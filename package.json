@@ -17,12 +17,14 @@
   "devDependencies": {
     "@storybook/react": "^3.2.13",
     "@storybook/storybook-deployer": "^2.0.0",
+    "nsp": "^2.8.1",
     "pre-commit": "^1.2.2",
     "pre-push": "^0.1.1",
     "prettier": "1.7.4",
     "standard": "^10.0.3"
   },
   "scripts": {
+    "check-security": "nsp check",
     "deploy": "storybook-to-ghpages -s public -o .out",
     "lint": "standard --verbose",
     "prettier": "prettier --write **/*.js",
@@ -53,7 +55,8 @@
   },
   "pre-push": {
     "run": [
-      "lint"
+      "lint",
+      "check-security"
     ]
   },
   "prettier": {
