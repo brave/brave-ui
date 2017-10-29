@@ -9,11 +9,18 @@
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
-    "@storybook/react": "^3.2.13"
+    "@storybook/react": "^3.2.13",
+    "@storybook/storybook-deployer": "^2.0.0"
   },
   "scripts": {
+    "deploy": "storybook-to-ghpages -s public -o .out",
     "start": "start-storybook -p 9091 -c .storybook",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "storybook-deployer": {
+    "gitUsername": "Brave Nespresso Drinker and Static Deployer Bot",
+    "gitEmail": "deploying-for-the-deployer-lord@brave.com",
+    "commitMessage": "Update Styleguide"
   },
   "repository": {
     "type": "git",
