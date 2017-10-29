@@ -2,11 +2,11 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
- import { configure } from '@storybook/react';
+ import { configure } from '@storybook/react'
 
-function loadStories() {
-  const req = require.context('../stories', true, /\.js$/);
-  req.keys().forEach(filename => req(filename));
+function loadStories () {
+  const req = require.context('../stories', true, /\.js$/)
+  req.keys().forEach(filename => req(filename))
 }
 
-configure(loadStories, module);
+configure(loadStories, module)

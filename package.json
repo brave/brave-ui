@@ -1,5 +1,11 @@
 {
   "private": true,
+  "author": "Brave Software",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/cezaraugusto/brave-ui/issues"
+  },
+  "homepage": "https://github.com/cezaraugusto/brave-ui#readme",
   "name": "brave-ui",
   "version": "0.0.0",
   "description": "List of reusable React components to empower your brave UI",
@@ -10,10 +16,17 @@
   },
   "devDependencies": {
     "@storybook/react": "^3.2.13",
-    "@storybook/storybook-deployer": "^2.0.0"
+    "@storybook/storybook-deployer": "^2.0.0",
+    "pre-commit": "^1.2.2",
+    "pre-push": "^0.1.1",
+    "prettier": "1.7.4",
+    "standard": "^10.0.3"
   },
   "scripts": {
     "deploy": "storybook-to-ghpages -s public -o .out",
+    "lint": "standard --verbose",
+    "prettier": "prettier --write **/*.js",
+    "standard-fix": "standard --fix",
     "start": "start-storybook -p 9091 -c .storybook",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -32,10 +45,21 @@
     "ui",
     "react"
   ],
-  "author": "Brave Software",
-  "license": "MPL-2.0",
-  "bugs": {
-    "url": "https://github.com/cezaraugusto/brave-ui/issues"
+  "pre-commit": {
+    "run": [
+      "prettier",
+      "standard-fix"
+    ]
   },
-  "homepage": "https://github.com/cezaraugusto/brave-ui#readme"
+  "pre-push": {
+    "run": [
+      "lint"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "bracketSpacing": false,
+    "jsxBracketSameLine": true
+  }
 }

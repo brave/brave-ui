@@ -17,7 +17,7 @@ import React from 'react'
 import {StyleSheet, css} from 'aphrodite/no-important'
 import theme from './theme'
 
-const BrowserButton = (props) => {
+const BrowserButton = props => {
   const theming = {}
 
   // Default button theme
@@ -32,13 +32,15 @@ const BrowserButton = (props) => {
   theming['--primary-gradient2'] = theme.browserButton.primary.gradient2
   theming['--primary-color'] = theme.browserButton.primary.color
   theming['--primary-hoverColor'] = theme.browserButton.primary.hoverColor
-  theming['--primary-borderHoverColor'] = theme.browserButton.primary.borderHoverColor
+  theming['--primary-borderHoverColor'] =
+    theme.browserButton.primary.borderHoverColor
 
   // Secondary button theme
   theming['--secondary-bg'] = theme.browserButton.secondary.bg
   theming['--secondary-color'] = theme.browserButton.secondary.color
   theming['--secondary-hoverColor'] = theme.browserButton.secondary.hoverColor
-  theming['--secondary-borderHoverColor'] = theme.browserButton.secondary.borderHoverColor
+  theming['--secondary-borderHoverColor'] =
+    theme.browserButton.secondary.borderHoverColor
 
   /**
    * Custom style is a separate entity and is also defined as a prop
@@ -66,8 +68,7 @@ const BrowserButton = (props) => {
         props.as === 'primary' && styles.browserButton_primaryColor,
         props.as === 'secondary' && styles.browserButton_secondaryColor,
         props.disabled && styles.browserButton_disabled
-      )}
-    >
+      )}>
       {props.label}
     </button>
   )
