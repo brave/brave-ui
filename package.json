@@ -9,18 +9,26 @@
   "name": "brave-ui",
   "version": "0.0.0",
   "description": "List of reusable React components to empower your brave UI",
-  "dependencies": {
-    "aphrodite": "^1.2.5",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
-  },
   "devDependencies": {
     "@storybook/react": "^3.2.13",
     "@storybook/storybook-deployer": "^2.0.0",
+    "aphrodite": "^1.2.5",
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.2",
+    "jest": "^21.2.1",
     "nsp": "^2.8.1",
     "pre-commit": "^1.2.2",
     "pre-push": "^0.1.1",
     "prettier": "1.7.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-test-renderer": "^16.0.0",
+    "sinon": "^4.0.2",
     "standard": "^10.0.3"
   },
   "scripts": {
@@ -30,7 +38,9 @@
     "prettier": "prettier --write **/*.js",
     "standard-fix": "standard --fix",
     "start": "start-storybook -p 9091 -c .storybook",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose -t",
+    "test-all": "jest --verbose",
+    "coverage": "jest --coverage --verbose"
   },
   "storybook-deployer": {
     "gitUsername": "Brave Nespresso Drinker and Static Deployer Bot",
@@ -56,6 +66,7 @@
   "pre-push": {
     "run": [
       "lint",
+      "test-all",
       "check-security"
     ]
   },
@@ -64,5 +75,26 @@
     "semi": false,
     "bracketSpacing": false,
     "jsxBracketSameLine": true
+  },
+  "jest": {
+    "resetMocks": true,
+    "resetModules": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "brave-ui/**/*.js",
+      "!brave-ui/theme.js",
+      "!**/node_modules/**",
+      "!stories/**"
+    ],
+    "testMatch": [
+      "<rootDir>/tests/?(*.)(test).js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/.testsconfig/testSetup.js",
+    "setupFiles": [
+      "<rootDir>/.testsconfig/testPolyfills.js"
+    ]
   }
 }

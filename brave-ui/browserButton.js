@@ -59,7 +59,8 @@ const BrowserButton = props => {
 
   return (
     <button
-      data-test-id={props.testId}
+      data-test-id={props.testId || 'browserButton'}
+      data-test-type={props.as || 'default'}
       style={Object.assign(theming, customStyle)}
       onClick={props.onClick}
       disabled={props.disabled}
