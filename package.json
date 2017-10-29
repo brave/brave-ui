@@ -1,14 +1,35 @@
 {
   "private": true,
+  "name": "brave-ui",
+  "version": "0.0.0",
+  "description": "List of reusable React components to empower your brave UI",
   "author": "Brave Software",
+  "homepage": "https://github.com/cezaraugusto/brave-ui#readme",
   "license": "MPL-2.0",
   "bugs": {
     "url": "https://github.com/cezaraugusto/brave-ui/issues"
   },
-  "homepage": "https://github.com/cezaraugusto/brave-ui#readme",
-  "name": "brave-ui",
-  "version": "0.0.0",
-  "description": "List of reusable React components to empower your brave UI",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cezaraugusto/brave-ui.git"
+  },
+  "keywords": [
+    "brave",
+    "browser-laptop",
+    "ui",
+    "react"
+  ],
+  "scripts": {
+    "check-security": "nsp check",
+    "deploy": "storybook-to-ghpages -s public -o .out",
+    "lint": "standard --verbose",
+    "prettier": "prettier --write **/*.js",
+    "standard-fix": "standard --fix",
+    "start": "start-storybook -p 9091 -c .storybook",
+    "test": "jest --verbose -t",
+    "test-all": "jest --verbose",
+    "coverage": "jest --coverage --verbose"
+  },
   "devDependencies": {
     "@storybook/react": "^3.2.13",
     "@storybook/storybook-deployer": "^2.0.0",
@@ -31,32 +52,6 @@
     "sinon": "^4.0.2",
     "standard": "^10.0.3"
   },
-  "scripts": {
-    "check-security": "nsp check",
-    "deploy": "storybook-to-ghpages -s public -o .out",
-    "lint": "standard --verbose",
-    "prettier": "prettier --write **/*.js",
-    "standard-fix": "standard --fix",
-    "start": "start-storybook -p 9091 -c .storybook",
-    "test": "jest --verbose -t",
-    "test-all": "jest --verbose",
-    "coverage": "jest --coverage --verbose"
-  },
-  "storybook-deployer": {
-    "gitUsername": "Brave Nespresso Drinker and Static Deployer Bot",
-    "gitEmail": "deploying-for-the-deployer-lord@brave.com",
-    "commitMessage": "Update Styleguide"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cezaraugusto/brave-ui.git"
-  },
-  "keywords": [
-    "brave",
-    "browser-laptop",
-    "ui",
-    "react"
-  ],
   "pre-commit": {
     "run": [
       "prettier",
@@ -75,6 +70,11 @@
     "semi": false,
     "bracketSpacing": false,
     "jsxBracketSameLine": true
+  },
+  "storybook-deployer": {
+    "gitUsername": "Brave Nespresso Drinker and Static Deployer Bot",
+    "gitEmail": "deploying-for-the-deployer-lord@brave.com",
+    "commitMessage": "Update Styleguide"
   },
   "jest": {
     "resetMocks": true,
