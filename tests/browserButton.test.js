@@ -1,6 +1,7 @@
 /* global expect, describe, it, afterEach */
 import React from 'react'
 import {mount} from 'enzyme'
+import renderer from 'react-test-renderer'
 import {resumeStyleInjection} from './lib/utils'
 import BrowserButton from '../brave-ui/browserButton'
 
@@ -9,6 +10,12 @@ describe('browserButton tests', () => {
     // Note: this is required for every test file
     // see utils.resumeStyleInjection for more info
     resumeStyleInjection()
+  })
+
+  it('matches the snapshot', () => {
+    const component = <BrowserButton label='browserButton as default' />
+    const tree = renderer.create(component).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 
   it('renders the component', () => {
