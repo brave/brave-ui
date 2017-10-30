@@ -20,10 +20,12 @@
     "react"
   ],
   "scripts": {
+    "bootstrap": "lerna bootstrap",
     "check-security": "nsp check",
     "deploy": "storybook-to-ghpages -s public -o .out",
     "lint": "standard --verbose",
     "prettier": "prettier --write **/*.js",
+    "publish": "lerna publish",
     "standard-fix": "standard --fix",
     "start": "start-storybook -p 9091 -c .storybook",
     "test": "jest --verbose -t",
@@ -42,6 +44,7 @@
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.2",
     "jest": "^21.2.1",
+    "lerna": "^2.4.0",
     "nsp": "^2.8.1",
     "pre-commit": "^1.2.2",
     "pre-push": "^0.1.1",
