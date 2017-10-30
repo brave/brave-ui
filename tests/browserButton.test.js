@@ -3,7 +3,7 @@ import React from 'react'
 import {mount} from 'enzyme'
 import renderer from 'react-test-renderer'
 import {resumeStyleInjection} from './lib/utils'
-import BrowserButton from '../brave-ui/browserButton'
+import BrowserButton from '../brave-ui/src/browserButton'
 
 describe('browserButton tests', () => {
   afterEach(() => {

@@ -21,6 +21,7 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "build": "lerna exec --parallel -- babel src -d dist",
     "check-security": "nsp check",
     "deploy": "storybook-to-ghpages -s public -o .out",
     "lint": "standard --verbose",
@@ -68,6 +69,11 @@
       "check-security"
     ]
   },
+  "standard": {
+    "ignore": [
+      "**/dist/*.js"
+    ]
+  },
   "prettier": {
     "singleQuote": true,
     "semi": false,
@@ -84,8 +90,9 @@
     "resetModules": true,
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "brave-ui/**/*.js",
-      "!brave-ui/theme.js",
+      "brave-ui/src/*.js",
+      "!brave-ui/src/theme.js",
+      "!brave-ui/src/index.js",
       "!**/node_modules/**",
       "!stories/**"
     ],

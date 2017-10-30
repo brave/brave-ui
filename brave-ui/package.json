@@ -2,7 +2,7 @@
   "name": "brave-ui",
   "version": "0.0.0",
   "description": "List of reusable React components to enhance your brave UI",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brave/brave-ui.git"

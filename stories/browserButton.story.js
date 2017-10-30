@@ -8,7 +8,7 @@ import {action} from '@storybook/addon-actions'
 
 // Components
 import React from 'react'
-import BrowserButton from '../brave-ui/browserButton'
+import BrowserButton from '../brave-ui/src/browserButton'
 
 storiesOf('BrowserButton', module)
   .add('Standard default button', () => (

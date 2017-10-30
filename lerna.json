@@ -3,5 +3,10 @@
   "version": "0.0.0",
   "packages": [
     "brave-ui/"
-  ]
+  ],
+  "commands": {
+    "bootstrap": {
+      "ignore": "brave-ui/src/*.js"
+    }
+  }
 }
