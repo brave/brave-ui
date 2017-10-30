@@ -1,11 +1,16 @@
-## Running tests
+# Coverage, running and creating tests
 
-You can run a test based on top-level describe name by running
+Testing is a critical step for any reliable library, which is what we're trying to accomplish. We make use of structural and snapshot tests, with coverage support for human readable testing information.
+
+
+## Running tests 
+
+You can run a test matching a name by running:
 
 ```
 npm run test "describe text here"
 
-# supposing you want to run tests for browserButton
+# supposing you want to run tests for `browserButton`
 npm run test "browserButton"
 ```
 
@@ -14,6 +19,8 @@ To run all tests
 ```
 npm run test-all
 ```
+
+### Running coverage
 
 To run test coverage
 
@@ -25,7 +32,7 @@ Coverage outputs a nice HTML version in case you want a human-readable version o
 
 Supposing you're running macOS, the source is available under `file:///Users/<your_user_name>/<path_to_this_repo>/brave-ui/coverage/lcov-report/index.html`
 
-## Writing tests
+### Creating tests
 
 We make use of Jest combined with Enzyme for our tests. For a list of supported `matchers` for testing please refer to [Jest:using matchers](https://facebook.github.io/jest/docs/en/using-matchers.html).
 
@@ -47,7 +54,7 @@ describe('your brand new tests', () => {
 
 An example of how to write a structural test with Enzyme:
 
-```js
+```jsx
 import YourAwesomeComponent from '../brave-ui/YourAwesomeComponent'
 
 it('renders the component', () => {
@@ -63,7 +70,7 @@ A snapshot test will fail if either the change is unexpected, or the screenshot 
 
 For convention, please write your snapshot test as the first test in your `describe` method. An example of snapshot testing is below:
 
-```js
+```jsx
 import YourAwesomeComponent from '../brave-ui/YourAwesomeComponent'
 
 describe('yourAwesomeComponent tests', () => {
@@ -82,5 +89,3 @@ describe('yourAwesomeComponent tests', () => {
 If you just created your component, when you run the test for the first time Jest will create the snapshot for you, hosted under `tests/__snapshots__/componentName.test.js.snap`. You should edit that file if you made intentional changes to your component leading to a failing test.
 
 Note that this file should be committed too as any other changes.
-
-For further information or questions, please open an issue®.
