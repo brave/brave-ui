@@ -34,6 +34,7 @@
     "coverage": "jest --coverage --verbose"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.2.14",
     "@storybook/react": "^3.2.13",
     "@storybook/storybook-deployer": "^2.0.0",
     "aphrodite": "^1.2.5",

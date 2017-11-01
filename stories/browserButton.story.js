@@ -15,34 +15,34 @@ import BrowserButton from '../brave-ui/src/browserButton'
 addDecorator(BetterVisualizer)
 
 storiesOf('BrowserButton', module)
-  .add('Standard default button', () => (
+  .add('Standard button', () => (
     <BrowserButton
-      as='default'
-      label='A default button®'
-      onClick={action('clicked the default button')}
+      as='standard'
+      label='A standard button®'
+      onClick={action('clicked the standard button')}
     />
   ))
-  .add('Standard default button disabled', () => (
-    <BrowserButton as='default' disabled label='A default disabled button®' />
+  .add('Standard button disabled', () => (
+    <BrowserButton as='standard' disabled label='A standard disabled button®' />
   ))
-  .add('Standard primary button', () => (
+  .add('Primary button', () => (
     <BrowserButton
       as='primary'
       label='A primary button®'
       onClick={action('clicked the primary button')}
     />
   ))
-  .add('Standard primary button disabled', () => (
+  .add('Primary button disabled', () => (
     <BrowserButton as='primary' disabled label='A primary disabled button®' />
   ))
-  .add('Standard secondary button', () => (
+  .add('Secondary button', () => (
     <BrowserButton
       as='secondary'
       label='A secondary button®'
       onClick={action('clicked the secondary button')}
     />
   ))
-  .add('Standard secondary button disabled', () => (
+  .add('Secondary button disabled', () => (
     <BrowserButton
       as='secondary'
       disabled
