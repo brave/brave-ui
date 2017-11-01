@@ -3,7 +3,7 @@
 
 > List of reusable React components to empower your brave UI
 
-[![Brave people](https://img.shields.io/badge/brave-people-orange.svg)](https://brave.com) [![React inside](https://img.shields.io/badge/react-inside-blue.svg)](https://github.com/facebook/react) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Brave people](https://img.shields.io/badge/brave-people-orange.svg)](https://brave.com) [![Known Vulnerabilities](https://snyk.io/test/github/cezaraugusto/brave-ui/badge.svg)](https://snyk.io/test/github/cezaraugusto/brave-ui) [![React inside](https://img.shields.io/badge/react-inside-blue.svg)](https://github.com/facebook/react) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
  [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
  [![Travis](https://img.shields.io/travis/cezaraugusto/brave-ui.svg)](http://github.com/cezaraugusto/brave-ui)
 [![MPL-2.0](https://img.shields.io/badge/mpl-2.0-green.svg)](https://www.mozilla.org/en-US/MPL/2.0/)
