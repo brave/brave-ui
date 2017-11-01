@@ -1,6 +1,6 @@
 # Publishing Stories and the Brave-UI package
 
-We have two types of `deploy`. Once is for deploying a static website to GitHub, which will then be visible going to https://cezaraugusto.github.io/brave-ui, and the other is for deploying the main components package to `npm`.
+We have two types of `deploy`. Once is for deploying a static website to GitHub, which will then be visible going to https://brave.github.io/brave-ui, and the other is for deploying the main components package to `npm`.
 
 ## Publishing the style guide to a website
 

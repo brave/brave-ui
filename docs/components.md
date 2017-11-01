@@ -114,14 +114,14 @@ This is maybe the most important part and the reason it comes before the "testin
 
 ### Testing your component
 
-Once your component is visually OK, it's time for testing. For now, we make use of snapshot and structural tests, and you'll need both to ensure your component works fine. This package was created with a have-fun 🕺 mentality and my take is that you may even like to write tests for it. Feeling excited? Check our [tests](https://github.com/cezaraugusto/brave-ui/blob/master/docs/publishing.md) documentation for guidance.
+Once your component is visually OK, it's time for testing. For now, we make use of snapshot and structural tests, and you'll need both to ensure your component works fine. This package was created with a have-fun 🕺 mentality and my take is that you may even like to write tests for it. Feeling excited? Check our [tests](https://github.com/brave/brave-ui/blob/master/docs/publishing.md) documentation for guidance.
 
 
 ### Testing your component in a story
 
-Stories are made to be used in the living style guide. They should honor its name and tell a story -- your component story. Having it there makes it publicly available for testing and easier to gain feedback. Refer to [Creating Stories - Improving the living styleguide](https://github.com/cezaraugusto/brave-ui/blob/master/docs/stories.md) documentation for info.
+Stories are made to be used in the living style guide. They should honor its name and tell a story -- your component story. Having it there makes it publicly available for testing and easier to gain feedback. Refer to [Creating Stories - Improving the living styleguide](https://github.com/brave/brave-ui/blob/master/docs/stories.md) documentation for info.
 
 
 ### Publishing your component to the real world
 
-Having the component ready with the right packages defined and proper testing doesn't mean the component is ready for external usage. To make so you need to publish the package and update the style guide for public view. Read more at [Publishing Stories and the Brave-UI package](https://github.com/cezaraugusto/brave-ui/blob/master/docs/publishing.md) documentation.
+Having the component ready with the right packages defined and proper testing doesn't mean the component is ready for external usage. To make so you need to publish the package and update the style guide for public view. Read more at [Publishing Stories and the Brave-UI package](https://github.com/brave/brave-ui/blob/master/docs/publishing.md) documentation.

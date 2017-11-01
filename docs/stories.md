@@ -19,4 +19,4 @@ storiesOf('gratestComponentEver', module)
 
 ## Publishing stories
 
-Please refer to [Publishing Stories and the Brave-UI package](https://github.com/cezaraugusto/brave-ui/blob/master/docs/publishing.md) docs for more information.
+Please refer to [Publishing Stories and the Brave-UI package](https://github.com/brave/brave-ui/blob/master/docs/publishing.md) docs for more information.

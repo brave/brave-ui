@@ -5,7 +5,7 @@
 
 ## Available components
 
-Below there's a full list of the current components available. For a live demo and API overview access https://cezaraugusto.github.io/brave-ui
+Below there's a full list of the current components available. For a live demo and API overview access https://brave.github.io/brave-ui
 
 * BrowserButton
 
@@ -34,7 +34,7 @@ render () {
 
 ## Contributing
 
-Please refer to https://github.com/cezaraugusto/brave-ui for contributing documentation.
+Please refer to https://github.com/brave/brave-ui for contributing documentation.
 
 
 ## License

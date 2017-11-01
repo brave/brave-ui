@@ -4,14 +4,14 @@
   "version": "0.0.0",
   "description": "List of reusable React components to empower your brave UI",
   "author": "Brave Software",
-  "homepage": "https://github.com/cezaraugusto/brave-ui#readme",
+  "homepage": "https://github.com/brave/brave-ui#readme",
   "license": "MPL-2.0",
   "bugs": {
-    "url": "https://github.com/cezaraugusto/brave-ui/issues"
+    "url": "https://github.com/brave/brave-ui/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cezaraugusto/brave-ui.git"
+    "url": "git+https://github.com/brave/brave-ui.git"
   },
   "keywords": [
     "brave",
