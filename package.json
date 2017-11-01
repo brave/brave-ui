@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "brave-ui",
+  "name": "brave-ui-wrapper",
   "version": "0.0.0",
   "description": "List of reusable React components to empower your brave UI",
   "author": "Brave Software",
@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.14",
+    "@storybook/addon-knobs": "^3.2.14",
     "@storybook/react": "^3.2.13",
     "@storybook/storybook-deployer": "^2.0.0",
     "aphrodite": "^1.2.5",

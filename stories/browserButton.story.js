@@ -4,6 +4,7 @@
 
 // Storybook requires
 import {storiesOf, addDecorator} from '@storybook/react'
+import {withKnobs, text, boolean, select} from '@storybook/addon-knobs'
 import {action} from '@storybook/addon-actions'
 import {BetterVisualizer} from './storyUtil'
 
@@ -11,57 +12,26 @@ import {BetterVisualizer} from './storyUtil'
 import React from 'react'
 import BrowserButton from '../brave-ui/src/browserButton'
 
+addDecorator(withKnobs)
 // Globally adapt the story visualizer for this story
 addDecorator(BetterVisualizer)
 
-storiesOf('BrowserButton', module)
-  .add('Standard button', () => (
+storiesOf('BrowserButton', module).add('Standard button', () => {
+  const label = 'Button Types'
+  const options = {
+    default: 'Default',
+    primary: 'Primary',
+    secondary: 'Secondary'
+  }
+  const defaultValue = 'default'
+  const value = select(label, options, defaultValue)
+
+  return (
     <BrowserButton
-      as='standard'
-      label='A standard button®'
+      as={value}
+      disabled={boolean('Disabled', false)}
+      label={text('Label', 'Hello Button')}
       onClick={action('clicked the standard button')}
     />
-  ))
-  .add('Standard button disabled', () => (
-    <BrowserButton as='standard' disabled label='A standard disabled button®' />
-  ))
-  .add('Primary button', () => (
-    <BrowserButton
-      as='primary'
-      label='A primary button®'
-      onClick={action('clicked the primary button')}
-    />
-  ))
-  .add('Primary button disabled', () => (
-    <BrowserButton as='primary' disabled label='A primary disabled button®' />
-  ))
-  .add('Secondary button', () => (
-    <BrowserButton
-      as='secondary'
-      label='A secondary button®'
-      onClick={action('clicked the secondary button')}
-    />
-  ))
-  .add('Secondary button disabled', () => (
-    <BrowserButton
-      as='secondary'
-      disabled
-      label='A secondary disabled button®'
-    />
-  ))
-  .add('Custom size', () => (
-    <BrowserButton
-      as='primary'
-      size='60px'
-      label='A custom size button®'
-      onClick={action('clicked the custom font size button')}
-    />
-  ))
-  .add('Custom font size', () => (
-    <BrowserButton
-      as='primary'
-      fontSize='40px'
-      label='A custom font size button®'
-      onClick={action('clicked the custom font size button')}
-    />
-  ))
+  )
+})

@@ -4,3 +4,6 @@
 
 // for docs see https://github.com/storybooks/storybook/tree/master/addons/actions
 import '@storybook/addon-actions/register'
+
+// for docs see https://github.com/storybooks/storybook/tree/master/addons/knobs
+import '@storybook/addon-knobs/register'
