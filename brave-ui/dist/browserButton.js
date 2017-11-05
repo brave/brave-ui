@@ -51,12 +51,12 @@ var BrowserButton = function BrowserButton(props) {
 
   if (props.fontSize != null) {
     customStyle['--fontSize'] = props.fontSize;
-    customStyle['--size'] = 'calc(' + props.fontSize + ' * 2)';
   }
 
   return _react2.default.createElement(
     'button',
     {
+      'data-l10n-id': props.l10nId,
       'data-test-id': props.testId || 'browserButton',
       'data-test-type': props.as || 'default',
       style: Object.assign(theming, customStyle),
@@ -109,7 +109,7 @@ var styles = _noImportant.StyleSheet.create({
     lineHeight: 1.25, // TODO: this should be calculated instead of hard coded
     width: 'auto',
     minWidth: 'calc(var(--fontSize, 13px) * 6)',
-    height: 'var(--size, 32px)',
+    minHeight: 'var(--size, 32px)',
     whiteSpace: 'nowrap',
 
     // Spacing properties

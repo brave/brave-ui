@@ -2,7 +2,8 @@
 
 exports[`browserButton tests matches the snapshot 1`] = `
 <button
-  className="browserButton_12p6l1v"
+  className="browserButton_1b3ew9l"
+  data-l10n-id={undefined}
   data-test-id="browserButton"
   data-test-type="default"
   disabled={undefined}

@@ -39,6 +39,8 @@ storiesOf('BrowserButton', module).add('Standard button', () => {
       disabled={boolean('Disabled', false)}
       label={text('Label', 'Hello Button')}
       onClick={action('clicked the standard button')}
+      size={text('Size', '')}
+      fontSize={text('Font Size', '')}
     />
   )
 })
