@@ -4,10 +4,18 @@
 
 import {configure} from '@storybook/react'
 import {setOptions} from '@storybook/addon-options'
+import {setDefaults} from '@storybook/addon-info'
 
 setOptions({
   name: 'Brave UI',
   url: 'https://github.com/brave/brave-ui'
+})
+
+// addon-info
+// see https://github.com/storybooks/storybook/tree/master/addons/info#options-and-defaults
+// for defaults
+setDefaults({
+  header: false
 })
 
 function loadStories () {

@@ -4,6 +4,7 @@
 
 // Storybook requires
 import {storiesOf, addDecorator} from '@storybook/react'
+import {withInfo} from '@storybook/addon-info'
 import {withKnobs, text, boolean, select} from '@storybook/addon-knobs'
 import {action} from '@storybook/addon-actions'
 import {BetterVisualizer} from './storyUtil'
@@ -12,7 +13,13 @@ import {BetterVisualizer} from './storyUtil'
 import React from 'react'
 import BrowserButton from '../brave-ui/src/browserButton'
 
+// This should be the first decorator
+addDecorator((story, context) =>
+  withInfo('<h1>🎩 Basic Usage</h1>')(story)(context)
+)
+
 addDecorator(withKnobs)
+
 // Globally adapt the story visualizer for this story
 addDecorator(BetterVisualizer)
 
