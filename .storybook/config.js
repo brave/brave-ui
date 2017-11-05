@@ -3,6 +3,12 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import {configure} from '@storybook/react'
+import {setOptions} from '@storybook/addon-options'
+
+setOptions({
+  name: 'Brave UI',
+  url: 'https://github.com/brave/brave-ui'
+})
 
 function loadStories () {
   const req = require.context('../stories', true, /\.js$/)

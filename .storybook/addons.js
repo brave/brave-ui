@@ -7,3 +7,6 @@ import '@storybook/addon-actions/register'
 
 // for docs see https://github.com/storybooks/storybook/tree/master/addons/knobs
 import '@storybook/addon-knobs/register'
+
+// for docs see https://github.com/storybooks/storybook/tree/master/addons/options
+import '@storybook/addon-options/register'
