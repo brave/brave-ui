@@ -63,7 +63,8 @@
   "pre-commit": {
     "run": [
       "prettier",
-      "standard-fix"
+      "standard-fix",
+      "build"
     ]
   },
   "pre-push": {
