@@ -1,21 +1,18 @@
-<img src="logo-dev.png" align="left" width="192px" height="192px"/>
-<img align="left" width="0" height="192px" hspace="10"/>
+<img src="https://raw.githubusercontent.com/brave/brave-ui/master/logo-dev.png" align="right" width="130px" height="130px"/>
 
+# Brave UI [![npm](https://img.shields.io/npm/v/brave-ui.svg)]()
 > List of reusable React components to empower your brave UI
 
-[![Brave people](https://img.shields.io/badge/brave-people-orange.svg)](https://brave.com) [![Known Vulnerabilities](https://snyk.io/test/github/brave/brave-ui/badge.svg)](https://snyk.io/test/github/brave/brave-ui) [![React inside](https://img.shields.io/badge/react-inside-blue.svg)](https://github.com/facebook/react) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Travis](https://img.shields.io/travis/brave/brave-ui.svg)](http://github.com/brave/brave-ui) [![Known Vulnerabilities](https://snyk.io/test/github/brave/brave-ui/badge.svg)](https://snyk.io/test/github/brave/brave-ui) [![npm](https://img.shields.io/npm/dt/brave-ui.svg)]() [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
  [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
- [![Travis](https://img.shields.io/travis/brave/brave-ui.svg)](http://github.com/brave/brave-ui)
-[![MPL-2.0](https://img.shields.io/badge/mpl-2.0-green.svg)](https://www.mozilla.org/en-US/MPL/2.0/)
 
 Welcome to the Brave UI repo! Here you will find a list of reusable stateless React components for use across our browser UI. It's a standalone package to be manipulated as any other module, including a visual style guide fully customizable for both developers and designers.
 
-<br>
-<br>
+<hr>
 <p align="center">
 <a href="#table-of-contents">TOC</a> • <a href="#why-this">Why this?</a> • <a href="#what-is-this">What is this?</a> • <a href="#how-this-works">How this works?</a> • <a href="#installation-and-usage">Installation and usage</a> • <a href="#contribute">Contribute!</a>
 </p>
-<br>
+<hr>
 
 ## Table of Contents
 
