@@ -26,7 +26,7 @@
     "deploy": "storybook-to-ghpages -s public -o .out",
     "lint": "standard --verbose",
     "prettier": "prettier --write **/*.js",
-    "publish": "lerna publish",
+    "publish": "lerna publish && npm run deploy",
     "standard-fix": "standard --fix",
     "start": "start-storybook -p 9091 -c .storybook",
     "test": "jest --verbose -t",
