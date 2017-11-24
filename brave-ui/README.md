@@ -13,6 +13,7 @@ Below there's a full list of the current components available. For a live demo a
 ## Installation
 
 ```
+# If you prefer using yarn: yarn add brave-ui
 npm i --save brave-ui
 ```
 

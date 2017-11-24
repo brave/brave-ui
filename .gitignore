@@ -13,6 +13,9 @@ coverage
 # Dependency directory
 node_modules
 
+# No need for package-lock.json in the brave-ui repo
+brave-ui/package-lock.json
+
 # Temp files
 .DS_Store
 .DS-Store

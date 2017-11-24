@@ -55,6 +55,7 @@ If you want to edit this repository, being it test fixes, additions, style guide
 ```
 git clone git@github.com:brave/brave-ui.git
 cd brave-ui
+# If you prefer using yarn: yarn install
 npm i
 ```
 
@@ -66,6 +67,7 @@ If you want to make use of the `brave-ui` components (you can see a list of them
 
 ```
 cd <your_repo_here>
+# If you prefer using yarn: yarn add brave-ui
 npm i --save brave-ui
 ```
 
