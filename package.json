@@ -22,11 +22,13 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna exec --parallel -- babel src -d dist",
+    "dev": "babel -w brave-ui/src -d brave-ui/dist",
     "check-security": "nsp check",
     "deploy": "storybook-to-ghpages -s public -o .out",
     "lint": "standard --verbose",
     "prettier": "prettier --write **/*.js",
     "publish": "lerna publish && npm run deploy",
+    "postinstall": "cd brave-ui/ && npm i && cd ../",
     "standard-fix": "standard --fix",
     "start": "start-storybook -p 9091 -c .storybook",
     "test": "jest --verbose -t",

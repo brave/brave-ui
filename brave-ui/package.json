@@ -24,5 +24,8 @@
   "dependencies": {
     "aphrodite": "^1.2.5",
     "react": "^16.0.0"
+  },
+  "devDependencies": {
+    "babel-preset-react-hmre": "^1.1.1"
   }
 }
