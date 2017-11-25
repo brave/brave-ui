@@ -3,3 +3,4 @@ cjs
 es
 storybook-static
 dist
+*.snap
