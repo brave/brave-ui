@@ -23,7 +23,7 @@ addDecorator(withKnobs)
 // Globally adapt the story visualizer for this story
 addDecorator(BetterVisualizer)
 
-storiesOf('BrowserButton', module).add('Standard button', () => {
+storiesOf('Buttons', module).add('BrowserButton', () => {
   const label = 'Button Types'
   const options = {
     default: 'Default',
