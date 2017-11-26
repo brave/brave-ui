@@ -14,9 +14,11 @@ There are several ways you can do so:
 
 ## Running `brave-ui` in your local machine:
 
-1. Clone this repo
+1. Clone this repo `git clone git@github.com:brave/brave-ui.git`
 2. cd `brave-ui`
 3. `npm i` or `yarn install`
+
+Once the installation is finished, run `npm start`. The source is available under http://localhost:9091 (one after nine-o-nine?). It will hot-reload the style guide at every code change.
 
 ## Running tests
 

@@ -45,25 +45,6 @@ On the other hand, we have the `brave-ui` repository, containing a list of reusa
 
 ## Installation and Usage
 
-Depending on your goals, we have two types of installation/usage, described below.
-
-
-### To edit this reposity/styleguide
-
-If you want to edit this repository, being it test fixes, additions, style guide updates, etc, you need to:
-
-```
-git clone git@github.com:brave/brave-ui.git
-cd brave-ui
-# If you prefer using yarn: yarn install
-npm i
-```
-
-Once the installation is finished, run `npm start`. The source is available under http://localhost:9091 (one after nine-o-nine?). It will hot-reload the style guide at every code change.
-
-### To make use of the `brave-ui` components in an application
-
-If you want to make use of the `brave-ui` components (you can see a list of them [here](https://brave.github.io/brave-ui)), follow these commands:
 
 ```
 cd <your_repo_here>
@@ -72,6 +53,8 @@ npm i --save brave-ui
 ```
 
 Confirm in your `package.json` that the `brave-ui` is installed. Once you're good to go you can require it by using the object-destructuring pattern, which is used to take advantage of module three-shaking. Note that without this pattern (without the brackets evolving the component name) the package will throw an error.
+
+If you're looking to contribute to this repo please refer to [Contributing](https://github.com/brave/brave-ui/blob/master/docs/contributing.md) docs.
 
 ```js
 // Let's implement the <BrowserButton /> component
