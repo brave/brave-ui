@@ -14,7 +14,7 @@ Welcome to the Brave UI repo! Here you will find a list of reusable stateless Re
 </p>
 <hr>
 
-## Table of Contents
+## Useful links
 
 * [Installation and Usage](#installation-and-usage)
 * [Visual Test - Playing around with the living styleguide](https://github.com/brave/brave-ui/blob/master/docs/manual-tests.md)
@@ -22,7 +22,7 @@ Welcome to the Brave UI repo! Here you will find a list of reusable stateless Re
 * [Creating components and Architecture Overview](https://github.com/brave/brave-ui/blob/master/docs/components.md)
 * [Coverage, running and creating tests](https://github.com/brave/brave-ui/blob/master/docs/tests.md)
 * [Publishing Stories and the Brave-UI package](https://github.com/brave/brave-ui/blob/master/docs/publishing.md)
-* [Cookbook for maintainers](#) - TODO
+* [Contributing](https://github.com/brave/brave-ui/blob/master/docs/contributing.md)
 
 
 ## What is this?
@@ -89,4 +89,4 @@ For further information about other development goodies, please refer to the [ta
 
 ## Contribute!
 
-We are still in an early draft and would love your feedback. If you think something can be better or is just wrong, please open an issue or submit a pull-request. Let's make it cool!
+We are still in an early draft and would love your feedback. If you think something can be better or is just wrong, please open an issue or submit a pull-request. More information at the [contributing docs](https://github.com/brave/brave-ui/blob/master/docs/contributing.md). Let's make it cool!
