@@ -1,9 +1,9 @@
 /* global expect, describe, it, afterEach */
 import React from 'react'
-import {shallow} from 'enzyme'
+import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
-import {resumeStyleInjection} from './lib/utils'
-import {Grid, Column} from '../brave-ui/src/gridSystem'
+import { resumeStyleInjection } from './lib/utils'
+import { Grid, Column } from '../brave-ui/src/gridSystem'
 
 describe('gridSystem tests', () => {
   afterEach(() => {
@@ -26,21 +26,23 @@ describe('gridSystem tests', () => {
       const wrapper = shallow(<Grid padding='20px' />)
       const assertion = wrapper.find('div').props().style
       expect(assertion).toEqual(
-        expect.objectContaining({'--gridPadding': '20px'})
+        expect.objectContaining({ '--gridPadding': '20px' })
       )
     })
 
     it('defines a custom gap', () => {
       const wrapper = shallow(<Grid gap='10px' />)
       const assertion = wrapper.find('div').props().style
-      expect(assertion).toEqual(expect.objectContaining({'--gridGap': '10px'}))
+      expect(assertion).toEqual(
+        expect.objectContaining({ '--gridGap': '10px' })
+      )
     })
 
     it('defines a custom width', () => {
       const wrapper = shallow(<Grid width='13px' />)
       const assertion = wrapper.find('div').props().style
       expect(assertion).toEqual(
-        expect.objectContaining({'--gridWidth': '13px'})
+        expect.objectContaining({ '--gridWidth': '13px' })
       )
     })
 
@@ -48,7 +50,7 @@ describe('gridSystem tests', () => {
       const wrapper = shallow(<Grid background='cyan' />)
       const assertion = wrapper.find('div').props().style
       expect(assertion).toEqual(
-        expect.objectContaining({'--gridBackground': 'cyan'})
+        expect.objectContaining({ '--gridBackground': 'cyan' })
       )
     })
   })
@@ -74,7 +76,7 @@ describe('gridSystem tests', () => {
       const wrapper = shallow(<Column align='flex-start' />)
       const assertion = wrapper.find('div').props().style
       expect(assertion).toEqual(
-        expect.objectContaining({'--columnAlign': 'flex-start'})
+        expect.objectContaining({ '--columnAlign': 'flex-start' })
       )
     })
 
@@ -82,7 +84,7 @@ describe('gridSystem tests', () => {
       const wrapper = shallow(<Column verticalAlign='flex-end' />)
       const assertion = wrapper.find('div').props().style
       expect(assertion).toEqual(
-        expect.objectContaining({'--columnVerticalAlign': 'flex-end'})
+        expect.objectContaining({ '--columnVerticalAlign': 'flex-end' })
       )
     })
 
@@ -90,7 +92,7 @@ describe('gridSystem tests', () => {
       const wrapper = shallow(<Column background='purple' />)
       const assertion = wrapper.find('div').props().style
       expect(assertion).toEqual(
-        expect.objectContaining({'--columnBackground': 'purple'})
+        expect.objectContaining({ '--columnBackground': 'purple' })
       )
     })
   })

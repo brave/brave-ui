@@ -3,11 +3,11 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 // Storybook requires
-import {storiesOf, addDecorator} from '@storybook/react'
-import {withInfo} from '@storybook/addon-info'
-import {withKnobs, text, boolean, select} from '@storybook/addon-knobs'
-import {action} from '@storybook/addon-actions'
-import {BetterVisualizer} from './storyUtil'
+import { storiesOf, addDecorator } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
+import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
+import { action } from '@storybook/addon-actions'
+import { BetterVisualizer } from './storyUtil'
 
 // Components
 import React from 'react'

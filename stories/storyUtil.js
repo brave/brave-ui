@@ -16,4 +16,4 @@ const styles = {
   height: '-webkit-fill-available'
 }
 
-export {BetterVisualizer}
+export { BetterVisualizer }

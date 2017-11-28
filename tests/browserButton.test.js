@@ -1,8 +1,8 @@
 /* global jest, expect, describe, it, afterEach */
 import React from 'react'
-import {shallow} from 'enzyme'
+import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
-import {resumeStyleInjection} from './lib/utils'
+import { resumeStyleInjection } from './lib/utils'
 import BrowserButton from '../brave-ui/src/browserButton'
 
 describe('browserButton tests', () => {
@@ -27,13 +27,13 @@ describe('browserButton tests', () => {
   it('defines a custom size', () => {
     const wrapper = shallow(<BrowserButton size='13px' />)
     const assertion = wrapper.find('button').props().style
-    expect(assertion).toEqual(expect.objectContaining({'--size': '13px'}))
+    expect(assertion).toEqual(expect.objectContaining({ '--size': '13px' }))
   })
 
   it('defines a custom font size', () => {
     const wrapper = shallow(<BrowserButton fontSize='60px' />)
     const assertion = wrapper.find('button').props().style
-    expect(assertion).toEqual(expect.objectContaining({'--fontSize': '60px'}))
+    expect(assertion).toEqual(expect.objectContaining({ '--fontSize': '60px' }))
   })
 
   it('can pass locale', () => {

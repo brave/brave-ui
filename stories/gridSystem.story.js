@@ -3,14 +3,14 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 // Storybook requires
-import {storiesOf, addDecorator} from '@storybook/react'
-import {withInfo} from '@storybook/addon-info'
-import {withKnobs, text, select} from '@storybook/addon-knobs'
-import {BetterVisualizer} from './storyUtil'
+import { storiesOf, addDecorator } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
+import { withKnobs, text, select } from '@storybook/addon-knobs'
+import { BetterVisualizer } from './storyUtil'
 
 // Components
 import React from 'react'
-import {gridTemplate, Grid, Column} from '../brave-ui/src/gridSystem'
+import { gridTemplate, Grid, Column } from '../brave-ui/src/gridSystem'
 
 // This should be the first decorator
 addDecorator((story, context) =>
@@ -74,8 +74,8 @@ storiesOf('Grid System', module)
   .add('Grid Playground', () => {
     const options = {}
 
-    Array.from({length: gridTemplate}, (v, i) => i + 1).forEach(size =>
-      Object.assign(options, {[size.toString()]: size})
+    Array.from({ length: gridTemplate }, (v, i) => i + 1).forEach(size =>
+      Object.assign(options, { [size.toString()]: size })
     )
 
     const label1 = 'Column #1 size'

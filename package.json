@@ -25,7 +25,7 @@
     "dev": "babel -w brave-ui/src -d brave-ui/dist",
     "check-security": "nsp check",
     "deploy": "storybook-to-ghpages -s public -o .out",
-    "lint": "standard --verbose",
+    "lint": "npm run prettier && standard --fix --verbose",
     "prettier": "prettier --write **/*.js",
     "publish": "lerna publish && npm run deploy",
     "postinstall": "cd brave-ui/ && npm i && cd ../",
@@ -64,8 +64,7 @@
   },
   "pre-commit": {
     "run": [
-      "prettier",
-      "standard-fix",
+      "lint",
       "build"
     ]
   },
@@ -84,7 +83,7 @@
   "prettier": {
     "singleQuote": true,
     "semi": false,
-    "bracketSpacing": false,
+    "bracketSpacing": true,
     "jsxBracketSameLine": true
   },
   "storybook-deployer": {
