@@ -23,6 +23,11 @@ const theme = {
       hoverColor: 'rgb(153, 153, 153)',
       borderHoverColor: '#444'
     }
+  },
+  switchButton: {
+    checkedBg: '#ff6000',
+    uncheckedBg: '#ccc',
+    knob: '#fff'
   }
 }
 

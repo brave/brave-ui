@@ -5,12 +5,14 @@
 import Anchor from './anchor'
 import ActionButton from './actionButton'
 import BrowserButton from './browserButton'
+import SwitchButton from './switchButton'
 import {Grid, Column} from './gridSystem'
 
 export {
   Anchor,
   ActionButton,
   BrowserButton,
+  SwitchButton,
   Grid,
   Column
 }
