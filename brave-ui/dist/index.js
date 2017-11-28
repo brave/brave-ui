@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Column = exports.Grid = exports.BrowserSelect = exports.SwitchButton = exports.BrowserButton = exports.ActionButton = exports.Anchor = exports.BrowserText = undefined;
+exports.Separator = exports.Column = exports.Grid = exports.BrowserSelect = exports.SwitchButton = exports.BrowserButton = exports.ActionButton = exports.Anchor = exports.BrowserText = undefined;
 
 var _browserText = require('./browserText');
 
@@ -31,7 +31,15 @@ var _browserSelect2 = _interopRequireDefault(_browserSelect);
 
 var _gridSystem = require('./gridSystem');
 
+var _separator = require('./separator');
+
+var _separator2 = _interopRequireDefault(_separator);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 exports.BrowserText = _browserText2.default;
 exports.Anchor = _anchor2.default;
@@ -40,6 +48,5 @@ exports.BrowserButton = _browserButton2.default;
 exports.SwitchButton = _switchButton2.default;
 exports.BrowserSelect = _browserSelect2.default;
 exports.Grid = _gridSystem.Grid;
-exports.Column = _gridSystem.Column; /* This Source Code Form is subject to the terms of the Mozilla Public
-                                      * License, v. 2.0. If a copy of the MPL was not distributed with this file,
-                                      * You can obtain one at http://mozilla.org/MPL/2.0/. */
+exports.Column = _gridSystem.Column;
+exports.Separator = _separator2.default;
