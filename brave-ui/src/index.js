@@ -7,6 +7,7 @@ import Anchor from './anchor'
 import ActionButton from './actionButton'
 import BrowserButton from './browserButton'
 import SwitchButton from './switchButton'
+import BrowserSelect from './browserSelect'
 import {Grid, Column} from './gridSystem'
 
 export {
@@ -15,6 +16,7 @@ export {
   ActionButton,
   BrowserButton,
   SwitchButton,
+  BrowserSelect,
   Grid,
   Column
 }
