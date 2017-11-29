@@ -18,7 +18,7 @@ describe('gridSystem tests', () => {
 
     it('renders the component', () => {
       const wrapper = shallow(<Grid />)
-      const assertion = wrapper.find('[data-test-id="grid"]').length
+      const assertion = wrapper.find('#grid').length
       expect(assertion).toBe(1)
     })
 

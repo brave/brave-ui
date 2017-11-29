@@ -2,92 +2,107 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import React from 'react'
-import {StyleSheet, css} from 'aphrodite/no-important'
+import React, { PureComponent } from 'react'
+import { StyleSheet, css } from 'aphrodite/no-important'
 
 // Create a 12-based column grid system
-const gridTemplate = 12
+export const gridTemplate = 12
 
-/**
- * Creates a css-grid based column wrapper (grid)
- * @param {testId} testId - the element's name for testing purposes
- * @param {String} padding - own grid padding
- * @param {String} gap - distance between each column children
- * @param {String} width - the max grid width
- * @param {node} children - any node you want to pass as the grid children
- */
-const Grid = ({ testId, padding, gap, width, background, children }) => {
-  const customStyle = {}
+export class Grid extends PureComponent {
+  get componentStyles () {
+    const { props } = this
+    const customStyle = {}
 
-  if (padding != null) {
-    customStyle['--gridPadding'] = padding
+    if ('padding' in props) {
+      customStyle['--gridPadding'] = props.padding
+    }
+
+    if ('gap' in props) {
+      customStyle['--gridGap'] = props.gap
+    }
+
+    if ('width' in props) {
+      customStyle['--gridWidth'] = props.width
+    }
+
+    if ('height' in props) {
+      customStyle['--gridHeight'] = props.height
+    }
+
+    if ('textColor' in props) {
+      customStyle['--gridTextColor'] = props.textColor
+    }
+
+    if ('background' in props) {
+      customStyle['--gridBackground'] = props.background
+    }
+
+    return customStyle
   }
 
-  if (gap != null) {
-    customStyle['--gridGap'] = gap
+  render () {
+    const { id, children, style } = this.props
+    return (
+      <div
+        id={id || 'grid'}
+        className={css(styles.grid)}
+        style={Object.assign(this.componentStyles, style)}>
+        {children}
+      </div>
+    )
   }
-
-  if (width != null) {
-    customStyle['--gridWidth'] = width
-  }
-
-  if (background != null) {
-    customStyle['--gridBackground'] = background
-  }
-
-  return (
-    <div
-      data-test-id={testId || 'grid'}
-      className={css(styles.grid)}
-      style={customStyle}>
-      {children}
-    </div>
-  )
 }
 
 const gridWrapper = {
   grid: {
+    boxSizing: 'border-box',
     display: 'grid',
     gridTemplateColumns: `repeat(${gridTemplate}, 1fr)`,
     gridGap: 'var(--gridGap, 15px)',
     padding: 'var(--gridPadding, 0)',
     maxWidth: 'var(--gridWidth)',
+    height: 'var(--gridHeight)',
+    color: 'var(--gridTextColor)',
     backgroundColor: 'var(--gridBackground)'
   }
 }
 
-/**
- *
- * @param {testId} testId - the element's name for testing purposes
- * @param {String|Number} size - the column size ranging between 1 and 12
- * @param {String} align - any flexbox accepted value for justify-content
- * @param {String} verticalAlign - any flexbox accepted value for alignItems
- * @param {String} background - any CSS compilant color for the background
- * @param {node} children - any node you want to pass as the grid children
- */
-const Column = ({ testId, size = 12, align, verticalAlign, background, children }) => {
-  const customStyle = {}
+export class Column extends PureComponent {
+  get componentStyles () {
+    const customStyle = {}
+    const { props } = this
+    const needsFlex = 'align' in props || 'verticalAlign' in props
 
-  if (align != null) {
-    customStyle['--columnAlign'] = align
+    if (needsFlex) {
+      customStyle['--columnDisplay'] = 'flex'
+    }
+
+    if ('align' in props) {
+      customStyle['--columnAlign'] = props.align
+    }
+
+    if ('verticalAlign' in props) {
+      customStyle['--columnVerticalAlign'] = props.verticalAlign
+    }
+
+    if ('background' in props) {
+      customStyle['--columnBackground'] = props.background
+    }
+
+    return customStyle
   }
 
-  if (verticalAlign != null) {
-    customStyle['--columnVerticalAlign'] = verticalAlign
+  render () {
+    const { id, size = 12, children } = this.props
+    return (
+      <div
+        data-test-id={id || 'column'}
+        className={css(styles[`column${size}`])}
+        style={this.componentStyles}>
+        {children}
+      </div>
+    )
   }
-
-  if (background != null) {
-    customStyle['--columnBackground'] = background
-  }
-
-  return (
-    <div
-      data-test-id={testId || 'column'}
-      className={css(styles[`column${size}`])}
-      style={customStyle}>
-      {children}
-    </div>
-  )
 }
 
 // Iterate over gridTemplate and add a `columnN` classname
@@ -96,8 +111,10 @@ let columnSystem = {}
 Array.from({length: gridTemplate}, (v, i) => i + 1).forEach((size) => {
   Object.assign(columnSystem, {
     [`column${size}`]: {
+      boxSizing: 'border-box',
+      position: 'relative',
       gridColumn: `span ${size}`,
-      display: 'flex',
+      display: 'var(--columnDisplay, inherit)',
       justifyContent: 'var(--columnAlign)',
       alignItems: 'var(--columnVerticalAlign)',
       backgroundColor: 'var(--columnBackground)'
@@ -108,5 +125,3 @@ Array.from({length: gridTemplate}, (v, i) => i + 1).forEach((size) => {
 // merge both grid and column styles obj to be used in Aphrodite
 const gridSystem = Object.assign(gridWrapper, columnSystem)
 const styles = StyleSheet.create(gridSystem)
-
-export { gridTemplate, Grid, Column }

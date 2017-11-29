@@ -2,7 +2,7 @@
 
 exports[`gridSystem tests column component matches the snapshot 1`] = `
 <div
-  className="column12_17cxef8"
+  className="column12_1wuh2fy"
   data-test-id="column"
   style={Object {}}
 />
@@ -10,8 +10,8 @@ exports[`gridSystem tests column component matches the snapshot 1`] = `
 
 exports[`gridSystem tests grid component matches the snapshot 1`] = `
 <div
-  className="grid_1lsrjld"
-  data-test-id="grid"
+  className="grid_7oehqz"
+  id="grid"
   style={Object {}}
 />
 `;
