@@ -11,7 +11,10 @@ export default class BrowserSelect extends PureComponent {
     return (
       <div>
         <p className={css(styles.browserSelect_title)}>{titleName}</p>
-        <div className={css(styles.browserSelectWrapper)}>
+        <div className={css(
+          styles.browserSelectWrapper,
+          disabled && styles.browserSelectWrapper__disabled
+        )}>
           <select
             id={id}
             autoFocus={autoFocus}
@@ -66,5 +69,10 @@ const styles = StyleSheet.create({
       padding: '10px',
       fontSize: '13px'
     }
+  },
+
+  browserSelectWrapper__disabled: {
+    opacity: 0.3,
+    userSelect: 'none'
   }
 })

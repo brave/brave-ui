@@ -53,7 +53,7 @@ var BrowserSelect = function (_PureComponent) {
         ),
         _react2.default.createElement(
           'div',
-          { className: (0, _noImportant.css)(styles.browserSelectWrapper) },
+          { className: (0, _noImportant.css)(styles.browserSelectWrapper, disabled && styles.browserSelectWrapper__disabled) },
           _react2.default.createElement(
             'select',
             {
@@ -115,5 +115,10 @@ var styles = _noImportant.StyleSheet.create({
       padding: '10px',
       fontSize: '13px'
     }
+  },
+
+  browserSelectWrapper__disabled: {
+    opacity: 0.3,
+    userSelect: 'none'
   }
 });
