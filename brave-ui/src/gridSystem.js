@@ -41,11 +41,11 @@ export class Grid extends PureComponent {
   }
 
   render () {
-    const { id, children, style } = this.props
+    const { id, disabled, children, style } = this.props
     return (
       <div
         id={id || 'grid'}
-        className={css(styles.grid)}
+        className={css(styles.grid, disabled && styles.grid__disabled)}
         style={Object.assign(this.componentStyles, style)}>
         {children}
       </div>
@@ -64,6 +64,11 @@ const gridWrapper = {
     height: 'var(--gridHeight)',
     color: 'var(--gridTextColor)',
     backgroundColor: 'var(--gridBackground)'
+  },
+
+  grid__disabled: {
+    opacity: 0.3,
+    userSelect: 'none'
   }
 }
 

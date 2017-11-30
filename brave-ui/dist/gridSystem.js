@@ -42,6 +42,7 @@ var Grid = exports.Grid = function (_PureComponent) {
     value: function render() {
       var _props = this.props,
           id = _props.id,
+          disabled = _props.disabled,
           children = _props.children,
           style = _props.style;
 
@@ -49,7 +50,7 @@ var Grid = exports.Grid = function (_PureComponent) {
         'div',
         {
           id: id || 'grid',
-          className: (0, _noImportant.css)(styles.grid),
+          className: (0, _noImportant.css)(styles.grid, disabled && styles.grid__disabled),
           style: Object.assign(this.componentStyles, style) },
         children
       );
@@ -103,6 +104,11 @@ var gridWrapper = {
     height: 'var(--gridHeight)',
     color: 'var(--gridTextColor)',
     backgroundColor: 'var(--gridBackground)'
+  },
+
+  grid__disabled: {
+    opacity: 0.3,
+    userSelect: 'none'
   }
 };
 
