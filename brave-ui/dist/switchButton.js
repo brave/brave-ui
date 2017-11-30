@@ -74,7 +74,7 @@ var SwitchButton = function (_PureComponent) {
 
       return _react2.default.createElement(
         'div',
-        { className: (0, _noImportant.css)(styles.switchButton_wrapper) },
+        { className: (0, _noImportant.css)(styles.switchButton_wrapper, disabled && styles.switchButton_wrapper__disabled) },
         !!leftText && _react2.default.createElement(
           'label',
           {
@@ -149,6 +149,11 @@ var styles = _noImportant.StyleSheet.create({
   switchButton_wrapper: {
     display: 'flex',
     alignItems: 'center'
+  },
+
+  switchButton_wrapper__disabled: {
+    opacity: 0.3,
+    userSelect: 'none'
   },
 
   switchButton: {

@@ -46,7 +46,10 @@ export default class SwitchButton extends PureComponent {
     const { checked } = this.state
 
     return (
-      <div className={css(styles.switchButton_wrapper)}>
+      <div className={css(
+        styles.switchButton_wrapper,
+        disabled && styles.switchButton_wrapper__disabled
+      )}>
         {
           !!leftText &&
           <label
@@ -108,6 +111,11 @@ const styles = StyleSheet.create({
   switchButton_wrapper: {
     display: 'flex',
     alignItems: 'center'
+  },
+
+  switchButton_wrapper__disabled: {
+    opacity: 0.3,
+    userSelect: 'none'
   },
 
   switchButton: {
