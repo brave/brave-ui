@@ -42,7 +42,7 @@ export default class BrowserText extends PureComponent {
         className={css(styles.browserText)}
         onClick={onClick}
         style={this.componentStyles}>
-        {text}
+        {text.toString()}
       </p>
     )
   }

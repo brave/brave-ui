@@ -46,7 +46,7 @@ var BrowserText = function (_PureComponent) {
           className: (0, _noImportant.css)(styles.browserText),
           onClick: onClick,
           style: this.componentStyles },
-        text
+        text.toString()
       );
     }
   }, {
