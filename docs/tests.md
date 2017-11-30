@@ -59,7 +59,7 @@ import YourAwesomeComponent from '../brave-ui/YourAwesomeComponent'
 
 it('renders the component', () => {
   const wrapper = mount(<YourAwesomeComponent />)
-  const assertion = wrapper.find('[data-test-id="yourAwesomeComponent"]').length
+  const assertion = wrapper.find('#yourAwesomeComponent').length
   expect(assertion).toBe(1)
 })
 ```

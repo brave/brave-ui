@@ -5,8 +5,8 @@ exports[`browserButton tests matches the snapshot 1`] = `
   className="browserButton_1b3ew9l"
   data-l10n-id={undefined}
   data-test-as="default"
-  data-test-id="browserButton"
   disabled={undefined}
+  id={undefined}
   onClick={undefined}
   style={
     Object {

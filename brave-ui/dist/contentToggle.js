@@ -61,7 +61,7 @@ var ContentToggle = function (_PureComponent) {
     key: 'render',
     value: function render() {
       var _props = this.props,
-          testId = _props.testId,
+          id = _props.id,
           summary = _props.summary,
           defaultOpen = _props.defaultOpen,
           withSeparator = _props.withSeparator,
@@ -72,7 +72,7 @@ var ContentToggle = function (_PureComponent) {
       return _react2.default.createElement(
         'details',
         {
-          'data-test-id': testId,
+          id: id,
           open: maybeOpen },
         _react2.default.createElement(
           'summary',

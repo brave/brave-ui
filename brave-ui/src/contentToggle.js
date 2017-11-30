@@ -29,12 +29,12 @@ export default class ContentToggle extends PureComponent {
   }
 
   render () {
-    const { testId, summary, defaultOpen, withSeparator, children } = this.props
+    const { id, summary, defaultOpen, withSeparator, children } = this.props
     const { open } = this.state
     const maybeOpen = 'defaultOpen' in this.props ? (defaultOpen && open) : !!open
     return (
       <details
-        data-test-id={testId}
+        id={id}
         open={maybeOpen}>
         <summary
           onClick={this.handleClick}

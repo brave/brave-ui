@@ -49,7 +49,7 @@ var Grid = exports.Grid = function (_PureComponent) {
       return _react2.default.createElement(
         'div',
         {
-          id: id || 'grid',
+          id: id,
           className: (0, _noImportant.css)(styles.grid, disabled && styles.grid__disabled),
           style: Object.assign(this.componentStyles, style) },
         children
@@ -133,7 +133,7 @@ var Column = exports.Column = function (_PureComponent2) {
       return _react2.default.createElement(
         'div',
         {
-          'data-test-id': id || 'column',
+          id: id,
           className: (0, _noImportant.css)(styles['column' + size]),
           style: this.componentStyles },
         children

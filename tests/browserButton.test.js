@@ -19,8 +19,8 @@ describe('browserButton tests', () => {
   })
 
   it('renders the component', () => {
-    const wrapper = shallow(<BrowserButton />)
-    const assertion = wrapper.find('[data-test-id="browserButton"]').length
+    const wrapper = shallow(<BrowserButton id='browserButton' />)
+    const assertion = wrapper.find('#browserButton').length
     expect(assertion).toBe(1)
   })
 

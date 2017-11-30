@@ -44,7 +44,7 @@ export class Grid extends PureComponent {
     const { id, disabled, children, style } = this.props
     return (
       <div
-        id={id || 'grid'}
+        id={id}
         className={css(styles.grid, disabled && styles.grid__disabled)}
         style={Object.assign(this.componentStyles, style)}>
         {children}
@@ -101,7 +101,7 @@ export class Column extends PureComponent {
     const { id, size = 12, children } = this.props
     return (
       <div
-        data-test-id={id || 'column'}
+        id={id}
         className={css(styles[`column${size}`])}
         style={this.componentStyles}>
         {children}
