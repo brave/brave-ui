@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/brave/brave-ui#readme",
   "dependencies": {
+    "@types/react": "^16.0.26",
     "aphrodite": "^1.2.5",
     "react": "^16.0.0"
   },
