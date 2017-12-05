@@ -3,8 +3,7 @@
 exports[`browserButton tests matches the snapshot 1`] = `
 <button
   className="browserButton_1b3ew9l"
-  data-l10n-id={undefined}
-  data-test-as="default"
+  data-test-theme="default"
   disabled={undefined}
   id={undefined}
   onClick={undefined}
@@ -25,7 +24,5 @@ exports[`browserButton tests matches the snapshot 1`] = `
       "--secondary-hoverColor": "rgb(153, 153, 153)",
     }
   }
->
-  browserButton as default
-</button>
+/>
 `;

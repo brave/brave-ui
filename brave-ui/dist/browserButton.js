@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -16,58 +18,13 @@ var _theme2 = _interopRequireDefault(_theme);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var BrowserButton = function BrowserButton(props) {
-  var theming = {};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  // Default button theme
-  // TODO: do we really need a default button?
-  theming['--bg'] = _theme2.default.browserButton.default.bg;
-  theming['--color'] = _theme2.default.browserButton.default.color;
-  theming['--hoverColor'] = _theme2.default.browserButton.default.hoverColor;
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-  // Primary button theme
-  theming['--primary-bg'] = _theme2.default.browserButton.primary.bg;
-  theming['--primary-gradient1'] = _theme2.default.browserButton.primary.gradient1;
-  theming['--primary-gradient2'] = _theme2.default.browserButton.primary.gradient2;
-  theming['--primary-color'] = _theme2.default.browserButton.primary.color;
-  theming['--primary-hoverColor'] = _theme2.default.browserButton.primary.hoverColor;
-  theming['--primary-borderHoverColor'] = _theme2.default.browserButton.primary.borderHoverColor;
-
-  // Secondary button theme
-  theming['--secondary-bg'] = _theme2.default.browserButton.secondary.bg;
-  theming['--secondary-color'] = _theme2.default.browserButton.secondary.color;
-  theming['--secondary-hoverColor'] = _theme2.default.browserButton.secondary.hoverColor;
-  theming['--secondary-borderHoverColor'] = _theme2.default.browserButton.secondary.borderHoverColor;
-
-  /**
-   * Custom style is a separate entity and is also defined as a prop
-   * i.e. <BrowserButton size='16px' fontSize='10px' />
-   */
-  var customStyle = {};
-
-  if (props.size != null) {
-    customStyle['--size'] = props.size;
-  }
-
-  if (props.fontSize != null) {
-    customStyle['--fontSize'] = props.fontSize;
-  }
-
-  return _react2.default.createElement(
-    'button',
-    {
-      'data-l10n-id': props.l10nId,
-      id: props.id,
-      'data-test-as': props.as || 'default',
-      style: Object.assign(theming, customStyle),
-      onClick: props.onClick,
-      disabled: props.disabled,
-      className: (0, _noImportant.css)(styles.browserButton, props.as === 'primary' && styles.browserButton_primaryColor, props.as === 'secondary' && styles.browserButton_secondaryColor, props.disabled && styles.browserButton_disabled) },
-    props.label
-  );
-}; /* This Source Code Form is subject to the terms of the Mozilla Public
-    * License, v. 2.0. If a copy of the MPL was not distributed with this file,
-    * You can obtain one at http://mozilla.org/MPL/2.0/. */
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /* This Source Code Form is subject to the terms of the Mozilla Public
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 /**
  * Implementator notes:
@@ -79,6 +36,84 @@ var BrowserButton = function BrowserButton(props) {
  * addition requires a lot of changes, consider creating another
  * component using this as a boilerlate
  */
+
+var BrowserText = function (_PureComponent) {
+  _inherits(BrowserText, _PureComponent);
+
+  function BrowserText() {
+    _classCallCheck(this, BrowserText);
+
+    return _possibleConstructorReturn(this, (BrowserText.__proto__ || Object.getPrototypeOf(BrowserText)).apply(this, arguments));
+  }
+
+  _createClass(BrowserText, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          id = _props.id,
+          theme = _props.theme,
+          onClick = _props.onClick,
+          disabled = _props.disabled,
+          children = _props.children;
+
+      return _react2.default.createElement(
+        'button',
+        {
+          id: id,
+          'data-test-theme': theme || 'default',
+          style: this.componentStyles,
+          onClick: onClick,
+          disabled: disabled,
+          className: (0, _noImportant.css)(styles.browserButton, theme === 'primary' && styles.browserButton_primaryColor, theme === 'secondary' && styles.browserButton_secondaryColor, disabled && styles.browserButton_disabled) },
+        children
+      );
+    }
+  }, {
+    key: 'componentStyles',
+    get: function get() {
+      var theming = {};
+
+      // Default button theme
+      // TODO: do we really need a default button?
+      theming['--bg'] = _theme2.default.browserButton.default.bg;
+      theming['--color'] = _theme2.default.browserButton.default.color;
+      theming['--hoverColor'] = _theme2.default.browserButton.default.hoverColor;
+
+      // Primary button theme
+      theming['--primary-bg'] = _theme2.default.browserButton.primary.bg;
+      theming['--primary-gradient1'] = _theme2.default.browserButton.primary.gradient1;
+      theming['--primary-gradient2'] = _theme2.default.browserButton.primary.gradient2;
+      theming['--primary-color'] = _theme2.default.browserButton.primary.color;
+      theming['--primary-hoverColor'] = _theme2.default.browserButton.primary.hoverColor;
+      theming['--primary-borderHoverColor'] = _theme2.default.browserButton.primary.borderHoverColor;
+
+      // Secondary button theme
+      theming['--secondary-bg'] = _theme2.default.browserButton.secondary.bg;
+      theming['--secondary-color'] = _theme2.default.browserButton.secondary.color;
+      theming['--secondary-hoverColor'] = _theme2.default.browserButton.secondary.hoverColor;
+      theming['--secondary-borderHoverColor'] = _theme2.default.browserButton.secondary.borderHoverColor;
+
+      var customStyle = {};
+      var _props2 = this.props,
+          size = _props2.size,
+          fontSize = _props2.fontSize;
+
+      if (size != null) {
+        customStyle['--size'] = size;
+      }
+
+      if (fontSize != null) {
+        customStyle['--fontSize'] = fontSize;
+      }
+      return Object.assign(theming, customStyle);
+    }
+  }]);
+
+  return BrowserText;
+}(_react.PureComponent);
+
+exports.default = BrowserText;
+
 
 var styles = _noImportant.StyleSheet.create({
   browserButton: {
@@ -171,5 +206,3 @@ var styles = _noImportant.StyleSheet.create({
     }
   }
 });
-
-exports.default = BrowserButton;

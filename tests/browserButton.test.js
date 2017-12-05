@@ -13,7 +13,7 @@ describe('browserButton tests', () => {
   })
 
   it('matches the snapshot', () => {
-    const component = <BrowserButton label='browserButton as default' />
+    const component = <BrowserButton />
     const tree = renderer.create(component).toJSON()
     expect(tree).toMatchSnapshot()
   })
@@ -36,9 +36,9 @@ describe('browserButton tests', () => {
     expect(assertion).toEqual(expect.objectContaining({ '--fontSize': '60px' }))
   })
 
-  it('can pass locale', () => {
-    const wrapper = shallow(<BrowserButton l10nId='NESPRESSO' />)
-    const assertion = wrapper.find('button').props()['data-l10n-id']
+  it('can pass text', () => {
+    const wrapper = shallow(<BrowserButton>NESPRESSO</BrowserButton>)
+    const assertion = wrapper.find('button').text()
     expect(assertion).toBe('NESPRESSO')
   })
 
@@ -50,26 +50,20 @@ describe('browserButton tests', () => {
 
   it('defaults to the default button', () => {
     const wrapper = shallow(<BrowserButton />)
-    const assertion = wrapper.find('button').props()['data-test-as']
+    const assertion = wrapper.find('button').props()['data-test-theme']
     expect(assertion).toBe('default')
   })
 
   it('can be set as primary', () => {
-    const wrapper = shallow(<BrowserButton as='primary' />)
-    const assertion = wrapper.find('button').props()['data-test-as']
+    const wrapper = shallow(<BrowserButton theme='primary' />)
+    const assertion = wrapper.find('button').props()['data-test-theme']
     expect(assertion).toBe('primary')
   })
 
   it('can be set as secondary', () => {
-    const wrapper = shallow(<BrowserButton as='secondary' />)
-    const assertion = wrapper.find('button').props()['data-test-as']
+    const wrapper = shallow(<BrowserButton theme='secondary' />)
+    const assertion = wrapper.find('button').props()['data-test-theme']
     expect(assertion).toBe('secondary')
-  })
-
-  it('can have a custom label', () => {
-    const wrapper = shallow(<BrowserButton label='CLOONEY' />)
-    const assertion = wrapper.find('button').text()
-    expect(assertion).toBe('CLOONEY')
   })
 
   it('can respond to click', () => {

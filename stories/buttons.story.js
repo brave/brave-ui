@@ -35,12 +35,12 @@ storiesOf('Buttons', module).add('BrowserButton', () => {
 
   return (
     <BrowserButton
-      as={value}
+      theme={value}
       disabled={boolean('Disabled', false)}
-      label={text('Label', 'Hello Button')}
       onClick={action('clicked the standard button')}
       size={text('Size', '')}
-      fontSize={text('Font Size', '')}
-    />
+      fontSize={text('Font Size', '')}>
+      {text('Label', 'Hello Button')}
+    </BrowserButton>
   )
 })

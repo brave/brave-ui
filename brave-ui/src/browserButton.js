@@ -13,66 +13,67 @@
  * component using this as a boilerlate
  */
 
-import React from 'react'
-import {StyleSheet, css} from 'aphrodite/no-important'
+import React, { PureComponent } from 'react'
+import { StyleSheet, css } from 'aphrodite/no-important'
 import theme from './theme'
 
-const BrowserButton = props => {
-  const theming = {}
+export default class BrowserText extends PureComponent {
+  get componentStyles () {
+    const theming = {}
 
-  // Default button theme
-  // TODO: do we really need a default button?
-  theming['--bg'] = theme.browserButton.default.bg
-  theming['--color'] = theme.browserButton.default.color
-  theming['--hoverColor'] = theme.browserButton.default.hoverColor
+    // Default button theme
+    // TODO: do we really need a default button?
+    theming['--bg'] = theme.browserButton.default.bg
+    theming['--color'] = theme.browserButton.default.color
+    theming['--hoverColor'] = theme.browserButton.default.hoverColor
 
-  // Primary button theme
-  theming['--primary-bg'] = theme.browserButton.primary.bg
-  theming['--primary-gradient1'] = theme.browserButton.primary.gradient1
-  theming['--primary-gradient2'] = theme.browserButton.primary.gradient2
-  theming['--primary-color'] = theme.browserButton.primary.color
-  theming['--primary-hoverColor'] = theme.browserButton.primary.hoverColor
-  theming['--primary-borderHoverColor'] =
-    theme.browserButton.primary.borderHoverColor
+    // Primary button theme
+    theming['--primary-bg'] = theme.browserButton.primary.bg
+    theming['--primary-gradient1'] = theme.browserButton.primary.gradient1
+    theming['--primary-gradient2'] = theme.browserButton.primary.gradient2
+    theming['--primary-color'] = theme.browserButton.primary.color
+    theming['--primary-hoverColor'] = theme.browserButton.primary.hoverColor
+    theming['--primary-borderHoverColor'] =
+      theme.browserButton.primary.borderHoverColor
 
-  // Secondary button theme
-  theming['--secondary-bg'] = theme.browserButton.secondary.bg
-  theming['--secondary-color'] = theme.browserButton.secondary.color
-  theming['--secondary-hoverColor'] = theme.browserButton.secondary.hoverColor
-  theming['--secondary-borderHoverColor'] =
-    theme.browserButton.secondary.borderHoverColor
+    // Secondary button theme
+    theming['--secondary-bg'] = theme.browserButton.secondary.bg
+    theming['--secondary-color'] = theme.browserButton.secondary.color
+    theming['--secondary-hoverColor'] = theme.browserButton.secondary.hoverColor
+    theming['--secondary-borderHoverColor'] =
+      theme.browserButton.secondary.borderHoverColor
 
-  /**
-   * Custom style is a separate entity and is also defined as a prop
-   * i.e. <BrowserButton size='16px' fontSize='10px' />
-   */
-  const customStyle = {}
+    const customStyle = {}
+    const { size, fontSize } = this.props
+    if (size != null) {
+      customStyle['--size'] = size
+    }
 
-  if (props.size != null) {
-    customStyle['--size'] = props.size
+    if (fontSize != null) {
+      customStyle['--fontSize'] = fontSize
+    }
+    return Object.assign(theming, customStyle)
   }
 
-  if (props.fontSize != null) {
-    customStyle['--fontSize'] = props.fontSize
+  render () {
+    const { id, theme, onClick, disabled, children } = this.props
+    return (
+      <button
+        id={id}
+        data-test-theme={theme || 'default'}
+        style={this.componentStyles}
+        onClick={onClick}
+        disabled={disabled}
+        className={css(
+          styles.browserButton,
+          theme === 'primary' && styles.browserButton_primaryColor,
+          theme === 'secondary' && styles.browserButton_secondaryColor,
+          disabled && styles.browserButton_disabled
+        )}>
+        {children}
+      </button>
+    )
   }
-
-  return (
-    <button
-      data-l10n-id={props.l10nId}
-      id={props.id}
-      data-test-as={props.as || 'default'}
-      style={Object.assign(theming, customStyle)}
-      onClick={props.onClick}
-      disabled={props.disabled}
-      className={css(
-        styles.browserButton,
-        props.as === 'primary' && styles.browserButton_primaryColor,
-        props.as === 'secondary' && styles.browserButton_secondaryColor,
-        props.disabled && styles.browserButton_disabled
-      )}>
-      {props.label}
-    </button>
-  )
 }
 
 const styles = StyleSheet.create({
@@ -166,5 +167,3 @@ const styles = StyleSheet.create({
     }
   }
 })
-
-export default BrowserButton
