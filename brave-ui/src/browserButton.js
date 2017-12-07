@@ -17,7 +17,7 @@ import React, { PureComponent } from 'react'
 import { StyleSheet, css } from 'aphrodite/no-important'
 import theme from './theme'
 
-export default class BrowserText extends PureComponent {
+export default class BrowserButton extends PureComponent {
   get componentStyles () {
     const theming = {}
 

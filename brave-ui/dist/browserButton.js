@@ -37,16 +37,16 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * component using this as a boilerlate
  */
 
-var BrowserText = function (_PureComponent) {
-  _inherits(BrowserText, _PureComponent);
+var BrowserButton = function (_PureComponent) {
+  _inherits(BrowserButton, _PureComponent);
 
-  function BrowserText() {
-    _classCallCheck(this, BrowserText);
+  function BrowserButton() {
+    _classCallCheck(this, BrowserButton);
 
-    return _possibleConstructorReturn(this, (BrowserText.__proto__ || Object.getPrototypeOf(BrowserText)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (BrowserButton.__proto__ || Object.getPrototypeOf(BrowserButton)).apply(this, arguments));
   }
 
-  _createClass(BrowserText, [{
+  _createClass(BrowserButton, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
@@ -109,10 +109,10 @@ var BrowserText = function (_PureComponent) {
     }
   }]);
 
-  return BrowserText;
+  return BrowserButton;
 }(_react.PureComponent);
 
-exports.default = BrowserText;
+exports.default = BrowserButton;
 
 
 var styles = _noImportant.StyleSheet.create({
