@@ -5,6 +5,7 @@
 /// <reference types="react" />
 
 declare module "brave-ui" {
+  // Components
   export import ActionButton = __BraveUI.Components.ActionButton
   export import Anchor = __BraveUI.Components.Anchor
   export import BrowserSelect = __BraveUI.Components.BrowserSelect
@@ -14,110 +15,113 @@ declare module "brave-ui" {
   export import Grid = __BraveUI.Components.Grid
   export import Separator = __BraveUI.Components.Separator
   export import SwitchButton = __BraveUI.Components.SwitchButton
+
+  // Props
+  export import Props = __BraveUI.Props
 }
 
 declare namespace __BraveUI {
   namespace Props {
-      interface ActionButton {
-          id?: string
-          onClick?: () => void
-          text: string
-          // Component style
-          height?: string
-          fontSize?: string
-          color?: string
-          padding?: string
-      }
+    interface ActionButton {
+      id?: string
+      onClick?: () => void
+      text: string
+      // Component style
+      height?: string
+      fontSize?: string
+      color?: string
+      padding?: string
+    }
 
-      interface Anchor {
-          href: string
-          noStyle: boolean
-          target: '_blank' | '_parent' | '_self' | '_top'
-          text: string
-      }
+    interface Anchor {
+      href: string
+      noStyle: boolean
+      target: '_blank' | '_parent' | '_self' | '_top'
+      text: string
+    }
 
-      interface BrowserSelect {
-          titleName: string
-          id?: string
-          autoFocus?: boolean
-          disabled?: boolean
-          value: string
-          onChange: (e?: HTMLSelectElement) => void
-          children: React.ReactNode
-      }
+    interface BrowserSelect {
+      titleName: string
+      id?: string
+      autoFocus?: boolean
+      disabled?: boolean
+      value: string
+      onChange: (e?: HTMLSelectElement) => void
+      children: React.ReactNode
+    }
 
-      interface BrowserText {
-          id?: string
-          onClick?: () => {}
-          text: string | number
-          // Component style
-          noSelect?: boolean
-          fontSize?: string
-          color?: string
-          padding?: string
-          bold?: boolean
-      }
+    interface BrowserText {
+      id?: string
+      onClick?: () => {}
+      text: string | number
+      // Component style
+      noSelect?: boolean
+      fontSize?: string
+      color?: string
+      padding?: string
+      bold?: boolean
+    }
 
-      interface Column {
-          id?: string
-          size?: number
-          children: React.ReactNode
-          // Component style
-          noSelect?: boolean
-          align?: string
-          verticalAlign?: string
-          background?: string
-      }
+    interface Column {
+      id?: string
+      size?: number
+      children: React.ReactNode
+      // Component style
+      noSelect?: boolean
+      align?: string
+      verticalAlign?: string
+      background?: string
+    }
 
-      interface ContentToggle {
-          id?: string
-          summary: string
-          open: boolean
-          defaultOpen?: boolean
-          withSeparator?: boolean
-          children?: React.ReactNode
-          onClick: () => void
-      }
+    interface ContentToggle {
+      id?: string
+      summary: string
+      open: boolean
+      defaultOpen?: boolean
+      withSeparator?: boolean
+      children?: React.ReactNode
+      onClick: () => void
+    }
 
-      interface Grid {
-          id?: string
-          disabled?: boolean
-          children: React.ReactNode
-          style?: any // TODO what should be here?
-          // Component style
-          gap?: string
-          padding?: string
-          width?: string
-          height?: string
-          textColor?: string
-          background?: string
-      }
+    interface Grid {
+      id?: string
+      disabled?: boolean
+      children: React.ReactNode
+      style?: any // TODO what should be here?
+      // Component style
+      gap?: string
+      padding?: string
+      width?: string
+      height?: string
+      textColor?: string
+      background?: string
+    }
 
-      interface Separator {
-          noMargin?: boolean
-      }
+    interface Separator {
+      noMargin?: boolean
+    }
 
-      interface SwitchButton {
-          id: string
-          readOnly?: boolean
-          disabled?: boolean
-          autoFocus?: boolean
-          leftText?: string
-          rightText?: string
-          checked?: boolean
-          onChange?: (e: HTMLSelectElement) => void
-      }
+    interface SwitchButton {
+      id: string
+      readOnly?: boolean
+      disabled?: boolean
+      autoFocus?: boolean
+      leftText?: string
+      rightText?: string
+      checked?: boolean
+      onChange?: (e: HTMLSelectElement) => void
+    }
   }
 
   namespace Components {
-      export class Anchor extends React.PureComponent<Props.Anchor> {}
-      export class ActionButton extends React.PureComponent<Props.ActionButton> {}
-      export class BrowserSelect extends React.PureComponent<Props.BrowserSelect> {}
-      export class BrowserText extends React.PureComponent<Props.BrowserText> {}
-      export class Column extends React.PureComponent<Props.Column> {}
-      export class ContentToggle extends React.PureComponent<Props.ContentToggle> {}
-      export class Grid extends React.PureComponent<Props.Grid> {}
-      export class Separator extends React.PureComponent<Props.Separator> {}
-      export class SwitchButton extends React.PureComponent<Props.SwitchButton> {}
+    export class Anchor extends React.PureComponent<Props.Anchor> {}
+    export class ActionButton extends React.PureComponent<Props.ActionButton> {}
+    export class BrowserSelect extends React.PureComponent<Props.BrowserSelect> {}
+    export class BrowserText extends React.PureComponent<Props.BrowserText> {}
+    export class Column extends React.PureComponent<Props.Column> {}
+    export class ContentToggle extends React.PureComponent<Props.ContentToggle> {}
+    export class Grid extends React.PureComponent<Props.Grid> {}
+    export class Separator extends React.PureComponent<Props.Separator> {}
+    export class SwitchButton extends React.PureComponent<Props.SwitchButton> {}
   }
 }
