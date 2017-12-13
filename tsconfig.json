@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "jsx": "react",
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "./brave-ui/dist",
+    "removeComments": true,
+    "strict": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": false
+  },
+  "include": [
+    "brave-ui/src/*"
+  ],
+  "exclude": [
+    "stories"
+  ]
+}

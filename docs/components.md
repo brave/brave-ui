@@ -19,7 +19,7 @@ Our components currently live inside of the `brave-ui` repo. In there you have t
 Our components are stateless on purpose. They do not share any state info nor have lifecycle methods. These should be made by the consumer app. For most cases, you will rely only on `React` and `Aphrodite` as dependencies. A basic example of a component is:
 
 ```js
-import React from 'react'
+import * as React from 'react'
 
 // always use no-important
 import {StyleSheet, css} from 'aphrodite/no-important'

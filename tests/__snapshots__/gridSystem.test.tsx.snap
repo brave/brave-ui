@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gridSystem tests column component matches the snapshot 1`] = `
+<div
+  className="column12_1wuh2fy"
+  id={undefined}
+  style={
+    Object {
+      "--columnAlign": undefined,
+      "--columnBackground": undefined,
+      "--columnDisplay": false,
+      "--columnVerticalAlign": undefined,
+    }
+  }
+/>
+`;
+
+exports[`gridSystem tests grid component matches the snapshot 1`] = `
+<div
+  className="grid_7oehqz"
+  id={undefined}
+  style={
+    Object {
+      "--gridBackground": undefined,
+      "--gridGap": undefined,
+      "--gridHeight": undefined,
+      "--gridPadding": undefined,
+      "--gridTextColor": undefined,
+      "--gridWidth": undefined,
+    }
+  }
+/>
+`;

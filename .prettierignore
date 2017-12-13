@@ -1,6 +1,0 @@
-node_modules
-cjs
-es
-storybook-static
-dist
-*.snap

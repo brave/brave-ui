@@ -1,55 +1,22 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Separator = exports.ContentToggle = exports.Column = exports.Grid = exports.BrowserSelect = exports.SwitchButton = exports.BrowserButton = exports.ActionButton = exports.Anchor = exports.BrowserText = undefined;
-
-var _browserText = require('./browserText');
-
-var _browserText2 = _interopRequireDefault(_browserText);
-
-var _anchor = require('./anchor');
-
-var _anchor2 = _interopRequireDefault(_anchor);
-
-var _actionButton = require('./actionButton');
-
-var _actionButton2 = _interopRequireDefault(_actionButton);
-
-var _browserButton = require('./browserButton');
-
-var _browserButton2 = _interopRequireDefault(_browserButton);
-
-var _switchButton = require('./switchButton');
-
-var _switchButton2 = _interopRequireDefault(_switchButton);
-
-var _browserSelect = require('./browserSelect');
-
-var _browserSelect2 = _interopRequireDefault(_browserSelect);
-
-var _gridSystem = require('./gridSystem');
-
-var _contentToggle = require('./contentToggle');
-
-var _contentToggle2 = _interopRequireDefault(_contentToggle);
-
-var _separator = require('./separator');
-
-var _separator2 = _interopRequireDefault(_separator);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.BrowserText = _browserText2.default;
-exports.Anchor = _anchor2.default;
-exports.ActionButton = _actionButton2.default;
-exports.BrowserButton = _browserButton2.default;
-exports.SwitchButton = _switchButton2.default;
-exports.BrowserSelect = _browserSelect2.default;
-exports.Grid = _gridSystem.Grid;
-exports.Column = _gridSystem.Column;
-exports.ContentToggle = _contentToggle2.default;
-exports.Separator = _separator2.default; /* This Source Code Form is subject to the terms of the Mozilla Public
-                                          * License, v. 2.0. If a copy of the MPL was not distributed with this file,
-                                          * You can obtain one at http://mozilla.org/MPL/2.0/. */
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const browserText_1 = require("./browserText");
+exports.BrowserText = browserText_1.default;
+const anchor_1 = require("./anchor");
+exports.Anchor = anchor_1.default;
+const actionButton_1 = require("./actionButton");
+exports.ActionButton = actionButton_1.default;
+const browserButton_1 = require("./browserButton");
+exports.BrowserButton = browserButton_1.default;
+const switchButton_1 = require("./switchButton");
+exports.SwitchButton = switchButton_1.default;
+const browserSelect_1 = require("./browserSelect");
+exports.BrowserSelect = browserSelect_1.default;
+const gridSystem_1 = require("./gridSystem");
+exports.Grid = gridSystem_1.Grid;
+exports.Column = gridSystem_1.Column;
+const contentToggle_1 = require("./contentToggle");
+exports.ContentToggle = contentToggle_1.default;
+const separator_1 = require("./separator");
+exports.Separator = separator_1.default;
+//# sourceMappingURL=index.js.map
