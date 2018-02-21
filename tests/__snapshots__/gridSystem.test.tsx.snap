@@ -2,12 +2,13 @@
 
 exports[`gridSystem tests column component matches the snapshot 1`] = `
 <div
-  className="column12_1wuh2fy"
+  className="column12_15d79fx"
   id={undefined}
   style={
     Object {
       "--columnAlign": undefined,
       "--columnBackground": undefined,
+      "--columnDirection": undefined,
       "--columnDisplay": false,
       "--columnVerticalAlign": undefined,
     }
@@ -17,7 +18,7 @@ exports[`gridSystem tests column component matches the snapshot 1`] = `
 
 exports[`gridSystem tests grid component matches the snapshot 1`] = `
 <div
-  className="grid_7oehqz"
+  className="grid_18yerv5"
   id={undefined}
   style={
     Object {
@@ -25,6 +26,7 @@ exports[`gridSystem tests grid component matches the snapshot 1`] = `
       "--gridGap": undefined,
       "--gridHeight": undefined,
       "--gridPadding": undefined,
+      "--gridTemplateColumns": 12,
       "--gridTextColor": undefined,
       "--gridWidth": undefined,
     }

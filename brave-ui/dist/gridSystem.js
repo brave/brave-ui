@@ -5,8 +5,9 @@ const no_important_1 = require("aphrodite/no-important");
 exports.gridTemplate = 12;
 class Grid extends React.PureComponent {
     get componentStyles() {
-        const { padding, gap, width, height, textColor, background } = this.props;
+        const { columns, padding, gap, width, height, textColor, background } = this.props;
         return {
+            '--gridTemplateColumns': columns || exports.gridTemplate,
             '--gridPadding': padding,
             '--gridGap': gap,
             '--gridWidth': width,
@@ -25,7 +26,7 @@ const gridWrapper = {
     grid: {
         boxSizing: 'border-box',
         display: 'grid',
-        gridTemplateColumns: `repeat(${exports.gridTemplate}, 1fr)`,
+        gridTemplateColumns: `repeat(var(--gridTemplateColumns), 1fr)`,
         gridGap: 'var(--gridGap, 15px)',
         padding: 'var(--gridPadding, 0)',
         maxWidth: 'var(--gridWidth)',
@@ -41,12 +42,15 @@ const gridWrapper = {
 class Column extends React.PureComponent {
     get componentStyles() {
         const { props } = this;
-        const needsFlex = 'align' in props || 'verticalAlign' in props;
+        const needsFlex = ('align' in props ||
+            'verticalAlign' in props ||
+            'direction' in props);
         return {
             '--columnDisplay': needsFlex && 'flex',
             '--columnAlign': props.align,
             '--columnVerticalAlign': props.verticalAlign,
-            '--columnBackground': props.background
+            '--columnBackground': props.background,
+            '--columnDirection': props.direction
         };
     }
     render() {
@@ -65,7 +69,8 @@ Array.from({ length: exports.gridTemplate }, (v, i) => i + 1).forEach(size => {
             display: 'var(--columnDisplay, inherit)',
             justifyContent: 'var(--columnAlign)',
             alignItems: 'var(--columnVerticalAlign)',
-            backgroundColor: 'var(--columnBackground)'
+            backgroundColor: 'var(--columnBackground)',
+            flexDirection: 'var(--columnDirection)'
         }
     });
 });

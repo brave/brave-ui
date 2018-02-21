@@ -12,6 +12,7 @@ export interface GridProps {
   disabled?: boolean,
   children?: React.ReactNode,
   // Component styles
+  columns?: string,
   padding?: string,
   gap?: string,
   width?: string,
@@ -26,8 +27,9 @@ interface AphroditeStyle {
 
 class Grid extends React.PureComponent<GridProps, {}> {
   get componentStyles () {
-    const { padding, gap, width, height, textColor, background } = this.props
+    const { columns, padding, gap, width, height, textColor, background } = this.props
     return {
+      '--gridTemplateColumns': columns || gridTemplate,
       '--gridPadding': padding,
       '--gridGap': gap,
       '--gridWidth': width,
@@ -54,7 +56,7 @@ const gridWrapper = {
   grid: {
     boxSizing: 'border-box',
     display: 'grid',
-    gridTemplateColumns: `repeat(${gridTemplate}, 1fr)`,
+    gridTemplateColumns: `repeat(var(--gridTemplateColumns), 1fr)`,
     gridGap: 'var(--gridGap, 15px)',
     padding: 'var(--gridPadding, 0)',
     maxWidth: 'var(--gridWidth)',
@@ -76,18 +78,24 @@ export interface ColumnProps {
   // Component styles
   align?: string,
   verticalAlign?: string,
-  background?: string
+  background?: string,
+  direction?: string
 }
 
 class Column extends React.PureComponent<ColumnProps, {}> {
   get componentStyles () {
     const { props } = this
-    const needsFlex = 'align' in props || 'verticalAlign' in props
+    const needsFlex = (
+      'align' in props ||
+      'verticalAlign' in props ||
+      'direction' in props
+    )
     return {
       '--columnDisplay': needsFlex && 'flex',
       '--columnAlign': props.align,
       '--columnVerticalAlign': props.verticalAlign,
-      '--columnBackground': props.background
+      '--columnBackground': props.background,
+      '--columnDirection': props.direction
     }
   }
 
@@ -116,7 +124,8 @@ Array.from({length: gridTemplate}, (v, i) => i + 1).forEach(size => {
       display: 'var(--columnDisplay, inherit)',
       justifyContent: 'var(--columnAlign)',
       alignItems: 'var(--columnVerticalAlign)',
-      backgroundColor: 'var(--columnBackground)'
+      backgroundColor: 'var(--columnBackground)',
+      flexDirection: 'var(--columnDirection)'
     }
   })
 })
