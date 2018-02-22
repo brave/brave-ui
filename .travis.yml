@@ -1,4 +1,12 @@
 language: node_js
 node_js:
-  - "7"
+  - "8"
+  - "node"
 cache: npm
+script:
+  - npm run test-all
+  - npm run check-security
+  - npm run lint
+branches:
+  only:
+    - master
