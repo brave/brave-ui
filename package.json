@@ -13,7 +13,7 @@
     "check-security": "nsp check",
     "deploy": "storybook-to-ghpages -s public -o .out",
     "lint": "standard --fix --verbose",
-    "preinstall": "cd brave-ui/ && yarn install && cd ../",
+    "preinstall": "cd brave-ui/ && npm install && cd ../",
     "publish": "lerna publish && npm run deploy",
     "standard-fix": "standard --fix",
     "start": "start-storybook -p 9091 -c .storybook",
