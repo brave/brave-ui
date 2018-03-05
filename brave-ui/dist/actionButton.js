@@ -14,7 +14,7 @@ class ActionButton extends React.PureComponent {
     }
     render() {
         const { id, onClick, text } = this.props;
-        return (React.createElement("button", { id: id, className: no_important_1.css(styles.actionButton), onClick: onClick, style: this.componentStyles }, text.toString()));
+        return (React.createElement("button", { id: id, className: no_important_1.css(styles.actionButton), onClick: onClick, style: this.componentStyles }, text && text.toString()));
     }
 }
 const styles = no_important_1.StyleSheet.create({

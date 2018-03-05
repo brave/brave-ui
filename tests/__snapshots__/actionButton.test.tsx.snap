@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`actionButton tests matches the snapshot 1`] = `
+<button
+  className="actionButton_lhxf92"
+  id={undefined}
+  onClick={undefined}
+  style={
+    Object {
+      "--color": undefined,
+      "--fontSize": undefined,
+      "--height": undefined,
+      "--padding": undefined,
+    }
+  }
+/>
+`;

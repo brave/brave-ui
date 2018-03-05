@@ -3,7 +3,7 @@ import * as React from 'react';
 export interface ActionButtonProps {
     id?: string;
     onClick?: () => void;
-    text: string | number;
+    text?: string | number;
     height?: string;
     fontSize?: string;
     color?: string;
