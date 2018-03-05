@@ -6,6 +6,7 @@ import * as React from 'react'
 import { StyleSheet, css } from 'aphrodite/no-important'
 
 export interface ActionButtonProps {
+  id?: string,
   href: string
   noStyle?: boolean
   target?: '_blank' | '_parent' | '_self' | '_top'
@@ -14,9 +15,10 @@ export interface ActionButtonProps {
 
 class Anchor extends React.PureComponent<ActionButtonProps, {}> {
   render () {
-    const { href, noStyle, target, text } = this.props
+    const { id, href, noStyle, target, text } = this.props
     return (
       <a
+        id={id}
         className={css(styles.anchor, noStyle && styles.anchor__noStyle)}
         href={href}
         target={target}

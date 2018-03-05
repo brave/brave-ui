@@ -4,8 +4,8 @@ const React = require("react");
 const no_important_1 = require("aphrodite/no-important");
 class Anchor extends React.PureComponent {
     render() {
-        const { href, noStyle, target, text } = this.props;
-        return (React.createElement("a", { className: no_important_1.css(styles.anchor, noStyle && styles.anchor__noStyle), href: href, target: target, rel: 'noreferrer noopener' }, text.toString()));
+        const { id, href, noStyle, target, text } = this.props;
+        return (React.createElement("a", { id: id, className: no_important_1.css(styles.anchor, noStyle && styles.anchor__noStyle), href: href, target: target, rel: 'noreferrer noopener' }, text.toString()));
     }
 }
 const styles = no_important_1.StyleSheet.create({
