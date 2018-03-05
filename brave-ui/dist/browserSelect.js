@@ -4,11 +4,11 @@ const React = require("react");
 const no_important_1 = require("aphrodite/no-important");
 class BrowserSelect extends React.PureComponent {
     render() {
-        const { titleName, id, autoFocus, disabled, value, onChange, children } = this.props;
+        const { titleName, id, multiple, autoFocus, disabled, value, onChange, children } = this.props;
         return (React.createElement("div", null,
             React.createElement("p", { className: no_important_1.css(styles.browserSelect_title) }, titleName),
             React.createElement("div", { className: no_important_1.css(styles.browserSelectWrapper, disabled && styles.browserSelectWrapper__disabled) },
-                React.createElement("select", { id: id, autoFocus: autoFocus, disabled: disabled, value: value, onChange: onChange, className: no_important_1.css(styles.browserSelect) }, children))));
+                React.createElement("select", { id: id, multiple: multiple, autoFocus: autoFocus, disabled: disabled, value: value, onChange: onChange, className: no_important_1.css(styles.browserSelect) }, children))));
     }
 }
 const styles = no_important_1.StyleSheet.create({

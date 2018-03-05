@@ -8,6 +8,7 @@ import { StyleSheet, css } from 'aphrodite/no-important'
 export interface BrowserSelectProps {
   titleName?: string,
   id?: string,
+  multiple?: boolean,
   autoFocus?: boolean,
   disabled?: boolean,
   value: string,
@@ -17,7 +18,7 @@ export interface BrowserSelectProps {
 
 class BrowserSelect extends React.PureComponent<BrowserSelectProps, {}> {
   render () {
-    const { titleName, id, autoFocus, disabled, value, onChange, children } = this.props
+    const { titleName, id, multiple, autoFocus, disabled, value, onChange, children } = this.props
     return (
       <div>
         <p className={css(styles.browserSelect_title)}>{titleName}</p>
@@ -27,6 +28,7 @@ class BrowserSelect extends React.PureComponent<BrowserSelectProps, {}> {
         )}>
           <select
             id={id}
+            multiple={multiple}
             autoFocus={autoFocus}
             disabled={disabled}
             value={value}
