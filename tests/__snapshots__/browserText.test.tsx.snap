@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`browserText tests matches the snapshot 1`] = `
+<p
+  className="browserTextStyles_5sgo6p"
+  id={undefined}
+  onClick={undefined}
+  style={
+    Object {
+      "--bold": undefined,
+      "--color": undefined,
+      "--cursor": undefined,
+      "--fontSize": undefined,
+      "--noSelect": undefined,
+      "--padding": undefined,
+    }
+  }
+>
+  testText
+</p>
+`;
