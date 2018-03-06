@@ -13,7 +13,7 @@ export interface ContentToggleProps {
   defaultOpen?: boolean,
   withSeparator?: boolean,
   children?: React.ReactNode,
-  onClick: (e: any) => void
+  onClick?: (e: any) => void
 }
 
 export interface ContentToggleState {
@@ -39,7 +39,7 @@ class ContentToggle extends React.PureComponent<ContentToggleProps, ContentToggl
     if (!('open' in props)) {
       this.setState({ open: e.target.open })
     }
-    props.onClick({ target: { open: e.target.open } })
+    props.onClick!({ target: { open: e.target.open } })
   }
 
   render () {

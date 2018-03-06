@@ -7,7 +7,7 @@ export interface ContentToggleProps {
     defaultOpen?: boolean;
     withSeparator?: boolean;
     children?: React.ReactNode;
-    onClick: (e: any) => void;
+    onClick?: (e: any) => void;
 }
 export interface ContentToggleState {
     open?: boolean;
