@@ -10,3 +10,6 @@ import '@storybook/addon-knobs/register'
 
 // for docs see https://github.com/storybooks/storybook/tree/master/addons/options
 import '@storybook/addon-options/register'
+
+// for docs see https://github.com/dump247/storybook-state
+import '@dump247/storybook-state/register'

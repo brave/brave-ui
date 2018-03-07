@@ -10,7 +10,6 @@ export interface SwitchButtonProps {
   checked: boolean,
   disabled?: boolean,
   onChange?: (e: any) => void,
-  value?: string,
   id: string,
   readOnly?: boolean,
   autoFocus?: boolean,
@@ -68,6 +67,7 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
         {
           !!leftText &&
           <label
+          id={`${id}LeftText`}
             className={css(styles.switchButton_label__left)}
             htmlFor={id}>
             {leftText}
@@ -104,6 +104,7 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
         {
           !!rightText &&
           <label
+            id={`${id}RightText`}
             className={css(styles.switchButton_label__right)}
             htmlFor={id}>
             {rightText}

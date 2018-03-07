@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`browserSelect tests matches the snapshot 1`] = `
+<div>
+  <p
+    className="browserSelect_title_cnfarr"
+  />
+  <div
+    className="browserSelectWrapper_wpw68s"
+  >
+    <select
+      autoFocus={undefined}
+      className="browserSelect_6cpacb"
+      disabled={undefined}
+      id={undefined}
+      multiple={undefined}
+      onChange={undefined}
+      value="test"
+    >
+      <option>
+        some option
+      </option>
+    </select>
+  </div>
+</div>
+`;

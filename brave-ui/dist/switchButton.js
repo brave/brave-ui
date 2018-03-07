@@ -36,13 +36,13 @@ class SwitchButton extends React.PureComponent {
         const { checked } = this.state;
         return (React.createElement("div", { className: no_important_1.css(styles.switchButton_wrapper, disabled && styles.switchButton_wrapper__disabled) },
             !!leftText &&
-                React.createElement("label", { className: no_important_1.css(styles.switchButton_label__left), htmlFor: id }, leftText),
+                React.createElement("label", { id: `${id}LeftText`, className: no_important_1.css(styles.switchButton_label__left), htmlFor: id }, leftText),
             React.createElement("div", null,
                 React.createElement("input", { type: 'checkbox', id: id, readOnly: readOnly, disabled: disabled, className: no_important_1.css(styles.checkbox), checked: !!checked, onChange: this.handleChange, autoFocus: autoFocus }),
                 React.createElement("label", { htmlFor: id, className: no_important_1.css(styles.switchButton, !!checked && styles.switchButton__checked), style: this.componentStyles },
                     React.createElement("i", { style: this.componentStyles, className: no_important_1.css(styles.switchButton_knob, !!checked && styles.switchButton_knob__checked) }))),
             !!rightText &&
-                React.createElement("label", { className: no_important_1.css(styles.switchButton_label__right), htmlFor: id }, rightText)));
+                React.createElement("label", { id: `${id}RightText`, className: no_important_1.css(styles.switchButton_label__right), htmlFor: id }, rightText)));
     }
 }
 const checkboxWidth = 'var(--width, 48px)';

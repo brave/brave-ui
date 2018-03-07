@@ -4,11 +4,11 @@ const React = require("react");
 const no_important_1 = require("aphrodite/no-important");
 class BrowserSelect extends React.PureComponent {
     render() {
-        const { titleName, id, autoFocus, disabled, value, onChange, children } = this.props;
+        const { titleName, id, multiple, autoFocus, disabled, value, onChange, children } = this.props;
         return (React.createElement("div", null,
             React.createElement("p", { className: no_important_1.css(styles.browserSelect_title) }, titleName),
-            React.createElement("div", { className: no_important_1.css(styles.browserSelectWrapper, disabled && styles.browserSelectWrapper__disabled) },
-                React.createElement("select", { id: id, autoFocus: autoFocus, disabled: disabled, value: value, onChange: onChange, className: no_important_1.css(styles.browserSelect) }, children))));
+            React.createElement("div", { className: no_important_1.css(!multiple && styles.browserSelectWrapper, disabled && styles.browserSelectWrapper__disabled) },
+                React.createElement("select", { id: id, multiple: multiple, autoFocus: autoFocus, disabled: disabled, value: value, onChange: onChange, className: no_important_1.css(styles.browserSelect) }, children))));
     }
 }
 const styles = no_important_1.StyleSheet.create({
@@ -27,7 +27,7 @@ const styles = no_important_1.StyleSheet.create({
         backgroundColor: '#fbfbfb',
         backgroundSize: '12px 12px',
         WebkitAppearance: 'none',
-        height: '2rem',
+        minHeight: '2rem',
         marginBottom: '.75rem'
     },
     browserSelect_title: {
@@ -42,7 +42,7 @@ const styles = no_important_1.StyleSheet.create({
             right: 0,
             display: 'flex',
             alignItems: 'center',
-            height: '100%',
+            maxHeight: '100%',
             padding: '10px',
             fontSize: '13px'
         }

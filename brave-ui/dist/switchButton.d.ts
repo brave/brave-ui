@@ -4,7 +4,6 @@ export interface SwitchButtonProps {
     checked: boolean;
     disabled?: boolean;
     onChange?: (e: any) => void;
-    value?: string;
     id: string;
     readOnly?: boolean;
     autoFocus?: boolean;

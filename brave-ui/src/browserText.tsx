@@ -7,7 +7,7 @@ import { StyleSheet, css } from 'aphrodite/no-important'
 
 export interface BrowserTextProps {
   id?: string
-  onClick?: () => {}
+  onClick?: () => void
   text: string | number
   // Component styles
   noSelect?: boolean

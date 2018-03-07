@@ -18,7 +18,7 @@ import { StyleSheet, css } from 'aphrodite/no-important'
 export interface ActionButtonProps {
   id?: string,
   onClick?: () => void,
-  text: string | number,
+  text?: string | number,
   // Component style
   height?: string,
   fontSize?: string,
@@ -45,7 +45,7 @@ class ActionButton extends React.PureComponent<ActionButtonProps, {}> {
         className={css(styles.actionButton)}
         onClick={onClick}
         style={this.componentStyles}>
-        {text.toString()}
+        {text && text.toString()}
       </button>
     )
   }

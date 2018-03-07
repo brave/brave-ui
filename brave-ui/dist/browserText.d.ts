@@ -2,7 +2,7 @@
 import * as React from 'react';
 export interface BrowserTextProps {
     id?: string;
-    onClick?: () => {};
+    onClick?: () => void;
     text: string | number;
     noSelect?: boolean;
     fontSize?: string;
