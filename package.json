@@ -22,6 +22,7 @@
     "coverage": "jest --coverage --verbose"
   },
   "devDependencies": {
+    "@dump247/storybook-state": "^1.2.3",
     "@storybook/addon-actions": "^3.3.14",
     "@storybook/addon-info": "^3.3.14",
     "@storybook/addon-knobs": "^3.3.14",
