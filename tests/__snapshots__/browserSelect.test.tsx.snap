@@ -6,11 +6,11 @@ exports[`browserSelect tests matches the snapshot 1`] = `
     className="browserSelect_title_cnfarr"
   />
   <div
-    className="browserSelectWrapper_1casrmw"
+    className="browserSelectWrapper_wpw68s"
   >
     <select
       autoFocus={undefined}
-      className="browserSelect_sbd2k1"
+      className="browserSelect_6cpacb"
       disabled={undefined}
       id={undefined}
       multiple={undefined}
