@@ -5,6 +5,7 @@ export interface GridProps {
     id?: string;
     disabled?: boolean;
     children?: React.ReactNode;
+    columns?: string;
     padding?: string;
     gap?: string;
     width?: string;
@@ -14,6 +15,7 @@ export interface GridProps {
 }
 declare class Grid extends React.PureComponent<GridProps, {}> {
     readonly componentStyles: {
+        '--gridTemplateColumns': React.ReactText;
         '--gridPadding': string | undefined;
         '--gridGap': string | undefined;
         '--gridWidth': string | undefined;
@@ -30,6 +32,7 @@ export interface ColumnProps {
     align?: string;
     verticalAlign?: string;
     background?: string;
+    direction?: string;
 }
 declare class Column extends React.PureComponent<ColumnProps, {}> {
     readonly componentStyles: {
@@ -37,6 +40,7 @@ declare class Column extends React.PureComponent<ColumnProps, {}> {
         '--columnAlign': string | undefined;
         '--columnVerticalAlign': string | undefined;
         '--columnBackground': string | undefined;
+        '--columnDirection': string | undefined;
     };
     render(): JSX.Element;
 }
