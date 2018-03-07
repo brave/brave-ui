@@ -6,7 +6,7 @@ export interface BrowserSelectProps {
     multiple?: boolean;
     autoFocus?: boolean;
     disabled?: boolean;
-    value: string;
+    value?: string;
     onChange?: () => void;
     children: React.ReactNode;
 }

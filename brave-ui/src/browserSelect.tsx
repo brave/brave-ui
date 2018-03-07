@@ -11,7 +11,7 @@ export interface BrowserSelectProps {
   multiple?: boolean,
   autoFocus?: boolean,
   disabled?: boolean,
-  value: string,
+  value?: string,
   onChange?: () => void,
   children: React.ReactNode
 }
@@ -23,7 +23,7 @@ class BrowserSelect extends React.PureComponent<BrowserSelectProps, {}> {
       <div>
         <p className={css(styles.browserSelect_title)}>{titleName}</p>
         <div className={css(
-          styles.browserSelectWrapper,
+          !multiple && styles.browserSelectWrapper,
           disabled && styles.browserSelectWrapper__disabled
         )}>
           <select
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fbfbfb',
     backgroundSize: '12px 12px',
     WebkitAppearance: 'none',
-    height: '2rem',
+    minHeight: '2rem',
     marginBottom: '.75rem'
   },
 
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
       right: 0,
       display: 'flex',
       alignItems: 'center',
-      height: '100%',
+      maxHeight: '100%',
       padding: '10px',
       fontSize: '13px'
     }
