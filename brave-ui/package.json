@@ -24,9 +24,6 @@
   ],
   "author": "Brave Software",
   "license": "MPL-2.0",
-  "dependencies": {
-    "aphrodite": "^1.2.5"
-  },
   "peerDependencies": {
     "react": "^16.0.0"
   },

@@ -2,17 +2,10 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import { resumeStyleInjection } from './lib/utils'
 import BrowserText from '../brave-ui/src/browserText'
 import theme from '../brave-ui/src/theme'
 
 describe('browserText tests', () => {
-  afterEach(() => {
-    // Note: this is required for every test file
-    // see utils.resumeStyleInjection for more info
-    resumeStyleInjection()
-  })
-
   const baseComponent = (props?: object) => (
     <BrowserText text='testText' {...props} />
   )

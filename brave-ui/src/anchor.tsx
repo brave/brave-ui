@@ -3,7 +3,8 @@
 * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyleSheet, css } from 'aphrodite/no-important'
+import { applyClass } from './helpers'
+import './anchor.css'
 
 export interface ActionButtonProps {
   id?: string,
@@ -19,7 +20,10 @@ class Anchor extends React.PureComponent<ActionButtonProps, {}> {
     return (
       <a
         id={id}
-        className={css(styles.anchor, noStyle && styles.anchor__noStyle)}
+        className={applyClass({
+          anchor: true,
+          anchor__noStyle: noStyle
+        })}
         href={href}
         target={target}
         rel='noreferrer noopener'
@@ -29,15 +33,5 @@ class Anchor extends React.PureComponent<ActionButtonProps, {}> {
     )
   }
 }
-
-const styles = StyleSheet.create({
-  anchor: {
-    color: 'inherit',
-    fontSize: 'inherit'
-  },
-  anchor__noStyle: {
-    textDecoration: 'none'
-  }
-})
 
 export default Anchor

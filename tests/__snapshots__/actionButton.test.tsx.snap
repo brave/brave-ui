@@ -2,7 +2,7 @@
 
 exports[`actionButton tests matches the snapshot 1`] = `
 <button
-  className="actionButton_lhxf92"
+  className="actionButton"
   id={undefined}
   onClick={undefined}
   style={

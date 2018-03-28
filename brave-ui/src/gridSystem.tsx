@@ -3,7 +3,8 @@
 * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyleSheet, css } from 'aphrodite/no-important'
+import { applyClass } from './helpers'
+import './gridSystem.css'
 
 // Create a 12-based column grid system
 export const gridTemplate = 12
@@ -19,10 +20,6 @@ export interface GridProps {
   height?: string,
   textColor?: string,
   background?: string
-}
-
-interface AphroditeStyle {
-  [selector: string]: string | number | AphroditeStyle
 }
 
 class Grid extends React.PureComponent<GridProps, {}> {
@@ -44,7 +41,10 @@ class Grid extends React.PureComponent<GridProps, {}> {
     return (
       <div
         id={id}
-        className={css(styles.grid, disabled && styles.grid__disabled)}
+        className={applyClass({
+          grid: true,
+          grid__disabled: disabled
+        })}
         style={this.componentStyles}>
         {children}
       </div>
@@ -52,30 +52,11 @@ class Grid extends React.PureComponent<GridProps, {}> {
   }
 }
 
-const gridWrapper = {
-  grid: {
-    boxSizing: 'border-box',
-    display: 'grid',
-    gridTemplateColumns: `repeat(var(--gridTemplateColumns), 1fr)`,
-    gridGap: 'var(--gridGap, 15px)',
-    padding: 'var(--gridPadding, 0)',
-    maxWidth: 'var(--gridWidth)',
-    height: 'var(--gridHeight)',
-    color: 'var(--gridTextColor)',
-    backgroundColor: 'var(--gridBackground)'
-  },
-
-  grid__disabled: {
-    opacity: 0.3,
-    userSelect: 'none'
-  }
-}
-
 export interface ColumnProps {
   id?: string,
-  size?: number,
   children?: React.ReactNode,
   // Component styles
+  size?: number,
   align?: string,
   verticalAlign?: string,
   background?: string,
@@ -91,6 +72,7 @@ class Column extends React.PureComponent<ColumnProps, {}> {
       'direction' in props
     )
     return {
+      '--columnSize': 'size' in props ? props.size : gridTemplate,
       '--columnDisplay': needsFlex && 'flex',
       '--columnAlign': props.align,
       '--columnVerticalAlign': props.verticalAlign,
@@ -100,37 +82,16 @@ class Column extends React.PureComponent<ColumnProps, {}> {
   }
 
   render () {
-    const { id, size = gridTemplate, children } = this.props
+    const { id, children } = this.props
     return (
       <div
         id={id}
-        className={css(styles[`column${size}`])}
+        className='column'
         style={this.componentStyles}>
         {children}
       </div>
     )
   }
 }
-
-// Iterate over gridTemplate and add a `columnN` classname
-// i.e. {column1, ..., columnN}. Being N the max gridTemplate number
-let columnSystem = {}
-Array.from({length: gridTemplate}, (v, i) => i + 1).forEach(size => {
-  Object.assign(columnSystem, {
-    [`column${size}`]: {
-      boxSizing: 'border-box',
-      position: 'relative',
-      gridColumn: `span ${size}`,
-      display: 'var(--columnDisplay, inherit)',
-      justifyContent: 'var(--columnAlign)',
-      alignItems: 'var(--columnVerticalAlign)',
-      backgroundColor: 'var(--columnBackground)',
-      flexDirection: 'var(--columnDirection)'
-    }
-  })
-})
-
-const gridSystem = Object.assign(gridWrapper, columnSystem)
-const styles: AphroditeStyle = StyleSheet.create(gridSystem)
 
 export { Grid, Column }

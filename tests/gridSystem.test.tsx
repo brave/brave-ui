@@ -2,13 +2,9 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import { resumeStyleInjection } from './lib/utils'
 import { Grid, Column } from '../brave-ui/src/gridSystem'
 
 describe('gridSystem tests', () => {
-  afterEach(() => {
-    resumeStyleInjection()
-  })
   describe('grid component', () => {
     it('matches the snapshot', () => {
       const component = <Grid />
@@ -56,10 +52,6 @@ describe('gridSystem tests', () => {
   })
 
   describe('column component', () => {
-    afterEach(() => {
-      resumeStyleInjection()
-    })
-
     it('matches the snapshot', () => {
       const component = <Column />
       const tree = create(component).toJSON()

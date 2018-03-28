@@ -2,13 +2,13 @@
 
 exports[`switchButton tests matches the snapshot 1`] = `
 <div
-  className="switchButton_wrapper_5kaapu"
+  className="0"
 >
   <div>
     <input
       autoFocus={undefined}
       checked={false}
-      className="checkbox_1u9fru1"
+      className="checkbox"
       disabled={undefined}
       id="switchButton"
       onChange={[Function]}
@@ -16,7 +16,7 @@ exports[`switchButton tests matches the snapshot 1`] = `
       type="checkbox"
     />
     <label
-      className="switchButton_aucq8e"
+      className="0"
       htmlFor="switchButton"
       style={
         Object {
@@ -26,7 +26,7 @@ exports[`switchButton tests matches the snapshot 1`] = `
       }
     >
       <i
-        className="switchButton_knob_1mcshdr"
+        className="0"
         style={
           Object {
             "--height": false,

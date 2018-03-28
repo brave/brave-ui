@@ -3,7 +3,8 @@
 * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyleSheet, css } from 'aphrodite/no-important'
+import { applyClass } from './helpers'
+import './contentToggle.css'
 import Separator from './separator'
 
 export interface ContentToggleProps {
@@ -52,10 +53,10 @@ class ContentToggle extends React.PureComponent<ContentToggleProps, ContentToggl
         open={maybeOpen}>
         <summary
           onClick={this.handleClick}
-          className={css(
-            styles.summary,
-            maybeOpen && styles.summary__open
-          )}
+          className={applyClass({
+            summary: true,
+            summary__open: maybeOpen
+          })}
         >
           {summary}
           {withSeparator && <Separator />}
@@ -66,29 +67,5 @@ class ContentToggle extends React.PureComponent<ContentToggleProps, ContentToggl
     )
   }
 }
-
-const styles = StyleSheet.create({
-  summary: {
-    display: 'block',
-
-    // webkit does handle the caret by default
-    // but if we want to style it in the future
-    // it's better to have our own defined
-    '::-webkit-details-marker': {
-      display: 'none'
-    },
-
-    '::before': {
-      content: '"▶"',
-      paddingRight: '0.5em'
-    }
-  },
-
-  summary__open: {
-    '::before': {
-      content: '"▼"'
-    }
-  }
-})
 
 export default ContentToggle

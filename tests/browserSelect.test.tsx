@@ -2,16 +2,9 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import { resumeStyleInjection } from './lib/utils'
 import BrowserSelect from '../brave-ui/src/browserSelect'
 
 describe('browserSelect tests', () => {
-  afterEach(() => {
-    // Note: this is required for every test file
-    // see utils.resumeStyleInjection for more info
-    resumeStyleInjection()
-  })
-
   const baseComponent = (props?: object) => (
       <BrowserSelect value='test' {...props}>
         <option>some option</option>

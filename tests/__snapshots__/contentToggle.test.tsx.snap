@@ -6,7 +6,7 @@ exports[`contentToggle tests matches the snapshot 1`] = `
   open={false}
 >
   <summary
-    className="summary_or13n"
+    className="0"
     onClick={[Function]}
   >
     testSummary

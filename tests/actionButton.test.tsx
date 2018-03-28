@@ -2,16 +2,10 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import { resumeStyleInjection } from './lib/utils'
 import ActionButton from '../brave-ui/src/actionButton'
 import theme from '../brave-ui/src/theme'
 
 describe('actionButton tests', () => {
-  afterEach(() => {
-    // Note: this is required for every test file
-    // see utils.resumeStyleInjection for more info
-    resumeStyleInjection()
-  })
 
   it('matches the snapshot', () => {
     const component = <ActionButton />

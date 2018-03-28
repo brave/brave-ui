@@ -2,27 +2,10 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import { resumeStyleInjection } from './lib/utils'
 import Anchor from '../brave-ui/src/anchor'
 import theme from '../brave-ui/src/theme'
 
 describe('anchor tests', () => {
-  afterEach(() => {
-    // Note: this is required for every test file
-    // see utils.resumeStyleInjection for more info
-    resumeStyleInjection()
-  })
-
-  // href: string
-  // noStyle?: boolean
-  // target?: '_blank' | '_parent' | '_self' | '_top'
-  // text: string | number
-
-  // 'defines a href'
-  // 'defines a target'
-  // 'rel defaults to noreferrer noopener'
-  // 'defines a text'
-
   it('matches the snapshot', () => {
     const component = <Anchor href='#' text='testText' />
     const tree = create(component).toJSON()

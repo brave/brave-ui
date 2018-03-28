@@ -2,17 +2,10 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import { resumeStyleInjection } from './lib/utils'
 import BrowserButton from '../brave-ui/src/browserButton'
 import theme from '../brave-ui/src/theme'
 
 describe('browserButton tests', () => {
-  afterEach(() => {
-    // Note: this is required for every test file
-    // see utils.resumeStyleInjection for more info
-    resumeStyleInjection()
-  })
-
   it('matches the snapshot', () => {
     const component = <BrowserButton />
     const tree = create(component).toJSON()

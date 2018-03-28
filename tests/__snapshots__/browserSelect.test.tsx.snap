@@ -3,14 +3,14 @@
 exports[`browserSelect tests matches the snapshot 1`] = `
 <div>
   <p
-    className="browserSelect_title_cnfarr"
+    className="browserSelect_title"
   />
   <div
-    className="browserSelectWrapper_wpw68s"
+    className="0"
   >
     <select
       autoFocus={undefined}
-      className="browserSelect_6cpacb"
+      className="browserSelect"
       disabled={undefined}
       id={undefined}
       multiple={undefined}

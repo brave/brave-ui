@@ -3,7 +3,7 @@
 * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyleSheet, css } from 'aphrodite/no-important'
+import './actionButton.css'
 
 /**
 * Implementor notes:
@@ -42,7 +42,7 @@ class ActionButton extends React.PureComponent<ActionButtonProps, {}> {
     return (
       <button
         id={id}
-        className={css(styles.actionButton)}
+        className='actionButton'
         onClick={onClick}
         style={this.componentStyles}>
         {text && text.toString()}
@@ -50,20 +50,5 @@ class ActionButton extends React.PureComponent<ActionButtonProps, {}> {
     )
   }
 }
-
-const styles = StyleSheet.create({
-  actionButton: {
-    display: 'block',
-    padding: 'var(--padding, 0)',
-    height: 'var(--height)',
-    fontSize: 'var(--fontSize, inherit)',
-    lineHeight: 1,
-    background: 'none',
-    color: 'var(--color, inherit)',
-    border: 'none',
-    cursor: 'pointer',
-    outline: 'inherit'
-  }
-})
 
 export default ActionButton

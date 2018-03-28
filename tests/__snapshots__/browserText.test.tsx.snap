@@ -2,7 +2,7 @@
 
 exports[`browserText tests matches the snapshot 1`] = `
 <p
-  className="browserTextStyles_5sgo6p"
+  className="browserTextStyles"
   id={undefined}
   onClick={undefined}
   style={

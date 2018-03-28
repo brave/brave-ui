@@ -29,7 +29,6 @@
     "@storybook/addon-options": "^3.3.14",
     "@storybook/react": "^3.3.14",
     "@storybook/storybook-deployer": "^2.3.0",
-    "@types/aphrodite": "^0.5.7",
     "@types/enzyme": "^3.1.9",
     "@types/jest": "^22.1.3",
     "@types/react": "^16.0.38",
@@ -39,10 +38,10 @@
     "@types/storybook__addon-info": "^3.2.2",
     "@types/storybook__addon-knobs": "^3.2.3",
     "@types/storybook__react": "^3.0.7",
-    "aphrodite": "^1.2.5",
     "awesome-typescript-loader": "^3.4.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.0",
     "lerna": "^2.9.0",
     "nsp": "^3.2.1",
@@ -107,6 +106,11 @@
     "setupTestFrameworkScriptFile": "<rootDir>/.testconfig/testSetup.js",
     "setupFiles": [
       "<rootDir>/.testconfig/testPolyfills.js"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|svg|ttf|woff|woff2)$":
+        "<rootDir>/.testconfig/fileMock.js",
+      "\\.(css)$": "identity-obj-proxy"
+    }
   }
 }

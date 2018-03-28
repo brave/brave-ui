@@ -3,7 +3,7 @@
 * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyleSheet, css } from 'aphrodite/no-important'
+import './separator.css'
 
 export interface SeparatorProps {
   // component styles
@@ -20,19 +20,9 @@ class Separator extends React.PureComponent<SeparatorProps, {}> {
 
   render () {
     return (
-      <hr className={css(styles.separator)} style={this.componentStyles} />
+      <hr className='separator' style={this.componentStyles} />
     )
   }
 }
-
-const styles = StyleSheet.create({
-  separator: {
-    background: '#ccc',
-    border: '0px',
-    height: '1px',
-    marginTop: 'var(--separatorMargin, 10px)',
-    marginBottom: 'var(--separatorMargin, 10px)'
-  }
-})
 
 export default Separator

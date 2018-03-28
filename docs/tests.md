@@ -36,34 +36,6 @@ Supposing you're running macOS, the source is available under `file:///Users/<yo
 
 We make use of Jest combined with Enzyme for our tests. For a list of supported `matchers` for testing please refer to [Jest:using matchers](https://facebook.github.io/jest/docs/en/using-matchers.html).
 
-While writing tests, take note that given the async nature of Aphrodite, you'll need to resume the style injection after each test. An example is demonstrated below:
-
-```js
-import {resumeStyleInjection} from './lib/utils'
-
-describe('your brand new tests', () => {
-  afterEach(() => {
-    // This is required
-    resumeStyleInjection()
-  })
-
-  it('does something', () => {
-    // your code here
-  })
-```
-
-An example of how to write a structural test with Enzyme:
-
-```jsx
-import YourAwesomeComponent from '../brave-ui/YourAwesomeComponent'
-
-it('renders the component', () => {
-  const wrapper = mount(<YourAwesomeComponent />)
-  const assertion = wrapper.find('#yourAwesomeComponent').length
-  expect(assertion).toBe(1)
-})
-```
-
 We also make use of Snapshot testing. This guarantees that our UI does not change unexpectedly.
 
 A snapshot test will fail if either the change is unexpected, or the screenshot needs to be updated to the new version of the UI component.
@@ -74,10 +46,6 @@ For convention, please write your snapshot test as the first test in your `descr
 import YourAwesomeComponent from '../brave-ui/YourAwesomeComponent'
 
 describe('yourAwesomeComponent tests', () => {
-  afterEach(() => {
-    resumeStyleInjection()
-  })
-
   it('matches the snapshot', () => {
     const component = <YourAwesomeComponent someAweProp='cool' />
     const tree = renderer.create(component).toJSON()

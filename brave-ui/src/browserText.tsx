@@ -3,7 +3,7 @@
 * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyleSheet, css } from 'aphrodite/no-important'
+import './browserText.css'
 
 export interface BrowserTextProps {
   id?: string
@@ -15,10 +15,6 @@ export interface BrowserTextProps {
   color?: string
   padding?: string
   bold?: boolean
-}
-
-interface AphroditeStyle {
-  [selector: string]: string | number | AphroditeStyle
 }
 
 class BrowserText extends React.PureComponent<BrowserTextProps, {}> {
@@ -39,7 +35,7 @@ class BrowserText extends React.PureComponent<BrowserTextProps, {}> {
     return (
       <p
         id={id}
-        className={css(styles.browserTextStyles)}
+        className='browserTextStyles'
         onClick={onClick}
         style={this.componentStyles}>
         {text.toString()}
@@ -47,21 +43,5 @@ class BrowserText extends React.PureComponent<BrowserTextProps, {}> {
     )
   }
 }
-
-const browserTextStyles: AphroditeStyle = {
-  userSelect: 'var(--noSelect)',
-  fontWeight: 'var(--bold)',
-  padding: 'var(--padding, 0)',
-  cursor: 'var(--cursor, auto)',
-  fontSize: 'var(--fontSize, 13px)',
-  color: 'var(--color, inherit)',
-  background: 'none',
-  margin: 0,
-  textOverflow: 'ellipsis',
-  overflow: 'hidden',
-  whiteSpace: 'nowrap'
-}
-
-const styles = StyleSheet.create({browserTextStyles})
 
 export default BrowserText

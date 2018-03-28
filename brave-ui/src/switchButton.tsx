@@ -3,8 +3,8 @@
 * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyleSheet, css } from 'aphrodite/no-important'
-import theme from './theme'
+import { applyClass } from './helpers'
+import './switchButton.css'
 
 export interface SwitchButtonProps {
   checked: boolean,
@@ -60,15 +60,15 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
     const { checked } = this.state
 
     return (
-      <div className={css(
-        styles.switchButton_wrapper,
-        disabled && styles.switchButton_wrapper__disabled
-      )}>
+      <div className={applyClass({
+        switchButton_wrapper: true,
+        switchButton_wrapper__disabled: disabled
+      })}>
         {
           !!leftText &&
           <label
-          id={`${id}LeftText`}
-            className={css(styles.switchButton_label__left)}
+            id={`${id}LeftText`}
+            className='switchButton_label__left'
             htmlFor={id}>
             {leftText}
           </label>
@@ -79,25 +79,25 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
             id={id}
             readOnly={readOnly}
             disabled={disabled}
-            className={css(styles.checkbox)}
+            className='checkbox'
             checked={!!checked}
             onChange={this.handleChange}
             autoFocus={autoFocus}
           />
           <label
             htmlFor={id}
-            className={css(
-              styles.switchButton,
-              !!checked && styles.switchButton__checked
-          )}
+            className={applyClass({
+              switchButton: true,
+              switchButton__checked: !!checked
+            })}
             style={this.componentStyles}
           >
             <i
               style={this.componentStyles}
-              className={css(
-                styles.switchButton_knob,
-                !!checked && styles.switchButton_knob__checked
-              )}
+              className={applyClass({
+                switchButton_knob: true,
+                switchButton_knob__checked: !!checked
+              })}
             />
           </label>
         </div>
@@ -105,7 +105,7 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
           !!rightText &&
           <label
             id={`${id}RightText`}
-            className={css(styles.switchButton_label__right)}
+            className='switchButton_label__right'
             htmlFor={id}>
             {rightText}
           </label>
@@ -114,80 +114,5 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
     )
   }
 }
-
-const checkboxWidth = 'var(--width, 48px)'
-const checkboxHeight = 'var(--height, 16px)'
-const knobSize = `calc(${checkboxHeight} - 4px)`
-
-const styles = StyleSheet.create({
-  checkbox: {
-    display: 'none'
-  },
-
-  switchButton_wrapper: {
-    display: 'flex',
-    alignItems: 'center'
-  },
-
-  switchButton_wrapper__disabled: {
-    opacity: 0.3,
-    userSelect: 'none'
-  },
-
-  switchButton: {
-    boxSizing: 'border-box',
-    padding: '0 2px',
-    display: 'flex',
-    alignItems: 'center',
-    width: checkboxWidth,
-    height: checkboxHeight,
-    borderRadius: checkboxHeight,
-    boxShadow: 'inset 0 1px 1px 1px #bbb',
-    background: theme.switchButton.uncheckedBg,
-    transition: 'all 0.4s',
-
-    ':active': {
-      boxShadow: `inset 0 0 0 ${checkboxHeight} #bbb`
-    },
-
-    ':active > i': {
-      width: checkboxHeight
-    }
-  },
-
-  switchButton__checked: {
-    boxShadow: `inset 0 0 0 ${checkboxHeight} ${theme.switchButton.checkedBg}`,
-    border: 'none',
-
-    ':active > i': {
-      marginLeft: `calc(90% - ${knobSize})`
-    }
-  },
-
-  switchButton_knob: {
-    boxSizing: 'border-box',
-    height: knobSize,
-    width: knobSize,
-    borderRadius: checkboxHeight,
-    background: theme.switchButton.knob,
-    transition: 'all 0.3s',
-    WebkitTransition: 'all 0.3s',
-    boxShadow: '0 2px 2px rgba(0,0,0,0.25)',
-    pointerEvents: 'none'
-  },
-
-  switchButton_knob__checked: {
-    marginLeft: `calc(100% - ${knobSize})`,
-    boxShadow: '0 2px 2px rgba(0,0,0,0.25)'
-  },
-
-  switchButton_label__left: {
-    marginRight: '10px'
-  },
-
-  switchButton_label__right: {
-    marginLeft: '10px'
-  }
-})
 
 export default SwitchButton
