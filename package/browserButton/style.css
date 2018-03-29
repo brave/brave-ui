@@ -1,0 +1,93 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License. v. 2.0. If a copy of the MPL was not distributed with this file.
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.browserButton {
+  /* Positioning properties */
+  position: relative;
+  display: inline-block;
+  text-align: center;
+
+  /* Font properties */
+  font-size: var(--fontSize, 13px);
+  color: var(--browserButton-default--color);
+
+  /* Box/Border properties */
+  box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+
+  /* Background properties */
+  background-size: 16px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: none;
+  background-color: var(--browserButton-default--bg);
+
+  /* Sizing properties */
+  line-height: 1.25;
+  width: auto;
+  min-width: calc(var(--fontSize, 13px) * 6);
+  min-height: var(--size, 32px);
+  white-space: nowrap;
+
+  /* Spacing properties */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+
+  /* Mouse properties */
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  user-select: none;
+
+  /* Transition properties */
+  transition: .1s opacity, .1s background;
+}
+
+.browserButton:hover {
+  color: var(--browserButton-default--hoverColor);
+}
+
+.browserButton:active {
+  /* push the button down when active */
+  bottom: -1px;
+}
+
+.browserButton_disabled {
+  pointer-events: none;
+  animation: none;
+  opacity: 0.25;
+}
+
+.browserButton_primaryColor {
+  background: var(--browserButton-primary--bg);
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-top: 2px solid var(--browserButton-primary--gradient1);
+  border-bottom: 2px solid var(--browserButton-primary--gradient2);
+  color: var(--browserButton-primary--color);
+}
+
+.browserButton_primaryColor:hover {
+  border: 2px solid var(--browserButton-primary--borderHoverColor);
+  color: var(--browserButton-primary--hoverColor);
+}
+
+.browserButton_secondaryColor {
+  background: var(--browserButton-secondary--bg);
+  border: 1px solid white;
+  color: var(--browserButton-secondary--color);
+}
+
+.browserButton_secondaryColor:hover {
+  border: 1px solid var(--browserButton-secondary--borderHoverColor);
+  color: var(--browserButton-secondary--hoverColor);
+}

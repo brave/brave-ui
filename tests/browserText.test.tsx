@@ -2,8 +2,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import BrowserText from '../brave-ui/src/browserText'
-import theme from '../brave-ui/src/theme'
+import BrowserText from '../components/browserText'
 
 describe('browserText tests', () => {
   const baseComponent = (props?: object) => (

@@ -2,8 +2,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import SwitchButton from '../brave-ui/src/switchButton'
-import theme from '../brave-ui/src/theme'
+import SwitchButton from '../components/switchButton'
 
 describe('switchButton tests', () => {
   const baseComponent = (props?: object) => (

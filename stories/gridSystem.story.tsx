@@ -17,7 +17,7 @@ import { BetterVisualizer } from './storyUtil'
 
 // Components
 import * as React from 'react'
-import { gridTemplate, Grid, Column } from '../brave-ui/src/gridSystem'
+import { gridTemplate, Grid, Column } from '../components/gridSystem'
 
 addDecorator(withKnobs)
 

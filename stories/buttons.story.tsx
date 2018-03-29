@@ -20,9 +20,9 @@ import { BetterVisualizer } from './storyUtil'
 
 // Components
 import * as React from 'react'
-import BrowserButton from '../brave-ui/src/browserButton'
-import ActionButton from '../brave-ui/src/actionButton'
-import SwitchButton from '../brave-ui/src/switchButton'
+import BrowserButton from '../components/browserButton'
+import ActionButton from '../components/actionButton'
+import SwitchButton from '../components/switchButton'
 
 addDecorator(withKnobs)
 

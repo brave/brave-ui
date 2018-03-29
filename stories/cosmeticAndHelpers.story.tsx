@@ -16,7 +16,7 @@ import { BetterVisualizer } from './storyUtil'
 
 // Components
 import * as React from 'react'
-import Separator from '../brave-ui/src/separator'
+import Separator from '../components/separator'
 
 addDecorator(withKnobs)
 

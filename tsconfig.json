@@ -3,9 +3,9 @@
     "target": "es6",
     "module": "commonjs",
     "jsx": "react",
+    "outDir": "./package",
     "declaration": true,
     "sourceMap": true,
-    "outDir": "./brave-ui/dist",
     "removeComments": true,
     "strict": true,
     "noImplicitThis": true,
@@ -15,10 +15,12 @@
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": false
   },
+
   "include": [
-    "brave-ui/src/*"
+    "./components"
   ],
   "exclude": [
-    "stories"
+    "./stories",
+    "./tests"
   ]
 }

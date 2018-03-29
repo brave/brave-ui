@@ -17,7 +17,7 @@ import { withState } from '@dump247/storybook-state'
 
 // Components
 import * as React from 'react'
-import ContentToggle from '../brave-ui/src/contentToggle'
+import ContentToggle from '../components/contentToggle'
 
 addDecorator(withKnobs)
 
@@ -34,8 +34,8 @@ storiesOf('Other Components', module)
         summary={text('Summary text', 'Some text here')}
         onClick={(open) => (
           store.set({ open: !store.state.open })
-       )}>
-       <h1>Some text inside!</h1>
+        )}>
+        <h1>Some text inside!</h1>
       </ContentToggle>
     )
   }))

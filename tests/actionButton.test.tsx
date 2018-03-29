@@ -2,11 +2,9 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import ActionButton from '../brave-ui/src/actionButton'
-import theme from '../brave-ui/src/theme'
+import ActionButton from '../components/actionButton'
 
 describe('actionButton tests', () => {
-
   it('matches the snapshot', () => {
     const component = <ActionButton />
     const tree = create(component).toJSON()

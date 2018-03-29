@@ -1,0 +1,24 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License. v. 2.0. If a copy of the MPL was not distributed with this file.
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+summary {
+  display: block;
+}
+
+/**
+ * webkit does handle the caret by default
+ * but if we want to style it in the future
+ * it's better to have our own defined */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::before {
+  content: "▶";
+  padding-right: 0.5em;
+}
+
+summary__open::before {
+  content: "▼";
+}

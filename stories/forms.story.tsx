@@ -16,7 +16,7 @@ import { BetterVisualizer } from './storyUtil'
 
 // Components
 import * as React from 'react'
-import BrowserSelect from '../brave-ui/src/browserSelect'
+import BrowserSelect from '../components/browserSelect'
 
 addDecorator(withKnobs)
 

@@ -2,8 +2,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import BrowserButton from '../brave-ui/src/browserButton'
-import theme from '../brave-ui/src/theme'
+import BrowserButton from '../components/browserButton'
 
 describe('browserButton tests', () => {
   it('matches the snapshot', () => {
@@ -46,7 +45,7 @@ describe('browserButton tests', () => {
     const wrapper = shallow(<BrowserButton />)
     const assertion = wrapper.find('button').props().style
     expect(assertion).toEqual(
-      expect.objectContaining({ '--bg': theme.browserButton.default.bg })
+      expect.objectContaining({ '--bg': 'FIX ME' })
     )
   })
 
@@ -54,7 +53,7 @@ describe('browserButton tests', () => {
     const wrapper = shallow(<BrowserButton theme='primary' />)
     const assertion = wrapper.find('button').props().style
     expect(assertion).toEqual(
-      expect.objectContaining({ '--primary-bg': theme.browserButton.primary.bg })
+      expect.objectContaining({ '--primary-bg': 'FIX ME' })
     )
   })
 
@@ -62,7 +61,7 @@ describe('browserButton tests', () => {
     const wrapper = shallow(<BrowserButton theme='secondary' />)
     const assertion = wrapper.find('button').props().style
     expect(assertion).toEqual(
-      expect.objectContaining({ '--secondary-bg': theme.browserButton.secondary.bg })
+      expect.objectContaining({ '--secondary-bg': 'FIX ME' })
     )
   })
 

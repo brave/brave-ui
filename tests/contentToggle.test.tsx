@@ -2,8 +2,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import ContentToggle from '../brave-ui/src/contentToggle'
-import theme from '../brave-ui/src/theme'
+import ContentToggle from '../components/contentToggle'
 
 describe('contentToggle tests', () => {
   const baseComponent = (props?: object) => (

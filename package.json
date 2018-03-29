@@ -13,7 +13,6 @@
     "check-security": "nsp check",
     "deploy": "storybook-to-ghpages -s public -o .out",
     "lint": "standard --fix --verbose",
-    "preinstall": "cd brave-ui/ && npm install && cd ../",
     "publish": "lerna publish && npm run deploy",
     "standard-fix": "standard --fix",
     "start": "start-storybook -p 9091 -c .storybook",
@@ -22,37 +21,32 @@
     "coverage": "jest --coverage --verbose"
   },
   "devDependencies": {
-    "@dump247/storybook-state": "^1.2.3",
-    "@storybook/addon-actions": "^3.3.14",
-    "@storybook/addon-info": "^3.3.14",
-    "@storybook/addon-knobs": "^3.3.14",
-    "@storybook/addon-options": "^3.3.14",
-    "@storybook/react": "^3.3.14",
+    "@dump247/storybook-state": "^1.3.0",
+    "@storybook/addon-actions": "^3.3.15",
+    "@storybook/addon-info": "^3.3.15",
+    "@storybook/addon-knobs": "^3.3.15",
+    "@storybook/addon-options": "^3.3.15",
+    "@storybook/react": "^3.3.15",
     "@storybook/storybook-deployer": "^2.3.0",
-    "@types/enzyme": "^3.1.9",
-    "@types/jest": "^22.1.3",
-    "@types/react": "^16.0.38",
+    "@types/jest": "^22.2.2",
+    "@types/react": "^16.1.0",
     "@types/react-dom": "^16.0.4",
-    "@types/react-test-renderer": "^16.0.1",
-    "@types/storybook__addon-actions": "^3.0.2",
-    "@types/storybook__addon-info": "^3.2.2",
-    "@types/storybook__addon-knobs": "^3.2.3",
-    "@types/storybook__react": "^3.0.7",
-    "awesome-typescript-loader": "^3.4.1",
+    "awesome-typescript-loader": "^4.0.1",
+    "babel-loader": "^7.1.4",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^22.4.0",
+    "jest": "^22.4.3",
     "lerna": "^2.9.0",
     "nsp": "^3.2.1",
     "pre-commit": "^1.2.2",
     "pre-push": "^0.1.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-test-renderer": "^16.2.0",
-    "standard": "^11.0.0",
-    "ts-jest": "^22.0.4",
-    "typescript": "^2.7.2"
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "react-test-renderer": "^16.3.0",
+    "standard": "^11.0.1",
+    "ts-jest": "^22.4.2",
+    "typescript": "^2.8.1"
   },
   "pre-commit": {
     "run": [
@@ -69,7 +63,7 @@
   },
   "standard": {
     "ignore": [
-      "**/dist/*.js"
+      "package/**/*.js"
     ]
   },
   "storybook-deployer": {
@@ -91,11 +85,8 @@
     "resetModules": true,
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "brave-ui/src/*.tsx",
-      "!brave-ui/src/theme.ts",
-      "!brave-ui/src/index.ts",
-      "!**/node_modules/**",
-      "!stories/**"
+      "components/**/*.tsx",
+      "!components/**/index.ts"
     ],
     "testMatch": [
       "<rootDir>/tests/?(*.)(test).tsx"
@@ -108,9 +99,14 @@
       "<rootDir>/.testconfig/testPolyfills.js"
     ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|svg|ttf|woff|woff2)$":
-        "<rootDir>/.testconfig/fileMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|svg|ttf|woff|woff2)$": "<rootDir>/.testconfig/fileMock.js",
       "\\.(css)$": "identity-obj-proxy"
     }
+  },
+  "dependencies": {
+    "@types/storybook__addon-actions": "^3.0.3",
+    "@types/storybook__addon-info": "^3.2.2",
+    "@types/storybook__addon-knobs": "^3.2.3",
+    "@types/storybook__react": "^3.0.7"
   }
 }

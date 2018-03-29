@@ -25,3 +25,7 @@ brave-ui/package-lock.json
 
 # webstrom
 .idea
+
+# project specifics
+./package/components
+./package/stories

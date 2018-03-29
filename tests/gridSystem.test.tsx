@@ -2,7 +2,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import { Grid, Column } from '../brave-ui/src/gridSystem'
+import { Grid, Column } from '../components/gridSystem'
 
 describe('gridSystem tests', () => {
   describe('grid component', () => {
