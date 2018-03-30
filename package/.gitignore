@@ -1,2 +1,5 @@
-components
-stories
+*
+!.babelrc
+!package.json
+!README.md
+!.npmignore
