@@ -21,6 +21,6 @@
   ],
   "exclude": [
     "./stories",
-    "./tests"
+    "./components/**/spec.tsx"
   ]
 }

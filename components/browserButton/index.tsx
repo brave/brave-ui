@@ -50,6 +50,7 @@ class BrowserButton extends React.PureComponent<BrowserButtonProps, {}> {
         disabled={disabled}
         className={applyClass({
           browserButton: true,
+          browserButton_defaultColor: theme !== 'primary' && theme !== 'secondary',
           browserButton_primaryColor: theme === 'primary',
           browserButton_secondaryColor: theme === 'secondary',
           browserButton_disabled: disabled

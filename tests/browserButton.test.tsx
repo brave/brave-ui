@@ -41,28 +41,22 @@ describe('browserButton tests', () => {
     expect(assertion).toBe(true)
   })
 
-  it('defaults to the default button', () => {
+  it('defaults to the default buttonz', () => {
     const wrapper = shallow(<BrowserButton />)
-    const assertion = wrapper.find('button').props().style
-    expect(assertion).toEqual(
-      expect.objectContaining({ '--bg': 'FIX ME' })
-    )
+    const assertion = wrapper.find('button').hasClass('browserButton_defaultColor')
+    expect(assertion).toBe(true)
   })
 
   it('can be set as primary', () => {
     const wrapper = shallow(<BrowserButton theme='primary' />)
-    const assertion = wrapper.find('button').props().style
-    expect(assertion).toEqual(
-      expect.objectContaining({ '--primary-bg': 'FIX ME' })
-    )
+    const assertion = wrapper.find('button').hasClass('browserButton_primaryColor')
+    expect(assertion).toBe(true)
   })
 
   it('can be set as secondary', () => {
     const wrapper = shallow(<BrowserButton theme='secondary' />)
-    const assertion = wrapper.find('button').props().style
-    expect(assertion).toEqual(
-      expect.objectContaining({ '--secondary-bg': 'FIX ME' })
-    )
+    const assertion = wrapper.find('button').hasClass('browserButton_secondaryColor')
+    expect(assertion).toBe(true)
   })
 
   it('can respond to click', () => {

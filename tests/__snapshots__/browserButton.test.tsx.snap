@@ -2,8 +2,8 @@
 
 exports[`browserButton tests matches the snapshot 1`] = `
 <button
-  className="0"
-  disabled={undefined}
+  className="browserButton browserButton_defaultColor"
+  disabled={false}
   id={undefined}
   onClick={undefined}
   style={

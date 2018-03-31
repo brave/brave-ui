@@ -6,14 +6,14 @@ exports[`browserSelect tests matches the snapshot 1`] = `
     className="browserSelect_title"
   />
   <div
-    className="0"
+    className="browserSelectWrapper"
   >
     <select
       autoFocus={undefined}
       className="browserSelect"
-      disabled={undefined}
+      disabled={false}
       id={undefined}
-      multiple={undefined}
+      multiple={false}
       onChange={undefined}
       value="test"
     >

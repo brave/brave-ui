@@ -10,7 +10,7 @@ exports[`gridSystem tests column component matches the snapshot 1`] = `
       "--columnBackground": undefined,
       "--columnDirection": undefined,
       "--columnDisplay": false,
-      "--columnSize": 12,
+      "--columnSize": "span 12",
       "--columnVerticalAlign": undefined,
     }
   }
@@ -19,7 +19,7 @@ exports[`gridSystem tests column component matches the snapshot 1`] = `
 
 exports[`gridSystem tests grid component matches the snapshot 1`] = `
 <div
-  className="0"
+  className="grid"
   id={undefined}
   style={
     Object {

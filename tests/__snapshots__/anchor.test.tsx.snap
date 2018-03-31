@@ -2,7 +2,7 @@
 
 exports[`anchor tests matches the snapshot 1`] = `
 <a
-  className="0"
+  className="anchor"
   href="#"
   id={undefined}
   rel="noreferrer noopener"
