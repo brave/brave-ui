@@ -17,7 +17,7 @@ export interface ActionButtonProps {
 
 class Anchor extends React.PureComponent<ActionButtonProps, {}> {
   render () {
-    const { id, href, noStyle, target, text } = this.props
+    const { id, href, noStyle = false, target, text } = this.props
     return (
       <a
         id={id}

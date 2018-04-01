@@ -1,5 +1,5 @@
 export interface ApplyClass {
-  [key: string]: any
+  [key: string]: boolean
 }
 
 export const applyClass = (classesObj: ApplyClass) => {

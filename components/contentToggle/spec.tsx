@@ -2,7 +2,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import ContentToggle from '../components/contentToggle'
+import ContentToggle from '../contentToggle'
 
 describe('contentToggle tests', () => {
   const baseComponent = (props?: object) => (

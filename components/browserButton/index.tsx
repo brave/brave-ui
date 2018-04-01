@@ -41,7 +41,8 @@ class BrowserButton extends React.PureComponent<BrowserButtonProps, {}> {
   }
 
   render () {
-    const { id, theme, onClick, disabled, children } = this.props
+    const { id, theme = 'default', onClick, disabled = false, children } = this.props
+
     return (
       <button
         id={id}
@@ -50,7 +51,7 @@ class BrowserButton extends React.PureComponent<BrowserButtonProps, {}> {
         disabled={disabled}
         className={applyClass({
           browserButton: true,
-          browserButton_defaultColor: theme !== 'primary' && theme !== 'secondary',
+          browserButton_defaultColor: theme === 'default',
           browserButton_primaryColor: theme === 'primary',
           browserButton_secondaryColor: theme === 'secondary',
           browserButton_disabled: disabled

@@ -20,7 +20,7 @@ export interface BrowserSelectProps {
 
 class BrowserSelect extends React.PureComponent<BrowserSelectProps, {}> {
   render () {
-    const { titleName, id, multiple, autoFocus, disabled, value, onChange, children } = this.props
+    const { titleName, id, multiple = false, autoFocus, disabled = false, value, onChange, children } = this.props
     return (
       <div>
         <p className='browserSelect_title'>{titleName}</p>

@@ -2,7 +2,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import BrowserButton from '../components/browserButton'
+import BrowserButton from '../browserButton'
 
 describe('browserButton tests', () => {
   it('matches the snapshot', () => {

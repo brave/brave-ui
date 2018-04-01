@@ -45,7 +45,7 @@ class ContentToggle extends React.PureComponent<ContentToggleProps, ContentToggl
   }
 
   render () {
-    const { id, summary, defaultOpen, withSeparator, children } = this.props
+    const { id, summary, defaultOpen = false, withSeparator, children } = this.props
     const { open } = this.state
     const maybeOpen = 'defaultOpen' in this.props ? (defaultOpen && open) : !!open
     return (
@@ -56,7 +56,7 @@ class ContentToggle extends React.PureComponent<ContentToggleProps, ContentToggl
           onClick={this.handleClick}
           className={applyClass({
             summary: true,
-            summary__open: maybeOpen
+            summary__open: maybeOpen != null ? maybeOpen : false
           })}
         >
           {summary}

@@ -38,7 +38,7 @@ class Grid extends React.PureComponent<GridProps, {}> {
   }
 
   render () {
-    const { id, disabled, children } = this.props
+    const { id, disabled = false, children } = this.props
     return (
       <div
         id={id}

@@ -2,7 +2,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import Anchor from '../components/anchor'
+import Anchor from '../anchor'
 
 describe('anchor tests', () => {
   it('matches the snapshot', () => {

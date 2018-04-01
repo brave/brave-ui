@@ -2,7 +2,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import SwitchButton from '../components/switchButton'
+import SwitchButton from '../switchButton'
 
 describe('switchButton tests', () => {
   const baseComponent = (props?: object) => (

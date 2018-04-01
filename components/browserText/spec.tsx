@@ -2,7 +2,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import BrowserText from '../components/browserText'
+import BrowserText from '../browserText'
 
 describe('browserText tests', () => {
   const baseComponent = (props?: object) => (

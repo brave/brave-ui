@@ -2,7 +2,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import ActionButton from '../components/actionButton'
+import ActionButton from '../actionButton'
 
 describe('actionButton tests', () => {
   it('matches the snapshot', () => {

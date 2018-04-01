@@ -57,7 +57,7 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
   }
 
   render () {
-    const { id, readOnly, disabled, autoFocus, leftText, rightText } = this.props
+    const { id, readOnly, disabled = false, autoFocus, leftText, rightText } = this.props
     const { checked } = this.state
 
     return (
