@@ -1,0 +1,26 @@
+:root {
+  /* theme for browserButton */
+  /* -> browserButton default color */
+  --browserButton-default--bg: #fff;
+  --browserButton-default--color: #5a5a5a;
+  --browserButton-default--hoverColor: #000;
+
+  /* -> browserButton primary color */
+  --browserButton-primary--bg: linear-gradient(#ff7a1d, #ff5000);
+  --browserButton-primary--gradient1: #ff7a1d;
+  --browserButton-primary--gradient2: #ff5000;
+  --browserButton-primary--color: #fff;
+  --browserButton-primary--hoverColor: #fff;
+  --browserButton-primary--borderHoverColor: #fff;
+
+  /* -> browserButton secondary color */
+  --browserButton-secondary--bg: linear-gradient(#fff, #ececec);
+  --browserButton-secondary--color: #666;
+  --browserButton-secondary--hoverColor: rgb(153, 153, 153);
+  --browserButton-secondary--borderHoverColor: #444;
+
+  /* theme for switchButton */
+  --switchButton-unchecked--bg: #ccc;
+  --switchButton-checked--bg: inset 0 0 0 var(--height, 16px) #ff6000;
+  --switchButton-knob--bg: #fff;
+}

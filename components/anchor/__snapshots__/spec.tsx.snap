@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`anchor tests matches the snapshot 1`] = `
+<a
+  className="anchor"
+  href="#"
+  id={undefined}
+  rel="noreferrer noopener"
+  target={undefined}
+>
+  testText
+</a>
+`;

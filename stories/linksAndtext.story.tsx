@@ -18,8 +18,8 @@ import { BetterVisualizer } from './storyUtil'
 
 // Components
 import * as React from 'react'
-import Anchor from '../brave-ui/src/anchor'
-import BrowserText from '../brave-ui/src/browserText'
+import Anchor from '../components/anchor'
+import BrowserText from '../components/browserText'
 
 addDecorator(withKnobs)
 

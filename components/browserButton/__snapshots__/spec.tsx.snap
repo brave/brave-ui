@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`browserButton tests matches the snapshot 1`] = `
+<button
+  className="browserButton browserButton_defaultColor"
+  disabled={false}
+  id={undefined}
+  onClick={undefined}
+  style={
+    Object {
+      "--fontSize": undefined,
+      "--size": undefined,
+    }
+  }
+/>
+`;

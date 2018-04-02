@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`switchButton tests matches the snapshot 1`] = `
+<div
+  className="switchButton_wrapper"
+>
+  <div>
+    <input
+      autoFocus={undefined}
+      checked={false}
+      className="checkbox"
+      disabled={false}
+      id="switchButton"
+      onChange={[Function]}
+      readOnly={undefined}
+      type="checkbox"
+    />
+    <label
+      className="switchButton"
+      htmlFor="switchButton"
+      style={
+        Object {
+          "--height": false,
+          "--width": false,
+        }
+      }
+    >
+      <i
+        className="switchButton_knob"
+        style={
+          Object {
+            "--height": false,
+            "--width": false,
+          }
+        }
+      />
+    </label>
+  </div>
+</div>
+`;
