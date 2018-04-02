@@ -1,5 +1,11 @@
 # Creating Stories - Improving the living style guide
 
+<hr>
+
+# NOT ACCURATE. NEEDS REVISION
+
+<hr>
+
 Stories are very similar to test files and allow us to see the component "in action" inside the style guide. Visually, they are the topics described on the left-hand side of the screen, usually inside a list of stories. They all live inside the `stories/` folder and follow the `yourComponentName.story.js` name convention.
 
 They look somehow like this:

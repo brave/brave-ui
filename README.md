@@ -24,6 +24,23 @@ Welcome to the Brave UI repo! Here you will find a list of reusable stateless Re
 * [Contributing](https://github.com/brave/brave-ui/blob/master/docs/contributing.md)
 
 
+
+## This is experimental technology
+
+You shouldn't be using this module in your production environment yet. API changes can happen at any time and all modules in this repo are considerated `experimental` at this moment.
+
+## Stability Index
+The stability index is adopted from MDN (which is adopted from [node.js](http://nodejs.org/api/documentation.html#documentation_stability_index). This library uses only four of the six values defined by node.js:
+
+|     Status     | Description |
+|----------------|-------------|
+| Experimental   | The module is not yet stabilized. You can try it out and provide feedback, but we may change or remove it in future versions without having to pass through a formal deprecation process. |
+| Unstable       | The API is in the process of settling, but has not yet had sufficient real-world testing to be considered stable. Backwards-compatibility will be maintained if reasonable. If we do have to make backwards-incompatible changes, we will not guarantee the module will go through the formal deprecation process. |
+| Stable         | The module is a fully-supported part of the SDK. We will avoid breaking backwards compatibility unless absolutely necessary. If we do have to make backwards-incompatible changes, we will go through the formal deprecation process. |
+| Deprecated     | We plan to change this module, and backwards compatibility should not be expected. Don’t start using it, and plan to migrate away from this module to its replacement. |
+
+At the moment all components in this library are under the status of `experimental`. As things change you can follow each component status in the [Components Stability Table](https://github.com/brave/brave-ui/wiki/Components-Stability-Index
+
 ## What is this?
 
 This repository is the home of the [Brave Style Guide](https://brave.github.io/brave-ui) and the [Brave UI Package](https://npmjs.org/package/brave-ui).
@@ -57,11 +74,11 @@ If you're looking to contribute to this repo please refer to [Contributing](http
 
 ```js
 // Let's implement the <BrowserButton /> component
-const {BrowserButton} = require('brave-ui')
+const { BrowserButton } = require('brave-ui')
 
 render () {
   return (
-    <BrowserButton as='primary' label='something' />
+    <BrowserButton theme='primary' label='something' />
   )
 }
 ```

@@ -4,6 +4,12 @@
   "version": "0.0.0",
   "description": "List of reusable React components to empower your brave UI",
   "author": "Brave Software",
+  "contributors": [
+    {
+      "name": "Cezar Augusto",
+      "email": "cezar@brave.com"
+    }
+  ],
   "license": "MPL-2.0",
   "scripts": {
     "copy-style": "cpx \"components/**/*.css\" package",

@@ -1,5 +1,11 @@
 # Coverage, running and creating tests
 
+<hr>
+
+# NOT ACCURATE. NEEDS REVISION
+
+<hr>
+
 Testing is a critical step for any reliable library, which is what we're trying to accomplish. We make use of structural and snapshot tests, with coverage support for human readable testing information.
 
 

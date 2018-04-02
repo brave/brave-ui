@@ -23,6 +23,12 @@
     "enzyme"
   ],
   "author": "Brave Software",
+  "contributors": [
+    {
+      "name": "Cezar Augusto",
+      "email": "cezar@brave.com"
+    }
+  ],
   "license": "MPL-2.0",
   "peerDependencies": {
     "react": "^16.0.0"

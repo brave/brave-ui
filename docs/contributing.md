@@ -1,5 +1,11 @@
 # Contributing
 
+<hr>
+
+# NOT ACCURATE. NEEDS REVISION. CC @CEZARAUGUSTO IF YOU WANT TO CONTRIBUTE.
+
+<hr>
+
 First of all thanks for stopping by! There's a lot of hearts in this project and we're glad that you want to help.
 
 There are several ways you can do so:

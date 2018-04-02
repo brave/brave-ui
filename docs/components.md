@@ -1,5 +1,11 @@
 # Creating components & Architecture Overview
 
+<hr>
+
+# DEPRECATED. NEEDS REMAKE AFTER NEW ARCHITECTURE.
+
+<hr>
+
 ## Architecture Overview
 
 This repo relies on `lerna` for multiple package management, `nsp` for security checking, `storybook` for the style guide and general `webpack` config, and `jest` + `aphrodite` for testing. Also, uses `prettier` and `standard` for the lint style.
