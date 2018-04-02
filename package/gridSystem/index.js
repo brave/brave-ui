@@ -8,7 +8,7 @@ class Grid extends React.PureComponent {
     get componentStyles() {
         const { columns, padding, gap, width, height, textColor, background } = this.props;
         return {
-            '--gridTemplateColumns': columns || exports.gridTemplate,
+            '--gridTemplateColumns': columns != null ? columns : exports.gridTemplate,
             '--gridPadding': padding,
             '--gridGap': gap,
             '--gridWidth': width,
