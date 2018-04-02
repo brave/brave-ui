@@ -1,12 +1,7 @@
 {
-  "lerna": "2.4.0",
+  "lerna": "2.0.0",
   "version": "0.5.0",
   "packages": [
-    "brave-ui/"
-  ],
-  "commands": {
-    "bootstrap": {
-      "ignore": "brave-ui/src/*.js"
-    }
-  }
+    "package/"
+  ]
 }

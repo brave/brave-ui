@@ -46,7 +46,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.3",
-    "lerna": "^2.9.0",
+    "lerna": "^2.0.0",
     "nsp": "^3.2.1",
     "pre-commit": "^1.2.2",
     "pre-push": "^0.1.1",
