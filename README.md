@@ -4,7 +4,6 @@
 > List of reusable React components to empower your brave UI
 
 [![Travis](https://img.shields.io/travis/brave/brave-ui.svg)](https://travis-ci.org/brave/brave-ui) [![Known Vulnerabilities](https://snyk.io/test/github/brave/brave-ui/badge.svg)](https://snyk.io/test/github/brave/brave-ui) [![npm](https://img.shields.io/npm/dt/brave-ui.svg)]() [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
- [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 Welcome to the Brave UI repo! Here you will find a list of reusable stateless React components for use across our browser UI. It's a standalone package to be manipulated as any other module, including a visual style guide fully customizable for both developers and designers.
 
