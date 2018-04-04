@@ -9,7 +9,9 @@ class Anchor extends React.PureComponent {
         return (React.createElement("a", { id: id, className: helpers_1.applyClass({
                 anchor: true,
                 anchor__noStyle: noStyle
-            }), href: href, target: target, rel: 'noreferrer noopener' }, text.toString()));
+            }), href: href, target: target, rel: 'noreferrer noopener' }, text != null
+            ? text.toString()
+            : null));
     }
 }
 exports.default = Anchor;

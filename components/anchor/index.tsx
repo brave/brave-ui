@@ -12,7 +12,7 @@ export interface ActionButtonProps {
   href: string
   noStyle?: boolean
   target?: '_blank' | '_parent' | '_self' | '_top'
-  text: string | number
+  text?: string | number
 }
 
 class Anchor extends React.PureComponent<ActionButtonProps, {}> {
@@ -29,7 +29,11 @@ class Anchor extends React.PureComponent<ActionButtonProps, {}> {
         target={target}
         rel='noreferrer noopener'
       >
-        {text.toString()}
+        {
+          text != null
+            ? text.toString()
+            : null
+        }
       </a>
     )
   }
