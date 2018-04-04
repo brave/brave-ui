@@ -16,7 +16,9 @@ class BrowserText extends React.PureComponent {
     }
     render() {
         const { id, onClick, text } = this.props;
-        return (React.createElement("p", { id: id, className: 'browserTextStyles', onClick: onClick, style: this.componentStyles }, text.toString()));
+        return (React.createElement("p", { id: id, className: 'browserTextStyles', onClick: onClick, style: this.componentStyles }, text != null
+            ? text.toString()
+            : null));
     }
 }
 exports.default = BrowserText;

@@ -8,7 +8,7 @@ import './style.css'
 export interface BrowserTextProps {
   id?: string
   onClick?: () => void
-  text: string | number
+  text?: string | number
   // Component styles
   noSelect?: boolean
   fontSize?: string
@@ -38,7 +38,11 @@ class BrowserText extends React.PureComponent<BrowserTextProps, {}> {
         className='browserTextStyles'
         onClick={onClick}
         style={this.componentStyles}>
-        {text.toString()}
+        {
+          text != null
+            ? text.toString()
+            : null
+        }
       </p>
     )
   }

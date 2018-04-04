@@ -4,7 +4,7 @@ import './style.css';
 export interface BrowserTextProps {
     id?: string;
     onClick?: () => void;
-    text: string | number;
+    text?: string | number;
     noSelect?: boolean;
     fontSize?: string;
     color?: string;
