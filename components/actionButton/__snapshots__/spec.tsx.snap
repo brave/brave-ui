@@ -2,16 +2,11 @@
 
 exports[`actionButton tests matches the snapshot 1`] = `
 <button
-  className="actionButton"
+  className="sc-bdVaJa enSxyJ"
+  color={undefined}
+  fontSize={undefined}
+  height={undefined}
   id={undefined}
   onClick={undefined}
-  style={
-    Object {
-      "--color": undefined,
-      "--fontSize": undefined,
-      "--height": undefined,
-      "--padding": undefined,
-    }
-  }
 />
 `;

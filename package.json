@@ -116,6 +116,7 @@
     "@types/storybook__addon-actions": "^3.0.3",
     "@types/storybook__addon-info": "^3.2.2",
     "@types/storybook__addon-knobs": "^3.2.3",
-    "@types/storybook__react": "^3.0.7"
+    "@types/storybook__react": "^3.0.7",
+    "styled-components": "^3.2.5"
   }
 }

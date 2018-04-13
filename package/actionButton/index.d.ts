@@ -1,6 +1,5 @@
 /// <reference types="react" />
 import * as React from 'react';
-import './style.css';
 export interface ActionButtonProps {
     id?: string;
     onClick?: () => void;
@@ -11,12 +10,6 @@ export interface ActionButtonProps {
     padding?: string;
 }
 declare class ActionButton extends React.PureComponent<ActionButtonProps, {}> {
-    readonly componentStyles: {
-        '--height': string | undefined;
-        '--fontSize': string | undefined;
-        '--color': string | undefined;
-        '--padding': string | undefined;
-    };
     render(): JSX.Element;
 }
 export default ActionButton;

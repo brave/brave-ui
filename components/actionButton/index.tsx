@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import './style.css'
+import { StyledActionButton } from './style'
 
 /**
 * Implementor notes:
@@ -27,26 +27,18 @@ export interface ActionButtonProps {
 }
 
 class ActionButton extends React.PureComponent<ActionButtonProps, {}> {
-  get componentStyles () {
-    const { height, fontSize, color, padding } = this.props
-    return {
-      '--height': height,
-      '--fontSize': fontSize,
-      '--color': color,
-      '--padding': padding
-    }
-  }
-
   render () {
-    const { id, onClick, text } = this.props
     return (
-      <button
-        id={id}
-        className='actionButton'
-        onClick={onClick}
-        style={this.componentStyles}>
-        {text && text.toString()}
-      </button>
+      <StyledActionButton
+        id={this.props.id}
+        onClick={this.props.onClick}
+        height={this.props.height}
+        fontSize={this.props.fontSize}
+        color={this.props.color}
+        padding={this.props.padding}
+      >
+        { this.props.text ? this.props.text.toString() : null }
+      </StyledActionButton>
     )
   }
 }

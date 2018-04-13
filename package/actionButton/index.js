@@ -1,20 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-require("./style.css");
+const style_1 = require("./style");
 class ActionButton extends React.PureComponent {
-    get componentStyles() {
-        const { height, fontSize, color, padding } = this.props;
-        return {
-            '--height': height,
-            '--fontSize': fontSize,
-            '--color': color,
-            '--padding': padding
-        };
-    }
     render() {
-        const { id, onClick, text } = this.props;
-        return (React.createElement("button", { id: id, className: 'actionButton', onClick: onClick, style: this.componentStyles }, text && text.toString()));
+        return (React.createElement(style_1.StyledActionButton, { id: this.props.id, onClick: this.props.onClick, height: this.props.height, fontSize: this.props.fontSize, color: this.props.color, padding: this.props.padding }, this.props.text ? this.props.text.toString() : null));
     }
 }
 exports.default = ActionButton;
