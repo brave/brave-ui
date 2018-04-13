@@ -1,14 +1,13 @@
 /// <reference types="react" />
 import * as React from 'react';
-import './style.css';
-export interface ActionButtonProps {
+export interface AnchorProps {
     id?: string;
     href: string;
     noStyle?: boolean;
     target?: '_blank' | '_parent' | '_self' | '_top';
     text?: string | number;
 }
-declare class Anchor extends React.PureComponent<ActionButtonProps, {}> {
+declare class Anchor extends React.PureComponent<AnchorProps, {}> {
     render(): JSX.Element;
 }
 export default Anchor;

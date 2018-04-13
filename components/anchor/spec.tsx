@@ -19,25 +19,25 @@ describe('anchor tests', () => {
 
   it('defines a href', () => {
     const wrapper = shallow(<Anchor href='https://nespresso.com' text='testText' />)
-    const assertion = wrapper.find('a').props().href
+    const assertion = wrapper.props().href
     expect(assertion).toEqual('https://nespresso.com')
   })
 
   it('defines a target', () => {
     const wrapper = shallow(<Anchor href='#' text='testText' target='_blank' />)
-    const assertion = wrapper.find('a').props().target
+    const assertion = wrapper.props().target
     expect(assertion).toEqual('_blank')
   })
 
   it('rel defaults to noreferrer noopener', () => {
     const wrapper = shallow(<Anchor href='#' text='testText' />)
-    const assertion = wrapper.find('a').props().rel
+    const assertion = wrapper.props().rel
     expect(assertion).toEqual('noreferrer noopener')
   })
 
   it('can pass text', () => {
     const wrapper = shallow(<Anchor href='#' text='GOTCHA' />)
-    const assertion = wrapper.find('a').text()
-    expect(assertion).toBe('GOTCHA')
+    const assertion = wrapper.html().includes('GOTCHA')
+    expect(assertion).toBe(true)
   })
 })

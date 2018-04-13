@@ -3,11 +3,9 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import './style.css'
+import { StyledAnchor } from './style'
 
-import { applyClass } from '../helpers'
-
-export interface ActionButtonProps {
+export interface AnchorProps {
   id?: string,
   href: string
   noStyle?: boolean
@@ -15,26 +13,22 @@ export interface ActionButtonProps {
   text?: string | number
 }
 
-class Anchor extends React.PureComponent<ActionButtonProps, {}> {
+class Anchor extends React.PureComponent<AnchorProps, {}> {
   render () {
-    const { id, href, noStyle = false, target, text } = this.props
     return (
-      <a
-        id={id}
-        className={applyClass({
-          anchor: true,
-          anchor__noStyle: noStyle
-        })}
-        href={href}
-        target={target}
+      <StyledAnchor
+        id={this.props.id}
+        noStyle={this.props.noStyle ? this.props.noStyle : false}
+        href={this.props.href}
+        target={this.props.target}
         rel='noreferrer noopener'
       >
         {
-          text != null
-            ? text.toString()
+          this.props.text != null
+            ? this.props.text.toString()
             : null
         }
-      </a>
+      </StyledAnchor>
     )
   }
 }
