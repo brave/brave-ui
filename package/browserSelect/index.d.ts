@@ -1,6 +1,5 @@
 /// <reference types="react" />
 import * as React from 'react';
-import './style.css';
 export interface BrowserSelectProps {
     titleName?: string;
     id?: string;

@@ -3,9 +3,12 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import './style.css'
 
-import { applyClass } from '../helpers'
+import {
+  StyledBrowserSelect,
+  StyledBrowserSelectTitle,
+  StyledBrowserSelectWrapper
+} from './style'
 
 export interface BrowserSelectProps {
   titleName?: string,
@@ -20,30 +23,26 @@ export interface BrowserSelectProps {
 
 class BrowserSelect extends React.PureComponent<BrowserSelectProps, {}> {
   render () {
-    const { titleName, id, multiple = false, autoFocus, disabled = false, value, onChange, children } = this.props
     return (
       <div>
-        <p className='browserSelect_title'>{titleName}</p>
-        <div className={applyClass({
-          browserSelectWrapper: !multiple,
-          browserSelectWrapper__disabled: disabled
-        }
-        )}>
-          <select
-            id={id}
-            multiple={multiple}
-            autoFocus={autoFocus}
-            disabled={disabled}
-            value={value}
-            onChange={onChange}
-            className={applyClass({
-              browserSelect: true,
-              browserSelect__multiple: multiple
-            })}
+        <StyledBrowserSelectTitle>
+          {this.props.titleName}
+        </StyledBrowserSelectTitle>
+        <StyledBrowserSelectWrapper
+          multiple={this.props.multiple ? this.props.disabled : false}
+          disabled={this.props.disabled ? this.props.disabled : false}
+        >
+          <StyledBrowserSelect
+            id={this.props.id}
+            multiple={this.props.multiple ? this.props.disabled : false}
+            autoFocus={this.props.autoFocus}
+            disabled={this.props.disabled ? this.props.disabled : false}
+            value={this.props.value}
+            onChange={this.props.onChange}
           >
-            {children}
-          </select>
-        </div>
+            {this.props.children}
+          </StyledBrowserSelect>
+        </StyledBrowserSelectWrapper>
       </div>
     )
   }
