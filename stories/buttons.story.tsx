@@ -42,7 +42,7 @@ storiesOf('Buttons', module)
 
     return (
       <BrowserButton
-        theme={value}
+        color={value}
         disabled={boolean('Disabled', false)}
         onClick={action('clicked the standard button!')}
         size={text('Size', '')}

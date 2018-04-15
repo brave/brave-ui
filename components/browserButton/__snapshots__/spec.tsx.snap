@@ -2,15 +2,12 @@
 
 exports[`browserButton tests matches the snapshot 1`] = `
 <button
-  className="browserButton browserButton_defaultColor"
+  className="sc-bdVaJa hGmOLT"
+  color="default"
   disabled={false}
+  fontSize={undefined}
   id={undefined}
   onClick={undefined}
-  style={
-    Object {
-      "--fontSize": undefined,
-      "--size": undefined,
-    }
-  }
+  size={undefined}
 />
 `;

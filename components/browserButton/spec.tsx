@@ -19,51 +19,51 @@ describe('browserButton tests', () => {
 
   it('defines a custom size', () => {
     const wrapper = shallow(<BrowserButton size='13px' />)
-    const assertion = wrapper.find('button').props().style
-    expect(assertion).toEqual(expect.objectContaining({ '--size': '13px' }))
+    const assertion = wrapper.props().size
+    expect(assertion).toEqual('13px')
   })
 
   it('defines a custom font size', () => {
     const wrapper = shallow(<BrowserButton fontSize='60px' />)
-    const assertion = wrapper.find('button').props().style
-    expect(assertion).toEqual(expect.objectContaining({ '--fontSize': '60px' }))
+    const assertion = wrapper.props().fontSize
+    expect(assertion).toEqual('60px')
   })
 
   it('can pass text', () => {
     const wrapper = shallow(<BrowserButton>NESPRESSO</BrowserButton>)
-    const assertion = wrapper.find('button').text()
-    expect(assertion).toBe('NESPRESSO')
+    const assertion = wrapper.html().includes('NESPRESSO')
+    expect(assertion).toBe(true)
   })
 
   it('can be disabled', () => {
     const wrapper = shallow(<BrowserButton disabled />)
-    const assertion = wrapper.find('button').props().disabled
+    const assertion = wrapper.props().disabled
     expect(assertion).toBe(true)
   })
 
-  it('defaults to the default buttonz', () => {
+  it('defaults to the default button', () => {
     const wrapper = shallow(<BrowserButton />)
-    const assertion = wrapper.find('button').hasClass('browserButton_defaultColor')
-    expect(assertion).toBe(true)
+    const assertion = wrapper.props().color
+    expect(assertion).toBe('default')
   })
 
   it('can be set as primary', () => {
-    const wrapper = shallow(<BrowserButton theme='primary' />)
-    const assertion = wrapper.find('button').hasClass('browserButton_primaryColor')
-    expect(assertion).toBe(true)
+    const wrapper = shallow(<BrowserButton color='primary' />)
+    const assertion = wrapper.props().color
+    expect(assertion).toBe('primary')
   })
 
   it('can be set as secondary', () => {
-    const wrapper = shallow(<BrowserButton theme='secondary' />)
-    const assertion = wrapper.find('button').hasClass('browserButton_secondaryColor')
-    expect(assertion).toBe(true)
+    const wrapper = shallow(<BrowserButton color='secondary' />)
+    const assertion = wrapper.props().color
+    expect(assertion).toBe('secondary')
   })
 
   it('can respond to click', () => {
     const value = 'FANCY BUTTON CLICKED'
     const onClick = jest.fn()
     const wrapper = shallow(<BrowserButton onClick={onClick} />)
-    wrapper.find('button').simulate('click', value)
+    wrapper.simulate('click', value)
     expect(onClick).toBeCalledWith(value)
   })
 })

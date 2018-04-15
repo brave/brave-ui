@@ -14,14 +14,11 @@
  */
 
 import * as React from 'react'
-import './style.css'
-import '../theme.css'
-
-import { applyClass } from '../helpers'
+import { StyledBrowserButton } from './style'
 
 export interface BrowserButtonProps {
   id?: string,
-  theme?: string,
+  color?: string,
   disabled?: boolean,
   onClick?: () => void,
   children?: React.ReactNode,
@@ -31,33 +28,18 @@ export interface BrowserButtonProps {
 }
 
 class BrowserButton extends React.PureComponent<BrowserButtonProps, {}> {
-  get componentStyles () {
-    const { size, fontSize } = this.props
-    return {
-      // custom props
-      '--size': size,
-      '--fontSize': fontSize
-    }
-  }
-
   render () {
-    const { id, theme = 'default', onClick, disabled = false, children } = this.props
-
     return (
-      <button
-        id={id}
-        style={this.componentStyles}
-        onClick={onClick}
-        disabled={disabled}
-        className={applyClass({
-          browserButton: true,
-          browserButton_defaultColor: theme === 'default',
-          browserButton_primaryColor: theme === 'primary',
-          browserButton_secondaryColor: theme === 'secondary',
-          browserButton_disabled: disabled
-        })}>
-        {children}
-      </button>
+      <StyledBrowserButton
+        id={this.props.id}
+        color={this.props.color ? this.props.color : 'default'}
+        onClick={this.props.onClick}
+        disabled={this.props.disabled ? this.props.disabled : false}
+        size={this.props.size}
+        fontSize={this.props.fontSize}
+      >
+        {this.props.children}
+      </StyledBrowserButton>
     )
   }
 }
