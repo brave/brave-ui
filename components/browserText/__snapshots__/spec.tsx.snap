@@ -2,19 +2,11 @@
 
 exports[`browserText tests matches the snapshot 1`] = `
 <p
-  className="browserTextStyles"
+  className="sc-bdVaJa dHyaWO"
+  color={undefined}
+  fontSize={undefined}
   id={undefined}
   onClick={undefined}
-  style={
-    Object {
-      "--bold": undefined,
-      "--color": undefined,
-      "--cursor": undefined,
-      "--fontSize": undefined,
-      "--noSelect": undefined,
-      "--padding": undefined,
-    }
-  }
 >
   testText
 </p>

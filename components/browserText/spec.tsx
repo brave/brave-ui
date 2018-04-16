@@ -23,61 +23,51 @@ describe('browserText tests', () => {
 
   it('can have an id', () => {
     const wrapper = shallow(baseComponent({id: 'browserText'}))
-    const assertion = wrapper.find('p').props().id
+    const assertion = wrapper.props().id
     expect(assertion).toEqual('browserText')
   })
 
   it('can pass text', () => {
     const wrapper = shallow(baseComponent({text: 'w00t w00t'}))
-    const assertion = wrapper.find('p').text()
-    expect(assertion).toBe('w00t w00t')
+    const assertion = wrapper.html().includes('w00t w00t')
+    expect(assertion).toBe(true)
   })
 
   it('can disalow text selection', () => {
     const wrapper = shallow(baseComponent({noSelect: true}))
-    const assertion = wrapper.find('p').props().style
-    expect(assertion).toEqual(
-      expect.objectContaining({ '--noSelect': 'none' })
-    )
+    const assertion = wrapper.props().noSelect
+    expect(assertion).toEqual(true)
   })
 
   it('can have a custom font size', () => {
     const wrapper = shallow(baseComponent({fontSize: '20px'}))
-    const assertion = wrapper.find('p').props().style
-    expect(assertion).toEqual(
-      expect.objectContaining({ '--fontSize': '20px' })
-    )
+    const assertion = wrapper.props().fontSize
+    expect(assertion).toEqual('20px')
   })
 
   it('can have a custom color', () => {
     const wrapper = shallow(baseComponent({color: 'cyan'}))
-    const assertion = wrapper.find('p').props().style
-    expect(assertion).toEqual(
-      expect.objectContaining({ '--color': 'cyan' })
-    )
+    const assertion = wrapper.props().color
+    expect(assertion).toEqual('cyan')
   })
 
   it('can have a custom padding', () => {
     const wrapper = shallow(baseComponent({padding: '5px'}))
-    const assertion = wrapper.find('p').props().style
-    expect(assertion).toEqual(
-      expect.objectContaining({ '--padding': '5px' })
-    )
+    const assertion = wrapper.props().padding
+    expect(assertion).toEqual('5px')
   })
 
   it('can have a custom font weight', () => {
     const wrapper = shallow(baseComponent({bold: true}))
-    const assertion = wrapper.find('p').props().style
-    expect(assertion).toEqual(
-      expect.objectContaining({ '--bold': 'bold' })
-    )
+    const assertion = wrapper.props().bold
+    expect(assertion).toEqual(true)
   })
 
   it('can respond to click', () => {
     const value = 'FANCY BROWSER TEXT CLICKED'
     const onClick = jest.fn()
     const wrapper = shallow(baseComponent({onClick}))
-    wrapper.find('p').simulate('click', value)
+    wrapper.simulate('click', value)
     expect(onClick).toBeCalledWith(value)
   })
 })

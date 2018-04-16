@@ -1,24 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-require("./style.css");
+const style_1 = require("./style");
 class BrowserText extends React.PureComponent {
-    get componentStyles() {
-        const { fontSize, color, padding, noSelect, bold } = this.props;
-        return {
-            '--fontSize': fontSize,
-            '--color': color,
-            '--padding': padding,
-            '--noSelect': noSelect && 'none',
-            '--cursor': noSelect && 'default',
-            '--bold': bold && 'bold'
-        };
-    }
     render() {
-        const { id, onClick, text } = this.props;
-        return (React.createElement("p", { id: id, className: 'browserTextStyles', onClick: onClick, style: this.componentStyles }, text != null
-            ? text.toString()
-            : null));
+        return (React.createElement(style_1.default, { id: this.props.id, onClick: this.props.onClick, fontSize: this.props.fontSize, color: this.props.color, padding: this.props.padding, noSelect: this.props.noSelect, bold: this.props.bold, text: this.props.text }, this.props.text != null ? this.props.text.toString() : null));
     }
 }
 exports.default = BrowserText;
