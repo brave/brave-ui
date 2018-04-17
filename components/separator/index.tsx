@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import './style.css'
+import StyledSeparator from './style'
 
 export interface SeparatorProps {
   // component styles
@@ -11,16 +11,9 @@ export interface SeparatorProps {
 }
 
 class Separator extends React.PureComponent<SeparatorProps, {}> {
-  get componentStyles () {
-    const { noMargin } = this.props
-    return {
-      '--separatorMargin': noMargin && 0
-    }
-  }
-
   render () {
     return (
-      <hr className='separator' style={this.componentStyles} />
+      <StyledSeparator noMargin={this.props.noMargin} />
     )
   }
 }

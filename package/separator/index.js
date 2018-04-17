@@ -1,16 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-require("./style.css");
+const style_1 = require("./style");
 class Separator extends React.PureComponent {
-    get componentStyles() {
-        const { noMargin } = this.props;
-        return {
-            '--separatorMargin': noMargin && 0
-        };
-    }
     render() {
-        return (React.createElement("hr", { className: 'separator', style: this.componentStyles }));
+        return (React.createElement(style_1.default, { noMargin: this.props.noMargin }));
     }
 }
 exports.default = Separator;

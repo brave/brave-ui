@@ -2,12 +2,17 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-.separator {
+import styled from 'styled-components'
+import { SeparatorProps } from './index'
+
+const StyledSeparator = styled.hr`
   box-sizing: border-box;
   background: #ccc;
   border: 0px;
   height: 1px;
   width: 100%;
-  margin-top: var(--separatorMargin, 10px);
-  margin-bottom: var(--separatorMargin, 10px);
-}
+  margin-top: ${(p: SeparatorProps) => p.noMargin ? '0' : '10px'};
+  margin-bottom: ${(p: SeparatorProps) => p.noMargin ? '0' : '10px'};
+` as any
+
+export default StyledSeparator
