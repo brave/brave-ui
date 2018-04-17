@@ -17,7 +17,7 @@ import { BetterVisualizer } from './storyUtil'
 
 // Components
 import * as React from 'react'
-import { gridTemplate, Grid, Column } from '../components/gridSystem'
+import { Grid, Column } from '../components/gridSystem'
 
 addDecorator(withKnobs)
 
@@ -76,7 +76,7 @@ storiesOf('Grid System', module)
   .add('Grid Playground', () => {
     const options = {}
 
-    Array.from({ length: gridTemplate }, (v, i) => i + 1).forEach(size =>
+    Array.from({ length: 12 }, (v, i) => i + 1).forEach(size =>
       Object.assign(options, { [size.toString()]: size })
     )
 

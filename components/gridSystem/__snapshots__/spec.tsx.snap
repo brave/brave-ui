@@ -2,35 +2,19 @@
 
 exports[`gridSystem tests column component matches the snapshot 1`] = `
 <div
-  className="column"
+  className="sc-bwzfXH jVikWA"
+  direction={undefined}
   id={undefined}
-  style={
-    Object {
-      "--columnAlign": undefined,
-      "--columnBackground": undefined,
-      "--columnDirection": undefined,
-      "--columnDisplay": false,
-      "--columnSize": "span 12",
-      "--columnVerticalAlign": undefined,
-    }
-  }
+  size={undefined}
 />
 `;
 
 exports[`gridSystem tests grid component matches the snapshot 1`] = `
 <div
-  className="grid"
+  className="sc-bdVaJa dzQmNt"
+  disabled={false}
+  height={undefined}
   id={undefined}
-  style={
-    Object {
-      "--gridBackground": undefined,
-      "--gridGap": undefined,
-      "--gridHeight": undefined,
-      "--gridPadding": undefined,
-      "--gridTemplateColumns": 12,
-      "--gridTextColor": undefined,
-      "--gridWidth": undefined,
-    }
-  }
+  width={undefined}
 />
 `;

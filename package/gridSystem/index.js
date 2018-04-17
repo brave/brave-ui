@@ -1,49 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-require("./style.css");
-const helpers_1 = require("../helpers");
-exports.gridTemplate = 12;
+const style_1 = require("./style");
 class Grid extends React.PureComponent {
-    get componentStyles() {
-        const { columns, padding, gap, width, height, textColor, background } = this.props;
-        return {
-            '--gridTemplateColumns': columns != null ? columns : exports.gridTemplate,
-            '--gridPadding': padding,
-            '--gridGap': gap,
-            '--gridWidth': width,
-            '--gridHeight': height,
-            '--gridTextColor': textColor,
-            '--gridBackground': background
-        };
-    }
     render() {
-        const { id, disabled = false, children } = this.props;
-        return (React.createElement("div", { id: id, className: helpers_1.applyClass({
-                grid: true,
-                grid__disabled: disabled
-            }), style: this.componentStyles }, children));
+        return (React.createElement(style_1.StyledGrid, { id: this.props.id, disabled: this.props.disabled ? this.props.disabled : false, columns: this.props.columns, padding: this.props.padding, gap: this.props.gap, width: this.props.width, height: this.props.height, textColor: this.props.textColor, background: this.props.background }, this.props.children));
     }
 }
 exports.Grid = Grid;
 class Column extends React.PureComponent {
-    get componentStyles() {
-        const { props } = this;
-        const needsFlex = ('align' in props ||
-            'verticalAlign' in props ||
-            'direction' in props);
-        return {
-            '--columnSize': 'size' in props ? `span ${props.size}` : `span ${exports.gridTemplate}`,
-            '--columnDisplay': needsFlex && 'flex',
-            '--columnAlign': props.align,
-            '--columnVerticalAlign': props.verticalAlign,
-            '--columnBackground': props.background,
-            '--columnDirection': props.direction
-        };
-    }
     render() {
-        const { id, children } = this.props;
-        return (React.createElement("div", { id: id, className: 'column', style: this.componentStyles }, children));
+        return (React.createElement(style_1.StyledColumn, { id: this.props.id, size: this.props.size, align: this.props.align, verticalAlign: this.props.verticalAlign, background: this.props.background, direction: this.props.direction }, this.props.children));
     }
 }
 exports.Column = Column;

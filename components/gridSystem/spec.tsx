@@ -20,34 +20,26 @@ describe('gridSystem tests', () => {
 
     it('defines a custom padding', () => {
       const wrapper = shallow(<Grid padding='20px' />)
-      const assertion = wrapper.find('div').props().style
-      expect(assertion).toEqual(
-        expect.objectContaining({ '--gridPadding': '20px' })
-      )
+      const assertion = wrapper.props().padding
+      expect(assertion).toEqual('20px')
     })
 
     it('defines a custom gap', () => {
       const wrapper = shallow(<Grid gap='10px' />)
-      const assertion = wrapper.find('div').props().style
-      expect(assertion).toEqual(
-        expect.objectContaining({ '--gridGap': '10px' })
-      )
+      const assertion = wrapper.props().gap
+      expect(assertion).toEqual('10px')
     })
 
     it('defines a custom width', () => {
       const wrapper = shallow(<Grid width='13px' />)
-      const assertion = wrapper.find('div').props().style
-      expect(assertion).toEqual(
-        expect.objectContaining({ '--gridWidth': '13px' })
-      )
+      const assertion = wrapper.props().width
+      expect(assertion).toEqual('13px')
     })
 
     it('defines a custom background', () => {
       const wrapper = shallow(<Grid background='cyan' />)
-      const assertion = wrapper.find('div').props().style
-      expect(assertion).toEqual(
-        expect.objectContaining({ '--gridBackground': 'cyan' })
-      )
+      const assertion = wrapper.props().background
+      expect(assertion).toEqual('cyan')
     })
   })
 
@@ -66,26 +58,20 @@ describe('gridSystem tests', () => {
 
     it('defines a custom align', () => {
       const wrapper = shallow(<Column align='flex-start' />)
-      const assertion = wrapper.find('div').props().style
-      expect(assertion).toEqual(
-        expect.objectContaining({ '--columnAlign': 'flex-start' })
-      )
+      const assertion = wrapper.props().align
+      expect(assertion).toEqual('flex-start')
     })
 
     it('defines a custom verticalAlign', () => {
       const wrapper = shallow(<Column verticalAlign='flex-end' />)
-      const assertion = wrapper.find('div').props().style
-      expect(assertion).toEqual(
-        expect.objectContaining({ '--columnVerticalAlign': 'flex-end' })
-      )
+      const assertion = wrapper.props().verticalAlign
+      expect(assertion).toEqual('flex-end')
     })
 
     it('defines a custom background', () => {
       const wrapper = shallow(<Column background='purple' />)
-      const assertion = wrapper.find('div').props().style
-      expect(assertion).toEqual(
-        expect.objectContaining({ '--columnBackground': 'purple' })
-      )
+      const assertion = wrapper.props().background
+      expect(assertion).toEqual('purple')
     })
   })
 })

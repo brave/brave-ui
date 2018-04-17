@@ -3,12 +3,8 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import './style.css'
+import { StyledGrid, StyledColumn } from './style'
 
-import { applyClass } from '../helpers'
-
-// Create a 12-based column grid system
-export const gridTemplate = 12
 export interface GridProps {
   id?: string,
   disabled?: boolean,
@@ -24,31 +20,21 @@ export interface GridProps {
 }
 
 class Grid extends React.PureComponent<GridProps, {}> {
-  get componentStyles () {
-    const { columns, padding, gap, width, height, textColor, background } = this.props
-    return {
-      '--gridTemplateColumns': columns != null ? columns : gridTemplate,
-      '--gridPadding': padding,
-      '--gridGap': gap,
-      '--gridWidth': width,
-      '--gridHeight': height,
-      '--gridTextColor': textColor,
-      '--gridBackground': background
-    }
-  }
-
   render () {
-    const { id, disabled = false, children } = this.props
     return (
-      <div
-        id={id}
-        className={applyClass({
-          grid: true,
-          grid__disabled: disabled
-        })}
-        style={this.componentStyles}>
-        {children}
-      </div>
+      <StyledGrid
+        id={this.props.id}
+        disabled={this.props.disabled ? this.props.disabled : false}
+        columns={this.props.columns}
+        padding={this.props.padding}
+        gap={this.props.gap}
+        width={this.props.width}
+        height={this.props.height}
+        textColor={this.props.textColor}
+        background={this.props.background}
+      >
+        {this.props.children}
+      </StyledGrid>
     )
   }
 }
@@ -57,7 +43,7 @@ export interface ColumnProps {
   id?: string,
   children?: React.ReactNode,
   // Component styles
-  size?: number,
+  size?: number | string,
   align?: string,
   verticalAlign?: string,
   background?: string,
@@ -65,32 +51,18 @@ export interface ColumnProps {
 }
 
 class Column extends React.PureComponent<ColumnProps, {}> {
-  get componentStyles () {
-    const { props } = this
-    const needsFlex = (
-      'align' in props ||
-      'verticalAlign' in props ||
-      'direction' in props
-    )
-    return {
-      '--columnSize': 'size' in props ? `span ${props.size}` : `span ${gridTemplate}`,
-      '--columnDisplay': needsFlex && 'flex',
-      '--columnAlign': props.align,
-      '--columnVerticalAlign': props.verticalAlign,
-      '--columnBackground': props.background,
-      '--columnDirection': props.direction
-    }
-  }
-
   render () {
-    const { id, children } = this.props
     return (
-      <div
-        id={id}
-        className='column'
-        style={this.componentStyles}>
-        {children}
-      </div>
+      <StyledColumn
+        id={this.props.id}
+        size={this.props.size}
+        align={this.props.align}
+        verticalAlign={this.props.verticalAlign}
+        background={this.props.background}
+        direction={this.props.direction}
+      >
+        {this.props.children}
+      </StyledColumn>
     )
   }
 }
