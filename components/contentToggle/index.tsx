@@ -3,9 +3,8 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import './style.css'
+import StyledContentToggle from './style'
 
-import { applyClass } from '../helpers'
 import Separator from '../separator'
 
 export interface ContentToggleProps {
@@ -45,25 +44,25 @@ class ContentToggle extends React.PureComponent<ContentToggleProps, ContentToggl
   }
 
   render () {
-    const { id, summary, defaultOpen = false, withSeparator, children } = this.props
-    const { open } = this.state
-    const maybeOpen = 'defaultOpen' in this.props ? (defaultOpen && open) : !!open
+    const maybeOpen = 'defaultOpen' in this.props
+      ? (this.props.defaultOpen &&  this.state.open)
+      : !!this.state.open
+
     return (
       <details
-        id={id}
-        open={maybeOpen}>
-        <summary
+        id={this.props.id}
+        open={maybeOpen}
+      >
+        <StyledContentToggle
           onClick={this.handleClick}
-          className={applyClass({
-            summary: true,
-            summary__open: maybeOpen != null ? maybeOpen : false
-          })}
+          defaultOpen={this.props.defaultOpen ? this.props.defaultOpen : false}
+          open={maybeOpen != null ? maybeOpen : false}
         >
-          {summary}
-          {withSeparator && <Separator />}
-        </summary>
-        <div>{children}</div>
-        {withSeparator && <Separator />}
+          { this.props.summary }
+          { this.props.withSeparator ? <Separator /> : null }
+        </StyledContentToggle>
+        <div>{ this.props.children }</div>
+        { this.props.withSeparator ? <Separator /> : null }
       </details>
     )
   }

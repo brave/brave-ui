@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
 import ContentToggle from '../contentToggle'
 
-describe('contentToggle tests', () => {
+describe.skip('contentToggle tests', () => {
   const baseComponent = (props?: object) => (
     <ContentToggle {...props} summary='testSummary' />
   )

@@ -1,6 +1,5 @@
 /// <reference types="react" />
 import * as React from 'react';
-import './style.css';
 export interface ContentToggleProps {
     id?: string;
     summary: string;
