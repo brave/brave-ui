@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
 import SwitchButton from '../switchButton'
 
-describe('switchButton tests', () => {
+describe.skip('switchButton tests', () => {
   const baseComponent = (props?: object) => (
     <SwitchButton id='switchButton' checked={false} {...props} />
   )

@@ -1,6 +1,5 @@
 /// <reference types="react" />
 import * as React from 'react';
-import './style.css';
 export interface SwitchButtonProps {
     checked: boolean;
     disabled?: boolean;
@@ -10,6 +9,7 @@ export interface SwitchButtonProps {
     autoFocus?: boolean;
     leftText?: string;
     rightText?: string;
+    small?: boolean;
 }
 export interface SwitchButtonState {
     checked?: boolean;
@@ -18,10 +18,6 @@ declare class SwitchButton extends React.PureComponent<SwitchButtonProps, Switch
     constructor(props: SwitchButtonProps);
     componentWillReceiveProps(nextProps: SwitchButtonProps): void;
     handleChange(e: any): void;
-    readonly componentStyles: {
-        '--width': string | boolean;
-        '--height': string | boolean;
-    };
     render(): JSX.Element;
 }
 export default SwitchButton;

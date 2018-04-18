@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-require("./style.css");
-const helpers_1 = require("../helpers");
+const style_1 = require("./style");
 class SwitchButton extends React.PureComponent {
     constructor(props) {
         super(props);
@@ -24,34 +23,18 @@ class SwitchButton extends React.PureComponent {
         }
         props.onChange({ target: { checked: e.target.checked } });
     }
-    get componentStyles() {
-        const { props } = this;
-        return {
-            '--width': 'small' in props && '40px',
-            '--height': 'small' in props && '14px'
-        };
-    }
     render() {
         const { id, readOnly, disabled = false, autoFocus, leftText, rightText } = this.props;
         const { checked } = this.state;
-        return (React.createElement("div", { className: helpers_1.applyClass({
-                switchButton_wrapper: true,
-                switchButton_wrapper__disabled: disabled
-            }) },
+        return (React.createElement(style_1.StyledSwitchButtonWrapper, { disabled: disabled },
             !!leftText &&
-                React.createElement("label", { id: `${id}LeftText`, className: 'switchButton_label__left', htmlFor: id }, leftText),
+                React.createElement(style_1.StyledSwitchButtonLeftLabel, { id: `${id}LeftText`, htmlFor: id }, leftText),
             React.createElement("div", null,
-                React.createElement("input", { type: 'checkbox', id: id, readOnly: readOnly, disabled: disabled, className: 'checkbox', checked: !!checked, onChange: this.handleChange, autoFocus: autoFocus }),
-                React.createElement("label", { htmlFor: id, className: helpers_1.applyClass({
-                        switchButton: true,
-                        switchButton__checked: !!checked
-                    }), style: this.componentStyles },
-                    React.createElement("i", { style: this.componentStyles, className: helpers_1.applyClass({
-                            switchButton_knob: true,
-                            switchButton_knob__checked: !!checked
-                        }) }))),
+                React.createElement(style_1.StyledCheckbox, { type: 'checkbox', id: id, readOnly: readOnly, disabled: disabled, checked: !!checked, onChange: this.handleChange, autoFocus: autoFocus }),
+                React.createElement(style_1.StyledSwitchButton, { htmlFor: id, checked: !!checked, small: this.props.small },
+                    React.createElement(style_1.StyledSwitchButtonKnob, { checked: !!checked, small: this.props.small }))),
             !!rightText &&
-                React.createElement("label", { id: `${id}RightText`, className: 'switchButton_label__right', htmlFor: id }, rightText)));
+                React.createElement(style_1.StyledSwitchButtonRightLabel, { id: `${id}RightText`, htmlFor: id }, rightText)));
     }
 }
 exports.default = SwitchButton;

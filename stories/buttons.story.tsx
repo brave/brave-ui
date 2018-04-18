@@ -70,7 +70,7 @@ storiesOf('Buttons', module)
         id='sampleSwitch'
         leftText={text('Left Label', 'Some label here')}
         rightText={text('Right Label', 'Some label here too')}
-        readOnly={boolean('Read only?', false)}
+        small={boolean('Small?', false)}
         checked={boolean('Checked?', store.state.checked)}
         disabled={boolean('Disabled?', false)}
         autoFocus={boolean('AutoFocus?', false)}

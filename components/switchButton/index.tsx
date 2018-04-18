@@ -3,9 +3,14 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import './style.css'
-
-import { applyClass } from '../helpers'
+import {
+  StyledSwitchButtonWrapper,
+  StyledSwitchButtonLeftLabel,
+  StyledSwitchButtonRightLabel,
+  StyledCheckbox,
+  StyledSwitchButton,
+  StyledSwitchButtonKnob
+} from './style'
 
 export interface SwitchButtonProps {
   checked: boolean,
@@ -15,7 +20,8 @@ export interface SwitchButtonProps {
   readOnly?: boolean,
   autoFocus?: boolean,
   leftText?: string,
-  rightText?: string
+  rightText?: string,
+  small?: boolean
 }
 
 export interface SwitchButtonState {
@@ -48,70 +54,39 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
     props.onChange!({ target: { checked: e.target.checked } })
   }
 
-  get componentStyles () {
-    const { props } = this
-    return {
-      '--width': 'small' in props && '40px',
-      '--height': 'small' in props && '14px'
-    }
-  }
-
   render () {
     const { id, readOnly, disabled = false, autoFocus, leftText, rightText } = this.props
     const { checked } = this.state
 
     return (
-      <div className={applyClass({
-        switchButton_wrapper: true,
-        switchButton_wrapper__disabled: disabled
-      })}>
+      <StyledSwitchButtonWrapper disabled={disabled}>
         {
           !!leftText &&
-          <label
-            id={`${id}LeftText`}
-            className='switchButton_label__left'
-            htmlFor={id}>
+          <StyledSwitchButtonLeftLabel id={`${id}LeftText`} htmlFor={id}>
             {leftText}
-          </label>
+          </StyledSwitchButtonLeftLabel>
         }
         <div>
-          <input
+          <StyledCheckbox
             type='checkbox'
             id={id}
             readOnly={readOnly}
             disabled={disabled}
-            className='checkbox'
             checked={!!checked}
             onChange={this.handleChange}
             autoFocus={autoFocus}
           />
-          <label
-            htmlFor={id}
-            className={applyClass({
-              switchButton: true,
-              switchButton__checked: !!checked
-            })}
-            style={this.componentStyles}
-          >
-            <i
-              style={this.componentStyles}
-              className={applyClass({
-                switchButton_knob: true,
-                switchButton_knob__checked: !!checked
-              })}
-            />
-          </label>
+          <StyledSwitchButton htmlFor={id} checked={!!checked} small={this.props.small}>
+            <StyledSwitchButtonKnob checked={!!checked} small={this.props.small} />
+          </StyledSwitchButton>
         </div>
         {
           !!rightText &&
-          <label
-            id={`${id}RightText`}
-            className='switchButton_label__right'
-            htmlFor={id}>
+          <StyledSwitchButtonRightLabel id={`${id}RightText`} htmlFor={id}>
             {rightText}
-          </label>
+          </StyledSwitchButtonRightLabel>
         }
-      </div>
+      </StyledSwitchButtonWrapper>
     )
   }
 }
