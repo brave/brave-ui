@@ -56,7 +56,7 @@ const StyledBrowserSelectWrapper = styled.div`
 ` as any
 
 const StyledBrowserSelectTitle = styled.p`
-  margin-bottom: 0 0 4px 2px;
+  margin: 0 0 4px 2px;
 ` as any
 
 export {
