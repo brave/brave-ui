@@ -1,4 +1,7 @@
-*
+# ignore everything
+/*
+
+# whitelist useful sources
 !.babelrc
 !package.json
 !README.md

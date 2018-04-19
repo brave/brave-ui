@@ -14,7 +14,9 @@ coverage
 node_modules
 
 # No need for package-lock.json in the brave-ui repo
-brave-ui/package-lock.json
+# as yarn is used for prod
+package/package-lock.json
+package-lock.json
 
 # Temp files
 .DS_Store
@@ -25,7 +27,3 @@ brave-ui/package-lock.json
 
 # webstrom
 .idea
-
-# project specifics
-./package/components
-./package/stories
