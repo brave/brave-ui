@@ -22,7 +22,7 @@
     "lint": "standard --fix --verbose",
     "publish": "lerna publish && npm run deploy",
     "start": "start-storybook -p 9091 -c .storybook",
-    "test": "jest --verbose -t",
+    "test": "jest -t",
     "test-all": "jest --verbose",
     "coverage": "jest --coverage --verbose"
   },
