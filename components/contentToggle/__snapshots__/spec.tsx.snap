@@ -1,16 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`contentToggle tests matches the snapshot 1`] = `
-<details
-  id={undefined}
-  open={false}
+<div
+  className="sc-bdVaJa iZymIP"
+  id="testContentToggle"
+  open={undefined}
 >
-  <summary
-    className="summary"
+  <div
+    className="sc-bwzfXH hwZXDk"
+    id="testContentToggleControl"
     onClick={[Function]}
+    open={undefined}
   >
-    testSummary
-  </summary>
-  <div />
-</details>
+    <div
+      className="sc-htpNat gnOXKr"
+    >
+      testSummary
+    </div>
+  </div>
+  <div
+    className="sc-bxivhb hUyKvu"
+    open={undefined}
+  />
+</div>
 `;

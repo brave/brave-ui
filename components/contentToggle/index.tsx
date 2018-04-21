@@ -3,7 +3,12 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import StyledContentToggle from './style'
+import {
+  StyledContentToggle,
+  StyledContentToggleControl,
+  StyledContentToggleSummary,
+  StyledContentToggleContent
+} from './style'
 
 import Separator from '../separator'
 
@@ -24,8 +29,9 @@ export interface ContentToggleState {
 class ContentToggle extends React.PureComponent<ContentToggleProps, ContentToggleState> {
   constructor (props: ContentToggleProps) {
     super(props)
-    const open = 'open' in props ? props.open : props.defaultOpen
-    this.state = { open }
+    // defaultOpen is only valid when there's no user activity
+    // which means open is undefined
+    this.state = { open: props.open != null ? props.open : props.defaultOpen }
     this.handleClick = this.handleClick.bind(this)
   }
 
@@ -36,34 +42,33 @@ class ContentToggle extends React.PureComponent<ContentToggleProps, ContentToggl
   }
 
   handleClick (e: any) {
-    const { props } = this
-    if (!('open' in props)) {
-      this.setState({ open: e.target.open })
-    }
-    props.onClick!({ target: { open: e.target.open } })
+    this.setState((prevState: ContentToggleState) => ({open: !prevState.open}))
+
+    this.props.onClick!({
+      target: {
+        open: this.state.open,
+        id: e.target.id
+      }
+    })
   }
 
-  render () {
-    const maybeOpen = 'defaultOpen' in this.props
-      ? (this.props.defaultOpen &&  this.state.open)
-      : !!this.state.open
+  render() {
+    const { id, summary, withSeparator, children } = this.props
+    const { open } = this.state
 
     return (
-      <details
-        id={this.props.id}
-        open={maybeOpen}
-      >
-        <StyledContentToggle
+      <StyledContentToggle id={id} open={open} withSeparator={withSeparator}>
+        <StyledContentToggleControl
+          id={`${id}Control`}
+          open={open}
           onClick={this.handleClick}
-          defaultOpen={this.props.defaultOpen ? this.props.defaultOpen : false}
-          open={maybeOpen != null ? maybeOpen : false}
         >
-          { this.props.summary }
-          { this.props.withSeparator ? <Separator /> : null }
-        </StyledContentToggle>
-        <div>{ this.props.children }</div>
-        { this.props.withSeparator ? <Separator /> : null }
-      </details>
+          {withSeparator && <Separator />}
+          <StyledContentToggleSummary>{summary}</StyledContentToggleSummary>
+          {withSeparator && <Separator />}
+        </StyledContentToggleControl>
+        <StyledContentToggleContent open={open}>{children}</StyledContentToggleContent>
+      </StyledContentToggle>
     )
   }
 }

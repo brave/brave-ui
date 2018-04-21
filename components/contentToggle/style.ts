@@ -3,19 +3,44 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
-import { ContentToggleProps } from './index'
+import { ContentToggleState } from './index'
 
-const StyledContentToggle = styled.summary`
-  display: block;
+const StyledContentToggle = styled.div`
+  box-sizing: border-box;
+  width: fit-content;
+` as any
 
-  &::-webkit-details-marker {
-    display: none;
-  }
+const StyledContentToggleControl = styled.div`
+  box-sizing: border-box;
+  position: relative;
 
-  &::before {
-    content: ${(p: ContentToggleProps) => p.open ? '"▼"' : '"▶"'};
-    padding-right: 0.5em;
+  &::after {
+    content: ${(s: ContentToggleState) => s.open ? '"▼"' : '"▶"'};
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    top 0;
+    left: 0;
   }
 ` as any
 
-export default StyledContentToggle
+const StyledContentToggleSummary = styled.div`
+  box-sizing: border-box;
+  margin-left: 25px;
+` as any
+
+const StyledContentToggleContent = styled.div`
+  box-sizing: border-box;
+  visibility: ${(s: ContentToggleState) => s.open ? 'visible' : 'hidden'};
+  width: 200px;
+  height: 200px;
+  background: yellow;
+` as any
+
+export {
+  StyledContentToggle,
+  StyledContentToggleControl,
+  StyledContentToggleSummary,
+  StyledContentToggleContent
+}

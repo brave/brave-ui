@@ -6,8 +6,7 @@ const separator_1 = require("../separator");
 class ContentToggle extends React.PureComponent {
     constructor(props) {
         super(props);
-        const open = 'open' in props ? props.open : props.defaultOpen;
-        this.state = { open };
+        this.state = { open: props.open != null ? props.open : props.defaultOpen };
         this.handleClick = this.handleClick.bind(this);
     }
     componentWillReceiveProps(nextProps) {
@@ -16,22 +15,23 @@ class ContentToggle extends React.PureComponent {
         }
     }
     handleClick(e) {
-        const { props } = this;
-        if (!('open' in props)) {
-            this.setState({ open: e.target.open });
-        }
-        props.onClick({ target: { open: e.target.open } });
+        this.setState((prevState) => ({ open: !prevState.open }));
+        this.props.onClick({
+            target: {
+                open: this.state.open,
+                id: e.target.id
+            }
+        });
     }
     render() {
-        const maybeOpen = 'defaultOpen' in this.props
-            ? (this.props.defaultOpen && this.state.open)
-            : !!this.state.open;
-        return (React.createElement("details", { id: this.props.id, open: maybeOpen },
-            React.createElement(style_1.default, { onClick: this.handleClick, defaultOpen: this.props.defaultOpen ? this.props.defaultOpen : false, open: maybeOpen != null ? maybeOpen : false },
-                this.props.summary,
-                this.props.withSeparator ? React.createElement(separator_1.default, null) : null),
-            React.createElement("div", null, this.props.children),
-            this.props.withSeparator ? React.createElement(separator_1.default, null) : null));
+        const { id, summary, withSeparator, children } = this.props;
+        const { open } = this.state;
+        return (React.createElement(style_1.StyledContentToggle, { id: id, open: open, withSeparator: withSeparator },
+            React.createElement(style_1.StyledContentToggleControl, { id: `${id}Control`, open: open, onClick: this.handleClick },
+                withSeparator && React.createElement(separator_1.default, null),
+                React.createElement(style_1.StyledContentToggleSummary, null, summary),
+                withSeparator && React.createElement(separator_1.default, null)),
+            React.createElement(style_1.StyledContentToggleContent, { open: open }, children)));
     }
 }
 exports.default = ContentToggle;
