@@ -2,11 +2,11 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import ContentToggle from '../contentToggle'
+import ContentToggleArrow from '../contentToggleArrow'
 
-describe('contentToggle tests', () => {
+describe('contentToggleArrow tests', () => {
   const baseComponent = (props?: object) => (
-    <ContentToggle id='testContentToggle' summary='testSummary' {...props} />
+    <ContentToggleArrow id='testContentToggleArrow' summary='testSummary' {...props} />
   )
 
   it('matches the snapshot', () => {
@@ -16,8 +16,8 @@ describe('contentToggle tests', () => {
   })
 
   it('renders the component', () => {
-    const wrapper = shallow(baseComponent({id: 'testContentToggleId'}))
-    const assertion = wrapper.find('#testContentToggleId').length
+    const wrapper = shallow(baseComponent({id: 'testContentToggleArrowId'}))
+    const assertion = wrapper.find('#testContentToggleArrowId').length
     expect(assertion).toBe(1)
   })
 
@@ -68,7 +68,7 @@ describe('contentToggle tests', () => {
     const value = {target: { open: true }}
     const onClick = jest.fn()
     const wrapper = shallow(baseComponent({onClick}))
-    wrapper.find('#testContentToggleControl').simulate('click', value)
+    wrapper.find('#testContentToggleArrowControl').simulate('click', value)
     expect(onClick).toBeCalledWith(value)
   })
 })

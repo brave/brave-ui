@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`contentToggle tests matches the snapshot 1`] = `
+exports[`contentToggleArrow tests matches the snapshot 1`] = `
 <div
   className="sc-bdVaJa iZymIP"
-  id="testContentToggle"
+  id="testContentToggleArrow"
   open={undefined}
 >
   <div
     className="sc-bwzfXH hwZXDk"
-    id="testContentToggleControl"
+    id="testContentToggleArrowControl"
     onClick={[Function]}
     open={undefined}
   >

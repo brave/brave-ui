@@ -3,19 +3,19 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
-import { ContentToggleState } from './index'
+import { ContentToggleArrowState } from './index'
 
-const StyledContentToggle = styled.div`
+const StyledContentToggleArrow = styled.div`
   box-sizing: border-box;
   width: fit-content;
 ` as any
 
-const StyledContentToggleControl = styled.div`
+const StyledContentToggleArrowControl = styled.div`
   box-sizing: border-box;
   position: relative;
 
   &::after {
-    content: ${(s: ContentToggleState) => s.open ? '"▼"' : '"▶"'};
+    content: ${(s: ContentToggleArrowState) => s.open ? '"▼"' : '"▶"'};
     display: flex;
     align-items: center;
     height: 100%;
@@ -25,22 +25,22 @@ const StyledContentToggleControl = styled.div`
   }
 ` as any
 
-const StyledContentToggleSummary = styled.div`
+const StyledContentToggleArrowSummary = styled.div`
   box-sizing: border-box;
   margin-left: 25px;
 ` as any
 
-const StyledContentToggleContent = styled.div`
+const StyledContentToggleArrowContent = styled.div`
   box-sizing: border-box;
-  visibility: ${(s: ContentToggleState) => s.open ? 'visible' : 'hidden'};
+  visibility: ${(s: ContentToggleArrowState) => s.open ? 'visible' : 'hidden'};
   width: 200px;
   height: 200px;
   background: yellow;
 ` as any
 
 export {
-  StyledContentToggle,
-  StyledContentToggleControl,
-  StyledContentToggleSummary,
-  StyledContentToggleContent
+  StyledContentToggleArrow,
+  StyledContentToggleArrowControl,
+  StyledContentToggleArrowSummary,
+  StyledContentToggleArrowContent
 }

@@ -5,7 +5,7 @@
 /**
  * In this file:
  * ---------------------------------
- * ContentToggle component
+ * ContentToggleArrow component
  * ---------------------------------
  */
 
@@ -17,7 +17,7 @@ import { withState } from '@dump247/storybook-state'
 
 // Components
 import * as React from 'react'
-import ContentToggle from '../components/contentToggle'
+import ContentToggleArrow from '../components/contentToggleArrow'
 
 addDecorator(withKnobs)
 
@@ -27,7 +27,7 @@ addDecorator(BetterVisualizer)
 storiesOf('Other Components', module)
   .add('Content Toggle', withState({ open: true }, (store) => {
     return (
-      <ContentToggle
+      <ContentToggleArrow
         {...store.state}
         withSeparator={boolean('with separator?', true)}
         open={boolean('Open?', store.state.open)}
@@ -36,6 +36,6 @@ storiesOf('Other Components', module)
           store.set({ open: !store.state.open })
         )}>
         <h1>Some text inside!</h1>
-      </ContentToggle>
+      </ContentToggleArrow>
     )
   }))

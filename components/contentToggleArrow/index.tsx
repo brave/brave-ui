@@ -4,15 +4,15 @@
 
 import * as React from 'react'
 import {
-  StyledContentToggle,
-  StyledContentToggleControl,
-  StyledContentToggleSummary,
-  StyledContentToggleContent
+  StyledContentToggleArrow,
+  StyledContentToggleArrowControl,
+  StyledContentToggleArrowSummary,
+  StyledContentToggleArrowContent
 } from './style'
 
 import Separator from '../separator'
 
-export interface ContentToggleProps {
+export interface ContentToggleArrowProps {
   id?: string,
   summary: string,
   open?: boolean,
@@ -22,12 +22,12 @@ export interface ContentToggleProps {
   onClick?: (e: any) => void
 }
 
-export interface ContentToggleState {
+export interface ContentToggleArrowState {
   open?: boolean
 }
 
-class ContentToggle extends React.PureComponent<ContentToggleProps, ContentToggleState> {
-  constructor (props: ContentToggleProps) {
+class ContentToggleArrow extends React.PureComponent<ContentToggleArrowProps, ContentToggleArrowState> {
+  constructor (props: ContentToggleArrowProps) {
     super(props)
     // defaultOpen is only valid when there's no user activity
     // which means open is undefined
@@ -35,14 +35,14 @@ class ContentToggle extends React.PureComponent<ContentToggleProps, ContentToggl
     this.handleClick = this.handleClick.bind(this)
   }
 
-  componentWillReceiveProps (nextProps: ContentToggleProps) {
+  componentWillReceiveProps (nextProps: ContentToggleArrowProps) {
     if ('open' in nextProps) {
       this.setState({ open: nextProps.open })
     }
   }
 
   handleClick (e: any) {
-    this.setState((prevState: ContentToggleState) => ({open: !prevState.open}))
+    this.setState((prevState: ContentToggleArrowState) => ({open: !prevState.open}))
 
     this.props.onClick!({
       target: {
@@ -57,20 +57,20 @@ class ContentToggle extends React.PureComponent<ContentToggleProps, ContentToggl
     const { open } = this.state
 
     return (
-      <StyledContentToggle id={id} open={open} withSeparator={withSeparator}>
-        <StyledContentToggleControl
+      <StyledContentToggleArrow id={id} open={open} withSeparator={withSeparator}>
+        <StyledContentToggleArrowControl
           id={`${id}Control`}
           open={open}
           onClick={this.handleClick}
         >
           {withSeparator && <Separator />}
-          <StyledContentToggleSummary>{summary}</StyledContentToggleSummary>
+          <StyledContentToggleArrowSummary>{summary}</StyledContentToggleArrowSummary>
           {withSeparator && <Separator />}
-        </StyledContentToggleControl>
-        <StyledContentToggleContent open={open}>{children}</StyledContentToggleContent>
-      </StyledContentToggle>
+        </StyledContentToggleArrowControl>
+        <StyledContentToggleArrowContent open={open}>{children}</StyledContentToggleArrowContent>
+      </StyledContentToggleArrow>
     )
   }
 }
 
-export default ContentToggle
+export default ContentToggleArrow
