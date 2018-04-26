@@ -21,7 +21,12 @@ class SwitchButton extends React.PureComponent {
         if (!('checked' in props)) {
             this.setState({ checked: e.target.checked });
         }
-        props.onChange({ target: { checked: e.target.checked } });
+        props.onChange({
+            target: {
+                checked: e.target.checked,
+                id: e.target.id
+            }
+        });
     }
     render() {
         const { id, readOnly, disabled = false, autoFocus, leftText, rightText } = this.props;

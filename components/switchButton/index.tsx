@@ -51,7 +51,12 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
     }
     // add non-null assertion operator
     // in case onChange is not defined i.e. used in a prototype
-    props.onChange!({ target: { checked: e.target.checked } })
+    props.onChange!({
+      target: {
+        checked: e.target.checked,
+        id: e.target.id
+       }
+     })
   }
 
   render () {
