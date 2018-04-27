@@ -1,108 +1,67 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
- * License. v. 2.0. If a copy of the MPL was not distributed with this file.
- * You can obtain one at http://mozilla.org/MPL/2.0/. */
+* License. v. 2.0. If a copy of the MPL was not distributed with this file.
+* You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled, { css } from 'styled-components'
 import { SwitchButtonProps } from './index'
 import theme from '../theme'
+import { setSize } from '../helpers'
 
 /**
- * Wrapper for the switch toggle
- */
+* Wrapper for the switch button
+* Wraps both labels and the switch
+*/
 const StyledSwitchButtonWrapper = styled.div`
   display: flex;
   align-items: center;
 
-  ${(p: SwitchButtonProps) => p.disabled
-    ? css`
-      opacity: 0.3;
-      user-select: none;
-    ` : ''
+  ${(p: SwitchButtonProps) => p.disabled && css`
+    opacity: 0.3;
+    user-select: none;`
   }
 ` as any
 
 /**
- * Helper labels
- */
- const StyledSwitchButtonLeftLabel = styled.label`
-  margin-right: 10px;
-` as any
-
-const StyledSwitchButtonRightLabel = styled.label`
-  margin-left: 10px;
-` as any
-
-/**
- * Input Style
- * Set this as display: none as we have our own hacked element
- */
-const StyledCheckbox = styled.input`
-  display: none;
+* Label for the switch button
+* Sets the styles for both left and right labels
+*/
+const StyledSwitchButtonLabel = styled.label`
+  font-size: ${(p: SwitchButtonProps) => setSize(p, '24px', 'inherit', 'inherit')};
+  margin-left: ${(p: SwitchButtonProps) => setSize(p, '18px', '10px', '10px')};
+  margin-right: ${(p: SwitchButtonProps) => setSize(p, '18px', '10px', '10px')};
+  font-weight: 400;
 ` as any
 
 /**
- * Wrapper for the switch knob
- * This is the main (white) switch area
- */
- const StyledSwitchButton = styled.label`
-  width: ${(p: SwitchButtonProps) => p.small ? '40px' : '48px'};
-  height: ${(p: SwitchButtonProps) => p.small ? '14px' : '16px'};
-  border-radius: ${(p: SwitchButtonProps) => p.small ? '14px' : '16px'};
-  background: ${theme.switchButton.uncheckedBg};
-  box-sizing: border-box;
+* The switch button itself
+*/
+const StyledSwitchButton = styled.input`
+  -webkit-appearance: none;
+  position: relative;
+  width: ${(p: SwitchButtonProps) => setSize(p, '60px', '48px', '40px')};
+  height: ${(p: SwitchButtonProps) => setSize(p, '26px', '16px', '14px')};
+  border-radius: ${(p: SwitchButtonProps) => setSize(p, '26px', '16px', '14px')};
+  border: 2px solid ${theme.switchButton.uncheckedBg};
   padding: 0 2px;
-  display: flex;
-  align-items: center;
-  box-shadow: inset 0 1px 1px 1px #bbb;
-  transition: all 0.4s;
+  background-color: white;
+  outline: none;
+  transition: linear 0.2s;
+  box-shadow:
+    inset
+    -${(p: SwitchButtonProps) => setSize(p, '33px', '31px', '25px')} 0px 0px 0px
+    ${theme.switchButton.uncheckedBg};
 
-  &:active {
-    box-shadow: inset 0 0 0 ${(p: SwitchButtonProps) => p.small ? '40px' : '48px'} #bbb;
-  }
-
-  &:active > i {
-    width: ${(p: SwitchButtonProps) => p.small ? '14px' : '16px'};
-  }
-
-  ${(p: SwitchButtonProps) => p.checked
-    ? css`
-      box-shadow: ${theme.switchButton.checkedBg};
-      border: none;
-
-      &:active > i {
-        margin-left: calc(90% - ${(p: SwitchButtonProps) => p.small ? '10px' : '12px'})
-      }
-    ` : ''
-  }
-` as any
-
-/**
- * Switch toggle knob
- */
-const StyledSwitchButtonKnob = styled.i`
-  box-sizing: border-box;
-  height: calc(${(p: SwitchButtonProps) => p.small ? '14px' : '16px'} - 4px);
-  width: calc(${(p: SwitchButtonProps) => p.small ? '14px' : '16px'} - 4px);
-  border-radius: ${(p: SwitchButtonProps) => p.small ? '14px' : '16px'};
-  background: ${theme.switchButton.knob};
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  box-shadow: 0 2px 2px rgba(0,0,0,0.25);
-  pointer-events: none;
-
-  ${(p: SwitchButtonProps) => p.checked
-    ? css`
-      margin-left: calc(100% - ${(p: SwitchButtonProps) => p.small ? '10px' : '12px'});
-      box-shadow: 0 2px 2px rgba(0,0,0,0.25);
-    ` : ''
+  &:checked {
+    border: 2px solid ${theme.switchButton.checkedBg};
+    box-shadow:
+      inset
+      ${(p: SwitchButtonProps) => setSize(p, '33px', '31px', '25px')} 0px 0px 0px
+      ${theme.switchButton.checkedBg};
   }
 ` as any
 
 export {
   StyledSwitchButtonWrapper,
-  StyledSwitchButtonLeftLabel,
-  StyledSwitchButtonRightLabel,
-  StyledCheckbox,
-  StyledSwitchButton,
-  StyledSwitchButtonKnob
+  StyledSwitchButtonLabel,
+  StyledSwitchButton
 }

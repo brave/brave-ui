@@ -9,7 +9,7 @@ export interface SwitchButtonProps {
     autoFocus?: boolean;
     leftText?: string;
     rightText?: string;
-    small?: boolean;
+    size?: 'large' | 'medium' | 'small';
 }
 export interface SwitchButtonState {
     checked?: boolean;
@@ -18,6 +18,7 @@ declare class SwitchButton extends React.PureComponent<SwitchButtonProps, Switch
     constructor(props: SwitchButtonProps);
     componentWillReceiveProps(nextProps: SwitchButtonProps): void;
     handleChange(e: any): void;
+    getLabel(side: 'left' | 'right'): JSX.Element;
     render(): JSX.Element;
 }
 export default SwitchButton;

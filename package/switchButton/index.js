@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
+const helpers_1 = require("../helpers");
 const style_1 = require("./style");
 class SwitchButton extends React.PureComponent {
     constructor(props) {
@@ -28,18 +29,16 @@ class SwitchButton extends React.PureComponent {
             }
         });
     }
+    getLabel(side) {
+        return (React.createElement(style_1.StyledSwitchButtonLabel, { id: `${this.props.id + helpers_1.capitalize(side)}Text`, htmlFor: this.props.id, size: this.props.size }, side === 'left' ? this.props.leftText : this.props.rightText));
+    }
     render() {
-        const { id, readOnly, disabled = false, autoFocus, leftText, rightText } = this.props;
+        const { id, readOnly, disabled, autoFocus, size = 'medium', rightText, leftText } = this.props;
         const { checked } = this.state;
         return (React.createElement(style_1.StyledSwitchButtonWrapper, { disabled: disabled },
-            !!leftText &&
-                React.createElement(style_1.StyledSwitchButtonLeftLabel, { id: `${id}LeftText`, htmlFor: id }, leftText),
-            React.createElement("div", null,
-                React.createElement(style_1.StyledCheckbox, { type: 'checkbox', id: id, readOnly: readOnly, disabled: disabled, checked: !!checked, onChange: this.handleChange, autoFocus: autoFocus }),
-                React.createElement(style_1.StyledSwitchButton, { htmlFor: id, checked: !!checked, small: this.props.small },
-                    React.createElement(style_1.StyledSwitchButtonKnob, { checked: !!checked, small: this.props.small }))),
-            !!rightText &&
-                React.createElement(style_1.StyledSwitchButtonRightLabel, { id: `${id}RightText`, htmlFor: id }, rightText)));
+            leftText && this.getLabel('left'),
+            React.createElement(style_1.StyledSwitchButton, { type: 'checkbox', id: id, checked: !!checked, readOnly: readOnly, disabled: disabled, autoFocus: autoFocus, size: size, onChange: this.handleChange }),
+            rightText && this.getLabel('right')));
     }
 }
 exports.default = SwitchButton;

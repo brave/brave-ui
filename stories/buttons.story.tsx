@@ -64,13 +64,21 @@ storiesOf('Buttons', module)
     )
   })
   .add('SwitchButton', withState({ checked: false }, (store) => {
+    const label = 'Button Sizes'
+    const options = {
+      default: 'Default',
+      large: 'Large',
+      small: 'Small'
+    }
+    const defaultValue = 'medium'
+    const value = select(label, options, defaultValue)
     return (
       <SwitchButton
         {...store.state}
         id='sampleSwitch'
         leftText={text('Left Label', 'Some label here')}
         rightText={text('Right Label', 'Some label here too')}
-        small={boolean('Small?', false)}
+        size={value}
         checked={boolean('Checked?', store.state.checked)}
         disabled={boolean('Disabled?', false)}
         autoFocus={boolean('AutoFocus?', false)}

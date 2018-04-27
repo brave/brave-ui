@@ -1,15 +1,14 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this file,
- * You can obtain one at http://mozilla.org/MPL/2.0/. */
+* License, v. 2.0. If a copy of the MPL was not distributed with this file,
+* You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
+import { capitalize } from '../helpers'
+
 import {
   StyledSwitchButtonWrapper,
-  StyledSwitchButtonLeftLabel,
-  StyledSwitchButtonRightLabel,
-  StyledCheckbox,
-  StyledSwitchButton,
-  StyledSwitchButtonKnob
+  StyledSwitchButtonLabel,
+  StyledSwitchButton
 } from './style'
 
 export interface SwitchButtonProps {
@@ -21,7 +20,7 @@ export interface SwitchButtonProps {
   autoFocus?: boolean,
   leftText?: string,
   rightText?: string,
-  small?: boolean
+  size?: 'large' | 'medium' | 'small'
 }
 
 export interface SwitchButtonState {
@@ -55,42 +54,49 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
       target: {
         checked: e.target.checked,
         id: e.target.id
-       }
-     })
+      }
+    })
+  }
+
+  getLabel (side: 'left' | 'right') {
+    return (
+      <StyledSwitchButtonLabel
+        id={`${this.props.id + capitalize(side)}Text`}
+        htmlFor={this.props.id}
+        size={this.props.size}
+      >
+        { side === 'left' ? this.props.leftText : this.props.rightText }
+      </StyledSwitchButtonLabel>
+    )
   }
 
   render () {
-    const { id, readOnly, disabled = false, autoFocus, leftText, rightText } = this.props
+    const {
+      id,
+      readOnly,
+      disabled,
+      autoFocus,
+      size = 'medium',
+      rightText,
+      leftText
+    } = this.props
+
     const { checked } = this.state
 
     return (
       <StyledSwitchButtonWrapper disabled={disabled}>
-        {
-          !!leftText &&
-          <StyledSwitchButtonLeftLabel id={`${id}LeftText`} htmlFor={id}>
-            {leftText}
-          </StyledSwitchButtonLeftLabel>
-        }
-        <div>
-          <StyledCheckbox
+        { leftText && this.getLabel('left') }
+          <StyledSwitchButton
             type='checkbox'
             id={id}
+            checked={!!checked}
             readOnly={readOnly}
             disabled={disabled}
-            checked={!!checked}
-            onChange={this.handleChange}
             autoFocus={autoFocus}
+            size={size}
+            onChange={this.handleChange}
           />
-          <StyledSwitchButton htmlFor={id} checked={!!checked} small={this.props.small}>
-            <StyledSwitchButtonKnob checked={!!checked} small={this.props.small} />
-          </StyledSwitchButton>
-        </div>
-        {
-          !!rightText &&
-          <StyledSwitchButtonRightLabel id={`${id}RightText`} htmlFor={id}>
-            {rightText}
-          </StyledSwitchButtonRightLabel>
-        }
+        { rightText && this.getLabel('right') }
       </StyledSwitchButtonWrapper>
     )
   }
