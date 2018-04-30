@@ -21,6 +21,7 @@ Welcome to the Brave UI repo! Here you will find a list of reusable stateless Re
 * [Creating components and Architecture Overview](https://github.com/brave/brave-ui/blob/master/docs/components.md)
 * [Coverage, running and creating tests](https://github.com/brave/brave-ui/blob/master/docs/tests.md)
 * [Publishing Stories and the Brave-UI package](https://github.com/brave/brave-ui/blob/master/docs/publishing.md)
+* [Brave UI System Interface Engineering Specification](https://github.com/brave/brave-ui/blob/master/docs/spec.md)
 * [Contributing](https://github.com/brave/brave-ui/blob/master/docs/contributing.md)
 
 
