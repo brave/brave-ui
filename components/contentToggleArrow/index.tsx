@@ -10,8 +10,6 @@ import {
   StyledContentToggleArrowContent
 } from './style'
 
-import Separator from '../separator'
-
 export interface ContentToggleArrowProps {
   id?: string,
   summary: string,
@@ -63,11 +61,14 @@ class ContentToggleArrow extends React.PureComponent<ContentToggleArrowProps, Co
           open={open}
           onClick={this.handleClick}
         >
-          {withSeparator && <Separator />}
           <StyledContentToggleArrowSummary>{summary}</StyledContentToggleArrowSummary>
-          {withSeparator && <Separator />}
         </StyledContentToggleArrowControl>
-        <StyledContentToggleArrowContent open={open}>{children}</StyledContentToggleArrowContent>
+        <StyledContentToggleArrowContent
+          open={open}
+          withSeparator={withSeparator}
+        >
+          {children}
+        </StyledContentToggleArrowContent>
       </StyledContentToggleArrow>
     )
   }
