@@ -23,24 +23,33 @@ export interface BrowserSelectProps {
 
 class BrowserSelect extends React.PureComponent<BrowserSelectProps, {}> {
   render () {
+    const {
+      titleName,
+      id,
+      multiple = false,
+      autoFocus = false,
+      disabled = false,
+      value,
+      onChange,
+      children
+    } = this.props
+
     return (
       <div>
-        <StyledBrowserSelectTitle>
-          {this.props.titleName}
-        </StyledBrowserSelectTitle>
+        <StyledBrowserSelectTitle>{titleName}</StyledBrowserSelectTitle>
         <StyledBrowserSelectWrapper
-          multiple={this.props.multiple ? this.props.disabled : false}
-          disabled={this.props.disabled ? this.props.disabled : false}
+          multiple={multiple}
+          disabled={disabled}
         >
           <StyledBrowserSelect
-            id={this.props.id}
-            multiple={this.props.multiple ? this.props.disabled : false}
-            autoFocus={this.props.autoFocus}
-            disabled={this.props.disabled ? this.props.disabled : false}
-            value={this.props.value}
-            onChange={this.props.onChange}
+            id={id}
+            multiple={multiple}
+            autoFocus={autoFocus}
+            disabled={disabled}
+            value={value}
+            onChange={onChange}
           >
-            {this.props.children}
+            {children}
           </StyledBrowserSelect>
         </StyledBrowserSelectWrapper>
       </div>

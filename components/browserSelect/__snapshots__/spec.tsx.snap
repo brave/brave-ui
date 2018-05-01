@@ -3,7 +3,7 @@
 exports[`browserSelect tests matches the snapshot 1`] = `
 <div>
   <p
-    className="sc-htpNat SYTas"
+    className="sc-htpNat fJNIFu"
   />
   <div
     className="sc-bwzfXH fdGmBW"
@@ -11,12 +11,12 @@ exports[`browserSelect tests matches the snapshot 1`] = `
     multiple={false}
   >
     <select
-      autoFocus={undefined}
+      autoFocus={false}
       className="sc-bdVaJa gYRIpJ"
       disabled={false}
-      id={undefined}
+      id="browserSelect"
       multiple={false}
-      onChange={undefined}
+      onChange={[Function]}
       value="test"
     >
       <option>
