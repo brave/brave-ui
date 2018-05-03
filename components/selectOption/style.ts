@@ -3,9 +3,9 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled, { css } from 'styled-components'
-import { BrowserSelectProps } from './index'
+import { SelectOptionProps } from './index'
 
-const StyledBrowserSelect = styled.select`
+const StyledSelectOption = styled.select`
   box-sizing: border-box;
   position: relative;
   border-radius: 4px;
@@ -23,26 +23,26 @@ const StyledBrowserSelect = styled.select`
   min-height: 32px;
   margin-bottom: 12px;
 
-  ${(p: BrowserSelectProps) => p.disabled
+  ${(p: SelectOptionProps) => p.disabled
     ? css`
       user-select: none;
       opacity: 0.25;
     ` : ''
   }
 
-  ${(p: BrowserSelectProps) => p.multiple
+  ${(p: SelectOptionProps) => p.multiple
     ? css`
       padding: 6px;
     ` : ''
   }
 ` as any
 
-const StyledBrowserSelectWrapper = styled.div`
+const StyledSelectOptionWrapper = styled.div`
   position: relative;
 
   &::after {
-    display: ${(p: BrowserSelectProps) => p.multiple ? 'none' : 'flex'};
-    opacity: ${(p: BrowserSelectProps) => p.disabled ? '0.25' : '1'};
+    display: ${(p: SelectOptionProps) => p.multiple ? 'none' : 'flex'};
+    opacity: ${(p: SelectOptionProps) => p.disabled ? '0.25' : '1'};
     content: "▼";
     position: absolute;
     top: 0;
@@ -55,12 +55,12 @@ const StyledBrowserSelectWrapper = styled.div`
   }
 ` as any
 
-const StyledBrowserSelectTitle = styled.p`
+const StyledSelectOptionTitle = styled.p`
   margin: 0 0 4px 2px;
 ` as any
 
 export {
-  StyledBrowserSelect,
-  StyledBrowserSelectWrapper,
-  StyledBrowserSelectTitle
+  StyledSelectOption,
+  StyledSelectOptionWrapper,
+  StyledSelectOptionTitle
 }

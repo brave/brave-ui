@@ -7,7 +7,7 @@
  import ActionButton from './actionButton'
  import BrowserButton from './browserButton'
  import SwitchButton from './switchButton'
- import BrowserSelect from './browserSelect'
+ import SelectOption from './selectOption'
  import { Grid, Column } from './gridSystem'
  import ContentToggleArrow from './contentToggleArrow'
  import Separator from './separator'
@@ -18,7 +18,7 @@
    ActionButton,
    BrowserButton,
    SwitchButton,
-   BrowserSelect,
+   SelectOption,
    Grid,
    Column,
    ContentToggleArrow,

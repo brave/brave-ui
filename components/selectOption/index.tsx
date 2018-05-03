@@ -5,12 +5,12 @@
 import * as React from 'react'
 
 import {
-  StyledBrowserSelect,
-  StyledBrowserSelectTitle,
-  StyledBrowserSelectWrapper
+  StyledSelectOption,
+  StyledSelectOptionTitle,
+  StyledSelectOptionWrapper
 } from './style'
 
-export interface BrowserSelectProps {
+export interface SelectOptionProps {
   titleName?: string,
   id?: string,
   multiple?: boolean,
@@ -21,7 +21,7 @@ export interface BrowserSelectProps {
   children: React.ReactNode
 }
 
-class BrowserSelect extends React.PureComponent<BrowserSelectProps, {}> {
+class SelectOption extends React.PureComponent<SelectOptionProps, {}> {
   render () {
     const {
       titleName,
@@ -36,12 +36,12 @@ class BrowserSelect extends React.PureComponent<BrowserSelectProps, {}> {
 
     return (
       <div>
-        <StyledBrowserSelectTitle>{titleName}</StyledBrowserSelectTitle>
-        <StyledBrowserSelectWrapper
+        <StyledSelectOptionTitle>{titleName}</StyledSelectOptionTitle>
+        <StyledSelectOptionWrapper
           multiple={multiple}
           disabled={disabled}
         >
-          <StyledBrowserSelect
+          <StyledSelectOption
             id={id}
             multiple={multiple}
             autoFocus={autoFocus}
@@ -50,11 +50,11 @@ class BrowserSelect extends React.PureComponent<BrowserSelectProps, {}> {
             onChange={onChange}
           >
             {children}
-          </StyledBrowserSelect>
-        </StyledBrowserSelectWrapper>
+          </StyledSelectOption>
+        </StyledSelectOptionWrapper>
       </div>
     )
   }
 }
 
-export default BrowserSelect
+export default SelectOption

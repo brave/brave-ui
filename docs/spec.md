@@ -154,7 +154,7 @@ A selector is anything that lead the user to take a limited number of decisions.
 ### Candidates
 
 * `SliderOption` - Default range input with styles.
-* `SelectOption` – Current `BrowserSelect` component, now following a name convention.
+* `SelectOption` – Current `SelectOption` component, now following a name convention.
 
 ## Indicators
 

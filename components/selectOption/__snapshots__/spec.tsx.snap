@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`browserSelect tests matches the snapshot 1`] = `
+exports[`selectOption tests matches the snapshot 1`] = `
 <div>
   <p
     className="sc-htpNat fJNIFu"
@@ -14,7 +14,7 @@ exports[`browserSelect tests matches the snapshot 1`] = `
       autoFocus={false}
       className="sc-bdVaJa gYRIpJ"
       disabled={false}
-      id="browserSelect"
+      id="selectOption"
       multiple={false}
       onChange={[Function]}
       value="test"

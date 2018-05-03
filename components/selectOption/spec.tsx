@@ -2,13 +2,13 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import BrowserSelect from '../browserSelect'
+import SelectOption from '../selectOption'
 
-describe('browserSelect tests', () => {
+describe('selectOption tests', () => {
   const baseComponent = (props?: object) => (
-      <BrowserSelect id='browserSelect' value='test' onChange={() => {}} {...props}>
+      <SelectOption id='selectOption' value='test' onChange={() => {}} {...props}>
         <option>some option</option>
-      </BrowserSelect>
+      </SelectOption>
   )
 
   it('matches the snapshot', () => {
@@ -17,8 +17,8 @@ describe('browserSelect tests', () => {
   })
 
   it('renders the component', () => {
-    const wrapper = shallow(baseComponent({id: 'browserSelectId'}))
-    const assertion = wrapper.find('#browserSelectId').length
+    const wrapper = shallow(baseComponent({id: 'selectOptionId'}))
+    const assertion = wrapper.find('#selectOptionId').length
     expect(assertion).toBe(1)
   })
 
@@ -29,26 +29,26 @@ describe('browserSelect tests', () => {
   })
 
   it('can have an id', () => {
-    const wrapper = shallow(baseComponent({id: 'browserSelectId'}))
-    const assertion = wrapper.find('#browserSelectId').props().id
-    expect(assertion).toEqual('browserSelectId')
+    const wrapper = shallow(baseComponent({id: 'selectOptionId'}))
+    const assertion = wrapper.find('#selectOptionId').props().id
+    expect(assertion).toEqual('selectOptionId')
   })
 
   it('can be set as multiple', () => {
     const wrapper = shallow(baseComponent({multiple: true}))
-    const assertion = wrapper.find('#browserSelect').props().multiple
+    const assertion = wrapper.find('#selectOption').props().multiple
     expect(assertion).toBe(true)
   })
 
   it('can be set autoFocus', () => {
     const wrapper = shallow(baseComponent({autoFocus: true}))
-    const assertion = wrapper.find('#browserSelect').props().autoFocus
+    const assertion = wrapper.find('#selectOption').props().autoFocus
     expect(assertion).toEqual(true)
   })
 
   it('can be disabled', () => {
     const wrapper = shallow(baseComponent({disabled: true}))
-    const assertion = wrapper.find('#browserSelect').props().disabled
+    const assertion = wrapper.find('#selectOption').props().disabled
     expect(assertion).toBe(true)
   })
 
@@ -56,7 +56,7 @@ describe('browserSelect tests', () => {
     const value = 'FANCY SELECT CHANGED'
     const onChange = jest.fn()
     const wrapper = shallow(baseComponent({onChange}))
-    wrapper.find('#browserSelect').simulate('change', value)
+    wrapper.find('#selectOption').simulate('change', value)
     expect(onChange).toBeCalledWith(value)
   })
 })

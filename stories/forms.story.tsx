@@ -16,7 +16,7 @@ import { BetterVisualizer } from './storyUtil'
 
 // Components
 import * as React from 'react'
-import BrowserSelect from '../components/browserSelect'
+import SelectOption from '../components/selectOption'
 
 addDecorator(withKnobs)
 
@@ -24,9 +24,9 @@ addDecorator(withKnobs)
 addDecorator(BetterVisualizer)
 
 storiesOf('Forms', module)
-  .add('BrowserSelect', () => {
+  .add('SelectOption', () => {
     return (
-      <BrowserSelect
+      <SelectOption
         titleName={text('Title', 'Example Title')}
         multiple={boolean('Multiple?', false)}
         autoFocus={boolean('Auto focus?', false)}
@@ -34,6 +34,6 @@ storiesOf('Forms', module)
       >
         <option value='cool'>Brave UI: cool</option>
         <option value='notcool'>Brave UI: not cool</option>
-      </BrowserSelect>
+      </SelectOption>
     )
   })
