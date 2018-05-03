@@ -3,6 +3,8 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
+import Separator from '../separator'
+
 import {
   StyledContentToggleArrow,
   StyledContentToggleArrowControl,
@@ -63,12 +65,14 @@ class ContentToggleArrow extends React.PureComponent<ContentToggleArrowProps, Co
         >
           <StyledContentToggleArrowSummary>{summary}</StyledContentToggleArrowSummary>
         </StyledContentToggleArrowControl>
+        {withSeparator && <Separator />}
         <StyledContentToggleArrowContent
           open={open}
           withSeparator={withSeparator}
         >
           {children}
         </StyledContentToggleArrowContent>
+          {open && withSeparator && <Separator />}
       </StyledContentToggleArrow>
     )
   }

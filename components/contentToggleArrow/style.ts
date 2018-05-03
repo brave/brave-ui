@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
-import { ContentToggleArrowProps, ContentToggleArrowState } from './index'
+import { ContentToggleArrowState } from './index'
 
 const StyledContentToggleArrow = styled.div`
   box-sizing: border-box;
@@ -34,12 +34,9 @@ const StyledContentToggleArrowSummary = styled.div`
 const StyledContentToggleArrowContent = styled.div`
   box-sizing: border-box;
   overflow: ${(s: ContentToggleArrowState) => s.open ? 'auto' : 'hidden'};
-  height: ${(s: ContentToggleArrowState) => s.open ? 'fit-content' : '1px'};
+  height: ${(s: ContentToggleArrowState) => s.open ? 'fit-content' : '0'};
   width: fit-content;
-  margin: ${(p: ContentToggleArrowProps) => p.withSeparator ? '10px 0' : '0'};
-  padding: ${(p: ContentToggleArrowProps) => p.withSeparator ? '10px 0' : '0'};
-  border-top: ${(p: ContentToggleArrowProps) => p.withSeparator ? '1px solid #ccc' : 'none'};
-  border-bottom: ${(p: ContentToggleArrowProps) => p.withSeparator ? '1px solid #ccc' : 'none'};
+
 ` as any
 
 export {
