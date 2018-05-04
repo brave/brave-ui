@@ -1,4 +1,4 @@
-import BrowserText from './browserText';
+import TextLabel from './textLabel';
 import Anchor from './anchor';
 import ActionButton from './actionButton';
 import BrowserButton from './browserButton';
@@ -7,4 +7,4 @@ import SelectOption from './selectOption';
 import { Grid, Column } from './gridSystem';
 import ContentToggleArrow from './contentToggleArrow';
 import Separator from './separator';
-export { BrowserText, Anchor, ActionButton, BrowserButton, SwitchButton, SelectOption, Grid, Column, ContentToggleArrow, Separator };
+export { TextLabel, Anchor, ActionButton, BrowserButton, SwitchButton, SelectOption, Grid, Column, ContentToggleArrow, Separator };

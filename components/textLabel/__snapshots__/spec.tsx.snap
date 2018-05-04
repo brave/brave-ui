@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`browserText tests matches the snapshot 1`] = `
+exports[`textLabel tests matches the snapshot 1`] = `
 <p
   className="sc-bdVaJa dHyaWO"
   color={undefined}

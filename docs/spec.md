@@ -67,7 +67,7 @@ Fields are components that change state based on the user's text input. Labels a
 * `SearchField` - Default `input[type="search"]` field w/ style.
 * `SearchBox` – `input[type="search"]` w/ a dropdown list showing results (see urlbar).
 * `TokenBox` – Similar to `SearchBox` but w/ results as tokens (tags). See the spellcheck box in `preferences->advanced`.
-* `TextLabel` – Current `BrowserText` component, now following a name convention.
+* `TextLabel` – Current `TextLabel` component, now following a name convention.
 
 ## Views
 

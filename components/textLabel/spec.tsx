@@ -2,11 +2,11 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import BrowserText from '../browserText'
+import TextLabel from '../textLabel'
 
-describe('browserText tests', () => {
+describe('textLabel tests', () => {
   const baseComponent = (props?: object) => (
-    <BrowserText text='testText' {...props} />
+    <TextLabel text='testText' {...props} />
   )
 
   it('matches the snapshot', () => {
@@ -16,15 +16,15 @@ describe('browserText tests', () => {
   })
 
   it('renders the component', () => {
-    const wrapper = shallow(baseComponent({id: 'browserText'}))
-    const assertion = wrapper.find('#browserText').length
+    const wrapper = shallow(baseComponent({id: 'textLabel'}))
+    const assertion = wrapper.find('#textLabel').length
     expect(assertion).toBe(1)
   })
 
   it('can have an id', () => {
-    const wrapper = shallow(baseComponent({id: 'browserText'}))
+    const wrapper = shallow(baseComponent({id: 'textLabel'}))
     const assertion = wrapper.props().id
-    expect(assertion).toEqual('browserText')
+    expect(assertion).toEqual('textLabel')
   })
 
   it('can pass text', () => {

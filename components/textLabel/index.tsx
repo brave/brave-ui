@@ -3,9 +3,9 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import StyledBrowserText from './style'
+import StyledTextLabel from './style'
 
-export interface BrowserTextProps {
+export interface TextLabelProps {
   id?: string
   onClick?: () => void
   text?: string | number
@@ -17,10 +17,10 @@ export interface BrowserTextProps {
   bold?: boolean
 }
 
-class BrowserText extends React.PureComponent<BrowserTextProps, {}> {
+class TextLabel extends React.PureComponent<TextLabelProps, {}> {
   render () {
     return (
-      <StyledBrowserText
+      <StyledTextLabel
         id={this.props.id}
         onClick={this.props.onClick}
         fontSize={this.props.fontSize}
@@ -31,9 +31,9 @@ class BrowserText extends React.PureComponent<BrowserTextProps, {}> {
         text={this.props.text}
       >
         { this.props.text != null ? this.props.text.toString() : null }
-      </StyledBrowserText>
+      </StyledTextLabel>
     )
   }
 }
 
-export default BrowserText
+export default TextLabel

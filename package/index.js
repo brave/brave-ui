@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const browserText_1 = require("./browserText");
-exports.BrowserText = browserText_1.default;
+const textLabel_1 = require("./textLabel");
+exports.TextLabel = textLabel_1.default;
 const anchor_1 = require("./anchor");
 exports.Anchor = anchor_1.default;
 const actionButton_1 = require("./actionButton");

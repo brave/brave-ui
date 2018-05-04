@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
- import BrowserText from './browserText'
+ import TextLabel from './textLabel'
  import Anchor from './anchor'
  import ActionButton from './actionButton'
  import BrowserButton from './browserButton'
@@ -13,7 +13,7 @@
  import Separator from './separator'
 
  export {
-   BrowserText,
+   TextLabel,
    Anchor,
    ActionButton,
    BrowserButton,

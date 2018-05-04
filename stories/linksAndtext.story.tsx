@@ -6,7 +6,7 @@
  * In this file:
  * ---------------------------------
  * Anchor component
- * BrowserText component
+ * TextLabel component
  * ---------------------------------
  */
 
@@ -19,7 +19,7 @@ import { BetterVisualizer } from './storyUtil'
 // Components
 import * as React from 'react'
 import Anchor from '../components/anchor'
-import BrowserText from '../components/browserText'
+import TextLabel from '../components/textLabel'
 
 addDecorator(withKnobs)
 
@@ -36,11 +36,11 @@ storiesOf('Links and Text', module)
       />
     )
   })
-  .add('BrowserText', () => {
+  .add('TextLabel', () => {
     return (
-      <BrowserText
-        onClick={action('clicked the browserText!')}
-        text={text('Text', 'Example BrowserText')}
+      <TextLabel
+        onClick={action('clicked the textLabel!')}
+        text={text('Text', 'Example TextLabel')}
         noSelect={boolean('Avoid Selection?', false)}
         fontSize={text('Font Size', '')}
         color={text('Color', '')}
