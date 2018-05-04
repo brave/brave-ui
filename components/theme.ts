@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 const theme = {
-  browserButton: {
+  pushButton: {
     default: {
       bg: '#fff',
       color: '#5a5a5a',

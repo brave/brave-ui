@@ -16,8 +16,8 @@ You can run a test matching a name by running:
 ```
 npm run test "describe text here"
 
-# supposing you want to run tests for `browserButton`
-npm run test "browserButton"
+# supposing you want to run tests for `pushButton`
+npm run test "pushButton"
 ```
 
 To run all tests

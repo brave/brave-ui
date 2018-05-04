@@ -22,21 +22,21 @@ npm i --save brave-ui
 ## Sample Usage
 
 ```jsx
-const { BrowserButton } = require('brave-ui')
+const { PushButton } = require('brave-ui')
 
 // alternatively you can pass
-// const BrowserButton = require('brave-ui/browserButton')
+// const PushButton = require('brave-ui/pushButton')
 
 // ES6 imports also work
-// import BrowserButton from 'brave-ui/browserButton'
+// import PushButton from 'brave-ui/pushButton'
 
 //...
 
 render () {
   return (
-    <BrowserButton theme='secondary' onClick={this.doSomething}>
+    <PushButton theme='secondary' onClick={this.doSomething}>
       Click me
-    </BrowserButton>
+    </PushButton>
   )
 }
 

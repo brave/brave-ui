@@ -74,12 +74,12 @@ Confirm in your `package.json` that the `brave-ui` is installed. Once you're goo
 If you're looking to contribute to this repo please refer to [Contributing](https://github.com/brave/brave-ui/blob/master/docs/contributing.md) docs.
 
 ```js
-// Let's implement the <BrowserButton /> component
-const { BrowserButton } = require('brave-ui')
+// Let's implement the <PushButton /> component
+const { PushButton } = require('brave-ui')
 
 render () {
   return (
-    <BrowserButton theme='primary' label='something' />
+    <PushButton theme='primary' label='something' />
   )
 }
 ```

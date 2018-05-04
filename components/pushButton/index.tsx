@@ -14,9 +14,9 @@
  */
 
 import * as React from 'react'
-import { StyledBrowserButton } from './style'
+import { StyledPushButton } from './style'
 
-export interface BrowserButtonProps {
+export interface PushButtonProps {
   id?: string,
   color?: string,
   disabled?: boolean,
@@ -27,10 +27,10 @@ export interface BrowserButtonProps {
   fontSize?: string
 }
 
-class BrowserButton extends React.PureComponent<BrowserButtonProps, {}> {
+class PushButton extends React.PureComponent<PushButtonProps, {}> {
   render () {
     return (
-      <StyledBrowserButton
+      <StyledPushButton
         id={this.props.id}
         color={this.props.color ? this.props.color : 'default'}
         onClick={this.props.onClick}
@@ -39,9 +39,9 @@ class BrowserButton extends React.PureComponent<BrowserButtonProps, {}> {
         fontSize={this.props.fontSize}
       >
         {this.props.children}
-      </StyledBrowserButton>
+      </StyledPushButton>
     )
   }
 }
 
-export default BrowserButton
+export default PushButton

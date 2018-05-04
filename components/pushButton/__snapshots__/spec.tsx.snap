@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`browserButton tests matches the snapshot 1`] = `
+exports[`pushButton tests matches the snapshot 1`] = `
 <button
   className="sc-bdVaJa hGmOLT"
   color="default"

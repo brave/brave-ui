@@ -5,7 +5,7 @@
  import TextLabel from './textLabel'
  import Anchor from './anchor'
  import ActionButton from './actionButton'
- import BrowserButton from './browserButton'
+ import PushButton from './pushButton'
  import SwitchButton from './switchButton'
  import SelectOption from './selectOption'
  import { Grid, Column } from './gridSystem'
@@ -16,7 +16,7 @@
    TextLabel,
    Anchor,
    ActionButton,
-   BrowserButton,
+   PushButton,
    SwitchButton,
    SelectOption,
    Grid,

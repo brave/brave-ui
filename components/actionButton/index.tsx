@@ -8,10 +8,10 @@ import { StyledActionButton } from './style'
 /**
 * Implementor notes:
 * This button is almost unopinonated in styles
-* and should be used only when BrowserButton can't
+* and should be used only when PushButton can't
 * such as actions in buttons that have no UI (link-like buttons).
 * This has limited usage on purpose.
-* Consider either using browserButton or creating a new component as needed
+* Consider either using pushButton or creating a new component as needed
 * as this file shouldn't be changed much.
 **/
 

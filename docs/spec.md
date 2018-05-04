@@ -101,7 +101,7 @@ A button is anything that once clicked performs an instant action.
 ### Candidates
 
 * `UnstyledButton` – Old `ActionButton`. Similar to a link but with semantic HTNL's button properties.
-* `PushButton` – Current `BrowserButton` component.
+* `PushButton` – Current `PushButton` component.
 * `SwitchButton` – Current `SwitchButton` component.
 * `ClipBoardButton` – `pushButton` variant with built-in _copy to clipboard_ functionality.
 * `ImageButton` – A clickable and optionally styled image (see cryptocurrency buttons on ledger).

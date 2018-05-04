@@ -5,7 +5,7 @@
 /**
  * In this file:
  * ---------------------------------
- * BrowserButton component
+ * PushButton component
  * ActionButton
  * SwitchButton
  * ---------------------------------
@@ -20,7 +20,7 @@ import { BetterVisualizer } from './storyUtil'
 
 // Components
 import * as React from 'react'
-import BrowserButton from '../components/browserButton'
+import PushButton from '../components/pushButton'
 import ActionButton from '../components/actionButton'
 import SwitchButton from '../components/switchButton'
 
@@ -30,7 +30,7 @@ addDecorator(withKnobs)
 addDecorator(BetterVisualizer)
 
 storiesOf('Buttons', module)
-  .add('BrowserButton', () => {
+  .add('PushButton', () => {
     const label = 'Button Types'
     const options = {
       default: 'Default',
@@ -41,14 +41,14 @@ storiesOf('Buttons', module)
     const value = select(label, options, defaultValue)
 
     return (
-      <BrowserButton
+      <PushButton
         color={value}
         disabled={boolean('Disabled', false)}
         onClick={action('clicked the standard button!')}
         size={text('Size', '')}
         fontSize={text('Font Size', '')}>
         {text('Label', 'Hello Button')}
-      </BrowserButton>
+      </PushButton>
     )
   })
   .add('ActionButton', () => {
