@@ -6,7 +6,7 @@
  * In this file:
  * ---------------------------------
  * PushButton component
- * ActionButton
+ * UnstyledButton
  * SwitchButton
  * ---------------------------------
  */
@@ -21,7 +21,7 @@ import { BetterVisualizer } from './storyUtil'
 // Components
 import * as React from 'react'
 import PushButton from '../components/pushButton'
-import ActionButton from '../components/actionButton'
+import UnstyledButton from '../components/unstyledButton'
 import SwitchButton from '../components/switchButton'
 
 addDecorator(withKnobs)
@@ -51,11 +51,11 @@ storiesOf('Buttons', module)
       </PushButton>
     )
   })
-  .add('ActionButton', () => {
+  .add('UnstyledButton', () => {
     return (
-      <ActionButton
+      <UnstyledButton
         onClick={action('clicked the action button!')}
-        text={text('Text', 'Example ActionButton')}
+        text={text('Text', 'Example UnstyledButton')}
         height={text('Height', '')}
         fontSize={text('Font Size', '')}
         color={text('Color', '')}

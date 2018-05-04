@@ -4,7 +4,7 @@
 
  import TextLabel from './textLabel'
  import Anchor from './anchor'
- import ActionButton from './actionButton'
+ import UnstyledButton from './unstyledButton'
  import PushButton from './pushButton'
  import SwitchButton from './switchButton'
  import SelectOption from './selectOption'
@@ -15,7 +15,7 @@
  export {
    TextLabel,
    Anchor,
-   ActionButton,
+   UnstyledButton,
    PushButton,
    SwitchButton,
    SelectOption,

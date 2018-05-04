@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledActionButton } from './style'
+import { StyledUnstyledButton } from './style'
 
 /**
 * Implementor notes:
@@ -15,7 +15,7 @@ import { StyledActionButton } from './style'
 * as this file shouldn't be changed much.
 **/
 
-export interface ActionButtonProps {
+export interface UnstyledButtonProps {
   id?: string,
   onClick?: () => void,
   text?: string | number,
@@ -26,10 +26,10 @@ export interface ActionButtonProps {
   padding?: string
 }
 
-class ActionButton extends React.PureComponent<ActionButtonProps, {}> {
+class UnstyledButton extends React.PureComponent<UnstyledButtonProps, {}> {
   render () {
     return (
-      <StyledActionButton
+      <StyledUnstyledButton
         id={this.props.id}
         onClick={this.props.onClick}
         height={this.props.height}
@@ -38,9 +38,9 @@ class ActionButton extends React.PureComponent<ActionButtonProps, {}> {
         padding={this.props.padding}
       >
         { this.props.text ? this.props.text.toString() : null }
-      </StyledActionButton>
+      </StyledUnstyledButton>
     )
   }
 }
 
-export default ActionButton
+export default UnstyledButton
