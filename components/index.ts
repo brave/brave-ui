@@ -11,6 +11,7 @@
  import { Grid, Column } from './gridSystem'
  import ContentToggleArrow from './contentToggleArrow'
  import Separator from './separator'
+ import BoxedContent from './boxedContent'
 
  export {
    TextLabel,
@@ -22,5 +23,6 @@
    Grid,
    Column,
    ContentToggleArrow,
-   Separator
+   Separator,
+   BoxedContent
  }

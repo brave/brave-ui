@@ -19,4 +19,6 @@ const contentToggleArrow_1 = require("./contentToggleArrow");
 exports.ContentToggleArrow = contentToggleArrow_1.default;
 const separator_1 = require("./separator");
 exports.Separator = separator_1.default;
+const boxedContent_1 = require("./boxedContent");
+exports.BoxedContent = boxedContent_1.default;
 //# sourceMappingURL=index.js.map

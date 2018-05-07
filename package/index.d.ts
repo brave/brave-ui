@@ -7,4 +7,5 @@ import SelectOption from './selectOption';
 import { Grid, Column } from './gridSystem';
 import ContentToggleArrow from './contentToggleArrow';
 import Separator from './separator';
-export { TextLabel, Anchor, UnstyledButton, PushButton, SwitchButton, SelectOption, Grid, Column, ContentToggleArrow, Separator };
+import BoxedContent from './boxedContent';
+export { TextLabel, Anchor, UnstyledButton, PushButton, SwitchButton, SelectOption, Grid, Column, ContentToggleArrow, Separator, BoxedContent };
