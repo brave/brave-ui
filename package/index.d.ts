@@ -9,4 +9,5 @@ import ContentToggleArrow from './contentToggleArrow';
 import Separator from './separator';
 import BoxedContent from './boxedContent';
 import Paragraph from './paragraph';
-export { TextLabel, Anchor, UnstyledButton, PushButton, SwitchButton, SelectOption, Grid, Column, ContentToggleArrow, Separator, BoxedContent, Paragraph };
+import MediaContent from './mediaContent';
+export { TextLabel, Anchor, UnstyledButton, PushButton, SwitchButton, SelectOption, Grid, Column, ContentToggleArrow, Separator, BoxedContent, Paragraph, MediaContent };

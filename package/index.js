@@ -23,4 +23,6 @@ const boxedContent_1 = require("./boxedContent");
 exports.BoxedContent = boxedContent_1.default;
 const paragraph_1 = require("./paragraph");
 exports.Paragraph = paragraph_1.default;
+const mediaContent_1 = require("./mediaContent");
+exports.MediaContent = mediaContent_1.default;
 //# sourceMappingURL=index.js.map

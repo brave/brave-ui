@@ -13,6 +13,7 @@
  import Separator from './separator'
  import BoxedContent from './boxedContent'
  import Paragraph from './paragraph'
+ import MediaContent from './mediaContent'
 
  export {
    TextLabel,
@@ -26,5 +27,6 @@
    ContentToggleArrow,
    Separator,
    BoxedContent,
-   Paragraph
+   Paragraph,
+   MediaContent
  }
