@@ -12,6 +12,7 @@
  import ContentToggleArrow from './contentToggleArrow'
  import Separator from './separator'
  import BoxedContent from './boxedContent'
+ import Paragraph from './paragraph'
 
  export {
    TextLabel,
@@ -24,5 +25,6 @@
    Column,
    ContentToggleArrow,
    Separator,
-   BoxedContent
+   BoxedContent,
+   Paragraph
  }

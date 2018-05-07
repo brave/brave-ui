@@ -21,4 +21,6 @@ const separator_1 = require("./separator");
 exports.Separator = separator_1.default;
 const boxedContent_1 = require("./boxedContent");
 exports.BoxedContent = boxedContent_1.default;
+const paragraph_1 = require("./paragraph");
+exports.Paragraph = paragraph_1.default;
 //# sourceMappingURL=index.js.map

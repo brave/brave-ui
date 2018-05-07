@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`paragraph tests matches the snapshot 1`] = `
+<p
+  className="sc-bdVaJa cyghtH"
+  color={undefined}
+  id="testParagraph"
+  size={undefined}
+/>
+`;

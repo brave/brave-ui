@@ -27,3 +27,23 @@ export const setSize = (p: any, large: string, medium: string, small: string) =>
       return medium
   }
 }
+
+/**
+ * Sets the style property of a component based on the weight prop
+ * @param p (object) - the component's props
+ * @param bold (string) - string that defines the bold weight
+ * @param normal (string) - string that defines the normal weight
+ * @param thin (string) - string that defines the thin weight
+ */
+export const setWeight = (p: any, bold: string, normal: string, thin: string) => {
+  switch (p.weight) {
+    case 'bold':
+      return bold
+    case 'normal':
+      return normal
+    case 'thin':
+      return thin
+    default:
+      return normal
+  }
+}
