@@ -2,7 +2,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import MediaContent from '../mediaContent'
+import MediaContent from './index'
 
 describe('mediaContent tests', () => {
   const baseComponent = (props?: object) => (

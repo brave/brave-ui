@@ -14,6 +14,7 @@
  import BoxedContent from './boxedContent'
  import Paragraph from './paragraph'
  import MediaContent from './mediaContent'
+ import { TitleHeading, SectionHeading, FeatureHeading, Heading } from './headings'
 
  export {
    TextLabel,
@@ -28,5 +29,9 @@
    Separator,
    BoxedContent,
    Paragraph,
-   MediaContent
+   MediaContent,
+   TitleHeading,
+   SectionHeading,
+   FeatureHeading,
+   Heading
  }

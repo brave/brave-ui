@@ -30,7 +30,7 @@ export const setSize = (p: any, large: string, medium: string, small: string) =>
 
 /**
  * Sets the style property of a component based on the weight prop
- * @param p (object) - the component's props
+ * @param p (any) - the component's props
  * @param bold (string) - string that defines the bold weight
  * @param normal (string) - string that defines the normal weight
  * @param thin (string) - string that defines the thin weight

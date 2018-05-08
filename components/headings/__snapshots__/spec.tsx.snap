@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`all heading tests featureHeading tests matches the snapshot 1`] = `
+<h2
+  className="sc-gzVnrw fcfJgG"
+  id="testFeatureHeading"
+/>
+`;
+
+exports[`all heading tests heading tests matches the snapshot 1`] = `
+<h1
+  className="sc-htoDjs exQmQn"
+  color={undefined}
+  id="testHeading"
+/>
+`;
+
+exports[`all heading tests sectionHeading tests matches the snapshot 1`] = `
+<h2
+  className="sc-EHOje YLMwK"
+  id="testSectionHeading"
+/>
+`;
+
+exports[`all heading tests titleHeading tests matches the snapshot 1`] = `
+<h1
+  className="sc-htpNat jQniJE"
+  id="testTitleHeading"
+/>
+`;
