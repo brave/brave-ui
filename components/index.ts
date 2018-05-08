@@ -16,6 +16,7 @@ import Paragraph from './paragraph'
 import MediaContent from './mediaContent'
 import { TitleHeading, SectionHeading, FeatureHeading, Heading } from './headings'
 import Page from './page'
+import { DataBlock, DataItem } from './dataBlock'
 
 export {
   TextLabel,
@@ -35,5 +36,7 @@ export {
   SectionHeading,
   FeatureHeading,
   Heading,
-  Page
+  Page,
+  DataBlock,
+  DataItem
 }

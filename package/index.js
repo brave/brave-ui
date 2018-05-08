@@ -32,4 +32,7 @@ exports.FeatureHeading = headings_1.FeatureHeading;
 exports.Heading = headings_1.Heading;
 const page_1 = require("./page");
 exports.Page = page_1.default;
+const dataBlock_1 = require("./dataBlock");
+exports.DataBlock = dataBlock_1.DataBlock;
+exports.DataItem = dataBlock_1.DataItem;
 //# sourceMappingURL=index.js.map

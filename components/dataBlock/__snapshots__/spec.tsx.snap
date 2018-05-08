@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dataBlock tests dataBlock component tests matches the snapshot 1`] = `
+<ul
+  className="sc-bdVaJa kfIqup"
+  id={undefined}
+/>
+`;
+
+exports[`dataBlock tests dataItem component tests matches the snapshot 1`] = `
+<li
+  className="sc-bwzfXH bGbQhl"
+  color={undefined}
+  id={undefined}
+>
+  <div
+    className="sc-htpNat cgiDmg"
+    color={undefined}
+  />
+  <div
+    className="sc-ifAKCX epetJO"
+  />
+</li>
+`;

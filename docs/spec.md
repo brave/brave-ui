@@ -87,7 +87,7 @@ None.
 * `ToolTip` – Textual popup shown in a link's hover state.
 * `Clock` – As seen on newtab page.
 * `PageWrapper` – Wrapper component that normalizes and adds a title to about pages.
-* `DataList` – A list of items including some sort of data and a text such as newtab stats.
+* `DataBlock` – A list of items including some sort of data and a text such as newtab stats.
 
 
 ## Buttons
