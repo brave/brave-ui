@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page tests matches the snapshot 1`] = `
+<div
+  className="sc-bdVaJa aeEbU"
+  color={undefined}
+  id="testPage"
+  label={undefined}
+  title={undefined}
+>
+  <h1
+    className="sc-ifAKCX ipxyF"
+    id={undefined}
+  />
+  <main
+    className="sc-bwzfXH glSjfo"
+  />
+</div>
+`;

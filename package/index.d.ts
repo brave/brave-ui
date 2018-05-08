@@ -11,4 +11,5 @@ import BoxedContent from './boxedContent';
 import Paragraph from './paragraph';
 import MediaContent from './mediaContent';
 import { TitleHeading, SectionHeading, FeatureHeading, Heading } from './headings';
-export { TextLabel, Anchor, UnstyledButton, PushButton, SwitchButton, SelectOption, Grid, Column, ContentToggleArrow, Separator, BoxedContent, Paragraph, MediaContent, TitleHeading, SectionHeading, FeatureHeading, Heading };
+import Page from './page';
+export { TextLabel, Anchor, UnstyledButton, PushButton, SwitchButton, SelectOption, Grid, Column, ContentToggleArrow, Separator, BoxedContent, Paragraph, MediaContent, TitleHeading, SectionHeading, FeatureHeading, Heading, Page };

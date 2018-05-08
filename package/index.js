@@ -30,4 +30,6 @@ exports.TitleHeading = headings_1.TitleHeading;
 exports.SectionHeading = headings_1.SectionHeading;
 exports.FeatureHeading = headings_1.FeatureHeading;
 exports.Heading = headings_1.Heading;
+const page_1 = require("./page");
+exports.Page = page_1.default;
 //# sourceMappingURL=index.js.map
