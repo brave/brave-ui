@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`boxedContent tests matches the snapshot 1`] = `
+<div
+  className="sc-bdVaJa bBabaa"
+  id={undefined}
+>
+  <span
+    className="sc-bwzfXH jkxQTc"
+  >
+    02
+    <span
+      className="sc-bxivhb dPajcN"
+    >
+      :
+    </span>
+    07
+  </span>
+  <span
+    className="sc-htpNat fpUzll"
+  >
+    
+  </span>
+</div>
+`;

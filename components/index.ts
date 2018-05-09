@@ -17,6 +17,7 @@ import MediaContent from './mediaContent'
 import { TitleHeading, SectionHeading, FeatureHeading, Heading } from './headings'
 import Page from './page'
 import { DataBlock, DataItem } from './dataBlock'
+import Clock from './clock'
 
 export {
   TextLabel,
@@ -38,5 +39,6 @@ export {
   Heading,
   Page,
   DataBlock,
-  DataItem
+  DataItem,
+  Clock
 }

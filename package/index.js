@@ -35,4 +35,6 @@ exports.Page = page_1.default;
 const dataBlock_1 = require("./dataBlock");
 exports.DataBlock = dataBlock_1.DataBlock;
 exports.DataItem = dataBlock_1.DataItem;
+const clock_1 = require("./clock");
+exports.Clock = clock_1.default;
 //# sourceMappingURL=index.js.map
