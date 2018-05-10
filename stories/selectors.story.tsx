@@ -3,10 +3,13 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 /**
+ * A selector is anything that lead the user to take a limited number of decisions.
+ *
+ * @see https://github.com/brave/brave-ui/blob/master/docs/spec.md#selectors
+ *
  * In this file:
- * ---------------------------------
- * Select component
- * ---------------------------------
+ * ---
+ * SelectOption
  */
 
 // Storybook requires
@@ -23,7 +26,7 @@ addDecorator(withKnobs)
 // Globally adapt the story visualizer for this story
 addDecorator(BetterVisualizer)
 
-storiesOf('Forms', module)
+storiesOf('Selectors', module)
   .add('SelectOption', () => {
     return (
       <SelectOption
