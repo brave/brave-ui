@@ -3,12 +3,16 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 /**
+ * A button is anything that once clicked performs an instant action.
+ *
+ * @see https://github.com/brave/brave-ui/blob/master/docs/spec.md#buttons
+ *
  * In this file:
- * ---------------------------------
- * PushButton component
+ * ---
  * UnstyledButton
+ * PushButton
  * SwitchButton
- * ---------------------------------
+ * ContentToggleArrow
  */
 
 // Storybook requires
@@ -23,6 +27,7 @@ import * as React from 'react'
 import PushButton from '../components/pushButton'
 import UnstyledButton from '../components/unstyledButton'
 import SwitchButton from '../components/switchButton'
+import ContentToggleArrow from '../components/contentToggleArrow'
 
 addDecorator(withKnobs)
 
@@ -30,6 +35,18 @@ addDecorator(withKnobs)
 addDecorator(BetterVisualizer)
 
 storiesOf('Buttons', module)
+  .add('UnstyledButton', () => {
+    return (
+      <UnstyledButton
+        onClick={action('clicked the action button!')}
+        text={text('Text', 'Example UnstyledButton')}
+        height={text('Height', 'inherit')}
+        fontSize={text('Font Size', '16px')}
+        color={text('Color', '#000')}
+        padding={text('Padding', '0px')}
+      />
+    )
+  })
   .add('PushButton', () => {
     const label = 'Button Types'
     const options = {
@@ -49,18 +66,6 @@ storiesOf('Buttons', module)
         fontSize={text('Font Size', '')}>
         {text('Label', 'Hello Button')}
       </PushButton>
-    )
-  })
-  .add('UnstyledButton', () => {
-    return (
-      <UnstyledButton
-        onClick={action('clicked the action button!')}
-        text={text('Text', 'Example UnstyledButton')}
-        height={text('Height', '')}
-        fontSize={text('Font Size', '')}
-        color={text('Color', '')}
-        padding={text('Padding', '')}
-      />
     )
   })
   .add('SwitchButton', withState({ checked: false }, (store) => {
@@ -86,5 +91,19 @@ storiesOf('Buttons', module)
           store.set({ checked: !store.state.checked })
         )}
       />
+    )
+  }))
+  .add('ContentToggleArrow', withState({ open: true }, (store) => {
+    return (
+      <ContentToggleArrow
+        {...store.state}
+        withSeparator={boolean('with separator?', true)}
+        open={boolean('Open?', store.state.open)}
+        summary={text('Summary text', 'Some text here')}
+        onClick={(open) => (
+          store.set({ open: !store.state.open })
+        )}>
+        <h1>Some text inside!</h1>
+      </ContentToggleArrow>
     )
   }))
