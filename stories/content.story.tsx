@@ -1,13 +1,19 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this file,
- * You can obtain one at http://mozilla.org/MPL/2.0/. */
+* License, v. 2.0. If a copy of the MPL was not distributed with this file,
+* You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 /**
+ * Content components contain what the user sees on the screen and are
+ * related to textual positioning. They are static and unstyled elements
+ * used to help define the information architecture.
+ *
+ * @see https://github.com/brave/brave-ui/blob/master/docs/spec.md#content
+ *
  * In this file:
- * ---------------------------------
- * Grid component
- * Column component
- * ---------------------------------
+ * ---
+ * GridSystem (Grid and Column)
+ * MediaContent
+ * BoxedContent
  */
 
 // Storybook requires
@@ -24,7 +30,7 @@ addDecorator(withKnobs)
 // Globally adapt the story visualizer for this story
 addDecorator(BetterVisualizer)
 
-storiesOf('Grid System', module)
+storiesOf('Content', module)
   .add('Grid Demonstration', () => {
     return (
       <div>
@@ -120,3 +126,6 @@ storiesOf('Grid System', module)
       </div>
     )
   })
+
+// TODO: mediaContent
+// TODO: boxedContent
