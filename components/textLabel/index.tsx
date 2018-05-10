@@ -11,26 +11,27 @@ export interface TextLabelProps {
   text?: string | number
   // Component styles
   noSelect?: boolean
-  fontSize?: string
+  size?: string
   color?: string
   padding?: string
-  bold?: boolean
+  weight?: 'bold' | 'normal' | 'thin'
 }
 
 class TextLabel extends React.PureComponent<TextLabelProps, {}> {
   render () {
+    const { id, onClick, size, color, padding, noSelect, weight, text } = this.props
     return (
       <StyledTextLabel
-        id={this.props.id}
-        onClick={this.props.onClick}
-        fontSize={this.props.fontSize}
-        color={this.props.color}
-        padding={this.props.padding}
-        noSelect={this.props.noSelect}
-        bold={this.props.bold}
-        text={this.props.text}
+        id={id}
+        onClick={onClick}
+        size={size}
+        color={color}
+        padding={padding}
+        noSelect={noSelect}
+        weight={weight}
+        text={text}
       >
-        { this.props.text != null ? this.props.text.toString() : null }
+        { text && text.toString() }
       </StyledTextLabel>
     )
   }

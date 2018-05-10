@@ -4,9 +4,9 @@ exports[`textLabel tests matches the snapshot 1`] = `
 <p
   className="sc-bdVaJa dHyaWO"
   color={undefined}
-  fontSize={undefined}
   id={undefined}
   onClick={undefined}
+  size={undefined}
 >
   testText
 </p>

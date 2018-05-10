@@ -40,8 +40,8 @@ describe('textLabel tests', () => {
   })
 
   it('can have a custom font size', () => {
-    const wrapper = shallow(baseComponent({fontSize: '20px'}))
-    const assertion = wrapper.props().fontSize
+    const wrapper = shallow(baseComponent({size: '20px'}))
+    const assertion = wrapper.props().size
     expect(assertion).toEqual('20px')
   })
 
@@ -58,9 +58,9 @@ describe('textLabel tests', () => {
   })
 
   it('can have a custom font weight', () => {
-    const wrapper = shallow(baseComponent({bold: true}))
-    const assertion = wrapper.props().bold
-    expect(assertion).toEqual(true)
+    const wrapper = shallow(baseComponent({weight: 'bold'}))
+    const assertion = wrapper.props().weight
+    expect(assertion).toEqual('bold')
   })
 
   it('can respond to click', () => {

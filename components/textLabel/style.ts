@@ -4,13 +4,14 @@
 
 import styled from 'styled-components'
 import { TextLabelProps } from './index'
+import { setWeight } from '../helpers'
 
 const StyledTextLabel = styled.p`
   user-select: ${(p: TextLabelProps) => p.noSelect ? 'none' : 'inherit'};
   cursor: ${(p: TextLabelProps) => p.noSelect ? 'default' : 'auto'};
-  font-weight: ${(p: TextLabelProps) => p.bold ? 'bold' : 'inherit'};
+  font-weight: ${(p: TextLabelProps) => setWeight(p, 'bold', 'inherit', '300')};
   padding: ${(p: TextLabelProps) => p.padding ? p.padding : '0'};
-  font-size: ${(p: TextLabelProps) => p.fontSize ? p.fontSize : '13px'};
+  font-size: ${(p: TextLabelProps) => p.size ? p.size : '13px'};
   color: ${(p: TextLabelProps) => p.color ? p.color : 'inherit'};
   background: none;
   margin: 0;
