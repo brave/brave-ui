@@ -18,7 +18,7 @@ exports[`dataBlock tests dataItem component tests matches the snapshot 1`] = `
     color={undefined}
   />
   <div
-    className="sc-ifAKCX epetJO"
+    className="sc-ifAKCX jMJROp"
   />
 </li>
 `;

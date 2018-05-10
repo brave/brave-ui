@@ -2,7 +2,7 @@
 
 exports[`page tests matches the snapshot 1`] = `
 <div
-  className="sc-bdVaJa aeEbU"
+  className="sc-bdVaJa cHhfuJ"
   color={undefined}
   id="testPage"
   label={undefined}
