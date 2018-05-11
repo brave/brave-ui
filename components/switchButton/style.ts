@@ -12,6 +12,7 @@ import { setSize } from '../helpers'
 * Wraps both labels and the switch
 */
 const StyledSwitchButtonWrapper = styled.div`
+  box-sizing: border-box;
   display: flex;
   align-items: center;
 
@@ -26,6 +27,7 @@ const StyledSwitchButtonWrapper = styled.div`
 * Sets the styles for both left and right labels
 */
 const StyledSwitchButtonLabel = styled.label`
+  box-sizing: border-box;
   font-size: ${(p: SwitchButtonProps) => setSize(p, '24px', 'inherit', 'inherit')};
   margin-left: ${(p: SwitchButtonProps) => setSize(p, '18px', '10px', '10px')};
   margin-right: ${(p: SwitchButtonProps) => setSize(p, '18px', '10px', '10px')};
@@ -36,6 +38,7 @@ const StyledSwitchButtonLabel = styled.label`
 * The switch button itself
 */
 const StyledSwitchButton = styled.input`
+  box-sizing: border-box;
   -webkit-appearance: none;
   position: relative;
   width: ${(p: SwitchButtonProps) => setSize(p, '60px', '48px', '40px')};

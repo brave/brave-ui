@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import { AnchorProps } from './index'
 
 const StyledAnchor = styled.a`
+  box-sizing: border-box;
   color: inherit;
   font-size: inherit;
   text-decoration: ${(p: AnchorProps) => p.noStyle ? 'none' : 'underline'};

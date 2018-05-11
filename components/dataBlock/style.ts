@@ -16,6 +16,7 @@ const StyledDataBlock = styled.ul`
 ` as any
 
 const StyledDataItem = styled.li`
+  box-sizing: border-box;
   margin-right: 40px;
   margin-bottom: 20px;
   display: inline-block;
@@ -24,6 +25,7 @@ const StyledDataItem = styled.li`
 ` as any
 
 const StyledDataItemCounter = styled.div`
+  box-sizing: border-box;
   color: ${(p: DataItemProps) => p.color || 'inherit'}
   letter-spacing: -0.4px;
   font-size: 44px;
@@ -35,6 +37,7 @@ const StyledDataItemCounter = styled.div`
 ` as any
 
 const StyledDataItemText = styled.span`
+  box-sizing: border-box;
   display: inline;
   color: #999999;
   font-size: 20px;
@@ -44,6 +47,7 @@ const StyledDataItemText = styled.span`
 ` as any
 
 const StyledDataItemDescription = styled.div`
+  box-sizing: border-box;
   font-size: 13px;
   color: inherit;
   margin-left: 3px;

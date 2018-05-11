@@ -36,7 +36,6 @@ const StyledContentToggleArrowContent = styled.div`
   overflow: ${(s: ContentToggleArrowState) => s.open ? 'auto' : 'hidden'};
   height: ${(s: ContentToggleArrowState) => s.open ? 'fit-content' : '0'};
   width: fit-content;
-
 ` as any
 
 export {

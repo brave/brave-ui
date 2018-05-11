@@ -7,7 +7,9 @@ import { HeadingProps } from './index'
 import { setWeight } from '../helpers'
 
 // All feature-based text inherits from StyledSharedHeading
+// which excludes normal h1...h6 headings
 const StyledSharedHeading = styled.span`
+  box-sizing: border-box;
   font-family: inherit;
   color: inherit;
   -webkit-font-smoothing: antialiased;
@@ -25,6 +27,7 @@ const StyledHeadingTitle = StyledSharedHeading.withComponent('h1').extend`
 ` as any
 
 const StyledHeadingTitleLabel = styled.sup`
+  box-sizing: border-box;
   color: #999;
   font-size: 15px;
 ` as any
@@ -45,6 +48,7 @@ const StyledFeatureHeading = StyledSharedHeading.withComponent('h2').extend`
 ` as any
 
 const StyledH1 = styled.h1`
+  box-sizing: border-box;
   color: ${(p: HeadingProps) => p.color}
   fontWeight: ${(p: HeadingProps) => setWeight(p, 'bold', 'initial', '400')}
   margin-top: 14px;

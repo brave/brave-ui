@@ -5,6 +5,7 @@
 import styled from 'styled-components'
 
 const StyledClock = styled.div`
+  box-sizing: border-box;
   line-height: 1;
   user-select: none;
   display: flex;
@@ -13,6 +14,7 @@ const StyledClock = styled.div`
 ` as any
 
 const StyledTime = styled.span`
+  box-sizing: border-box;
   letter-spacing: 0;
   font-size: 75px;
   font-weight: 200;
@@ -21,6 +23,7 @@ const StyledTime = styled.span`
 ` as any
 
 const StyledPeriod = styled.span`
+  box-sizing: border-box;
   color: #fff;
   display: inline-block;
   font-size: 20px;
@@ -32,6 +35,7 @@ const StyledPeriod = styled.span`
 ` as any
 
 const StyledTimeSeparator = styled.span`
+  box-sizing: border-box;
   color: #fff;
   /* center colon vertically in the text-content line */
   margin-top: -0.1em;

@@ -7,6 +7,7 @@ import { ParagraphProps } from './index'
 import { setWeight } from '../helpers'
 
 const StyledParagraph = styled.p`
+  box-sizing: border-box;
   font-size: ${(p: ParagraphProps) => p.size ? p.size : '13px'};
   color: ${(p: ParagraphProps) => p.color ? p.color : 'inherit'};
   font-weight: ${(p: ParagraphProps) => setWeight(p, 'bold', 'normal', 'inherit')};
