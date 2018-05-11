@@ -2,7 +2,7 @@
 
 exports[`boxedContent tests matches the snapshot 1`] = `
 <div
-  className="sc-bdVaJa jXRmVo"
+  className="sc-bdVaJa bTjozL"
   id="testBoxedContent"
   width={undefined}
 />

@@ -2,23 +2,23 @@
 
 exports[`dataBlock tests dataBlock component tests matches the snapshot 1`] = `
 <ul
-  className="sc-bdVaJa kfIqup"
+  className="sc-bdVaJa iULBjb"
   id={undefined}
 />
 `;
 
 exports[`dataBlock tests dataItem component tests matches the snapshot 1`] = `
 <li
-  className="sc-bwzfXH bGbQhl"
+  className="sc-bwzfXH fZsyBa"
   color={undefined}
   id={undefined}
 >
   <div
-    className="sc-htpNat cgiDmg"
+    className="sc-htpNat ckXcLw"
     color={undefined}
   />
   <div
-    className="sc-ifAKCX jMJROp"
+    className="sc-ifAKCX cCQww"
   />
 </li>
 `;

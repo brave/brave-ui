@@ -2,7 +2,7 @@
 
 exports[`unstyledButton tests matches the snapshot 1`] = `
 <button
-  className="sc-bdVaJa enSxyJ"
+  className="sc-bdVaJa eVAwUp"
   color={undefined}
   fontSize={undefined}
   height={undefined}

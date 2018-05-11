@@ -2,7 +2,7 @@
 
 exports[`paragraph tests matches the snapshot 1`] = `
 <p
-  className="sc-bdVaJa fGAXrn"
+  className="sc-bdVaJa dersFR"
   color={undefined}
   id="testParagraph"
   size={undefined}

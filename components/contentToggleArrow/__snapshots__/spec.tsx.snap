@@ -19,7 +19,7 @@ exports[`contentToggleArrow tests matches the snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-ifAKCX cAzrgB"
+    className="sc-ifAKCX jHVBBt"
     open={undefined}
   />
 </div>

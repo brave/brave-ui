@@ -2,14 +2,14 @@
 
 exports[`all heading tests featureHeading tests matches the snapshot 1`] = `
 <h2
-  className="sc-gzVnrw fcfJgG"
+  className="sc-gzVnrw dOBGfT"
   id="testFeatureHeading"
 />
 `;
 
 exports[`all heading tests heading tests matches the snapshot 1`] = `
 <h1
-  className="sc-htoDjs exQmQn"
+  className="sc-htoDjs fWbKoG"
   color={undefined}
   id="testHeading"
 />
@@ -17,14 +17,14 @@ exports[`all heading tests heading tests matches the snapshot 1`] = `
 
 exports[`all heading tests sectionHeading tests matches the snapshot 1`] = `
 <h2
-  className="sc-EHOje YLMwK"
+  className="sc-EHOje didhuH"
   id="testSectionHeading"
 />
 `;
 
 exports[`all heading tests titleHeading tests matches the snapshot 1`] = `
 <h1
-  className="sc-htpNat jQniJE"
+  className="sc-htpNat eomUMv"
   id="testTitleHeading"
 />
 `;

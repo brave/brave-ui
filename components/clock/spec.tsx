@@ -4,15 +4,8 @@ import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
 import Clock from '../clock'
 
-describe('boxedContent tests', () => {
+describe('clock tests', () => {
   const baseComponent = (props?: object) => <Clock {...props} />
-
-  it('matches the snapshot', () => {
-    const component: any = shallow(baseComponent())
-    const tree = create(component).toJSON()
-    expect(tree).toMatchSnapshot()
-  })
-
   it('renders the component', () => {
     const wrapper = shallow(baseComponent({id: 'someId'}))
     const assertion = wrapper.find('#someId').length

@@ -2,13 +2,13 @@
 
 exports[`switchButton tests matches the snapshot 1`] = `
 <div
-  className="sc-bdVaJa jnmCBG"
+  className="sc-bdVaJa eLNElI"
   disabled={undefined}
 >
   <input
     autoFocus={undefined}
     checked={false}
-    className="sc-htpNat fEjPpk"
+    className="sc-htpNat cRhuEs"
     disabled={undefined}
     id="switchButton"
     onChange={[Function]}
