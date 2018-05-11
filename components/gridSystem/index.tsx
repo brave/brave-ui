@@ -10,7 +10,7 @@ export interface GridProps {
   disabled?: boolean,
   children?: React.ReactNode,
   // Component styles
-  columns?: string,
+  columns?: number,
   padding?: string,
   gap?: string,
   width?: string,
