@@ -27,12 +27,6 @@ describe('mediaContent tests', () => {
     expect(assertion).toBe('mediaThing')
   })
 
-  it('can have a custom media source', () => {
-    const wrapper = shallow(baseComponent({media: 'https://somesource.com'}))
-    const assertion = wrapper.props().src
-    expect(assertion).toBe('https://somesource.com')
-  })
-
   it('can have a custom media size', () => {
     const wrapper = shallow(baseComponent({mediaSize: '30px'}))
     const assertion = wrapper.props().mediaSize

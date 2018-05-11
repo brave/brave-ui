@@ -11,7 +11,7 @@ const StyledMediaContent = styled.div`
   align-items: flex-start;
 ` as any
 
-const StyledMedia = styled.div`
+const StyledMedia = styled.img`
   width: ${(p: MediaContentProps) => p.mediaSize};
   box-sizing: border-box;
   display: block;
@@ -20,7 +20,7 @@ const StyledMedia = styled.div`
 
 const StyledMediaBody = styled.div`
   box-sizing: border-box;
-  marginLeft: ${(p: MediaContentProps) => p.gap};
+  margin-left: ${(p: MediaContentProps) => p.gap};
 ` as any
 
 export {

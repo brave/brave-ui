@@ -22,7 +22,7 @@ class MediaContent extends React.PureComponent<MediaContentProps, {}> {
   render () {
     const { id, media, mediaSize, gap, children } = this.props
     return (
-      <StyledMediaContent id={id} src={media} mediaSize={mediaSize} gap={gap}>
+      <StyledMediaContent id={id} mediaSize={mediaSize} gap={gap}>
         <StyledMedia src={media} mediaSize={mediaSize} />
         <StyledMediaBody gap={gap}>{children}</StyledMediaBody>
       </StyledMediaContent>
