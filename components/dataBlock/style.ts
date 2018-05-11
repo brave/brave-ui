@@ -10,6 +10,7 @@ import { DataItemProps } from './index'
 const StyledDataBlock = styled.ul`
   box-sizing: border-box;
   display: inline-block;
+  -webkit-font-smoothing: antialiased;
   font-weight: 400;
   margin: 0;
   padding: 0;
