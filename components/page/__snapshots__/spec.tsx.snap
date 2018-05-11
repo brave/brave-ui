@@ -2,18 +2,18 @@
 
 exports[`page tests matches the snapshot 1`] = `
 <div
-  className="sc-bdVaJa cHhfuJ"
-  color={undefined}
+  className="sc-bdVaJa cXEFce"
   id="testPage"
   label={undefined}
+  style={undefined}
   title={undefined}
 >
   <h1
-    className="sc-ifAKCX ipxyF"
+    className="sc-ifAKCX gxtLTt"
     id={undefined}
   />
   <main
-    className="sc-bwzfXH glSjfo"
+    className="sc-bwzfXH gzCXzM"
   />
 </div>
 `;

@@ -42,10 +42,9 @@ storiesOf('Views', module)
       <Page
         title={text('Page Title', 'New About Page')}
         label={text('Page Title Label', 'Beta')}
-        color={text('Color', 'white')}
-        padding={text('Padding', '0px')}
-        background={text('Background', 'linear-gradient(to top, #ff00ff, #000)')}
-      >{text('Content', 'Some illustrative text')}</Page>
+      >
+        {text('Content', 'Some illustrative text')}
+      </Page>
     )
   })
   .add('DataBlock', () => {

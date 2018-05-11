@@ -38,22 +38,4 @@ describe('page tests', () => {
     const assertion = wrapper.props().label
     expect(assertion).toBe('beta')
   })
-
-  it('can have a custom color', () => {
-    const wrapper = shallow(baseComponent({color: 'gray'}))
-    const assertion = wrapper.props().color
-    expect(assertion).toBe('gray')
-  })
-
-  it('can have a custom padding', () => {
-    const wrapper = shallow(baseComponent({padding: '10px 20px'}))
-    const assertion = wrapper.props().padding
-    expect(assertion).toBe('10px 20px')
-  })
-
-  it('can have a custom background', () => {
-    const wrapper = shallow(baseComponent({background: 'red'}))
-    const assertion = wrapper.props().background
-    expect(assertion).toBe('red')
-  })
 })

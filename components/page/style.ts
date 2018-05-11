@@ -3,26 +3,24 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
-import { PageProps } from './index'
 
 const StyledPage = styled.div`
-  color: ${(p: PageProps) => p.color};
-  padding: ${(p: PageProps) => p.padding};
-  background-image: ${(p: PageProps) => p.background};
+  box-sizing: border-box;
   background-attachment: fixed;
   background-size: auto;
   font-family: inherit;
-  width: -webkit-fill-available;
-  height: -webkit-fill-available;
+  width: 100%;
+  height: 100%;
   padding: 40px;
   display: flex;
   flex-direction: column;
 ` as any
 
 const StyledPageContent = styled.main`
+  box-sizing: border-box;
   font-family: inherit;
-  width: -webkit-fill-available;
-  height: -webkit-fill-available;
+  width: 100%;
+  height: 100%;
 ` as any
 
 export {
