@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { BoxedContentProps } from './index'
 
 const StyledBoxedContent = styled.div`
-  maxWidth: ${(p: BoxedContentProps) => p.width};
+  max-width: ${(p: BoxedContentProps) => p.width};
   margin: ${(p: BoxedContentProps) => p.margin};
   box-sizing: border-box;
   color: inherit;
