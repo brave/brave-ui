@@ -59,7 +59,7 @@ export interface ClockProps {
    }
 
    get formattedTimePeriod () {
-     const time = this.state.currentTime
+     const time: any = this.state.currentTime
      const period = time.find((component: {type: string}) => component.type === 'dayperiod')
      return period ? period.value : ''
    }
