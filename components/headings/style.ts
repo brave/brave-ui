@@ -50,8 +50,8 @@ const StyledFeatureHeading = StyledSharedHeading.withComponent('h2').extend`
 const StyledH1 = styled.h1`
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  color: ${(p: HeadingProps) => p.color}
-  font-weight: ${(p: HeadingProps) => setWeight(p, 'bold', 'initial', '400')}
+  color: ${(p: HeadingProps) => p.color};
+  font-weight: ${(p: HeadingProps) => setWeight(p, 'bold', 'initial', '400')};
   margin-top: 14px;
   margin-bottom: 22px;
   letter-spacing: -0.4px;
