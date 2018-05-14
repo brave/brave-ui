@@ -2,7 +2,7 @@
 
 exports[`pushButton tests matches the snapshot 1`] = `
 <button
-  className="sc-bdVaJa hGmOLT"
+  className="sc-bdVaJa cThVjo"
   color="default"
   disabled={false}
   fontSize={undefined}

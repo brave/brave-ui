@@ -9,7 +9,7 @@ exports[`all heading tests featureHeading tests matches the snapshot 1`] = `
 
 exports[`all heading tests heading tests matches the snapshot 1`] = `
 <h1
-  className="sc-htoDjs fhsOuc"
+  className="sc-htoDjs ghFRG"
   color={undefined}
   id="testHeading"
 />

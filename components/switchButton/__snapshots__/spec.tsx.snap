@@ -2,7 +2,7 @@
 
 exports[`switchButton tests matches the snapshot 1`] = `
 <div
-  className="sc-bdVaJa eLNElI"
+  className="sc-bdVaJa hVPJwY"
   disabled={undefined}
 >
   <input

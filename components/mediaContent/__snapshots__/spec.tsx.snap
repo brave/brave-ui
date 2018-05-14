@@ -2,7 +2,7 @@
 
 exports[`mediaContent tests matches the snapshot 1`] = `
 <div
-  className="sc-bdVaJa bpJxEA"
+  className="sc-bdVaJa haFDcB"
   id="testMediaContent"
 >
   <img
@@ -10,7 +10,7 @@ exports[`mediaContent tests matches the snapshot 1`] = `
     src={undefined}
   />
   <div
-    className="sc-htpNat iDsVoA"
+    className="sc-htpNat eAEhbz"
   />
 </div>
 `;

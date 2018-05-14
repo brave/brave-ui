@@ -12,7 +12,7 @@ exports[`selectOption tests matches the snapshot 1`] = `
   >
     <select
       autoFocus={false}
-      className="sc-bdVaJa gYRIpJ"
+      className="sc-bdVaJa keIGbw"
       disabled={false}
       id="selectOption"
       multiple={false}

@@ -2,7 +2,7 @@
 
 exports[`page tests matches the snapshot 1`] = `
 <div
-  className="sc-bdVaJa cXEFce"
+  className="sc-bdVaJa fPjtJT"
   id="testPage"
   label={undefined}
   style={undefined}
@@ -13,7 +13,7 @@ exports[`page tests matches the snapshot 1`] = `
     id={undefined}
   />
   <main
-    className="sc-bwzfXH gzCXzM"
+    className="sc-bwzfXH Uxxhi"
   />
 </div>
 `;

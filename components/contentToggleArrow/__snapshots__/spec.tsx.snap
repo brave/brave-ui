@@ -2,24 +2,24 @@
 
 exports[`contentToggleArrow tests matches the snapshot 1`] = `
 <div
-  className="sc-bwzfXH iGzieW"
+  className="sc-bwzfXH fAAGFB"
   id="testContentToggleArrow"
   open={undefined}
 >
   <div
-    className="sc-htpNat fcxVKG"
+    className="sc-htpNat gBtarb"
     id="testContentToggleArrowControl"
     onClick={[Function]}
     open={undefined}
   >
     <div
-      className="sc-bxivhb gaJMNv"
+      className="sc-bxivhb kkUMaj"
     >
       testSummary
     </div>
   </div>
   <div
-    className="sc-ifAKCX jHVBBt"
+    className="sc-ifAKCX dQgWgn"
     open={undefined}
   />
 </div>

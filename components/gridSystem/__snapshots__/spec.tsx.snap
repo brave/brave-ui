@@ -2,7 +2,7 @@
 
 exports[`gridSystem tests column component matches the snapshot 1`] = `
 <div
-  className="sc-bwzfXH jVikWA"
+  className="sc-bwzfXH SvCJB"
   direction={undefined}
   id={undefined}
   size={undefined}
@@ -11,7 +11,7 @@ exports[`gridSystem tests column component matches the snapshot 1`] = `
 
 exports[`gridSystem tests grid component matches the snapshot 1`] = `
 <div
-  className="sc-bdVaJa dzQmNt"
+  className="sc-bdVaJa iqOqOS"
   disabled={false}
   height={undefined}
   id={undefined}
