@@ -52,6 +52,7 @@ const StyledH1 = styled.h1`
   -webkit-font-smoothing: antialiased;
   color: ${(p: HeadingProps) => p.color};
   font-weight: ${(p: HeadingProps) => setWeight(p, 'bold', 'initial', '400')};
+  font-family: inherit;
   margin-top: 14px;
   margin-bottom: 22px;
   letter-spacing: -0.4px;

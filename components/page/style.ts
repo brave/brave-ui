@@ -9,6 +9,8 @@ const StyledPage = styled.div`
   background-attachment: fixed;
   background-size: auto;
   font-family: inherit;
+  color: inherit;
+  font-size: inherit;
   width: 100%;
   height: 100%;
   padding: 40px;
@@ -18,7 +20,9 @@ const StyledPage = styled.div`
 
 const StyledPageContent = styled.main`
   box-sizing: border-box;
+  font-size: inherit;
   font-family: inherit;
+  color: inherit;
   width: 100%;
   height: 100%;
 ` as any

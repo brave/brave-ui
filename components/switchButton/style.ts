@@ -15,6 +15,8 @@ const StyledSwitchButtonWrapper = styled.div`
   box-sizing: border-box;
   display: flex;
   align-items: center;
+  font-family: inherit;
+  color: inherit;
 
   ${(p: SwitchButtonProps) => p.disabled && css`
     opacity: 0.3;
@@ -32,6 +34,8 @@ const StyledSwitchButtonLabel = styled.label`
   margin-left: ${(p: SwitchButtonProps) => setSize(p, '18px', '10px', '10px')};
   margin-right: ${(p: SwitchButtonProps) => setSize(p, '18px', '10px', '10px')};
   font-weight: 400;
+  font-family: inherit;
+  color: inherit;
 ` as any
 
 /**

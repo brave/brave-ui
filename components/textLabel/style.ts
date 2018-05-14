@@ -13,6 +13,7 @@ const StyledTextLabel = styled.p`
   padding: ${(p: TextLabelProps) => p.padding ? p.padding : '0'};
   font-size: ${(p: TextLabelProps) => p.size ? p.size : '13px'};
   color: ${(p: TextLabelProps) => p.color ? p.color : 'inherit'};
+  font-family: inherit;
   box-sizing: border-box;
   background: none;
   margin: 0;

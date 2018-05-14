@@ -15,13 +15,16 @@ const StyledTime = styled_components_1.default.span `
   letter-spacing: 0;
   font-size: 75px;
   font-weight: 200;
-  color: #fff;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
   display: inline-flex;
 `;
 exports.StyledTime = StyledTime;
 const StyledPeriod = styled_components_1.default.span `
   box-sizing: border-box;
-  color: #fff;
+  color: inherit;
+  font-family: inherit;
   display: inline-block;
   font-size: 20px;
   letter-spacing: -0.2px;;
@@ -33,7 +36,9 @@ const StyledPeriod = styled_components_1.default.span `
 exports.StyledPeriod = StyledPeriod;
 const StyledTimeSeparator = styled_components_1.default.span `
   box-sizing: border-box;
-  color: #fff;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
   /* center colon vertically in the text-content line */
   margin-top: -0.1em;
 `;

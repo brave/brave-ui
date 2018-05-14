@@ -10,6 +10,7 @@ const StyledPushButton = styled.button`
   font-size: ${(p: PushButtonProps) => p.fontSize ? p.fontSize : '13px'};
   min-width: ${(p: PushButtonProps) => p.size ? p.size : '78px'};
   min-height: ${(p: PushButtonProps) => p.size ? p.size : '32px'};
+  font-family: inherit;
   position: relative;
   display: inline-block;
   text-align: center;

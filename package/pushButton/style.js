@@ -6,6 +6,7 @@ const StyledPushButton = styled_components_1.default.button `
   font-size: ${(p) => p.fontSize ? p.fontSize : '13px'};
   min-width: ${(p) => p.size ? p.size : '78px'};
   min-height: ${(p) => p.size ? p.size : '32px'};
+  font-family: inherit;
   position: relative;
   display: inline-block;
   text-align: center;

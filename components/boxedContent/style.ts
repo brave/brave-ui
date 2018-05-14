@@ -10,6 +10,8 @@ const StyledBoxedContent = styled.div`
   margin: ${(p: BoxedContentProps) => p.margin};
   box-sizing: border-box;
   color: inherit;
+  font-size: inherit;
+  font-family: inherit;
 ` as any
 
 export default StyledBoxedContent

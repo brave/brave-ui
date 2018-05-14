@@ -6,6 +6,7 @@ const StyledUnstyledButton = styled_components_1.default.button `
   height: ${(p) => p.height ? p.height : 'inherit'};
   font-size: ${(p) => p.fontSize ? p.fontSize : 'inherit'};
   color: ${(p) => p.color ? p.color : 'inherit'};
+  font-family: inherit;
   box-sizing: border-box;
   display: block;
   line-height: 1;

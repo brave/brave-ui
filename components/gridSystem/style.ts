@@ -15,6 +15,8 @@ const StyledGrid = styled.div`
   height: ${(p: GridProps) => p.height ? p.height : 'initial'};
   color: ${(p: GridProps) => p.textColor ? p.textColor : 'inherit'};
   background-color: ${(p: GridProps) => p.background ? p.background : 'inherit'};
+  font-family: inherit;
+  font-size: inherit;
 
   ${(p: GridProps) => p.disabled
     ? css`
@@ -35,6 +37,9 @@ const StyledColumn = styled.div`
   align-items: ${(p: ColumnProps) => p.verticalAlign ? p.verticalAlign : 'initial'};
   background-color: ${(p: ColumnProps) => p.background ? p.background : 'inherit'};
   flex-direction: ${(p: ColumnProps) => p.direction ? p.direction : 'initial'};
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
 ` as any
 
 export {

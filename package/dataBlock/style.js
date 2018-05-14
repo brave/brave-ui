@@ -8,6 +8,9 @@ const StyledDataBlock = styled_components_1.default.ul `
   font-weight: 400;
   margin: 0;
   padding: 0;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
 `;
 exports.StyledDataBlock = StyledDataBlock;
 const StyledDataItem = styled_components_1.default.li `
@@ -17,6 +20,9 @@ const StyledDataItem = styled_components_1.default.li `
   display: inline-block;
   vertical-align: middle;
   list-style-type: none;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
 `;
 exports.StyledDataItem = StyledDataItem;
 const StyledDataItemCounter = styled_components_1.default.div `
@@ -24,6 +30,7 @@ const StyledDataItemCounter = styled_components_1.default.div `
   color: ${(p) => p.color || 'inherit'}
   letter-spacing: -0.4px;
   font-size: 44px;
+  font-family: inherit;
   line-height: 53px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -34,8 +41,9 @@ exports.StyledDataItemCounter = StyledDataItemCounter;
 const StyledDataItemText = styled_components_1.default.span `
   box-sizing: border-box;
   display: inline;
-  color: #999999;
+  color: inherit;
   font-size: 20px;
+  font-family: inherit;
   letter-spacing: 0;
   line-height: 24px;
   margin-left: 3px;
@@ -44,6 +52,7 @@ exports.StyledDataItemText = StyledDataItemText;
 const StyledDataItemDescription = styled_components_1.default.div `
   box-sizing: border-box;
   font-size: 13px;
+  font-family: inherit;
   color: inherit;
   margin-left: 3px;
 `;

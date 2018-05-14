@@ -9,6 +9,9 @@ const StyledMediaContent = styled.div`
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
+  font-weight: inherit;
+  font-family: inherit;
+  color: inherit;
 ` as any
 
 const StyledMedia = styled.img`
@@ -21,6 +24,9 @@ const StyledMedia = styled.img`
 const StyledMediaBody = styled.div`
   box-sizing: border-box;
   margin-left: ${(p: MediaContentProps) => p.gap};
+  font-weight: inherit;
+  font-family: inherit;
+  color: inherit;
 ` as any
 
 export {

@@ -4,11 +4,17 @@ const styled_components_1 = require("styled-components");
 const StyledContentToggleArrow = styled_components_1.default.div `
   box-sizing: border-box;
   width: fit-content;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
 `;
 exports.StyledContentToggleArrow = StyledContentToggleArrow;
 const StyledContentToggleArrowControl = styled_components_1.default.div `
   box-sizing: border-box;
   position: relative;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
 
   &::after {
     content: ${(s) => s.open ? '"▼"' : '"▶"'};
@@ -24,11 +30,17 @@ const StyledContentToggleArrowControl = styled_components_1.default.div `
 exports.StyledContentToggleArrowControl = StyledContentToggleArrowControl;
 const StyledContentToggleArrowSummary = styled_components_1.default.div `
   box-sizing: border-box;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
   margin-left: 15px;
 `;
 exports.StyledContentToggleArrowSummary = StyledContentToggleArrowSummary;
 const StyledContentToggleArrowContent = styled_components_1.default.div `
   box-sizing: border-box;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
   overflow: ${(s) => s.open ? 'auto' : 'hidden'};
   height: ${(s) => s.open ? 'fit-content' : '0'};
   width: fit-content;

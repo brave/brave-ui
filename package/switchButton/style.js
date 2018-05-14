@@ -7,6 +7,8 @@ const StyledSwitchButtonWrapper = styled_components_1.default.div `
   box-sizing: border-box;
   display: flex;
   align-items: center;
+  font-family: inherit;
+  color: inherit;
 
   ${(p) => p.disabled && styled_components_1.css `
     opacity: 0.3;
@@ -19,6 +21,8 @@ const StyledSwitchButtonLabel = styled_components_1.default.label `
   margin-left: ${(p) => helpers_1.setSize(p, '18px', '10px', '10px')};
   margin-right: ${(p) => helpers_1.setSize(p, '18px', '10px', '10px')};
   font-weight: 400;
+  font-family: inherit;
+  color: inherit;
 `;
 exports.StyledSwitchButtonLabel = StyledSwitchButtonLabel;
 const StyledSwitchButton = styled_components_1.default.input `

@@ -13,6 +13,7 @@ const StyledSelectOption = styled.select`
   display: block;
   color: rgb(68, 68, 68);
   font-size: 13px;
+  font-family: inherit;
   border: solid 1px rgba(0, 0, 0, 0.2);
   outline: none;
   padding: 6px 12px 6px 6px;

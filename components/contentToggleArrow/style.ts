@@ -8,11 +8,17 @@ import { ContentToggleArrowState } from './index'
 const StyledContentToggleArrow = styled.div`
   box-sizing: border-box;
   width: fit-content;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
 ` as any
 
 const StyledContentToggleArrowControl = styled.div`
   box-sizing: border-box;
   position: relative;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
 
   &::after {
     content: ${(s: ContentToggleArrowState) => s.open ? '"▼"' : '"▶"'};
@@ -28,11 +34,17 @@ const StyledContentToggleArrowControl = styled.div`
 
 const StyledContentToggleArrowSummary = styled.div`
   box-sizing: border-box;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
   margin-left: 15px;
 ` as any
 
 const StyledContentToggleArrowContent = styled.div`
   box-sizing: border-box;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
   overflow: ${(s: ContentToggleArrowState) => s.open ? 'auto' : 'hidden'};
   height: ${(s: ContentToggleArrowState) => s.open ? 'fit-content' : '0'};
   width: fit-content;

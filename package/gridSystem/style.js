@@ -11,6 +11,8 @@ const StyledGrid = styled_components_1.default.div `
   height: ${(p) => p.height ? p.height : 'initial'};
   color: ${(p) => p.textColor ? p.textColor : 'inherit'};
   background-color: ${(p) => p.background ? p.background : 'inherit'};
+  font-family: inherit;
+  font-size: inherit;
 
   ${(p) => p.disabled
     ? styled_components_1.css `
@@ -28,6 +30,9 @@ const StyledColumn = styled_components_1.default.div `
   align-items: ${(p) => p.verticalAlign ? p.verticalAlign : 'initial'};
   background-color: ${(p) => p.background ? p.background : 'inherit'};
   flex-direction: ${(p) => p.direction ? p.direction : 'initial'};
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
 `;
 exports.StyledColumn = StyledColumn;
 //# sourceMappingURL=style.js.map

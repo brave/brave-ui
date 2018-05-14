@@ -6,6 +6,8 @@ const StyledBoxedContent = styled_components_1.default.div `
   margin: ${(p) => p.margin};
   box-sizing: border-box;
   color: inherit;
+  font-size: inherit;
+  font-family: inherit;
 `;
 exports.default = StyledBoxedContent;
 //# sourceMappingURL=style.js.map
