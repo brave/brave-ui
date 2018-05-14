@@ -2,9 +2,7 @@
 import * as React from 'react';
 export interface ClockProps {
     id?: string;
-}
-export interface ClockProps {
-    id?: string;
+    color?: string;
 }
 export interface ClockState {
     currentTime: Array<{

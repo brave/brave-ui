@@ -17,4 +17,10 @@ describe('clock tests', () => {
     const assertion = wrapper.props().id
     expect(assertion).toBe('whatClock')
   })
+
+  it('can have a custom color', () => {
+    const wrapper = shallow(baseComponent({color: 'white'}))
+    const assertion = wrapper.props().color
+    expect(assertion).toBe('white')
+  })
 })
