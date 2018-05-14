@@ -1,0 +1,11 @@
+declare const StyledHeadingTitle: any;
+declare const StyledHeadingTitleLabel: any;
+declare const StyledSectionHeading: any;
+declare const StyledFeatureHeading: any;
+declare const StyledH1: any;
+declare const StyledH2: any;
+declare const StyledH3: any;
+declare const StyledH4: any;
+declare const StyledH5: any;
+declare const StyledH6: any;
+export { StyledHeadingTitle, StyledHeadingTitleLabel, StyledSectionHeading, StyledFeatureHeading, StyledH1, StyledH2, StyledH3, StyledH4, StyledH5, StyledH6 };
