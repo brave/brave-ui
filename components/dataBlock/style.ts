@@ -31,7 +31,7 @@ const StyledDataItem = styled.li`
   font-family: inherit;
 ` as any
 
-const StyledDataItemCounter = styled.div`
+const StyledDataItemCounter = styled.span`
   box-sizing: border-box;
   color: ${(p: DataItemProps) => p.color || 'inherit'}
   letter-spacing: -0.4px;

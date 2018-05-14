@@ -25,7 +25,7 @@ const StyledDataItem = styled_components_1.default.li `
   font-family: inherit;
 `;
 exports.StyledDataItem = StyledDataItem;
-const StyledDataItemCounter = styled_components_1.default.div `
+const StyledDataItemCounter = styled_components_1.default.span `
   box-sizing: border-box;
   color: ${(p) => p.color || 'inherit'}
   letter-spacing: -0.4px;
