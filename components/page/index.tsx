@@ -23,7 +23,7 @@ class Page extends React.PureComponent<PageProps, {}> {
 
     return (
       <StyledPage id={id} title={title} label={label} style={style}>
-        <TitleHeading text={title} label={label} />
+        { title && <TitleHeading text={title} label={label} /> }
         <StyledPageContent>{children}</StyledPageContent>
       </StyledPage>
     )

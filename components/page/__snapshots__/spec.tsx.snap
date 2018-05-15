@@ -8,10 +8,6 @@ exports[`page tests matches the snapshot 1`] = `
   style={undefined}
   title={undefined}
 >
-  <h1
-    className="sc-ifAKCX gxtLTt"
-    id={undefined}
-  />
   <main
     className="sc-bwzfXH Uxxhi"
   />
