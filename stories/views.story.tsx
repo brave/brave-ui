@@ -16,8 +16,9 @@
  */
 
 import { storiesOf, addDecorator } from '@storybook/react'
-import { withKnobs, text } from '@storybook/addon-knobs'
+import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { BetterVisualizer } from './storyUtil'
+import { action } from '@storybook/addon-actions'
 
 // Components
 import * as React from 'react'
@@ -48,13 +49,28 @@ storiesOf('Views', module)
     )
   })
   .add('DataBlock', () => {
+    const sizeOptions = { 'small': 'Small', 'medium': 'Medium' }
+    const sizeDefaultValue = 'medium'
+    const sizeValue = select('Size', sizeOptions, sizeDefaultValue)
     return (
-      <DataBlock>
+      <DataBlock list={boolean('show as list?', false)}>
         <DataItem
+          size={sizeValue}
           color={text('Color', 'orange')}
           counter={text('Counter', '123123')}
           text={text('Text', 'Some Text')}
           description={text('Description', 'Some Description')}
+          onClick={action('clicked the DataBlock!')}
+          noSelect={boolean('Disallow user select?', false)}
+        />
+        <DataItem
+          size={sizeValue}
+          color={text('Color', 'orange')}
+          counter={text('Counter', '123123')}
+          text={text('Text', 'Some Text')}
+          description={text('Description', 'Some Description')}
+          onClick={action('clicked the DataBlock!')}
+          noSelect={boolean('Disallow user select?', false)}
         />
       </DataBlock>
     )
