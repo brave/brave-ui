@@ -1,3 +1,3 @@
 export declare const capitalize: (str: string) => string;
-export declare const setSize: (p: any, large: string | null, medium: string, small: string | null) => string | null;
+export declare const setValueBasedOnSize: (size?: "small" | "medium" | "large" | undefined, medium?: string | undefined, small?: string | undefined, large?: string | undefined) => string | undefined;
 export declare const setWeight: (p: any, bold: string, normal: string, thin: string) => string;

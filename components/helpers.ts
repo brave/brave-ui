@@ -10,24 +10,24 @@ export const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.sli
 
 /**
  * Sets the style property of a component based on the size prop
- * @param p (any) - the component's props
- * @param large (string | null) - string that defines the large size
- * @param medium (string) - string that defines the medium size
- * @param small (string | null) - string that defines the small size
+ * @param {'medium' | 'small' | 'large'} size - the component's size props
+ * @param {String} medium - string that defines the medium size
+ * @param {String} small - string that defines the small size
+ * @param {String} large - string that defines the large size
  */
-export const setSize = (
-  p: any,
-  large: string | null,
-  medium: string,
-  small: string | null
+export const setValueBasedOnSize = (
+  size?: 'medium' | 'small' | 'large',
+  medium?: string,
+  small?: string,
+  large?: string
 ) => {
-  switch (p.size) {
-    case 'large':
-      return large
+  switch (size) {
     case 'medium':
       return medium
     case 'small':
       return small
+    case 'large':
+      return large
     default:
       return medium
   }

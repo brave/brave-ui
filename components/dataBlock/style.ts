@@ -4,7 +4,7 @@
 
 import styled from 'styled-components'
 import { DataProps, DataItemProps } from './index'
-import { setSize } from '../helpers'
+import { setValueBasedOnSize } from '../helpers'
 
 // s/Data/data
 
@@ -40,9 +40,9 @@ const StyledDataItem = styled.li`
 
 const StyledDataItemCounter = styled.span`
   color: ${(p: DataItemProps) => p.color || 'inherit'}
-  font-size: ${(p: DataItemProps) => setSize(p, null, '44px', '26px')};
-  line-height: ${(p: DataItemProps) => setSize(p, null, '52px', '24px')};
-  max-width: ${(p: DataItemProps) => setSize(p, null, '200px', '38px')};
+  font-size: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '44px', '26px', undefined)};
+  line-height: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '52px', '24px', undefined)};
+  max-width: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '200px', '38px', undefined)};
   text-align: ${(p: DataItemProps) => p.size === 'small' ? 'right' : 'inherit'};
   box-sizing: border-box;
   letter-spacing: -0.4px;
@@ -53,9 +53,9 @@ const StyledDataItemCounter = styled.span`
 ` as any
 
 const StyledDataItemText = styled.span`
-  font-size: ${(p: DataItemProps) => setSize(p, null, '20px', '13px')};
-  line-height: ${(p: DataItemProps) => setSize(p, null, '24px', '16px')};
-  margin-left: ${(p: DataItemProps) => setSize(p, null, '3px', '10px')};
+  font-size: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '20px', '13px', undefined)};
+  line-height: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '24px', '16px', undefined)};
+  margin-left: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '3px', '10px', undefined)};
   box-sizing: border-box;
   display: inline;
   color: inherit;
@@ -66,7 +66,7 @@ const StyledDataItemText = styled.span`
 const StyledDataItemDescription = styled.div`
   box-sizing: border-box;
   font-size: 13px;
-  line-height: ${(p: DataItemProps) => setSize(p, null, '24px', '16px')};
+  line-height: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '24px', '16px', undefined)};
   font-family: inherit;
   color: inherit;
   margin-left: 3px;

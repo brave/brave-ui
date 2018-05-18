@@ -2,7 +2,6 @@
 import * as React from 'react';
 export interface DataProps {
     id?: string;
-    size?: 'medium' | 'small';
     list?: boolean;
     children?: React.ReactNode;
 }

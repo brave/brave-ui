@@ -5,7 +5,7 @@
 import styled, { css } from 'styled-components'
 import { SwitchButtonProps } from './index'
 import theme from '../theme'
-import { setSize } from '../helpers'
+import { setValueBasedOnSize } from '../helpers'
 
 /**
 * Wrapper for the switch button
@@ -30,9 +30,9 @@ const StyledSwitchButtonWrapper = styled.div`
 */
 const StyledSwitchButtonLabel = styled.label`
   box-sizing: border-box;
-  font-size: ${(p: SwitchButtonProps) => setSize(p, '24px', 'inherit', 'inherit')};
-  margin-left: ${(p: SwitchButtonProps) => setSize(p, '18px', '10px', '10px')};
-  margin-right: ${(p: SwitchButtonProps) => setSize(p, '18px', '10px', '10px')};
+  font-size: ${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, 'inherit', 'inherit', '24px')};
+  margin-left: ${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, '10px', '10px', '18px')};
+  margin-right: ${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, '10px', '10px', '18px')};
   font-weight: 400;
   font-family: inherit;
   color: inherit;
@@ -45,9 +45,9 @@ const StyledSwitchButton = styled.input`
   box-sizing: border-box;
   -webkit-appearance: none;
   position: relative;
-  width: ${(p: SwitchButtonProps) => setSize(p, '60px', '48px', '40px')};
-  height: ${(p: SwitchButtonProps) => setSize(p, '26px', '16px', '14px')};
-  border-radius: ${(p: SwitchButtonProps) => setSize(p, '26px', '16px', '14px')};
+  width: ${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, '48px', '40px','60px')};
+  height: ${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, '16px', '14px', '26px')};
+  border-radius: ${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, '16px', '14px', '26px')};
   border: 2px solid ${theme.switchButton.uncheckedBg};
   padding: 0 2px;
   background-color: white;
@@ -55,14 +55,14 @@ const StyledSwitchButton = styled.input`
   transition: linear 0.2s;
   box-shadow:
     inset
-    -${(p: SwitchButtonProps) => setSize(p, '33px', '31px', '25px')} 0px 0px 0px
+    -${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, '31px', '25px', '33px')} 0px 0px 0px
     ${theme.switchButton.uncheckedBg};
 
   &:checked {
     border: 2px solid ${theme.switchButton.checkedBg};
     box-shadow:
       inset
-      ${(p: SwitchButtonProps) => setSize(p, '33px', '31px', '25px')} 0px 0px 0px
+      ${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, '31px', '25px', '33px')} 0px 0px 0px
       ${theme.switchButton.checkedBg};
   }
 ` as any

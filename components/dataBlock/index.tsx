@@ -10,16 +10,15 @@ import {
 
 export interface DataProps {
   id?: string,
-  size?: 'medium' | 'small',
   list?: boolean,
   children?: React.ReactNode
 }
 
 class DataBlock extends React.PureComponent<DataProps, {}> {
   render () {
-    const { id, list, size, children } = this.props
+    const { id, list, children } = this.props
     return (
-      <StyledDataBlock id={id} list={list} size={size}>{children}</StyledDataBlock>
+      <StyledDataBlock id={id} list={list}>{children}</StyledDataBlock>
     )
   }
 }
@@ -37,7 +36,17 @@ export interface DataItemProps {
 
 class DataItem extends React.PureComponent<DataItemProps, {}> {
   render () {
-    const { id, color, counter, text, description, onClick, noSelect, size } = this.props
+    const {
+      id,
+      color,
+      counter,
+      text,
+      description,
+      onClick,
+      noSelect,
+      size = 'medium'
+    } = this.props
+
     return (
       <StyledDataItem
         id={id}

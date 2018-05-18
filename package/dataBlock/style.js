@@ -34,9 +34,9 @@ const StyledDataItem = styled_components_1.default.li `
 exports.StyledDataItem = StyledDataItem;
 const StyledDataItemCounter = styled_components_1.default.span `
   color: ${(p) => p.color || 'inherit'}
-  font-size: ${(p) => helpers_1.setSize(p, null, '44px', '26px')};
-  line-height: ${(p) => helpers_1.setSize(p, null, '52px', '24px')};
-  max-width: ${(p) => helpers_1.setSize(p, null, '200px', '38px')};
+  font-size: ${(p) => helpers_1.setValueBasedOnSize(p.size, '44px', '26px', undefined)};
+  line-height: ${(p) => helpers_1.setValueBasedOnSize(p.size, '52px', '24px', undefined)};
+  max-width: ${(p) => helpers_1.setValueBasedOnSize(p.size, '200px', '38px', undefined)};
   text-align: ${(p) => p.size === 'small' ? 'right' : 'inherit'};
   box-sizing: border-box;
   letter-spacing: -0.4px;
@@ -47,9 +47,9 @@ const StyledDataItemCounter = styled_components_1.default.span `
 `;
 exports.StyledDataItemCounter = StyledDataItemCounter;
 const StyledDataItemText = styled_components_1.default.span `
-  font-size: ${(p) => helpers_1.setSize(p, null, '20px', '13px')};
-  line-height: ${(p) => helpers_1.setSize(p, null, '24px', '16px')};
-  margin-left: ${(p) => helpers_1.setSize(p, null, '3px', '10px')};
+  font-size: ${(p) => helpers_1.setValueBasedOnSize(p.size, '20px', '13px', undefined)};
+  line-height: ${(p) => helpers_1.setValueBasedOnSize(p.size, '24px', '16px', undefined)};
+  margin-left: ${(p) => helpers_1.setValueBasedOnSize(p.size, '3px', '10px', undefined)};
   box-sizing: border-box;
   display: inline;
   color: inherit;
@@ -60,7 +60,7 @@ exports.StyledDataItemText = StyledDataItemText;
 const StyledDataItemDescription = styled_components_1.default.div `
   box-sizing: border-box;
   font-size: 13px;
-  line-height: ${(p) => helpers_1.setSize(p, null, '24px', '16px')};
+  line-height: ${(p) => helpers_1.setValueBasedOnSize(p.size, '24px', '16px', undefined)};
   font-family: inherit;
   color: inherit;
   margin-left: 3px;

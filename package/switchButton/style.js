@@ -17,9 +17,9 @@ const StyledSwitchButtonWrapper = styled_components_1.default.div `
 exports.StyledSwitchButtonWrapper = StyledSwitchButtonWrapper;
 const StyledSwitchButtonLabel = styled_components_1.default.label `
   box-sizing: border-box;
-  font-size: ${(p) => helpers_1.setSize(p, '24px', 'inherit', 'inherit')};
-  margin-left: ${(p) => helpers_1.setSize(p, '18px', '10px', '10px')};
-  margin-right: ${(p) => helpers_1.setSize(p, '18px', '10px', '10px')};
+  font-size: ${(p) => helpers_1.setValueBasedOnSize(p.size, 'inherit', 'inherit', '24px')};
+  margin-left: ${(p) => helpers_1.setValueBasedOnSize(p.size, '10px', '10px', '18px')};
+  margin-right: ${(p) => helpers_1.setValueBasedOnSize(p.size, '10px', '10px', '18px')};
   font-weight: 400;
   font-family: inherit;
   color: inherit;
@@ -29,9 +29,9 @@ const StyledSwitchButton = styled_components_1.default.input `
   box-sizing: border-box;
   -webkit-appearance: none;
   position: relative;
-  width: ${(p) => helpers_1.setSize(p, '60px', '48px', '40px')};
-  height: ${(p) => helpers_1.setSize(p, '26px', '16px', '14px')};
-  border-radius: ${(p) => helpers_1.setSize(p, '26px', '16px', '14px')};
+  width: ${(p) => helpers_1.setValueBasedOnSize(p.size, '48px', '40px', '60px')};
+  height: ${(p) => helpers_1.setValueBasedOnSize(p.size, '16px', '14px', '26px')};
+  border-radius: ${(p) => helpers_1.setValueBasedOnSize(p.size, '16px', '14px', '26px')};
   border: 2px solid ${theme_1.default.switchButton.uncheckedBg};
   padding: 0 2px;
   background-color: white;
@@ -39,14 +39,14 @@ const StyledSwitchButton = styled_components_1.default.input `
   transition: linear 0.2s;
   box-shadow:
     inset
-    -${(p) => helpers_1.setSize(p, '33px', '31px', '25px')} 0px 0px 0px
+    -${(p) => helpers_1.setValueBasedOnSize(p.size, '31px', '25px', '33px')} 0px 0px 0px
     ${theme_1.default.switchButton.uncheckedBg};
 
   &:checked {
     border: 2px solid ${theme_1.default.switchButton.checkedBg};
     box-shadow:
       inset
-      ${(p) => helpers_1.setSize(p, '33px', '31px', '25px')} 0px 0px 0px
+      ${(p) => helpers_1.setValueBasedOnSize(p.size, '31px', '25px', '33px')} 0px 0px 0px
       ${theme_1.default.switchButton.checkedBg};
   }
 `;
