@@ -11,7 +11,7 @@ declare class DataBlock extends React.PureComponent<DataProps, {}> {
 export interface DataItemProps {
     id?: string;
     color?: string;
-    counter?: string;
+    counter?: string | number;
     text?: string;
     description?: string;
     size?: 'medium' | 'small';
