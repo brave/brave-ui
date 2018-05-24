@@ -59,13 +59,15 @@ class NewPrivateTab extends React.PureComponent {
             <Clock color='rgba(255,255,255,0.8)' />
           </Column>
         </Grid>
-        <BoxedContent width='650px' margin='60px auto 0'>
+        <BoxedContent
+          theme={{boxedContent: {maxWidth: '650px', margin: '60px auto 0'}}}
+        >
           <MediaContent media={privateTabIcon} mediaSize='80px' gap='25px'>
             <Heading level={1} weight='thin' color='#fff' text={locale.title} />
             <article style={{fontFamily: '"Muli", sans-serif'}}>
               <Paragraph size='18px' text={locale.paragraph1} />
               <Paragraph italic size='15px' text={locale.paragraph2} />
-              <BoxedContent margin='40px 0 25px'>
+              <BoxedContent theme={{boxedContent: {margin: '40px 0 25px'}}}>
                 <SwitchButton
                   id='togglePrivateSearchEngine'
                   size='large'

@@ -6,20 +6,24 @@ import * as React from 'react'
 
 import StyledBoxedContent from './style'
 
+export interface BoxedContentTheme {
+  maxWidth?: string,
+  margin?: string
+}
+
 export interface BoxedContentProps {
   id?: string,
-  width?: string,
-  margin?: string,
+  theme?: {
+    [boxedContent: string]: BoxedContentTheme
+  }
   children?: React.ReactNode
 }
 
 class BoxedContent extends React.PureComponent<BoxedContentProps, {}> {
   render () {
-    const { id, width, margin, children } = this.props
+    const { id, theme, children } = this.props
     return (
-      <StyledBoxedContent id={id} width={width} margin={margin}>
-        {children}
-      </StyledBoxedContent>
+      <StyledBoxedContent id={id} theme={theme}>{children}</StyledBoxedContent>
     )
   }
 }

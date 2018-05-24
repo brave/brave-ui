@@ -1,9 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`boxedContent tests matches the snapshot 1`] = `
+exports[`boxedContent tests basic tests matches the snapshot 1`] = `
+.c0 {
+  color: inherit;
+  font-size: inherit;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
 <div
-  className="sc-bdVaJa eAHPHK"
+  className="c0"
   id="testBoxedContent"
-  width={undefined}
 />
 `;

@@ -1,9 +1,14 @@
 /// <reference types="react" />
 import * as React from 'react';
+export interface BoxedContentTheme {
+    maxWidth?: string;
+    margin?: string;
+}
 export interface BoxedContentProps {
     id?: string;
-    width?: string;
-    margin?: string;
+    theme?: {
+        [boxedContent: string]: BoxedContentTheme;
+    };
     children?: React.ReactNode;
 }
 declare class BoxedContent extends React.PureComponent<BoxedContentProps, {}> {
