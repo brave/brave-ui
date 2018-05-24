@@ -56,7 +56,7 @@ class NewPrivateTab extends React.PureComponent {
             </DataBlock>
           </Column>
           <Column size={1} align='flex-end'>
-            <Clock color='rgba(255,255,255,0.8)' />
+            <Clock theme={{clock: {color: 'rgba(255,255,255,0.8)'}}} />
           </Column>
         </Grid>
         <BoxedContent

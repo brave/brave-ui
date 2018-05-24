@@ -6,21 +6,27 @@ import Clock from '../clock'
 
 describe('clock tests', () => {
   const baseComponent = (props?: object) => <Clock {...props} />
-  it('renders the component', () => {
-    const wrapper = shallow(baseComponent({id: 'someId'}))
-    const assertion = wrapper.find('#someId').length
-    expect(assertion).toBe(1)
+  describe('basic tests', () => {
+    it('renders the component', () => {
+      const wrapper = shallow(baseComponent({id: 'someId'}))
+      const assertion = wrapper.find('#someId').length
+      expect(assertion).toBe(1)
+    })
   })
 
-  it('can have an id', () => {
-    const wrapper = shallow(baseComponent({id: 'whatClock'}))
-    const assertion = wrapper.props().id
-    expect(assertion).toBe('whatClock')
+  describe('component behavior', () => {
+    it('can have an id', () => {
+      const wrapper = shallow(baseComponent({id: 'whatClock'}))
+      const assertion = wrapper.props().id
+      expect(assertion).toBe('whatClock')
+    })
   })
 
-  it('can have a custom color', () => {
-    const wrapper = shallow(baseComponent({color: 'white'}))
-    const assertion = wrapper.props().color
-    expect(assertion).toBe('white')
+  describe('theming', () => {
+    it('allows theming the `color` property', () => {
+      const component = baseComponent({theme: { clock: { color: 'white' } } })
+      const tree = create(component).toJSON()
+      expect(tree).toHaveStyleRule('color', 'white')
+    })
   })
 })

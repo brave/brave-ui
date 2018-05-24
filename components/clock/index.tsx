@@ -11,15 +11,14 @@
    StyledTimeSeparator
  } from './style'
 
-// ********************************************************
-// ********************************************************
-// NOTE: THIS IS A DRAFT. DO NOT USE IT IN PRODUCTION
-// ********************************************************
-// ********************************************************
-
+export interface ClockTheme {
+  color?: string
+}
 export interface ClockProps {
   id?: string,
-  color?: string
+  theme?: {
+    [clock: string]: ClockTheme
+  }
 }
 
 export interface ClockState {
@@ -84,9 +83,9 @@ class Clock extends React.PureComponent<ClockProps, ClockState> {
   }
 
   render () {
-    const { id, color } = this.props
+    const { id, theme } = this.props
     return (
-      <StyledClock id={id} color={color}>
+      <StyledClock id={id} theme={theme}>
         <StyledTime>{this.formattedTime}</StyledTime>
         <StyledPeriod>{this.formattedTimePeriod}</StyledPeriod>
       </StyledClock>

@@ -4,9 +4,10 @@
 
 import styled from 'styled-components'
 import { ClockProps } from './index'
+import { checkIfThemeProp } from '../helpers'
 
 const StyledClock = styled.div`
-  color: ${(p: ClockProps) => p.color || 'inherit'};
+  color: ${(p: ClockProps) => checkIfThemeProp(p.theme, 'clock', 'color') || 'inherit'};
   box-sizing: border-box;
   line-height: 1;
   user-select: none;

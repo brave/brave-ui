@@ -1,8 +1,13 @@
 /// <reference types="react" />
 import * as React from 'react';
+export interface ClockTheme {
+    color?: string;
+}
 export interface ClockProps {
     id?: string;
-    color?: string;
+    theme?: {
+        [clock: string]: ClockTheme;
+    };
 }
 export interface ClockState {
     currentTime: Array<{

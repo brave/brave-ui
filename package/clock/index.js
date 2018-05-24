@@ -50,8 +50,8 @@ class Clock extends React.PureComponent {
         window.setInterval(this.maybeUpdateClock.bind(this), 2000);
     }
     render() {
-        const { id, color } = this.props;
-        return (React.createElement(style_1.StyledClock, { id: id, color: color },
+        const { id, theme } = this.props;
+        return (React.createElement(style_1.StyledClock, { id: id, theme: theme },
             React.createElement(style_1.StyledTime, null, this.formattedTime),
             React.createElement(style_1.StyledPeriod, null, this.formattedTimePeriod)));
     }
