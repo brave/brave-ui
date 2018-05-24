@@ -11,10 +11,10 @@ class DataBlock extends React.PureComponent {
 exports.DataBlock = DataBlock;
 class DataItem extends React.PureComponent {
     render() {
-        const { id, color, counter, text, description, onClick, noSelect, size = 'medium' } = this.props;
-        return (React.createElement(style_1.StyledDataItem, { id: id, color: color, onClick: onClick, noSelect: noSelect, size: size },
-            React.createElement(style_1.StyledDataItemCounter, { color: color, size: size }, counter),
-            text && React.createElement(style_1.StyledDataItemText, { color: color, size: size }, text),
+        const { id, theme, counter, text, description, onClick, size = 'medium' } = this.props;
+        return (React.createElement(style_1.StyledDataItem, { id: id, theme: theme, onClick: onClick, size: size },
+            React.createElement(style_1.StyledDataItemCounter, { theme: theme, size: size }, counter),
+            text && React.createElement(style_1.StyledDataItemText, { theme: theme, size: size }, text),
             description && React.createElement(style_1.StyledDataItemDescription, { size: size }, description)));
     }
 }

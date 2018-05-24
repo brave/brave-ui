@@ -37,19 +37,19 @@ class NewPrivateTab extends React.PureComponent {
           <Column size={2}>
             <DataBlock>
               <DataItem
-                color='#f39030'
+                theme={{ dataItem: {color: '#f39030' }}}
                 description={locale.trackersBlocked}
                 counter={data.trackersBlockedCount} />
               <DataItem
-                color='#fe521d'
+                theme={{ dataItem: {color: '#fe521d' }}}
                 description={locale.adsBlocked}
                 counter={data.adsBlockedCount} />
               <DataItem
-                color='#0796fa'
+                theme={{ dataItem: {color: '#0796fa' }}}
                 description={locale.httpsUpgrades}
                 counter={data.httpsUpgradesCount} />
               <DataItem
-                color='#999999'
+                theme={{ dataItem: {color: '#999999' }}}
                 description={locale.estimatedTime}
                 text={locale.minutes}
                 counter={data.estimatedTimeCount} />

@@ -22,42 +22,40 @@ class DataBlock extends React.PureComponent<DataProps, {}> {
     )
   }
 }
+export interface DataItemTheme {
+  color?: string,
+  userSelect?: 'auto' | 'none'
+}
 
 export interface DataItemProps {
   id?: string,
-  color?: string,
   counter?: string | number,
   text?: string,
   description?: string,
   size?: 'medium' | 'small',
   onClick?: (e: any) => void,
-  noSelect?: boolean
+  theme?: {
+    [dataItem: string]: DataItemTheme
+  }
 }
 
 class DataItem extends React.PureComponent<DataItemProps, {}> {
   render () {
     const {
       id,
-      color,
+      theme,
       counter,
       text,
       description,
       onClick,
-      noSelect,
       size = 'medium'
     } = this.props
 
     return (
-      <StyledDataItem
-        id={id}
-        color={color}
-        onClick={onClick}
-        noSelect={noSelect}
-        size={size}
-      >
-        <StyledDataItemCounter color={color} size={size}>{counter}</StyledDataItemCounter>
+      <StyledDataItem id={id} theme={theme} onClick={onClick} size={size}>
+        <StyledDataItemCounter theme={theme} size={size}>{counter}</StyledDataItemCounter>
           {
-            text && <StyledDataItemText color={color} size={size}>{text}</StyledDataItemText>
+            text && <StyledDataItemText theme={theme} size={size}>{text}</StyledDataItemText>
           }
           {
           description && <StyledDataItemDescription size={size}>{description}</StyledDataItemDescription>

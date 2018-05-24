@@ -8,15 +8,20 @@ export interface DataProps {
 declare class DataBlock extends React.PureComponent<DataProps, {}> {
     render(): JSX.Element;
 }
+export interface DataItemTheme {
+    color?: string;
+    userSelect?: 'auto' | 'none';
+}
 export interface DataItemProps {
     id?: string;
-    color?: string;
     counter?: string | number;
     text?: string;
     description?: string;
     size?: 'medium' | 'small';
     onClick?: (e: any) => void;
-    noSelect?: boolean;
+    theme?: {
+        [dataItem: string]: DataItemTheme;
+    };
 }
 declare class DataItem extends React.PureComponent<DataItemProps, {}> {
     render(): JSX.Element;

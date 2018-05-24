@@ -1,24 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`dataBlock tests dataBlock component tests matches the snapshot 1`] = `
+exports[`dataBlock tests dataBlock component tests basic tests matches the snapshot 1`] = `
+.c0 {
+  box-sizing: border-box;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.c0 > li {
+  display: inline-block;
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+
 <ul
-  className="sc-bdVaJa rqnMM"
+  className="c0"
   id={undefined}
   list={undefined}
 />
 `;
 
-exports[`dataBlock tests dataItem component tests matches the snapshot 1`] = `
+exports[`dataBlock tests dataItem component tests basic tests matches the snapshot 1`] = `
+.c0 {
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  box-sizing: border-box;
+  vertical-align: middle;
+  list-style-type: none;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.c1 {
+  color: inherit;
+  font-size: 44px;
+  line-height: 52px;
+  max-width: 200px;
+  text-align: inherit;
+  box-sizing: border-box;
+  -webkit-letter-spacing: -0.4px;
+  -moz-letter-spacing: -0.4px;
+  -ms-letter-spacing: -0.4px;
+  letter-spacing: -0.4px;
+  font-family: inherit;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 <li
-  className="sc-bwzfXH IXpOQ"
-  color={undefined}
+  className="c0"
   id={undefined}
   onClick={undefined}
   size="medium"
 >
   <span
-    className="sc-htpNat fymEco"
-    color={undefined}
+    className="c1"
     size="medium"
   />
 </li>

@@ -49,28 +49,36 @@ storiesOf('Views', module)
     )
   })
   .add('DataBlock', () => {
-    const sizeOptions = { 'small': 'Small', 'medium': 'Medium' }
-    const sizeDefaultValue = 'medium'
-    const sizeValue = select('Size', sizeOptions, sizeDefaultValue)
+    const sizeValue = select('Size', { 'small': 'Small', 'medium': 'Medium' }, 'medium')
+    const userSelectValue = select('Disallow user select?', { 'auto': 'allow', 'none': 'Disallow' }, 'auto')
+
     return (
       <DataBlock list={boolean('show as list?', false)}>
         <DataItem
           size={sizeValue}
-          color={text('Color', 'orange')}
+          theme={{
+            dataItem: {
+              color: text('Color', 'orange'),
+              userSelect: userSelectValue
+            }
+          }}
           counter={text('Counter', '123123')}
           text={text('Text', 'Some Text')}
           description={text('Description', 'Some Description')}
           onClick={action('clicked the DataBlock!')}
-          noSelect={boolean('Disallow user select?', false)}
         />
         <DataItem
           size={sizeValue}
-          color={text('Color', 'orange')}
+          theme={{
+            dataItem: {
+              color: text('Color', 'orange'),
+              userSelect: userSelectValue
+            }
+          }}
           counter={text('Counter', '123123')}
           text={text('Text', 'Some Text')}
           description={text('Description', 'Some Description')}
           onClick={action('clicked the DataBlock!')}
-          noSelect={boolean('Disallow user select?', false)}
         />
       </DataBlock>
     )
