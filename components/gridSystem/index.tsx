@@ -5,64 +5,57 @@
 import * as React from 'react'
 import { StyledGrid, StyledColumn } from './style'
 
+export interface GridTheme {
+  padding?: string,
+  gridGap?: string,
+  maxWidth?: string,
+  height?: string,
+  color?: string,
+  backgroundColor?: string
+}
+
 export interface GridProps {
   id?: string,
   disabled?: boolean,
-  children?: React.ReactNode,
-  // Component styles
   columns?: number,
-  padding?: string,
-  gap?: string,
-  width?: string,
-  height?: string,
-  textColor?: string,
-  background?: string
+  children?: React.ReactNode,
+  theme?: {
+    [grid: string]: GridTheme
+  }
 }
 
 class Grid extends React.PureComponent<GridProps, {}> {
   render () {
+    const { id, disabled, columns, theme, children } = this.props
     return (
-      <StyledGrid
-        id={this.props.id}
-        disabled={this.props.disabled ? this.props.disabled : false}
-        columns={this.props.columns}
-        padding={this.props.padding}
-        gap={this.props.gap}
-        width={this.props.width}
-        height={this.props.height}
-        textColor={this.props.textColor}
-        background={this.props.background}
-      >
-        {this.props.children}
+      <StyledGrid id={id} disabled={disabled || false} theme={theme} columns={columns}>
+        {children}
       </StyledGrid>
     )
   }
 }
 
+export interface ColumnTheme {
+  justifyContent?: string,
+  verticalAlign?: string,
+  backgroundColor?: string,
+  flexDirection?: string
+}
+
 export interface ColumnProps {
   id?: string,
-  children?: React.ReactNode,
-  // Component styles
   size?: number | string,
-  align?: string,
-  verticalAlign?: string,
-  background?: string,
-  direction?: string
+  theme?: {
+    [column: string]: ColumnTheme
+  }
+  children?: React.ReactNode
 }
 
 class Column extends React.PureComponent<ColumnProps, {}> {
   render () {
+    const { id, size, theme, children } = this.props
     return (
-      <StyledColumn
-        id={this.props.id}
-        size={this.props.size}
-        align={this.props.align}
-        verticalAlign={this.props.verticalAlign}
-        background={this.props.background}
-        direction={this.props.direction}
-      >
-        {this.props.children}
-      </StyledColumn>
+      <StyledColumn id={id} size={size} theme={theme}>{children}</StyledColumn>
     )
   }
 }

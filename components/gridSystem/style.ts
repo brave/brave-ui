@@ -4,17 +4,18 @@
 
 import styled, { css } from 'styled-components'
 import { GridProps, ColumnProps } from './index'
+import { checkIfThemeProp } from '../helpers'
 
 const StyledGrid = styled.div`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(${(p: GridProps) => p.columns ? p.columns : '12'}, 1fr);
-  grid-gap: ${(p: GridProps) => p.gap ? p.gap : '15px'};
-  padding: ${(p: GridProps) => p.padding ? p.padding : '0'};
-  max-width: ${(p: GridProps) => p.width ? p.width : 'initial'};
-  height: ${(p: GridProps) => p.height ? p.height : 'initial'};
-  color: ${(p: GridProps) => p.textColor ? p.textColor : 'inherit'};
-  background-color: ${(p: GridProps) => p.background ? p.background : 'inherit'};
+  grid-gap: ${(p: GridProps) => checkIfThemeProp(p.theme, 'grid', 'gridGap') || '15px'};
+  padding: ${(p: GridProps) => checkIfThemeProp(p.theme, 'grid', 'padding') || '0'};
+  max-width: ${(p: GridProps) => checkIfThemeProp(p.theme, 'grid', 'maxWidth') || 'initial'};
+  height: ${(p: GridProps) => checkIfThemeProp(p.theme, 'grid', 'height') || 'initial'};
+  color: ${(p: GridProps) => checkIfThemeProp(p.theme, 'grid', 'color') || 'inherit'};
+  background-color: ${(p: GridProps) => checkIfThemeProp(p.theme, 'grid', 'backgroundColor') || 'inherit'};
   font-family: inherit;
   font-size: inherit;
 
@@ -29,14 +30,12 @@ const StyledGrid = styled.div`
 const StyledColumn = styled.div`
   box-sizing: border-box;
   position: relative;
-  display: ${(p: ColumnProps) =>
-    p.align || p.verticalAlign || p.direction ? 'flex' : 'block'
-  };
+  display: flex;
   grid-column: ${(p: ColumnProps) => p.size ? `span ${p.size}` : 'span 12'};
-  justify-content: ${(p: ColumnProps) => p.align ? p.align : 'initial'};
-  align-items: ${(p: ColumnProps) => p.verticalAlign ? p.verticalAlign : 'initial'};
-  background-color: ${(p: ColumnProps) => p.background ? p.background : 'inherit'};
-  flex-direction: ${(p: ColumnProps) => p.direction ? p.direction : 'initial'};
+  justify-content: ${(p: ColumnProps) => checkIfThemeProp(p.theme, 'column', 'justifyContent') || 'initial'};
+  align-items: ${(p: ColumnProps) => checkIfThemeProp(p.theme, 'column', 'alignItems') || 'initial'};
+  background-color: ${(p: ColumnProps) => checkIfThemeProp(p.theme, 'column', 'backgroundColor') || 'inherit'};
+  flex-direction: ${(p: ColumnProps) => checkIfThemeProp(p.theme, 'column', 'flexDirection') || 'initial'};
   font-family: inherit;
   font-size: inherit;
   color: inherit;

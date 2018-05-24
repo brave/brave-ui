@@ -5,73 +5,136 @@ import { create } from 'react-test-renderer'
 import { Grid, Column } from '../gridSystem'
 
 describe('gridSystem tests', () => {
+  const baseGridComponent = (props?: object) => <Grid {...props} />
+  const baseColumnComponent = (props?: object) => <Column {...props} />
+
   describe('grid component', () => {
-    it('matches the snapshot', () => {
-      const component = <Grid />
-      const tree = create(component).toJSON()
-      expect(tree).toMatchSnapshot()
+    describe('basic tests', () => {
+      it('matches the snapshot', () => {
+        const component = baseGridComponent()
+        const tree = create(component).toJSON()
+        expect(tree).toMatchSnapshot()
+      })
+
+      it('renders the component', () => {
+        const wrapper = shallow(baseGridComponent({id: 'grid'}))
+        const assertion = wrapper.find('#grid').length
+        expect(assertion).toBe(1)
+      })
     })
 
-    it('renders the component', () => {
-      const wrapper = shallow(<Grid id='grid' />)
-      const assertion = wrapper.find('#grid').length
-      expect(assertion).toBe(1)
+    describe('component behavior', () => {
+      it('can have an id', () => {
+        const wrapper = shallow(baseGridComponent({id: 'gridThing'}))
+        const assertion = wrapper.props().id
+        expect(assertion).toBe('gridThing')
+      })
+
+      it('can be disabled', () => {
+        const wrapper = shallow(baseGridComponent({disabled: true}))
+        const assertion = wrapper.props().disabled
+        expect(assertion).toBe(true)
+      })
+
+      it('defines a custom column size', () => {
+        const wrapper = shallow(baseGridComponent({columns: 3}))
+        const assertion = wrapper.props().columns
+        expect(assertion).toBe(3)
+      })
     })
 
-    it('defines a custom padding', () => {
-      const wrapper = shallow(<Grid padding='20px' />)
-      const assertion = wrapper.props().padding
-      expect(assertion).toEqual('20px')
-    })
+    describe('theming', () => {
+      it('allows theming the `padding` property', () => {
+        const component = baseGridComponent({theme: { grid: { padding: '20px' } } })
+        const tree = create(component).toJSON()
+        expect(tree).toHaveStyleRule('padding', '20px')
+      })
 
-    it('defines a custom gap', () => {
-      const wrapper = shallow(<Grid gap='10px' />)
-      const assertion = wrapper.props().gap
-      expect(assertion).toEqual('10px')
-    })
+      it('allows theming the `grid-gap` property', () => {
+        const component = baseGridComponent({theme: { grid: { gridGap: '15px' } } })
+        const tree = create(component).toJSON()
+        expect(tree).toHaveStyleRule('grid-gap', '15px')
+      })
 
-    it('defines a custom width', () => {
-      const wrapper = shallow(<Grid width='13px' />)
-      const assertion = wrapper.props().width
-      expect(assertion).toEqual('13px')
-    })
+      it('allows theming the `max-width` property', () => {
+        const component = baseGridComponent({theme: { grid: { maxWidth: '150px' } } })
+        const tree = create(component).toJSON()
+        expect(tree).toHaveStyleRule('max-width', '150px')
+      })
 
-    it('defines a custom background', () => {
-      const wrapper = shallow(<Grid background='cyan' />)
-      const assertion = wrapper.props().background
-      expect(assertion).toEqual('cyan')
+      it('allows theming the `height` property', () => {
+        const component = baseGridComponent({theme: { grid: { height: '100%' } } })
+        const tree = create(component).toJSON()
+        expect(tree).toHaveStyleRule('height', '100%')
+      })
+
+      it('allows theming the `color` property', () => {
+        const component = baseGridComponent({theme: { grid: { color: 'purple' } } })
+        const tree = create(component).toJSON()
+        expect(tree).toHaveStyleRule('color', 'purple')
+      })
+
+      it('allows theming the `background-color` property', () => {
+        const component = baseGridComponent({theme: { grid: { backgroundColor: 'green' } } })
+        const tree = create(component).toJSON()
+        expect(tree).toHaveStyleRule('background-color', 'green')
+      })
     })
   })
 
   describe('column component', () => {
-    it('matches the snapshot', () => {
-      const component = <Column />
-      const tree = create(component).toJSON()
-      expect(tree).toMatchSnapshot()
+    describe('basic tests', () => {
+      it('matches the snapshot', () => {
+        const component = <Column />
+        const tree = create(component).toJSON()
+        expect(tree).toMatchSnapshot()
+      })
+
+      it('renders the component', () => {
+        const wrapper = shallow(<Column id='column' />)
+        const assertion = wrapper.find('#column').length
+        expect(assertion).toBe(1)
+      })
     })
 
-    it('renders the component', () => {
-      const wrapper = shallow(<Column id='column' />)
-      const assertion = wrapper.find('#column').length
-      expect(assertion).toBe(1)
+    describe('component behavior', () => {
+      it('can have an id', () => {
+        const wrapper = shallow(baseColumnComponent({id: 'dataItemThing'}))
+        const assertion = wrapper.props().id
+        expect(assertion).toBe('dataItemThing')
+      })
+
+      it('can have a custom size', () => {
+        const wrapper = shallow(baseColumnComponent({size: 3}))
+        const assertion = wrapper.props().size
+        expect(assertion).toBe(3)
+      })
     })
 
-    it('defines a custom align', () => {
-      const wrapper = shallow(<Column align='flex-start' />)
-      const assertion = wrapper.props().align
-      expect(assertion).toEqual('flex-start')
-    })
+    describe('theming', () => {
+      it('allows theming the `justify-content` property', () => {
+        const component = baseColumnComponent({theme: { column: { justifyContent: 'center' } } })
+        const tree = create(component).toJSON()
+        expect(tree).toHaveStyleRule('justify-content', 'center')
+      })
 
-    it('defines a custom verticalAlign', () => {
-      const wrapper = shallow(<Column verticalAlign='flex-end' />)
-      const assertion = wrapper.props().verticalAlign
-      expect(assertion).toEqual('flex-end')
-    })
+      it('allows theming the `align-items` property', () => {
+        const component = baseColumnComponent({theme: { column: { alignItems: 'center' } } })
+        const tree = create(component).toJSON()
+        expect(tree).toHaveStyleRule('align-items', 'center')
+      })
 
-    it('defines a custom background', () => {
-      const wrapper = shallow(<Column background='purple' />)
-      const assertion = wrapper.props().background
-      expect(assertion).toEqual('purple')
+      it('allows theming the `background-color` property', () => {
+        const component = baseColumnComponent({theme: { column: { backgroundColor: 'purple' } } })
+        const tree = create(component).toJSON()
+        expect(tree).toHaveStyleRule('background-color', 'purple')
+      })
+
+      it('allows theming the `flex-direction` property', () => {
+        const component = baseColumnComponent({theme: { column: { flexDirection: 'column' } } })
+        const tree = create(component).toJSON()
+        expect(tree).toHaveStyleRule('flex-direction', 'column')
+      })
     })
   })
 })

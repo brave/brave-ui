@@ -55,7 +55,7 @@ class NewPrivateTab extends React.PureComponent {
                 counter={data.estimatedTimeCount} />
             </DataBlock>
           </Column>
-          <Column size={1} align='flex-end'>
+          <Column size={1} theme={{column: {justifyContent: 'flex-end'}}}>
             <Clock theme={{clock: {color: 'rgba(255,255,255,0.8)'}}} />
           </Column>
         </Grid>
