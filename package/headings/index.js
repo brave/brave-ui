@@ -27,22 +27,22 @@ class FeatureHeading extends React.PureComponent {
 exports.FeatureHeading = FeatureHeading;
 class Heading extends React.PureComponent {
     render() {
-        const { id, level, color, weight = 'normal', text } = this.props;
+        const { id, level, theme, text } = this.props;
         switch (level) {
             case 1:
-                return React.createElement(style_1.StyledH1, { id: id, color: color, weight: weight }, text);
+                return React.createElement(style_1.StyledH1, { id: id, theme: theme }, text);
             case 2:
-                return React.createElement(style_1.StyledH2, { id: id, color: color, weight: weight }, text);
+                return React.createElement(style_1.StyledH2, { id: id, theme: theme }, text);
             case 3:
-                return React.createElement(style_1.StyledH3, { id: id, color: color, weight: weight }, text);
+                return React.createElement(style_1.StyledH3, { id: id, theme: theme }, text);
             case 4:
-                return React.createElement(style_1.StyledH4, { id: id, color: color, weight: weight }, text);
+                return React.createElement(style_1.StyledH4, { id: id, theme: theme }, text);
             case 5:
-                return React.createElement(style_1.StyledH5, { id: id, color: color, weight: weight }, text);
+                return React.createElement(style_1.StyledH5, { id: id, theme: theme }, text);
             case 6:
-                return React.createElement(style_1.StyledH6, { id: id, color: color, weight: weight }, text);
+                return React.createElement(style_1.StyledH6, { id: id, theme: theme }, text);
             default:
-                return React.createElement(style_1.StyledH1, { id: id, color: color, weight: weight }, text);
+                return React.createElement(style_1.StyledH1, { id: id, theme: theme }, text);
         }
     }
 }

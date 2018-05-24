@@ -77,8 +77,12 @@ storiesOf('Typography, Text and Links', module)
       <Heading
         level={levelValue}
         text={text('Heading text', 'Some text')}
-        color={text('Color', '#000000')}
-        weight={weightValue}
+        theme={{
+          heading: {
+            color: text('Color', '#000000'),
+            fontWeight: weightValue
+          }
+        }}
       />
     )
   })

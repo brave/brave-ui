@@ -61,32 +61,38 @@ class FeatureHeading extends React.PureComponent<FeatureHeadingProps, {}> {
   }
 }
 
+export interface HeadingTheme {
+  color?: string,
+  fontWeight?: string
+}
+
 export interface HeadingProps {
   id?: string,
   level?: 1 | 2 | 3 | 4 | 5 | 6,
-  color?: string,
-  weight?: 'thin' | 'normal' | 'bold',
-  text?: string
+  text?: string,
+  theme?: {
+    [heading: string]: HeadingTheme
+  }
 }
 
 class Heading extends React.PureComponent<HeadingProps, {}> {
   render () {
-    const { id, level, color, weight = 'normal', text } = this.props
+    const { id, level, theme, text } = this.props
     switch (level) {
       case 1:
-        return <StyledH1 id={id} color={color} weight={weight}>{text}</StyledH1>
+        return <StyledH1 id={id} theme={theme}>{text}</StyledH1>
       case 2:
-        return <StyledH2 id={id} color={color} weight={weight}>{text}</StyledH2>
+        return <StyledH2 id={id} theme={theme}>{text}</StyledH2>
       case 3:
-        return <StyledH3 id={id} color={color} weight={weight}>{text}</StyledH3>
+        return <StyledH3 id={id} theme={theme}>{text}</StyledH3>
       case 4:
-        return <StyledH4 id={id} color={color} weight={weight}>{text}</StyledH4>
+        return <StyledH4 id={id} theme={theme}>{text}</StyledH4>
       case 5:
-        return <StyledH5 id={id} color={color} weight={weight}>{text}</StyledH5>
+        return <StyledH5 id={id} theme={theme}>{text}</StyledH5>
       case 6:
-        return <StyledH6 id={id} color={color} weight={weight}>{text}</StyledH6>
+        return <StyledH6 id={id} theme={theme}>{text}</StyledH6>
       default:
-        return <StyledH1 id={id} color={color} weight={weight}>{text}</StyledH1>
+        return <StyledH1 id={id} theme={theme}>{text}</StyledH1>
     }
   }
 }

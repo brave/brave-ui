@@ -22,12 +22,17 @@ export interface FeatureHeadingProps {
 declare class FeatureHeading extends React.PureComponent<FeatureHeadingProps, {}> {
     render(): JSX.Element;
 }
+export interface HeadingTheme {
+    color?: string;
+    fontWeight?: string;
+}
 export interface HeadingProps {
     id?: string;
     level?: 1 | 2 | 3 | 4 | 5 | 6;
-    color?: string;
-    weight?: 'thin' | 'normal' | 'bold';
     text?: string;
+    theme?: {
+        [heading: string]: HeadingTheme;
+    };
 }
 declare class Heading extends React.PureComponent<HeadingProps, {}> {
     render(): JSX.Element;
