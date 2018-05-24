@@ -57,7 +57,7 @@ class DataItem extends React.PureComponent<DataItemProps, {}> {
       >
         <StyledDataItemCounter color={color} size={size}>{counter}</StyledDataItemCounter>
           {
-            text && <StyledDataItemText size={size}>{text}</StyledDataItemText>
+            text && <StyledDataItemText color={color} size={size}>{text}</StyledDataItemText>
           }
           {
           description && <StyledDataItemDescription size={size}>{description}</StyledDataItemDescription>

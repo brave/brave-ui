@@ -14,7 +14,7 @@ class DataItem extends React.PureComponent {
         const { id, color, counter, text, description, onClick, noSelect, size = 'medium' } = this.props;
         return (React.createElement(style_1.StyledDataItem, { id: id, color: color, onClick: onClick, noSelect: noSelect, size: size },
             React.createElement(style_1.StyledDataItemCounter, { color: color, size: size }, counter),
-            text && React.createElement(style_1.StyledDataItemText, { size: size }, text),
+            text && React.createElement(style_1.StyledDataItemText, { color: color, size: size }, text),
             description && React.createElement(style_1.StyledDataItemDescription, { size: size }, description)));
     }
 }

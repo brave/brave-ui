@@ -47,12 +47,12 @@ const StyledDataItemCounter = styled_components_1.default.span `
 `;
 exports.StyledDataItemCounter = StyledDataItemCounter;
 const StyledDataItemText = styled_components_1.default.span `
+  color: ${(p) => p.color || 'inherit'}
   font-size: ${(p) => helpers_1.setValueBasedOnSize(p.size, '20px', '13px', undefined)};
   line-height: ${(p) => helpers_1.setValueBasedOnSize(p.size, '24px', '16px', undefined)};
   margin-left: ${(p) => helpers_1.setValueBasedOnSize(p.size, '3px', '10px', undefined)};
   box-sizing: border-box;
   display: inline;
-  color: inherit;
   font-family: inherit;
   letter-spacing: 0;
 `;

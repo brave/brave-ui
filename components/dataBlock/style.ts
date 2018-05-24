@@ -53,12 +53,12 @@ const StyledDataItemCounter = styled.span`
 ` as any
 
 const StyledDataItemText = styled.span`
+  color: ${(p: DataItemProps) => p.color || 'inherit'}
   font-size: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '20px', '13px', undefined)};
   line-height: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '24px', '16px', undefined)};
   margin-left: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '3px', '10px', undefined)};
   box-sizing: border-box;
   display: inline;
-  color: inherit;
   font-family: inherit;
   letter-spacing: 0;
 ` as any
