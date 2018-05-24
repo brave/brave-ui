@@ -1,25 +1,80 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`contentToggleArrow tests matches the snapshot 1`] = `
+exports[`contentToggleArrow tests basic tests matches the snapshot 1`] = `
+.c0 {
+  box-sizing: border-box;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.c1 {
+  box-sizing: border-box;
+  position: relative;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.c1::after {
+  content: "▶";
+  font-size: 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.c2 {
+  box-sizing: border-box;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  margin-left: 15px;
+}
+
+.c3 {
+  box-sizing: border-box;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  overflow: hidden;
+  height: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 <div
-  className="sc-bwzfXH fAAGFB"
+  className="c0"
   id="testContentToggleArrow"
   open={undefined}
 >
   <div
-    className="sc-htpNat gBtarb"
+    className="c1"
     id="testContentToggleArrowControl"
     onClick={[Function]}
     open={undefined}
   >
     <div
-      className="sc-bxivhb kkUMaj"
+      className="c2"
     >
       testSummary
     </div>
   </div>
   <div
-    className="sc-ifAKCX dQgWgn"
+    className="c3"
     open={undefined}
   />
 </div>
