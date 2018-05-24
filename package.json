@@ -43,8 +43,10 @@
     "cpx": "^1.5.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.3",
+    "jest-styled-components": "^5.0.1",
     "lerna": "^2.0.0",
     "nsp": "^3.2.1",
     "pre-commit": "^1.2.2",
@@ -80,6 +82,9 @@
     "commitMessage": "Update Styleguide"
   },
   "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
