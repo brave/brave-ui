@@ -25,4 +25,5 @@ exports.setWeight = (p, bold, normal, thin) => {
             return normal;
     }
 };
+exports.checkIfThemeProp = (theme, component, prop) => theme && theme[component] && theme[component][prop];
 //# sourceMappingURL=helpers.js.map

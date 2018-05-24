@@ -52,3 +52,12 @@ export const setWeight = (p: any, bold: string, normal: string, thin: string) =>
       return normal
   }
 }
+
+/**
+ * Checks whether or not a given theme prop is defined
+ * @param {any} theme - the component's theme object
+ * @param {any} component - the component name
+ * @param {any} prop - the theme prop to check against
+ */
+export const checkIfThemeProp = (theme: any, component: any, prop: any) =>
+  theme && theme[component] && theme[component][prop]

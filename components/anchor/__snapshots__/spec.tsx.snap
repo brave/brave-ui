@@ -1,8 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`anchor tests matches the snapshot 1`] = `
+exports[`anchor tests basic tests matches the snapshot 1`] = `
+.c0 {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 13px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
 <a
-  className="sc-bdVaJa kFGLuU"
+  className="c0"
   href="#"
   id={undefined}
   rel="noreferrer noopener"

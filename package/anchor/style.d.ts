@@ -1,2 +1,2 @@
 declare const StyledAnchor: any;
-export { StyledAnchor };
+export default StyledAnchor;

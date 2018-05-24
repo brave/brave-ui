@@ -3,30 +3,37 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledAnchor } from './style'
+import StyledAnchor from './style'
+
+export interface AnchorTheme {
+  textDecoration?: 'underline' | 'none',
+  color?: string,
+  fontSize?: string
+}
 
 export interface AnchorProps {
   id?: string,
-  href: string
-  noStyle?: boolean
-  target?: '_blank' | '_parent' | '_self' | '_top'
-  text?: string | number
+  href: string,
+  target?: '_blank' | '_parent' | '_self' | '_top',
+  text?: string | number,
+  theme?: {
+    [anchor: string]: AnchorTheme
+  }
 }
 
 class Anchor extends React.PureComponent<AnchorProps, {}> {
   render () {
+    const { id, href, target, theme, text } = this.props
     return (
       <StyledAnchor
-        id={this.props.id}
-        noStyle={this.props.noStyle ? this.props.noStyle : false}
-        href={this.props.href}
-        target={this.props.target}
+        id={id}
+        href={href}
+        target={target}
+        theme={theme}
         rel='noreferrer noopener'
       >
         {
-          this.props.text != null
-            ? this.props.text.toString()
-            : null
+          text && text.toString()
         }
       </StyledAnchor>
     )

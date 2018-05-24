@@ -97,10 +97,18 @@ storiesOf('Typography, Text and Links', module)
     )
   })
   .add('Anchor', () => {
+    // label - options - default value
+    const textDecoration = select('Decoration', { 'underline': 'Underline', 'none': 'None' }, 'none')
     return (
       <Anchor
         href='#'
-        noStyle={boolean('Unstyled?', false)}
+        theme={{
+          anchor: {
+            textDecoration,
+            color: text('Color', '#000000'),
+            fontSize: text('Size', '16px')
+          }
+        }}
         text={text('Link Text', 'Some text')}
       />
     )
