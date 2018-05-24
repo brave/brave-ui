@@ -1,5 +1,6 @@
 /// <reference types="react" />
 import * as React from 'react';
+import 'emptykit.css';
 export interface PageProps {
     id?: string;
     title?: string;

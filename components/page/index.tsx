@@ -1,5 +1,6 @@
 import * as React from 'react'
 
+import 'emptykit.css'
 import { StyledPage, StyledPageContent } from './style'
 import { TitleHeading } from '../headings'
 

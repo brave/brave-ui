@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
+require("emptykit.css");
 const style_1 = require("./style");
 const headings_1 = require("../headings");
 class Page extends React.PureComponent {

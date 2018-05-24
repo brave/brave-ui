@@ -116,6 +116,7 @@
     "@types/storybook__addon-info": "^3.2.2",
     "@types/storybook__addon-knobs": "^3.2.3",
     "@types/storybook__react": "^3.0.7",
+    "emptykit.css": "^1.0.1",
     "styled-components": "^3.2.5"
   }
 }
