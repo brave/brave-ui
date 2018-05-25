@@ -24,6 +24,7 @@ declare class FeatureHeading extends React.PureComponent<FeatureHeadingProps, {}
 }
 export interface HeadingTheme {
     color?: string;
+    fontFamily?: string;
     fontWeight?: string;
 }
 export interface HeadingProps {

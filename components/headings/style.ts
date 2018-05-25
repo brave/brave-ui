@@ -52,7 +52,7 @@ const StyledH1 = styled.h1`
   -webkit-font-smoothing: antialiased;
   color: ${(p: HeadingProps) => setTheme(p.theme, 'heading', 'color')};
   font-weight: ${(p: HeadingProps) => setTheme(p.theme, 'heading', 'fontWeight') || '400'};
-  font-family: inherit;
+  font-family: ${(p: HeadingProps) => setTheme(p.theme, 'heading', 'fontFamily') || 'inherit'};
   margin-top: 14px;
   margin-bottom: 22px;
   letter-spacing: -0.4px;

@@ -45,7 +45,7 @@ const StyledH1 = styled_components_1.default.h1 `
   -webkit-font-smoothing: antialiased;
   color: ${(p) => helpers_1.setTheme(p.theme, 'heading', 'color')};
   font-weight: ${(p) => helpers_1.setTheme(p.theme, 'heading', 'fontWeight') || '400'};
-  font-family: inherit;
+  font-family: ${(p) => helpers_1.setTheme(p.theme, 'heading', 'fontFamily') || 'inherit'};
   margin-top: 14px;
   margin-bottom: 22px;
   letter-spacing: -0.4px;

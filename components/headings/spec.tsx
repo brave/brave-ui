@@ -194,6 +194,12 @@ describe('all heading tests', () => {
         const tree = create(component).toJSON()
         expect(tree).toHaveStyleRule('font-weight', 'bold')
       })
+
+      it('allows theming the `font-family` property', () => {
+        const component = baseHeadingComponent({theme: { heading: { fontFamily: 'Arial' } } })
+        const tree = create(component).toJSON()
+        expect(tree).toHaveStyleRule('font-family', 'Arial')
+      })
     })
   })
 })
