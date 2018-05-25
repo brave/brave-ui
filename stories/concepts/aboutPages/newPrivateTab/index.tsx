@@ -1,6 +1,6 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
-* License, v. 2.0. If a copy of the MPL was not distributed with this file,
-* You can obtain one at http://mozilla.org/MPL/2.0/. */
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
 
@@ -15,6 +15,8 @@ import { Heading } from '../../../../components/headings'
 import Paragraph from '../../../../components/paragraph'
 import SwitchButton from '../../../../components/switchButton'
 
+import theme from './theme'
+
 // Assets
 import locale from './fakeLocale'
 import data from './fakeData'
@@ -27,58 +29,46 @@ const privateTabIcon = require('../../../assets/img/private_tab_pagearea_icon.sv
 class NewPrivateTab extends React.PureComponent {
   render () {
     return (
-      <Page theme={{
-        fontFamily: '"Poppins", sans-serif',
-        color: '#fff',
-        padding: '80px 60px 40px',
-        background: 'linear-gradient(#4b3c6e, #000)'
-      }}>
+      <Page theme={theme.page}>
         <Grid columns={3}>
           <Column size={2}>
             <DataBlock>
               <DataItem
-                theme={{ color: '#f39030' }}
+                theme={theme.trackersBlocked}
                 description={locale.trackersBlocked}
                 counter={data.trackersBlockedCount} />
               <DataItem
-                theme={{ color: '#fe521d' }}
+                theme={theme.adsBlocked}
                 description={locale.adsBlocked}
                 counter={data.adsBlockedCount} />
               <DataItem
-                theme={{ color: '#0796fa' }}
+                theme={theme.httpsUpgrades}
                 description={locale.httpsUpgrades}
                 counter={data.httpsUpgradesCount} />
               <DataItem
-                theme={{ color: '#999999' }}
+                theme={theme.estimatedTime}
                 description={locale.estimatedTime}
                 text={locale.minutes}
                 counter={data.estimatedTimeCount} />
             </DataBlock>
           </Column>
-          <Column size={1} theme={{justifyContent: 'flex-end'}}>
-            <Clock theme={{color: 'rgba(255,255,255,0.8)'}} />
+          <Column size={1} theme={theme.clockContainer}>
+            <Clock theme={theme.clock} />
           </Column>
         </Grid>
-        <BoxedContent
-          theme={{maxWidth: '650px', margin: '60px auto 0'}}
-        >
-          <MediaContent
-            media={privateTabIcon}
-            theme={{width: '80px', margin: '0 0 0 25px'}}
-          >
-            <Heading level={1} theme={{fontWeight: '400', color: '#fff'}} text={locale.title} />
-            <article style={{fontFamily: '"Muli", sans-serif'}}>
-              <Paragraph theme={{fontSize: '18px'}} text={locale.paragraph1} />
-              <Paragraph theme={{fontStyle: 'italic', fontSize: '15px'}} text={locale.paragraph2} />
-              <BoxedContent theme={{margin: '40px 0 25px'}}>
+        <BoxedContent theme={theme.textualContainer}>
+          <MediaContent media={privateTabIcon} theme={theme.media}>
+            <Heading level={1} theme={theme.title} text={locale.title} />
+              <Paragraph theme={theme.text} text={locale.paragraph1} />
+              <Paragraph theme={theme.italicText} text={locale.paragraph2} />
+              <BoxedContent theme={theme.switchContainer}>
                 <SwitchButton
                   id='togglePrivateSearchEngine'
                   size='large'
                   checked={false}
                   rightText={locale.switchLabel} />
               </BoxedContent>
-              <Paragraph theme={{fontSize: '18px'}} text={locale.paragraph3} />
-            </article>
+              <Paragraph theme={theme.text} text={locale.paragraph3} />
           </MediaContent>
         </BoxedContent>
       </Page>
