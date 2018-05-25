@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const styled_components_1 = require("styled-components");
-const theme_1 = require("../theme");
+const defaultTheme_1 = require("../defaultTheme");
 const helpers_1 = require("../helpers");
 const StyledSwitchButtonWrapper = styled_components_1.default.div `
   box-sizing: border-box;
@@ -32,7 +32,7 @@ const StyledSwitchButton = styled_components_1.default.input `
   width: ${(p) => helpers_1.setValueBasedOnSize(p.size, '48px', '40px', '60px')};
   height: ${(p) => helpers_1.setValueBasedOnSize(p.size, '16px', '14px', '26px')};
   border-radius: ${(p) => helpers_1.setValueBasedOnSize(p.size, '16px', '14px', '26px')};
-  border: 2px solid ${theme_1.default.switchButton.uncheckedBg};
+  border: 2px solid ${defaultTheme_1.default.switchButton.uncheckedBg};
   padding: 0 2px;
   background-color: white;
   outline: none;
@@ -40,14 +40,14 @@ const StyledSwitchButton = styled_components_1.default.input `
   box-shadow:
     inset
     -${(p) => helpers_1.setValueBasedOnSize(p.size, '31px', '25px', '33px')} 0px 0px 0px
-    ${theme_1.default.switchButton.uncheckedBg};
+    ${defaultTheme_1.default.switchButton.uncheckedBg};
 
   &:checked {
-    border: 2px solid ${theme_1.default.switchButton.checkedBg};
+    border: 2px solid ${defaultTheme_1.default.switchButton.checkedBg};
     box-shadow:
       inset
       ${(p) => helpers_1.setValueBasedOnSize(p.size, '31px', '25px', '33px')} 0px 0px 0px
-      ${theme_1.default.switchButton.checkedBg};
+      ${defaultTheme_1.default.switchButton.checkedBg};
   }
 `;
 exports.StyledSwitchButton = StyledSwitchButton;

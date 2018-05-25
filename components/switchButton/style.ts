@@ -4,7 +4,7 @@
 
 import styled, { css } from 'styled-components'
 import { SwitchButtonProps } from './index'
-import theme from '../theme'
+import defaultTheme from '../defaultTheme'
 import { setValueBasedOnSize } from '../helpers'
 
 /**
@@ -48,7 +48,7 @@ const StyledSwitchButton = styled.input`
   width: ${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, '48px', '40px','60px')};
   height: ${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, '16px', '14px', '26px')};
   border-radius: ${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, '16px', '14px', '26px')};
-  border: 2px solid ${theme.switchButton.uncheckedBg};
+  border: 2px solid ${defaultTheme.switchButton.uncheckedBg};
   padding: 0 2px;
   background-color: white;
   outline: none;
@@ -56,14 +56,14 @@ const StyledSwitchButton = styled.input`
   box-shadow:
     inset
     -${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, '31px', '25px', '33px')} 0px 0px 0px
-    ${theme.switchButton.uncheckedBg};
+    ${defaultTheme.switchButton.uncheckedBg};
 
   &:checked {
-    border: 2px solid ${theme.switchButton.checkedBg};
+    border: 2px solid ${defaultTheme.switchButton.checkedBg};
     box-shadow:
       inset
       ${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, '31px', '25px', '33px')} 0px 0px 0px
-      ${theme.switchButton.checkedBg};
+      ${defaultTheme.switchButton.checkedBg};
   }
 ` as any
 

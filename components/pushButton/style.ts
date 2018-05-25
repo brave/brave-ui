@@ -5,7 +5,7 @@
 import styled, { css } from 'styled-components'
 import { PushButtonProps } from './index'
 import { checkIfThemeProp } from '../helpers'
-import theme from '../theme'
+import defaultTheme from '../defaultTheme'
 
 const StyledPushButton = styled.button`
   font-size: ${(p: PushButtonProps) => checkIfThemeProp(p.theme, 'pushButton', 'fontSize') || '13px'};
@@ -54,11 +54,11 @@ const StyledPushButton = styled.button`
 
   ${(p: PushButtonProps) => p.color === 'default'
     ? css`
-      color: ${theme.pushButton.default.color};
-      background-color: ${theme.pushButton.default.bg};
+      color: ${defaultTheme.pushButton.default.color};
+      background-color: ${defaultTheme.pushButton.default.bg};
 
       &:hover {
-        color: ${theme.pushButton.default.hoverColor};
+        color: ${defaultTheme.pushButton.default.hoverColor};
       }
     `
     : ''
@@ -67,18 +67,18 @@ const StyledPushButton = styled.button`
   ${(p: PushButtonProps) => p.color === 'primary'
     ? css`
       background: linear-gradient(
-        ${theme.pushButton.primary.gradient1},
-        ${theme.pushButton.primary.gradient2}
+        ${defaultTheme.pushButton.primary.gradient1},
+        ${defaultTheme.pushButton.primary.gradient2}
       );
-      border-left: 2px solid ${theme.pushButton.primary.borderColor};
-      border-right: 2px solid ${theme.pushButton.primary.borderColor};
-      border-top: 2px solid ${theme.pushButton.primary.gradient1};
-      border-bottom: 2px solid ${theme.pushButton.primary.gradient1};
-      color: ${theme.pushButton.primary.color};
+      border-left: 2px solid ${defaultTheme.pushButton.primary.borderColor};
+      border-right: 2px solid ${defaultTheme.pushButton.primary.borderColor};
+      border-top: 2px solid ${defaultTheme.pushButton.primary.gradient1};
+      border-bottom: 2px solid ${defaultTheme.pushButton.primary.gradient1};
+      color: ${defaultTheme.pushButton.primary.color};
 
       &:hover {
-        border: 2px solid ${theme.pushButton.primary.borderHoverColor};
-        color: ${theme.pushButton.primary.hoverColor};
+        border: 2px solid ${defaultTheme.pushButton.primary.borderHoverColor};
+        color: ${defaultTheme.pushButton.primary.hoverColor};
       }
     ` : ''
   }
@@ -86,15 +86,15 @@ const StyledPushButton = styled.button`
   ${(p: PushButtonProps) => p.color === 'secondary'
     ? css`
       background: linear-gradient(
-        ${theme.pushButton.secondary.gradient1},
-        ${theme.pushButton.secondary.gradient2}
+        ${defaultTheme.pushButton.secondary.gradient1},
+        ${defaultTheme.pushButton.secondary.gradient2}
       );
-      border: 1px solid ${theme.pushButton.secondary.borderColor};
-      color: ${theme.pushButton.secondary.color};
+      border: 1px solid ${defaultTheme.pushButton.secondary.borderColor};
+      color: ${defaultTheme.pushButton.secondary.color};
 
       &:hover {
-        border: 1px solid ${theme.pushButton.secondary.borderHoverColor};
-        color: ${theme.pushButton.secondary.hoverColor};
+        border: 1px solid ${defaultTheme.pushButton.secondary.borderHoverColor};
+        color: ${defaultTheme.pushButton.secondary.hoverColor};
       }
     ` : ''
   }
