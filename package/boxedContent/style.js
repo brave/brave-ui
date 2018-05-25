@@ -5,10 +5,10 @@ const helpers_1 = require("../helpers");
 const StyledBoxedContent = styled_components_1.default.div `
   max-width: ${(p) => helpers_1.setTheme(p.theme, 'boxedContent', 'maxWidth')};
   margin: ${(p) => helpers_1.setTheme(p.theme, 'boxedContent', 'margin')};
-  color: inherit;
+  font-family: ${(p) => helpers_1.setTheme(p.theme, 'boxedContent', 'fontFamily')};
+  color: ${(p) => helpers_1.setTheme(p.theme, 'boxedContent', 'color')};
   font-size: inherit;
   box-sizing: border-box;
-  font-family: inherit;
 `;
 exports.default = StyledBoxedContent;
 //# sourceMappingURL=style.js.map

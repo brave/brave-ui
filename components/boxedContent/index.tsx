@@ -8,7 +8,9 @@ import StyledBoxedContent from './style'
 
 export interface BoxedContentTheme {
   maxWidth?: string,
-  margin?: string
+  margin?: string,
+  fontFamily?: string,
+  color?: string
 }
 
 export interface BoxedContentProps {

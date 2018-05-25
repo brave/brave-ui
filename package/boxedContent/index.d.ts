@@ -3,6 +3,8 @@ import * as React from 'react';
 export interface BoxedContentTheme {
     maxWidth?: string;
     margin?: string;
+    fontFamily?: string;
+    color?: string;
 }
 export interface BoxedContentProps {
     id?: string;

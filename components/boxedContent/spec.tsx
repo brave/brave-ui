@@ -42,5 +42,17 @@ describe('boxedContent tests', () => {
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('margin', '10px 20px')
     })
+
+    it('allows theming the `font-family` property', () => {
+      const component = baseComponent({theme: { boxedContent: { fontFamily: 'Verdana' } } })
+      const tree = create(component).toJSON()
+      expect(tree).toHaveStyleRule('font-family', 'Verdana')
+    })
+
+    it('allows theming the `color` property', () => {
+      const component = baseComponent({theme: { boxedContent: { color: 'yellow' } } })
+      const tree = create(component).toJSON()
+      expect(tree).toHaveStyleRule('color', 'yellow')
+    })
   })
 })
