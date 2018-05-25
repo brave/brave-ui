@@ -13,7 +13,7 @@
  * TextLabel
  */
 import { storiesOf, addDecorator } from '@storybook/react'
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
+import { withKnobs, text, select } from '@storybook/addon-knobs'
 import { BetterVisualizer } from './storyUtil'
 import { action } from '@storybook/addon-actions'
 
@@ -35,11 +35,14 @@ storiesOf('Fields and Labels', module)
       <TextLabel
         onClick={action('clicked the textLabel!')}
         text={text('Text', 'Example TextLabel')}
-        noSelect={boolean('Avoid Selection?', false)}
-        size={text('Size', '13px')}
-        color={text('Color', '#000000')}
-        padding={text('Padding', '0px')}
-        weight={weightValue}
+        theme={{
+          textLabel: {
+            fontSize: text('Font size', '13px'),
+            color: text('Color', '#000000'),
+            padding: text('Padding', '0px'),
+            fontWeight: weightValue
+          }
+        }}
       />
     )
   })

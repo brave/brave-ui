@@ -13,17 +13,5 @@ exports.setValueBasedOnSize = (size, medium, small, large) => {
             return medium;
     }
 };
-exports.setWeight = (p, bold, normal, thin) => {
-    switch (p.weight) {
-        case 'bold':
-            return bold;
-        case 'normal':
-            return normal;
-        case 'thin':
-            return thin;
-        default:
-            return normal;
-    }
-};
 exports.checkIfThemeProp = (theme, component, prop) => theme && theme[component] && theme[component][prop];
 //# sourceMappingURL=helpers.js.map

@@ -3,12 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const styled_components_1 = require("styled-components");
 const helpers_1 = require("../helpers");
 const StyledTextLabel = styled_components_1.default.p `
-  user-select: ${(p) => p.noSelect ? 'none' : 'inherit'};
-  cursor: ${(p) => p.noSelect ? 'default' : 'auto'};
-  font-weight: ${(p) => helpers_1.setWeight(p, 'bold', 'inherit', '300')};
-  padding: ${(p) => p.padding ? p.padding : '0'};
-  font-size: ${(p) => p.size ? p.size : '13px'};
-  color: ${(p) => p.color ? p.color : 'inherit'};
+  font-weight: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'textLabel', 'fontWeight') || 'normal'};
+  padding: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'textLabel', 'padding') || '0'};
+  font-size: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'textLabel', 'fontSize') || '13px'};
+  color: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'textLabel', 'color') || 'inherit'};
+  user-select: none;
+  cursor: default;
   font-family: inherit;
   box-sizing: border-box;
   background: none;

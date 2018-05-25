@@ -1,12 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`textLabel tests matches the snapshot 1`] = `
+exports[`textLabel tests basic tests matches the snapshot 1`] = `
+.c0 {
+  font-weight: normal;
+  padding: 0;
+  font-size: 13px;
+  color: inherit;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  font-family: inherit;
+  box-sizing: border-box;
+  background: none;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 <p
-  className="sc-bdVaJa fijKev"
-  color={undefined}
+  className="c0"
   id={undefined}
   onClick={undefined}
-  size={undefined}
 >
   testText
 </p>

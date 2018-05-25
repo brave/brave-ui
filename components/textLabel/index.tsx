@@ -5,32 +5,27 @@
 import * as React from 'react'
 import StyledTextLabel from './style'
 
+export interface TextLabelTheme {
+  fontSize?: string,
+  color?: string,
+  padding?: string,
+  fontWeight?: string
+}
+
 export interface TextLabelProps {
-  id?: string
-  onClick?: () => void
+  id?: string,
+  onClick?: () => void,
+  theme?: {
+    [textLabel: string]: TextLabelTheme
+  }
   text?: string | number
-  // Component styles
-  noSelect?: boolean
-  size?: string
-  color?: string
-  padding?: string
-  weight?: 'bold' | 'normal' | 'thin'
 }
 
 class TextLabel extends React.PureComponent<TextLabelProps, {}> {
   render () {
-    const { id, onClick, size, color, padding, noSelect, weight, text } = this.props
+    const { id, onClick, theme, text } = this.props
     return (
-      <StyledTextLabel
-        id={id}
-        onClick={onClick}
-        size={size}
-        color={color}
-        padding={padding}
-        noSelect={noSelect}
-        weight={weight}
-        text={text}
-      >
+      <StyledTextLabel id={id} onClick={onClick} theme={theme}>
         { text && text.toString() }
       </StyledTextLabel>
     )
