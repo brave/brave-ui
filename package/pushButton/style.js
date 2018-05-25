@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const styled_components_1 = require("styled-components");
+const helpers_1 = require("../helpers");
 const theme_1 = require("../theme");
 const StyledPushButton = styled_components_1.default.button `
-  font-size: ${(p) => p.fontSize ? p.fontSize : '13px'};
-  min-width: ${(p) => p.size ? p.size : '78px'};
-  min-height: ${(p) => p.size ? p.size : '32px'};
+  font-size: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'pushButton', 'fontSize') || '13px'};
+  min-width: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'pushButton', 'minWidth') || '78px'};
+  min-height: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'pushButton', 'minHeight') || '32px'};
   font-family: inherit;
   position: relative;
   display: inline-block;
@@ -90,5 +91,5 @@ const StyledPushButton = styled_components_1.default.button `
       }
     ` : ''}
 `;
-exports.StyledPushButton = StyledPushButton;
+exports.default = StyledPushButton;
 //# sourceMappingURL=style.js.map

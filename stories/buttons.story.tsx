@@ -62,8 +62,14 @@ storiesOf('Buttons', module)
         color={value}
         disabled={boolean('Disabled', false)}
         onClick={action('clicked the standard button!')}
-        size={text('Size', '')}
-        fontSize={text('Font Size', '')}>
+        theme={{
+          pushButton: {
+            minWidth: text('Width', '78px'),
+            minHeight: text('Height', '32px'),
+            fontSize: text('Font Size', '13px')
+          }
+        }}
+        >
         {text('Label', 'Hello Button')}
       </PushButton>
     )

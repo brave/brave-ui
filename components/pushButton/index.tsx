@@ -14,31 +14,37 @@
  */
 
 import * as React from 'react'
-import { StyledPushButton } from './style'
+import StyledPushButton from './style'
+
+export interface PushButtonTheme {
+  minWidth?: string,
+  minHeight?: string,
+  fontSize?: string
+}
 
 export interface PushButtonProps {
   id?: string,
   color?: string,
   disabled?: boolean,
   onClick?: () => void,
-  children?: React.ReactNode,
-  // component styles
-  size?: string,
-  fontSize?: string
+  theme?: {
+    [pushButton: string]: PushButtonTheme
+  }
+  children?: React.ReactNode
 }
 
 class PushButton extends React.PureComponent<PushButtonProps, {}> {
   render () {
+    const { id, color, theme, onClick, disabled, children } = this.props
     return (
       <StyledPushButton
-        id={this.props.id}
-        color={this.props.color ? this.props.color : 'default'}
-        onClick={this.props.onClick}
-        disabled={this.props.disabled ? this.props.disabled : false}
-        size={this.props.size}
-        fontSize={this.props.fontSize}
+        id={id}
+        color={color ? color : 'default'}
+        theme={theme}
+        onClick={onClick}
+        disabled={disabled ? disabled : false}
       >
-        {this.props.children}
+        {children}
       </StyledPushButton>
     )
   }

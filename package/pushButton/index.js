@@ -4,7 +4,8 @@ const React = require("react");
 const style_1 = require("./style");
 class PushButton extends React.PureComponent {
     render() {
-        return (React.createElement(style_1.StyledPushButton, { id: this.props.id, color: this.props.color ? this.props.color : 'default', onClick: this.props.onClick, disabled: this.props.disabled ? this.props.disabled : false, size: this.props.size, fontSize: this.props.fontSize }, this.props.children));
+        const { id, color, theme, onClick, disabled, children } = this.props;
+        return (React.createElement(style_1.default, { id: id, color: color ? color : 'default', theme: theme, onClick: onClick, disabled: disabled ? disabled : false }, children));
     }
 }
 exports.default = PushButton;

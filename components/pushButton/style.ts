@@ -4,12 +4,13 @@
 
 import styled, { css } from 'styled-components'
 import { PushButtonProps } from './index'
+import { checkIfThemeProp } from '../helpers'
 import theme from '../theme'
 
 const StyledPushButton = styled.button`
-  font-size: ${(p: PushButtonProps) => p.fontSize ? p.fontSize : '13px'};
-  min-width: ${(p: PushButtonProps) => p.size ? p.size : '78px'};
-  min-height: ${(p: PushButtonProps) => p.size ? p.size : '32px'};
+  font-size: ${(p: PushButtonProps) => checkIfThemeProp(p.theme, 'pushButton', 'fontSize') || '13px'};
+  min-width: ${(p: PushButtonProps) => checkIfThemeProp(p.theme, 'pushButton', 'minWidth') || '78px'};
+  min-height: ${(p: PushButtonProps) => checkIfThemeProp(p.theme, 'pushButton', 'minHeight') || '32px'};
   font-family: inherit;
   position: relative;
   display: inline-block;
@@ -99,4 +100,4 @@ const StyledPushButton = styled.button`
   }
 ` as any
 
- export { StyledPushButton }
+ export default StyledPushButton
