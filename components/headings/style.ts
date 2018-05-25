@@ -4,7 +4,7 @@
 
 import styled from 'styled-components'
 import { HeadingProps } from './index'
-import { checkIfThemeProp } from '../helpers'
+import { setTheme } from '../helpers'
 
 // All feature-based text inherits from StyledSharedHeading
 // which excludes normal h1...h6 headings
@@ -50,8 +50,8 @@ const StyledFeatureHeading = StyledSharedHeading.withComponent('h2').extend`
 const StyledH1 = styled.h1`
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  color: ${(p: HeadingProps) => checkIfThemeProp(p.theme, 'heading', 'color')};
-  font-weight: ${(p: HeadingProps) => checkIfThemeProp(p.theme, 'heading', 'fontWeight') || '400'};
+  color: ${(p: HeadingProps) => setTheme(p.theme, 'heading', 'color')};
+  font-weight: ${(p: HeadingProps) => setTheme(p.theme, 'heading', 'fontWeight') || '400'};
   font-family: inherit;
   margin-top: 14px;
   margin-bottom: 22px;

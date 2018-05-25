@@ -4,13 +4,13 @@
 
 import styled from 'styled-components'
 import { TextLabelProps } from './index'
-import { checkIfThemeProp } from '../helpers'
+import { setTheme } from '../helpers'
 
 const StyledTextLabel = styled.p`
-  font-weight: ${(p: TextLabelProps) => checkIfThemeProp(p.theme, 'textLabel', 'fontWeight') || 'normal'};
-  padding: ${(p: TextLabelProps) => checkIfThemeProp(p.theme, 'textLabel', 'padding') || '0'};
-  font-size: ${(p: TextLabelProps) => checkIfThemeProp(p.theme, 'textLabel', 'fontSize') || '13px'};
-  color: ${(p: TextLabelProps) => checkIfThemeProp(p.theme, 'textLabel', 'color') || 'inherit'};
+  font-weight: ${(p: TextLabelProps) => setTheme(p.theme, 'textLabel', 'fontWeight') || 'normal'};
+  padding: ${(p: TextLabelProps) => setTheme(p.theme, 'textLabel', 'padding') || '0'};
+  font-size: ${(p: TextLabelProps) => setTheme(p.theme, 'textLabel', 'fontSize') || '13px'};
+  color: ${(p: TextLabelProps) => setTheme(p.theme, 'textLabel', 'color') || 'inherit'};
   user-select: none;
   cursor: default;
   font-family: inherit;

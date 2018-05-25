@@ -3,10 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const styled_components_1 = require("styled-components");
 const helpers_1 = require("../helpers");
 const StyledTextLabel = styled_components_1.default.p `
-  font-weight: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'textLabel', 'fontWeight') || 'normal'};
-  padding: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'textLabel', 'padding') || '0'};
-  font-size: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'textLabel', 'fontSize') || '13px'};
-  color: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'textLabel', 'color') || 'inherit'};
+  font-weight: ${(p) => helpers_1.setTheme(p.theme, 'textLabel', 'fontWeight') || 'normal'};
+  padding: ${(p) => helpers_1.setTheme(p.theme, 'textLabel', 'padding') || '0'};
+  font-size: ${(p) => helpers_1.setTheme(p.theme, 'textLabel', 'fontSize') || '13px'};
+  color: ${(p) => helpers_1.setTheme(p.theme, 'textLabel', 'color') || 'inherit'};
   user-select: none;
   cursor: default;
   font-family: inherit;

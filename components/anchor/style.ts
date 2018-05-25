@@ -4,12 +4,12 @@
 
 import styled from 'styled-components'
 import { AnchorProps } from './index'
-import { checkIfThemeProp } from '../helpers'
+import { setTheme } from '../helpers'
 
 const StyledAnchor = styled.a`
-  color: ${(p: AnchorProps) => checkIfThemeProp(p.theme, 'anchor', 'color') || 'inherit'};
-  text-decoration: ${(p: AnchorProps) => checkIfThemeProp(p.theme, 'anchor', 'textDecoration') || 'none'};
-  font-size: ${(p: AnchorProps) => checkIfThemeProp(p.theme, 'anchor', 'fontSize') || '13px'};
+  color: ${(p: AnchorProps) => setTheme(p.theme, 'anchor', 'color') || 'inherit'};
+  text-decoration: ${(p: AnchorProps) => setTheme(p.theme, 'anchor', 'textDecoration') || 'none'};
+  font-size: ${(p: AnchorProps) => setTheme(p.theme, 'anchor', 'fontSize') || '13px'};
   font-family: inherit;
   box-sizing: border-box;
 ` as any

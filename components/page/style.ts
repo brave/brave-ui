@@ -4,13 +4,13 @@
 
 import styled from 'styled-components'
 import { PageProps } from './index'
-import { checkIfThemeProp } from '../helpers'
+import { setTheme } from '../helpers'
 
 const StyledPage = styled.div`
-  font-family: ${(p: PageProps) => checkIfThemeProp(p.theme, 'page', 'fontFamily') || 'inherit'};
-  color: ${(p: PageProps) => checkIfThemeProp(p.theme, 'page', 'color') || 'inherit'};
-  padding: ${(p: PageProps) => checkIfThemeProp(p.theme, 'page', 'padding') || '40px'};
-  background: ${(p: PageProps) => checkIfThemeProp(p.theme, 'page', 'background') || 'inherit'};
+  font-family: ${(p: PageProps) => setTheme(p.theme, 'page', 'fontFamily') || 'inherit'};
+  color: ${(p: PageProps) => setTheme(p.theme, 'page', 'color') || 'inherit'};
+  padding: ${(p: PageProps) => setTheme(p.theme, 'page', 'padding') || '40px'};
+  background: ${(p: PageProps) => setTheme(p.theme, 'page', 'background') || 'inherit'};
   box-sizing: border-box;
   background-attachment: fixed;
   background-size: auto;

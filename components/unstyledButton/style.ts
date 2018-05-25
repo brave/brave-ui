@@ -4,11 +4,11 @@
 
 import styled from 'styled-components'
 import { UnstyledButtonProps } from './index'
-import { checkIfThemeProp } from '../helpers'
+import { setTheme } from '../helpers'
 
 const StyledUnstyledButton = styled.button`
-  font-size: ${(p: UnstyledButtonProps) => checkIfThemeProp(p.theme, 'unstyledButton', 'fontSize') || 'inherit'};
-  color: ${(p: UnstyledButtonProps) => checkIfThemeProp(p.theme, 'unstyledButton', 'color') || 'inherit'};
+  font-size: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'unstyledButton', 'fontSize') || 'inherit'};
+  color: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'unstyledButton', 'color') || 'inherit'};
   font-family: inherit;
   box-sizing: border-box;
   display: block;

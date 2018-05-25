@@ -4,11 +4,11 @@
 
 import styled from 'styled-components'
 import { BoxedContentProps } from './index'
-import { checkIfThemeProp } from '../helpers'
+import { setTheme } from '../helpers'
 
 const StyledBoxedContent = styled.div`
-  max-width: ${(p: BoxedContentProps) => checkIfThemeProp(p.theme, 'boxedContent', 'maxWidth')};
-  margin: ${(p: BoxedContentProps) => checkIfThemeProp(p.theme, 'boxedContent', 'margin')};
+  max-width: ${(p: BoxedContentProps) => setTheme(p.theme, 'boxedContent', 'maxWidth')};
+  margin: ${(p: BoxedContentProps) => setTheme(p.theme, 'boxedContent', 'margin')};
   color: inherit;
   font-size: inherit;
   box-sizing: border-box;

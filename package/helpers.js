@@ -13,5 +13,5 @@ exports.setValueBasedOnSize = (size, medium, small, large) => {
             return medium;
     }
 };
-exports.checkIfThemeProp = (theme, component, prop) => theme && theme[component] && theme[component][prop];
+exports.setTheme = (theme, component, prop) => theme && theme[component] && theme[component][prop];
 //# sourceMappingURL=helpers.js.map

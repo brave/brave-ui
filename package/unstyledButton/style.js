@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const styled_components_1 = require("styled-components");
 const helpers_1 = require("../helpers");
 const StyledUnstyledButton = styled_components_1.default.button `
-  font-size: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'unstyledButton', 'fontSize') || 'inherit'};
-  color: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'unstyledButton', 'color') || 'inherit'};
+  font-size: ${(p) => helpers_1.setTheme(p.theme, 'unstyledButton', 'fontSize') || 'inherit'};
+  color: ${(p) => helpers_1.setTheme(p.theme, 'unstyledButton', 'color') || 'inherit'};
   font-family: inherit;
   box-sizing: border-box;
   display: block;

@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const styled_components_1 = require("styled-components");
 const helpers_1 = require("../helpers");
 const StyledClock = styled_components_1.default.div `
-  color: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'clock', 'color') || 'inherit'};
+  color: ${(p) => helpers_1.setTheme(p.theme, 'clock', 'color') || 'inherit'};
   box-sizing: border-box;
   line-height: 1;
   user-select: none;
