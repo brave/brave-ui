@@ -8,9 +8,7 @@ export interface BoxedContentTheme {
 }
 export interface BoxedContentProps {
     id?: string;
-    theme?: {
-        [boxedContent: string]: BoxedContentTheme;
-    };
+    theme?: BoxedContentTheme;
     children?: React.ReactNode;
 }
 declare class BoxedContent extends React.PureComponent<BoxedContentProps, {}> {

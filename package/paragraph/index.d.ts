@@ -9,9 +9,7 @@ export interface ParagraphTheme {
 export interface ParagraphProps {
     id?: string;
     text?: string;
-    theme?: {
-        [paragraph: string]: ParagraphTheme;
-    };
+    theme?: ParagraphTheme;
 }
 declare class Paragraph extends React.PureComponent<ParagraphProps, {}> {
     render(): JSX.Element;

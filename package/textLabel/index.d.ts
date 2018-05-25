@@ -9,9 +9,7 @@ export interface TextLabelTheme {
 export interface TextLabelProps {
     id?: string;
     onClick?: () => void;
-    theme?: {
-        [textLabel: string]: TextLabelTheme;
-    };
+    theme?: TextLabelTheme;
     text?: string | number;
 }
 declare class TextLabel extends React.PureComponent<TextLabelProps, {}> {

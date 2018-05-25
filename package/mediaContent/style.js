@@ -12,7 +12,7 @@ const StyledMediaContent = styled_components_1.default.div `
 `;
 exports.StyledMediaContent = StyledMediaContent;
 const StyledMedia = styled_components_1.default.img `
-  width: ${(p) => helpers_1.setTheme(p.theme, 'mediaContent', 'width')};
+  width: ${(p) => helpers_1.setTheme(p.theme, 'width')};
   box-sizing: border-box;
   display: block;
   max-width: 100%;
@@ -20,7 +20,7 @@ const StyledMedia = styled_components_1.default.img `
 exports.StyledMedia = StyledMedia;
 const StyledMediaBody = styled_components_1.default.div `
   box-sizing: border-box;
-  margin: ${(p) => helpers_1.setTheme(p.theme, 'mediaContent', 'margin')};
+  margin: ${(p) => helpers_1.setTheme(p.theme, 'margin')};
   font-weight: inherit;
   font-family: inherit;
   color: inherit;

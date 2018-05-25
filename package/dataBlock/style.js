@@ -23,7 +23,7 @@ const StyledDataBlock = styled_components_1.default.ul `
 `;
 exports.StyledDataBlock = StyledDataBlock;
 const StyledDataItem = styled_components_1.default.li `
-  user-select: ${(p) => helpers_1.setTheme(p.theme, 'dataItem', 'userSelect') || 'auto'};
+  user-select: ${(p) => helpers_1.setTheme(p.theme, 'userSelect') || 'auto'};
   box-sizing: border-box;
   vertical-align: middle;
   list-style-type: none;
@@ -32,7 +32,7 @@ const StyledDataItem = styled_components_1.default.li `
 `;
 exports.StyledDataItem = StyledDataItem;
 const StyledDataItemCounter = styled_components_1.default.span `
-  color: ${(p) => helpers_1.setTheme(p.theme, 'dataItem', 'color') || 'inherit'};
+  color: ${(p) => helpers_1.setTheme(p.theme, 'color') || 'inherit'};
   font-size: ${(p) => helpers_1.setValueBasedOnSize(p.size, '44px', '26px', undefined)};
   line-height: ${(p) => helpers_1.setValueBasedOnSize(p.size, '52px', '24px', undefined)};
   max-width: ${(p) => helpers_1.setValueBasedOnSize(p.size, '200px', '38px', undefined)};
@@ -46,7 +46,7 @@ const StyledDataItemCounter = styled_components_1.default.span `
 `;
 exports.StyledDataItemCounter = StyledDataItemCounter;
 const StyledDataItemText = styled_components_1.default.span `
-  color: ${(p) => helpers_1.setTheme(p.theme, 'dataItem', 'color') || 'inherit'};
+  color: ${(p) => helpers_1.setTheme(p.theme, 'color') || 'inherit'};
   font-size: ${(p) => helpers_1.setValueBasedOnSize(p.size, '20px', '13px', undefined)};
   line-height: ${(p) => helpers_1.setValueBasedOnSize(p.size, '24px', '16px', undefined)};
   margin-left: ${(p) => helpers_1.setValueBasedOnSize(p.size, '3px', '10px', undefined)};

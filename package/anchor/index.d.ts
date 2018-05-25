@@ -10,9 +10,7 @@ export interface AnchorProps {
     href: string;
     target?: '_blank' | '_parent' | '_self' | '_top';
     text?: string | number;
-    theme?: {
-        [anchor: string]: AnchorTheme;
-    };
+    theme?: AnchorTheme;
 }
 declare class Anchor extends React.PureComponent<AnchorProps, {}> {
     render(): JSX.Element;

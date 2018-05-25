@@ -8,9 +8,7 @@ export interface MediaContentProps {
     id?: string;
     media?: string;
     children?: React.ReactNode;
-    theme?: {
-        [mediaContent: string]: MediaTheme;
-    };
+    theme?: MediaTheme;
 }
 declare class MediaContent extends React.PureComponent<MediaContentProps, {}> {
     render(): JSX.Element;

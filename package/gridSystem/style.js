@@ -6,12 +6,12 @@ const StyledGrid = styled_components_1.default.div `
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(${(p) => p.columns ? p.columns : '12'}, 1fr);
-  grid-gap: ${(p) => helpers_1.setTheme(p.theme, 'grid', 'gridGap') || '15px'};
-  padding: ${(p) => helpers_1.setTheme(p.theme, 'grid', 'padding') || '0'};
-  max-width: ${(p) => helpers_1.setTheme(p.theme, 'grid', 'maxWidth') || 'initial'};
-  height: ${(p) => helpers_1.setTheme(p.theme, 'grid', 'height') || 'initial'};
-  color: ${(p) => helpers_1.setTheme(p.theme, 'grid', 'color') || 'inherit'};
-  background-color: ${(p) => helpers_1.setTheme(p.theme, 'grid', 'backgroundColor') || 'inherit'};
+  grid-gap: ${(p) => helpers_1.setTheme(p.theme, 'gridGap') || '15px'};
+  padding: ${(p) => helpers_1.setTheme(p.theme, 'padding') || '0'};
+  max-width: ${(p) => helpers_1.setTheme(p.theme, 'maxWidth') || 'initial'};
+  height: ${(p) => helpers_1.setTheme(p.theme, 'height') || 'initial'};
+  color: ${(p) => helpers_1.setTheme(p.theme, 'color') || 'inherit'};
+  background-color: ${(p) => helpers_1.setTheme(p.theme, 'backgroundColor') || 'inherit'};
   font-family: inherit;
   font-size: inherit;
 
@@ -27,10 +27,10 @@ const StyledColumn = styled_components_1.default.div `
   position: relative;
   display: flex;
   grid-column: ${(p) => p.size ? `span ${p.size}` : 'span 12'};
-  justify-content: ${(p) => helpers_1.setTheme(p.theme, 'column', 'justifyContent') || 'initial'};
-  align-items: ${(p) => helpers_1.setTheme(p.theme, 'column', 'alignItems') || 'initial'};
-  background-color: ${(p) => helpers_1.setTheme(p.theme, 'column', 'backgroundColor') || 'inherit'};
-  flex-direction: ${(p) => helpers_1.setTheme(p.theme, 'column', 'flexDirection') || 'initial'};
+  justify-content: ${(p) => helpers_1.setTheme(p.theme, 'justifyContent') || 'initial'};
+  align-items: ${(p) => helpers_1.setTheme(p.theme, 'alignItems') || 'initial'};
+  background-color: ${(p) => helpers_1.setTheme(p.theme, 'backgroundColor') || 'inherit'};
+  flex-direction: ${(p) => helpers_1.setTheme(p.theme, 'flexDirection') || 'initial'};
   font-family: inherit;
   font-size: inherit;
   color: inherit;
