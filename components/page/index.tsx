@@ -4,11 +4,20 @@ import 'emptykit.css'
 import { StyledPage, StyledPageContent } from './style'
 import { TitleHeading } from '../headings'
 
+export interface PageTheme {
+  fontFamily?: string,
+  color?: string,
+  padding?: string,
+  background?: string
+}
+
 export interface PageProps {
   id?: string,
   title?: string,
   label?: string,
-  style?: object,
+  theme?: {
+    [page: string]: PageTheme
+  }
   children?: React.ReactNode
 }
 
@@ -18,12 +27,12 @@ class Page extends React.PureComponent<PageProps, {}> {
       id,
       title,
       label,
-      style,
+      theme,
       children
     } = this.props
 
     return (
-      <StyledPage id={id} title={title} label={label} style={style}>
+      <StyledPage id={id} title={title} label={label} theme={theme}>
         { title && <TitleHeading text={title} label={label} /> }
         <StyledPageContent>{children}</StyledPageContent>
       </StyledPage>

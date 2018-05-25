@@ -27,11 +27,13 @@ const privateTabIcon = require('../../../assets/img/private_tab_pagearea_icon.sv
 class NewPrivateTab extends React.PureComponent {
   render () {
     return (
-      <Page style={{
-        fontFamily: '"Poppins", sans-serif',
-        color: 'rgba(255,255,255,0.8)',
-        padding: '80px 60px 40px',
-        background: 'linear-gradient(#4b3c6e, #000)'
+      <Page theme={{
+        page: {
+          fontFamily: '"Poppins", sans-serif',
+          color: '#fff',
+          padding: '80px 60px 40px',
+          background: 'linear-gradient(#4b3c6e, #000)'
+        }
       }}>
         <Grid columns={3}>
           <Column size={2}>

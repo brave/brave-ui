@@ -9,33 +9,63 @@ describe('page tests', () => {
     <Page id='testPage' {...props} />
   )
 
-  it('matches the snapshot', () => {
-    const component = baseComponent()
-    const tree = create(component).toJSON()
-    expect(tree).toMatchSnapshot()
+  describe('basic tests', () => {
+    it('matches the snapshot', () => {
+      const component = baseComponent()
+      const tree = create(component).toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+
+    it('renders the component', () => {
+      const wrapper = shallow(baseComponent({id: 'toughPage'}))
+      const assertion = wrapper.find('#toughPage').length
+      expect(assertion).toBe(1)
+    })
   })
 
-  it('renders the component', () => {
-    const wrapper = shallow(baseComponent({id: 'toughPage'}))
-    const assertion = wrapper.find('#toughPage').length
-    expect(assertion).toBe(1)
+  describe('component behavior', () => {
+    it('can have an id', () => {
+      const wrapper = shallow(baseComponent({id: 'boxedThing'}))
+      const assertion = wrapper.props().id
+      expect(assertion).toBe('boxedThing')
+    })
+
+    it('can have a custom title', () => {
+      const wrapper = shallow(baseComponent({title: 'here comes the sun'}))
+      const assertion = wrapper.props().title
+      expect(assertion).toBe('here comes the sun')
+    })
+
+    it('can have a custom label', () => {
+      const wrapper = shallow(baseComponent({label: 'beta'}))
+      const assertion = wrapper.props().label
+      expect(assertion).toBe('beta')
+    })
   })
 
-  it('can have an id', () => {
-    const wrapper = shallow(baseComponent({id: 'boxedThing'}))
-    const assertion = wrapper.props().id
-    expect(assertion).toBe('boxedThing')
-  })
+  describe('theming', () => {
+    it('allows theming the `font-family` property', () => {
+      const component = baseComponent({theme: { page: { fontFamily: 'Helvetica' } } })
+      const tree = create(component).toJSON()
+      expect(tree).toHaveStyleRule('font-family', 'Helvetica')
+    })
 
-  it('can have a custom title', () => {
-    const wrapper = shallow(baseComponent({title: 'here comes the sun'}))
-    const assertion = wrapper.props().title
-    expect(assertion).toBe('here comes the sun')
-  })
+    it('allows theming the `color` property', () => {
+      const component = baseComponent({theme: { page: { color: 'pink' } } })
+      const tree = create(component).toJSON()
+      expect(tree).toHaveStyleRule('color', 'pink')
+    })
 
-  it('can have a custom label', () => {
-    const wrapper = shallow(baseComponent({label: 'beta'}))
-    const assertion = wrapper.props().label
-    expect(assertion).toBe('beta')
+    it('allows theming the `padding` property', () => {
+      const component = baseComponent({theme: { page: { padding: '30px' } } })
+      const tree = create(component).toJSON()
+      expect(tree).toHaveStyleRule('padding', '30px')
+    })
+
+    it('allows theming the `background` property', () => {
+      const component = baseComponent({theme: { page: { background: 'purple' } } })
+      const tree = create(component).toJSON()
+      expect(tree).toHaveStyleRule('background', 'purple')
+    })
   })
 })
