@@ -1,11 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const styled_components_1 = require("styled-components");
+const helpers_1 = require("../helpers");
 const StyledUnstyledButton = styled_components_1.default.button `
-  padding: ${(p) => p.padding ? p.padding : 'inherit'};
-  height: ${(p) => p.height ? p.height : 'inherit'};
-  font-size: ${(p) => p.fontSize ? p.fontSize : 'inherit'};
-  color: ${(p) => p.color ? p.color : 'inherit'};
+  font-size: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'unstyledButton', 'fontSize') || 'inherit'};
+  color: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'unstyledButton', 'color') || 'inherit'};
   font-family: inherit;
   box-sizing: border-box;
   display: block;
@@ -15,5 +14,5 @@ const StyledUnstyledButton = styled_components_1.default.button `
   cursor: pointer;
   outline: inherit;
 `;
-exports.StyledUnstyledButton = StyledUnstyledButton;
+exports.default = StyledUnstyledButton;
 //# sourceMappingURL=style.js.map

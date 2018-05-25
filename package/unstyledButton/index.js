@@ -4,7 +4,8 @@ const React = require("react");
 const style_1 = require("./style");
 class UnstyledButton extends React.PureComponent {
     render() {
-        return (React.createElement(style_1.StyledUnstyledButton, { id: this.props.id, onClick: this.props.onClick, height: this.props.height, fontSize: this.props.fontSize, color: this.props.color, padding: this.props.padding }, this.props.text ? this.props.text.toString() : null));
+        const { id, onClick, theme, text } = this.props;
+        return (React.createElement(style_1.default, { id: id, theme: theme, onClick: onClick }, text ? text.toString() : null));
     }
 }
 exports.default = UnstyledButton;

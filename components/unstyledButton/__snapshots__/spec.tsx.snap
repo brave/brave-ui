@@ -1,11 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`unstyledButton tests matches the snapshot 1`] = `
+exports[`unstyledButton tests basic tests matches the snapshot 1`] = `
+.c0 {
+  font-size: inherit;
+  color: inherit;
+  font-family: inherit;
+  box-sizing: border-box;
+  display: block;
+  line-height: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+}
+
 <button
-  className="sc-bdVaJa eJbIPz"
-  color={undefined}
-  fontSize={undefined}
-  height={undefined}
+  className="c0"
   id={undefined}
   onClick={undefined}
 />

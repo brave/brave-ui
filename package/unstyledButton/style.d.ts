@@ -1,2 +1,2 @@
 declare const StyledUnstyledButton: any;
-export { StyledUnstyledButton };
+export default StyledUnstyledButton;

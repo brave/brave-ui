@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledUnstyledButton } from './style'
+import StyledUnstyledButton from './style'
 
 /**
 * Implementor notes:
@@ -15,29 +15,26 @@ import { StyledUnstyledButton } from './style'
 * as this file shouldn't be changed much.
 **/
 
+export interface UnstyledButtonTheme {
+  fontSize?: string,
+  color?: string
+}
+
 export interface UnstyledButtonProps {
   id?: string,
   onClick?: () => void,
   text?: string | number,
-  // Component style
-  height?: string,
-  fontSize?: string,
-  color?: string,
-  padding?: string
+  theme?: {
+    [unstyledButton: string]: UnstyledButtonTheme
+  }
 }
 
 class UnstyledButton extends React.PureComponent<UnstyledButtonProps, {}> {
   render () {
+    const { id, onClick, theme, text } = this.props
     return (
-      <StyledUnstyledButton
-        id={this.props.id}
-        onClick={this.props.onClick}
-        height={this.props.height}
-        fontSize={this.props.fontSize}
-        color={this.props.color}
-        padding={this.props.padding}
-      >
-        { this.props.text ? this.props.text.toString() : null }
+      <StyledUnstyledButton id={id} theme={theme} onClick={onClick}>
+        { text ? text.toString() : null }
       </StyledUnstyledButton>
     )
   }

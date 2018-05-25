@@ -40,10 +40,12 @@ storiesOf('Buttons', module)
       <UnstyledButton
         onClick={action('clicked the action button!')}
         text={text('Text', 'Example UnstyledButton')}
-        height={text('Height', 'inherit')}
-        fontSize={text('Font Size', '16px')}
-        color={text('Color', '#000')}
-        padding={text('Padding', '0px')}
+        theme={{
+          unstyledButton: {
+            fontSize: text('Font Size', '16px'),
+            color: text('Color', '#000')
+          }
+        }}
       />
     )
   })
