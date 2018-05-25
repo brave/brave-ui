@@ -70,8 +70,8 @@ class NewPrivateTab extends React.PureComponent {
           >
             <Heading level={1} theme={{heading: {fontWeight: '400', color: '#fff'}}} text={locale.title} />
             <article style={{fontFamily: '"Muli", sans-serif'}}>
-              <Paragraph size='18px' text={locale.paragraph1} />
-              <Paragraph italic size='15px' text={locale.paragraph2} />
+              <Paragraph theme={{paragraph: {fontSize: '18px'}}} text={locale.paragraph1} />
+              <Paragraph theme={{paragraph: {fontStyle: 'italic', fontSize: '15px'}}} text={locale.paragraph2} />
               <BoxedContent theme={{boxedContent: {margin: '40px 0 25px'}}}>
                 <SwitchButton
                   id='togglePrivateSearchEngine'
@@ -79,7 +79,7 @@ class NewPrivateTab extends React.PureComponent {
                   checked={false}
                   rightText={locale.switchLabel} />
               </BoxedContent>
-              <Paragraph size='18px' text={locale.paragraph3} />
+              <Paragraph theme={{paragraph: {fontSize: '18px'}}} text={locale.paragraph3} />
             </article>
           </MediaContent>
         </BoxedContent>

@@ -1,10 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`paragraph tests matches the snapshot 1`] = `
+exports[`paragraph tests basic tests matches the snapshot 1`] = `
+.c0 {
+  box-sizing: border-box;
+  font-size: 13px;
+  color: inherit;
+  font-weight: normal;
+  font-style: inherit;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  margin: 0;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  font-family: inherit;
+}
+
 <p
-  className="sc-bdVaJa dersFR"
-  color={undefined}
+  className="c0"
   id="testParagraph"
-  size={undefined}
 />
 `;

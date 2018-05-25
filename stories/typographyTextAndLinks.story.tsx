@@ -93,10 +93,14 @@ storiesOf('Typography, Text and Links', module)
     return (
       <Paragraph
         text={text('Text', 'Some text here')}
-        size={text('Size', '16px')}
-        color={text('Color', '#000000')}
-        weight={weightValue}
-        italic={boolean('Italic?', false)}
+        theme={{
+          paragraph: {
+            fontSize: text('Size', '16px'),
+            color: text('Color', '#000000'),
+            fontWeight: weightValue,
+            fontStyle: text('Font style', 'italic')
+          }
+        }}
       />
     )
   })

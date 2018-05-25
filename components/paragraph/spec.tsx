@@ -8,46 +8,57 @@ describe('paragraph tests', () => {
   const baseComponent = (props?: object) => (
     <Paragraph id='testParagraph' {...props} />
   )
+  describe('basic tests', () => {
+    it('matches the snapshot', () => {
+      const component = baseComponent()
+      const tree = create(component).toJSON()
+      expect(tree).toMatchSnapshot()
+    })
 
-  it('matches the snapshot', () => {
-    const component = baseComponent()
-    const tree = create(component).toJSON()
-    expect(tree).toMatchSnapshot()
+    it('renders the component', () => {
+      const wrapper = shallow(baseComponent({id: 'toughParagraph'}))
+      const assertion = wrapper.find('#toughParagraph').length
+      expect(assertion).toBe(1)
+    })
   })
 
-  it('renders the component', () => {
-    const wrapper = shallow(baseComponent({id: 'toughParagraph'}))
-    const assertion = wrapper.find('#toughParagraph').length
-    expect(assertion).toBe(1)
+  describe('component behavior', () => {
+    it('can have an id', () => {
+      const wrapper = shallow(baseComponent({id: 'boxedThing'}))
+      const assertion = wrapper.props().id
+      expect(assertion).toBe('boxedThing')
+    })
+
+    it('can pass text', () => {
+      const wrapper = shallow(baseComponent({text: 'what else'}))
+      const assertion = wrapper.html().includes('what else')
+      expect(assertion).toBe(true)
+    })
   })
 
-  it('can have an id', () => {
-    const wrapper = shallow(baseComponent({id: 'boxedThing'}))
-    const assertion = wrapper.props().id
-    expect(assertion).toBe('boxedThing')
-  })
+  describe('theming', () => {
+    it('allows theming the `color` property', () => {
+      const component = baseComponent({theme: { paragraph: { color: 'orange' } } })
+      const tree = create(component).toJSON()
+      expect(tree).toHaveStyleRule('color', 'orange')
+    })
 
-  it('can have a custom size', () => {
-    const wrapper = shallow(baseComponent({size: '30px'}))
-    const assertion = wrapper.props().size
-    expect(assertion).toBe('30px')
-  })
+    it('allows theming the `font-size` property', () => {
+      const component = baseComponent({theme: { paragraph: { fontSize: '12px' } } })
+      const tree = create(component).toJSON()
+      expect(tree).toHaveStyleRule('font-size', '12px')
+    })
 
-  it('can have a custom color', () => {
-    const wrapper = shallow(baseComponent({color: 'yellow'}))
-    const assertion = wrapper.props().color
-    expect(assertion).toBe('yellow')
-  })
+    it('allows theming the `font-weight` property', () => {
+      const component = baseComponent({theme: { paragraph: { fontWeight: 'bold' } } })
+      const tree = create(component).toJSON()
+      expect(tree).toHaveStyleRule('font-weight', 'bold')
+    })
 
-  it('can be bold', () => {
-    const wrapper = shallow(baseComponent({weight: 'bold'}))
-    const assertion = wrapper.props().weight
-    expect(assertion).toBe('bold')
-  })
-
-  it('can pass text', () => {
-    const wrapper = shallow(baseComponent({text: 'what else'}))
-    const assertion = wrapper.html().includes('what else')
-    expect(assertion).toBe(true)
+    it('allows theming the `font-style` property', () => {
+      const component = baseComponent({theme: { paragraph: { fontStyle: 'italic' } } })
+      const tree = create(component).toJSON()
+      expect(tree).toHaveStyleRule('font-style', 'italic')
+    })
   })
 })

@@ -7,13 +7,19 @@ import * as React from 'react'
 
 import StyledParagraph from './style'
 
+export interface ParagraphTheme {
+  color?: string,
+  fontSize?: string,
+  fontWeight?: string,
+  fontStyle?: string
+}
+
 export interface ParagraphProps {
   id?: string,
-  size?: string,
-  color?: string,
-  weight?: string,
-  italic?: boolean,
-  text?: string
+  text?: string,
+  theme?: {
+    [paragraph: string]: ParagraphTheme
+  }
 }
 
 /**
@@ -25,15 +31,9 @@ export interface ParagraphProps {
 
 class Paragraph extends React.PureComponent<ParagraphProps, {}> {
   render () {
-    const { id, size, color, weight = 'normal', italic, text } = this.props
+    const { id, theme, text } = this.props
     return (
-      <StyledParagraph
-        id={id}
-        size={size}
-        color={color}
-        weight={weight}
-        italic={italic}
-      >
+      <StyledParagraph id={id} theme={theme}>
         {text && text.toString()}
       </StyledParagraph>
     )

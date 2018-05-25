@@ -4,10 +4,10 @@ const styled_components_1 = require("styled-components");
 const helpers_1 = require("../helpers");
 const StyledParagraph = styled_components_1.default.p `
   box-sizing: border-box;
-  font-size: ${(p) => p.size ? p.size : '13px'};
-  color: ${(p) => p.color ? p.color : 'inherit'};
-  font-weight: ${(p) => helpers_1.setWeight(p, 'bold', 'normal', 'inherit')};
-  font-style: ${(p) => p.italic ? 'italic' : 'inherit'};
+  font-size: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'paragraph', 'fontSize') || '13px'};
+  color: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'paragraph', 'color') || 'inherit'};
+  font-weight: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'paragraph', 'fontWeight') || 'normal'};
+  font-style: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'paragraph', 'fontStyle') || 'inherit'};
   padding: 0;
   -webkit-font-smoothing: antialiased;
   background: transparent;

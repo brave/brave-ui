@@ -4,14 +4,14 @@
 
 import styled from 'styled-components'
 import { ParagraphProps } from './index'
-import { setWeight } from '../helpers'
+import { checkIfThemeProp } from '../helpers'
 
 const StyledParagraph = styled.p`
   box-sizing: border-box;
-  font-size: ${(p: ParagraphProps) => p.size ? p.size : '13px'};
-  color: ${(p: ParagraphProps) => p.color ? p.color : 'inherit'};
-  font-weight: ${(p: ParagraphProps) => setWeight(p, 'bold', 'normal', 'inherit')};
-  font-style: ${(p: ParagraphProps) => p.italic ? 'italic' : 'inherit'};
+  font-size: ${(p: ParagraphProps) => checkIfThemeProp(p.theme, 'paragraph', 'fontSize') || '13px'};
+  color: ${(p: ParagraphProps) => checkIfThemeProp(p.theme, 'paragraph', 'color') || 'inherit'};
+  font-weight: ${(p: ParagraphProps) => checkIfThemeProp(p.theme, 'paragraph', 'fontWeight') || 'normal'};
+  font-style: ${(p: ParagraphProps) => checkIfThemeProp(p.theme, 'paragraph', 'fontStyle') || 'inherit'};
   padding: 0;
   -webkit-font-smoothing: antialiased;
   background: transparent;
