@@ -1,14 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`switchButton tests matches the snapshot 1`] = `
+exports[`switchButton tests basic tests matches the snapshot 1`] = `
+.c0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: inherit;
+  color: inherit;
+}
+
+.c1 {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  position: relative;
+  width: 48px;
+  height: 16px;
+  border-radius: 16px;
+  border: 2px solid #ccc;
+  padding: 0 2px;
+  background-color: white;
+  outline: none;
+  -webkit-transition: linear 0.2s;
+  transition: linear 0.2s;
+  box-shadow: inset -31px 0px 0px 0px #ccc;
+}
+
+.c1:checked {
+  border: 2px solid #ff6000;
+  box-shadow: inset 31px 0px 0px 0px #ff6000;
+}
+
 <div
-  className="sc-bdVaJa hVPJwY"
+  className="c0"
   disabled={undefined}
 >
   <input
     autoFocus={undefined}
     checked={false}
-    className="sc-htpNat cRhuEs"
+    className="c1"
     disabled={undefined}
     id="switchButton"
     onChange={[Function]}
