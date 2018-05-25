@@ -184,19 +184,19 @@ describe('all heading tests', () => {
 
     describe('theming', () => {
       it('allows theming the `color` property', () => {
-        const component = baseHeadingComponent({theme: { heading: { color: 'orange' } } })
+        const component = baseHeadingComponent({theme: { color: 'orange' } })
         const tree = create(component).toJSON()
         expect(tree).toHaveStyleRule('color', 'orange')
       })
 
       it('allows theming the `font-weight` property', () => {
-        const component = baseHeadingComponent({theme: { heading: { fontWeight: 'bold' } } })
+        const component = baseHeadingComponent({theme: { fontWeight: 'bold' } })
         const tree = create(component).toJSON()
         expect(tree).toHaveStyleRule('font-weight', 'bold')
       })
 
       it('allows theming the `font-family` property', () => {
-        const component = baseHeadingComponent({theme: { heading: { fontFamily: 'Arial' } } })
+        const component = baseHeadingComponent({theme: { fontFamily: 'Arial' } })
         const tree = create(component).toJSON()
         expect(tree).toHaveStyleRule('font-family', 'Arial')
       })

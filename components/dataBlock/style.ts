@@ -29,7 +29,7 @@ const StyledDataBlock = styled.ul`
 ` as any
 
 const StyledDataItem = styled.li`
-  user-select: ${(p: DataItemProps) => setTheme(p.theme, 'dataItem', 'userSelect') || 'auto'};
+  user-select: ${(p: DataItemProps) => setTheme(p.theme, 'userSelect') || 'auto'};
   box-sizing: border-box;
   vertical-align: middle;
   list-style-type: none;
@@ -38,7 +38,7 @@ const StyledDataItem = styled.li`
 ` as any
 
 const StyledDataItemCounter = styled.span`
-  color: ${(p: DataItemProps) => setTheme(p.theme, 'dataItem', 'color') || 'inherit'};
+  color: ${(p: DataItemProps) => setTheme(p.theme, 'color') || 'inherit'};
   font-size: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '44px', '26px', undefined)};
   line-height: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '52px', '24px', undefined)};
   max-width: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '200px', '38px', undefined)};
@@ -52,7 +52,7 @@ const StyledDataItemCounter = styled.span`
 ` as any
 
 const StyledDataItemText = styled.span`
-  color: ${(p: DataItemProps) => setTheme(p.theme, 'dataItem', 'color') || 'inherit'};
+  color: ${(p: DataItemProps) => setTheme(p.theme, 'color') || 'inherit'};
   font-size: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '20px', '13px', undefined)};
   line-height: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '24px', '16px', undefined)};
   margin-left: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '3px', '10px', undefined)};

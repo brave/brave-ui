@@ -2,10 +2,8 @@
 
 exports[`boxedContent tests basic tests matches the snapshot 1`] = `
 .c0 {
-  color: inherit;
   font-size: inherit;
   box-sizing: border-box;
-  font-family: inherit;
 }
 
 <div

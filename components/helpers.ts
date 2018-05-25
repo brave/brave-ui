@@ -36,8 +36,6 @@ export const setValueBasedOnSize = (
 /**
  * Sets the user input theme if defined
  * @param {any} theme - the component's theme object
- * @param {any} component - the component name
  * @param {any} prop - the theme prop to check against
  */
-export const setTheme = (theme: any, component: any, prop: any) =>
-  theme && theme[component] && theme[component][prop]
+export const setTheme = (theme: any, prop: any) => theme && theme[prop]

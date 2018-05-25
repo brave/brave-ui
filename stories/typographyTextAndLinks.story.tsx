@@ -78,10 +78,8 @@ storiesOf('Typography, Text and Links', module)
         level={levelValue}
         text={text('Heading text', 'Some text')}
         theme={{
-          heading: {
-            color: text('Color', '#000000'),
-            fontWeight: weightValue
-          }
+          color: text('Color', '#000000'),
+          fontWeight: weightValue
         }}
       />
     )
@@ -94,12 +92,10 @@ storiesOf('Typography, Text and Links', module)
       <Paragraph
         text={text('Text', 'Some text here')}
         theme={{
-          paragraph: {
-            fontSize: text('Size', '16px'),
-            color: text('Color', '#000000'),
-            fontWeight: weightValue,
-            fontStyle: text('Font style', 'italic')
-          }
+          fontSize: text('Size', '16px'),
+          color: text('Color', '#000000'),
+          fontWeight: weightValue,
+          fontStyle: text('Font style', 'italic')
         }}
       />
     )
@@ -111,11 +107,9 @@ storiesOf('Typography, Text and Links', module)
       <Anchor
         href='#'
         theme={{
-          anchor: {
-            textDecoration,
-            color: text('Color', '#000000'),
-            fontSize: text('Size', '16px')
-          }
+          textDecoration,
+          color: text('Color', '#000000'),
+          fontSize: text('Size', '16px')
         }}
         text={text('Link Text', 'Some text')}
       />

@@ -63,19 +63,19 @@ describe('pushButton tests', () => {
 
   describe('theming', () => {
     it('allows theming the `min-width` property', () => {
-      const component = baseComponent({theme: { pushButton: { minWidth: '300px' } } })
+      const component = baseComponent({theme: { minWidth: '300px' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('min-width', '300px')
     })
 
     it('allows theming the `min-height` property', () => {
-      const component = baseComponent({theme: { pushButton: { minHeight: '50px' } } })
+      const component = baseComponent({theme: { minHeight: '50px' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('min-height', '50px')
     })
 
     it('allows theming the `font-size` property', () => {
-      const component = baseComponent({theme: { pushButton: { fontSize: '40px' } } })
+      const component = baseComponent({theme: { fontSize: '40px' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('font-size', '40px')
     })

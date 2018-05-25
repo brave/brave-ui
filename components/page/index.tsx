@@ -15,9 +15,7 @@ export interface PageProps {
   id?: string,
   title?: string,
   label?: string,
-  theme?: {
-    [page: string]: PageTheme
-  }
+  theme?: PageTheme,
   children?: React.ReactNode
 }
 

@@ -7,10 +7,10 @@ import { TextLabelProps } from './index'
 import { setTheme } from '../helpers'
 
 const StyledTextLabel = styled.p`
-  font-weight: ${(p: TextLabelProps) => setTheme(p.theme, 'textLabel', 'fontWeight') || 'normal'};
-  padding: ${(p: TextLabelProps) => setTheme(p.theme, 'textLabel', 'padding') || '0'};
-  font-size: ${(p: TextLabelProps) => setTheme(p.theme, 'textLabel', 'fontSize') || '13px'};
-  color: ${(p: TextLabelProps) => setTheme(p.theme, 'textLabel', 'color') || 'inherit'};
+  font-weight: ${(p: TextLabelProps) => setTheme(p.theme, 'fontWeight') || 'normal'};
+  padding: ${(p: TextLabelProps) => setTheme(p.theme, 'padding') || '0'};
+  font-size: ${(p: TextLabelProps) => setTheme(p.theme, 'fontSize') || '13px'};
+  color: ${(p: TextLabelProps) => setTheme(p.theme, 'color') || 'inherit'};
   user-select: none;
   cursor: default;
   font-family: inherit;

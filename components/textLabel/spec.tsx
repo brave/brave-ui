@@ -47,25 +47,25 @@ describe('textLabel tests', () => {
 
   describe('theming', () => {
     it('allows theming the `color` property', () => {
-      const component = baseComponent({theme: { textLabel: { color: 'orange' } } })
+      const component = baseComponent({theme: { color: 'orange' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('color', 'orange')
     })
 
     it('allows theming the `font-size` property', () => {
-      const component = baseComponent({theme: { textLabel: { fontSize: '15px' } } })
+      const component = baseComponent({theme: { fontSize: '15px' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('font-size', '15px')
     })
 
     it('allows theming the `font-weight` property', () => {
-      const component = baseComponent({theme: { textLabel: { fontWeight: 'bold' } } })
+      const component = baseComponent({theme: { fontWeight: 'bold' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('font-weight', 'bold')
     })
 
     it('allows theming the `padding` property', () => {
-      const component = baseComponent({theme: { textLabel: { padding: '30px' } } })
+      const component = baseComponent({theme: { padding: '30px' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('padding', '30px')
     })

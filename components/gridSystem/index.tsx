@@ -19,9 +19,7 @@ export interface GridProps {
   disabled?: boolean,
   columns?: number,
   children?: React.ReactNode,
-  theme?: {
-    [grid: string]: GridTheme
-  }
+  theme?: GridTheme
 }
 
 class Grid extends React.PureComponent<GridProps, {}> {
@@ -45,9 +43,7 @@ export interface ColumnTheme {
 export interface ColumnProps {
   id?: string,
   size?: number | string,
-  theme?: {
-    [column: string]: ColumnTheme
-  }
+  theme?: ColumnTheme,
   children?: React.ReactNode
 }
 

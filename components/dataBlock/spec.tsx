@@ -75,7 +75,7 @@ describe('dataBlock tests', () => {
 
     describe('theming', () => {
       it('allows theming the `user-select` property', () => {
-        const component = baseDataItemComponent({theme: { dataItem: { userSelect: 'none' } } })
+        const component = baseDataItemComponent({theme: { userSelect: 'none' } })
         const tree = create(component).toJSON()
         expect(tree).toHaveStyleRule('user-select', 'none')
       })

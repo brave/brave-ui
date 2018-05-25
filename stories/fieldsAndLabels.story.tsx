@@ -36,12 +36,10 @@ storiesOf('Fields and Labels', module)
         onClick={action('clicked the textLabel!')}
         text={text('Text', 'Example TextLabel')}
         theme={{
-          textLabel: {
-            fontSize: text('Font size', '13px'),
-            color: text('Color', '#000000'),
-            padding: text('Padding', '0px'),
-            fontWeight: weightValue
-          }
+          fontSize: text('Font size', '13px'),
+          color: text('Color', '#000000'),
+          padding: text('Padding', '0px'),
+          fontWeight: weightValue
         }}
       />
     )

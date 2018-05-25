@@ -7,9 +7,9 @@ import { AnchorProps } from './index'
 import { setTheme } from '../helpers'
 
 const StyledAnchor = styled.a`
-  color: ${(p: AnchorProps) => setTheme(p.theme, 'anchor', 'color') || 'inherit'};
-  text-decoration: ${(p: AnchorProps) => setTheme(p.theme, 'anchor', 'textDecoration') || 'none'};
-  font-size: ${(p: AnchorProps) => setTheme(p.theme, 'anchor', 'fontSize') || '13px'};
+  color: ${(p: AnchorProps) => setTheme(p.theme, 'color') || 'inherit'};
+  text-decoration: ${(p: AnchorProps) => setTheme(p.theme, 'textDecoration') || 'none'};
+  font-size: ${(p: AnchorProps) => setTheme(p.theme, 'fontSize') || '13px'};
   font-family: inherit;
   box-sizing: border-box;
 ` as any

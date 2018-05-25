@@ -17,9 +17,7 @@ export interface ParagraphTheme {
 export interface ParagraphProps {
   id?: string,
   text?: string,
-  theme?: {
-    [paragraph: string]: ParagraphTheme
-  }
+  theme?: ParagraphTheme
 }
 
 /**

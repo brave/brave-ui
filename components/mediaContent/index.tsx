@@ -19,9 +19,7 @@ export interface MediaContentProps {
   id?: string,
   media?: string,
   children?: React.ReactNode,
-  theme?: {
-    [mediaContent: string]: MediaTheme
-  }
+  theme?: MediaTheme
 }
 
 class MediaContent extends React.PureComponent<MediaContentProps, {}> {

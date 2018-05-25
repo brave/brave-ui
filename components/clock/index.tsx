@@ -16,9 +16,7 @@ export interface ClockTheme {
 }
 export interface ClockProps {
   id?: string,
-  theme?: {
-    [clock: string]: ClockTheme
-  }
+  theme?: ClockTheme
 }
 
 export interface ClockState {

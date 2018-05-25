@@ -57,10 +57,8 @@ storiesOf('Views', module)
         <DataItem
           size={sizeValue}
           theme={{
-            dataItem: {
-              color: text('Color', 'orange'),
-              userSelect: userSelectValue
-            }
+            color: text('Color', 'orange'),
+            userSelect: userSelectValue
           }}
           counter={text('Counter', '123123')}
           text={text('Text', 'Some Text')}
@@ -70,10 +68,8 @@ storiesOf('Views', module)
         <DataItem
           size={sizeValue}
           theme={{
-            dataItem: {
-              color: text('Color', 'orange'),
-              userSelect: userSelectValue
-            }
+            color: text('Color', 'orange'),
+            userSelect: userSelectValue
           }}
           counter={text('Counter', '123123')}
           text={text('Text', 'Some Text')}

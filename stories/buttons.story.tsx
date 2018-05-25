@@ -41,10 +41,8 @@ storiesOf('Buttons', module)
         onClick={action('clicked the action button!')}
         text={text('Text', 'Example UnstyledButton')}
         theme={{
-          unstyledButton: {
-            fontSize: text('Font Size', '16px'),
-            color: text('Color', '#000')
-          }
+          fontSize: text('Font Size', '16px'),
+          color: text('Color', '#000')
         }}
       />
     )
@@ -65,11 +63,9 @@ storiesOf('Buttons', module)
         disabled={boolean('Disabled', false)}
         onClick={action('clicked the standard button!')}
         theme={{
-          pushButton: {
-            minWidth: text('Width', '78px'),
-            minHeight: text('Height', '32px'),
-            fontSize: text('Font Size', '13px')
-          }
+          minWidth: text('Width', '78px'),
+          minHeight: text('Height', '32px'),
+          fontSize: text('Font Size', '13px')
         }}
         >
         {text('Label', 'Hello Button')}

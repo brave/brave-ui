@@ -7,10 +7,10 @@ import { PageProps } from './index'
 import { setTheme } from '../helpers'
 
 const StyledPage = styled.div`
-  font-family: ${(p: PageProps) => setTheme(p.theme, 'page', 'fontFamily') || 'inherit'};
-  color: ${(p: PageProps) => setTheme(p.theme, 'page', 'color') || 'inherit'};
-  padding: ${(p: PageProps) => setTheme(p.theme, 'page', 'padding') || '40px'};
-  background: ${(p: PageProps) => setTheme(p.theme, 'page', 'background') || 'inherit'};
+  font-family: ${(p: PageProps) => setTheme(p.theme, 'fontFamily') || 'inherit'};
+  color: ${(p: PageProps) => setTheme(p.theme, 'color') || 'inherit'};
+  padding: ${(p: PageProps) => setTheme(p.theme, 'padding') || '40px'};
+  background: ${(p: PageProps) => setTheme(p.theme, 'background') || 'inherit'};
   box-sizing: border-box;
   background-attachment: fixed;
   background-size: auto;

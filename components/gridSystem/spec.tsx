@@ -45,37 +45,37 @@ describe('gridSystem tests', () => {
 
     describe('theming', () => {
       it('allows theming the `padding` property', () => {
-        const component = baseGridComponent({theme: { grid: { padding: '20px' } } })
+        const component = baseGridComponent({theme: { padding: '20px' } })
         const tree = create(component).toJSON()
         expect(tree).toHaveStyleRule('padding', '20px')
       })
 
       it('allows theming the `grid-gap` property', () => {
-        const component = baseGridComponent({theme: { grid: { gridGap: '15px' } } })
+        const component = baseGridComponent({theme: { gridGap: '15px' } })
         const tree = create(component).toJSON()
         expect(tree).toHaveStyleRule('grid-gap', '15px')
       })
 
       it('allows theming the `max-width` property', () => {
-        const component = baseGridComponent({theme: { grid: { maxWidth: '150px' } } })
+        const component = baseGridComponent({theme: { maxWidth: '150px' } })
         const tree = create(component).toJSON()
         expect(tree).toHaveStyleRule('max-width', '150px')
       })
 
       it('allows theming the `height` property', () => {
-        const component = baseGridComponent({theme: { grid: { height: '100%' } } })
+        const component = baseGridComponent({theme: { height: '100%' } })
         const tree = create(component).toJSON()
         expect(tree).toHaveStyleRule('height', '100%')
       })
 
       it('allows theming the `color` property', () => {
-        const component = baseGridComponent({theme: { grid: { color: 'purple' } } })
+        const component = baseGridComponent({theme: { color: 'purple' } })
         const tree = create(component).toJSON()
         expect(tree).toHaveStyleRule('color', 'purple')
       })
 
       it('allows theming the `background-color` property', () => {
-        const component = baseGridComponent({theme: { grid: { backgroundColor: 'green' } } })
+        const component = baseGridComponent({theme: { backgroundColor: 'green' } })
         const tree = create(component).toJSON()
         expect(tree).toHaveStyleRule('background-color', 'green')
       })
@@ -113,25 +113,25 @@ describe('gridSystem tests', () => {
 
     describe('theming', () => {
       it('allows theming the `justify-content` property', () => {
-        const component = baseColumnComponent({theme: { column: { justifyContent: 'center' } } })
+        const component = baseColumnComponent({theme: { justifyContent: 'center' } })
         const tree = create(component).toJSON()
         expect(tree).toHaveStyleRule('justify-content', 'center')
       })
 
       it('allows theming the `align-items` property', () => {
-        const component = baseColumnComponent({theme: { column: { alignItems: 'center' } } })
+        const component = baseColumnComponent({theme: { alignItems: 'center' } })
         const tree = create(component).toJSON()
         expect(tree).toHaveStyleRule('align-items', 'center')
       })
 
       it('allows theming the `background-color` property', () => {
-        const component = baseColumnComponent({theme: { column: { backgroundColor: 'purple' } } })
+        const component = baseColumnComponent({theme: { backgroundColor: 'purple' } })
         const tree = create(component).toJSON()
         expect(tree).toHaveStyleRule('background-color', 'purple')
       })
 
       it('allows theming the `flex-direction` property', () => {
-        const component = baseColumnComponent({theme: { column: { flexDirection: 'column' } } })
+        const component = baseColumnComponent({theme: { flexDirection: 'column' } })
         const tree = create(component).toJSON()
         expect(tree).toHaveStyleRule('flex-direction', 'column')
       })

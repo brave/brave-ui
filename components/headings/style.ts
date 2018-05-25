@@ -50,9 +50,9 @@ const StyledFeatureHeading = StyledSharedHeading.withComponent('h2').extend`
 const StyledH1 = styled.h1`
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  color: ${(p: HeadingProps) => setTheme(p.theme, 'heading', 'color')};
-  font-weight: ${(p: HeadingProps) => setTheme(p.theme, 'heading', 'fontWeight') || '400'};
-  font-family: ${(p: HeadingProps) => setTheme(p.theme, 'heading', 'fontFamily') || 'inherit'};
+  color: ${(p: HeadingProps) => setTheme(p.theme, 'color')};
+  font-weight: ${(p: HeadingProps) => setTheme(p.theme, 'fontWeight') || '400'};
+  font-family: ${(p: HeadingProps) => setTheme(p.theme, 'fontFamily') || 'inherit'};
   margin-top: 14px;
   margin-bottom: 22px;
   letter-spacing: -0.4px;

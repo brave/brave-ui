@@ -8,10 +8,10 @@ import { setTheme } from '../helpers'
 
 const StyledParagraph = styled.p`
   box-sizing: border-box;
-  font-size: ${(p: ParagraphProps) => setTheme(p.theme, 'paragraph', 'fontSize') || '13px'};
-  color: ${(p: ParagraphProps) => setTheme(p.theme, 'paragraph', 'color') || 'inherit'};
-  font-weight: ${(p: ParagraphProps) => setTheme(p.theme, 'paragraph', 'fontWeight') || 'normal'};
-  font-style: ${(p: ParagraphProps) => setTheme(p.theme, 'paragraph', 'fontStyle') || 'inherit'};
+  font-size: ${(p: ParagraphProps) => setTheme(p.theme, 'fontSize') || '13px'};
+  color: ${(p: ParagraphProps) => setTheme(p.theme, 'color') || 'inherit'};
+  font-weight: ${(p: ParagraphProps) => setTheme(p.theme, 'fontWeight') || 'normal'};
+  font-style: ${(p: ParagraphProps) => setTheme(p.theme, 'fontStyle') || 'inherit'};
   padding: 0;
   -webkit-font-smoothing: antialiased;
   background: transparent;

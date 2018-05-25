@@ -34,9 +34,7 @@ export interface DataItemProps {
   description?: string,
   size?: 'medium' | 'small',
   onClick?: (e: any) => void,
-  theme?: {
-    [dataItem: string]: DataItemTheme
-  }
+  theme?: DataItemTheme
 }
 
 class DataItem extends React.PureComponent<DataItemProps, {}> {

@@ -71,9 +71,7 @@ export interface HeadingProps {
   id?: string,
   level?: 1 | 2 | 3 | 4 | 5 | 6,
   text?: string,
-  theme?: {
-    [heading: string]: HeadingTheme
-  }
+  theme?: HeadingTheme
 }
 
 class Heading extends React.PureComponent<HeadingProps, {}> {

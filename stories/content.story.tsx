@@ -35,44 +35,44 @@ storiesOf('Content', module)
     return (
       <div>
         <h2>A 12-column based grid for rapid prototyping</h2>
-        <Grid theme={{grid: {backgroundColor:'gray'}}}>
-          <Column theme={{ column: { backgroundColor: 'darkgray' } }} size={12}>
+        <Grid theme={{backgroundColor:'gray'}}>
+          <Column theme={{ backgroundColor: 'darkgray' }} size={12}>
             12/12
           </Column>
-          <Column theme={{ column: { backgroundColor: 'darkgray' } }} size={11}>
+          <Column theme={{ backgroundColor: 'darkgray' }} size={11}>
             11/12
           </Column>
-          <Column theme={{ column: { backgroundColor: 'darkgray' } }} size={1}>
+          <Column theme={{ backgroundColor: 'darkgray' }} size={1}>
             1/12
           </Column>
-          <Column theme={{ column: { backgroundColor: 'darkgray' } }} size={10}>
+          <Column theme={{ backgroundColor: 'darkgray' }} size={10}>
             10/12
           </Column>
-          <Column theme={{ column: { backgroundColor: 'darkgray' } }} size={2}>
+          <Column theme={{ backgroundColor: 'darkgray' }} size={2}>
             2/12
           </Column>
-          <Column theme={{ column: { backgroundColor: 'darkgray' } }} size={9}>
+          <Column theme={{ backgroundColor: 'darkgray' }} size={9}>
             9/12
           </Column>
-          <Column theme={{ column: { backgroundColor: 'darkgray' } }} size={3}>
+          <Column theme={{ backgroundColor: 'darkgray' }} size={3}>
             3/12
           </Column>
-          <Column theme={{ column: { backgroundColor: 'darkgray' } }} size={8}>
+          <Column theme={{ backgroundColor: 'darkgray' }} size={8}>
             8/12
           </Column>
-          <Column theme={{ column: { backgroundColor: 'darkgray' } }} size={4}>
+          <Column theme={{ backgroundColor: 'darkgray' }} size={4}>
             4/12
           </Column>
-          <Column theme={{ column: { backgroundColor: 'darkgray' } }} size={7}>
+          <Column theme={{ backgroundColor: 'darkgray' }} size={7}>
             7/12
           </Column>
-          <Column theme={{ column: { backgroundColor: 'darkgray' } }} size={5}>
+          <Column theme={{ backgroundColor: 'darkgray' }} size={5}>
             5/12
           </Column>
-          <Column theme={{ column: { backgroundColor: 'darkgray' } }} size={6}>
+          <Column theme={{ backgroundColor: 'darkgray' }} size={6}>
             6/12
           </Column>
-          <Column theme={{ column: { backgroundColor: 'darkgray' } }} size={6}>
+          <Column theme={{ backgroundColor: 'darkgray' }} size={6}>
             6/12
           </Column>
         </Grid>
@@ -98,38 +98,32 @@ storiesOf('Content', module)
       <div>
         <h2>Playground! (see "knobs" for usage)</h2>
         <Grid theme={{
-          grid: {
-            backgroundColor: text('Grid Background', 'gray'),
-            maxWidth: text('Max Grid Width', '100%'),
-            padding: text('Own Grid Gutter (padding)', '15px'),
-            gridGap: text('Grid Gutter (for columns)', '15px')
-          }
+          backgroundColor: text('Grid Background', 'gray'),
+          maxWidth: text('Max Grid Width', '100%'),
+          padding: text('Own Grid Gutter (padding)', '15px'),
+          gridGap: text('Grid Gutter (for columns)', '15px')
         }}>
           <Column
             size={value1}
             theme={{
-              column: {
-                backgroundColor: text('Column #1 Background', 'darkgray'),
-                justifyContent: text('Column #1 Align (flexbox-based)', 'flex-end'),
-                verticalAlign: text(
-                  'Column #1 Vertical Align (flexbox-based)',
-                  'flex-end'
-                )
-              }
+              backgroundColor: text('Column #1 Background', 'darkgray'),
+              justifyContent: text('Column #1 Align (flexbox-based)', 'flex-end'),
+              verticalAlign: text(
+                'Column #1 Vertical Align (flexbox-based)',
+                'flex-end'
+              )
             }}>
             {`${value1}/12`}
           </Column>
           <Column
             size={value2}
             theme={{
-              column: {
-                backgroundColor: text('Column #2 Background', 'darkgray'),
-                justifyContent: text('Column #1 Align (flexbox-based)', 'flex-start'),
-                verticalAlign: text(
-                  'Column #1 Vertical Align (flexbox-based)',
-                  'flex-start'
-                )
-              }
+              backgroundColor: text('Column #2 Background', 'darkgray'),
+              justifyContent: text('Column #1 Align (flexbox-based)', 'flex-start'),
+              verticalAlign: text(
+                'Column #1 Vertical Align (flexbox-based)',
+                'flex-start'
+              )
             }}>
             {`${value2}/12`}
           </Column>

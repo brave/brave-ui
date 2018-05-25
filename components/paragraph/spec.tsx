@@ -38,25 +38,25 @@ describe('paragraph tests', () => {
 
   describe('theming', () => {
     it('allows theming the `color` property', () => {
-      const component = baseComponent({theme: { paragraph: { color: 'orange' } } })
+      const component = baseComponent({theme: { color: 'orange' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('color', 'orange')
     })
 
     it('allows theming the `font-size` property', () => {
-      const component = baseComponent({theme: { paragraph: { fontSize: '12px' } } })
+      const component = baseComponent({theme: { fontSize: '12px' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('font-size', '12px')
     })
 
     it('allows theming the `font-weight` property', () => {
-      const component = baseComponent({theme: { paragraph: { fontWeight: 'bold' } } })
+      const component = baseComponent({theme: { fontWeight: 'bold' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('font-weight', 'bold')
     })
 
     it('allows theming the `font-style` property', () => {
-      const component = baseComponent({theme: { paragraph: { fontStyle: 'italic' } } })
+      const component = baseComponent({theme: { fontStyle: 'italic' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('font-style', 'italic')
     })

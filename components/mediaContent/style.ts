@@ -16,7 +16,7 @@ const StyledMediaContent = styled.div`
 ` as any
 
 const StyledMedia = styled.img`
-  width: ${(p: MediaContentProps) => setTheme(p.theme, 'mediaContent', 'width')};
+  width: ${(p: MediaContentProps) => setTheme(p.theme, 'width')};
   box-sizing: border-box;
   display: block;
   max-width: 100%;
@@ -24,7 +24,7 @@ const StyledMedia = styled.img`
 
 const StyledMediaBody = styled.div`
   box-sizing: border-box;
-  margin: ${(p: MediaContentProps) => setTheme(p.theme, 'mediaContent', 'margin')};
+  margin: ${(p: MediaContentProps) => setTheme(p.theme, 'margin')};
   font-weight: inherit;
   font-family: inherit;
   color: inherit;
