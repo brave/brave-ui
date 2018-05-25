@@ -4,6 +4,7 @@
 
 import styled from 'styled-components'
 import { MediaContentProps } from './index'
+import { checkIfThemeProp } from '../helpers'
 
 const StyledMediaContent = styled.div`
   box-sizing: border-box;
@@ -15,7 +16,7 @@ const StyledMediaContent = styled.div`
 ` as any
 
 const StyledMedia = styled.img`
-  width: ${(p: MediaContentProps) => p.mediaSize};
+  width: ${(p: MediaContentProps) => checkIfThemeProp(p.theme, 'mediaContent', 'width')};
   box-sizing: border-box;
   display: block;
   max-width: 100%;
@@ -23,7 +24,7 @@ const StyledMedia = styled.img`
 
 const StyledMediaBody = styled.div`
   box-sizing: border-box;
-  margin-left: ${(p: MediaContentProps) => p.gap};
+  margin: ${(p: MediaContentProps) => checkIfThemeProp(p.theme, 'mediaContent', 'margin')};
   font-weight: inherit;
   font-family: inherit;
   color: inherit;

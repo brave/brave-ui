@@ -9,33 +9,35 @@ describe('mediaContent tests', () => {
     <MediaContent id='testMediaContent' {...props} />
   )
 
-  it('matches the snapshot', () => {
-    const component = baseComponent()
-    const tree = create(component).toJSON()
-    expect(tree).toMatchSnapshot()
+  describe('basic tests', () => {
+    it('matches the snapshot', () => {
+      const component = baseComponent()
+      const tree = create(component).toJSON()
+      expect(tree).toMatchSnapshot()
+    })
+
+    it('renders the component', () => {
+      const wrapper = shallow(baseComponent({id: 'toughMediaContent'}))
+      const assertion = wrapper.find('#toughMediaContent').length
+      expect(assertion).toBe(1)
+    })
   })
 
-  it('renders the component', () => {
-    const wrapper = shallow(baseComponent({id: 'toughMediaContent'}))
-    const assertion = wrapper.find('#toughMediaContent').length
-    expect(assertion).toBe(1)
+  describe('component behavior', () => {
+    it('can have an id', () => {
+      const wrapper = shallow(baseComponent({id: 'mediaThing'}))
+      const assertion = wrapper.props().id
+      expect(assertion).toBe('mediaThing')
+    })
   })
 
-  it('can have an id', () => {
-    const wrapper = shallow(baseComponent({id: 'mediaThing'}))
-    const assertion = wrapper.props().id
-    expect(assertion).toBe('mediaThing')
-  })
+  describe('theming', () => {
+    it('allows theming the `width` property', () => {
+      // TODO
+    })
 
-  it('can have a custom media size', () => {
-    const wrapper = shallow(baseComponent({mediaSize: '30px'}))
-    const assertion = wrapper.props().mediaSize
-    expect(assertion).toBe('30px')
-  })
-
-  it('can have a custom gap', () => {
-    const wrapper = shallow(baseComponent({gap: '30px'}))
-    const assertion = wrapper.props().gap
-    expect(assertion).toBe('30px')
+    it('allows theming the `margin` property', () => {
+      // TODO
+    })
   })
 })

@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const styled_components_1 = require("styled-components");
+const helpers_1 = require("../helpers");
 const StyledMediaContent = styled_components_1.default.div `
   box-sizing: border-box;
   display: flex;
@@ -11,7 +12,7 @@ const StyledMediaContent = styled_components_1.default.div `
 `;
 exports.StyledMediaContent = StyledMediaContent;
 const StyledMedia = styled_components_1.default.img `
-  width: ${(p) => p.mediaSize};
+  width: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'mediaContent', 'width')};
   box-sizing: border-box;
   display: block;
   max-width: 100%;
@@ -19,7 +20,7 @@ const StyledMedia = styled_components_1.default.img `
 exports.StyledMedia = StyledMedia;
 const StyledMediaBody = styled_components_1.default.div `
   box-sizing: border-box;
-  margin-left: ${(p) => p.gap};
+  margin: ${(p) => helpers_1.checkIfThemeProp(p.theme, 'mediaContent', 'margin')};
   font-weight: inherit;
   font-family: inherit;
   color: inherit;

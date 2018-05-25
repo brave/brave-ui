@@ -10,21 +10,27 @@ import {
   StyledMediaBody
 } from './style'
 
+export interface MediaTheme {
+  width?: string,
+  margin?: string
+}
+
 export interface MediaContentProps {
   id?: string,
   media?: string,
-  mediaSize?: string,
-  gap?: string,
-  children?: React.ReactNode
+  children?: React.ReactNode,
+  theme?: {
+    [mediaContent: string]: MediaTheme
+  }
 }
 
 class MediaContent extends React.PureComponent<MediaContentProps, {}> {
   render () {
-    const { id, media, mediaSize, gap, children } = this.props
+    const { id, media, theme, children } = this.props
     return (
-      <StyledMediaContent id={id} mediaSize={mediaSize} gap={gap}>
-        <StyledMedia src={media} mediaSize={mediaSize} />
-        <StyledMediaBody gap={gap}>{children}</StyledMediaBody>
+      <StyledMediaContent id={id}>
+        <StyledMedia src={media} theme={theme} />
+        <StyledMediaBody theme={theme}>{children}</StyledMediaBody>
       </StyledMediaContent>
     )
   }

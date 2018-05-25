@@ -62,7 +62,10 @@ class NewPrivateTab extends React.PureComponent {
         <BoxedContent
           theme={{boxedContent: {maxWidth: '650px', margin: '60px auto 0'}}}
         >
-          <MediaContent media={privateTabIcon} mediaSize='80px' gap='25px'>
+          <MediaContent
+            media={privateTabIcon}
+            theme={{mediaContent: {width: '80px', margin: '0 0 0 25px'}}}
+          >
             <Heading level={1} theme={{heading: {fontWeight: '400', color: '#fff'}}} text={locale.title} />
             <article style={{fontFamily: '"Muli", sans-serif'}}>
               <Paragraph size='18px' text={locale.paragraph1} />

@@ -1,16 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`mediaContent tests matches the snapshot 1`] = `
+exports[`mediaContent tests basic tests matches the snapshot 1`] = `
+.c0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  font-weight: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+.c1 {
+  box-sizing: border-box;
+  display: block;
+  max-width: 100%;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-weight: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
 <div
-  className="sc-bdVaJa haFDcB"
+  className="c0"
   id="testMediaContent"
 >
   <img
-    className="sc-bwzfXH wTZMo"
+    className="c1"
     src={undefined}
   />
   <div
-    className="sc-htpNat eAEhbz"
+    className="c2"
   />
 </div>
 `;

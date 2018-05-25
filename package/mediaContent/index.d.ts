@@ -1,11 +1,16 @@
 /// <reference types="react" />
 import * as React from 'react';
+export interface MediaTheme {
+    width?: string;
+    margin?: string;
+}
 export interface MediaContentProps {
     id?: string;
     media?: string;
-    mediaSize?: string;
-    gap?: string;
     children?: React.ReactNode;
+    theme?: {
+        [mediaContent: string]: MediaTheme;
+    };
 }
 declare class MediaContent extends React.PureComponent<MediaContentProps, {}> {
     render(): JSX.Element;
