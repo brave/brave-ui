@@ -11,8 +11,6 @@ const StyledPage = styled_components_1.default.div `
   background-attachment: fixed;
   background-size: auto;
   font-size: inherit;
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
 `;
@@ -22,8 +20,6 @@ const StyledPageContent = styled_components_1.default.main `
   font-size: inherit;
   font-family: inherit;
   color: inherit;
-  width: 100%;
-  height: 100%;
 `;
 exports.StyledPageContent = StyledPageContent;
 //# sourceMappingURL=style.js.map

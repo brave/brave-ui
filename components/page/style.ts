@@ -15,8 +15,6 @@ const StyledPage = styled.div`
   background-attachment: fixed;
   background-size: auto;
   font-size: inherit;
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
 ` as any
@@ -26,8 +24,6 @@ const StyledPageContent = styled.main`
   font-size: inherit;
   font-family: inherit;
   color: inherit;
-  width: 100%;
-  height: 100%;
 ` as any
 
 export {

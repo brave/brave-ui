@@ -10,8 +10,6 @@ exports[`page tests basic tests matches the snapshot 1`] = `
   background-attachment: fixed;
   background-size: auto;
   font-size: inherit;
-  width: 100%;
-  height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -26,8 +24,6 @@ exports[`page tests basic tests matches the snapshot 1`] = `
   font-size: inherit;
   font-family: inherit;
   color: inherit;
-  width: 100%;
-  height: 100%;
 }
 
 <div
