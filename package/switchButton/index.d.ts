@@ -1,5 +1,8 @@
 /// <reference types="react" />
 import * as React from 'react';
+export interface SwitchButtonTheme {
+    labelColor?: string;
+}
 export interface SwitchButtonProps {
     checked: boolean;
     disabled?: boolean;
@@ -10,6 +13,7 @@ export interface SwitchButtonProps {
     leftText?: string;
     rightText?: string;
     size?: 'large' | 'medium' | 'small';
+    theme?: SwitchButtonTheme;
 }
 export interface SwitchButtonState {
     checked?: boolean;

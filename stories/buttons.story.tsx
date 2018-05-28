@@ -87,6 +87,7 @@ storiesOf('Buttons', module)
         id='sampleSwitch'
         leftText={text('Left Label', 'Some label here')}
         rightText={text('Right Label', 'Some label here too')}
+        theme={{labelColor: text('Label Color', '#303030')}}
         size={value}
         checked={boolean('Checked?', store.state.checked)}
         disabled={boolean('Disabled?', false)}

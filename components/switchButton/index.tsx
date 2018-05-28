@@ -11,6 +11,10 @@ import {
   StyledSwitchButton
 } from './style'
 
+export interface SwitchButtonTheme {
+  labelColor?: string
+}
+
 export interface SwitchButtonProps {
   checked: boolean,
   disabled?: boolean,
@@ -20,7 +24,8 @@ export interface SwitchButtonProps {
   autoFocus?: boolean,
   leftText?: string,
   rightText?: string,
-  size?: 'large' | 'medium' | 'small'
+  size?: 'large' | 'medium' | 'small',
+  theme?: SwitchButtonTheme
 }
 
 export interface SwitchButtonState {
@@ -64,6 +69,7 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
         id={`${this.props.id + capitalize(side)}Text`}
         htmlFor={this.props.id}
         size={this.props.size}
+        theme={this.props.theme}
       >
         { side === 'left' ? this.props.leftText : this.props.rightText }
       </StyledSwitchButtonLabel>

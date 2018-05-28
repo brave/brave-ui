@@ -22,7 +22,7 @@ const StyledSwitchButtonLabel = styled_components_1.default.label `
   margin-right: ${(p) => helpers_1.setValueBasedOnSize(p.size, '10px', '10px', '18px')};
   font-weight: 400;
   font-family: inherit;
-  color: inherit;
+  color: ${(p) => helpers_1.setTheme(p.theme, 'labelColor') || 'inherit'};
 `;
 exports.StyledSwitchButtonLabel = StyledSwitchButtonLabel;
 const StyledSwitchButton = styled_components_1.default.input `

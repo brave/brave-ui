@@ -5,7 +5,7 @@
 import styled, { css } from 'styled-components'
 import { SwitchButtonProps } from './index'
 import defaultTheme from '../defaultTheme'
-import { setValueBasedOnSize } from '../helpers'
+import { setValueBasedOnSize, setTheme } from '../helpers'
 
 /**
 * Wrapper for the switch button
@@ -35,7 +35,7 @@ const StyledSwitchButtonLabel = styled.label`
   margin-right: ${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, '10px', '10px', '18px')};
   font-weight: 400;
   font-family: inherit;
-  color: inherit;
+  color: ${(p: SwitchButtonProps) => setTheme(p.theme, 'labelColor') || 'inherit'};
 ` as any
 
 /**

@@ -30,7 +30,7 @@ class SwitchButton extends React.PureComponent {
         });
     }
     getLabel(side) {
-        return (React.createElement(style_1.StyledSwitchButtonLabel, { id: `${this.props.id + helpers_1.capitalize(side)}Text`, htmlFor: this.props.id, size: this.props.size }, side === 'left' ? this.props.leftText : this.props.rightText));
+        return (React.createElement(style_1.StyledSwitchButtonLabel, { id: `${this.props.id + helpers_1.capitalize(side)}Text`, htmlFor: this.props.id, size: this.props.size, theme: this.props.theme }, side === 'left' ? this.props.leftText : this.props.rightText));
     }
     render() {
         const { id, readOnly, disabled, autoFocus, size = 'medium', rightText, leftText } = this.props;
