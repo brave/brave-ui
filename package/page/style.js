@@ -13,6 +13,7 @@ const StyledPage = styled_components_1.default.div `
   font-size: inherit;
   display: flex;
   flex-direction: column;
+  height: -webkit-fill-available;
 `;
 exports.StyledPage = StyledPage;
 const StyledPageContent = styled_components_1.default.main `

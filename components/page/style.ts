@@ -17,6 +17,8 @@ const StyledPage = styled.div`
   font-size: inherit;
   display: flex;
   flex-direction: column;
+  height: initial;
+  min-height: 100%;
 ` as any
 
 const StyledPageContent = styled.main`
