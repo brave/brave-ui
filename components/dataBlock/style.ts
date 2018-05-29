@@ -38,7 +38,7 @@ const StyledDataItem = styled.li`
 ` as any
 
 const StyledDataItemCounter = styled.span`
-  color: ${(p: DataItemProps) => setTheme(p.theme, 'color') || 'inherit'};
+  color: ${(p: DataItemProps) => setTheme(p.theme, 'counterColor') || 'inherit'};
   font-size: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '44px', '26px', undefined)};
   line-height: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '52px', '24px', undefined)};
   max-width: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '200px', '38px', undefined)};
@@ -52,7 +52,7 @@ const StyledDataItemCounter = styled.span`
 ` as any
 
 const StyledDataItemText = styled.span`
-  color: ${(p: DataItemProps) => setTheme(p.theme, 'color') || 'inherit'};
+  color: ${(p: DataItemProps) => setTheme(p.theme, 'counterColor') || 'inherit'};
   font-size: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '20px', '13px', undefined)};
   line-height: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '24px', '16px', undefined)};
   margin-left: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '3px', '10px', undefined)};
@@ -67,7 +67,7 @@ const StyledDataItemDescription = styled.div`
   font-size: 13px;
   line-height: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '24px', '16px', undefined)};
   font-family: inherit;
-  color: inherit;
+  color: ${(p: DataItemProps) => setTheme(p.theme, 'descriptionColor') || 'inherit'};
   margin-left: 3px;
 ` as any
 

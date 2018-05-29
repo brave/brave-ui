@@ -9,7 +9,8 @@ declare class DataBlock extends React.PureComponent<DataProps, {}> {
     render(): JSX.Element;
 }
 export interface DataItemTheme {
-    color?: string;
+    counterColor?: string;
+    descriptionColor?: string;
     userSelect?: 'auto' | 'none';
 }
 export interface DataItemProps {

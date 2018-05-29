@@ -15,7 +15,7 @@ class DataItem extends React.PureComponent {
         return (React.createElement(style_1.StyledDataItem, { id: id, theme: theme, onClick: onClick, size: size },
             React.createElement(style_1.StyledDataItemCounter, { theme: theme, size: size }, counter),
             text && React.createElement(style_1.StyledDataItemText, { theme: theme, size: size }, text),
-            description && React.createElement(style_1.StyledDataItemDescription, { size: size }, description)));
+            description && React.createElement(style_1.StyledDataItemDescription, { theme: theme, size: size }, description)));
     }
 }
 exports.DataItem = DataItem;

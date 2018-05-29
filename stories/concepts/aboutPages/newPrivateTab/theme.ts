@@ -10,16 +10,20 @@ const theme = {
     background: 'linear-gradient(#4b3c6e, #000)'
   },
   trackersBlocked: {
-    color: '#f39030'
+    counterColor: '#f39030',
+    descriptionColor: '#fff'
   },
   adsBlocked: {
-    color: '#fe521d'
+    counterColor: '#fe521d',
+    descriptionColor: '#fff'
   },
   httpsUpgrades: {
-    color: '#0796fa'
+    counterColor: '#0796fa',
+    descriptionColor: '#fff'
   },
   estimatedTime: {
-    color: '#999999'
+    counterColor: '#999999',
+    descriptionColor: '#fff'
   },
   clock: {
     color: 'rgba(255,255,255,0.8)'

@@ -23,7 +23,8 @@ class DataBlock extends React.PureComponent<DataProps, {}> {
   }
 }
 export interface DataItemTheme {
-  color?: string,
+  counterColor?: string,
+  descriptionColor?: string,
   userSelect?: 'auto' | 'none'
 }
 
@@ -56,7 +57,7 @@ class DataItem extends React.PureComponent<DataItemProps, {}> {
             text && <StyledDataItemText theme={theme} size={size}>{text}</StyledDataItemText>
           }
           {
-          description && <StyledDataItemDescription size={size}>{description}</StyledDataItemDescription>
+          description && <StyledDataItemDescription theme={theme} size={size}>{description}</StyledDataItemDescription>
           }
       </StyledDataItem>
     )
