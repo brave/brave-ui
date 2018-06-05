@@ -12,18 +12,26 @@
   ],
   "license": "MPL-2.0",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "ts": "tsc",
+    "ts-watch": "tsc -w",
+    "lint": "standard --verbose",
+    "lint-fix": "standard --fix --verbose",
     "build": "lerna exec --parallel -- tsc",
-    "transpile": "tsc",
-    "dev": "tsc -w",
-    "check-security": "nsp check",
-    "deploy": "storybook-to-ghpages -s public -o .out",
-    "lint": "standard --fix --verbose",
-    "publish": "lerna publish && npm run deploy",
-    "start": "start-storybook -p 9091 -c .storybook",
-    "test": "jest -t",
-    "test-all": "jest --verbose",
+    "publish": "lerna publish && npm run storybook-deploy",
+    "storybook-start": "start-storybook -p 9091 -c .storybook",
+    "storybook-deploy": "storybook-to-ghpages -s public -o .out",
+    "test-unit": "jest -t",
+    "test-unit-all": "jest --verbose",
+    "test-security": "npm audit",
     "coverage": "jest --coverage --verbose"
+  },
+  "dependencies": {
+    "@types/storybook__addon-actions": "^3.0.3",
+    "@types/storybook__addon-info": "^3.2.2",
+    "@types/storybook__addon-knobs": "^3.2.3",
+    "@types/storybook__react": "^3.0.7",
+    "emptykit.css": "^1.0.1",
+    "styled-components": "^3.2.5"
   },
   "devDependencies": {
     "@dump247/storybook-state": "^1.3.0",
@@ -39,8 +47,6 @@
     "@types/react-dom": "^16.0.4",
     "@types/react-test-renderer": "^16.0.1",
     "awesome-typescript-loader": "^4.0.1",
-    "babel-loader": "^7.1.4",
-    "cpx": "^1.5.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
@@ -48,7 +54,6 @@
     "jest": "^22.4.3",
     "jest-styled-components": "^5.0.1",
     "lerna": "^2.0.0",
-    "nsp": "^3.2.1",
     "pre-commit": "^1.2.2",
     "pre-push": "^0.1.1",
     "react": "^16.3.0",
@@ -67,8 +72,7 @@
   "pre-push": {
     "run": [
       "lint",
-      "test-all",
-      "check-security"
+      "test-unit-all"
     ]
   },
   "standard": {
@@ -115,13 +119,5 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|svg|ttf|woff|woff2)$": "<rootDir>/.testconfig/fileMock.js",
       "\\.(css)$": "identity-obj-proxy"
     }
-  },
-  "dependencies": {
-    "@types/storybook__addon-actions": "^3.0.3",
-    "@types/storybook__addon-info": "^3.2.2",
-    "@types/storybook__addon-knobs": "^3.2.3",
-    "@types/storybook__react": "^3.0.7",
-    "emptykit.css": "^1.0.1",
-    "styled-components": "^3.2.5"
   }
 }
