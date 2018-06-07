@@ -24,7 +24,7 @@ There are several ways you can do so:
 2. cd `brave-ui`
 3. `npm i` or `yarn install`
 
-Once the installation is finished, run `npm start`. The source is available under http://localhost:9091 (one after nine-o-nine?). It will hot-reload the style guide at every code change.
+Once the installation is finished, run `npm storybook-start`. The source is available under http://localhost:9091 (one after nine-o-nine?). It will hot-reload the style guide at every code change.
 
 ## Running tests
 

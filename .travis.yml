@@ -1,12 +1,17 @@
 language: node_js
 node_js:
-  - "8"
   - "node"
+dist: trusty
 cache: npm
-script:
-  - npm run test-all
-  - npm run check-security
-  - npm run lint
+before_install:
+  - npm i -g npm@6.0.1
+  - npm --version
 branches:
   only:
     - master
+env:
+  - TEST_SUITE=lint
+  - TEST_SUITE=test-unit-all
+  - TEST_SUITE=test-security
+script:
+  - npm run $TEST_SUITE
