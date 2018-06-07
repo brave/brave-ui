@@ -2,7 +2,7 @@
 import * as React from 'react';
 export interface DataProps {
     id?: string;
-    list?: boolean;
+    asList?: boolean;
     children?: React.ReactNode;
 }
 declare class DataBlock extends React.PureComponent<DataProps, {}> {
@@ -11,7 +11,7 @@ declare class DataBlock extends React.PureComponent<DataProps, {}> {
 export interface DataItemTheme {
     counterColor?: string;
     descriptionColor?: string;
-    userSelect?: 'auto' | 'none';
+    userSelect?: string;
 }
 export interface DataItemProps {
     id?: string;

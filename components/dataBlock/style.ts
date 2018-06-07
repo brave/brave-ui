@@ -10,7 +10,7 @@ import { setValueBasedOnSize, setTheme } from '../helpers'
 
 const StyledDataBlock = styled.ul`
   box-sizing: border-box;
-  display: ${(p: DataProps) => !p.list ? 'inline-block' : 'block'};
+  display: ${(p: DataProps) => !p.asList ? 'inline-block' : 'block'};
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   margin: 0;
@@ -20,11 +20,11 @@ const StyledDataBlock = styled.ul`
   font-family: inherit;
 
   & > li {
-    display: ${(p: DataProps) => p.list ? 'flex' : 'inline-block'};
-    align-items: ${(p: DataProps) => p.list ? 'center' : null};
-    min-height: ${(p: DataProps) => p.list ? '30px' : null};
-    margin-right: ${(p: DataProps) => p.list ? '0' : '40px'};
-    margin-bottom: ${(p: DataProps) => p.list ? '0' : '20px'};
+    display: ${(p: DataProps) => p.asList ? 'flex' : 'inline-block'};
+    align-items: ${(p: DataProps) => p.asList ? 'center' : null};
+    min-height: ${(p: DataProps) => p.asList ? '30px' : null};
+    margin-right: ${(p: DataProps) => p.asList ? '0' : '40px'};
+    margin-bottom: ${(p: DataProps) => p.asList ? '0' : '20px'};
   }
 ` as any
 
@@ -41,7 +41,7 @@ const StyledDataItemCounter = styled.span`
   color: ${(p: DataItemProps) => setTheme(p.theme, 'counterColor') || 'inherit'};
   font-size: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '44px', '26px', undefined)};
   line-height: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '52px', '24px', undefined)};
-  max-width: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '200px', '38px', undefined)};
+  width: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '7ch', '3ch', undefined)};
   text-align: ${(p: DataItemProps) => p.size === 'small' ? 'right' : 'inherit'};
   box-sizing: border-box;
   letter-spacing: -0.4px;
@@ -68,7 +68,7 @@ const StyledDataItemDescription = styled.div`
   line-height: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '24px', '16px', undefined)};
   font-family: inherit;
   color: ${(p: DataItemProps) => setTheme(p.theme, 'descriptionColor') || 'inherit'};
-  margin-left: 3px;
+  margin-left: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '3px', '1ch', undefined)};
 ` as any
 
 export {
