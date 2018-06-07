@@ -6,7 +6,7 @@ import * as React from 'react'
 import StyledAnchor from './style'
 
 export interface AnchorTheme {
-  textDecoration?: 'underline' | 'none',
+  textDecoration?: string,
   color?: string,
   fontSize?: string
 }
