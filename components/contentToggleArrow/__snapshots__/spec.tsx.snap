@@ -3,9 +3,7 @@
 exports[`contentToggleArrow tests basic tests matches the snapshot 1`] = `
 .c0 {
   box-sizing: border-box;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: -webkit-fill-available;
   color: inherit;
   font-size: inherit;
   font-family: inherit;
@@ -17,6 +15,10 @@ exports[`contentToggleArrow tests basic tests matches the snapshot 1`] = `
   color: inherit;
   font-size: inherit;
   font-family: inherit;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c1::after {
@@ -51,9 +53,7 @@ exports[`contentToggleArrow tests basic tests matches the snapshot 1`] = `
   font-family: inherit;
   overflow: hidden;
   height: 0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: -webkit-fill-available;
 }
 
 <div

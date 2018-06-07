@@ -7,7 +7,7 @@ import { ContentToggleArrowState } from './index'
 
 const StyledContentToggleArrow = styled.div`
   box-sizing: border-box;
-  width: fit-content;
+  width: -webkit-fill-available;
   color: inherit;
   font-size: inherit;
   font-family: inherit;
@@ -47,7 +47,7 @@ const StyledContentToggleArrowContent = styled.div`
   font-family: inherit;
   overflow: ${(s: ContentToggleArrowState) => s.open ? 'auto' : 'hidden'};
   height: ${(s: ContentToggleArrowState) => s.open ? 'fit-content' : '0'};
-  width: fit-content;
+  width: -webkit-fill-available;
 ` as any
 
 export {

@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const styled_components_1 = require("styled-components");
 const StyledContentToggleArrow = styled_components_1.default.div `
   box-sizing: border-box;
-  width: fit-content;
+  width: -webkit-fill-available;
   color: inherit;
   font-size: inherit;
   font-family: inherit;
@@ -43,7 +43,7 @@ const StyledContentToggleArrowContent = styled_components_1.default.div `
   font-family: inherit;
   overflow: ${(s) => s.open ? 'auto' : 'hidden'};
   height: ${(s) => s.open ? 'fit-content' : '0'};
-  width: fit-content;
+  width: -webkit-fill-available;
 `;
 exports.StyledContentToggleArrowContent = StyledContentToggleArrowContent;
 //# sourceMappingURL=style.js.map
