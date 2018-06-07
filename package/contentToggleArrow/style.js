@@ -15,6 +15,7 @@ const StyledContentToggleArrowControl = styled_components_1.default.div `
   color: inherit;
   font-size: inherit;
   font-family: inherit;
+  user-select: none;
 
   &::after {
     content: ${(s) => s.open ? '"▼"' : '"▶"'};
