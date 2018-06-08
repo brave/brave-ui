@@ -8,9 +8,9 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 // Components
 import * as React from 'react'
-import NewPrivateTab from './concepts/aboutPages/newPrivateTab/index'
+import PrivateTab from './concepts/pages/privateTab/index'
 
 addDecorator(withKnobs)
 
-storiesOf('Concepts: About Pages', module)
-  .add('New Private Tab', () => <NewPrivateTab />)
+storiesOf('Concepts/Pages', module)
+  .add('Private Tab', () => <PrivateTab />)
