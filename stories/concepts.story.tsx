@@ -17,6 +17,6 @@ addDecorator(withKnobs)
 // Globally adapt the story visualizer for this story
 addDecorator(BetterPageVisualizer)
 
-storiesOf('Concepts: About Pages', module)
+storiesOf('Concepts/Pages', module)
   .add('New Private Tab', () => <NewPrivateTab />)
   .add('Welcome Page', () => <WelcomePage />)

@@ -26,7 +26,7 @@ import '../../../assets/fonts/poppins.css'
 // Images
 const privateTabIcon = require('../../../assets/img/private_tab_pagearea_icon.svg')
 
-class NewPrivateTab extends React.PureComponent {
+class PrivateTab extends React.PureComponent {
   render () {
     return (
       <Page theme={theme.page}>
@@ -76,4 +76,4 @@ class NewPrivateTab extends React.PureComponent {
   }
 }
 
-export default NewPrivateTab
+export default PrivateTab
