@@ -4,7 +4,7 @@ const styled_components_1 = require("styled-components");
 const helpers_1 = require("../helpers");
 const StyledDataBlock = styled_components_1.default.ul `
   box-sizing: border-box;
-  display: ${(p) => !p.list ? 'inline-block' : 'block'};
+  display: ${(p) => !p.asList ? 'inline-block' : 'block'};
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   margin: 0;
@@ -14,11 +14,11 @@ const StyledDataBlock = styled_components_1.default.ul `
   font-family: inherit;
 
   & > li {
-    display: ${(p) => p.list ? 'flex' : 'inline-block'};
-    align-items: ${(p) => p.list ? 'center' : null};
-    min-height: ${(p) => p.list ? '30px' : null};
-    margin-right: ${(p) => p.list ? '0' : '40px'};
-    margin-bottom: ${(p) => p.list ? '0' : '20px'};
+    display: ${(p) => p.asList ? 'flex' : 'inline-block'};
+    align-items: ${(p) => p.asList ? 'center' : null};
+    min-height: ${(p) => p.asList ? '30px' : null};
+    margin-right: ${(p) => p.asList ? '0' : '40px'};
+    margin-bottom: ${(p) => p.asList ? '0' : '20px'};
   }
 `;
 exports.StyledDataBlock = StyledDataBlock;
@@ -35,7 +35,7 @@ const StyledDataItemCounter = styled_components_1.default.span `
   color: ${(p) => helpers_1.setTheme(p.theme, 'counterColor') || 'inherit'};
   font-size: ${(p) => helpers_1.setValueBasedOnSize(p.size, '44px', '26px', undefined)};
   line-height: ${(p) => helpers_1.setValueBasedOnSize(p.size, '52px', '24px', undefined)};
-  max-width: ${(p) => helpers_1.setValueBasedOnSize(p.size, '200px', '38px', undefined)};
+  width: ${(p) => helpers_1.setValueBasedOnSize(p.size, '7ch', '3ch', undefined)};
   text-align: ${(p) => p.size === 'small' ? 'right' : 'inherit'};
   box-sizing: border-box;
   letter-spacing: -0.4px;
@@ -62,7 +62,7 @@ const StyledDataItemDescription = styled_components_1.default.div `
   line-height: ${(p) => helpers_1.setValueBasedOnSize(p.size, '24px', '16px', undefined)};
   font-family: inherit;
   color: ${(p) => helpers_1.setTheme(p.theme, 'descriptionColor') || 'inherit'};
-  margin-left: 3px;
+  margin-left: ${(p) => helpers_1.setValueBasedOnSize(p.size, '3px', '1ch', undefined)};
 `;
 exports.StyledDataItemDescription = StyledDataItemDescription;
 //# sourceMappingURL=style.js.map

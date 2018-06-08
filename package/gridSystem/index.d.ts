@@ -20,7 +20,7 @@ declare class Grid extends React.PureComponent<GridProps, {}> {
 }
 export interface ColumnTheme {
     justifyContent?: string;
-    verticalAlign?: string;
+    alignItems?: string;
     backgroundColor?: string;
     flexDirection?: string;
 }

@@ -22,7 +22,6 @@ exports[`dataBlock tests dataBlock component tests basic tests matches the snaps
 <ul
   className="c0"
   id={undefined}
-  list={undefined}
 />
 `;
 
@@ -43,7 +42,7 @@ exports[`dataBlock tests dataItem component tests basic tests matches the snapsh
   color: inherit;
   font-size: 44px;
   line-height: 52px;
-  max-width: 200px;
+  width: 7ch;
   text-align: inherit;
   box-sizing: border-box;
   -webkit-letter-spacing: -0.4px;

@@ -53,7 +53,7 @@ storiesOf('Views', module)
     const userSelectValue = select('Disallow user select?', { 'auto': 'allow', 'none': 'Disallow' }, 'auto')
 
     return (
-      <DataBlock list={boolean('show as list?', false)}>
+      <DataBlock asList={boolean('show as list?', false)}>
         <DataItem
           size={sizeValue}
           theme={{

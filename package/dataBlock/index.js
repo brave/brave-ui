@@ -4,8 +4,8 @@ const React = require("react");
 const style_1 = require("./style");
 class DataBlock extends React.PureComponent {
     render() {
-        const { id, list, children } = this.props;
-        return (React.createElement(style_1.StyledDataBlock, { id: id, list: list }, children));
+        const { id, asList, children } = this.props;
+        return (React.createElement(style_1.StyledDataBlock, { id: id, asList: asList }, children));
     }
 }
 exports.DataBlock = DataBlock;

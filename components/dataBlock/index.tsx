@@ -10,22 +10,22 @@ import {
 
 export interface DataProps {
   id?: string,
-  list?: boolean,
+  asList?: boolean,
   children?: React.ReactNode
 }
 
 class DataBlock extends React.PureComponent<DataProps, {}> {
   render () {
-    const { id, list, children } = this.props
+    const { id, asList, children } = this.props
     return (
-      <StyledDataBlock id={id} list={list}>{children}</StyledDataBlock>
+      <StyledDataBlock id={id} asList={asList}>{children}</StyledDataBlock>
     )
   }
 }
 export interface DataItemTheme {
   counterColor?: string,
   descriptionColor?: string,
-  userSelect?: 'auto' | 'none'
+  userSelect?: string
 }
 
 export interface DataItemProps {

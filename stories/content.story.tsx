@@ -108,7 +108,7 @@ storiesOf('Content', module)
             theme={{
               backgroundColor: text('Column #1 Background', 'darkgray'),
               justifyContent: text('Column #1 Align (flexbox-based)', 'flex-end'),
-              verticalAlign: text(
+              alignItems: text(
                 'Column #1 Vertical Align (flexbox-based)',
                 'flex-end'
               )
@@ -120,7 +120,7 @@ storiesOf('Content', module)
             theme={{
               backgroundColor: text('Column #2 Background', 'darkgray'),
               justifyContent: text('Column #1 Align (flexbox-based)', 'flex-start'),
-              verticalAlign: text(
+              alignItems: text(
                 'Column #1 Vertical Align (flexbox-based)',
                 'flex-start'
               )
