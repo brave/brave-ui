@@ -9,7 +9,8 @@ export interface TextLabelTheme {
   fontSize?: string,
   color?: string,
   padding?: string,
-  fontWeight?: string
+  fontWeight?: string,
+  lineHeight?: string
 }
 
 export interface TextLabelProps {

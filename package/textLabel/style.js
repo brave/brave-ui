@@ -7,6 +7,7 @@ const StyledTextLabel = styled_components_1.default.p `
   padding: ${(p) => helpers_1.setTheme(p.theme, 'padding') || '0'};
   font-size: ${(p) => helpers_1.setTheme(p.theme, 'fontSize') || '13px'};
   color: ${(p) => helpers_1.setTheme(p.theme, 'color') || 'inherit'};
+  line-height: ${(p) => helpers_1.setTheme(p.theme, 'lineHeight')};
   user-select: none;
   cursor: default;
   font-family: inherit;

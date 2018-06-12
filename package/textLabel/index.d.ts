@@ -5,6 +5,7 @@ export interface TextLabelTheme {
     color?: string;
     padding?: string;
     fontWeight?: string;
+    lineHeight?: string;
 }
 export interface TextLabelProps {
     id?: string;

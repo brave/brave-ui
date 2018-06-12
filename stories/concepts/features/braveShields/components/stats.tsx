@@ -4,7 +4,7 @@
 
 import * as React from 'react'
 import { Grid, Column } from '../../../../../components/gridSystem'
-import { DataBlock, DataItem } from '../../../../../components/dataBlock'
+import TextLabel from '../../../../../components/textLabel'
 import data from '../fakeData'
 import locale from '../fakeLocale'
 import theme from '../theme'
@@ -14,38 +14,44 @@ class BraveShieldsStats extends React.PureComponent {
     return (
       <Grid
         id='braveShieldsStats'
-        theme={theme.braveShieldsStats}>
-        <Column>
-          <DataBlock asList>
-            <DataItem
-              id='adsTrackersBlockedStats'
-              theme={theme.adsTrackersBlockedStats}
-              size='small'
-              counter={data.totalAdsTrackersBlocked}
-              description={locale.shieldsStatsAdsTrackersBlocked}
-              onClick={() => console.log('fired!! 1')} />
-            <DataItem
-              id='httpsUpgradesStats'
-              theme={theme.httpsUpgradesStats}
-              size='small'
-              counter={data.httpsRedirected}
-              description={locale.shieldsStatsHttpsUpgrades}
-              onClick={() => console.log('fired!! 2')} />
-            <DataItem
-              id='scriptsBlockedStats'
-              theme={theme.scriptsBlockedStats}
-              size='small'
-              counter={data.javascriptBlocked}
-              description={locale.shieldsStatsScriptsBlocked}
-              onClick={() => console.log('fired!! 3')} />
-            <DataItem
-              id='fingerPrintingProtectionStats'
-              theme={theme.fingerPrintingProtectionStats}
-              size='small'
-              counter={data.fingerprintingBlocked}
-              description={locale.shieldsFingerPrintingBlocked}
-              onClick={() => console.log('fired!! 4')} />
-          </DataBlock>
+        theme={theme.braveShieldsStats}
+        disabled={false}
+      >
+        <Column theme={theme.statsNumbers} size={1}>
+          <TextLabel
+            theme={theme.totalAdsTrackersBlockedStat}
+            text={data.totalAdsTrackersBlocked}
+          />
+          <TextLabel
+            theme={theme.httpsRedirectedStat}
+            text={data.httpsRedirected}
+          />
+          <TextLabel
+            theme={theme.javascriptBlockedStat}
+            text={data.javascriptBlocked}
+          />
+          <TextLabel
+            theme={theme.fingerprintingBlockedStat}
+            text={data.fingerprintingBlocked}
+          />
+        </Column>
+        <Column theme={theme.statsNames} size={11}>
+          <TextLabel
+            theme={theme.totalAdsTrackersBlockedText}
+            text={locale.shieldsStatsAdsTrackersBlocked}
+          />
+          <TextLabel
+            theme={theme.httpsRedirectedText}
+            text={locale.shieldsStatsHttpsUpgrades}
+          />
+          <TextLabel
+            theme={theme.javascriptBlockedText}
+            text={locale.shieldsStatsScriptsBlocked}
+          />
+          <TextLabel
+            theme={theme.fingerprintingBlockedText}
+            text={locale.shieldsFingerPrintingBlocked}
+          />
         </Column>
       </Grid>
     )

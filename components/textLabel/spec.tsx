@@ -69,6 +69,12 @@ describe('textLabel tests', () => {
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('padding', '30px')
     })
+
+    it('allows theming the `line-height` property', () => {
+      const component = baseComponent({theme: { lineHeight: '2' } })
+      const tree = create(component).toJSON()
+      expect(tree).toHaveStyleRule('line-height', '2')
+    })
   })
 })
 

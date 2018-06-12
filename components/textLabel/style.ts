@@ -11,6 +11,7 @@ const StyledTextLabel = styled.p`
   padding: ${(p: TextLabelProps) => setTheme(p.theme, 'padding') || '0'};
   font-size: ${(p: TextLabelProps) => setTheme(p.theme, 'fontSize') || '13px'};
   color: ${(p: TextLabelProps) => setTheme(p.theme, 'color') || 'inherit'};
+  line-height: ${(p: TextLabelProps) => setTheme(p.theme, 'lineHeight')};
   user-select: none;
   cursor: default;
   font-family: inherit;
