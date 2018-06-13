@@ -29,7 +29,7 @@ const StyledSwitchButton = styled_components_1.default.input `
   box-sizing: border-box;
   -webkit-appearance: none;
   position: relative;
-  width: ${(p) => helpers_1.setValueBasedOnSize(p.size, '48px', '40px', '60px')};
+  min-width: ${(p) => helpers_1.setValueBasedOnSize(p.size, '48px', '40px', '60px')};
   height: ${(p) => helpers_1.setValueBasedOnSize(p.size, '16px', '14px', '26px')};
   border-radius: ${(p) => helpers_1.setValueBasedOnSize(p.size, '16px', '14px', '26px')};
   border: 2px solid ${defaultTheme_1.default.switchButton.uncheckedBg};
