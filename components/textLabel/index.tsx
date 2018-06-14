@@ -17,14 +17,15 @@ export interface TextLabelProps {
   id?: string,
   onClick?: (e: any) => void,
   theme?: TextLabelTheme,
+  title?: string,
   text?: string | number
 }
 
 class TextLabel extends React.PureComponent<TextLabelProps, {}> {
   render () {
-    const { id, onClick, theme, text } = this.props
+    const { id, onClick, theme, text, title } = this.props
     return (
-      <StyledTextLabel id={id} onClick={onClick} theme={theme}>
+      <StyledTextLabel id={id} onClick={onClick} title={title} theme={theme}>
         { text && text.toString() }
       </StyledTextLabel>
     )

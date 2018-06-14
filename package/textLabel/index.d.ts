@@ -11,6 +11,7 @@ export interface TextLabelProps {
     id?: string;
     onClick?: (e: any) => void;
     theme?: TextLabelTheme;
+    title?: string;
     text?: string | number;
 }
 declare class TextLabel extends React.PureComponent<TextLabelProps, {}> {

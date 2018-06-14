@@ -24,6 +24,7 @@ exports[`textLabel tests basic tests matches the snapshot 1`] = `
   className="c0"
   id={undefined}
   onClick={undefined}
+  title={undefined}
 >
   testText
 </p>

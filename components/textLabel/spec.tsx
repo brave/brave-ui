@@ -30,6 +30,12 @@ describe('textLabel tests', () => {
       expect(assertion).toEqual('textLabel')
     })
 
+    it('can have a title attribute', () => {
+      const wrapper = shallow(baseComponent({title: 'the great songbook'}))
+      const assertion = wrapper.props().title
+      expect(assertion).toEqual('the great songbook')
+    })
+
     it('can pass text', () => {
       const wrapper = shallow(baseComponent({text: 'w00t w00t'}))
       const assertion = wrapper.html().includes('w00t w00t')
