@@ -7,12 +7,11 @@ exports[`paragraph tests basic tests matches the snapshot 1`] = `
   color: inherit;
   font-weight: normal;
   font-style: inherit;
+  margin: 0 0 20px;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   background: transparent;
-  margin: 0;
   line-height: 1.4;
-  margin-bottom: 20px;
   font-family: inherit;
 }
 

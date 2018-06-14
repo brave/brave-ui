@@ -12,12 +12,11 @@ const StyledParagraph = styled.p`
   color: ${(p: ParagraphProps) => setTheme(p.theme, 'color') || 'inherit'};
   font-weight: ${(p: ParagraphProps) => setTheme(p.theme, 'fontWeight') || 'normal'};
   font-style: ${(p: ParagraphProps) => setTheme(p.theme, 'fontStyle') || 'inherit'};
+  margin: ${(p: ParagraphProps) => setTheme(p.theme, 'margin') || '0 0 20px'};
   padding: 0;
   -webkit-font-smoothing: antialiased;
   background: transparent;
-  margin: 0;
   line-height: 1.4;
-  margin-bottom: 20px;
   font-family: inherit;
 ` as any
 

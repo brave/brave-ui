@@ -11,7 +11,8 @@ export interface ParagraphTheme {
   color?: string,
   fontSize?: string,
   fontWeight?: string,
-  fontStyle?: string
+  fontStyle?: string,
+  margin?: string
 }
 
 export interface ParagraphProps {

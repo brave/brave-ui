@@ -95,7 +95,8 @@ storiesOf('Typography, Text and Links', module)
           fontSize: text('Size', '16px'),
           color: text('Color', '#000000'),
           fontWeight: weightValue,
-          fontStyle: text('Font style', 'italic')
+          fontStyle: text('Font style', 'italic'),
+          margin: text('Margin', '15px')
         }}
       />
     )

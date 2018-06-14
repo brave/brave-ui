@@ -5,6 +5,7 @@ export interface ParagraphTheme {
     fontSize?: string;
     fontWeight?: string;
     fontStyle?: string;
+    margin?: string;
 }
 export interface ParagraphProps {
     id?: string;

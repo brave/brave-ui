@@ -60,5 +60,11 @@ describe('paragraph tests', () => {
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('font-style', 'italic')
     })
+
+    it('allows theming the `margin` property', () => {
+      const component = baseComponent({theme: { margin: '0 0 10px 0' } })
+      const tree = create(component).toJSON()
+      expect(tree).toHaveStyleRule('margin', '0 0 10px 0')
+    })
   })
 })
