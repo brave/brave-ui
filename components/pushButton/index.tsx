@@ -26,7 +26,7 @@ export interface PushButtonProps {
   id?: string,
   color?: string,
   disabled?: boolean,
-  onClick?: () => void,
+  onClick?: (e: any) => void,
   theme?: PushButtonTheme,
   children?: React.ReactNode
 }

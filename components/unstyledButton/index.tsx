@@ -22,7 +22,7 @@ export interface UnstyledButtonTheme {
 
 export interface UnstyledButtonProps {
   id?: string,
-  onClick?: () => void,
+  onClick?: (e: any) => void,
   text?: string | number,
   theme?: UnstyledButtonTheme
 }

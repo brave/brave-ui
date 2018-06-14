@@ -9,7 +9,7 @@ export interface TextLabelTheme {
 }
 export interface TextLabelProps {
     id?: string;
-    onClick?: () => void;
+    onClick?: (e: any) => void;
     theme?: TextLabelTheme;
     text?: string | number;
 }
