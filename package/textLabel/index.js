@@ -4,8 +4,8 @@ const React = require("react");
 const style_1 = require("./style");
 class TextLabel extends React.PureComponent {
     render() {
-        const { id, onClick, theme, text, title } = this.props;
-        return (React.createElement(style_1.default, { id: id, onClick: onClick, title: title, theme: theme }, text && text.toString()));
+        const { id, onClick, theme, text } = this.props;
+        return (React.createElement(style_1.default, { id: id, onClick: onClick, theme: theme }, text && text.toString()));
     }
 }
 exports.default = TextLabel;
