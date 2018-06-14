@@ -12,6 +12,7 @@ export interface GridProps {
     id?: string;
     disabled?: boolean;
     columns?: number;
+    onClick: (e: any) => void;
     children?: React.ReactNode;
     theme?: GridTheme;
 }
@@ -28,6 +29,7 @@ export interface ColumnProps {
     id?: string;
     size?: number | string;
     theme?: ColumnTheme;
+    onClick: (e: any) => void;
     children?: React.ReactNode;
 }
 declare class Column extends React.PureComponent<ColumnProps, {}> {
