@@ -135,6 +135,12 @@ describe('gridSystem tests', () => {
         const tree = create(component).toJSON()
         expect(tree).toHaveStyleRule('flex-direction', 'column')
       })
+
+      it('allows theming the `overflow` property', () => {
+        const component = baseColumnComponent({theme: { overflow: 'hidden' } })
+        const tree = create(component).toJSON()
+        expect(tree).toHaveStyleRule('overflow', 'hidden')
+      })
     })
   })
 })

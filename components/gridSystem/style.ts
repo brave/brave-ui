@@ -36,6 +36,7 @@ const StyledColumn = styled.div`
   align-items: ${(p: ColumnProps) => setTheme(p.theme, 'alignItems') || 'initial'};
   background-color: ${(p: ColumnProps) => setTheme(p.theme, 'backgroundColor') || 'inherit'};
   flex-direction: ${(p: ColumnProps) => setTheme(p.theme, 'flexDirection') || 'initial'};
+  overflow: ${(p: ColumnProps) => setTheme(p.theme, 'overflow')};
   font-family: inherit;
   font-size: inherit;
   color: inherit;

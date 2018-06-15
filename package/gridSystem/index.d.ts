@@ -24,6 +24,7 @@ export interface ColumnTheme {
     alignItems?: string;
     backgroundColor?: string;
     flexDirection?: string;
+    overflow?: string;
 }
 export interface ColumnProps {
     id?: string;

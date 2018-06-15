@@ -8,7 +8,7 @@ const StyledParagraph = styled_components_1.default.p `
   color: ${(p) => helpers_1.setTheme(p.theme, 'color') || 'inherit'};
   font-weight: ${(p) => helpers_1.setTheme(p.theme, 'fontWeight') || 'normal'};
   font-style: ${(p) => helpers_1.setTheme(p.theme, 'fontStyle') || 'inherit'};
-  margin: ${(p) => helpers_1.setTheme(p.theme, 'margin') || '20px'};
+  margin: ${(p) => helpers_1.setTheme(p.theme, 'margin') || '0 0 20px'};
   padding: 0;
   -webkit-font-smoothing: antialiased;
   background: transparent;

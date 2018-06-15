@@ -44,7 +44,8 @@ export interface ColumnTheme {
   justifyContent?: string,
   alignItems?: string,
   backgroundColor?: string,
-  flexDirection?: string
+  flexDirection?: string,
+  overflow?: string
 }
 
 export interface ColumnProps {
