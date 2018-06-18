@@ -9,8 +9,11 @@ import { withKnobs } from '@storybook/addon-knobs'
 // Components
 import * as React from 'react'
 import PrivateTab from './concepts/pages/privateTab/index'
+import BraveShields from './concepts/features/braveShields';
 
 addDecorator(withKnobs)
 
 storiesOf('Concepts/Pages', module)
   .add('Private Tab', () => <PrivateTab />)
+storiesOf('Concepts/Features', module)
+  .add('Brave Shields Panel', () => <BraveShields />)
