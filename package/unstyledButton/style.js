@@ -5,6 +5,7 @@ const helpers_1 = require("../helpers");
 const StyledUnstyledButton = styled_components_1.default.button `
   font-size: ${(p) => helpers_1.setTheme(p.theme, 'fontSize') || 'inherit'};
   color: ${(p) => helpers_1.setTheme(p.theme, 'color') || 'inherit'};
+  user-select: ${(p) => helpers_1.setTheme(p.theme, 'userSelect')};
   font-family: inherit;
   box-sizing: border-box;
   display: block;

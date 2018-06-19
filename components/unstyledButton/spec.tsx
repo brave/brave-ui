@@ -49,5 +49,11 @@ describe('unstyledButton tests', () => {
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('font-size', '14px')
     })
+
+    it('allows theming the `user-select` property', () => {
+      const component = baseComponent({theme: { userSelect: 'none' } })
+      const tree = create(component).toJSON()
+      expect(tree).toHaveStyleRule('user-select', 'none')
+    })
   })
 })

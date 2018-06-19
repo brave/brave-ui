@@ -3,6 +3,7 @@ import * as React from 'react';
 export interface UnstyledButtonTheme {
     fontSize?: string;
     color?: string;
+    userSelect?: string;
 }
 export interface UnstyledButtonProps {
     id?: string;

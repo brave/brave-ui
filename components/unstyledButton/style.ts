@@ -9,6 +9,7 @@ import { setTheme } from '../helpers'
 const StyledUnstyledButton = styled.button`
   font-size: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'fontSize') || 'inherit'};
   color: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'color') || 'inherit'};
+  user-select: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'userSelect')};
   font-family: inherit;
   box-sizing: border-box;
   display: block;

@@ -17,7 +17,8 @@ import StyledUnstyledButton from './style'
 
 export interface UnstyledButtonTheme {
   fontSize?: string,
-  color?: string
+  color?: string,
+  userSelect?: string
 }
 
 export interface UnstyledButtonProps {
