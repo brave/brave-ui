@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const styled_components_1 = require("styled-components");
+const helpers_1 = require("../helpers");
 const StyledSelectOption = styled_components_1.default.select `
   box-sizing: border-box;
   position: relative;
@@ -52,6 +53,7 @@ const StyledSelectOptionWrapper = styled_components_1.default.div `
 exports.StyledSelectOptionWrapper = StyledSelectOptionWrapper;
 const StyledSelectOptionTitle = styled_components_1.default.p `
   margin: 0 0 4px 2px;
+  cursor: ${(p) => helpers_1.setTheme(p.theme, 'userSelect')};
 `;
 exports.StyledSelectOptionTitle = StyledSelectOptionTitle;
 //# sourceMappingURL=style.js.map

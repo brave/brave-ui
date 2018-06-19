@@ -1,5 +1,8 @@
 /// <reference types="react" />
 import * as React from 'react';
+export interface SelectOptionTheme {
+    userSelect?: string;
+}
 export interface SelectOptionProps {
     titleName?: string;
     id?: string;
@@ -9,6 +12,7 @@ export interface SelectOptionProps {
     value?: string;
     onChange?: (e: any) => void;
     children: React.ReactNode;
+    theme?: SelectOptionTheme;
 }
 declare class SelectOption extends React.PureComponent<SelectOptionProps, {}> {
     render(): JSX.Element;

@@ -4,6 +4,7 @@
 
 import styled, { css } from 'styled-components'
 import { SelectOptionProps } from './index'
+import { setTheme } from '../helpers'
 
 const StyledSelectOption = styled.select`
   box-sizing: border-box;
@@ -58,6 +59,7 @@ const StyledSelectOptionWrapper = styled.div`
 
 const StyledSelectOptionTitle = styled.p`
   margin: 0 0 4px 2px;
+  cursor: ${(p: SelectOptionProps) => setTheme(p.theme, 'userSelect')};
 ` as any
 
 export {

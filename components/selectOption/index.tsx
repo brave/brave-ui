@@ -10,6 +10,10 @@ import {
   StyledSelectOptionWrapper
 } from './style'
 
+export interface SelectOptionTheme {
+  userSelect?: string
+}
+
 export interface SelectOptionProps {
   titleName?: string,
   id?: string,
@@ -18,7 +22,8 @@ export interface SelectOptionProps {
   disabled?: boolean,
   value?: string,
   onChange?: (e: any) => void,
-  children: React.ReactNode
+  children: React.ReactNode,
+  theme?: SelectOptionTheme
 }
 
 class SelectOption extends React.PureComponent<SelectOptionProps, {}> {
