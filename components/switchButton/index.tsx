@@ -12,7 +12,8 @@ import {
 } from './style'
 
 export interface SwitchButtonTheme {
-  labelColor?: string
+  labelColor?: string,
+  userSelect?: string
 }
 
 export interface SwitchButtonProps {

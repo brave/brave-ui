@@ -36,6 +36,7 @@ const StyledSwitchButtonLabel = styled.label`
   font-weight: 400;
   font-family: inherit;
   color: ${(p: SwitchButtonProps) => setTheme(p.theme, 'labelColor') || 'inherit'};
+  user-select: ${(p: SwitchButtonProps) => setTheme(p.theme, 'userSelect') || 'none'};
 ` as any
 
 /**

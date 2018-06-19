@@ -2,6 +2,7 @@
 import * as React from 'react';
 export interface SwitchButtonTheme {
     labelColor?: string;
+    userSelect?: string;
 }
 export interface SwitchButtonProps {
     checked: boolean;

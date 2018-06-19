@@ -23,6 +23,7 @@ const StyledSwitchButtonLabel = styled_components_1.default.label `
   font-weight: 400;
   font-family: inherit;
   color: ${(p) => helpers_1.setTheme(p.theme, 'labelColor') || 'inherit'};
+  user-select: ${(p) => helpers_1.setTheme(p.theme, 'userSelect') || 'none'};
 `;
 exports.StyledSwitchButtonLabel = StyledSwitchButtonLabel;
 const StyledSwitchButton = styled_components_1.default.input `
