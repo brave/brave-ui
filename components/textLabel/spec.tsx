@@ -75,6 +75,12 @@ describe('textLabel tests', () => {
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('line-height', '2')
     })
+
+    it('allows theming the `cursor` property', () => {
+      const component = baseComponent({theme: { cursor: 'pointer' } })
+      const tree = create(component).toJSON()
+      expect(tree).toHaveStyleRule('cursor', 'pointer')
+    })
   })
 })
 

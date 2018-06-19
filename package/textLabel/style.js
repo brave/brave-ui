@@ -8,8 +8,8 @@ const StyledTextLabel = styled_components_1.default.p `
   font-size: ${(p) => helpers_1.setTheme(p.theme, 'fontSize') || '13px'};
   color: ${(p) => helpers_1.setTheme(p.theme, 'color') || 'inherit'};
   line-height: ${(p) => helpers_1.setTheme(p.theme, 'lineHeight')};
+  cursor: ${(p) => helpers_1.setTheme(p.theme, 'cursor')};
   user-select: none;
-  cursor: default;
   font-family: inherit;
   box-sizing: border-box;
   background: none;

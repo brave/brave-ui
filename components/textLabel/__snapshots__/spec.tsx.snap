@@ -10,7 +10,6 @@ exports[`textLabel tests basic tests matches the snapshot 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  cursor: default;
   font-family: inherit;
   box-sizing: border-box;
   background: none;

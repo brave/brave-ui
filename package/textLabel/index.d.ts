@@ -6,6 +6,7 @@ export interface TextLabelTheme {
     padding?: string;
     fontWeight?: string;
     lineHeight?: string;
+    cursor?: string;
 }
 export interface TextLabelProps {
     id?: string;

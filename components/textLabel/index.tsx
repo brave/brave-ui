@@ -10,7 +10,8 @@ export interface TextLabelTheme {
   color?: string,
   padding?: string,
   fontWeight?: string,
-  lineHeight?: string
+  lineHeight?: string,
+  cursor?: string
 }
 
 export interface TextLabelProps {
