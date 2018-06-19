@@ -64,5 +64,11 @@ describe('anchor tests', () => {
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('font-size', '300px')
     })
+
+    it('allows theming the `user-select` property', () => {
+      const component = <Anchor href='#' theme={ { userSelect: 'none' } } />
+      const tree = create(component).toJSON()
+      expect(tree).toHaveStyleRule('user-select', 'none')
+    })
   })
 })

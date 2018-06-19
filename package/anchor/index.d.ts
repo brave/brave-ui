@@ -4,6 +4,7 @@ export interface AnchorTheme {
     textDecoration?: string;
     color?: string;
     fontSize?: string;
+    userSelect?: string;
 }
 export interface AnchorProps {
     id?: string;

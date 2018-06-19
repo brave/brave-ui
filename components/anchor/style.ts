@@ -10,6 +10,7 @@ const StyledAnchor = styled.a`
   color: ${(p: AnchorProps) => setTheme(p.theme, 'color') || 'inherit'};
   text-decoration: ${(p: AnchorProps) => setTheme(p.theme, 'textDecoration') || 'none'};
   font-size: ${(p: AnchorProps) => setTheme(p.theme, 'fontSize') || '13px'};
+  user-select: ${(p: AnchorProps) => setTheme(p.theme, 'userSelect')};
   font-family: inherit;
   box-sizing: border-box;
 ` as any

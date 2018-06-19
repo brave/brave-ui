@@ -8,7 +8,8 @@ import StyledAnchor from './style'
 export interface AnchorTheme {
   textDecoration?: string,
   color?: string,
-  fontSize?: string
+  fontSize?: string,
+  userSelect?: string
 }
 
 export interface AnchorProps {
