@@ -4,7 +4,7 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
 .c0 {
   position: relative;
   display: block;
-  width: 42px;
+  width: 40px;
   height: 24px;
 }
 
@@ -22,18 +22,18 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
   border-radius: 50%;
   -webkit-transition: 200ms ease-out;
   transition: 200ms ease-out;
+  background-color: #CDD1D5;
+  -webkit-transform: translate(0,calc(-50% - 4px));
+  -ms-transform: translate(0,calc(-50% - 4px));
+  transform: translate(0,calc(-50% - 4px));
   width: 24px;
   height: 24px;
-  background-color: #CDD1D5;
-  -webkit-transform: translate(-5px,calc(-50% - 4px));
-  -ms-transform: translate(-5px,calc(-50% - 4px));
-  transform: translate(-5px,calc(-50% - 4px));
 }
 
 <div
-  checked={false}
+  checked={undefined}
   className="c0"
-  disabled={false}
+  disabled={undefined}
   id="checkbox"
   onClick={undefined}
   size="medium"
@@ -43,7 +43,7 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
     size="medium"
   />
   <div
-    checked={false}
+    checked={undefined}
     className="c2"
     size="medium"
   />

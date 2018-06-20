@@ -3,25 +3,25 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledCheckboxWrapper, StyledCheckboxSlider, StyledCheckboxBullet } from './style'
+import { StyledWrapper, StyledSlider, StyledBullet } from './style'
 
-export interface CheckboxProps {
-  id?: string,
-  disabled?: boolean,
-  checked?: boolean,
-  size?: 'large' | 'medium' | 'small',
+export interface Props {
+  id?: string
+  disabled?: boolean
+  checked?: boolean
+  size?: 'large' | 'medium' | 'small'
   onClick?: () => void
 }
 
-class Checkbox extends React.PureComponent<CheckboxProps, {}> {
+class Checkbox extends React.PureComponent<Props, {}> {
   render () {
     const { id, onClick, size, disabled, checked } = this.props
 
-    const props: CheckboxProps = {
+    const props: Props = {
       id,
-      disabled: disabled ? disabled : false,
-      size: size ? size : 'medium',
-      checked: checked ? checked : false
+      disabled,
+      checked,
+      size: size ? size : 'medium'
     }
 
     if (!disabled) {
@@ -29,10 +29,10 @@ class Checkbox extends React.PureComponent<CheckboxProps, {}> {
     }
 
     return (
-      <StyledCheckboxWrapper {...props}>
-        <StyledCheckboxSlider size={props.size} />
-        <StyledCheckboxBullet size={props.size} checked={props.checked} />
-      </StyledCheckboxWrapper>
+      <StyledWrapper {...props}>
+        <StyledSlider size={props.size} />
+        <StyledBullet size={props.size} checked={props.checked} />
+      </StyledWrapper>
     )
   }
 }
