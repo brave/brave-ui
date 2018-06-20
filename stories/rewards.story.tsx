@@ -4,17 +4,23 @@
 
 // Storybook requires
 import { storiesOf, addDecorator } from '@storybook/react'
-import { withKnobs, boolean, select } from '@storybook/addon-knobs'
+import { withKnobs, boolean, select, text } from '@storybook/addon-knobs'
 
 import * as React from 'react'
-import { withState } from '@dump247/storybook-state';
+import { withState } from '@dump247/storybook-state'
+
+// Utils
+import { BetterVisualizer } from './storyUtil'
 
 // Components
-import Checkbox from '../components/rewards/checkbox';
-import { BetterVisualizer } from './storyUtil';
+import Checkbox from '../components/rewards/checkbox'
+import Box from '../components/rewards/box'
+import List from '../components/rewards/list';
+
+// Images
+const settingsIcon = require('./assets/img/rewards_settings.svg')
 
 addDecorator(withKnobs)
-
 addDecorator(BetterVisualizer)
 
 
@@ -32,3 +38,33 @@ storiesOf('Rewards', module)
       )}
     />
   }))
+  .add('Box', withState({ checked: false, toggle: true }, (store) => {
+    return <div style={{width: '595px'}}>
+      <Box
+        title={text('Title', 'Brave ads')}
+        toggle={boolean('Show toggle', store.state.toggle)}
+        checked={boolean('Toggle checked', store.state.checked)}
+        description={
+          text('Description', `Earn tokens by seeing ads on Brave. Ads are matched
+          from machine learning and the data temporarily present in your browser without tracking your
+          information or sending it outside.`)
+        }
+        settingsIcon={settingsIcon}
+        toggleClick={() => (
+          store.set({ checked: !store.state.checked })
+        )}
+        settingsChild={<div>Settings content</div>}
+      >
+        <div>Some content</div>
+      </Box>
+    </div>
+  }))
+  .add('List',() => {
+    return <div style={{width: '595px'}}>
+      <List
+        title={text('Title', 'Earnings this month')}
+      >
+        Some content
+      </List>
+    </div>
+  })
