@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box tests basic tests matches the snapshot 1`] = `
+.c0 {
+  width: 100%;
+  position: relative;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 0 8px 0 rgba(99,105,110,0.12);
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 30px 36px;
+}
+
+.c1 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+}
+
+.c3 {
+  -webkit-flex-basis: 40px;
+  -ms-flex-preferred-size: 40px;
+  flex-basis: 40px;
+}
+
+.c2 {
+  height: 36px;
+  font-family: Poppins;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.27;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  color: #9752cb;
+}
+
+.c4 {
+  width: 100%;
+  display: block;
+}
+
+.c5 {
+  width: 100%;
+  padding-right: 20px;
+  font-family: Muli;
+  font-size: 14px;
+  line-height: 1.29;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  color: #a4aeb8;
+}
+
+.c6 {
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-top: 25px;
+}
+
+<div
+  className="c0"
+  id="box"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      test
+    </div>
+  </div>
+  <div
+    className="c3"
+  />
+  <div
+    className="c4"
+  />
+  <div
+    className="c1"
+  >
+    <div
+      className="c5"
+    />
+  </div>
+  <div
+    className="c3"
+  />
+  <div
+    className="c6"
+  />
+</div>
+`;

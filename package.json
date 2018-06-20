@@ -115,7 +115,7 @@
       "<rootDir>/.testconfig/testPolyfills.js"
     ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|svg|ttf|woff|woff2)$": "<rootDir>/.testconfig/fileMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|svg|ttf|woff|woff2)$": "<rootDir>/.testconfig/fileMocks.js",
       "\\.(css)$": "identity-obj-proxy"
     }
   }
