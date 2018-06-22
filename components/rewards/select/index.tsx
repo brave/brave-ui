@@ -17,7 +17,7 @@ export interface Props {
   id?: string,
   disabled?: boolean,
   value?: string,
-  onChange: (e: any) => void,
+  onChange?: (e: any) => void,
   children: React.ReactNode
 }
 
@@ -64,7 +64,7 @@ class Select extends React.PureComponent<Props, State> {
       }
   }
 
-  generateOptions = (value: string | undefined, children: React.ReactNode, onChange: (e: any) => void) => {
+  generateOptions = (value: string | undefined, children: React.ReactNode) => {
     const self = this
     return React.Children.map(children, (child: any, i) => {
       if (child.props['data-value'] == undefined) {
@@ -87,7 +87,9 @@ class Select extends React.PureComponent<Props, State> {
       show: false
     })
 
-    this.props.onChange(child)
+    if (this.props.onChange) {
+      this.props.onChange(child)
+    }
   }
 
   onSelectClick = () => {
@@ -103,13 +105,13 @@ class Select extends React.PureComponent<Props, State> {
   }
 
   render () {
-    const { id, title, children, disabled, value, onChange } = this.props
+    const { id, title, children, disabled, value } = this.props
 
     const num = React.Children.count(this.props.children)
     let data = null
 
     if (num > 0) {
-      data = this.generateOptions(value, children, onChange)
+      data = this.generateOptions(value, children)
     }
 
     return (

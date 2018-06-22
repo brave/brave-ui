@@ -10,6 +10,7 @@ const arrow = require('./assets/arrow.svg')
 export const StyledWrapper = styled.div`
   max-width: 254px;
   width: 100%;
+  margin-bottom: 12px;
 ` as any
 
 export const StyledTitle = styled.div`
@@ -60,6 +61,7 @@ export const StyledOptions = styled.div`
   background-color: #ffffff;
   border: solid 1px #dfdfe8;
   overflow: hidden;
+  z-index: 2;
   
   ${(p: {show: boolean}) => p.show
     ? css`

@@ -19,9 +19,6 @@ import List from '../components/rewards/list';
 import Select from '../components/rewards/select';
 import Tokens from '../components/rewards/tokens';
 
-// Images
-const settingsIcon = require('./assets/img/rewards_settings.svg')
-
 addDecorator(withKnobs)
 addDecorator(BetterVisualizer)
 
@@ -44,6 +41,7 @@ storiesOf('Rewards', module)
     return <div style={{width: '595px'}}>
       <Box
         title={text('Title', 'Brave ads')}
+        theme={{titleColor: '#9752cb'}}
         toggle={boolean('Show toggle', store.state.toggle)}
         checked={boolean('Toggle checked', store.state.checked)}
         description={
@@ -51,8 +49,7 @@ storiesOf('Rewards', module)
           from machine learning and the data temporarily present in your browser without tracking your
           information or sending it outside.`)
         }
-        settingsIcon={settingsIcon}
-        toggleClick={() => (
+        onToggle={() => (
           store.set({ checked: !store.state.checked })
         )}
         settingsChild={<div>Settings content</div>}

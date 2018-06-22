@@ -13,6 +13,7 @@ export const StyledWrapper = styled.div`
   align-items: flex-start;
   align-content: flex-start;
   flex-wrap: nowrap;
+  margin-bottom: 8px;
 ` as any
 
 export const StyledTitle = styled.div`
@@ -29,4 +30,5 @@ export const StyledContent = styled.div`
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 50%;
+  text-align: right;
 ` as any

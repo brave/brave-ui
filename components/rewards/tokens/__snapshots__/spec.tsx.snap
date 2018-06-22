@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tokens tests basic tests matches the snapshot 1`] = `
+.c0 {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #4b4c5c;
+}
+
+.c1 {
+  font-weight: 600;
+}
+
+<div
+  id="tokens"
+>
+  <span
+    className="c0"
+  >
+    <span
+      className="c1"
+    >
+      10
+    </span>
+     tokens
+  </span>
+</div>
+`;
