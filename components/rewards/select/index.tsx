@@ -32,6 +32,7 @@ interface State {
   - add tab option movement
   - add enter key confirm
   - add autoFocus
+  - make sure that props update is prepared into the state
  */
 class Select extends React.PureComponent<Props, State> {
   constructor (props: Props) {
@@ -74,7 +75,7 @@ class Select extends React.PureComponent<Props, State> {
       const element = child.props.children
       const value = child.props['data-value']
       const selected = value == self.state.value
-      return <StyledOption onClick={self.onOptionClick.bind(this, value, child, element)} selected={selected}>
+      return <StyledOption onClick={self.onOptionClick.bind(self, value, child, element)} selected={selected}>
         {element}
       </StyledOption>
     })
@@ -107,7 +108,7 @@ class Select extends React.PureComponent<Props, State> {
   render () {
     const { id, title, children, disabled, value } = this.props
 
-    const num = React.Children.count(this.props.children)
+    const num = React.Children.count(children)
     let data = null
 
     if (num > 0) {

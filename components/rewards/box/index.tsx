@@ -16,7 +16,7 @@ import { StyledWrapper,
   StyledSettingsTitle,
   StyledSettingsText
 } from './style'
-import Checkbox from '../checkbox'
+import Checkbox from '../toggle'
 
 const close = require('./assets/close.svg')
 const settings = require('./assets/settings.svg')
