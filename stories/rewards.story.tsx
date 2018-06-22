@@ -16,6 +16,7 @@ import { BetterVisualizer } from './storyUtil'
 import Checkbox from '../components/rewards/checkbox'
 import Box from '../components/rewards/box'
 import List from '../components/rewards/list';
+import Select from '../components/rewards/select';
 
 // Images
 const settingsIcon = require('./assets/img/rewards_settings.svg')
@@ -67,4 +68,14 @@ storiesOf('Rewards', module)
         Some content
       </List>
     </div>
+  })
+  .add('Select',() => {
+    return <Select
+      title={text('Title', 'Limit Sites to')}
+      onChange={() => false}
+    >
+      <div data-value='0'>No Limit</div>
+      <div data-value='10'>Pay Only Top 10</div>
+      <div data-value='50'>Pay Top 50</div>
+    </Select>
   })
