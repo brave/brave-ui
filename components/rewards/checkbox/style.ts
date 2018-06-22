@@ -2,98 +2,46 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled, {css} from 'styled-components'
-import { Props } from './index'
+import styled, { css } from 'styled-components'
+
+const check = require('./assets/check.svg')
 
 export const StyledWrapper = styled.div`
-  position: relative;
-  display: block;
-  
-  ${(p: Props) => p.disabled
-    ? css`
-      pointer-events: none;
-      animation: none;
-      opacity: 0.25;
-    ` : ''
-    }
-    
-  ${(p: Props) => p.size === 'small'
-    ? css`
-      width: 30px;
-      height: 18px;
-    ` : ''
-    }
-  
-  ${(p: Props) => p.size === 'medium'
-    ? css`
-      width: 40px;
-      height: 24px;
-    ` : ''
-    }
-` as any
-
-export const StyledSlider = styled.div`
-  background: #A7ACB2;
   width: 100%;
-  border-radius: 3px;
-  
-  ${(p: Props) => p.size === 'small'
-    ? css`
-      height: 6px;
-      margin-top: 6px;
-    ` : ''
-    }
-  
-  ${(p: Props) => p.size === 'medium'
-    ? css`
-      height: 8px;
-      margin-top: 8px;
-    ` : ''
-    }
+  margin-bottom: 12px;
 ` as any
 
-export const StyledBullet = styled.div`
+export const StyledTitle = styled.div`
+  width: 100%;
+  font-family: Poppins;
+  line-height: normal;
+  font-size: 14px;
+  font-weight: 500;
+  color: #686978;
+  margin-bottom: 6px;
+` as any
+
+export const StyledLabel = styled.div`
+  font-family: Poppins;
+  font-size: 14px;
+  line-height: 2.79;
+  color: #686978;
+` as any
+
+export const StyledBox = styled.span`
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  border: solid 1px #d1d1db;
+  display: inline-block;
+  margin-right: 11px;
   position: relative;
-  z-index: 2;
-  border-radius: 50%;
-  transition: 200ms ease-out;
+  top: 3px;
   
-  ${(p: Props) => p.checked
+ ${(p: {selected: boolean}) => p.selected
     ? css`
-      background-color: #6D73D2;
+      border-color: #a1a8f2;
+      background: url(${check}) no-repeat 3px 5px;
     ` : ''
-    }
-  
-  ${(p: Props) => !p.checked
-    ? css`
-      background-color: #CDD1D5;
-      transform: translate(0, calc(-50% - 4px));
-    ` : ''
-    }
-    
-  ${(p: Props) => p.size === 'small'
-    ? css`
-      width: 18px;
-      height: 18px;
-    ` : ''
-    }
-    
-  ${(p: Props) => p.checked && p.size === 'small'
-    ? css`
-      transform: translate(12px, calc(-50% - 4px));
-    ` : ''
-    }
-  
-  ${(p: Props) => p.size === 'medium'
-    ? css`
-      width: 24px;
-      height: 24px;
-    ` : ''
-    }
-    
-  ${(p: Props) => p.checked && p.size === 'medium'
-    ? css`
-      transform: translate(16px, calc(-50% - 4px));
-    ` : ''
-    }
+  }
 ` as any

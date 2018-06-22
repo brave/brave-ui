@@ -1,51 +1,93 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkbox tests basic tests matches the snapshot 1`] = `
+exports[`List tests basic tests matches the snapshot 1`] = `
 .c0 {
-  position: relative;
-  display: block;
-  width: 40px;
-  height: 24px;
+  width: 100%;
+  margin-bottom: 12px;
 }
 
 .c1 {
-  background: #A7ACB2;
   width: 100%;
-  border-radius: 3px;
-  height: 8px;
-  margin-top: 8px;
+  font-family: Poppins;
+  line-height: normal;
+  font-size: 14px;
+  font-weight: 500;
+  color: #686978;
+  margin-bottom: 6px;
 }
 
 .c2 {
+  font-family: Poppins;
+  font-size: 14px;
+  line-height: 2.79;
+  color: #686978;
+}
+
+.c3 {
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  border: solid 1px #d1d1db;
+  display: inline-block;
+  margin-right: 11px;
   position: relative;
-  z-index: 2;
-  border-radius: 50%;
-  -webkit-transition: 200ms ease-out;
-  transition: 200ms ease-out;
-  background-color: #CDD1D5;
-  -webkit-transform: translate(0,calc(-50% - 4px));
-  -ms-transform: translate(0,calc(-50% - 4px));
-  transform: translate(0,calc(-50% - 4px));
-  width: 24px;
-  height: 24px;
+  top: 3px;
+  border-color: #a1a8f2;
+  background: url(test-file-stub) no-repeat 3px 5px;
+}
+
+.c4 {
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  border: solid 1px #d1d1db;
+  display: inline-block;
+  margin-right: 11px;
+  position: relative;
+  top: 3px;
 }
 
 <div
-  checked={undefined}
   className="c0"
-  disabled={undefined}
   id="checkbox"
-  onClick={undefined}
-  size="medium"
 >
   <div
     className="c1"
-    size="medium"
-  />
+  >
+    Enable ability to give tips on ‘Like’ posts
+  </div>
   <div
-    checked={undefined}
     className="c2"
-    size="medium"
-  />
+    onClick={[Function]}
+  >
+    <span
+      className="c3"
+      selected={true}
+    />
+     
+    YouTube
+  </div>
+  <div
+    className="c2"
+    onClick={[Function]}
+  >
+    <span
+      className="c4"
+      selected={false}
+    />
+     
+    Twitter
+  </div>
+  <div
+    className="c2"
+    onClick={[Function]}
+  >
+    <span
+      className="c4"
+      selected={false}
+    />
+     
+    Instagram
+  </div>
 </div>
 `;

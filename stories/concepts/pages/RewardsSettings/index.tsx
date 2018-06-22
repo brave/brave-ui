@@ -15,6 +15,7 @@ import '../../../assets/fonts/poppins.css'
 import List from '../../../../components/rewards/list';
 import Tokens from '../../../../components/rewards/tokens';
 import Select from '../../../../components/rewards/select';
+import Checkbox from '../../../../components/rewards/checkbox';
 
 interface State {
   adsToggle: boolean
@@ -68,24 +69,20 @@ class Settings extends React.PureComponent<{}, State> {
         </Grid>
     </>
   }
-
-
-
+  
   donationSettingsChild = () => {
     return <>
       <Grid columns={1} theme={{maxWidth: '270px', margin: '0 auto'}}>
           <Column size={1} theme={{justifyContent: 'center', flexWrap: 'wrap'}}>
-            <Select title={locale.contributionMonthly}>
-              <div data-value='10'><Tokens value={10} converted={'4'}/></div>
-              <div data-value='20'><Tokens value={20} converted={'6'}/></div>
-              <div data-value='40'><Tokens value={40} converted={'12'}/></div>
-              <div data-value='100'><Tokens value={100} converted={'40'}/></div>
-            </Select>
-            <Select title={locale.contributionSitesLimit}>
-              <div data-value='0'>{locale.contributionSitesNoLimit}</div>
-              <div data-value='10'>{locale.contributionSitesLimit10}</div>
-              <div data-value='50'>{locale.contributionSitesLimit50}</div>
-            </Select>
+            <Checkbox
+              value={{'yt': true, 'tw': false, 'inst': false}}
+              multiple={true}
+              title={'Enable ability to give tips on ‘Like’ posts'}
+            >
+              <div data-key='yt'>YouTube</div>
+              <div data-key='tw'>Twitter</div>
+              <div data-key='inst'>Instagram</div>
+            </Checkbox>
           </Column>
         </Grid>
     </>

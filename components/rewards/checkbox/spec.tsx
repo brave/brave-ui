@@ -4,8 +4,17 @@ import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
 import Checkbox from './index'
 
-describe('Checkbox tests', () => {
-  const baseComponent = (props?: object) => <Checkbox id='checkbox' {...props} />
+describe('List tests', () => {
+  const baseComponent = (props?: object) => <Checkbox
+    value={{'yt': true, 'tw': false, 'inst': false}}
+    id={'checkbox'}
+    multiple={false}
+    title={'Enable ability to give tips on ‘Like’ posts'}
+  >
+    <div data-key='yt'>YouTube</div>
+    <div data-key='tw'>Twitter</div>
+    <div data-key='inst'>Instagram</div>
+  </Checkbox>
 
   describe('basic tests', () => {
     it('matches the snapshot', () => {
@@ -18,34 +27,6 @@ describe('Checkbox tests', () => {
       const wrapper = shallow(baseComponent())
       const assertion = wrapper.find('#checkbox').length
       expect(assertion).toBe(1)
-    })
-  })
-
-  describe('component behavior', () => {
-    it('can be checked', () => {
-      const wrapper = shallow(baseComponent({checked: true}))
-      const assertion = wrapper.find('#checkbox').props().checked
-      expect(assertion).toEqual(true)
-    })
-
-    it('can be unchecked', () => {
-      const wrapper = shallow(baseComponent({checked: false}))
-      const assertion = wrapper.find('#checkbox').props().checked
-      expect(assertion).toEqual(false)
-    })
-
-    it('can be disabled', () => {
-      const wrapper = shallow(baseComponent({disabled: true}))
-      const assertion = wrapper.find('#checkbox').props().disabled
-      expect(assertion).toBe(true)
-    })
-
-    it('can respond to onClick', () => {
-      const value = {target: { checked: true }}
-      const onClick = jest.fn()
-      const wrapper = shallow(baseComponent({onClick}))
-      wrapper.find('#checkbox').simulate('click', value)
-      expect(onClick).toBeCalledWith(value)
     })
   })
 })

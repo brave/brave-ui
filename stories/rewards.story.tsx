@@ -4,7 +4,7 @@
 
 // Storybook requires
 import { storiesOf, addDecorator } from '@storybook/react'
-import { withKnobs, boolean, select, text } from '@storybook/addon-knobs'
+import { withKnobs, boolean, select, text, object } from '@storybook/addon-knobs'
 
 import * as React from 'react'
 import { withState } from '@dump247/storybook-state'
@@ -13,22 +13,23 @@ import { withState } from '@dump247/storybook-state'
 import { BetterVisualizer } from './storyUtil'
 
 // Components
-import Checkbox from '../components/rewards/checkbox'
+import Toggle from '../components/rewards/toggle'
 import Box from '../components/rewards/box'
 import List from '../components/rewards/list';
 import Select from '../components/rewards/select';
 import Tokens from '../components/rewards/tokens';
+import Checkbox from '../components/rewards/checkbox';
 
 addDecorator(withKnobs)
 addDecorator(BetterVisualizer)
 
 
 storiesOf('Rewards', module)
-  .add('Checkbox', withState({ checked: false }, (store) => {
+  .add('Toggle', withState({ checked: false }, (store) => {
     const sizeOptions = { 'small': 'small', 'medium': 'medium', 'large': 'large' }
     const size = select('Weight', sizeOptions, 'medium')
 
-    return <Checkbox
+    return <Toggle
       size={size}
       disabled={boolean('Disabled?', false)}
       checked={boolean('Checked?', store.state.checked)}
@@ -84,3 +85,19 @@ storiesOf('Rewards', module)
       currency={text('Currency', 'USD')}
     />
   })
+  .add('Checkbox', withState({'yt': true, 'tw': false, 'inst': false}, (store) => {
+    return <div style={{width: '310px'}}>
+      <Checkbox
+      value={object('Checkbox values', store.state)}
+      multiple={boolean('Is multiple?', false)}
+      title={text('Title', 'Enable ability to give tips on ‘Like’ posts')}
+      onChange={(child, selected, all) => (
+        store.set(all)
+      )}
+    >
+      <div data-key='yt'>YouTube</div>
+      <div data-key='tw'>Twitter</div>
+      <div data-key='inst'>Instagram</div>
+    </Checkbox>
+    </div>
+  }))

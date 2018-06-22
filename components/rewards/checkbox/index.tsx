@@ -3,35 +3,86 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledWrapper, StyledSlider, StyledBullet } from './style'
+import { StyledWrapper, StyledTitle, StyledLabel, StyledBox } from './style'
 
 export interface Props {
   id?: string
-  disabled?: boolean
-  checked?: boolean
-  size?: 'large' | 'medium' | 'small'
-  onClick?: () => void
+  title?: string
+  children: React.ReactNode
+  multiple?: boolean
+  value: {[key: string]: boolean}
+  onChange?: (child: React.ReactNode, selected: boolean, all: {[key: string]: boolean}) => void
 }
 
-class Checkbox extends React.PureComponent<Props, {}> {
-  render () {
-    const { id, onClick, size, disabled, checked } = this.props
+interface State {
+  checked: {[key: string]: boolean}
+}
 
-    const props: Props = {
-      id,
-      disabled,
-      checked,
-      size: size ? size : 'medium'
+/*
+  TODO
+  - make sure that props update is prepared into the state
+ */
+class Checkbox extends React.PureComponent<Props, State> {
+  constructor(props: Props) {
+    super(props)
+
+    this.state = {
+      checked: Object.assign({}, props.value)
     }
+  }
 
-    if (!disabled) {
-      props.onClick = onClick
+
+  generateChecks = (children: React.ReactNode) => {
+    const self = this
+    return React.Children.map(children, (child: any) => {
+      if (child.props['data-key'] == undefined) {
+        return null
+      }
+
+      const element = child.props.children
+      const key = child.props['data-key']
+      const selected = self.state.checked[key] || false
+      return <StyledLabel onClick={self.onOptionClick.bind(self, key, child, selected)}>
+        <StyledBox selected={selected} /> {element}
+      </StyledLabel>
+    })
+  }
+
+  onOptionClick = (key: string, child: React.ReactNode, selected: boolean) => {
+    const multiple = this.props.multiple
+    const checked = this.state.checked
+    let newState: {[key: string]: boolean} = {}
+    selected = !selected
+
+    Object.keys(this.state.checked).map((item: string) => {
+      newState[item] = multiple ? checked[item] : false;
+
+      if (key == item) {
+        newState[item] = selected
+      }
+    })
+
+    this.setState({checked: newState})
+
+    if (this.props.onChange) {
+      this.props.onChange(child, selected, newState)
+    }
+  }
+
+  render () {
+    const { id, title, children } = this.props
+
+    const num = React.Children.count(children)
+    let data = null
+
+    if (num > 0) {
+      data = this.generateChecks(children)
     }
 
     return (
-      <StyledWrapper {...props}>
-        <StyledSlider size={props.size} />
-        <StyledBullet size={props.size} checked={props.checked} />
+      <StyledWrapper id={id}>
+        <StyledTitle>{title}</StyledTitle>
+        {data}
       </StyledWrapper>
     )
   }
