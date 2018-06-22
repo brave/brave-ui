@@ -16,6 +16,12 @@ import List from '../../../../components/rewards/list';
 import Tokens from '../../../../components/rewards/tokens';
 import Select from '../../../../components/rewards/select';
 import Checkbox from '../../../../components/rewards/checkbox';
+import DisabledContent from '../../../../components/rewards/disabledContent';
+
+// Images
+const donateImg = require('../../../assets/img/rewards_donate.svg')
+const adsImg = require('../../../assets/img/rewards_ads.svg')
+const contributeImg = require('../../../assets/img/rewards_contribute.svg')
 
 interface State {
   adsToggle: boolean
@@ -50,6 +56,16 @@ class Settings extends React.PureComponent<{}, State> {
     </>
   }
 
+  adsDisabled () {
+    return <DisabledContent
+      image={adsImg}
+      theme={{color: '#ceb4e1', boldColor: '#b490cf'}}
+    >
+      • Earnings paid every month. <br/>
+      • Set your <b>desired frequency</b> for ads  based on the desired earning.
+    </DisabledContent>
+  }
+
   contributeSettingsChild = () => {
     return <>
       <Grid columns={1} theme={{maxWidth: '270px', margin: '0 auto'}}>
@@ -69,7 +85,17 @@ class Settings extends React.PureComponent<{}, State> {
         </Grid>
     </>
   }
-  
+
+  contributeDisabled () {
+    return <DisabledContent
+      image={contributeImg}
+      theme={{color: '#ce9ccf', boldColor: '#c16fc2'}}
+    >
+      • Pay directly for the content you love. <br/>
+      • Your <b>monthly allowance</b> gets divided based on your attention metric.
+    </DisabledContent>
+  }
+
   donationSettingsChild = () => {
     return <>
       <Grid columns={1} theme={{maxWidth: '270px', margin: '0 auto'}}>
@@ -88,6 +114,16 @@ class Settings extends React.PureComponent<{}, State> {
     </>
   }
 
+  donationDisabled () {
+    return <DisabledContent
+      image={donateImg}
+      theme={{color: '#AC9CCF', boldColor: '#696fdc'}}
+    >
+      • Donate on the spot as you find gems. <br/>
+      • <b>Enable Tips </b> on Twitter, YouTube, and more, to give tips to posts you ‘Like’.
+    </DisabledContent>
+  }
+
   render () {
     return (
       <div style={{maxWidth: '1000px', margin: '50px auto'}}>
@@ -100,6 +136,7 @@ class Settings extends React.PureComponent<{}, State> {
               toggle={true}
               checked={this.state.adsToggle}
               settingsChild={this.adsSettingsChild()}
+              disabledContent={this.adsDisabled()}
               onToggle={() => {this.setState({adsToggle: !this.state.adsToggle})}}
             >
               <List title={locale.adsEarnings}>
@@ -116,6 +153,7 @@ class Settings extends React.PureComponent<{}, State> {
               toggle={true}
               checked={this.state.contributeToggle}
               settingsChild={this.contributeSettingsChild()}
+              disabledContent={this.contributeDisabled()}
               onToggle={() => {this.setState({contributeToggle: !this.state.contributeToggle})}}
             >
               <List title={locale.contributionMonthly}>
@@ -130,6 +168,7 @@ class Settings extends React.PureComponent<{}, State> {
               theme={{titleColor: '#4c54d2'}}
               description={locale.donationDesc}
               settingsChild={this.donationSettingsChild()}
+              disabledContent={this.donationDisabled()}
             >
               <List title={locale.donationTotal}>
                 <Tokens value={21} converted={7} />
