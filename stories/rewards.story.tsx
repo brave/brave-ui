@@ -17,6 +17,7 @@ import Checkbox from '../components/rewards/checkbox'
 import Box from '../components/rewards/box'
 import List from '../components/rewards/list';
 import Select from '../components/rewards/select';
+import Tokens from '../components/rewards/tokens';
 
 // Images
 const settingsIcon = require('./assets/img/rewards_settings.svg')
@@ -78,4 +79,11 @@ storiesOf('Rewards', module)
       <div data-value='10'>Pay Only Top 10</div>
       <div data-value='50'>Pay Top 50</div>
     </Select>
+  })
+  .add('Tokens',() => {
+    return <Tokens
+      value={text('Tokens value', '10')}
+      converted={text('Converted value', '4')}
+      currency={text('Currency', 'USD')}
+    />
   })

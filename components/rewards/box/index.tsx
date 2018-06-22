@@ -36,6 +36,10 @@ interface State {
   settingsOpened: boolean
 }
 
+/*
+  TODO
+  - add local
+ */
 class Box extends React.PureComponent<Props, State> {
   constructor (props: Props) {
     super(props)
@@ -60,8 +64,6 @@ class Box extends React.PureComponent<Props, State> {
       description,
       children
     } = this.props
-
-    // TODO localize for Settings
 
     return (
       <StyledWrapper id={id}>
