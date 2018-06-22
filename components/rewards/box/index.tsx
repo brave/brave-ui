@@ -34,6 +34,7 @@ export interface Props {
   checked?: boolean
   onToggle?: () => void
   settingsChild?: React.ReactNode
+  disabledContent?: React.ReactNode
   children?: React.ReactNode
 }
 
@@ -65,6 +66,7 @@ class Box extends React.PureComponent<Props, State> {
       checked,
       onToggle,
       settingsChild,
+      disabledContent,
       description,
       theme,
       children
@@ -90,7 +92,7 @@ class Box extends React.PureComponent<Props, State> {
         </StyledLeft>
         <StyledRight>
           {
-            settingsChild ?
+            settingsChild && ((toggle && checked) || !toggle) ?
             <StyledSettingsIcon src={settings} float={'right'} onClick={this.settingsClick} />
             : null
           }
@@ -108,7 +110,11 @@ class Box extends React.PureComponent<Props, State> {
           : null
         }
         <StyledContent>
-          {children}
+          {
+            toggle && !checked
+            ? disabledContent
+            : children
+          }
         </StyledContent>
       </StyledWrapper>
     )

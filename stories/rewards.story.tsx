@@ -19,10 +19,12 @@ import List from '../components/rewards/list';
 import Select from '../components/rewards/select';
 import Tokens from '../components/rewards/tokens';
 import Checkbox from '../components/rewards/checkbox';
+import DisabledContent from '../components/rewards/disabledContent';
+
+const donate = require('./assets/img/rewards_donate.svg')
 
 addDecorator(withKnobs)
 addDecorator(BetterVisualizer)
-
 
 storiesOf('Rewards', module)
   .add('Toggle', withState({ checked: false }, (store) => {
@@ -101,3 +103,12 @@ storiesOf('Rewards', module)
     </Checkbox>
     </div>
   }))
+  .add('Disabled content',() => {
+    return <DisabledContent
+      image={donate}
+      theme={{color: '#AC9CCF', boldColor: '#696fdc'}}
+    >
+      • Donate on the spot as you find gems. <br/>
+      • <b>Enable Tips </b> on Twitter, YouTube, and more, to give tips to posts you ‘Like’.
+    </DisabledContent>
+  })
