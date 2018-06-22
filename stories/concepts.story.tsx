@@ -10,10 +10,12 @@ import { withKnobs } from '@storybook/addon-knobs'
 import * as React from 'react'
 import PrivateTab from './concepts/pages/privateTab/index'
 import BraveShields from './concepts/features/braveShields';
+import Settings from './concepts/pages/RewardsSettings';
 
 addDecorator(withKnobs)
 
 storiesOf('Concepts/Pages', module)
   .add('Private Tab', () => <PrivateTab />)
+  .add('Rewards Settings', () => <Settings />)
 storiesOf('Concepts/Features', module)
   .add('Brave Shields Panel', () => <BraveShields />)

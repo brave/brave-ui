@@ -3,6 +3,8 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
+import { setTheme } from '../../helpers';
+import { Props } from './index';
 
 export const StyledWrapper = styled.div`
   width: 100%;
@@ -17,6 +19,7 @@ export const StyledWrapper = styled.div`
   align-content: flex-start;
   flex-wrap: wrap;
   padding: 30px 36px;
+  margin-bottom: 28px;
 ` as any
 
 export const StyledLeft = styled.div`
@@ -36,7 +39,7 @@ export const StyledTitle = styled.div`
   font-weight: 600;
   line-height: 1.27;
   letter-spacing: normal;
-  color: #9752cb;
+  color: ${(p: Props) => setTheme(p.theme, 'titleColor') || '#4b4c5c'};
 ` as any
 
 export const StyledBreak = styled.div`
