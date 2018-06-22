@@ -12,6 +12,7 @@ import * as React from 'react'
 import NewPrivateTab from './concepts/aboutPages/newPrivateTab/index'
 import WelcomePage from './concepts/aboutPages/welcomePage/index'
 import BraveShields from './concepts/features/braveShields'
+import Settings from './concepts/pages/RewardsSettings'
 
 addDecorator(withKnobs)
 
@@ -21,5 +22,6 @@ addDecorator(BetterPageVisualizer)
 storiesOf('Concepts/Pages', module)
   .add('New Private Tab', () => <NewPrivateTab />)
   .add('Welcome Page', () => <WelcomePage />)
+  .add('Rewards Settings', () => <Settings />)
 storiesOf('Concepts/Features', module)
   .add('Brave Shields Panel', () => <BraveShields />)

@@ -18,6 +18,7 @@ export interface Props {
 class Tokens extends React.PureComponent<Props, {}> {
   render () {
     const { id, converted, value, currency } = this.props
+    const defaultCurrency = 'USD'
 
     return (
       <div id={id}>
@@ -27,7 +28,7 @@ class Tokens extends React.PureComponent<Props, {}> {
         {
           converted
           ? <StyledContent>
-            ~{converted} {currency}
+            ~{converted} {currency || defaultCurrency}
           </StyledContent>
           : null
         }

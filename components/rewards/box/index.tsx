@@ -19,15 +19,20 @@ import { StyledWrapper,
 import Checkbox from '../checkbox'
 
 const close = require('./assets/close.svg')
+const settings = require('./assets/settings.svg')
+
+export interface Theme {
+  titleColor: string
+}
 
 export interface Props {
   id?: string
   title: string
+  theme?: Theme
   description?: string
   toggle?: boolean
   checked?: boolean
-  toggleClick?: () => void
-  settingsIcon?: string
+  onToggle?: () => void
   settingsChild?: React.ReactNode
   children?: React.ReactNode
 }
@@ -58,22 +63,22 @@ class Box extends React.PureComponent<Props, State> {
       title,
       toggle,
       checked,
-      toggleClick,
-      settingsIcon,
+      onToggle,
       settingsChild,
       description,
+      theme,
       children
     } = this.props
 
     return (
       <StyledWrapper id={id}>
         <StyledLeft>
-          <StyledTitle>{title}</StyledTitle>
+          <StyledTitle theme={theme}>{title}</StyledTitle>
         </StyledLeft>
         <StyledRight>
           {
             toggle ?
-            <Checkbox onClick={toggleClick} checked={checked} />
+            <Checkbox onClick={onToggle} checked={checked} />
             : null
           }
         </StyledRight>
@@ -85,8 +90,8 @@ class Box extends React.PureComponent<Props, State> {
         </StyledLeft>
         <StyledRight>
           {
-            settingsIcon ?
-            <StyledSettingsIcon src={settingsIcon} float={'right'} onClick={this.settingsClick} />
+            settingsChild ?
+            <StyledSettingsIcon src={settings} float={'right'} onClick={this.settingsClick} />
             : null
           }
         </StyledRight>
@@ -95,7 +100,7 @@ class Box extends React.PureComponent<Props, State> {
           ? <StyledSettingsWrapper>
               <StyledSettingsClose src={close} onClick={this.settingsClick} />
               <StyledSettingsTitle>
-                <StyledSettingsIcon src={settingsIcon} />
+                <StyledSettingsIcon src={settings} />
                 <StyledSettingsText>{title} Settings</StyledSettingsText>
               </StyledSettingsTitle>
               {settingsChild}
