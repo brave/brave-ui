@@ -18,15 +18,21 @@ import Select from '../../../../components/rewards/select';
 import Checkbox from '../../../../components/rewards/checkbox';
 import DisabledContent from '../../../../components/rewards/disabledContent';
 import MainToggle from '../../../../components/rewards/mainToggle';
+import Panel from '../../../../components/rewards/panel';
 
 // Images
 const donateImg = require('../../../assets/img/rewards_donate.svg')
 const adsImg = require('../../../assets/img/rewards_ads.svg')
 const contributeImg = require('../../../assets/img/rewards_contribute.svg')
+const wallet = require('../../../assets/img/rewards_wallet.svg')
+const activity = require('../../../assets/img/rewards_activity.svg')
+const funds = require('../../../assets/img/rewards_funds.svg')
+const gear = require('../../../assets/img/rewards_gear.svg')
 
 interface State {
   adsToggle: boolean
   contributeToggle: boolean
+  mainToggle: boolean
 }
 
 class Settings extends React.PureComponent<{}, State> {
@@ -34,7 +40,8 @@ class Settings extends React.PureComponent<{}, State> {
     super(props)
     this.state = {
       adsToggle: true,
-      contributeToggle: true
+      contributeToggle: true,
+      mainToggle: true
     }
   }
 
@@ -130,7 +137,10 @@ class Settings extends React.PureComponent<{}, State> {
       <div style={{maxWidth: '1000px', margin: '50px auto'}}>
         <Grid columns={3} theme={{gridGap: '32px'}}>
           <Column size={2} theme={{justifyContent: 'center', flexWrap: 'wrap'}}>
-            <MainToggle onToggle={() => {}} enabled={true} />
+            <MainToggle
+              onToggle={() => {this.setState({mainToggle: !this.state.mainToggle})}}
+              enabled={this.state.mainToggle}
+            />
             <Box
               title={locale.adsTitle}
               theme={{titleColor: '#9752cb'}}
@@ -181,7 +191,36 @@ class Settings extends React.PureComponent<{}, State> {
             </Box>
           </Column>
           <Column size={1}>
-            Panel
+            <Panel
+              title={'Your Wallet'}
+              balanceTitle={'balance'}
+              tokens={25}
+              actions={[
+                {
+                  name: 'Add funds',
+                  action: () => {},
+                  icon: wallet
+                },
+                {
+                  name: 'Withdraw Funds',
+                  action: () => {},
+                  icon: funds
+                },
+                {
+                  name: 'Wallet Activity',
+                  action: () => {},
+                  icon: activity
+                },
+                {
+                  name: 'Backup & Restore',
+                  action: () => {},
+                  icon: gear
+                }
+              ]}
+              showCopy={true}
+            >
+             Some content
+            </Panel>
           </Column>
         </Grid>
       </div>

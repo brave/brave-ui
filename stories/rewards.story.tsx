@@ -4,7 +4,7 @@
 
 // Storybook requires
 import { storiesOf, addDecorator } from '@storybook/react'
-import { withKnobs, boolean, select, text, object } from '@storybook/addon-knobs'
+import { withKnobs, boolean, select, text, object, number } from '@storybook/addon-knobs'
 
 import * as React from 'react'
 import { withState } from '@dump247/storybook-state'
@@ -22,8 +22,13 @@ import Checkbox from '../components/rewards/checkbox';
 import DisabledContent from '../components/rewards/disabledContent';
 import MainToggle from '../components/rewards/mainToggle';
 import Alert from '../components/rewards/alert';
+import Panel from '../components/rewards/panel';
 
 const donate = require('./assets/img/rewards_donate.svg')
+const wallet = require('./assets/img/rewards_wallet.svg')
+const activity = require('./assets/img/rewards_activity.svg')
+const funds = require('./assets/img/rewards_funds.svg')
+const gear = require('./assets/img/rewards_gear.svg')
 
 addDecorator(withKnobs)
 addDecorator(BetterVisualizer)
@@ -129,4 +134,37 @@ storiesOf('Rewards', module)
     >
       <b>Funds received!</b> 25 tokens are added to your wallet successfully.
     </Alert>
+  })
+  .add('Panel',() => {
+    return <Panel
+      title={text('Panel title', 'Your Wallet')}
+      showTm={boolean('Show tm', true)}
+      balanceTitle={text('Balance title', 'balance')}
+      tokens={number('Tokens', 25)}
+      actions={[
+        {
+          name: 'Add funds',
+          action: () => {},
+          icon: wallet
+        },
+        {
+          name: 'Withdraw Funds',
+          action: () => {},
+          icon: funds
+        },
+        {
+          name: 'Wallet Activity',
+          action: () => {},
+          icon: activity
+        },
+        {
+          name: 'Backup & Restore',
+          action: () => {},
+          icon: gear
+        }
+      ]}
+      showCopy={boolean('Show uphold', false)}
+    >
+     Some content
+    </Panel>
   })
