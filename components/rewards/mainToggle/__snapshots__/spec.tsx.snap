@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainToggle tests basic tests matches the snapshot 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border-radius: 6px;
+  background-color: #dee2e6;
+  border: solid 1px #dbdfe3;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  padding: 22px 30px 18px 34px;
+  margin-bottom: 25px;
+}
+
+.c1 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 {
+  padding: 10px 0 0;
+}
+
+.c2 {
+  font-family: Poppins;
+  font-size: 28px;
+  font-weight: 600;
+  -webkit-letter-spacing: 0.2px;
+  -moz-letter-spacing: 0.2px;
+  -ms-letter-spacing: 0.2px;
+  letter-spacing: 0.2px;
+  color: #4b4c5c;
+  margin: 4px 0 0 11px;
+}
+
+.c3 {
+  font-size: 10px;
+  font-weight: 300;
+  -webkit-letter-spacing: 0.2px;
+  -moz-letter-spacing: 0.2px;
+  -ms-letter-spacing: 0.2px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #222326;
+  vertical-align: text-top;
+}
+
+.c5 {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 24px;
+}
+
+.c6 {
+  background: #A7ACB2;
+  width: 100%;
+  border-radius: 3px;
+  height: 8px;
+  margin-top: 8px;
+}
+
+.c7 {
+  position: relative;
+  z-index: 2;
+  border-radius: 50%;
+  -webkit-transition: 200ms ease-out;
+  transition: 200ms ease-out;
+  background-color: #CDD1D5;
+  -webkit-transform: translate(0,calc(-50% - 4px));
+  -ms-transform: translate(0,calc(-50% - 4px));
+  transform: translate(0,calc(-50% - 4px));
+  width: 24px;
+  height: 24px;
+}
+
+<div
+  className="c0"
+  id="mainToggle"
+>
+  <div
+    className="c1"
+  >
+    <img
+      className=""
+      src="test-file-stub"
+    />
+    <div
+      className="c2"
+    >
+      Brave Rewards 
+      <span
+        className="c3"
+      >
+        TM
+      </span>
+    </div>
+  </div>
+  <div
+    className="c4"
+  >
+    <div
+      checked={undefined}
+      className="c5"
+      disabled={undefined}
+      id={undefined}
+      onClick={undefined}
+      size="medium"
+    >
+      <div
+        className="c6"
+        size="medium"
+      />
+      <div
+        checked={undefined}
+        className="c7"
+        size="medium"
+      />
+    </div>
+  </div>
+</div>
+`;

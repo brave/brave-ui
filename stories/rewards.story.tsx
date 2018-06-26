@@ -21,6 +21,7 @@ import Tokens from '../components/rewards/tokens';
 import Checkbox from '../components/rewards/checkbox';
 import DisabledContent from '../components/rewards/disabledContent';
 import MainToggle from '../components/rewards/mainToggle';
+import Alert from '../components/rewards/alert';
 
 const donate = require('./assets/img/rewards_donate.svg')
 
@@ -113,7 +114,7 @@ storiesOf('Rewards', module)
       • <b>Enable Tips </b> on Twitter, YouTube, and more, to give tips to posts you ‘Like’.
     </DisabledContent>
   })
-  .add('Main toggle',withState({ checked: false }, (store) => {
+  .add('Main toggle', withState({ checked: false }, (store) => {
     return <MainToggle
       enabled={boolean('Enable', store.state.checked)}
       onToggle={() => (
@@ -121,3 +122,11 @@ storiesOf('Rewards', module)
       )}
     />
   }))
+  .add('Alert',() => {
+    return <Alert
+      type={select('Type', {error: 'error', success: 'success'}, 'success')}
+      onClose={() => {}}
+    >
+      <b>Funds received!</b> 25 tokens are added to your wallet successfully.
+    </Alert>
+  })
