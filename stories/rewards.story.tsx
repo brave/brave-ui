@@ -20,6 +20,7 @@ import Select from '../components/rewards/select';
 import Tokens from '../components/rewards/tokens';
 import Checkbox from '../components/rewards/checkbox';
 import DisabledContent from '../components/rewards/disabledContent';
+import MainToggle from '../components/rewards/mainToggle';
 
 const donate = require('./assets/img/rewards_donate.svg')
 
@@ -112,3 +113,11 @@ storiesOf('Rewards', module)
       • <b>Enable Tips </b> on Twitter, YouTube, and more, to give tips to posts you ‘Like’.
     </DisabledContent>
   })
+  .add('Main toggle',withState({ checked: false }, (store) => {
+    return <MainToggle
+      enabled={boolean('Enable', store.state.checked)}
+      onToggle={() => (
+        store.set({ checked: !store.state.checked })
+      )}
+    />
+  }))
