@@ -18,7 +18,7 @@ export interface Props {
   children: React.ReactNode
 }
 
-class DisabledContent extends React.PureComponent<Props, {}> {
+export default class DisabledContent extends React.PureComponent<Props, {}> {
   render () {
     const { id, image, theme, children } = this.props
 
@@ -38,5 +38,3 @@ class DisabledContent extends React.PureComponent<Props, {}> {
     )
   }
 }
-
-export default DisabledContent

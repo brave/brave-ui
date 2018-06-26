@@ -13,7 +13,7 @@ export interface Props {
   onClick?: () => void
 }
 
-class Toggle extends React.PureComponent<Props, {}> {
+export default class Toggle extends React.PureComponent<Props, {}> {
   render () {
     const { id, onClick, size, disabled, checked } = this.props
 
@@ -36,5 +36,3 @@ class Toggle extends React.PureComponent<Props, {}> {
     )
   }
 }
-
-export default Toggle

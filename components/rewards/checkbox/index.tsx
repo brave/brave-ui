@@ -22,7 +22,7 @@ interface State {
   TODO
   - make sure that props update is prepared into the state
  */
-class Checkbox extends React.PureComponent<Props, State> {
+export default class Checkbox extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props)
 
@@ -87,5 +87,3 @@ class Checkbox extends React.PureComponent<Props, State> {
     )
   }
 }
-
-export default Checkbox
