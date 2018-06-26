@@ -17,6 +17,7 @@ import Tokens from '../../../../components/rewards/tokens';
 import Select from '../../../../components/rewards/select';
 import Checkbox from '../../../../components/rewards/checkbox';
 import DisabledContent from '../../../../components/rewards/disabledContent';
+import MainToggle from '../../../../components/rewards/mainToggle';
 
 // Images
 const donateImg = require('../../../assets/img/rewards_donate.svg')
@@ -129,6 +130,7 @@ class Settings extends React.PureComponent<{}, State> {
       <div style={{maxWidth: '1000px', margin: '50px auto'}}>
         <Grid columns={3} theme={{gridGap: '32px'}}>
           <Column size={2} theme={{justifyContent: 'center', flexWrap: 'wrap'}}>
+            <MainToggle onToggle={() => {}} enabled={true} />
             <Box
               title={locale.adsTitle}
               theme={{titleColor: '#9752cb'}}
