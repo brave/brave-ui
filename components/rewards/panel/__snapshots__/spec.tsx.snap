@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Panel tests basic tests matches the snapshot 1`] = `
+.c0 {
+  font-family: Poppins;
+  width: 373px;
+}
+
+.c1 {
+  border-radius: 6px;
+  background-color: #f9fbfc;
+  box-shadow: 0 0 8px 0 rgba(99,105,110,0.12);
+  overflow: hidden;
+  width: 100%;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  background: url(test-file-stub) no-repeat top left,linear-gradient(152deg,#392dd1,rgba(255,26,26,0.53)),linear-gradient(#7d7bdc,#7d7bdc);
+  padding: 10px 16px 15px 29px;
+}
+
+.c3 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1;
+  -webkit-letter-spacing: -0.2px;
+  -moz-letter-spacing: -0.2px;
+  -ms-letter-spacing: -0.2px;
+  letter-spacing: -0.2px;
+  color: #ffffff;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  padding: 13px 0 0;
+  height: 42px;
+  overflow: hidden;
+  line-height: 1;
+}
+
+.c4 {
+  font-size: 6px;
+  font-weight: 500;
+  -webkit-letter-spacing: 0.6px;
+  -moz-letter-spacing: 0.6px;
+  -ms-letter-spacing: 0.6px;
+  letter-spacing: 0.6px;
+  color: #ffffff;
+  vertical-align: text-top;
+}
+
+.c5 {
+  text-align: left;
+}
+
+.c6 {
+  opacity: 0.63;
+  font-size: 12px;
+  line-height: 1.83;
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+
+.c7 {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.83;
+  color: #ffffff;
+}
+
+.c7 b {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 0.85;
+  -webkit-letter-spacing: -0.3px;
+  -moz-letter-spacing: -0.3px;
+  -ms-letter-spacing: -0.3px;
+  letter-spacing: -0.3px;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.c8 {
+  padding: 31px 28px 19px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    id="panel"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <span
+          className="c4"
+        >
+           
+        </span>
+      </div>
+      <div
+        className="c5"
+      >
+        <div
+          className="c6"
+        />
+        <div
+          className="c7"
+        >
+          <b>
+            00.00
+          </b>
+           tokens
+        </div>
+      </div>
+    </div>
+    <div
+      className="c8"
+    />
+  </div>
+</div>
+`;
