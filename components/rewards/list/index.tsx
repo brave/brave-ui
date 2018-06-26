@@ -12,7 +12,7 @@ export interface Props {
   onClick?: () => void
 }
 
-class List extends React.PureComponent<Props, {}> {
+export default class List extends React.PureComponent<Props, {}> {
   render () {
     const { id, onClick, title, children } = this.props
 
@@ -34,5 +34,3 @@ class List extends React.PureComponent<Props, {}> {
     )
   }
 }
-
-export default List
