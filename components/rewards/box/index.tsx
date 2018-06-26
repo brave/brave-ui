@@ -46,7 +46,7 @@ interface State {
   TODO
   - add local
  */
-class Box extends React.PureComponent<Props, State> {
+export default class Box extends React.PureComponent<Props, State> {
   constructor (props: Props) {
     super(props)
     this.state = {
@@ -120,5 +120,3 @@ class Box extends React.PureComponent<Props, State> {
     )
   }
 }
-
-export default Box

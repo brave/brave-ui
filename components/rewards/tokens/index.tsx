@@ -15,7 +15,7 @@ export interface Props {
   TODO
   - add local
  */
-class Tokens extends React.PureComponent<Props, {}> {
+export default class Tokens extends React.PureComponent<Props, {}> {
   render () {
     const { id, converted, value, currency } = this.props
     const defaultCurrency = 'USD'
@@ -36,5 +36,3 @@ class Tokens extends React.PureComponent<Props, {}> {
     )
   }
 }
-
-export default Tokens

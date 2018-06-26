@@ -34,7 +34,7 @@ interface State {
   - add autoFocus
   - make sure that props update is prepared into the state
  */
-class Select extends React.PureComponent<Props, State> {
+export default class Select extends React.PureComponent<Props, State> {
   constructor (props: Props) {
     super(props)
 
@@ -134,5 +134,3 @@ class Select extends React.PureComponent<Props, State> {
     )
   }
 }
-
-export default Select
