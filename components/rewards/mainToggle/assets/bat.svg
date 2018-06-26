@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="48px" viewBox="0 0 50 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>bat</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="settings" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1-full" transform="translate(-257.000000, -243.000000)">
+            <g id="BR-header" transform="translate(223.000000, 221.000000)">
+                <g id="bat" transform="translate(34.000000, 22.000000)">
+                    <polygon id="Fill-1" fill="#373743" opacity="0.2" points="37.5498652 47.7954326 49.9803299 47.824907 44.7417982 38.1285593 0.0624330897 38.1893275"></polygon>
+                    <polygon id="Fill-4" fill="#9E1F63" points="24.009563 0 24 26.0539419 47 39"></polygon>
+                    <polygon id="Fill-5" fill="#FB542B" points="0 39 22.9782255 26.0912273 23 0"></polygon>
+                    <polygon id="Fill-6" fill="#662D91" points="1 39 45 38.9978472 23.0436323 27"></polygon>
+                    <g id="Group-2" transform="translate(14.000000, 16.000000)">
+                        <polygon id="Fill-7" fill="#FFFFFF" points="9.42576368 0 0 15 19 15"></polygon>
+                        <polygon id="Stroke-8" stroke="#999EA2" stroke-width="0.88" points="9.42576368 0 0 15 19 15"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
