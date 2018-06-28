@@ -15,7 +15,7 @@ export const StyledWrapper = styled.div`
   align-items: flex-start;
   align-content: flex-start;
   flex-wrap: nowrap;
-  padding: 22px 30px 18px 34px;
+  padding: 22px 34px 18px;
   margin-bottom: 25px;
 ` as any
 
