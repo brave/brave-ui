@@ -59,6 +59,26 @@ class Settings extends React.PureComponent<{}, State> {
               <div data-value='5'>5 ads daily (5 tokens/month)</div>
               <div data-value='1'>1 ads daily (1 token/month)</div>
             </Select>
+            <Select title={locale.adsMode}>
+              <div data-value='1'>Notifications</div>
+              <div data-value='2'>Page</div>
+              <div data-value='3'>Sounds</div>
+            </Select>
+            <Select title={locale.adsFreq}>
+              <div data-value='10'>10 ads daily (10 tokens/month)</div>
+              <div data-value='5'>5 ads daily (5 tokens/month)</div>
+              <div data-value='1'>1 ads daily (1 token/month)</div>
+            </Select>
+            <Select title={locale.adsMode}>
+              <div data-value='1'>Notifications</div>
+              <div data-value='2'>Page</div>
+              <div data-value='3'>Sounds</div>
+            </Select>
+            <Select title={locale.adsFreq}>
+              <div data-value='10'>10 ads daily (10 tokens/month)</div>
+              <div data-value='5'>5 ads daily (5 tokens/month)</div>
+              <div data-value='1'>1 ads daily (1 token/month)</div>
+            </Select>
           </Column>
         </Grid>
     </>
