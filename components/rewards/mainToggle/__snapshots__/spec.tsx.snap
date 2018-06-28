@@ -25,7 +25,7 @@ exports[`MainToggle tests basic tests matches the snapshot 1`] = `
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  padding: 22px 30px 18px 34px;
+  padding: 22px 34px 18px;
   margin-bottom: 25px;
 }
 

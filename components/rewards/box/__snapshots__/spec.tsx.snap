@@ -5,32 +5,37 @@ exports[`Box tests basic tests matches the snapshot 1`] = `
   width: 100%;
   position: relative;
   height: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   border-radius: 6px;
   background-color: #ffffff;
   box-shadow: 0 0 8px 0 rgba(99,105,110,0.12);
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-align-content: flex-start;
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   padding: 30px 36px;
   margin-bottom: 28px;
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200%;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.c3 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -43,13 +48,13 @@ exports[`Box tests basic tests matches the snapshot 1`] = `
   flex-basis: 50%;
 }
 
-.c3 {
+.c5 {
   -webkit-flex-basis: 40px;
   -ms-flex-preferred-size: 40px;
   flex-basis: 40px;
 }
 
-.c2 {
+.c4 {
   height: 36px;
   font-family: Poppins;
   font-size: 22px;
@@ -62,12 +67,12 @@ exports[`Box tests basic tests matches the snapshot 1`] = `
   color: #4b4c5c;
 }
 
-.c4 {
+.c6 {
   width: 100%;
   display: block;
 }
 
-.c5 {
+.c7 {
   width: 100%;
   padding-right: 20px;
   font-family: Muli;
@@ -80,7 +85,13 @@ exports[`Box tests basic tests matches the snapshot 1`] = `
   color: #a4aeb8;
 }
 
-.c6 {
+.c12 {
+  width: 20px;
+  float: none;
+  margin-top: 8px;
+}
+
+.c8 {
   -webkit-flex-basis: 100%;
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
@@ -89,6 +100,41 @@ exports[`Box tests basic tests matches the snapshot 1`] = `
   -ms-flex-positive: 1;
   flex-grow: 1;
   margin-top: 25px;
+}
+
+.c9 {
+  background: #fff;
+  overflow: hidden;
+  height: 0;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c10 {
+  display: none;
+  position: absolute;
+  right: 35px;
+  top: 35px;
+  width: 13px;
+  height: 13px;
+}
+
+.c11 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.c13 {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.75;
+  color: #4b4c5c;
+  position: relative;
+  top: -4px;
+  display: inline-block;
+  margin-left: 20px;
 }
 
 <div
@@ -100,28 +146,62 @@ exports[`Box tests basic tests matches the snapshot 1`] = `
   >
     <div
       className="c2"
+      open={true}
     >
-      test
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          test
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+      <div
+        className="c6"
+      />
+      <div
+        className="c3"
+      >
+        <div
+          className="c7"
+        />
+      </div>
+      <div
+        className="c5"
+      />
+      <div
+        className="c8"
+      />
+    </div>
+    <div
+      className="c9"
+      open={false}
+    >
+      <img
+        className="c10"
+        onClick={[Function]}
+        open={false}
+        src="test-file-stub"
+      />
+      <div
+        className="c11"
+      >
+        <img
+          className="c12"
+          src="test-file-stub"
+        />
+        <span
+          className="c13"
+        >
+          test
+           Settings
+        </span>
+      </div>
     </div>
   </div>
-  <div
-    className="c3"
-  />
-  <div
-    className="c4"
-  />
-  <div
-    className="c1"
-  >
-    <div
-      className="c5"
-    />
-  </div>
-  <div
-    className="c3"
-  />
-  <div
-    className="c6"
-  />
 </div>
 `;

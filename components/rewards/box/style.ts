@@ -10,16 +10,24 @@ export const StyledWrapper = styled.div`
   width: 100%;
   position: relative;
   height: auto;
-  display: flex;
   border-radius: 6px;
   background-color: #ffffff;
   box-shadow: 0 0 8px 0 rgba(99, 105, 110, 0.12);
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-  flex-wrap: wrap;
   padding: 30px 36px;
   margin-bottom: 28px;
+` as any
+
+export const StyledFlip = styled.div`
+  display: flex;
+  width: 200%;
+` as any
+
+export const StyledContentWrapper = styled.div`
+  display: flex;
+  height: ${(p: {open: boolean}) => p.open ? 'auto' : '0'};
+  flex-basis: ${(p: {open: boolean}) => p.open ? '50%' : '0'};
+  flex-wrap: wrap;
+  overflow: hidden;
 ` as any
 
 export const StyledLeft = styled.div`
@@ -70,17 +78,14 @@ export const StyledContent = styled.div`
 ` as any
 
 export const StyledSettingsWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background: #fff;
-  padding: 28px;
-  z-index: 5;
+  overflow: hidden;
+  height: ${(p: {open: boolean}) => p.open ? 'auto' : '0'};
+  flex-basis: ${(p: {open: boolean}) => p.open ? '50%' : '0'};
 ` as any
 
 export const StyledSettingsClose = styled.img`
+  display: ${(p: {open: boolean}) => p.open ? 'block' : 'none'};
   position: absolute;
   right: 35px;
   top: 35px;

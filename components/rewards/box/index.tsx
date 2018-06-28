@@ -14,7 +14,9 @@ import { StyledWrapper,
   StyledSettingsWrapper,
   StyledSettingsClose,
   StyledSettingsTitle,
-  StyledSettingsText
+  StyledSettingsText,
+  StyledContentWrapper,
+  StyledFlip
 } from './style'
 import Checkbox from '../toggle'
 
@@ -45,6 +47,7 @@ interface State {
 /*
   TODO
   - add local
+  - add fade effect
  */
 export default class Box extends React.PureComponent<Props, State> {
   constructor (props: Props) {
@@ -74,48 +77,48 @@ export default class Box extends React.PureComponent<Props, State> {
 
     return (
       <StyledWrapper id={id}>
-        <StyledLeft>
-          <StyledTitle theme={theme}>{title}</StyledTitle>
-        </StyledLeft>
-        <StyledRight>
-          {
-            toggle ?
-            <Checkbox onClick={onToggle} checked={checked} />
-            : null
-          }
-        </StyledRight>
-        <StyledBreak />
-        <StyledLeft>
-          <StyledDescription>
-          {description}
-          </StyledDescription>
-        </StyledLeft>
-        <StyledRight>
-          {
-            settingsChild && ((toggle && checked) || !toggle) ?
-            <StyledSettingsIcon src={settings} float={'right'} onClick={this.settingsClick} />
-            : null
-          }
-        </StyledRight>
-        {
-          this.state.settingsOpened
-          ? <StyledSettingsWrapper>
-              <StyledSettingsClose src={close} onClick={this.settingsClick} />
+        <StyledFlip>
+          <StyledContentWrapper open={!this.state.settingsOpened}>
+            <StyledLeft>
+              <StyledTitle theme={theme}>{title}</StyledTitle>
+            </StyledLeft>
+            <StyledRight>
+              {
+                toggle ?
+                <Checkbox onClick={onToggle} checked={checked} />
+                : null
+              }
+            </StyledRight>
+            <StyledBreak />
+            <StyledLeft>
+              <StyledDescription>
+              {description}
+              </StyledDescription>
+            </StyledLeft>
+            <StyledRight>
+              {
+                settingsChild && ((toggle && checked) || !toggle) ?
+                <StyledSettingsIcon src={settings} float={'right'} onClick={this.settingsClick} />
+                : null
+              }
+            </StyledRight>
+            <StyledContent>
+              {
+                toggle && !checked
+                ? disabledContent
+                : children
+              }
+            </StyledContent>
+          </StyledContentWrapper>
+          <StyledSettingsWrapper open={this.state.settingsOpened}>
+              <StyledSettingsClose src={close} onClick={this.settingsClick} open={this.state.settingsOpened} />
               <StyledSettingsTitle>
                 <StyledSettingsIcon src={settings} />
                 <StyledSettingsText>{title} Settings</StyledSettingsText>
               </StyledSettingsTitle>
               {settingsChild}
           </StyledSettingsWrapper>
-          : null
-        }
-        <StyledContent>
-          {
-            toggle && !checked
-            ? disabledContent
-            : children
-          }
-        </StyledContent>
+        </StyledFlip>
       </StyledWrapper>
     )
   }
