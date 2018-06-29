@@ -80,7 +80,7 @@ export default class Box extends React.PureComponent<Props, State> {
         <StyledFlip>
           <StyledContentWrapper open={!this.state.settingsOpened}>
             <StyledLeft>
-              <StyledTitle theme={theme}>{title}</StyledTitle>
+              <StyledTitle theme={theme} checked={checked}>{title}</StyledTitle>
             </StyledLeft>
             <StyledRight>
               {
