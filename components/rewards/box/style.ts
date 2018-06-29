@@ -47,7 +47,11 @@ export const StyledTitle = styled.div`
   font-weight: 600;
   line-height: 1.27;
   letter-spacing: normal;
-  color: ${(p: Props) => setTheme(p.theme, 'titleColor') || '#4b4c5c'};
+  color: ${(p: Props) => {
+    if (p.checked === false) return '#838391'
+    
+    return setTheme(p.theme, 'titleColor') || '#4b4c5c'
+  }}
 ` as any
 
 export const StyledBreak = styled.div`
