@@ -24,6 +24,7 @@ import MainToggle from '../components/rewards/mainToggle';
 import Alert from '../components/rewards/alert';
 import Panel from '../components/rewards/panel';
 import Tooltip from '../components/rewards/tooltip';
+import Table, { Cell } from '../components/rewards/table';
 
 const donate = require('./assets/img/rewards_donate.svg')
 const wallet = require('./assets/img/rewards_wallet.svg')
@@ -178,4 +179,71 @@ storiesOf('Rewards', module)
         I have tooltip
       </div>
     </Tooltip>
+  })
+  .add('Table',() => {
+    const rowTheme = {
+      'text-align': 'right',
+      'padding-left': '9px'
+    }
+
+    const body: Cell[][] = [
+      [
+        {
+          content: 'Baker'
+        },
+        {
+          content: '40%',
+          theme: rowTheme
+        },
+        {
+          content: '4',
+          theme: rowTheme
+        }
+      ],
+      [
+        {
+          content: 'duckduckgo.com'
+        },
+        {
+          content: '20%',
+          theme: rowTheme
+        },
+        {
+          content: '2',
+          theme: rowTheme
+        }
+      ]
+    ]
+
+    const header: Cell[] = [
+      {
+        content: 'Site visited',
+        theme: {
+          color: '#9f22a1'
+        }
+      },
+      {
+        content: 'Attentions',
+        theme: {
+          'text-align': 'right',
+          color: '#9f22a1'
+        }
+      },
+      {
+        content: 'Tokens',
+        theme: {
+          'text-align': 'right',
+          color: '#9f22a1'
+        }
+      }
+    ]
+
+    return <div style={{width: '595px'}}>
+      <Table
+        header={object('Header', header)}
+        rows={object('Rows', body)}
+      >
+        404: Publishers not found :)
+      </Table>
+    </div>
   })
