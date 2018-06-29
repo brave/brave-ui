@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
 import Tooltip from './index'
 
-describe('List tests', () => {
+describe('Tooltip tests', () => {
   const baseComponent = (props?: object) => <Tooltip id='tooltip' {...props} />
 
   describe('basic tests', () => {
