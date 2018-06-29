@@ -23,6 +23,7 @@ import DisabledContent from '../components/rewards/disabledContent';
 import MainToggle from '../components/rewards/mainToggle';
 import Alert from '../components/rewards/alert';
 import Panel from '../components/rewards/panel';
+import Tooltip from '../components/rewards/tooltip';
 
 const donate = require('./assets/img/rewards_donate.svg')
 const wallet = require('./assets/img/rewards_wallet.svg')
@@ -167,4 +168,14 @@ storiesOf('Rewards', module)
     >
      Some content
     </Panel>
+  })
+  .add('Tooltip',() => {
+    return <Tooltip
+      position={select('Type', {left: 'left', right: 'right', top: 'top', bottom: 'bottom'}, 'bottom')}
+      content={'This is tooltip!'}
+    >
+      <div style={{border: '1px solid red'}}>
+        I have tooltip
+      </div>
+    </Tooltip>
   })
