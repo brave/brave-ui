@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
 import Checkbox from './index'
 
-describe('List tests', () => {
+describe('Checkbox tests', () => {
   const baseComponent = (props?: object) => <Checkbox
     value={{'yt': true, 'tw': false, 'inst': false}}
     id={'checkbox'}

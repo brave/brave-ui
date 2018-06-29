@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`List tests basic tests matches the snapshot 1`] = `
+exports[`Checkbox tests basic tests matches the snapshot 1`] = `
 .c0 {
   width: 100%;
   margin-bottom: 12px;

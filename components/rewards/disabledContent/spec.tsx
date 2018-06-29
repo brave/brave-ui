@@ -2,10 +2,10 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import List from './index'
+import DisabledContent from './index'
 
-describe('List tests', () => {
-  const baseComponent = (props?: object) => <List id='list' {...props} />
+describe('Disabled Content tests', () => {
+  const baseComponent = (props?: object) => <DisabledContent id='disabled' {...props} />
 
   describe('basic tests', () => {
     it('matches the snapshot', () => {
@@ -16,7 +16,7 @@ describe('List tests', () => {
 
     it('renders the component', () => {
       const wrapper = shallow(baseComponent())
-      const assertion = wrapper.find('#list').length
+      const assertion = wrapper.find('#disabled').length
       expect(assertion).toBe(1)
     })
   })
