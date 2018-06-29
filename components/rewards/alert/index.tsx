@@ -31,7 +31,6 @@ export default class Alert extends React.PureComponent<Props, {}> {
   render () {
     const { id, children, onClose } = this.props
 
-
     return (
       <StyledWrapper id={id}>
         <StyledIcon src={this.icon} />

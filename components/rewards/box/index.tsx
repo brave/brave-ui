@@ -3,6 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
+import * as CSS from 'csstype'
 import { StyledWrapper,
   StyledLeft,
   StyledRight,
@@ -24,7 +25,7 @@ const close = require('./assets/close.svg')
 const settings = require('./assets/settings.svg')
 
 export interface Theme {
-  titleColor: string
+  titleColor: CSS.Color
 }
 
 export interface Props {
