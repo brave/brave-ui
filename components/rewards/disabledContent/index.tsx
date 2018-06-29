@@ -3,12 +3,13 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
+import * as CSS from 'csstype'
 import { StyledWrapper, StyledImage, StyledContent } from './style'
 import { Column, Grid } from '../../gridSystem';
 
 interface Theme {
-  color: string
-  boldColor: string
+  color: CSS.Color
+  boldColor: CSS.Color
 }
 
 export interface Props {
