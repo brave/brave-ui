@@ -7,7 +7,6 @@ import styled from 'styled-components'
 export const StyledWrapper = styled.div`
   position: relative;
   display: flex;
-  height: 36px;
   border-bottom: solid 1px #cfd5da;  
   justify-content: space-between;
   align-items: flex-start;
@@ -19,11 +18,12 @@ export const StyledWrapper = styled.div`
 export const StyledTitle = styled.div`
   font-family: Poppins;
   font-size: 16px;
-  line-height: 1.75;
+  line-height: 1;
   color: #4b4c5c;
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 50%;
+  padding: 9px 0 15px;
 ` as any
 
 export const StyledContent = styled.div`
