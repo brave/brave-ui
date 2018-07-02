@@ -3,6 +3,8 @@
 exports[`Alert tests basic tests matches the snapshot 1`] = `
 .c0 {
   position: relative;
+  top: 0;
+  left: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11,10 +13,6 @@ exports[`Alert tests basic tests matches the snapshot 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
   -webkit-align-content: flex-start;
   -ms-flex-line-pack: start;
   align-content: flex-start;
