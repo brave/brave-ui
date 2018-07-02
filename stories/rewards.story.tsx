@@ -25,12 +25,14 @@ import Alert from '../components/rewards/alert';
 import Panel from '../components/rewards/panel';
 import Tooltip from '../components/rewards/tooltip';
 import Table, { Cell } from '../components/rewards/table';
+import Profile from '../components/rewards/profile';
 
 const donate = require('./assets/img/rewards_donate.svg')
 const wallet = require('./assets/img/rewards_wallet.svg')
 const activity = require('./assets/img/rewards_activity.svg')
 const funds = require('./assets/img/rewards_funds.svg')
 const gear = require('./assets/img/rewards_gear.svg')
+const bart = require('./assets/img/bartBaker.jpeg')
 
 addDecorator(withKnobs)
 addDecorator(BetterVisualizer)
@@ -245,5 +247,16 @@ storiesOf('Rewards', module)
       >
         404: Publishers not found :)
       </Table>
+    </div>
+  })
+  .add('Profile',() => {
+    return <div style={{width: '400px'}}>
+      <Profile
+      type={select('Type', {big: 'big', small: 'small', minimal: 'minimal'}, 'big')}
+      title={'Bart Baker'}
+      verified={boolean('Verified', false)}
+      provider={select('Provider', {youtube: 'YouTube', twitter: 'Twitter', twitch: 'Twitch'}, 'youtube')}
+      src={bart}
+    />
     </div>
   })
