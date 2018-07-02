@@ -14,7 +14,7 @@ interface ProfileCell {
   src: string
 }
 
-interface DetailCell {
+export interface DetailCell {
   profile?: ProfileCell,
   text?: string,
   onClick?: () => void
