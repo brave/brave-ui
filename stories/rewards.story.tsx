@@ -26,7 +26,8 @@ import Panel from '../components/rewards/panel';
 import Tooltip from '../components/rewards/tooltip';
 import Table, { Cell } from '../components/rewards/table';
 import Profile from '../components/rewards/profile';
-import ContributeTable, { DetailCell } from '../components/rewards/contributeTable';
+import ContributeTable, { DetailCell as ContributionDetailCell } from '../components/rewards/contributeTable';
+import DonationTable, { DetailCell as DonationDetailCell } from '../components/rewards/donationTable';
 
 const donate = require('./assets/img/rewards_donate.svg')
 const wallet = require('./assets/img/rewards_wallet.svg')
@@ -38,6 +39,7 @@ const ddgo = require('./assets/img/ddgo.jpg')
 const wiki = require('./assets/img/wiki.jpg')
 const buzz = require('./assets/img/buzz.jpg')
 const guardian = require('./assets/img/guardian.jpg')
+const eich = require('./assets/img/eich.jpg')
 
 addDecorator(withKnobs)
 addDecorator(BetterVisualizer)
@@ -182,7 +184,7 @@ storiesOf('Rewards/Utils', module)
   .add('Profile',() => {
     return <div style={{width: '400px'}}>
       <Profile
-      type={select('Type', {big: 'big', small: 'small', minimal: 'minimal'}, 'big')}
+      type={select('Type', {big: 'big', small: 'small', min: 'min'}, 'big')}
       title={'Bart Baker'}
       verified={boolean('Verified', false)}
       provider={select('Provider', {youtube: 'YouTube', twitter: 'Twitter', twitch: 'Twitch'}, 'youtube')}
@@ -276,7 +278,7 @@ storiesOf('Rewards/Tables', module)
       'Tokens'
     ]
 
-    const rows: DetailCell[][] = [
+    const rows: ContributionDetailCell[][] = [
       [
         {
           profile: {
@@ -368,5 +370,74 @@ storiesOf('Rewards/Tables', module)
       >
         Please visit some sites
       </ContributeTable>
+    </div>
+  })
+  .add('Donation',() => {
+    const rows: DonationDetailCell[][] = [
+      [
+        {
+          profile: {
+            name: 'Bart Baker',
+            verified: true,
+            provider: 'youtube',
+            src: bart
+          },
+          type: 'recurring'
+        },
+        {
+          onClick: () => {},
+          type: 'recurring'
+        },
+        {
+          text: 2,
+          type: 'recurring'
+        }
+      ],
+      [
+        {
+          profile: {
+            verified: false,
+            name: 'theguardian.com',
+            src: guardian
+          },
+          type: 'donation'
+        },
+        {
+          text: 'May 2',
+          type: 'donation'
+        },
+        {
+          text: 12,
+          type: 'donation'
+        }
+      ],
+      [
+        {
+          profile: {
+            verified: false,
+            name: '@BrendanEich',
+            provider: 'twitter',
+            src: eich
+          },
+          type: 'tip'
+        },
+        {
+          text: 'May 2',
+          type: 'tip'
+        },
+        {
+          text: 7,
+          type: 'tip'
+        }
+      ]
+    ]
+    return <div style={{width: '595px'}}>
+      <DonationTable
+        rows={object('Rows', rows)}
+        allItems={boolean('Are this all items?', false)}
+        numItems={number('Number of all items?', 55)}
+      >
+        Please visit some sites
+      </DonationTable>
     </div>
   })
