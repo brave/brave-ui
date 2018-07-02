@@ -17,14 +17,14 @@ import {
   StyledInlineVerified
 } from './style'
 
-type Provider = 'twitter' | 'youtube' | 'twitch'
+export type Provider = 'twitter' | 'youtube' | 'twitch'
 
 export interface Props {
   id?: string
   src?: string
   title: string
   type?: 'big' | 'small' |'minimal'
-  provider: Provider
+  provider?: Provider
   verified?: boolean
 }
 
@@ -75,13 +75,13 @@ export default class Profile extends React.PureComponent<Props, {}> {
         <StyledContent type={type}>
           <StyledTitleWrap type={type}>
             {
-              type === 'minimal'
+              provider && type === 'minimal'
               ? <StyledInlineImage src={this.getProviderImage(provider)} />
               : null
             }
             <StyledTitle type={type}>{title}</StyledTitle>
             {
-              type !== 'minimal'
+              provider && type !== 'minimal'
               ? <StyledProvider type={type}>{this.getProviderName(provider)}</StyledProvider>
               : null
             }

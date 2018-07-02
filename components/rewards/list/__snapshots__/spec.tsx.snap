@@ -7,7 +7,6 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 36px;
   border-bottom: solid 1px #cfd5da;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -29,7 +28,7 @@ exports[`List tests basic tests matches the snapshot 1`] = `
 .c1 {
   font-family: Poppins;
   font-size: 16px;
-  line-height: 1.75;
+  line-height: 1;
   color: #4b4c5c;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -41,6 +40,7 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   -webkit-flex-basis: 50%;
   -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
+  padding: 9px 0 15px;
 }
 
 .c2 {

@@ -69,12 +69,6 @@ exports[`Profile tests basic tests matches the snapshot 1`] = `
   color: #686978;
 }
 
-.c6 {
-  white-space: nowrap;
-  padding-left: 5px;
-  color: #b8b9c4;
-}
-
 <div
   className="c0"
   id="profile"
@@ -99,10 +93,6 @@ exports[`Profile tests basic tests matches the snapshot 1`] = `
     >
       <span
         className="c5"
-        type={undefined}
-      />
-      <span
-        className="c6"
         type={undefined}
       />
     </div>
