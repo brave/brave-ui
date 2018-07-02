@@ -3,12 +3,14 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
+import { Props } from './index';
 
 export const StyledWrapper = styled.div`
-  position: relative;
+  position: ${(p: Props) => p.theme && p.theme.position ? p.theme.position: 'relative'};
+  top: ${(p: Props) => p.theme && p.theme.top ? p.theme.top: 0};
+  left: ${(p: Props) => p.theme && p.theme.left ? p.theme.left: 0};
   display: flex; 
   justify-content: flex-start;
-  align-items: flex-start;
   align-content: flex-start;
   flex-wrap: nowrap;
   background-color: #ffffff;

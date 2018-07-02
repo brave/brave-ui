@@ -80,6 +80,7 @@ export const StyledBalanceTokens = styled.div`
 
 export const StyledContent = styled.div`
   padding: 31px 28px 19px;
+  position: relative;
 ` as any
 
 export const StyledFooter = styled.div`

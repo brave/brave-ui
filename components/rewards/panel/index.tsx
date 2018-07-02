@@ -47,9 +47,9 @@ export default class Panel extends React.PureComponent<Props, {}> {
     return tokens.toFixed(2)
   }
 
-  generateActions (actions: {icon: string, name: string, action: ()=> void}[]) {
-    return actions.map(action => {
-      return <StyledAction onClick={action.action}>
+  generateActions (actions: {icon: string, name: string, action: ()=> void}[], id?: string) {
+    return actions.map((action, i: number) => {
+      return <StyledAction key={`${id}-${i}`} onClick={action.action}>
         <StyledActionIcon src={action.icon} />{action.name}
       </StyledAction>
     })
@@ -86,7 +86,7 @@ export default class Panel extends React.PureComponent<Props, {}> {
         </StyledContent>
         {
           actions && actions.length
-          ? <StyledFooter>{this.generateActions(actions)}</StyledFooter>
+          ? <StyledFooter>{this.generateActions(actions, id)}</StyledFooter>
           : null
         }
       </StyledPanel>
