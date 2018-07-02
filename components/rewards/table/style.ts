@@ -17,6 +17,7 @@ export const StyledNoContent = styled.div`
 
 export const StyledTable = styled.table`
   width: 100%;
+  margin-bottom: 11px;
 ` as any
 
 export const StyledTH = styled.th`
