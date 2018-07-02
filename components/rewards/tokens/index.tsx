@@ -10,6 +10,7 @@ export interface Props {
   value: string | number
   converted?: string | number
   currency?: string
+  hideText?: boolean
 }
 /*
   TODO
@@ -17,13 +18,13 @@ export interface Props {
  */
 export default class Tokens extends React.PureComponent<Props, {}> {
   render () {
-    const { id, converted, value, currency } = this.props
+    const { id, converted, value, currency, hideText } = this.props
     const defaultCurrency = 'USD'
 
     return (
       <div id={id}>
         <StyledTokens>
-          <StyledTokenValue>{value}</StyledTokenValue> tokens
+          <StyledTokenValue>{value}</StyledTokenValue> { !hideText ? <span>tokens</span> : null }
         </StyledTokens>
         {
           converted
