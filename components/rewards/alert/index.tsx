@@ -3,13 +3,21 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
+import * as CSS from 'csstype'
 import { StyledWrapper, StyledIcon, StyledContent, StyledClose } from './style'
+
+interface Theme {
+  position?: CSS.PositionProperty
+  top?: CSS.TopProperty<1>
+  left?: CSS.LeftProperty<1>
+}
 
 export interface Props {
   id?: string
   type: 'error' | 'success'
   children?: React.ReactNode
   onClose?: () => void
+  theme?: Theme
 }
 
 const success = require('./assets/success.svg')
@@ -29,10 +37,10 @@ export default class Alert extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { id, children, onClose } = this.props
+    const { id, children, onClose, theme } = this.props
 
     return (
-      <StyledWrapper id={id}>
+      <StyledWrapper id={id} theme={theme}>
         <StyledIcon src={this.icon} />
         <StyledContent>
           {children}

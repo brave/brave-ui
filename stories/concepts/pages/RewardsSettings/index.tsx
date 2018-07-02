@@ -20,6 +20,8 @@ import DisabledContent from '../../../../components/rewards/disabledContent';
 import MainToggle from '../../../../components/rewards/mainToggle';
 import Panel from '../../../../components/rewards/panel';
 import ContributeTable from '../../../../components/rewards/contributeTable';
+import { boolean } from '@storybook/addon-knobs';
+import Alert from '../../../../components/rewards/alert';
 
 // Images
 const donateImg = require('../../../assets/img/rewards_donate.svg')
@@ -45,7 +47,7 @@ class Settings extends React.PureComponent<{}, State> {
   constructor (props: any) {
     super(props)
     this.state = {
-      adsToggle: true,
+      adsToggle: false,
       contributeToggle: true,
       mainToggle: true
     }
@@ -159,6 +161,8 @@ class Settings extends React.PureComponent<{}, State> {
   }
 
   render () {
+    const showNotification = boolean('Show notification', false)
+
     return (
       <div style={{maxWidth: '1000px', margin: '50px auto'}}>
         <Grid columns={3} theme={{gridGap: '32px'}}>
@@ -339,6 +343,13 @@ class Settings extends React.PureComponent<{}, State> {
               ]}
               showCopy={true}
             >
+              {
+                showNotification
+                ? <Alert type={'error'} theme={{position: 'absolute'}}>
+                    <b>Funds received!</b> 25 tokens are added to your wallet successfully.
+                </Alert>
+                : null
+              }
              Some content
             </Panel>
           </Column>

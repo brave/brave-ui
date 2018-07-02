@@ -106,6 +106,7 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
 
 .c8 {
   padding: 31px 28px 19px;
+  position: relative;
 }
 
 <div
