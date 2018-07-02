@@ -1,0 +1,38 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License. v. 2.0. If a copy of the MPL was not distributed with this file.
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+import styled from 'styled-components'
+
+export const StyledWrapper = styled.div`
+` as any
+
+export const StyledText = styled.div`
+  font-family: Muli;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.29;
+  text-align: right;
+  color: #686978;
+` as any
+
+export const StyledRemove = styled.img`
+  margin-left: 7px;
+` as any
+
+export const StyledTHSite = styled.div`
+  color: #9f22a1;
+` as any
+
+export const StyledTHOther = styled.div`
+  color: #9f22a1;
+  text-align: right;
+` as any
+
+export const StyledToggle = styled.div`
+  font-family: Poppins;
+  font-size: 13px;
+  color: #4c54d2;
+  text-align: right;
+  text-transform: capitalize;
+` as any

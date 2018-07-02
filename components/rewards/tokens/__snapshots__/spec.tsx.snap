@@ -24,7 +24,10 @@ exports[`Tokens tests basic tests matches the snapshot 1`] = `
     >
       10
     </span>
-     tokens
+     
+    <span>
+      tokens
+    </span>
   </span>
 </div>
 `;

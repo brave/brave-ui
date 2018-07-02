@@ -19,6 +19,7 @@ import Checkbox from '../../../../components/rewards/checkbox';
 import DisabledContent from '../../../../components/rewards/disabledContent';
 import MainToggle from '../../../../components/rewards/mainToggle';
 import Panel from '../../../../components/rewards/panel';
+import ContributeTable from '../../../../components/rewards/contributeTable';
 
 // Images
 const donateImg = require('../../../assets/img/rewards_donate.svg')
@@ -28,6 +29,11 @@ const wallet = require('../../../assets/img/rewards_wallet.svg')
 const activity = require('../../../assets/img/rewards_activity.svg')
 const funds = require('../../../assets/img/rewards_funds.svg')
 const gear = require('../../../assets/img/rewards_gear.svg')
+const bartBaker = require('../../../assets/img/bartBaker.jpeg')
+const ddgo = require('../../../assets/img/ddgo.jpg')
+const wiki = require('../../../assets/img/wiki.jpg')
+const buzz = require('../../../assets/img/buzz.jpg')
+const guardian = require('../../../assets/img/guardian.jpg')
 
 interface State {
   adsToggle: boolean
@@ -175,7 +181,7 @@ class Settings extends React.PureComponent<{}, State> {
                 <Tokens value={10} converted={4} />
               </List>
               <List title={locale.adsDisplayed}>
-                &nbsp;
+                <Tokens value={17} hideText={true}/>
               </List>
             </Box>
             <Box
@@ -192,8 +198,102 @@ class Settings extends React.PureComponent<{}, State> {
                 <Tokens value={15} converted={6} />
               </List>
               <List title={locale.contributionSites}>
-                &nbsp;
+                <Tokens value={55} hideText={true}/>
               </List>
+              <ContributeTable
+                header={[
+                  'Site visited',
+                  'Attentions',
+                  'Tokens'
+                ]}
+                rows={[
+                  [
+                    {
+                      profile: {
+                        name: 'Bart Baker',
+                        verified: true,
+                        provider: 'youtube',
+                        src: bartBaker
+                      }
+                    },
+                    {
+                      text: '40%'
+                    },
+                    {
+                      text: '4',
+                      onClick: () => {}
+                    }
+                  ],
+                  [
+                    {
+                      profile: {
+                        name: 'duckduckgo.com',
+                        verified: true,
+                        src: ddgo
+                      }
+                    },
+                    {
+                      text: '20%'
+                    },
+                    {
+                      text: '2',
+                      onClick: () => {}
+                    }
+                  ],
+                  [
+                    {
+                      profile: {
+                        name: 'buzzfeed.com',
+                        verified: false,
+                        src: buzz
+                      }
+                    },
+                    {
+                      text: '10%'
+                    },
+                    {
+                      text: '1',
+                      onClick: () => {}
+                    }
+                  ],
+                  [
+                    {
+                      profile: {
+                        name: 'theguardian.com',
+                        verified: true,
+                        src: guardian
+                      }
+                    },
+                    {
+                      text: '5%'
+                    },
+                    {
+                      text: '0.5',
+                      onClick: () => {}
+                    }
+                  ],
+                  [
+                    {
+                      profile: {
+                        name: 'wikipedia.org',
+                        verified: false,
+                        src: wiki
+                      }
+                    },
+                    {
+                      text: '4%'
+                    },
+                    {
+                      text: '0.4',
+                      onClick: () => {}
+                    }
+                  ]
+                ]}
+                allSites={false}
+                numSites={55}
+              >
+                Please visit some sites
+              </ContributeTable>
             </Box>
             <Box
               title={locale.donationTitle}
@@ -206,7 +306,7 @@ class Settings extends React.PureComponent<{}, State> {
                 <Tokens value={21} converted={7} />
               </List>
               <List title={locale.donationList}>
-                &nbsp;
+                <Tokens value={3} hideText={true}/>
               </List>
             </Box>
           </Column>
