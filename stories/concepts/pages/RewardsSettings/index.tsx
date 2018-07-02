@@ -22,6 +22,7 @@ import Panel from '../../../../components/rewards/panel';
 import ContributeTable from '../../../../components/rewards/contributeTable';
 import { boolean } from '@storybook/addon-knobs';
 import Alert from '../../../../components/rewards/alert';
+import DonationTable from '../../../../components/rewards/donationTable';
 
 // Images
 const donateImg = require('../../../assets/img/rewards_donate.svg')
@@ -36,6 +37,7 @@ const ddgo = require('../../../assets/img/ddgo.jpg')
 const wiki = require('../../../assets/img/wiki.jpg')
 const buzz = require('../../../assets/img/buzz.jpg')
 const guardian = require('../../../assets/img/guardian.jpg')
+const eich = require('../../../assets/img/eich.jpg')
 
 interface State {
   adsToggle: boolean
@@ -312,6 +314,69 @@ class Settings extends React.PureComponent<{}, State> {
               <List title={locale.donationList}>
                 <Tokens value={3} hideText={true}/>
               </List>
+              <DonationTable
+                rows={[
+                  [
+                    {
+                      profile: {
+                        name: 'Bart Baker',
+                        verified: true,
+                        provider: 'youtube',
+                        src: bartBaker
+                      },
+                      type: 'recurring'
+                    },
+                    {
+                      onClick: () => {},
+                      type: 'recurring'
+                    },
+                    {
+                      text: 2,
+                      type: 'recurring'
+                    }
+                  ],
+                  [
+                    {
+                      profile: {
+                        verified: false,
+                        name: 'theguardian.com',
+                        src: guardian
+                      },
+                      type: 'donation'
+                    },
+                    {
+                      text: 'May 2',
+                      type: 'donation'
+                    },
+                    {
+                      text: 12,
+                      type: 'donation'
+                    }
+                  ],
+                  [
+                    {
+                      profile: {
+                        verified: false,
+                        name: '@BrendanEich',
+                        provider: 'twitter',
+                        src: eich
+                      },
+                      type: 'tip'
+                    },
+                    {
+                      text: 'May 2',
+                      type: 'tip'
+                    },
+                    {
+                      text: 7,
+                      type: 'tip'
+                    }
+                  ]
+                ]}
+                allItems={true}
+              >
+                Please visit some sites
+              </DonationTable>
             </Box>
           </Column>
           <Column size={1}>

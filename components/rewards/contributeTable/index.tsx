@@ -16,7 +16,7 @@ interface ProfileCell {
 
 export interface DetailCell {
   profile?: ProfileCell,
-  text?: string,
+  text?: string | React.ReactNode,
   onClick?: () => void
 }
 

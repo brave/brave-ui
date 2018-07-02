@@ -15,16 +15,8 @@ export const StyledWrapper = styled.div`
 ` as any
 
 export const StyledImageWrapper = styled.div`
-  flex-basis: 24px;
+  flex-basis: 30px;
   position: relative;
-  
-  ${(p: Props) => p.verified
-    ? css`
-      flex-basis: 32px;
-    `
-    : ''
-  }
-  
 ` as any
 
 export const StyledImage = styled.img`
@@ -50,7 +42,7 @@ export const StyledImage = styled.img`
 export const StyledVerified = styled.img`
   position: absolute;
   bottom: 2px;
-  right: 1px;
+  right: -1px;
 ` as any
 
 export const StyledContent = styled.div`
