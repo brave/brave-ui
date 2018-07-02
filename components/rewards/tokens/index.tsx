@@ -3,7 +3,16 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
+import * as CSS from 'csstype'
 import { StyledTokens, StyledContent, StyledTokenValue } from './style'
+
+interface Theme {
+  color?: {
+    number?: CSS.Color
+    text?: CSS.Color
+  }
+  size?: CSS.FontSizeProperty<1>
+}
 
 export interface Props {
   id?: string
@@ -11,6 +20,7 @@ export interface Props {
   converted?: string | number
   currency?: string
   hideText?: boolean
+  theme?: Theme
 }
 /*
   TODO
@@ -18,13 +28,13 @@ export interface Props {
  */
 export default class Tokens extends React.PureComponent<Props, {}> {
   render () {
-    const { id, converted, value, currency, hideText } = this.props
+    const { id, converted, value, currency, hideText, theme } = this.props
     const defaultCurrency = 'USD'
 
     return (
       <div id={id}>
-        <StyledTokens>
-          <StyledTokenValue>{value}</StyledTokenValue> { !hideText ? <span>tokens</span> : null }
+        <StyledTokens theme={theme}>
+          <StyledTokenValue theme={theme}>{value}</StyledTokenValue> { !hideText ? <span>tokens</span> : null }
         </StyledTokens>
         {
           converted

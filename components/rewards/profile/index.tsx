@@ -23,7 +23,7 @@ export interface Props {
   id?: string
   src?: string
   title: string
-  type?: 'big' | 'small' |'minimal'
+  type?: 'big' | 'small' |'min'
   provider?: Provider
   verified?: boolean
 }
@@ -64,10 +64,10 @@ export default class Profile extends React.PureComponent<Props, {}> {
 
     return (
       <StyledWrapper id={id}>
-        <StyledImageWrapper type={type} verified={verified}>
+        <StyledImageWrapper>
           <StyledImage src={this.getSrc(src)} type={type} />
           {
-            verified && (type === 'small' || type === 'minimal')
+            verified && (type === 'small' || type === 'min')
             ? <StyledVerified src={verifiedIcon} />
             : null
           }
@@ -75,13 +75,13 @@ export default class Profile extends React.PureComponent<Props, {}> {
         <StyledContent type={type}>
           <StyledTitleWrap type={type}>
             {
-              provider && type === 'minimal'
+              provider && type === 'min'
               ? <StyledInlineImage src={this.getProviderImage(provider)} />
               : null
             }
             <StyledTitle type={type}>{title}</StyledTitle>
             {
-              provider && type !== 'minimal'
+              provider && type !== 'min'
               ? <StyledProvider type={type}>{this.getProviderName(provider)}</StyledProvider>
               : null
             }

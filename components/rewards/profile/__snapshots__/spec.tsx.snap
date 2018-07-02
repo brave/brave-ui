@@ -24,9 +24,9 @@ exports[`Profile tests basic tests matches the snapshot 1`] = `
 }
 
 .c1 {
-  -webkit-flex-basis: 24px;
-  -ms-flex-preferred-size: 24px;
-  flex-basis: 24px;
+  -webkit-flex-basis: 30px;
+  -ms-flex-preferred-size: 30px;
+  flex-basis: 30px;
   position: relative;
 }
 
@@ -75,7 +75,6 @@ exports[`Profile tests basic tests matches the snapshot 1`] = `
 >
   <div
     className="c1"
-    type={undefined}
   >
     <img
       className="c2"

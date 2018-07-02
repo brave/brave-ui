@@ -3,17 +3,19 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
+import { Props } from './index';
 
 export const StyledTokens = styled.span`
   font-family: Poppins;
-  font-size: 16px;
   font-weight: 300;
   line-height: 1.75;
-  color: #4b4c5c;
+  color: ${(p: Props) => p.theme && p.theme.color && p.theme.color.text ? p.theme.color.text : '#4b4c5c'}
+  font-size: ${(p: Props) => p.theme && p.theme.size ? p.theme.size : '16px'}
 ` as any
 
 export const StyledTokenValue = styled.span`
   font-weight: 600;
+  color: ${(p: Props) => p.theme && p.theme.color && p.theme.color.number ? p.theme.color.number : '#4b4c5c'}
 ` as any
 
 export const StyledContent = styled.span`
