@@ -19,7 +19,7 @@ export const StyledWrapper = styled.div`
   align-items: center;
 ` as any
 
-export const StyledIcon = styled.img`
+export const StyledIcon = styled.span`
   width: 40px;
   height: 40px;
   flex-basis: 40px;
@@ -40,7 +40,7 @@ export const StyledContent = styled.div`
   }
 ` as any
 
-export const StyledClose = styled.img`
+export const StyledClose = styled.div`
   width: 11px;
   height: 11px;
   position: absolute;

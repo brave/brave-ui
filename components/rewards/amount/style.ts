@@ -30,8 +30,8 @@ export const StyledTokens = styled.span`
   font-weight: 400;
 ` as any
 
-export const StyledLogo = styled.img`
-  vertical-align: text-top;
+export const StyledLogo = styled.span`
+  vertical-align: text-bottom;
   margin-right: 6px;
 ` as any
 

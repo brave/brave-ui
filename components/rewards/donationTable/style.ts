@@ -24,8 +24,8 @@ export const StyledRemove = styled.div`
   color: #d1d1db;
 ` as any
 
-export const StyledRemoveIcon = styled.img`
-  vertical-align: baseline;
+export const StyledRemoveIcon = styled.span`
+  vertical-align: text-bottom;
   width: 9px;
 ` as any
 

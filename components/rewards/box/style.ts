@@ -69,7 +69,7 @@ export const StyledDescription = styled.div`
   color: #a4aeb8;
 ` as any
 
-export const StyledSettingsIcon = styled.img`
+export const StyledSettingsIcon = styled.span`
   width: 20px;
   float: ${(p: {float: string}) => p.float ? p.float : 'none'};
   margin-top: 8px;
@@ -88,7 +88,7 @@ export const StyledSettingsWrapper = styled.div`
   flex-basis: ${(p: {open: boolean}) => p.open ? '50%' : '0'};
 ` as any
 
-export const StyledSettingsClose = styled.img`
+export const StyledSettingsClose = styled.div`
   display: ${(p: {open: boolean}) => p.open ? 'block' : 'none'};
   position: absolute;
   right: 35px;
