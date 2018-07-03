@@ -39,7 +39,7 @@ export const StyledImage = styled.img`
   }
 ` as any
 
-export const StyledVerified = styled.img`
+export const StyledVerified = styled.span`
   position: absolute;
   bottom: 2px;
   right: -1px;
@@ -118,13 +118,6 @@ export const StyledProvider = styled.span`
     `
     : ''
   }
-` as any
-
-export const StyledInlineImage = styled.img`
-  display: inline-block;
-  margin-right: 5px;
-  vertical-align: text-bottom;
-  height: 14px;
 ` as any
 
 export const StyledProviderWrap = styled.div`

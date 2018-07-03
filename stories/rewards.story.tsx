@@ -185,7 +185,7 @@ storiesOf('Rewards/Utils', module)
   .add('Profile',() => {
     return <div style={{width: '400px'}}>
       <Profile
-      type={select('Type', {big: 'big', small: 'small', min: 'min'}, 'big')}
+      type={select('Type', {big: 'big', small: 'small'}, 'big')}
       title={'Bart Baker'}
       verified={boolean('Verified', false)}
       provider={select('Provider', {youtube: 'YouTube', twitter: 'Twitter', twitch: 'Twitch'}, 'youtube')}
@@ -429,7 +429,7 @@ storiesOf('Rewards/Tables', module)
         {
           profile: {
             verified: false,
-            name: '@BrendanEich',
+            name: 'BrendanEich',
             provider: 'twitter',
             src: eich
           },

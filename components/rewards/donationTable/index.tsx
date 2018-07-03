@@ -48,13 +48,12 @@ export default class DonationTable extends React.PureComponent<Props, {}> {
     return rows.map((row: DetailCell[]): Cell[] => {
       return row.map((cell: DetailCell, i: number): Cell => {
         if (cell.profile) {
-          const type = cell.type === 'donation' || cell.type === 'recurring' ? 'small' : 'min'
           return {
             content: <Profile
               title={cell.profile.name}
               provider={cell.profile.provider}
               verified={cell.profile.verified}
-              type={type}
+              type={'small'}
               src={cell.profile.src}
             />
           }
