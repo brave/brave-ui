@@ -10,7 +10,6 @@ import {
   StyledImage,
   StyledVerified,
   StyledTitleWrap,
-  StyledInlineImage,
   StyledTitle,
   StyledProvider,
   StyledProviderWrap,
@@ -23,12 +22,12 @@ export interface Props {
   id?: string
   src?: string
   title: string
-  type?: 'big' | 'small' |'min'
+  type?: 'big' | 'small'
   provider?: Provider
   verified?: boolean
 }
 
-const verifiedIcon = require('./assets/verified.svg')
+const verifiedIcon = require('./assets/verified')
 
 /*
   TODO
@@ -36,10 +35,6 @@ const verifiedIcon = require('./assets/verified.svg')
   - add fallback image
  */
 export default class Profile extends React.PureComponent<Props, {}> {
-  getProviderImage (provider: Provider) {
-    return require(`./assets/${provider}.svg`)
-  }
-
   getProviderName (provider: Provider) {
     switch (provider) {
       case 'youtube':
@@ -67,21 +62,16 @@ export default class Profile extends React.PureComponent<Props, {}> {
         <StyledImageWrapper>
           <StyledImage src={this.getSrc(src)} type={type} />
           {
-            verified && (type === 'small' || type === 'min')
-            ? <StyledVerified src={verifiedIcon} />
+            verified && type === 'small'
+            ? <StyledVerified>{verifiedIcon}</StyledVerified>
             : null
           }
         </StyledImageWrapper>
         <StyledContent type={type}>
           <StyledTitleWrap type={type}>
-            {
-              provider && type === 'min'
-              ? <StyledInlineImage src={this.getProviderImage(provider)} />
-              : null
-            }
             <StyledTitle type={type}>{title}</StyledTitle>
             {
-              provider && type !== 'min'
+              provider
               ? <StyledProvider type={type}>{this.getProviderName(provider)}</StyledProvider>
               : null
             }
