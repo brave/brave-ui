@@ -29,7 +29,7 @@ export const StyledRight = styled.div`
   padding: 10px 0 0;
 ` as any
 
-export const StyledLogo = styled.img`
+export const StyledLogo = styled.span`
 ` as any
 
 export const StyledTitle = styled.div`

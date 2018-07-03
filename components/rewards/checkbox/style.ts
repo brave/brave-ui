@@ -4,7 +4,7 @@
 
 import styled, { css } from 'styled-components'
 
-const check = require('./assets/check.svg')
+const check = require('./assets/check')
 
 export const StyledWrapper = styled.div`
   width: 100%;
@@ -41,7 +41,7 @@ export const StyledBox = styled.span`
  ${(p: {selected: boolean}) => p.selected
     ? css`
       border-color: #a1a8f2;
-      background: url(${check}) no-repeat 3px 5px;
+      background: url("data:image/svg+xml,${check}") no-repeat 3px 5px;
     ` : ''
   }
 ` as any

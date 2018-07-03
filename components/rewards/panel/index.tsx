@@ -31,8 +31,8 @@ export interface Props {
   actions?: {icon: string, name: string, action: ()=> void}[]
 }
 
-const panel = require('./assets/panel.svg')
-const uphold = require('./assets/uphold.svg')
+const panel = require('./assets/panel')
+const uphold = require('./assets/uphold')
 
 /*
   TODO
@@ -93,7 +93,7 @@ export default class Panel extends React.PureComponent<Props, {}> {
       {
         showCopy
         ? <StyledCopy>
-          <StyledCopyImage src={uphold} /> Brave wallet is managed by <b>Uphold</b>.
+          <StyledCopyImage>{uphold}</StyledCopyImage> Brave wallet is managed by <b>Uphold</b>.
         </StyledCopy>
         : null
       }

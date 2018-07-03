@@ -13,7 +13,7 @@ import {
 } from './style'
 import Toggle from '../toggle';
 
-const logo = require('./assets/bat.svg')
+const logo = require('./assets/bat')
 
 export interface Props {
   id?: string
@@ -32,7 +32,7 @@ export default class MainToggle extends React.PureComponent<Props, {}> {
     return (
       <StyledWrapper id={id}>
         <StyledLeft>
-          <StyledLogo src={logo} />
+          <StyledLogo>{logo}</StyledLogo>
           <StyledTitle>
             Brave Rewards <StyledTM>TM</StyledTM>
           </StyledTitle>

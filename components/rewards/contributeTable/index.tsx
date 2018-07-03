@@ -30,7 +30,7 @@ export interface Props {
   onClick?: () => void
 }
 
-const closeIcon = require('./assets/close.svg')
+const closeIcon = require('./assets/close')
 
 export default class ContributeTable extends React.PureComponent<Props, {}> {
   getHeader (header: string[]) {
@@ -70,7 +70,7 @@ export default class ContributeTable extends React.PureComponent<Props, {}> {
               {cell.text}
               {
                 cell.onClick
-                ? <StyledRemove src={closeIcon} onClick={cell.onClick} />
+                ? <StyledRemove onClick={cell.onClick}>{closeIcon}</StyledRemove>
                 : null
               }
             </StyledText>
