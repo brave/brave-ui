@@ -4,7 +4,7 @@
 
 import * as React from 'react'
 import * as CSS from 'csstype'
-import { StyledWrapper, StyledIcon, StyledContent, StyledClose } from './style'
+import { StyledWrapper, StyledContent, StyledClose, StyledIcon } from './style'
 
 interface Theme {
   position?: CSS.PositionProperty
@@ -20,9 +20,9 @@ export interface Props {
   theme?: Theme
 }
 
-const success = require('./assets/success.svg')
-const error = require('./assets/error.svg')
-const close = require('./assets/close.svg')
+const success = require('./assets/success')
+const error = require('./assets/error')
+const close = require('./assets/close')
 
 export default class Alert extends React.PureComponent<Props, {}> {
   get icon () {
@@ -41,13 +41,13 @@ export default class Alert extends React.PureComponent<Props, {}> {
 
     return (
       <StyledWrapper id={id} theme={theme}>
-        <StyledIcon src={this.icon} />
+        <StyledIcon>{this.icon}</StyledIcon>
         <StyledContent>
           {children}
         </StyledContent>
         {
           onClose
-          ? <StyledClose src={close}/>
+          ? <StyledClose>{close}</StyledClose>
           : null
         }
       </StyledWrapper>

@@ -23,7 +23,7 @@ export const StyledHeader = styled.div`
   align-items: flex-start;
   align-content: flex-start;
   flex-wrap: nowrap;
-  background: url(${(p: {bg: string}) => p.bg}) no-repeat top left, linear-gradient(152deg, #392dd1, rgba(255, 26, 26, 0.53)), linear-gradient(#7d7bdc, #7d7bdc);
+  background: url(${(p: {bg: string}) => `"data:image/svg+xml,${p.bg}"`}) no-repeat top left, linear-gradient(152deg, #392dd1, rgba(255, 26, 26, 0.53)), linear-gradient(#7d7bdc, #7d7bdc);
   padding: 10px 16px 15px 29px;
 ` as any
 
@@ -112,7 +112,7 @@ export const StyledCopy = styled.div`
   padding: 14px 33px;
 ` as any
 
-export const StyledCopyImage = styled.img`
+export const StyledCopyImage = styled.span`
   vertical-align: text-bottom;
   display: inline-block;
   margin-right: 5px;

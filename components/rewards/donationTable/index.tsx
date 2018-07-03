@@ -33,7 +33,7 @@ export interface Props {
   onClick?: () => void
 }
 
-const removeIcon = require('./assets/close.svg')
+const removeIcon = require('./assets/close')
 
 /*
   TODO
@@ -67,7 +67,7 @@ export default class DonationTable extends React.PureComponent<Props, {}> {
                 content: <>
                   <StyledType>Recurring</StyledType>
                   <StyledRemove onClick={cell.onClick}>
-                    <StyledRemoveIcon src={removeIcon} /> remove
+                    <StyledRemoveIcon> {removeIcon} </StyledRemoveIcon>remove
                   </StyledRemove>
                 </>
               }

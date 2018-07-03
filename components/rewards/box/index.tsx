@@ -21,8 +21,8 @@ import { StyledWrapper,
 } from './style'
 import Checkbox from '../toggle'
 
-const close = require('./assets/close.svg')
-const settings = require('./assets/settings.svg')
+const close = require('./assets/close')
+const settings = require('./assets/settings')
 
 export interface Theme {
   titleColor: CSS.Color
@@ -99,7 +99,7 @@ export default class Box extends React.PureComponent<Props, State> {
             <StyledRight>
               {
                 settingsChild && ((toggle && checked) || !toggle) ?
-                <StyledSettingsIcon src={settings} float={'right'} onClick={this.settingsClick} />
+                <StyledSettingsIcon float={'right'} onClick={this.settingsClick}>{settings}</StyledSettingsIcon>
                 : null
               }
             </StyledRight>
@@ -112,12 +112,14 @@ export default class Box extends React.PureComponent<Props, State> {
             </StyledContent>
           </StyledContentWrapper>
           <StyledSettingsWrapper open={this.state.settingsOpened}>
-              <StyledSettingsClose src={close} onClick={this.settingsClick} open={this.state.settingsOpened} />
-              <StyledSettingsTitle>
-                <StyledSettingsIcon src={settings} />
-                <StyledSettingsText>{title} Settings</StyledSettingsText>
-              </StyledSettingsTitle>
-              {settingsChild}
+            <StyledSettingsClose onClick={this.settingsClick} open={this.state.settingsOpened}>
+              {close}
+            </StyledSettingsClose>
+            <StyledSettingsTitle>
+              <StyledSettingsIcon>{settings}</StyledSettingsIcon>
+              <StyledSettingsText>{title} Settings</StyledSettingsText>
+            </StyledSettingsTitle>
+            {settingsChild}
           </StyledSettingsWrapper>
         </StyledFlip>
       </StyledWrapper>

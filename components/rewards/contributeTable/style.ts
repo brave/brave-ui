@@ -16,7 +16,7 @@ export const StyledText = styled.div`
   color: #686978;
 ` as any
 
-export const StyledRemove = styled.img`
+export const StyledRemove = styled.span`
   margin-left: 7px;
 ` as any
 

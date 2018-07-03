@@ -14,7 +14,7 @@ export interface Props {
   onClick?: () => void
 }
 
-const logo = require('./assets/logo.svg')
+const logo = require('./assets/logo')
 
 /*
   TODO
@@ -29,7 +29,7 @@ export default class Amount extends React.PureComponent<Props, {}> {
     return (
       <StyledWrapper id={id} onClick={onClick}>
         <StyledAmount selected={selected} type={type}>
-          <StyledLogo src={logo} />{amount} <StyledTokens>{type === 'big' ? 'tokens' : null}</StyledTokens>
+          <StyledLogo>{logo}</StyledLogo>{amount} <StyledTokens>{type === 'big' ? 'tokens' : null}</StyledTokens>
         </StyledAmount>
         <StyledConverted selected={selected} type={type}>
           about {converted} USD

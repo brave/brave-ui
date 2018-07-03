@@ -4,8 +4,8 @@
 
 import styled, {css} from 'styled-components'
 
-const check = require('./assets/check.svg')
-const arrow = require('./assets/arrow.svg')
+const check = require('./assets/check')
+const arrow = require('./assets/arrow')
 
 export const StyledWrapper = styled.div`
   max-width: 254px;
@@ -41,7 +41,7 @@ export const StyledSelect = styled.div`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background: url(${arrow}) no-repeat right 15px top 16px #fff;
+  background: url("data:image/svg+xml,${arrow}") no-repeat right 15px top 16px #fff;
   
   ${(p: {show: boolean}) => p.show
     ? css`
@@ -84,7 +84,7 @@ export const StyledOption = styled.div`
   
   ${(p: {selected: boolean}) => p.selected
     ? css`
-      background: url(${check}) no-repeat 14px 12px #e9f0ff;
+      background: url("data:image/svg+xml,${check}") no-repeat 14px 12px #e9f0ff;
     ` : ''
   }
 ` as any
