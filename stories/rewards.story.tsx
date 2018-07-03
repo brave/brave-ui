@@ -28,6 +28,7 @@ import Table, { Cell } from '../components/rewards/table';
 import Profile from '../components/rewards/profile';
 import ContributeTable, { DetailCell as ContributionDetailCell } from '../components/rewards/contributeTable';
 import DonationTable, { DetailCell as DonationDetailCell } from '../components/rewards/donationTable';
+import Amount from '../components/rewards/amount';
 
 const donate = require('./assets/img/rewards_donate.svg')
 const wallet = require('./assets/img/rewards_wallet.svg')
@@ -202,6 +203,19 @@ storiesOf('Rewards/Utils', module)
       </div>
     </Tooltip>
   })
+  .add('Amount',withState({selected: false}, (store) => {
+    return <div style={{background: '#696fdc', width: '315px', padding: '50px'}}>
+      <Amount
+      amount={number('Amount', 5)}
+      converted={number('Converted', 1.5)}
+      selected={boolean('Selected', store.state.selected)}
+      type={select('Type', {big: 'Big', small: 'Small'}, 'big')}
+      onClick={() => (
+        store.set({ selected: !store.state.selected })
+      )}
+    />
+    </div>
+  }))
 
 storiesOf('Rewards/Tables', module)
   .add('Base',() => {
