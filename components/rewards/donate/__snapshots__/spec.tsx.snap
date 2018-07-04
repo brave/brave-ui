@@ -12,7 +12,11 @@ Array [
   font-weight: 600;
   line-height: 1.75;
   color: #ffffff;
-  margin-bottom: 5px;
+  margin-bottom: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 167px;
 }
 
 <div
@@ -21,9 +25,7 @@ Array [
   >
     <div
       className="c1"
-    >
-      Donation amount
-    </div>
+    />
   </div>,
   .c0 {
   background: #4c54d2;
@@ -42,7 +44,7 @@ Array [
 .c1 {
   vertical-align: middle;
   display: inline-block;
-  margin-right: 21px;
+  margin-right: 18px;
 }
 
 <div

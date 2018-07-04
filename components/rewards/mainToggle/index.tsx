@@ -38,7 +38,7 @@ export default class MainToggle extends React.PureComponent<Props, {}> {
           </StyledTitle>
         </StyledLeft>
         <StyledRight>
-          <Toggle checked={enabled} onClick={onToggle} />
+          <Toggle checked={enabled} onClick={onToggle} size={'large'} />
         </StyledRight>
       </StyledWrapper>
     )
