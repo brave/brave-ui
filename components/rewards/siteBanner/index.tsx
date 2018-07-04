@@ -20,21 +20,17 @@ import {
   StyledRemove,
   StyledWallet,
   StyledTokens,
-  StyledDonationTitle,
-  StyledSend,
-  StyledIconSend,
   StyledLogoImage,
   StyledCenter,
-  StyledIconRecurring,
   StyledIconRecurringBig,
-  StyledIconFace,
   StyledIconRemove,
-  StyledOption,
-  StyledFunds,
   StyledSocialItem,
-  StyledSocialIcon
+  StyledSocialIcon,
+  StyledOption,
+  StyledIconRecurring
 } from './style'
-import Amount from '../amount';
+
+import Donate from '../donate';
 import Checkbox from '../checkbox';
 
 type Social = {type: SocialType, name: string, handler: string}
@@ -53,20 +49,16 @@ export interface Props {
   donationAmounts: Donation[]
   children?: React.ReactNode
   onDonate: (amount: number, monthly: boolean) => void
-  onAmountSelection: (tokens: number) => void
   onClose?: () => void
+  onAmountSelection: (tokens: number) => void
 }
 
 interface State {
   monthly: boolean
-  missingFunds: boolean
-  amount: number
 }
 
 const close = require('./assets/close')
 const monthly = require('./assets/monthly')
-const send = require('./assets/send')
-const sadFace = require('./assets/sadFace')
 
 /*
   TODO
@@ -75,21 +67,8 @@ const sadFace = require('./assets/sadFace')
 export default class SiteBanner extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props)
-    const amounts = this.props.donationAmounts
-    const amount = amounts && amounts.find((amount: Donation) => !!amount.selected)
     this.state = {
-      monthly: false,
-      amount: amount && amount.tokens || 0,
-      missingFunds: false
-    }
-  }
-
-  componentDidUpdate(prevProps: Props) {
-    if (
-      this.props.balance !== prevProps.balance ||
-      this.props.donationAmounts !== prevProps.donationAmounts
-    ) {
-      this.validateAmount(this.props.balance)
+      monthly: false
     }
   }
 
@@ -121,7 +100,7 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
 
     return social.map((item: Social) => {
       const icon = require(`./assets/${item.type}`)
-      return <StyledSocialItem href={this.getSocialLink(item)} target={'_blank'}>
+      return <StyledSocialItem key={`s-${item.type}`} href={this.getSocialLink(item)} target={'_blank'}>
         <StyledSocialIcon>{icon}</StyledSocialIcon> {item.name || item.handler}
       </StyledSocialItem>
     })
@@ -156,29 +135,10 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
     this.setState({monthly: selected})
   }
 
-  validateAmount (balance: number, tokens?:number) {
-    if (tokens == null) {
-      tokens = this.state.amount
-    }
-    const valid = tokens > balance
-    this.setState({missingFunds: valid})
-    return valid
-  }
-
-  validateDonation = () => {
-    if (this.validateAmount(this.props.balance)) {
-      return
-    }
-
+  onDonate = (amount: number) => {
     if (this.props.onDonate) {
-      this.props.onDonate(this.state.amount, this.state.monthly)
+      this.props.onDonate(amount, this.state.monthly)
     }
-  }
-
-  onAmountChange = (tokens: number) => {
-    this.setState({amount: tokens})
-    this.validateAmount(this.props.balance, tokens)
-    this.props.onAmountSelection(tokens)
   }
 
   render () {
@@ -193,10 +153,9 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
       currentDonation,
       balance,
       donationAmounts,
-      domain
+      domain,
+      onAmountSelection
     } = this.props
-
-    const disabled = this.state.amount === 0
 
     return (
       <StyledWrapper id={id}>
@@ -227,7 +186,7 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
                   <StyledRemove>
                     <StyledIconRemove>{close}</StyledIconRemove>remove
                   </StyledRemove>
-                  </StyledRecurring>
+                </StyledRecurring>
                 : null
               }
             </StyledContent>
@@ -235,32 +194,28 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
               <StyledWallet>
                 wallet balance <StyledTokens>{balance} tokens</StyledTokens>
               </StyledWallet>
-              <StyledDonationTitle>Donation amount</StyledDonationTitle>
-              {
-                donationAmounts && donationAmounts.map((donation: Donation) => {
-                  return <Amount
-                    amount={donation.tokens}
-                    selected={donation.selected}
-                    onClick={this.onAmountChange}
-                    converted={donation.converted}
-                    type={'big'}
-                  />
-                })
-              }
-              <Checkbox value={{make: false}} onChange={this.onMonthlyChange} theme={{checkColor: '#fff', borderColor: '#a1a8f2'}}>
-                <div data-key='make'>
-                  <StyledOption>Make this monthly</StyledOption> <StyledIconRecurring>{monthly()}</StyledIconRecurring>
-                </div>
-              </Checkbox>
-              {
-                this.state.missingFunds
-                ? <StyledFunds>
-                  <StyledIconFace>{sadFace}</StyledIconFace> Not enough tokens. Please <a href="#">add funds</a>.
-                </StyledFunds>
-                : <StyledSend disabled={disabled} onClick={this.validateDonation()}>
-                  <StyledIconSend>{send(disabled ? '#3e45b2' : '#a1a8f2')}</StyledIconSend> Send my donation
-                </StyledSend>
-              }
+              <Donate
+                balance={balance}
+                donationAmounts={donationAmounts}
+                onDonate={this.onDonate}
+                actionText={'Send my donation'}
+                onAmountSelection={onAmountSelection}
+                theme={{
+                  paddingFunds: '14px 12px 16px 24px',
+                  paddingSend: '16px 19px 16px 55px',
+                  paddingBox: '0 19px 0 55px'
+                }}
+              >
+                <Checkbox
+                  value={{make: false}}
+                  onChange={this.onMonthlyChange.bind(this)}
+                  theme={{checkColor: '#fff', borderColor: '#a1a8f2'}}
+                >
+                  <div data-key='make'>
+                    <StyledOption>Make this monthly</StyledOption> <StyledIconRecurring>{monthly()}</StyledIconRecurring>
+                  </div>
+                </Checkbox>
+              </Donate>
             </StyledDonation>
           </StyledContentWrapper>
         </StyledBanner>

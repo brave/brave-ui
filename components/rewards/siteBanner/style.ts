@@ -5,7 +5,6 @@
 import styled from 'styled-components'
 import { Props } from './index';
 
-
 const bg1 = require('./assets/bg_bats.svg')
 const bg2 = require('./assets/bg_hearts.svg')
 
@@ -40,7 +39,6 @@ export const StyledContent = styled.div`
 export const StyledDonation = styled.div`
   flex-basis: 336px;
   background: #696fdc;
-  padding: 0 19px 0 55px;
 ` as any
 
 export const StyledBanner = styled.div`
@@ -140,37 +138,11 @@ export const StyledWallet = styled.div`
   color: #afb2f1;
   text-align: right;
   margin: 8px 0 10px;
+  padding: 0 19px 0 55px;
 ` as any
 
 export const StyledTokens = styled.span`
   color: #ffffff;
-` as any
-
-export const StyledDonationTitle = styled.div`
-  font-family: Poppins;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.75;
-  color: #ffffff;
-  margin-bottom: 5px;
-` as any
-
-export const StyledSend = styled.div`
-  background: #4c54d2;
-  font-family: Poppins;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-  color: ${(p: {disabled: boolean}) => p.disabled ? '#3e45b2' : '#fff'};
-  margin: 0 -19px 0 -55px;
-  padding: 16px 19px 16px 55px;
-  text-transform: uppercase;
-` as any
-
-export const StyledIconSend = styled.span`
-  vertical-align: middle;
-  display: inline-block;
-  margin-right: 21px;
 ` as any
 
 export const StyledLogoImage = styled.img`
@@ -189,25 +161,6 @@ export const StyledCenter = styled.div`
   max-width: 1024px;
   padding: 126px 0 0 238px;
   margin: 0 auto;
-` as any
-
-export const StyledFunds = styled.div`
-  font-size: 13px;
-  margin: 0 -19px 0 -55px;
-  padding: 14px 12px 16px 24px;
-  color: #ffffff;
-  background: #1b1d2f;
-  
-  a {
-    color: #6cc7fd;
-    text-decoration: none;
-  }
-` as any
-
-export const StyledIconFace = styled.span`
-  vertical-align: middle;
-  display: inline-block;
-  margin-right: 9px;
 ` as any
 
 export const StyledIconRecurringBig = styled.span`
