@@ -29,6 +29,7 @@ import Profile from '../components/rewards/profile';
 import ContributeTable, { DetailCell as ContributionDetailCell } from '../components/rewards/contributeTable';
 import DonationTable, { DetailCell as DonationDetailCell } from '../components/rewards/donationTable';
 import Amount from '../components/rewards/amount';
+import Donate from '../components/rewards/donate';
 
 const donate = require('./assets/img/rewards_donate.svg')
 const wallet = require('./assets/img/rewards_wallet.svg')
@@ -44,6 +45,12 @@ const eich = require('./assets/img/eich.jpg')
 
 addDecorator(withKnobs)
 addDecorator(BetterVisualizer)
+
+const donationAmount = [
+  {tokens: 1, converted: 0.3, selected: false},
+  {tokens: 5, converted: 1.5, selected: false},
+  {tokens: 10, converted: 3, selected: false}
+]
 
 storiesOf('Rewards/Content', module)
   .add('Box', withState({ checked: false, toggle: true }, (store) => {
@@ -124,6 +131,29 @@ storiesOf('Rewards/Content', module)
         store.set({ checked: !store.state.checked })
       )}
     />
+  }))
+  .add('Donate', withState({donationAmount}, (store) => {
+    return <div style={{background: '#696fdc'}}>
+      <Donate
+        theme={{
+          paddingFunds: '14px 12px 16px 24px',
+          paddingSend: '16px 19px 16px 40px',
+          paddingBox: '16px 19px 16px 20px'
+        }}
+        balance={number('Balance ', 5)}
+        donationAmounts={object('Donations', store.state.donationAmount)}
+        onDonate={() => {}}
+        actionText={text('Action text', 'Send my Donation')}
+        onAmountSelection={(tokens: number) => {
+          const list = store.state.donationAmount.map((item) => {
+            item.selected = item.tokens === tokens
+            return item
+          })
+          store.set({donationAmount: list})
+        }}
+      >
+    </Donate>
+    </div>
   }))
 
 storiesOf('Rewards/Utils', module)
