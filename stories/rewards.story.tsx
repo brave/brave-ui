@@ -172,7 +172,7 @@ storiesOf('Rewards/Utils', module)
       value={object('Checkbox values', store.state)}
       multiple={boolean('Is multiple?', false)}
       title={text('Title', 'Enable ability to give tips on ‘Like’ posts')}
-      onChange={(child, selected, all) => (
+      onChange={(kye, selected, child, all) => (
         store.set(all)
       )}
     >
@@ -204,7 +204,7 @@ storiesOf('Rewards/Utils', module)
     </Tooltip>
   })
   .add('Amount',withState({selected: false}, (store) => {
-    return <div style={{background: '#696fdc', width: '315px', padding: '50px'}}>
+    return <div style={{background: '#696fdc', width: '335px', padding: '50px'}}>
       <Amount
       amount={number('Amount', 5)}
       converted={number('Converted', 1.5)}

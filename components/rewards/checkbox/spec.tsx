@@ -2,10 +2,10 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import Checkbox from './index'
+import Checkbox, {Props} from './index'
 
 describe('Checkbox tests', () => {
-  const baseComponent = (props?: object) => <Checkbox
+  const baseComponent = (props?: Props) => <Checkbox
     value={{'yt': true, 'tw': false, 'inst': false}}
     id={'checkbox'}
     multiple={false}

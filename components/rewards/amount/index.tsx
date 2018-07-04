@@ -8,10 +8,10 @@ import { StyledWrapper, StyledAmount, StyledLogo, StyledConverted, StyledTokens 
 export interface Props {
   id?: string
   amount: number
-  converted?: number
+  converted: number
   selected?: boolean
   type?: 'big' | 'small'
-  onClick?: () => void
+  onClick: (amount: number) => void
 }
 
 const logo = require('./assets/logo')
@@ -24,15 +24,17 @@ const logo = require('./assets/logo')
 
 export default class Amount extends React.PureComponent<Props, {}> {
   render () {
-    const { id, onClick, amount, converted, selected, type } = this.props
+    const { id, onClick, amount, selected, type } = this.props
+
+    let converted = this.props.converted || 0
 
     return (
-      <StyledWrapper id={id} onClick={onClick}>
+      <StyledWrapper id={id} onClick={onClick.bind(this, amount)}>
         <StyledAmount selected={selected} type={type}>
           <StyledLogo>{logo}</StyledLogo>{amount} <StyledTokens>{type === 'big' ? 'tokens' : null}</StyledTokens>
         </StyledAmount>
         <StyledConverted selected={selected} type={type}>
-          about {converted} USD
+          about {converted.toFixed(2)} USD
         </StyledConverted>
       </StyledWrapper>
     )
