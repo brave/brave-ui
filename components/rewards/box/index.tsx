@@ -19,7 +19,7 @@ import { StyledWrapper,
   StyledContentWrapper,
   StyledFlip
 } from './style'
-import Checkbox from '../toggle'
+import Toggle from '../toggle'
 
 const close = require('./assets/close')
 const settings = require('./assets/settings')
@@ -86,7 +86,7 @@ export default class Box extends React.PureComponent<Props, State> {
             <StyledRight>
               {
                 toggle ?
-                <Checkbox onClick={onToggle} checked={checked} />
+                <Toggle onClick={onToggle} checked={checked} size={'large'} />
                 : null
               }
             </StyledRight>

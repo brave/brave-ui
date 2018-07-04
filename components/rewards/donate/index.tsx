@@ -11,6 +11,7 @@ import {
   StyledIconSend,
   StyledIconFace,
   StyledFunds,
+  StyledFundsText
 } from './style'
 
 import Amount from '../amount';
@@ -23,8 +24,10 @@ type Donation = {tokens: number, converted: number, selected?: boolean}
 export interface Props {
   id?: string
   actionText: string
+  title: string
   balance: number
   donationAmounts: Donation[]
+  donateType?: 'big' | 'small'
   children?: React.ReactNode
   onDonate: (amount: number) => void
   onAmountSelection?: (tokens: number) => void
@@ -40,6 +43,8 @@ export interface Theme {
   paddingSend?: CSS.PaddingProperty<1>
   paddingFunds?: CSS.PaddingProperty<1>
   paddingBox?: CSS.PaddingProperty<1>
+  sendBgColor?: CSS.Color
+  disabledSendColor?: CSS.Color
 }
 
 export default class Donate extends React.PureComponent<Props, State> {
@@ -99,12 +104,15 @@ export default class Donate extends React.PureComponent<Props, State> {
   }
 
   render () {
-    const { id, donationAmounts, actionText, children, theme } = this.props
+    const { id, donationAmounts, actionText, children, theme, title } = this.props
     const disabled = this.state.amount === 0
+
+    const donateType = this.props.donateType ? this.props.donateType : 'big'
+    const sendColor = disabled ? (theme && theme.disabledSendColor ? theme.disabledSendColor : '#3e45b2') : '#a1a8f2'
 
     return <>
       <StyledWrapper id={id} theme={theme}>
-        <StyledDonationTitle>Donation amount</StyledDonationTitle>
+        <StyledDonationTitle>{title}</StyledDonationTitle>
         {
           donationAmounts && donationAmounts.map((donation: Donation) => {
             return <Amount
@@ -113,7 +121,7 @@ export default class Donate extends React.PureComponent<Props, State> {
               selected={donation.selected}
               onClick={this.onAmountChange}
               converted={donation.converted}
-              type={'big'}
+              type={donateType}
             />
           })
         }
@@ -122,10 +130,11 @@ export default class Donate extends React.PureComponent<Props, State> {
       {
         this.state.missingFunds
           ? <StyledFunds theme={theme}>
-            <StyledIconFace>{sadFace}</StyledIconFace> Not enough tokens. Please <a href="#">add funds</a>.
+            <StyledIconFace>{sadFace}</StyledIconFace>
+            <StyledFundsText>Not enough tokens. Please <a href="#">add funds</a>.</StyledFundsText>
           </StyledFunds>
           : <StyledSend disabled={disabled} onClick={this.validateDonation()} theme={theme}>
-            <StyledIconSend>{send(disabled ? '#3e45b2' : '#a1a8f2')}</StyledIconSend>{actionText}
+            <StyledIconSend>{send(sendColor)}</StyledIconSend>{actionText}
           </StyledSend>
       }
     </>

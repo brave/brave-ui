@@ -168,16 +168,16 @@ exports[`MainToggle tests basic tests matches the snapshot 1`] = `
       disabled={undefined}
       id={undefined}
       onClick={undefined}
-      size="medium"
+      size="large"
     >
       <div
         className="c6"
-        size="medium"
+        size="large"
       />
       <div
         checked={undefined}
         className="c7"
-        size="medium"
+        size="large"
       />
     </div>
   </div>
