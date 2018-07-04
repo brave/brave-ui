@@ -15,12 +15,14 @@ import WelcomePage from './concepts/aboutPages/welcomePage/index'
 import BraveShields from './concepts/features/braveShields'
 import Settings from './concepts/pages/RewardsSettings'
 import SiteBanner from '../components/rewards/siteBanner'
+import Tip from '../components/rewards/tip'
 
 addDecorator(withKnobs)
 
 const siteBgImage = require('./assets/img/bg_siteBanner.jpg')
 const siteBgLogo = require('./assets/img/ddgo_siteBanner.svg')
 const siteScreen = require('./assets/img/ddgo_site.png')
+const tipScreen = require('./assets/img/tip_site.jpg')
 
 const donationAmount = [
   {tokens: 1, converted: 0.3, selected: false},
@@ -76,5 +78,27 @@ storiesOf('Concepts/Features', module)
         ]}
         onClose={() => {}}
       />
+    </div>
+  }))
+  .add('Rewards Tip', withState({donationAmount, allow: false}, (store) => {
+    return <div style={{background: `url(${tipScreen}) no-repeat top center`, width: '986px', height: '912px', margin: '0 auto', position: 'relative'}}>
+      <div style={{position: 'absolute', bottom: '185px', left: '330px'}}>
+        <Tip
+          donationAmounts={object('Donations', store.state.donationAmount)}
+          title={text('Title', 'Bart Baker')}
+          allow={boolean('Allow tips', store.state.allow)}
+          provider={text('Provider', 'YouTube')}
+          balance={5}
+          onDonate={() => {}}
+          onAllow={(allow: boolean) => store.set({allow})}
+          onAmountSelection={(tokens: number) => {
+            const list = store.state.donationAmount.map((item) => {
+              item.selected = item.tokens === tokens
+              return item
+            })
+            store.set({donationAmount: list})
+          }}
+        />
+      </div>
     </div>
   }))

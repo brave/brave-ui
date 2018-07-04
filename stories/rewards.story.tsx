@@ -143,6 +143,7 @@ storiesOf('Rewards/Content', module)
         balance={number('Balance ', 5)}
         donationAmounts={object('Donations', store.state.donationAmount)}
         onDonate={() => {}}
+        title={'Donation amount'}
         actionText={text('Action text', 'Send my Donation')}
         onAmountSelection={(tokens: number) => {
           const list = store.state.donationAmount.map((item) => {
@@ -165,6 +166,10 @@ storiesOf('Rewards/Utils', module)
       size={size}
       disabled={boolean('Disabled?', false)}
       checked={boolean('Checked?', store.state.checked)}
+      theme={{
+        offColor: text('Off color', '#CDD1D5'),
+        onColor: text('On color', '#6D73D2')
+      }}
       onClick={() => (
         store.set({ checked: !store.state.checked })
       )}

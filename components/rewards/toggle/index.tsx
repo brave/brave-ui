@@ -3,6 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
+import * as CSS from 'csstype'
 import { StyledWrapper, StyledSlider, StyledBullet } from './style'
 
 export interface Props {
@@ -11,11 +12,17 @@ export interface Props {
   checked?: boolean
   size?: 'large' | 'medium' | 'small'
   onClick?: () => void
+  theme?: Theme
+}
+
+interface Theme {
+  onColor?: CSS.Color
+  offColor?: CSS.Color
 }
 
 export default class Toggle extends React.PureComponent<Props, {}> {
   render () {
-    const { id, onClick, size, disabled, checked } = this.props
+    const { id, onClick, size, disabled, checked, theme } = this.props
 
     const props: Props = {
       id,
@@ -31,7 +38,7 @@ export default class Toggle extends React.PureComponent<Props, {}> {
     return (
       <StyledWrapper {...props}>
         <StyledSlider size={props.size} />
-        <StyledBullet size={props.size} checked={props.checked} />
+        <StyledBullet size={props.size} checked={checked} theme={theme}/>
       </StyledWrapper>
     )
   }

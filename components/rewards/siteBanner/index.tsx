@@ -197,6 +197,7 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
               <Donate
                 balance={balance}
                 donationAmounts={donationAmounts}
+                title={'Donation amount'}
                 onDonate={this.onDonate}
                 actionText={'Send my donation'}
                 onAmountSelection={onAmountSelection}

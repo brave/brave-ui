@@ -4,16 +4,16 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
 .c0 {
   position: relative;
   display: block;
-  width: 40px;
-  height: 24px;
+  width: 30px;
+  height: 18px;
 }
 
 .c1 {
   background: #A7ACB2;
   width: 100%;
   border-radius: 3px;
-  height: 8px;
-  margin-top: 8px;
+  height: 6px;
+  margin-top: 6px;
 }
 
 .c2 {
@@ -26,8 +26,8 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
   -webkit-transform: translate(0,calc(-50% - 4px));
   -ms-transform: translate(0,calc(-50% - 4px));
   transform: translate(0,calc(-50% - 4px));
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
 }
 
 <div

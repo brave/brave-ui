@@ -184,7 +184,11 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   font-weight: 600;
   line-height: 1.75;
   color: #ffffff;
-  margin-bottom: 5px;
+  margin-bottom: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 167px;
 }
 
 .c22 {
@@ -204,7 +208,7 @@ exports[`List tests basic tests matches the snapshot 1`] = `
 .c23 {
   vertical-align: middle;
   display: inline-block;
-  margin-right: 21px;
+  margin-right: 18px;
 }
 
 .c17 {
