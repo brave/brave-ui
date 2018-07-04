@@ -3,6 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled, { css } from 'styled-components'
+import { Theme } from './index';
 
 const check = require('./assets/check')
 
@@ -32,16 +33,16 @@ export const StyledBox = styled.span`
   width: 18px;
   height: 18px;
   border-radius: 2px;
-  border: solid 1px #d1d1db;
+  border: solid 1px ${(p: {selected: boolean, theme: Theme}) => p.theme.borderColor ? p.theme.borderColor : '#d1d1db'};
   display: inline-block;
   margin-right: 11px;
   position: relative;
   top: 3px;
   
- ${(p: {selected: boolean}) => p.selected
+ ${(p: {selected: boolean, theme: Theme}) => p.selected
     ? css`
       border-color: #a1a8f2;
-      background: url("data:image/svg+xml,${check}") no-repeat 3px 5px;
+      background: url("data:image/svg+xml,${check(p.theme.checkColor)}") no-repeat 3px 5px;
     ` : ''
   }
 ` as any

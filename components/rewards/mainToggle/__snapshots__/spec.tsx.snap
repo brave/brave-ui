@@ -107,10 +107,47 @@ exports[`MainToggle tests basic tests matches the snapshot 1`] = `
   <div
     className="c1"
   >
-    <img
+    <span
       className=""
-      src="test-file-stub"
-    />
+    >
+      <svg
+        height="48"
+        width="50"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          fill="none"
+          fillRule="evenodd"
+        >
+          <path
+            d="M37.55 47.795l12.43.03-5.238-9.696-44.68.06z"
+            fill="#373743"
+            opacity="0.2"
+          />
+          <path
+            d="M24.01 0L24 26.054 47 39z"
+            fill="#9E1F63"
+          />
+          <path
+            d="M0 39l22.978-12.909L23 0z"
+            fill="#FB542B"
+          />
+          <path
+            d="M1 39l44-.002L23.044 27z"
+            fill="#662D91"
+          />
+          <path
+            d="M23.426 16L14 31h19z"
+            fill="#FFF"
+          />
+          <path
+            d="M23.426 16L14 31h19z"
+            stroke="#999EA2"
+            strokeWidth="0.88"
+          />
+        </g>
+      </svg>
+    </span>
     <div
       className="c2"
     >

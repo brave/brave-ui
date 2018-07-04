@@ -182,19 +182,45 @@ exports[`Box tests basic tests matches the snapshot 1`] = `
       className="c9"
       open={false}
     >
-      <img
+      <div
         className="c10"
         onClick={[Function]}
         open={false}
-        src="test-file-stub"
-      />
+      >
+        <svg
+          height="11"
+          width="11"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.017 11l-.982-.971L4.551 5.48 0 .976.969 0l4.547 4.502L9.923.066l.985.975-4.407 4.436L11 9.932l-.969.977-4.499-4.456z"
+            fill="#DFDFE8"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
       <div
         className="c11"
       >
-        <img
+        <span
           className="c12"
-          src="test-file-stub"
-        />
+        >
+          <svg
+            height="20"
+            width="21"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.757 10H1.625M20.375 10h-2.868M17.507 10a2.375 2.375 0 1 0-4.75 0 2.375 2.375 0 0 0 4.75 0zM9.244 3h11.131M1.463 3H4.87M5.494 3a2.375 2.375 0 1 0 4.75 0 2.375 2.375 0 0 0-4.75 0zM6.4 17H1.625M20.375 17H11.15M12.15 17a2.375 2.375 0 1 0-4.749 0 2.375 2.375 0 0 0 4.75 0z"
+              fill="none"
+              fillRule="evenodd"
+              stroke="#A1A8F2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1.25"
+            />
+          </svg>
+        </span>
         <span
           className="c13"
         >
