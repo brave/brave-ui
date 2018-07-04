@@ -2,10 +2,10 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import Amount from './index'
+import List from './index'
 
-describe('Amount tests', () => {
-  const baseComponent = (props?: object) => <Amount id='amount' amount={1} converted={0.4} onClick={() => {}} {...props}  />
+describe('List tests', () => {
+  const baseComponent = (props?: object) => <List id='list' {...props} />
 
   describe('basic tests', () => {
     it('matches the snapshot', () => {
@@ -16,7 +16,7 @@ describe('Amount tests', () => {
 
     it('renders the component', () => {
       const wrapper = shallow(baseComponent())
-      const assertion = wrapper.find('#amount').length
+      const assertion = wrapper.find('#list').length
       expect(assertion).toBe(1)
     })
   })

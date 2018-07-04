@@ -3,6 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
+import * as CSS from 'csstype'
 import { StyledWrapper, StyledTitle, StyledLabel, StyledBox } from './style'
 
 export interface Props {
@@ -11,7 +12,13 @@ export interface Props {
   children: React.ReactNode
   multiple?: boolean
   value: {[key: string]: boolean}
-  onChange?: (child: React.ReactNode, selected: boolean, all: {[key: string]: boolean}) => void
+  theme?: Theme
+  onChange?: (key: string, selected: boolean, child: React.ReactNode, all: {[key: string]: boolean}) => void
+}
+
+export interface Theme {
+  checkColor?: CSS.Color
+  borderColor?: CSS.Color
 }
 
 interface State {
@@ -43,7 +50,7 @@ export default class Checkbox extends React.PureComponent<Props, State> {
       const key = child.props['data-key']
       const selected = self.state.checked[key] || false
       return <StyledLabel onClick={self.onOptionClick.bind(self, key, child, selected)}>
-        <StyledBox selected={selected} /> {element}
+        <StyledBox selected={selected} theme={self.props.theme} /> {element}
       </StyledLabel>
     })
   }
@@ -65,7 +72,7 @@ export default class Checkbox extends React.PureComponent<Props, State> {
     this.setState({checked: newState})
 
     if (this.props.onChange) {
-      this.props.onChange(child, selected, newState)
+      this.props.onChange(key, selected, child, newState)
     }
   }
 
@@ -81,7 +88,7 @@ export default class Checkbox extends React.PureComponent<Props, State> {
 
     return (
       <StyledWrapper id={id}>
-        <StyledTitle>{title}</StyledTitle>
+        {title ? <StyledTitle>{title}</StyledTitle> : null}
         {data}
       </StyledWrapper>
     )
