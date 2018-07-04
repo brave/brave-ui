@@ -64,7 +64,6 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   -ms-flex-preferred-size: 336px;
   flex-basis: 336px;
   background: #696fdc;
-  padding: 0 19px 0 55px;
 }
 
 .c1 {
@@ -153,48 +152,19 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   color: #afb2f1;
   text-align: right;
   margin: 8px 0 10px;
+  padding: 0 19px 0 55px;
 }
 
 .c14 {
   color: #ffffff;
 }
 
-.c15 {
-  font-family: Poppins;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.75;
-  color: #ffffff;
-  margin-bottom: 5px;
-}
-
 .c21 {
-  background: #4c54d2;
-  font-family: Poppins;
-  font-size: 13px;
-  font-weight: 600;
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
-  color: #3e45b2;
-  margin: 0 -19px 0 -55px;
-  padding: 16px 19px 16px 55px;
-  text-transform: uppercase;
-}
-
-.c22 {
-  vertical-align: middle;
-  display: inline-block;
-  margin-right: 21px;
-}
-
-.c20 {
   display: inline-block;
   margin-left: 6px;
 }
 
-.c19 {
+.c20 {
   color: rgba(255,255,255,0.65);
 }
 
@@ -204,19 +174,52 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   margin: 0 auto;
 }
 
+.c15 {
+  padding: 0 19px 0 55px;
+}
+
 .c16 {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.75;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.c22 {
+  background: #4c54d2;
+  font-family: Poppins;
+  font-size: 13px;
+  font-weight: 600;
+  -webkit-letter-spacing: 0.2px;
+  -moz-letter-spacing: 0.2px;
+  -ms-letter-spacing: 0.2px;
+  letter-spacing: 0.2px;
+  color: #3e45b2;
+  padding: 16px 19px 16px 55px;
+  text-transform: uppercase;
+}
+
+.c23 {
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 21px;
+}
+
+.c17 {
   width: 100%;
   margin-bottom: 12px;
 }
 
-.c17 {
+.c18 {
   font-family: Poppins;
   font-size: 14px;
   line-height: 2.79;
   color: #686978;
 }
 
-.c18 {
+.c19 {
   width: 18px;
   height: 18px;
   border-radius: 2px;
@@ -307,52 +310,57 @@ exports[`List tests basic tests matches the snapshot 1`] = `
         </div>
         <div
           className="c15"
-        >
-          Donation amount
-        </div>
-        <div
-          className="c16"
           id={undefined}
         >
           <div
-            className="c17"
-            onClick={[Function]}
+            className="c16"
           >
-            <span
+            Donation amount
+          </div>
+          <div
+            className="c17"
+            id={undefined}
+          >
+            <div
               className="c18"
-              selected={false}
-            />
-             
-            <span
-              className="c19"
+              onClick={[Function]}
             >
-              Make this monthly
-            </span>
-             
-            <span
-              className="c20"
-            >
-              <svg
-                height="11"
-                width="12"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                className="c19"
+                selected={false}
+              />
+               
+              <span
+                className="c20"
               >
-                <path
-                  d="M10.425 3.106h-.004l-.114-.23C9.277 1.023 7.615 0 5.621 0 2.52 0 0 2.465 0 5.504 0 8.534 2.521 11 5.628 11a5.67 5.67 0 0 0 3.275-1.029.452.452 0 0 0 .107-.64.474.474 0 0 0-.654-.104 4.73 4.73 0 0 1-2.735.856C3.039 10.083.937 8.03.937 5.496c0-2.525 2.102-4.58 4.691-4.58 2.086 0 3.249 1.305 3.845 2.377l.047.096c-.404.278-.67.737-.67 1.257 0 .85.705 1.54 1.575 1.54S12 5.496 12 4.646c0-.851-.705-1.54-1.575-1.54"
-                  fill="#A1A8F2"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </span>
+                Make this monthly
+              </span>
+               
+              <span
+                className="c21"
+              >
+                <svg
+                  height="11"
+                  width="12"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.425 3.106h-.004l-.114-.23C9.277 1.023 7.615 0 5.621 0 2.52 0 0 2.465 0 5.504 0 8.534 2.521 11 5.628 11a5.67 5.67 0 0 0 3.275-1.029.452.452 0 0 0 .107-.64.474.474 0 0 0-.654-.104 4.73 4.73 0 0 1-2.735.856C3.039 10.083.937 8.03.937 5.496c0-2.525 2.102-4.58 4.691-4.58 2.086 0 3.249 1.305 3.845 2.377l.047.096c-.404.278-.67.737-.67 1.257 0 .85.705 1.54 1.575 1.54S12 5.496 12 4.646c0-.851-.705-1.54-1.575-1.54"
+                    fill="#A1A8F2"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
           </div>
         </div>
         <div
-          className="c21"
+          className="c22"
           disabled={true}
           onClick={undefined}
         >
           <span
-            className="c22"
+            className="c23"
           >
             <svg
               height="21"
@@ -366,7 +374,7 @@ exports[`List tests basic tests matches the snapshot 1`] = `
               />
             </svg>
           </span>
-           Send my donation
+          Send my donation
         </div>
       </div>
     </div>

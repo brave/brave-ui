@@ -26,7 +26,7 @@ const donationAmount = [
   {tokens: 1, converted: 0.3, selected: false},
   {tokens: 5, converted: 1.5, selected: false},
   {tokens: 10, converted: 3, selected: false}
-  ]
+]
 
 
 // Globally adapt the story visualizer for this story
