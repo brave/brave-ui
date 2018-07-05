@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
-import { Props } from './index';
+import { Props, Theme } from './index';
 
 const bg1 = require('./assets/bg_bats.svg')
 const bg2 = require('./assets/bg_hearts.svg')
@@ -70,13 +70,11 @@ export const StyledLogoWrapper = styled.div`
   flex-basis: 217px;
 ` as any
 
-export const StyledLogoBorder = styled.div`
-  border: 6px solid #fff;
-  border-radius: 50%;
-  width: 160px;
-  height: 160px;
-  background: #DE4D26;
-  color: #FFFFFF;
+export const StyledLogoText = styled.div`
+	background: inherit;
+	-webkit-background-clip: text;
+	color: transparent;
+	filter: invert(1) grayscale(1) contrast(9);
   font-size: 80px;
   font-family: Poppins;
   font-weight: 600;
@@ -84,7 +82,15 @@ export const StyledLogoBorder = styled.div`
   letter-spacing: 0;
   line-height: 1;
   text-transform: uppercase;
-  padding-top: ${(p: {padding: boolean}) => p.padding ? '35px' : 0};
+` as any
+
+export const StyledLogoBorder = styled.div`
+  border: 6px solid #fff;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  background: ${(p: {theme: Theme, padding: boolean}) => p.theme && p.theme.logoBgColor ? p.theme.logoBgColor : '#DE4D26'};
+  padding-top: ${(p: {theme: Theme, padding: boolean}) => p.padding ? '35px' : 0};
   margin: -66px 0 25px;
   overflow: hidden;
 ` as any

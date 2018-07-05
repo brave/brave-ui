@@ -67,7 +67,7 @@ exports[`Tip tests basic tests matches the snapshot 1`] = `
   -ms-letter-spacing: 0.2px;
   letter-spacing: 0.2px;
   color: #1a22a8;
-  padding: 16px 0 17px 51px;
+  padding: 16px 0 16px 51px;
   text-transform: uppercase;
 }
 
