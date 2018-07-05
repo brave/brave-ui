@@ -3,6 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
+import * as CSS from 'csstype'
 import {
   StyledWrapper,
   StyledDonation,
@@ -27,7 +28,8 @@ import {
   StyledSocialItem,
   StyledSocialIcon,
   StyledOption,
-  StyledIconRecurring
+  StyledIconRecurring,
+  StyledLogoText
 } from './style'
 
 import Donate from '../donate';
@@ -51,6 +53,11 @@ export interface Props {
   onDonate: (amount: number, monthly: boolean) => void
   onClose?: () => void
   onAmountSelection: (tokens: number) => void
+  theme?: Theme
+}
+
+export interface Theme {
+  logoBgColor: CSS.Color
 }
 
 interface State {
@@ -74,7 +81,7 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
 
   getLogo (logo: string | undefined, domain: string) {
     if (!logo) {
-      return (domain && domain.substring(0,1)) || ''
+      return <StyledLogoText>{(domain && domain.substring(0,1)) || ''}</StyledLogoText>
     }
 
     return <StyledLogoImage src={logo} />
@@ -154,7 +161,8 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
       balance,
       donationAmounts,
       domain,
-      onAmountSelection
+      onAmountSelection,
+      theme
     } = this.props
 
     return (
@@ -169,7 +177,7 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
           <StyledContentWrapper>
             <StyledContent>
               <StyledLogoWrapper>
-                <StyledLogoBorder padding={!logo}>
+                <StyledLogoBorder padding={!logo} theme={theme}>
                   {this.getLogo(logo, domain)}
                 </StyledLogoBorder>
                 {this.getSocial(social)}
