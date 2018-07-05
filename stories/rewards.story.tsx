@@ -30,6 +30,7 @@ import ContributeTable, { DetailCell as ContributionDetailCell } from '../compon
 import DonationTable, { DetailCell as DonationDetailCell } from '../components/rewards/donationTable';
 import Amount from '../components/rewards/amount';
 import Donate from '../components/rewards/donate';
+import Button from '../components/rewards/button';
 
 const donate = require('./assets/img/rewards_donate.svg')
 const wallet = require('./assets/img/rewards_wallet.svg')
@@ -251,6 +252,16 @@ storiesOf('Rewards/Utils', module)
     />
     </div>
   }))
+  .add('Button',() => {
+    return <Button
+      type={select('Type', {primary: 'primary', secondary: 'secondary', ghost: 'ghost', cta: 'cta'}, 'primary')}
+      color={select('Color', {brand: 'brand', action: 'action', subtle: 'subtle'}, 'brand')}
+      size={select('Size', {xlarge: 'xlarge', large: 'large', medium: 'medium', small: 'small'}, 'medium')}
+      text={'Button'}
+      disabled={boolean('Disabled', false)}
+      onClick={() => {}}
+    />
+  })
 
 storiesOf('Rewards/Tables', module)
   .add('Base',() => {

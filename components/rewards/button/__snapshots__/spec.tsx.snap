@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button tests basic tests matches the snapshot 1`] = `
+.c0 {
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: Poppins;
+  text-align: center;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+  font-weight: 600;
+  line-height: 1;
+}
+
+<div
+  className="c0"
+  id="button"
+/>
+`;
