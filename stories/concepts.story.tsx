@@ -51,6 +51,7 @@ storiesOf('Concepts/Features', module)
         bgImage={boolean('Show bg image', false) ? siteBgImage : null}
         logo={boolean('Show logo', false) ? siteBgLogo : null}
         donationAmounts={object('Donations', store.state.donationAmount)}
+        theme={{logoBgColor: text('Logo bg color', '')}}
         onDonate={() => {}}
         onAmountSelection={(tokens: number) => {
           const list = store.state.donationAmount.map((item) => {

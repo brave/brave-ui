@@ -59,7 +59,7 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   align-content: space-between;
 }
 
-.c12 {
+.c13 {
   -webkit-flex-basis: 336px;
   -ms-flex-preferred-size: 336px;
   flex-basis: 336px;
@@ -94,13 +94,12 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   flex-basis: 217px;
 }
 
-.c8 {
-  border: 6px solid #fff;
-  border-radius: 50%;
-  width: 160px;
-  height: 160px;
-  background: #DE4D26;
-  color: #FFFFFF;
+.c9 {
+  background: inherit;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-filter: invert(1) grayscale(1) contrast(9);
+  filter: invert(1) grayscale(1) contrast(9);
   font-size: 80px;
   font-family: Poppins;
   font-weight: 600;
@@ -111,12 +110,20 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   letter-spacing: 0;
   line-height: 1;
   text-transform: uppercase;
+}
+
+.c8 {
+  border: 6px solid #fff;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  background: #DE4D26;
   padding-top: 35px;
   margin: -66px 0 25px;
   overflow: hidden;
 }
 
-.c9 {
+.c10 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -129,7 +136,7 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   flex-basis: calc(100% - 217px);
 }
 
-.c10 {
+.c11 {
   font-family: Poppins;
   font-size: 28px;
   font-weight: 600;
@@ -138,7 +145,7 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   margin: 41px 0 0;
 }
 
-.c11 {
+.c12 {
   font-family: Muli;
   font-size: 16px;
   line-height: 1.5;
@@ -146,7 +153,7 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   padding-right: 37px;
 }
 
-.c13 {
+.c14 {
   font-family: Poppins;
   font-size: 12px;
   color: #afb2f1;
@@ -155,16 +162,16 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   padding: 0 19px 0 55px;
 }
 
-.c14 {
+.c15 {
   color: #ffffff;
 }
 
-.c21 {
+.c22 {
   display: inline-block;
   margin-left: 6px;
 }
 
-.c20 {
+.c21 {
   color: rgba(255,255,255,0.65);
 }
 
@@ -174,11 +181,11 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   margin: 0 auto;
 }
 
-.c15 {
+.c16 {
   padding: 0 19px 0 55px;
 }
 
-.c16 {
+.c17 {
   font-family: Poppins;
   font-size: 16px;
   font-weight: 600;
@@ -191,7 +198,7 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   max-width: 167px;
 }
 
-.c22 {
+.c23 {
   background: #4c54d2;
   font-family: Poppins;
   font-size: 13px;
@@ -205,25 +212,25 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   text-transform: uppercase;
 }
 
-.c23 {
+.c24 {
   vertical-align: middle;
   display: inline-block;
   margin-right: 18px;
 }
 
-.c17 {
+.c18 {
   width: 100%;
   margin-bottom: 12px;
 }
 
-.c18 {
+.c19 {
   font-family: Poppins;
   font-size: 14px;
   line-height: 2.79;
   color: #686978;
 }
 
-.c19 {
+.c20 {
   width: 18px;
   height: 18px;
   border-radius: 2px;
@@ -276,19 +283,23 @@ exports[`List tests basic tests matches the snapshot 1`] = `
           <div
             className="c8"
           >
-            
+            <div
+              className="c9"
+            >
+              
+            </div>
           </div>
         </div>
         <div
-          className="c9"
+          className="c10"
         >
           <div
-            className="c10"
+            className="c11"
           >
             Welcome!
           </div>
           <div
-            className="c11"
+            className="c12"
           >
             <p>
               Thanks for stopping by. We joined Brave’s vision of protecting your privacy because we believe that fans like you would support us in our effort to keep the web a clean and safe place to be.
@@ -300,48 +311,48 @@ exports[`List tests basic tests matches the snapshot 1`] = `
         </div>
       </div>
       <div
-        className="c12"
+        className="c13"
       >
         <div
-          className="c13"
+          className="c14"
         >
           wallet balance 
           <span
-            className="c14"
+            className="c15"
           >
              tokens
           </span>
         </div>
         <div
-          className="c15"
+          className="c16"
           id={undefined}
         >
           <div
-            className="c16"
+            className="c17"
           >
             Donation amount
           </div>
           <div
-            className="c17"
+            className="c18"
             id={undefined}
           >
             <div
-              className="c18"
+              className="c19"
               onClick={[Function]}
             >
               <span
-                className="c19"
+                className="c20"
                 selected={false}
               />
                
               <span
-                className="c20"
+                className="c21"
               >
                 Make this monthly
               </span>
                
               <span
-                className="c21"
+                className="c22"
               >
                 <svg
                   height="11"
@@ -359,12 +370,12 @@ exports[`List tests basic tests matches the snapshot 1`] = `
           </div>
         </div>
         <div
-          className="c22"
+          className="c23"
           disabled={true}
           onClick={undefined}
         >
           <span
-            className="c23"
+            className="c24"
           >
             <svg
               height="21"
