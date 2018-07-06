@@ -6,6 +6,7 @@ import * as React from 'react'
 import * as CSS from 'csstype'
 import {
   StyledWrapper,
+  StyledContent,
   StyledDonationTitle,
   StyledSend,
   StyledIconSend,
@@ -110,8 +111,8 @@ export default class Donate extends React.PureComponent<Props, State> {
     const donateType = this.props.donateType ? this.props.donateType : 'big'
     const sendColor = disabled ? (theme && theme.disabledSendColor ? theme.disabledSendColor : '#3e45b2') : '#a1a8f2'
 
-    return <>
-      <StyledWrapper id={id} theme={theme}>
+    return <StyledWrapper>
+      <StyledContent id={id} theme={theme}>
         <StyledDonationTitle>{title}</StyledDonationTitle>
         {
           donationAmounts && donationAmounts.map((donation: Donation) => {
@@ -126,17 +127,18 @@ export default class Donate extends React.PureComponent<Props, State> {
           })
         }
         {children}
-      </StyledWrapper>
+      </StyledContent>
+      <StyledSend disabled={disabled} onClick={this.validateDonation()} theme={theme}>
+        <StyledIconSend>{send(sendColor)}</StyledIconSend>{actionText}
+      </StyledSend>
       {
         this.state.missingFunds
           ? <StyledFunds theme={theme}>
             <StyledIconFace>{sadFace}</StyledIconFace>
             <StyledFundsText>Not enough tokens. Please <a href="#">add funds</a>.</StyledFundsText>
           </StyledFunds>
-          : <StyledSend disabled={disabled} onClick={this.validateDonation()} theme={theme}>
-            <StyledIconSend>{send(sendColor)}</StyledIconSend>{actionText}
-          </StyledSend>
+          : null
       }
-    </>
+    </StyledWrapper>
   }
 }
