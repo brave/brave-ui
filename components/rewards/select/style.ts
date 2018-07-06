@@ -8,19 +8,6 @@ const check = require('./assets/check')
 const arrow = require('./assets/arrow')
 
 export const StyledWrapper = styled.div`
-  max-width: 254px;
-  width: 100%;
-  margin-bottom: 12px;
-` as any
-
-export const StyledTitle = styled.div`
-  width: 100%;
-  font-family: Poppins;
-  line-height: normal;
-  font-size: 14px;
-  font-weight: 500;
-  color: #686978;
-  margin-bottom: 6px;
 ` as any
 
 export const StyledSelectWrapper = styled.div`
