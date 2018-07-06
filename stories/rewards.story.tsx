@@ -31,6 +31,7 @@ import DonationTable, { DetailCell as DonationDetailCell } from '../components/r
 import Amount from '../components/rewards/amount';
 import Donate from '../components/rewards/donate';
 import Button from '../components/rewards/button';
+import Modal from '../components/rewards/modal';
 
 const donate = require('./assets/img/rewards_donate.svg')
 const wallet = require('./assets/img/rewards_wallet.svg')
@@ -156,6 +157,23 @@ storiesOf('Rewards/Content', module)
       >
     </Donate>
     </div>
+  }))
+  .add('Modal', withState({ visible: true }, (store) => {
+    return <>
+      {
+        boolean('Visible', store.state.visible)
+          ? <Modal
+          outsideClose={boolean('Close with click outside', false)}
+          maxWidth={text('Max width', '')}
+          onClose={() => (
+            store.set({ visible: !store.state.visible })
+          )}
+        >
+          Content
+        </Modal>
+        : null
+      }
+    </>
   }))
 
 storiesOf('Rewards/Utils', module)

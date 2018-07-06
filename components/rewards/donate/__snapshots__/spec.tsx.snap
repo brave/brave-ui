@@ -1,12 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Donate tests basic tests matches the snapshot 1`] = `
-Array [
-  .c0 {
-  padding: 0;
+.c0 {
+  position: relative;
 }
 
 .c1 {
+  padding: 0;
+}
+
+.c2 {
   font-family: Poppins;
   font-size: 16px;
   font-weight: 600;
@@ -19,15 +22,7 @@ Array [
   max-width: 167px;
 }
 
-<div
-    className="c0"
-    id="donate"
-  >
-    <div
-      className="c1"
-    />
-  </div>,
-  .c0 {
+.c3 {
   background: #4c54d2;
   font-family: Poppins;
   font-size: 13px;
@@ -41,19 +36,30 @@ Array [
   text-transform: uppercase;
 }
 
-.c1 {
+.c4 {
   vertical-align: middle;
   display: inline-block;
   margin-right: 18px;
 }
 
 <div
-    className="c0"
+  className="c0"
+>
+  <div
+    className="c1"
+    id="donate"
+  >
+    <div
+      className="c2"
+    />
+  </div>
+  <div
+    className="c3"
     disabled={true}
     onClick={undefined}
   >
     <span
-      className="c1"
+      className="c4"
     >
       <svg
         height="21"
@@ -67,6 +73,6 @@ Array [
         />
       </svg>
     </span>
-  </div>,
-]
+  </div>
+</div>
 `;

@@ -166,12 +166,12 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   color: #ffffff;
 }
 
-.c22 {
+.c23 {
   display: inline-block;
   margin-left: 6px;
 }
 
-.c21 {
+.c22 {
   color: rgba(255,255,255,0.65);
 }
 
@@ -182,10 +182,14 @@ exports[`List tests basic tests matches the snapshot 1`] = `
 }
 
 .c16 {
-  padding: 0 19px 0 55px;
+  position: relative;
 }
 
 .c17 {
+  padding: 0 19px 0 55px;
+}
+
+.c18 {
   font-family: Poppins;
   font-size: 16px;
   font-weight: 600;
@@ -198,7 +202,7 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   max-width: 167px;
 }
 
-.c23 {
+.c24 {
   background: #4c54d2;
   font-family: Poppins;
   font-size: 13px;
@@ -212,25 +216,25 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   text-transform: uppercase;
 }
 
-.c24 {
+.c25 {
   vertical-align: middle;
   display: inline-block;
   margin-right: 18px;
 }
 
-.c18 {
+.c19 {
   width: 100%;
   margin-bottom: 12px;
 }
 
-.c19 {
+.c20 {
   font-family: Poppins;
   font-size: 14px;
   line-height: 2.79;
   color: #686978;
 }
 
-.c20 {
+.c21 {
   width: 18px;
   height: 18px;
   border-radius: 2px;
@@ -325,71 +329,75 @@ exports[`List tests basic tests matches the snapshot 1`] = `
         </div>
         <div
           className="c16"
-          id={undefined}
         >
           <div
             className="c17"
-          >
-            Donation amount
-          </div>
-          <div
-            className="c18"
             id={undefined}
           >
             <div
-              className="c19"
-              onClick={[Function]}
+              className="c18"
             >
-              <span
+              Donation amount
+            </div>
+            <div
+              className="c19"
+              id={undefined}
+            >
+              <div
                 className="c20"
-                selected={false}
-              />
-               
-              <span
-                className="c21"
+                onClick={[Function]}
               >
-                Make this monthly
-              </span>
-               
-              <span
-                className="c22"
-              >
-                <svg
-                  height="11"
-                  width="12"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  className="c21"
+                  selected={false}
+                />
+                 
+                <span
+                  className="c22"
                 >
-                  <path
-                    d="M10.425 3.106h-.004l-.114-.23C9.277 1.023 7.615 0 5.621 0 2.52 0 0 2.465 0 5.504 0 8.534 2.521 11 5.628 11a5.67 5.67 0 0 0 3.275-1.029.452.452 0 0 0 .107-.64.474.474 0 0 0-.654-.104 4.73 4.73 0 0 1-2.735.856C3.039 10.083.937 8.03.937 5.496c0-2.525 2.102-4.58 4.691-4.58 2.086 0 3.249 1.305 3.845 2.377l.047.096c-.404.278-.67.737-.67 1.257 0 .85.705 1.54 1.575 1.54S12 5.496 12 4.646c0-.851-.705-1.54-1.575-1.54"
-                    fill="#A1A8F2"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </span>
+                  Make this monthly
+                </span>
+                 
+                <span
+                  className="c23"
+                >
+                  <svg
+                    height="11"
+                    width="12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.425 3.106h-.004l-.114-.23C9.277 1.023 7.615 0 5.621 0 2.52 0 0 2.465 0 5.504 0 8.534 2.521 11 5.628 11a5.67 5.67 0 0 0 3.275-1.029.452.452 0 0 0 .107-.64.474.474 0 0 0-.654-.104 4.73 4.73 0 0 1-2.735.856C3.039 10.083.937 8.03.937 5.496c0-2.525 2.102-4.58 4.691-4.58 2.086 0 3.249 1.305 3.845 2.377l.047.096c-.404.278-.67.737-.67 1.257 0 .85.705 1.54 1.575 1.54S12 5.496 12 4.646c0-.851-.705-1.54-1.575-1.54"
+                      fill="#A1A8F2"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          className="c23"
-          disabled={true}
-          onClick={undefined}
-        >
-          <span
+          <div
             className="c24"
+            disabled={true}
+            onClick={undefined}
           >
-            <svg
-              height="21"
-              width="22"
-              xmlns="http://www.w3.org/2000/svg"
+            <span
+              className="c25"
             >
-              <path
-                d="M11.248 13.348L2.84 17.23l-1.2-14.418 9.607 10.536zm8.214-3.794l-6.818 3.148-9.088-9.968 15.906 6.82zm-7.73 8.182l-1.769-2.178 1.769-.817v2.995zm-10.265.66A.73.73 0 0 0 2.506 19l6.083-2.81 3.307 4.075a.731.731 0 0 0 .814.23.733.733 0 0 0 .489-.692v-5.74l8.374-3.867a.736.736 0 0 0-.017-1.342L1.036.056 1.018.048C1.008.044.995.048.984.044A.728.728 0 0 0 .688 0C.658.003.631.01.602.015a.694.694 0 0 0-.238.09C.344.117.32.115.3.13.292.136.288.149.279.157.266.169.249.172.236.183a.717.717 0 0 0-.23.567C.008.763-.001.773 0 .787l1.467 17.61z"
-                fill="#3e45b2"
-                fillRule="evenodd"
-              />
-            </svg>
-          </span>
-          Send my donation
+              <svg
+                height="21"
+                width="22"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.248 13.348L2.84 17.23l-1.2-14.418 9.607 10.536zm8.214-3.794l-6.818 3.148-9.088-9.968 15.906 6.82zm-7.73 8.182l-1.769-2.178 1.769-.817v2.995zm-10.265.66A.73.73 0 0 0 2.506 19l6.083-2.81 3.307 4.075a.731.731 0 0 0 .814.23.733.733 0 0 0 .489-.692v-5.74l8.374-3.867a.736.736 0 0 0-.017-1.342L1.036.056 1.018.048C1.008.044.995.048.984.044A.728.728 0 0 0 .688 0C.658.003.631.01.602.015a.694.694 0 0 0-.238.09C.344.117.32.115.3.13.292.136.288.149.279.157.266.169.249.172.236.183a.717.717 0 0 0-.23.567C.008.763-.001.773 0 .787l1.467 17.61z"
+                  fill="#3e45b2"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </span>
+            Send my donation
+          </div>
         </div>
       </div>
     </div>
