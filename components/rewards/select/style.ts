@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled, {css} from 'styled-components'
-import { Props } from '../../../package/components/rewards/select';
+import { Props } from './index';
 
 const check = require('./assets/check')
 const arrow = require('./assets/arrow')
