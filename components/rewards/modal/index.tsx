@@ -16,7 +16,7 @@ export interface Props {
 const close = require('./assets/close')
 
 export default class Modal extends React.PureComponent<Props, {}> {
-  outsideClose = (e: any) => {
+  outsideClose = (e: React.ChangeEvent<HTMLDivElement>) => {
     if (!this.props.outsideClose) {
       return
     }
