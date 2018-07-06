@@ -5,7 +5,6 @@
 import * as React from 'react'
 import {
   StyledWrapper,
-  StyledTitle,
   StyledSelect,
   StyledOptions,
   StyledOption,
@@ -13,7 +12,6 @@ import {
 } from './style'
 
 export interface Props {
-  title?: string,
   id?: string,
   disabled?: boolean,
   value?: string,
@@ -106,7 +104,7 @@ export default class Select extends React.PureComponent<Props, State> {
   }
 
   render () {
-    const { id, title, children, disabled, value } = this.props
+    const { id, children, disabled, value } = this.props
 
     const num = React.Children.count(children)
     let data = null
@@ -117,7 +115,6 @@ export default class Select extends React.PureComponent<Props, State> {
 
     return (
       <StyledWrapper id={id}>
-        <StyledTitle>{title}</StyledTitle>
         {
           num > 0
           ? <StyledSelectWrapper tabIndex='0' onBlur={this.onBlur}>

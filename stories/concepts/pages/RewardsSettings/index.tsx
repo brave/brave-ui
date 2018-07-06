@@ -15,6 +15,7 @@ import '../../../assets/fonts/poppins.css'
 import List from '../../../../components/rewards/list';
 import Tokens from '../../../../components/rewards/tokens';
 import Select from '../../../../components/rewards/select';
+import ControlWrapper from '../../../../components/rewards/controlWrapper';
 import Checkbox from '../../../../components/rewards/checkbox';
 import DisabledContent from '../../../../components/rewards/disabledContent';
 import MainToggle from '../../../../components/rewards/mainToggle';
@@ -59,36 +60,48 @@ class Settings extends React.PureComponent<{}, State> {
     return <>
       <Grid columns={1} theme={{maxWidth: '270px', margin: '0 auto'}}>
           <Column size={1} theme={{justifyContent: 'center', flexWrap: 'wrap'}}>
-            <Select title={locale.adsMode}>
+            <ControlWrapper title={locale.adsMode}>
+              <Select>
               <div data-value='1'>Notifications</div>
               <div data-value='2'>Page</div>
               <div data-value='3'>Sounds</div>
             </Select>
-            <Select title={locale.adsFreq}>
-              <div data-value='10'>10 ads daily (10 tokens/month)</div>
-              <div data-value='5'>5 ads daily (5 tokens/month)</div>
-              <div data-value='1'>1 ads daily (1 token/month)</div>
-            </Select>
-            <Select title={locale.adsMode}>
-              <div data-value='1'>Notifications</div>
-              <div data-value='2'>Page</div>
-              <div data-value='3'>Sounds</div>
-            </Select>
-            <Select title={locale.adsFreq}>
-              <div data-value='10'>10 ads daily (10 tokens/month)</div>
-              <div data-value='5'>5 ads daily (5 tokens/month)</div>
-              <div data-value='1'>1 ads daily (1 token/month)</div>
-            </Select>
-            <Select title={locale.adsMode}>
-              <div data-value='1'>Notifications</div>
-              <div data-value='2'>Page</div>
-              <div data-value='3'>Sounds</div>
-            </Select>
-            <Select title={locale.adsFreq}>
-              <div data-value='10'>10 ads daily (10 tokens/month)</div>
-              <div data-value='5'>5 ads daily (5 tokens/month)</div>
-              <div data-value='1'>1 ads daily (1 token/month)</div>
-            </Select>
+            </ControlWrapper>
+            <ControlWrapper title={locale.adsFreq}>
+              <Select>
+                <div data-value='10'>10 ads daily (10 tokens/month)</div>
+                <div data-value='5'>5 ads daily (5 tokens/month)</div>
+                <div data-value='1'>1 ads daily (1 token/month)</div>
+              </Select>
+            </ControlWrapper>
+            <ControlWrapper title={locale.adsMode}>
+              <Select>
+                <div data-value='1'>Notifications</div>
+                <div data-value='2'>Page</div>
+                <div data-value='3'>Sounds</div>
+              </Select>
+            </ControlWrapper>
+            <ControlWrapper title={locale.adsFreq}>
+              <Select>
+                <div data-value='10'>10 ads daily (10 tokens/month)</div>
+                <div data-value='5'>5 ads daily (5 tokens/month)</div>
+                <div data-value='1'>1 ads daily (1 token/month)</div>
+              </Select>
+            </ControlWrapper>
+            <ControlWrapper title={locale.adsMode}>
+              <Select>
+                <div data-value='1'>Notifications</div>
+                <div data-value='2'>Page</div>
+                <div data-value='3'>Sounds</div>
+              </Select>
+            </ControlWrapper>
+            <ControlWrapper title={locale.adsFreq}>
+              <Select>
+                <div data-value='10'>10 ads daily (10 tokens/month)</div>
+                <div data-value='5'>5 ads daily (5 tokens/month)</div>
+                <div data-value='1'>1 ads daily (1 token/month)</div>
+              </Select>
+            </ControlWrapper>
           </Column>
         </Grid>
     </>
@@ -108,17 +121,21 @@ class Settings extends React.PureComponent<{}, State> {
     return <>
       <Grid columns={1} theme={{maxWidth: '270px', margin: '0 auto'}}>
           <Column size={1} theme={{justifyContent: 'center', flexWrap: 'wrap'}}>
-            <Select title={locale.contributionMonthly}>
-              <div data-value='10'><Tokens value={10} converted={'4'}/></div>
-              <div data-value='20'><Tokens value={20} converted={'6'}/></div>
-              <div data-value='40'><Tokens value={40} converted={'12'}/></div>
-              <div data-value='100'><Tokens value={100} converted={'40'}/></div>
-            </Select>
-            <Select title={locale.contributionSitesLimit}>
-              <div data-value='0'>{locale.contributionSitesNoLimit}</div>
-              <div data-value='10'>{locale.contributionSitesLimit10}</div>
-              <div data-value='50'>{locale.contributionSitesLimit50}</div>
-            </Select>
+            <ControlWrapper title={locale.contributionMonthly}>
+              <Select>
+                <div data-value='10'><Tokens value={10} converted={'4'}/></div>
+                <div data-value='20'><Tokens value={20} converted={'6'}/></div>
+                <div data-value='40'><Tokens value={40} converted={'12'}/></div>
+                <div data-value='100'><Tokens value={100} converted={'40'}/></div>
+              </Select>
+            </ControlWrapper>
+            <ControlWrapper title={locale.contributionSitesLimit}>
+               <Select>
+                <div data-value='0'>{locale.contributionSitesNoLimit}</div>
+                <div data-value='10'>{locale.contributionSitesLimit10}</div>
+                <div data-value='50'>{locale.contributionSitesLimit50}</div>
+              </Select>
+            </ControlWrapper>
           </Column>
         </Grid>
     </>
@@ -138,15 +155,16 @@ class Settings extends React.PureComponent<{}, State> {
     return <>
       <Grid columns={1} theme={{maxWidth: '270px', margin: '0 auto'}}>
           <Column size={1} theme={{justifyContent: 'center', flexWrap: 'wrap'}}>
-            <Checkbox
-              value={{'yt': true, 'tw': false, 'inst': false}}
-              multiple={true}
-              title={'Enable ability to give tips on ‘Like’ posts'}
-            >
-              <div data-key='yt'>YouTube</div>
-              <div data-key='tw'>Twitter</div>
-              <div data-key='inst'>Instagram</div>
-            </Checkbox>
+            <ControlWrapper title={'Enable ability to give tips on ‘Like’ posts'}>
+              <Checkbox
+                value={{'yt': true, 'tw': false, 'inst': false}}
+                multiple={true}
+              >
+                <div data-key='yt'>YouTube</div>
+                <div data-key='tw'>Twitter</div>
+                <div data-key='inst'>Instagram</div>
+              </Checkbox>
+            </ControlWrapper>
           </Column>
         </Grid>
     </>

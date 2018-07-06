@@ -2,7 +2,21 @@
 
 exports[`Button tests basic tests matches the snapshot 1`] = `
 .c0 {
+  background: #fff;
   display: inline-block;
+  overflow: hidden;
+  border: 1px solid rgb();
+}
+
+.c0:hover {
+  border-color: rgba(,0.9);
+}
+
+.c0:active {
+  border-color: rgba(,0.6);
+}
+
+.c1 {
   text-align: center;
   box-sizing: border-box;
   font-family: Poppins;
@@ -13,10 +27,19 @@ exports[`Button tests basic tests matches the snapshot 1`] = `
   letter-spacing: 0;
   font-weight: 600;
   line-height: 1;
+  cursor: pointer;
 }
 
 <div
   className="c0"
   id="button"
-/>
+>
+  <div
+    className="c1"
+    color={undefined}
+    disabled={undefined}
+    size={undefined}
+    type={undefined}
+  />
+</div>
 `;

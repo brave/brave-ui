@@ -8,18 +8,6 @@ import { Theme } from './index';
 const check = require('./assets/check')
 
 export const StyledWrapper = styled.div`
-  width: 100%;
-  margin-bottom: 12px;
-` as any
-
-export const StyledTitle = styled.div`
-  width: 100%;
-  font-family: Poppins;
-  line-height: normal;
-  font-size: 14px;
-  font-weight: 500;
-  color: #686978;
-  margin-bottom: 6px;
 ` as any
 
 export const StyledLabel = styled.div`

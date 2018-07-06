@@ -27,10 +27,10 @@ export type Size = 'xlarge' | 'large' | 'medium' | 'small'
  */
 export default class Button extends React.PureComponent<Props, {}> {
   render () {
-
+    const { type, size, color, disabled } = this.props
     return (
-      <StyledWrapper {...this.props}>
-          <StyledContent {...this.props}>
+      <StyledWrapper  {...this.props}>
+          <StyledContent type={type} size={size} color={color} disabled={disabled}>
             {this.props.text}
           </StyledContent>
       </StyledWrapper>
