@@ -14,7 +14,7 @@ export interface Props {
 }
 
 interface Theme {
-  maxWidth: CSS.MaxWidthProperty<1>
+  maxWidth?: CSS.MaxWidthProperty<1>
 }
 
 export default class ControlWrapper extends React.PureComponent<Props, {}> {

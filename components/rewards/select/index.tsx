@@ -3,6 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
+import * as CSS from 'csstype'
 import {
   StyledWrapper,
   StyledSelect,
@@ -10,19 +11,26 @@ import {
   StyledOption,
   StyledSelectWrapper
 } from './style'
+import ControlWrapper from '../controlWrapper';
 
 export interface Props {
-  id?: string,
-  disabled?: boolean,
-  value?: string,
-  onChange?: (e: any) => void,
+  id?: string
+  disabled?: boolean
+  value?: string
+  title?: string
+  onChange?: (e: any) => void
   children: React.ReactNode
+  theme?: Theme
 }
 
 interface State {
   value: string | number
   selected: React.ReactNode
   show: boolean
+}
+
+interface Theme {
+  maxWidth?: CSS.MaxWidthProperty<1>
 }
 
 /*
@@ -65,7 +73,7 @@ export default class Select extends React.PureComponent<Props, State> {
 
   generateOptions = (value: string | undefined, children: React.ReactNode) => {
     const self = this
-    return React.Children.map(children, (child: any, i) => {
+    return React.Children.map(children, (child: any) => {
       if (child.props['data-value'] == undefined) {
         return null
       }
@@ -104,7 +112,7 @@ export default class Select extends React.PureComponent<Props, State> {
   }
 
   render () {
-    const { id, children, disabled, value } = this.props
+    const { id, children, disabled, value, title, theme } = this.props
 
     const num = React.Children.count(children)
     let data = null
@@ -114,19 +122,21 @@ export default class Select extends React.PureComponent<Props, State> {
     }
 
     return (
-      <StyledWrapper id={id}>
-        {
-          num > 0
-          ? <StyledSelectWrapper tabIndex='0' onBlur={this.onBlur}>
-            <StyledSelect onClick={this.onSelectClick} disabled={disabled} show={this.state.show}>
-              {this.state.selected}
-            </StyledSelect>
-            <StyledOptions show={this.state.show}>
-              {data}
-            </StyledOptions>
-          </StyledSelectWrapper>
-          : null
-        }
+      <StyledWrapper id={id} theme={theme}>
+        <ControlWrapper title={title} theme={theme}>
+          {
+            num > 0
+            ? <StyledSelectWrapper tabIndex='0' onBlur={this.onBlur}>
+              <StyledSelect onClick={this.onSelectClick} disabled={disabled} show={this.state.show}>
+                {this.state.selected}
+              </StyledSelect>
+              <StyledOptions show={this.state.show}>
+                {data}
+              </StyledOptions>
+            </StyledSelectWrapper>
+            : null
+          }
+        </ControlWrapper>
       </StyledWrapper>
     )
   }
