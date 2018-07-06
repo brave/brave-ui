@@ -210,7 +210,7 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
                 actionText={'Send my donation'}
                 onAmountSelection={onAmountSelection}
                 theme={{
-                  paddingFunds: '14px 12px 16px 24px',
+                  paddingFunds: '13px 12px 13px 24px',
                   paddingSend: '16px 19px 16px 55px',
                   paddingBox: '0 19px 0 55px'
                 }}

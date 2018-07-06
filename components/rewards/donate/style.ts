@@ -6,6 +6,10 @@ import styled from 'styled-components'
 import { Theme } from './index';
 
 export const StyledWrapper = styled.div`
+  position: relative;
+` as any
+
+export const StyledContent = styled.div`
   padding: ${(p: {theme: Theme}) => p.theme && p.theme.paddingBox ? p.theme && p.theme.paddingBox : '0'};
 ` as any
 
@@ -48,6 +52,12 @@ export const StyledFunds = styled.div`
   padding: ${(p: {theme: Theme}) => p.theme && p.theme.paddingFunds ? p.theme && p.theme.paddingFunds : '0'};
   background: #1b1d2f;
   display: flex;
+  position:absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  
   a {
     color: #6cc7fd;
     text-decoration: none;
