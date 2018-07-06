@@ -22,6 +22,7 @@ import Tooltip from '../../components/rewards/tooltip'
 import Profile from '../../components/rewards/profile'
 import Amount from '../../components/rewards/amount'
 import Button from '../../components/rewards/button'
+import TextArea from '../../components/rewards/textarea';
 
 const bart = require('../assets/img/bartBaker.jpeg')
 
@@ -132,3 +133,12 @@ storiesOf('Rewards/Utils', module)
       onClick={() => {}}
     />
   })
+  .add('TextArea', withState({defaultValue: ''}, (store) => {
+    return <TextArea
+      defaultValue={text('Value', store.state.defaultValue)}
+      title={text('Title', 'Recovery keys')}
+      onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        store.set({ defaultValue: event.target.value})
+      }}
+    />
+  }))
