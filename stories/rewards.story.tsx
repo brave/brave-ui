@@ -32,6 +32,7 @@ import Amount from '../components/rewards/amount';
 import Donate from '../components/rewards/donate';
 import Button from '../components/rewards/button';
 import Modal from '../components/rewards/modal';
+import ControlWrapper from '../components/rewards/controlWrapper';
 
 const donate = require('./assets/img/rewards_donate.svg')
 const wallet = require('./assets/img/rewards_wallet.svg')
@@ -205,14 +206,15 @@ storiesOf('Rewards/Utils', module)
     </div>
   })
   .add('Select',() => {
-    return <Select
-      title={text('Title', 'Limit Sites to')}
+    return <ControlWrapper title={text('Title', 'Limit Sites to')}>
+      <Select
       onChange={() => false}
     >
       <div data-value='0'>No Limit</div>
       <div data-value='10'>Pay Only Top 10</div>
       <div data-value='50'>Pay Top 50</div>
     </Select>
+    </ControlWrapper>
   })
   .add('Tokens',() => {
     return <Tokens
@@ -222,20 +224,22 @@ storiesOf('Rewards/Utils', module)
     />
   })
   .add('Checkbox', withState({'yt': true, 'tw': false, 'inst': false}, (store) => {
-    return <div style={{width: '310px'}}>
-      <Checkbox
-      value={object('Checkbox values', store.state)}
-      multiple={boolean('Is multiple?', false)}
+    return <ControlWrapper
       title={text('Title', 'Enable ability to give tips on ‘Like’ posts')}
-      onChange={(kye, selected, child, all) => (
-        store.set(all)
-      )}
+      theme={{maxWidth: '315px'}}
     >
-      <div data-key='yt'>YouTube</div>
-      <div data-key='tw'>Twitter</div>
-      <div data-key='inst'>Instagram</div>
-    </Checkbox>
-    </div>
+      <Checkbox
+        value={object('Checkbox values', store.state)}
+        multiple={boolean('Is multiple?', false)}
+        onChange={(kye, selected, child, all) => (
+        store.set(all)
+        )}
+      >
+        <div data-key='yt'>YouTube</div>
+        <div data-key='tw'>Twitter</div>
+        <div data-key='inst'>Instagram</div>
+      </Checkbox>
+    </ControlWrapper>
   }))
   .add('Profile',() => {
     return <div style={{width: '400px'}}>

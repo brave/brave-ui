@@ -4,11 +4,10 @@
 
 import * as React from 'react'
 import * as CSS from 'csstype'
-import { StyledWrapper, StyledTitle, StyledLabel, StyledBox } from './style'
+import { StyledWrapper, StyledLabel, StyledBox } from './style'
 
 export interface Props {
   id?: string
-  title?: string
   children: React.ReactNode
   multiple?: boolean
   value: {[key: string]: boolean}
@@ -77,7 +76,7 @@ export default class Checkbox extends React.PureComponent<Props, State> {
   }
 
   render () {
-    const { id, title, children } = this.props
+    const { id, children } = this.props
 
     const num = React.Children.count(children)
     let data = null
@@ -88,7 +87,6 @@ export default class Checkbox extends React.PureComponent<Props, State> {
 
     return (
       <StyledWrapper id={id}>
-        {title ? <StyledTitle>{title}</StyledTitle> : null}
         {data}
       </StyledWrapper>
     )
