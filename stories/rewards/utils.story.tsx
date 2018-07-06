@@ -1,0 +1,138 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+// Storybook requires
+import { storiesOf, addDecorator } from '@storybook/react'
+import { withKnobs, boolean, select, text, object, number } from '@storybook/addon-knobs'
+
+import * as React from 'react'
+import { withState } from '@dump247/storybook-state'
+
+// Utils
+import { BetterVisualizer } from '../storyUtil'
+
+// Components
+import Toggle from '../../components/rewards/toggle'
+import List from '../../components/rewards/list'
+import Select from '../../components/rewards/select'
+import Tokens from '../../components/rewards/tokens'
+import Checkbox from '../../components/rewards/checkbox'
+import Tooltip from '../../components/rewards/tooltip'
+import Profile from '../../components/rewards/profile'
+import Amount from '../../components/rewards/amount'
+import Button from '../../components/rewards/button'
+import ControlWrapper from '../../components/rewards/controlWrapper'
+
+const bart = require('../assets/img/bartBaker.jpeg')
+
+addDecorator(withKnobs)
+addDecorator(BetterVisualizer)
+
+storiesOf('Rewards/Utils', module)
+  .add('Toggle', withState({ checked: false }, (store) => {
+    const sizeOptions = { 'small': 'small', 'medium': 'medium', 'large': 'large' }
+    const size = select('Weight', sizeOptions, 'medium')
+
+    return <Toggle
+      size={size}
+      disabled={boolean('Disabled?', false)}
+      checked={boolean('Checked?', store.state.checked)}
+      theme={{
+        offColor: text('Off color', '#CDD1D5'),
+        onColor: text('On color', '#6D73D2')
+      }}
+      onClick={() => (
+        store.set({ checked: !store.state.checked })
+      )}
+    />
+  }))
+  .add('List',() => {
+    return <div style={{width: '595px'}}>
+      <List
+        title={text('Title', 'Earnings this month')}
+      >
+        Some content
+      </List>
+    </div>
+  })
+  .add('Select',() => {
+    return <ControlWrapper title={text('Title', 'Limit Sites to')}>
+      <Select
+      onChange={() => false}
+    >
+      <div data-value='0'>No Limit</div>
+      <div data-value='10'>Pay Only Top 10</div>
+      <div data-value='50'>Pay Top 50</div>
+    </Select>
+    </ControlWrapper>
+  })
+  .add('Tokens',() => {
+    return <Tokens
+      value={text('Tokens value', '10')}
+      converted={text('Converted value', '4')}
+      currency={text('Currency', 'USD')}
+    />
+  })
+  .add('Checkbox', withState({'yt': true, 'tw': false, 'inst': false}, (store) => {
+    return <ControlWrapper
+      title={text('Title', 'Enable ability to give tips on ‘Like’ posts')}
+      theme={{maxWidth: '315px'}}
+    >
+      <Checkbox
+        value={object('Checkbox values', store.state)}
+        multiple={boolean('Is multiple?', false)}
+        onChange={(kye, selected, child, all) => (
+        store.set(all)
+        )}
+      >
+        <div data-key='yt'>YouTube</div>
+        <div data-key='tw'>Twitter</div>
+        <div data-key='inst'>Instagram</div>
+      </Checkbox>
+    </ControlWrapper>
+  }))
+  .add('Profile',() => {
+    return <div style={{width: '400px'}}>
+      <Profile
+      type={select('Type', {big: 'big', small: 'small'}, 'big')}
+      title={'Bart Baker'}
+      verified={boolean('Verified', false)}
+      provider={select('Provider', {youtube: 'YouTube', twitter: 'Twitter', twitch: 'Twitch'}, 'youtube')}
+      src={bart}
+    />
+    </div>
+  })
+  .add('Tooltip',() => {
+    return <Tooltip
+      position={select('Type', {left: 'left', right: 'right', top: 'top', bottom: 'bottom'}, 'bottom')}
+      content={'This is tooltip!'}
+    >
+      <div style={{border: '1px solid red'}}>
+        I have tooltip
+      </div>
+    </Tooltip>
+  })
+  .add('Amount',withState({selected: false}, (store) => {
+    return <div style={{background: '#696fdc', width: '335px', padding: '50px'}}>
+      <Amount
+      amount={number('Amount', 5)}
+      converted={number('Converted', 1.5)}
+      selected={boolean('Selected', store.state.selected)}
+      type={select('Type', {big: 'Big', small: 'Small'}, 'big')}
+      onClick={() => (
+        store.set({ selected: !store.state.selected })
+      )}
+    />
+    </div>
+  }))
+  .add('Button',() => {
+    return <Button
+      type={select('Type', {primary: 'primary', secondary: 'secondary', ghost: 'ghost', cta: 'cta'}, 'primary')}
+      color={select('Color', {brand: 'brand', action: 'action', subtle: 'subtle'}, 'brand')}
+      size={select('Size', {xlarge: 'xlarge', large: 'large', medium: 'medium', small: 'small'}, 'medium')}
+      text={'Button'}
+      disabled={boolean('Disabled', false)}
+      onClick={() => {}}
+    />
+  })
