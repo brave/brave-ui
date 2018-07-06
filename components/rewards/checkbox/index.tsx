@@ -5,11 +5,13 @@
 import * as React from 'react'
 import * as CSS from 'csstype'
 import { StyledWrapper, StyledLabel, StyledBox } from './style'
+import ControlWrapper from '../controlWrapper';
 
 export interface Props {
   id?: string
   children: React.ReactNode
   multiple?: boolean
+  title?: string
   value: {[key: string]: boolean}
   theme?: Theme
   onChange?: (key: string, selected: boolean, child: React.ReactNode, all: {[key: string]: boolean}) => void
@@ -18,6 +20,7 @@ export interface Props {
 export interface Theme {
   checkColor?: CSS.Color
   borderColor?: CSS.Color
+  maxWidth?: CSS.MaxWidthProperty<1>
 }
 
 interface State {
@@ -76,7 +79,7 @@ export default class Checkbox extends React.PureComponent<Props, State> {
   }
 
   render () {
-    const { id, children } = this.props
+    const { id, children, title, theme } = this.props
 
     const num = React.Children.count(children)
     let data = null
@@ -87,7 +90,9 @@ export default class Checkbox extends React.PureComponent<Props, State> {
 
     return (
       <StyledWrapper id={id}>
-        {data}
+        <ControlWrapper title={title} theme={theme}>
+          {data}
+        </ControlWrapper>
       </StyledWrapper>
     )
   }
