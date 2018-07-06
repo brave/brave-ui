@@ -46,7 +46,7 @@ interface State {
 }
 
 class Settings extends React.PureComponent<{}, State> {
-  constructor (props: any) {
+  constructor (props: {}) {
     super(props)
     this.state = {
       adsToggle: false,
