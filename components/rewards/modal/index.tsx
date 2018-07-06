@@ -16,12 +16,12 @@ export interface Props {
 const close = require('./assets/close')
 
 export default class Modal extends React.PureComponent<Props, {}> {
-  outsideClose = () => {
+  outsideClose = (e: any) => {
     if (!this.props.outsideClose) {
       return
     }
 
-    if (this.props.onClose) {
+    if (this.props.onClose && (e.target && e.target.id === this.props.id)) {
       this.props.onClose()
     }
   }
@@ -30,7 +30,7 @@ export default class Modal extends React.PureComponent<Props, {}> {
     const { id, onClose, maxWidth, children } = this.props
 
     return (
-      <StyledWrapper id={id} onClick={this.outsideClose}>
+      <StyledWrapper id={id || 'modal'} onClick={this.outsideClose}>
         <StyledDialog maxWidth={maxWidth}>
           <StyledClose onClick={onClose}>
             {close}

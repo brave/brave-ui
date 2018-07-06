@@ -163,6 +163,7 @@ storiesOf('Rewards/Content', module)
       {
         boolean('Visible', store.state.visible)
           ? <Modal
+          id={'modal'}
           outsideClose={boolean('Close with click outside', false)}
           maxWidth={text('Max width', '')}
           onClose={() => (
