@@ -5,91 +5,191 @@
 import styled, { css } from 'styled-components'
 import { Color, Props, Size, Type } from './index';
 
-const generateColors = (type: Type, color: Color, disabled: boolean) => {
+const getColor = (color: Color, disabled: boolean) => {
   let colorCode = ''
 
   if (disabled) {
-    return css`
-      background: #EBECF0;
-      color: #FFFFFF;
-    `
+    return '#EBECF0'
   }
 
   switch (color) {
     case 'brand':
-      colorCode = '#FB542B'
+      colorCode = '251, 84, 43'
       break
     case 'action':
-      colorCode = '#4C54D2'
+      colorCode = '76, 84, 210'
       break
     case 'subtle':
-      colorCode = '#B8B9C4'
+      colorCode = '184, 185, 196'
       break
   }
 
-  switch (type)  {
-    case 'primary':
-      return css`
-        background: ${colorCode};
-        color: #FFFFFF;
-      `
-    case 'secondary':
-      return css`
-        border: 1px solid ${colorCode};
-        color: ${colorCode};
-      `
-    case 'ghost':
-      return css`
-        color: ${colorCode};
-      `
-    case 'cta':
-      return css`
-        text-transform: uppercase;
-        background: ${colorCode};
-        color: #FFFFFF;
-      `
-  }
-
-  return css``
+  return colorCode
 }
 
-const generateBySize = (size: Size) => {
+const generateWrapper = (type: Type, size: Size, color: Color, disabled: boolean) => {
+  let colorCode = getColor(color, disabled)
+  if (type === 'ghost') {
+    colorCode = 'transparent'
+  }
+
+  const border = `
+    border: 1px solid rgb(${colorCode});
+    
+    :hover {
+      border-color: rgba(${colorCode}, 0.9);
+    }
+    
+    :active {
+      border-color: rgba(${colorCode}, 0.6);
+    }
+  `
+
+  let props = ``
   switch (size)  {
     case 'xlarge':
-      return css`
+      props =`
         font-size: 14px;
         border-radius: 28px;
         min-width: 235px;
-        padding: 21px 15px;
       `
+      break
     case 'large':
-      return css`
+      props =`
         font-size: 14px;
         border-radius: 24px;
         min-width: 116px;
-        padding: 17px 15px;
       `
+      break
     case 'medium':
-      return css`
+      props =`
         font-size: 13px;
         border-radius: 20px;
         min-width: 104px;
-        padding: 13.5px 10px;
       `
+      break
     case 'small':
-      return css`
+      props =`
         font-size: 11px;
         border-radius: 16px;
         min-width: 88px;
-        padding: 10.5px 10px;
       `
+      break
   }
 
-  return css``
+  return css`
+    ${border}
+    ${props}
+  `
+}
+
+const generateContent = (size: Size, type: Type, color: Color, disabled: boolean) => {
+  const colorCode = getColor(color, disabled)
+
+  let props = ``
+  switch (type)  {
+    case 'primary':
+      props = `
+        background: rgb(${colorCode});
+        color: #fff;
+        
+        :hover {
+          background: rgba(${colorCode}, 0.9);
+        }
+        
+        :active {
+          background: rgba(${colorCode}, 0.6);
+        }
+      `
+      break
+    case 'secondary':
+      props = `
+        color: rgb(${colorCode});
+        
+        :hover {
+          color: rgba(${colorCode}, 0.9);
+        }
+        
+        :active {
+          color: rgba(${colorCode}, 0.6);
+        }
+      `
+      break
+    case 'ghost':
+      props = `
+        color: rgb(${colorCode});
+        
+        :hover {
+          color: rgba(${colorCode}, 0.9);
+        }
+        
+        :active {
+          color: rgba(${colorCode}, 0.6);
+        }
+      `
+      break
+    case 'cta':
+      props = `
+        text-transform: uppercase;
+        background: rgb(${colorCode});
+        color: #fff;
+        
+        :hover {
+          background: rgba(${colorCode}, 0.9);
+        }
+        
+        :active {
+          background: rgba(${colorCode}, 0.6);
+        }
+      `
+      break
+  }
+
+  if (disabled) {
+    props = `
+      background: ${colorCode};
+      color: #fff;
+    `
+  }
+
+  let padding = ``
+  switch (size)  {
+    case 'xlarge':
+      padding =`
+        padding: 21px 15px;
+      `
+      break
+    case 'large':
+      padding =`
+        padding: 17px 15px;
+      `
+      break
+    case 'medium':
+      padding =`
+        padding: 13.5px 10px;
+      `
+      break
+    case 'small':
+      padding =`
+        padding: 10.5px 10px;
+      `
+      break
+  }
+
+  return css`
+    ${props}
+    ${padding}
+  `
 }
 
 export const StyledWrapper = styled.div`
+  background: #fff;
   display: inline-block;
+  overflow: hidden;
+  ${(p: Props) => generateWrapper(p.type, p.size, p.color, (p.disabled || false))}
+` as any
+
+export const StyledContent = styled.div`
   text-align: center;
   box-sizing: border-box;
   font-family: Poppins;
@@ -97,6 +197,7 @@ export const StyledWrapper = styled.div`
   letter-spacing: 0;
   font-weight: 600;
   line-height: 1;
+  cursor: pointer;
   
   ${(p: Props) => p.color === 'subtle'
     ? css`
@@ -105,6 +206,5 @@ export const StyledWrapper = styled.div`
     : ''
   }
   
-  ${(p: Props) => generateColors(p.type, p.color, (p.disabled || false))}
-  ${(p: Props) => generateBySize(p.size)}
+  ${(p: Props) => generateContent(p.size, p.type, p.color, (p.disabled || false))}
 ` as any

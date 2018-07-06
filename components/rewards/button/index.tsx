@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledWrapper} from './style'
+import { StyledWrapper, StyledContent } from './style'
 
 export interface Props {
   text: string
@@ -30,7 +30,9 @@ export default class Button extends React.PureComponent<Props, {}> {
 
     return (
       <StyledWrapper {...this.props}>
-        {this.props.text}
+          <StyledContent {...this.props}>
+            {this.props.text}
+          </StyledContent>
       </StyledWrapper>
     )
   }
