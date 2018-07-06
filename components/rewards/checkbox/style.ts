@@ -3,8 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled, { css } from 'styled-components'
-import { Theme } from './index';
-import { Props } from '../../../package/components/rewards/checkbox';
+import { Props, Theme } from './index';
 
 const check = require('./assets/check')
 
