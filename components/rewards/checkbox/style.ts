@@ -4,10 +4,13 @@
 
 import styled, { css } from 'styled-components'
 import { Theme } from './index';
+import { Props } from '../../../package/components/rewards/checkbox';
 
 const check = require('./assets/check')
 
 export const StyledWrapper = styled.div`
+  max-width: ${(p: Props) => p.theme && p.theme.maxWidth ? p.theme.maxWidth : '254px'};
+  width: 100%;
 ` as any
 
 export const StyledLabel = styled.div`

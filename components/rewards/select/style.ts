@@ -3,11 +3,14 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled, {css} from 'styled-components'
+import { Props } from '../../../package/components/rewards/select';
 
 const check = require('./assets/check')
 const arrow = require('./assets/arrow')
 
 export const StyledWrapper = styled.div`
+  max-width: ${(p: Props) => p.theme && p.theme.maxWidth ? p.theme.maxWidth : '254px'};
+  width: 100%;
 ` as any
 
 export const StyledSelectWrapper = styled.div`

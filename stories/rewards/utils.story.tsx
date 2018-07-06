@@ -22,7 +22,6 @@ import Tooltip from '../../components/rewards/tooltip'
 import Profile from '../../components/rewards/profile'
 import Amount from '../../components/rewards/amount'
 import Button from '../../components/rewards/button'
-import ControlWrapper from '../../components/rewards/controlWrapper'
 
 const bart = require('../assets/img/bartBaker.jpeg')
 
@@ -57,15 +56,15 @@ storiesOf('Rewards/Utils', module)
     </div>
   })
   .add('Select',() => {
-    return <ControlWrapper title={text('Title', 'Limit Sites to')}>
-      <Select
+    return <Select
       onChange={() => false}
+      title={text('Title', 'Limit Sites to')}
     >
       <div data-value='0'>No Limit</div>
       <div data-value='10'>Pay Only Top 10</div>
       <div data-value='50'>Pay Top 50</div>
+      <div data-value='100000'>Really long limit that I know of 100000</div>
     </Select>
-    </ControlWrapper>
   })
   .add('Tokens',() => {
     return <Tokens
@@ -75,22 +74,19 @@ storiesOf('Rewards/Utils', module)
     />
   })
   .add('Checkbox', withState({'yt': true, 'tw': false, 'inst': false}, (store) => {
-    return <ControlWrapper
-      title={text('Title', 'Enable ability to give tips on ‘Like’ posts')}
-      theme={{maxWidth: '315px'}}
-    >
-      <Checkbox
+    return <Checkbox
+        title={text('Title', 'Enable ability to give tips on ‘Like’ posts')}
         value={object('Checkbox values', store.state)}
         multiple={boolean('Is multiple?', false)}
         onChange={(kye, selected, child, all) => (
-        store.set(all)
+          store.set(all)
         )}
+        theme={{maxWidth: '315px'}}
       >
         <div data-key='yt'>YouTube</div>
         <div data-key='tw'>Twitter</div>
         <div data-key='inst'>Instagram</div>
-      </Checkbox>
-    </ControlWrapper>
+    </Checkbox>
   }))
   .add('Profile',() => {
     return <div style={{width: '400px'}}>
