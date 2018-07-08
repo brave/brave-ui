@@ -213,87 +213,73 @@ class Settings extends React.PureComponent<{}, State> {
                   'Tokens'
                 ]}
                 rows={[
-                  [
-                    {
-                      profile: {
-                        name: 'Bart Baker',
-                        verified: true,
-                        provider: 'youtube',
-                        src: bartBaker
-                      }
+                  {
+                    profile: {
+                      name: 'Bart Baker',
+                      verified: true,
+                      provider: 'youtube',
+                      src: bartBaker
                     },
-                    {
-                      text: '40%'
+                    contribute: {
+                      attention: '40%',
+                      tokens: 4,
+                      converted: 5
                     },
-                    {
-                      text: '4',
-                      onClick: () => {}
+                    onRemove: () => {}
+                  },
+                  {
+                    profile: {
+                      name: 'duckduckgo.com',
+                      verified: true,
+                      src: ddgo
+                    },
+                    contribute: {
+                      attention: '20%',
+                      tokens: 2,
+                      converted: 1
+                    },
+                    onRemove: () => {
                     }
-                  ],
-                  [
-                    {
-                      profile: {
-                        name: 'duckduckgo.com',
-                        verified: true,
-                        src: ddgo
-                      }
+                  },
+                  {
+                    profile: {
+                      name: 'buzzfeed.com',
+                      verified: false,
+                      src: buzz
                     },
-                    {
-                      text: '20%'
+                    contribute: {
+                      attention: '10%',
+                      tokens: 1,
+                      converted: 0.5
                     },
-                    {
-                      text: '2',
-                      onClick: () => {}
-                    }
-                  ],
-                  [
-                    {
-                      profile: {
-                        name: 'buzzfeed.com',
-                        verified: false,
-                        src: buzz
-                      }
+                    onRemove: () => {}
+                  },
+                  {
+                    profile: {
+                      name: 'theguardian.com',
+                      verified: true,
+                      src: guardian
                     },
-                    {
-                      text: '10%'
+                    contribute: {
+                      attention: '5%',
+                      tokens: 0.5,
+                      converted: 0.25
                     },
-                    {
-                      text: '1',
-                      onClick: () => {}
-                    }
-                  ],
-                  [
-                    {
-                      profile: {
-                        name: 'theguardian.com',
-                        verified: true,
-                        src: guardian
-                      }
+                    onRemove: () => {}
+                  },
+                  {
+                    profile: {
+                      name: 'wikipedia.org',
+                      verified: false,
+                      src: wiki
                     },
-                    {
-                      text: '5%'
+                    contribute: {
+                      attention: '4%',
+                      tokens: 0.4,
+                      converted: 0.25
                     },
-                    {
-                      text: '0.5',
-                      onClick: () => {}
-                    }
-                  ],
-                  [
-                    {
-                      profile: {
-                        name: 'wikipedia.org',
-                        verified: false,
-                        src: wiki
-                      }
-                    },
-                    {
-                      text: '4%'
-                    },
-                    {
-                      text: '0.4',
-                      onClick: () => {}
-                    }
-                  ]
+                    onRemove: () => {}
+                  }
                 ]}
                 allSites={false}
                 numSites={55}
@@ -316,62 +302,47 @@ class Settings extends React.PureComponent<{}, State> {
               </List>
               <DonationTable
                 rows={[
-                  [
-                    {
-                      profile: {
-                        name: 'Bart Baker',
-                        verified: true,
-                        provider: 'youtube',
-                        src: bartBaker
-                      },
-                      type: 'recurring'
+                  {
+                    profile: {
+                      name: 'Bart Baker',
+                      verified: true,
+                      provider: 'youtube',
+                      src: bartBaker
                     },
-                    {
-                      onClick: () => {},
-                      type: 'recurring'
+                    type: 'recurring',
+                    contribute: {
+                      tokens: 2,
+                      converted: 0.2
                     },
-                    {
-                      text: 2,
-                      type: 'recurring'
-                    }
-                  ],
-                  [
-                    {
-                      profile: {
-                        verified: false,
-                        name: 'theguardian.com',
-                        src: guardian
-                      },
-                      type: 'donation'
+                    onRemove: () => {}
+                  },
+                  {
+                    profile: {
+                      verified: false,
+                      name: 'theguardian.com',
+                      src: guardian
                     },
-                    {
-                      text: 'May 2',
-                      type: 'donation'
+                    type: 'donation',
+                    contribute: {
+                      tokens: 12,
+                      converted: 6.2
                     },
-                    {
-                      text: 12,
-                      type: 'donation'
-                    }
-                  ],
-                  [
-                    {
-                      profile: {
-                        verified: false,
-                        name: '@BrendanEich',
-                        provider: 'twitter',
-                        src: eich
-                      },
-                      type: 'tip'
+                    text: 'May 7',
+                  },
+                  {
+                    profile: {
+                      verified: false,
+                      name: 'BrendanEich',
+                      provider: 'twitter',
+                      src: eich
                     },
-                    {
-                      text: 'May 2',
-                      type: 'tip'
+                    type: 'tip',
+                    contribute: {
+                      tokens: 7,
+                      converted: 3.2
                     },
-                    {
-                      text: 7,
-                      type: 'tip'
-                    }
-                  ]
+                    text: 'May 2',
+                  }
                 ]}
                 allItems={true}
               >

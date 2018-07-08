@@ -11,9 +11,9 @@ import * as React from 'react'
 import { BetterVisualizer } from '../storyUtil'
 
 // Components
-import Table, { Cell } from '../../components/rewards/table';
-import ContributeTable, { DetailCell as ContributionDetailCell } from '../../components/rewards/contributeTable';
-import DonationTable, { DetailCell as DonationDetailCell } from '../../components/rewards/donationTable';
+import Table, { Cell, Row } from '../../components/rewards/table';
+import ContributeTable, { DetailRow as ContributeDetailRow } from '../../components/rewards/contributeTable';
+import DonationTable, { DetailRow as DonationDetailRow } from '../../components/rewards/donationTable';
 
 const bart = require('../assets/img/bartBaker.jpeg')
 const ddgo = require('../assets/img/ddgo.jpg')
@@ -32,54 +32,53 @@ storiesOf('Rewards/Tables', module)
       'padding-left': '9px'
     }
 
-    const rows: Cell[][] = [
-      [
-        {
-          content: 'Baker'
-        },
-        {
-          content: '40%',
-          theme: rowTheme
-        },
-        {
-          content: '4',
-          theme: rowTheme
-        }
-      ],
-      [
-        {
-          content: 'duckduckgo.com'
-        },
-        {
-          content: '20%',
-          theme: rowTheme
-        },
-        {
-          content: '2',
-          theme: rowTheme
-        }
-      ]
+    const rows: Row[] = [
+      {
+        content: [
+          {
+            content: 'Baker'
+          },
+          {
+            content: '40%',
+            theme: rowTheme
+          },
+          {
+            content: '4',
+            theme: rowTheme
+          }
+        ]
+      },
+      {
+        content: [
+          {
+            content: 'duckduckgo.com'
+          },
+          {
+            content: '20%',
+            theme: rowTheme
+          },
+          {
+            content: '2',
+            theme: rowTheme
+          }
+        ]
+      }
     ]
 
     const header: Cell[] = [
       {
-        content: 'Site visited',
-        theme: {
-          color: '#9f22a1'
-        }
+        content: 'Site visited'
       },
       {
         content: 'Attentions',
         theme: {
-          'text-align': 'right',
-          color: '#9f22a1'
+          'text-align': 'right'
         }
       },
       {
         content: 'Tokens',
         theme: {
-          'text-align': 'right',
-          color: '#9f22a1'
+          'text-align': 'right'
         }
       }
     ]
@@ -100,88 +99,74 @@ storiesOf('Rewards/Tables', module)
       'Tokens'
     ]
 
-    const rows: ContributionDetailCell[][] = [
-      [
-        {
-          profile: {
-            name: 'Bart Baker',
-            verified: true,
-            provider: 'youtube',
-            src: bart
-          }
+    const rows: ContributeDetailRow[] = [
+      {
+        profile: {
+          name: 'Bart Baker',
+          verified: true,
+          provider: 'youtube',
+          src: bart
         },
-        {
-          text: '40%'
+        contribute: {
+          attention: '40%',
+          tokens: 4,
+          converted: 5
         },
-        {
-          text: '4',
-          onClick: () => {}
+        onRemove: () => {}
+      },
+      {
+        profile: {
+          name: 'duckduckgo.com',
+          verified: true,
+          src: ddgo
+        },
+        contribute: {
+          attention: '20%',
+          tokens: 2,
+          converted: 1
+        },
+        onRemove: () => {
         }
-      ],
-      [
-        {
-          profile: {
-            name: 'duckduckgo.com',
-            verified: true,
-            src: ddgo
-          }
+      },
+      {
+        profile: {
+          name: 'buzzfeed.com',
+          verified: false,
+          src: buzz
         },
-        {
-          text: '20%'
+        contribute: {
+          attention: '10%',
+          tokens: 1,
+          converted: 0.5
         },
-        {
-          text: '2',
-          onClick: () => {}
-        }
-      ],
-      [
-        {
-          profile: {
-            name: 'buzzfeed.com',
-            verified: false,
-            src: buzz
-          }
+        onRemove: () => {}
+      },
+      {
+        profile: {
+          name: 'theguardian.com',
+          verified: true,
+          src: guardian
         },
-        {
-          text: '10%'
+        contribute: {
+          attention: '5%',
+          tokens: 0.5,
+          converted: 0.25
         },
-        {
-          text: '1',
-          onClick: () => {}
-        }
-      ],
-      [
-        {
-          profile: {
-            name: 'theguardian.com',
-            verified: true,
-            src: guardian
-          }
+        onRemove: () => {}
+      },
+      {
+        profile: {
+          name: 'wikipedia.org',
+          verified: false,
+          src: wiki
         },
-        {
-          text: '5%'
+        contribute: {
+          attention: '4%',
+          tokens: 0.4,
+          converted: 0.25
         },
-        {
-          text: '0.5',
-          onClick: () => {}
-        }
-      ],
-      [
-        {
-          profile: {
-            name: 'wikipedia.org',
-            verified: false,
-            src: wiki
-          }
-        },
-        {
-          text: '4%'
-        },
-        {
-          text: '0.4',
-          onClick: () => {}
-        }
-      ]
+        onRemove: () => {}
+      }
     ]
     return <div style={{width: '595px'}}>
       <ContributeTable
@@ -195,63 +180,48 @@ storiesOf('Rewards/Tables', module)
     </div>
   })
   .add('Donation',() => {
-    const rows: DonationDetailCell[][] = [
-      [
-        {
-          profile: {
-            name: 'Bart Baker',
-            verified: true,
-            provider: 'youtube',
-            src: bart
-          },
-          type: 'recurring'
+    const rows: DonationDetailRow[] = [
+      {
+        profile: {
+          name: 'Bart Baker',
+          verified: true,
+          provider: 'youtube',
+          src: bart
         },
-        {
-          onClick: () => {},
-          type: 'recurring'
+        type: 'recurring',
+        contribute: {
+          tokens: 2,
+          converted: 0.2
         },
-        {
-          text: 2,
-          type: 'recurring'
-        }
-      ],
-      [
-        {
-          profile: {
-            verified: false,
-            name: 'theguardian.com',
-            src: guardian
-          },
-          type: 'donation'
+        onRemove: () => {}
+      },
+      {
+        profile: {
+          verified: false,
+          name: 'theguardian.com',
+          src: guardian
         },
-        {
-          text: 'May 2',
-          type: 'donation'
+        type: 'donation',
+        contribute: {
+          tokens: 12,
+          converted: 6.2
         },
-        {
-          text: 12,
-          type: 'donation'
-        }
-      ],
-      [
-        {
-          profile: {
-            verified: false,
-            name: 'BrendanEich',
-            provider: 'twitter',
-            src: eich
-          },
-          type: 'tip'
+        text: 'May 7',
+      },
+      {
+        profile: {
+          verified: false,
+          name: 'BrendanEich',
+          provider: 'twitter',
+          src: eich
         },
-        {
-          text: 'May 2',
-          type: 'tip'
+        type: 'tip',
+        contribute: {
+          tokens: 7,
+          converted: 3.2
         },
-        {
-          text: 7,
-          type: 'tip'
-        }
-      ]
+        text: 'May 2',
+      }
     ]
     return <div style={{width: '595px'}}>
       <DonationTable

@@ -16,16 +16,21 @@ export const StyledText = styled.div`
   color: #686978;
 ` as any
 
+export const StyledTokens = styled(StyledText)`
+  display: flex;
+  width: 80px;
+  justify-content: flex-end;
+  float: right;
+` as any
+
 export const StyledRemove = styled.span`
   margin-left: 7px;
 ` as any
 
 export const StyledTHSite = styled.div`
-  color: #9f22a1;
 ` as any
 
 export const StyledTHOther = styled.div`
-  color: #9f22a1;
   text-align: right;
 ` as any
 
