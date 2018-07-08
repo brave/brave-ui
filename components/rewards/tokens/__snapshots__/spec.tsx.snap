@@ -11,6 +11,7 @@ exports[`Tokens tests basic tests matches the snapshot 1`] = `
 }
 
 .c1 {
+  color: inherit;
   font-weight: 600;
 }
 
@@ -23,6 +24,7 @@ exports[`Tokens tests basic tests matches the snapshot 1`] = `
     <span
       className="c1"
     >
+      
       10
     </span>
      
