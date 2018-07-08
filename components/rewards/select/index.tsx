@@ -29,8 +29,11 @@ interface State {
   show: boolean
 }
 
-interface Theme {
+export interface Theme {
   maxWidth?: CSS.MaxWidthProperty<1>
+  border?: CSS.BorderProperty<1>
+  padding?: CSS.PaddingProperty<1>
+  arrowPadding?: CSS.RightProperty<1>
 }
 
 /*
@@ -127,7 +130,7 @@ export default class Select extends React.PureComponent<Props, State> {
           {
             num > 0
             ? <StyledSelectWrapper tabIndex='0' onBlur={this.onBlur}>
-              <StyledSelect onClick={this.onSelectClick} disabled={disabled} show={this.state.show}>
+              <StyledSelect onClick={this.onSelectClick} disabled={disabled} show={this.state.show} theme={theme}>
                 {this.state.selected}
               </StyledSelect>
               <StyledOptions show={this.state.show}>

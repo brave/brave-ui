@@ -5,6 +5,7 @@
 import styled from 'styled-components'
 
 export const StyledWrapper = styled.div`
+  font-family: Poppins;
   position: relative;
   display: flex;
   width: 100%;
@@ -14,7 +15,7 @@ export const StyledWrapper = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   align-content: flex-start;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   padding: 22px 34px 18px;
   margin-bottom: 25px;
 ` as any
@@ -33,7 +34,6 @@ export const StyledLogo = styled.span`
 ` as any
 
 export const StyledTitle = styled.div`
-  font-family: Poppins;
   font-size: 28px;
   font-weight: 600;
   letter-spacing: 0.2px;
@@ -48,4 +48,19 @@ export const StyledTM = styled.span`
   text-align: center;
   color: #222326;
   vertical-align: text-top;
+` as any
+
+export const StyleTitle = styled.span`
+  font-size: 22px;
+  line-height: 1.27;
+  color: #4b4c5c;
+  margin-top: 40px;
+` as any
+
+export const StyleText = styled.div`
+  font-family: Muli;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #838391;
 ` as any

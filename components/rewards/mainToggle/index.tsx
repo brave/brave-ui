@@ -9,7 +9,9 @@ import {
   StyledTitle,
   StyledTM,
   StyledLeft,
-  StyledRight
+  StyledRight,
+  StyleTitle,
+  StyleText
 } from './style'
 import Toggle from '../toggle';
 
@@ -24,6 +26,7 @@ export interface Props {
 /*
   TODO
   - add notifications if needed
+  - add local
  */
 export default class MainToggle extends React.PureComponent<Props, {}> {
   render () {
@@ -40,6 +43,24 @@ export default class MainToggle extends React.PureComponent<Props, {}> {
         <StyledRight>
           <Toggle checked={enabled} onClick={onToggle} size={'large'} />
         </StyledRight>
+        {
+          !enabled
+          ? <>
+            <StyleTitle>Why Brave Rewards…</StyleTitle>
+            <StyleText>
+              Do you know that you’ve been paying for the web content with your data for the digital ads?
+              You didn’t have a voice in it and worse, you’re exposed to privacy and security risks. <br/>
+              <b>Brave Rewards allows you to take control back.</b>
+            </StyleText>
+            <StyleTitle>How does it work?</StyleTitle>
+            <StyleText>
+              Your attention is valuable. Get paid for the ads. And pay directly the favorite content
+              creators at your will. That way, they can grow and continue delivering the content that delights you.
+            </StyleText>
+          </>
+          : null
+        }
+
       </StyledWrapper>
     )
   }

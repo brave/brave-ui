@@ -105,7 +105,7 @@ export default class Box extends React.PureComponent<Props, State> {
             </StyledRight>
             <StyledContent>
               {
-                toggle && !checked
+                (toggle && !checked) || (!toggle && disabledContent)
                 ? disabledContent
                 : children
               }

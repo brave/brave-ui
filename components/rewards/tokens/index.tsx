@@ -38,7 +38,7 @@ export default class Tokens extends React.PureComponent<Props, {}> {
     const defaultCurrency = 'USD'
 
     return (
-      <div id={id}>
+      <span id={id}>
         <StyledTokens theme={theme}>
           <StyledTokenValue theme={theme}>
             { isNegative ? '-' : '' }{value}
@@ -51,7 +51,7 @@ export default class Tokens extends React.PureComponent<Props, {}> {
           </StyledContent>
           : null
         }
-      </div>
+      </span>
     )
   }
 }

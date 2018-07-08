@@ -27,7 +27,6 @@ import ModalContribute from '../../../../components/rewards/modalContribute';
 import ModalBackupRestore, { TabsType } from '../../../../components/rewards/modalBackupRestore';
 
 // Images
-const donateImg = require('../../../assets/img/rewards_donate.svg')
 const adsImg = require('../../../assets/img/rewards_ads.svg')
 const contributeImg = require('../../../assets/img/rewards_contribute.svg')
 const wallet = require('../../../assets/img/rewards_wallet.svg')
@@ -181,52 +180,12 @@ class Settings extends React.PureComponent<{}, State> {
     ]
   }
 
-  adsSettingsChild = () => {
-    return <>
-      <Grid columns={1} theme={{maxWidth: '270px', margin: '0 auto'}}>
-          <Column size={1} theme={{justifyContent: 'center', flexWrap: 'wrap'}}>
-            <Select title={locale.adsMode}>
-              <div data-value='1'>Notifications</div>
-              <div data-value='2'>Page</div>
-              <div data-value='3'>Sounds</div>
-            </Select>
-            <Select title={locale.adsFreq}>
-                <div data-value='10'>10 ads daily (10 tokens/month)</div>
-                <div data-value='5'>5 ads daily (5 tokens/month)</div>
-                <div data-value='1'>1 ads daily (1 token/month)</div>
-            </Select>
-            <Select title={locale.adsMode}>
-              <div data-value='1'>Notifications</div>
-              <div data-value='2'>Page</div>
-              <div data-value='3'>Sounds</div>
-            </Select>
-            <Select title={locale.adsFreq}>
-              <div data-value='10'>10 ads daily (10 tokens/month)</div>
-              <div data-value='5'>5 ads daily (5 tokens/month)</div>
-              <div data-value='1'>1 ads daily (1 token/month)</div>
-            </Select>
-            <Select title={locale.adsMode}>
-              <div data-value='1'>Notifications</div>
-              <div data-value='2'>Page</div>
-              <div data-value='3'>Sounds</div>
-            </Select>
-            <Select title={locale.adsFreq}>
-              <div data-value='10'>10 ads daily (10 tokens/month)</div>
-              <div data-value='5'>5 ads daily (5 tokens/month)</div>
-              <div data-value='1'>1 ads daily (1 token/month)</div>
-            </Select>
-          </Column>
-        </Grid>
-    </>
-  }
-
   adsDisabled () {
     return <DisabledContent
       image={adsImg}
       theme={{color: '#ceb4e1', boldColor: '#b490cf'}}
     >
-      • Earnings paid every month. <br/>
-      • Set your <b>desired frequency</b> for ads  based on the desired earning.
+      <h3>Coming soon.</h3>
     </DisabledContent>
   }
 
@@ -278,16 +237,6 @@ class Settings extends React.PureComponent<{}, State> {
     </>
   }
 
-  donationDisabled () {
-    return <DisabledContent
-      image={donateImg}
-      theme={{color: '#AC9CCF', boldColor: '#696fdc'}}
-    >
-      • Donate on the spot as you find gems. <br/>
-      • <b>Enable Tips </b> on Twitter, YouTube, and more, to give tips to posts you ‘Like’.
-    </DisabledContent>
-  }
-
   render () {
     const showNotification = boolean('Show notification', false)
     const self = this
@@ -304,18 +253,9 @@ class Settings extends React.PureComponent<{}, State> {
               title={locale.adsTitle}
               theme={{titleColor: '#9752cb'}}
               description={locale.adsDesc}
-              toggle
-              checked={this.state.adsToggle}
-              settingsChild={this.adsSettingsChild()}
+              toggle={false}
               disabledContent={this.adsDisabled()}
-              onToggle={() => {this.setState({adsToggle: !this.state.adsToggle})}}
             >
-              <List title={locale.adsEarnings}>
-                <Tokens value={10} converted={4} />
-              </List>
-              <List title={locale.adsDisplayed}>
-                <Tokens value={17} hideText/>
-              </List>
             </Box>
             <Box
               title={locale.contributionTitle}
@@ -336,10 +276,34 @@ class Settings extends React.PureComponent<{}, State> {
                 : null
               }
               <List title={locale.contributionMonthly}>
-                <Tokens value={15} converted={6} />
+                <Select
+                  onChange={() => false}
+                  theme={{
+                    border: 'none',
+                    padding: '0 20px 0 0',
+                    arrowPadding: '0'
+                  }}
+                >
+                  <div data-value='10'><Tokens value={10} converted={'4'}/></div>
+                  <div data-value='20'><Tokens value={20} converted={'6'}/></div>
+                  <div data-value='40'><Tokens value={40} converted={'12'}/></div>
+                  <div data-value='100'><Tokens value={100} converted={'40'}/></div>
+                </Select>
+              </List>
+              <List title={locale.contributionNextDate} theme={{
+                'font-size': '16px',
+                'font-weight': '600',
+                'text-align': 'right',
+                'border-radius': '6px',
+                color: '#4b4c5c',
+                background: '#e9f0ff',
+                display: 'inline-block',
+                padding: '9px 10px 9px 13px'
+              }}>
+                July 25th
               </List>
               <List title={locale.contributionSites}>
-                <Tokens value={55} hideText/>
+                Total <Tokens value={55} hideText/>
               </List>
               <ContributeTable
                 header={[
@@ -360,7 +324,6 @@ class Settings extends React.PureComponent<{}, State> {
               theme={{titleColor: '#4c54d2'}}
               description={locale.donationDesc}
               settingsChild={this.donationSettingsChild()}
-              disabledContent={this.donationDisabled()}
             >
               <List title={locale.donationTotal}>
                 <Tokens value={21} converted={7} />

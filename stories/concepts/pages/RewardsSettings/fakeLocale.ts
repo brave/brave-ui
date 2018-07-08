@@ -17,6 +17,7 @@ const locale = {
   contributionSitesNoLimit: 'No Limit',
   contributionSitesLimit10: 'Pay Only Top 10',
   contributionSitesLimit50: 'Pay Top 50',
+  contributionNextDate: 'Next contribution date',
   donationTitle: 'Direct Donations',
   donationDesc: 'Donate to sites as you browse or give tips to posts when you ‘Like’ them. You can also make the donation recurring monthly so you can support the site continuously. All accessed from the address bar.',
   donationTotal: 'Total donations this month',
