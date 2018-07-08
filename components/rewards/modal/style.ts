@@ -13,6 +13,7 @@ export const StyledWrapper = styled.div`
   height: 100vh;
   background: rgba(12, 13, 33, 0.85);
   z-index: 99;
+  padding: 0 20px;
 ` as any
 
 export const StyledDialog = styled.div`

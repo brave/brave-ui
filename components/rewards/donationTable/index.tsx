@@ -94,7 +94,7 @@ export default class DonationTable extends React.PureComponent<Props, {}> {
             content: <Tokens
               value={row.contribute.tokens}
               converted={row.contribute.converted}
-              hideText={true}
+              hideText
               theme={{
                 display: 'block',
                 size: {token: '14px', text: '10px'},

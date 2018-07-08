@@ -67,7 +67,7 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
               title={'Recovery Key'}
               theme={{maxWidth: '100%', minHeight: '112px'}}
               defaultValue={recoveryKey}
-              disabled={true}
+              disabled
             />
             <StyleButtonWrapper>
               <Button text={'Copy'} type={'secondary'} size={'small'} color={'subtle'} onClick={onCopy.bind(this, recoveryKey)} />

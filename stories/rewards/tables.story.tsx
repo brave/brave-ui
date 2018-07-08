@@ -108,7 +108,7 @@ storiesOf('Rewards/Tables', module)
           src: bart
         },
         contribute: {
-          attention: '40%',
+          attention: 40,
           tokens: 4,
           converted: 5
         },
@@ -121,7 +121,7 @@ storiesOf('Rewards/Tables', module)
           src: ddgo
         },
         contribute: {
-          attention: '20%',
+          attention: 20,
           tokens: 2,
           converted: 1
         },
@@ -135,7 +135,7 @@ storiesOf('Rewards/Tables', module)
           src: buzz
         },
         contribute: {
-          attention: '10%',
+          attention: 10,
           tokens: 1,
           converted: 0.5
         },
@@ -148,7 +148,7 @@ storiesOf('Rewards/Tables', module)
           src: guardian
         },
         contribute: {
-          attention: '5%',
+          attention: 5,
           tokens: 0.5,
           converted: 0.25
         },
@@ -161,7 +161,7 @@ storiesOf('Rewards/Tables', module)
           src: wiki
         },
         contribute: {
-          attention: '4%',
+          attention: 4,
           tokens: 0.4,
           converted: 0.25
         },
