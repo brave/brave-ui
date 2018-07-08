@@ -3,9 +3,10 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledWrapper, StyledText, StyledRemove, StyledToggle, StyledTHSite, StyledTHOther } from './style'
-import Table, { Cell } from '../table';
+import { StyledWrapper, StyledText, StyledRemove, StyledToggle, StyledTHSite, StyledTHOther, StyledTokens } from './style'
+import Table, { Row } from '../table';
 import Profile, { Provider } from '../profile';
+import Tokens from '../tokens';
 
 interface ProfileCell {
   verified: boolean
@@ -14,24 +15,34 @@ interface ProfileCell {
   src: string
 }
 
-export interface DetailCell {
-  profile?: ProfileCell,
-  text?: string | React.ReactNode,
-  onClick?: () => void
+export interface DetailRow {
+  profile: ProfileCell
+  contribute: {
+    attention: string
+    tokens: number
+    converted: number
+  }
+  onRemove?: () => void
 }
 
 export interface Props {
   id?: string
   header: string[]
   children?: React.ReactNode
-  rows?: DetailCell[][]
+  rows?: DetailRow[]
   numSites?: number
   allSites?: boolean
   onClick?: () => void
+  showRowAmount?: boolean
 }
 
 const closeIcon = require('./assets/close')
 
+/*
+  TODO
+  - add local
+  - add optional border above
+ */
 export default class ContributeTable extends React.PureComponent<Props, {}> {
   getHeader (header: string[]) {
     if (!header) {
@@ -45,42 +56,49 @@ export default class ContributeTable extends React.PureComponent<Props, {}> {
     })
   }
 
-  getRows (rows?: DetailCell[][]): Cell[][] | undefined {
+  getRows (rows?: DetailRow[]): Row[] | undefined {
     if (!rows) {
       return
     }
 
-    return rows.map((row: DetailCell[]): Cell[] => {
-      return row.map((cell: DetailCell): Cell => {
-        if (cell.profile) {
-          return {
+    return rows.map((row: DetailRow): Row => {
+      const cell = {
+        content: [
+          {
             content: <Profile
-              title={cell.profile.name}
-              provider={cell.profile.provider}
-              verified={cell.profile.verified}
+              title={row.profile.name}
+              provider={row.profile.provider}
+              verified={row.profile.verified}
               type={'small'}
-              src={cell.profile.src}
+              src={row.profile.src}
             />
+          },
+          {
+            content: <StyledText>{row.contribute.attention}</StyledText>
+          },
+          {
+            content: <StyledTokens>
+              <Tokens
+                value={row.contribute.tokens}
+                converted={row.contribute.converted}
+                hideText={true}
+                theme={{
+                  display: 'block',
+                  size: {text: '10px', token: '14px'},
+                  color: {token: '#686978', text: '#9e9fab'}
+                }}
+              />
+              <StyledRemove onClick={row.onRemove}>{closeIcon}</StyledRemove>
+            </StyledTokens>
           }
-        }
+        ]
+      }
 
-        if (cell.text) {
-          return {
-            content: <StyledText>
-              {cell.text}
-              {
-                cell.onClick
-                ? <StyledRemove onClick={cell.onClick}>{closeIcon}</StyledRemove>
-                : null
-              }
-            </StyledText>
-          }
-        }
+      if (this.props.showRowAmount) {
 
-        return {
-          content: null
-        }
-      })
+      }
+
+      return cell
     })
   }
 

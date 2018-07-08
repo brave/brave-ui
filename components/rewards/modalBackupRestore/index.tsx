@@ -49,7 +49,8 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
       onPrint,
       onSaveFile,
       onRestore,
-      onImport
+      onImport,
+      error
     } = this.props
 
     return (
@@ -83,6 +84,11 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
               have any balance or is backed up safely. Restoring a wallet replaces the current wallet and you
               will loose any balance if you don’t back up its recovery key.
             </StyledContent>
+            {
+              error
+              ? <div>TODO: {error}</div>
+              : null
+            }
             <TextArea
               title={<>Enter your recovery key or <StyledImport onClick={onImport}>import</StyledImport></>}
               theme={{maxWidth: '100%', minHeight: '112px'}}

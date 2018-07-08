@@ -8,10 +8,14 @@ import { StyledTokens, StyledContent, StyledTokenValue } from './style'
 
 interface Theme {
   color?: {
-    number?: CSS.Color
+    token?: CSS.Color
     text?: CSS.Color
   }
-  size?: CSS.FontSizeProperty<1>
+  size?: {
+    token?: CSS.FontSizeProperty<1>
+    text?: CSS.FontSizeProperty<1>
+  }
+  display?: CSS.DisplayProperty
 }
 
 export interface Props {
@@ -34,12 +38,12 @@ export default class Tokens extends React.PureComponent<Props, {}> {
     return (
       <div id={id}>
         <StyledTokens theme={theme}>
-          <StyledTokenValue theme={theme}>{value}</StyledTokenValue> { !hideText ? <span>tokens</span> : null }
+          <StyledTokenValue>{value}</StyledTokenValue> { !hideText ? <span>tokens</span> : null }
         </StyledTokens>
         {
           converted
-          ? <StyledContent>
-            ~{converted} {currency || defaultCurrency}
+          ? <StyledContent theme={theme}>
+            ~ {converted} {currency || defaultCurrency}
           </StyledContent>
           : null
         }

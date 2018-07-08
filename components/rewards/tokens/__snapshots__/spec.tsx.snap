@@ -4,14 +4,14 @@ exports[`Tokens tests basic tests matches the snapshot 1`] = `
 .c0 {
   font-family: Poppins;
   font-weight: 300;
-  line-height: 1.75;
+  line-height: 1.4;
   color: #4b4c5c;
   font-size: 16px;
+  display: inline-block;
 }
 
 .c1 {
   font-weight: 600;
-  color: #4b4c5c;
 }
 
 <div

@@ -193,6 +193,7 @@ storiesOf('Rewards/Content', module)
       <ModalBackupRestore
         activeTabId={store.state.tabId as TabsType}
         recoveryKey={'crouch  hint  glow  recall  round  angry  weasel  luggage save  hood  census  near  still   power  vague  balcony camp  law  now  certain  wagon  affair  butter  choice '}
+        error={text('Error', '')}
         onTabChange={(tabId: string) => (
           store.set({ tabId })
         )}
