@@ -3,14 +3,19 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
+import * as CSS from 'csstype'
 import { StyledWrapper, StyledDialog, StyledClose, StyledContent } from './style'
 
 export interface Props {
   id?: string
-  maxWidth?: string
   outsideClose?: boolean
   children?: React.ReactNode
   onClose?: () => void
+  theme?: Theme
+}
+
+interface Theme {
+  maxWidth?: CSS.MaxWidthProperty<1>
 }
 
 const close = require('./assets/close')
@@ -27,11 +32,11 @@ export default class Modal extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { id, onClose, maxWidth, children } = this.props
+    const { id, onClose, children, theme } = this.props
 
     return (
       <StyledWrapper id={id || 'modal'} onClick={this.outsideClose}>
-        <StyledDialog maxWidth={maxWidth}>
+        <StyledDialog theme={theme}>
           <StyledClose onClick={onClose}>
             {close}
           </StyledClose>

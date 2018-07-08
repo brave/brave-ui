@@ -9,27 +9,26 @@ import ControlWrapper from '../controlWrapper';
 
 export interface Props {
   id?: string
-  title?: string
+  title?: React.ReactNode
   defaultValue?: string
+  disabled?: boolean
   theme?: Theme
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>, child: React.ReactNode) => void
 }
 
 interface Theme {
-  maxWidth: CSS.MaxWidthProperty<1>
-  minHeight: CSS.MinHeightProperty<1>
+  maxWidth?: CSS.MaxWidthProperty<1>
+  minHeight?: CSS.MinHeightProperty<1>
 }
 
 export default class TextArea extends React.PureComponent<Props, {}> {
   render () {
-    const { id, onChange, defaultValue, title, theme } = this.props
+    const { id, onChange, defaultValue, title, theme, disabled } = this.props
 
     return (
-      <StyledWrapper id={id}>
+      <StyledWrapper id={id} theme={theme}>
         <ControlWrapper title={title} theme={theme}>
-          <StyledArea onChange={onChange}>
-            {defaultValue}
-          </StyledArea>
+          <StyledArea onChange={onChange} disabled={disabled} defaultValue={defaultValue} theme={theme} />
         </ControlWrapper>
       </StyledWrapper>
     )
