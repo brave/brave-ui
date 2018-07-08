@@ -2,7 +2,6 @@
 
 exports[`Button tests basic tests matches the snapshot 1`] = `
 .c0 {
-  background: #fff;
   display: inline-block;
   overflow: hidden;
   border: 1px solid rgb();

@@ -20,6 +20,7 @@ import Alert from '../../components/rewards/alert'
 import Panel from '../../components/rewards/panel'
 import Donate from '../../components/rewards/donate'
 import Modal from '../../components/rewards/modal'
+import Tabs from '../../components/rewards/tabs'
 
 const donate = require('../assets/img/rewards_donate.svg')
 const wallet = require('../assets/img/rewards_wallet.svg')
@@ -157,4 +158,33 @@ storiesOf('Rewards/Content', module)
         : null
       }
     </>
+  }))
+  .add('Tabs', withState({ tabId: '' }, (store) => {
+    return <div style={{maxWidth: '900px', background: '#fff', padding: '30px'}}>
+      <Tabs
+        activeTabId={store.state.tabId}
+        onChange={(tabId: string) => (
+          store.set({ tabId })
+        )}
+      >
+        <div data-key='cont1' data-title={'Content 1'}>
+          1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor incidunt laudantium magnam maiores molestias
+          numquam quae quas tempore. Accusamus animi aperiam aspernatur autem commodi cumque cupiditate dignissimos
+          dolore eius exercitationem fuga modi molestiae natus nemo nesciunt nihil nisi nobis obcaecati quasi quibusdam,
+          sunt tempora temporibus ut veniam vitae! Exercitationem, possimus?
+        </div>
+        <div data-key='cont2' data-title={'Content 2'}>
+          2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at delectus dolores eaque eius
+          eligendi error, et eveniet ex facere facilis fugit harum id in nesciunt non odit officia pariatur
+          placeat porro, quam quisquam quos recusandae saepe totam. Ipsa nam nulla obcaecati perspiciatis
+          saepe ullam. Aliquid amet architecto consequuntur dolor dolorem doloribus, eaque explicabo illum
+          nam numquam quia quis voluptatem.
+        </div>
+        <div data-key='cont3' data-title={'Content 3'}>
+          3Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut distinctio dolore eaque eveniet
+          fuga illo molestiae natus, officiis qui quia sit soluta sunt veniam. Dolorum eveniet illum
+          quibusdam ratione temporibus tenetur voluptatum. Ab alias assumenda earum expedita odio tempore vitae?
+        </div>
+      </Tabs>
+    </div>
   }))
