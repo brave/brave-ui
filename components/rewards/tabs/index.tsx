@@ -48,12 +48,10 @@ export default class Tabs extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { id } = this.props
-
     const {content, tabs} = this.generateTabs()
 
     return (
-      <StyledWrapper id={id}>
+      <StyledWrapper id={this.props.id}>
         <StyledTabWrapper>
           {tabs}
         </StyledTabWrapper>
