@@ -21,6 +21,7 @@ import Panel from '../../components/rewards/panel'
 import Donate from '../../components/rewards/donate'
 import Modal from '../../components/rewards/modal'
 import Tabs from '../../components/rewards/tabs'
+import ModalBackupRestore, { TabsType } from '../../components/rewards/modalBackupRestore';
 
 const donate = require('../assets/img/rewards_donate.svg')
 const wallet = require('../assets/img/rewards_wallet.svg')
@@ -148,7 +149,6 @@ storiesOf('Rewards/Content', module)
           ? <Modal
           id={'modal'}
           outsideClose={boolean('Close with click outside', false)}
-          maxWidth={text('Max width', '')}
           onClose={() => (
             store.set({ visible: !store.state.visible })
           )}
@@ -186,5 +186,22 @@ storiesOf('Rewards/Content', module)
           quibusdam ratione temporibus tenetur voluptatum. Ab alias assumenda earum expedita odio tempore vitae?
         </div>
       </Tabs>
+    </div>
+  }))
+  .add('Modal - Backup/Restore', withState({ tabId: 'backup' }, (store) => {
+    return <div style={{maxWidth: '900px', background: '#fff', padding: '30px'}}>
+      <ModalBackupRestore
+        activeTabId={store.state.tabId as TabsType}
+        recoveryKey={'crouch  hint  glow  recall  round  angry  weasel  luggage save  hood  census  near  still   power  vague  balcony camp  law  now  certain  wagon  affair  butter  choice '}
+        onTabChange={(tabId: string) => (
+          store.set({ tabId })
+        )}
+        onClose={() => {}}
+        onCopy={() => {}}
+        onPrint={() => {}}
+        onSaveFile={() => {}}
+        onRestore={() => {}}
+        onImport={() => {}}
+      />
     </div>
   }))

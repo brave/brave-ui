@@ -11,11 +11,13 @@ export const StyledWrapper = styled.div`
 ` as any
 
 export const StyledArea = styled.textarea`
+  min-height: ${(p: Props) => p.theme && p.theme.minHeight ? p.theme.minHeight : 'auto'};
+  box-sizing: border-box;
   width: 100%;
   font-family: Muli;
   border: 1px solid #DFDFE8;
   border-radius: 6px;
-  padding: 20px 15px;
+  padding: 15px 0px 15px 20px;
   font-size: 16px;
   line-height: 26px;
 ` as any

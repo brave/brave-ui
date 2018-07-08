@@ -7,7 +7,7 @@ exports[`Tabs tests basic tests matches the snapshot 1`] = `
 }
 
 .c1 {
-  padding: 34px 56px 34px;
+  padding: 34px 56px 20px;
 }
 
 <div

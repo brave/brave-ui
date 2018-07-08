@@ -32,7 +32,13 @@ export default class Tabs extends React.PureComponent<Props, {}> {
 
       const key = child.props['data-key']
       const title = child.props['data-title'] || `Tab - ${i}`
-      const selected = self.props.activeTabId == key || (self.props.activeTabId.length === 0 && i === 0)
+      const selected = self.props.activeTabId && (
+        self.props.activeTabId == key ||
+        (
+          self.props.activeTabId.length === 0 &&
+          i === 0
+        )
+      )
       if (selected) {
         content = child.props.children
       }
