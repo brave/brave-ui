@@ -141,7 +141,7 @@ class Settings extends React.PureComponent<{}, State> {
             <Checkbox
               title={'Enable ability to give tips on ‘Like’ posts'}
               value={{'yt': true, 'tw': false, 'inst': false}}
-              multiple={true}
+              multiple
             >
               <div data-key='yt'>YouTube</div>
               <div data-key='tw'>Twitter</div>
@@ -177,7 +177,7 @@ class Settings extends React.PureComponent<{}, State> {
               title={locale.adsTitle}
               theme={{titleColor: '#9752cb'}}
               description={locale.adsDesc}
-              toggle={true}
+              toggle
               checked={this.state.adsToggle}
               settingsChild={this.adsSettingsChild()}
               disabledContent={this.adsDisabled()}
@@ -187,14 +187,14 @@ class Settings extends React.PureComponent<{}, State> {
                 <Tokens value={10} converted={4} />
               </List>
               <List title={locale.adsDisplayed}>
-                <Tokens value={17} hideText={true}/>
+                <Tokens value={17} hideText/>
               </List>
             </Box>
             <Box
               title={locale.contributionTitle}
               theme={{titleColor: '#9f22a1'}}
               description={locale.contributionDesc}
-              toggle={true}
+              toggle
               checked={this.state.contributeToggle}
               settingsChild={this.contributeSettingsChild()}
               disabledContent={this.contributeDisabled()}
@@ -204,7 +204,7 @@ class Settings extends React.PureComponent<{}, State> {
                 <Tokens value={15} converted={6} />
               </List>
               <List title={locale.contributionSites}>
-                <Tokens value={55} hideText={true}/>
+                <Tokens value={55} hideText/>
               </List>
               <ContributeTable
                 header={[
@@ -221,7 +221,7 @@ class Settings extends React.PureComponent<{}, State> {
                       src: bartBaker
                     },
                     contribute: {
-                      attention: '40%',
+                      attention: 40,
                       tokens: 4,
                       converted: 5
                     },
@@ -234,7 +234,7 @@ class Settings extends React.PureComponent<{}, State> {
                       src: ddgo
                     },
                     contribute: {
-                      attention: '20%',
+                      attention: 20,
                       tokens: 2,
                       converted: 1
                     },
@@ -248,7 +248,7 @@ class Settings extends React.PureComponent<{}, State> {
                       src: buzz
                     },
                     contribute: {
-                      attention: '10%',
+                      attention: 10,
                       tokens: 1,
                       converted: 0.5
                     },
@@ -261,7 +261,7 @@ class Settings extends React.PureComponent<{}, State> {
                       src: guardian
                     },
                     contribute: {
-                      attention: '5%',
+                      attention: 5,
                       tokens: 0.5,
                       converted: 0.25
                     },
@@ -274,7 +274,7 @@ class Settings extends React.PureComponent<{}, State> {
                       src: wiki
                     },
                     contribute: {
-                      attention: '4%',
+                      attention: 4,
                       tokens: 0.4,
                       converted: 0.25
                     },
@@ -298,7 +298,7 @@ class Settings extends React.PureComponent<{}, State> {
                 <Tokens value={21} converted={7} />
               </List>
               <List title={locale.donationList}>
-                <Tokens value={3} hideText={true}/>
+                <Tokens value={3} hideText/>
               </List>
               <DonationTable
                 rows={[
@@ -344,7 +344,7 @@ class Settings extends React.PureComponent<{}, State> {
                     text: 'May 2',
                   }
                 ]}
-                allItems={true}
+                allItems
               >
                 Please visit some sites
               </DonationTable>
@@ -377,7 +377,7 @@ class Settings extends React.PureComponent<{}, State> {
                   icon: gear
                 }
               ]}
-              showCopy={true}
+              showCopy
             >
               {
                 showNotification
