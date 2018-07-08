@@ -29,8 +29,16 @@ const getColor = (color: Color, disabled: boolean) => {
 
 const generateWrapper = (type: Type, size: Size, color: Color, disabled: boolean) => {
   let colorCode = getColor(color, disabled)
-  if (type === 'ghost') {
-    colorCode = 'transparent'
+  let bgColor = ''
+
+  switch (type) {
+    case 'ghost':
+      colorCode = 'transparent'
+      break
+    case 'primary':
+    case 'cta':
+      bgColor = 'background: #fff;'
+      break
   }
 
   const border = `
@@ -79,6 +87,7 @@ const generateWrapper = (type: Type, size: Size, color: Color, disabled: boolean
 
   return css`
     ${border}
+    ${bgColor}
     ${props}
   `
 }
@@ -183,7 +192,6 @@ const generateContent = (size: Size, type: Type, color: Color, disabled: boolean
 }
 
 export const StyledWrapper = styled.div`
-  background: #fff;
   display: inline-block;
   overflow: hidden;
   ${(p: Props) => generateWrapper(p.type, p.size, p.color, (p.disabled || false))}
