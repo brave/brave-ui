@@ -112,7 +112,8 @@ storiesOf('Rewards/Content', module)
           icon: gear
         }
       ]}
-      showCopy={boolean('Show uphold', false)}
+      showCopy={boolean('Show Uphold', false)}
+      connectedWallet={boolean('Connected wallet', false)}
     >
      Some content
     </Panel>

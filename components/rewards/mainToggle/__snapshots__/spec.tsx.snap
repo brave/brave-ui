@@ -2,6 +2,7 @@
 
 exports[`MainToggle tests basic tests matches the snapshot 1`] = `
 .c0 {
+  font-family: Poppins;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -22,9 +23,9 @@ exports[`MainToggle tests basic tests matches the snapshot 1`] = `
   -webkit-align-content: flex-start;
   -ms-flex-line-pack: start;
   align-content: flex-start;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   padding: 22px 34px 18px;
   margin-bottom: 25px;
 }
@@ -48,7 +49,6 @@ exports[`MainToggle tests basic tests matches the snapshot 1`] = `
 }
 
 .c2 {
-  font-family: Poppins;
   font-size: 28px;
   font-weight: 600;
   -webkit-letter-spacing: 0.2px;
@@ -69,6 +69,21 @@ exports[`MainToggle tests basic tests matches the snapshot 1`] = `
   text-align: center;
   color: #222326;
   vertical-align: text-top;
+}
+
+.c8 {
+  font-size: 22px;
+  line-height: 1.27;
+  color: #4b4c5c;
+  margin-top: 40px;
+}
+
+.c9 {
+  font-family: Muli;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #838391;
 }
 
 .c5 {
@@ -180,6 +195,30 @@ exports[`MainToggle tests basic tests matches the snapshot 1`] = `
         size="large"
       />
     </div>
+  </div>
+  <span
+    className="c8"
+  >
+    Why Brave Rewards…
+  </span>
+  <div
+    className="c9"
+  >
+    Do you know that you’ve been paying for the web content with your data for the digital ads? You didn’t have a voice in it and worse, you’re exposed to privacy and security risks. 
+    <br />
+    <b>
+      Brave Rewards allows you to take control back.
+    </b>
+  </div>
+  <span
+    className="c8"
+  >
+    How does it work?
+  </span>
+  <div
+    className="c9"
+  >
+    Your attention is valuable. Get paid for the ads. And pay directly the favorite content creators at your will. That way, they can grow and continue delivering the content that delights you.
   </div>
 </div>
 `;

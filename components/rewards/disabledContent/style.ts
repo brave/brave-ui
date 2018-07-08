@@ -24,4 +24,15 @@ export const StyledContent = styled.div`
     font-weight: 500;
     color: ${(p: Props) => setTheme(p.theme, 'boldColor') || '#4b4c5c'};
   }
+  
+  h3 {
+    margin: 0;
+    display: inline-block;
+    padding: 0;
+    font-family: Poppins;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 0.5;
+    color: #ceb4e1;
+  }
 ` as any

@@ -26,6 +26,7 @@ export interface Props {
   balanceTitle: string
   tokens: number
   showTm?: boolean
+  connectedWallet?: boolean
   showCopy?: boolean
   children?: React.ReactNode
   actions?: {icon: string, name: string, action: ()=> void}[]
@@ -37,6 +38,7 @@ const uphold = require('./assets/uphold')
 /*
   TODO
   - localize
+  - add colored uphold logo
  */
 export default class Panel extends React.PureComponent<Props, {}> {
   formatTokens (tokens: number) {
@@ -64,7 +66,8 @@ export default class Panel extends React.PureComponent<Props, {}> {
       tokens,
       showTm,
       actions,
-      showCopy
+      showCopy,
+      connectedWallet
     } = this.props
 
     return <StyledWrapper>
@@ -92,8 +95,12 @@ export default class Panel extends React.PureComponent<Props, {}> {
       </StyledPanel>
       {
         showCopy
-        ? <StyledCopy>
-          <StyledCopyImage>{uphold}</StyledCopyImage> Brave wallet is managed by <b>Uphold</b>.
+        ? <StyledCopy connectedWallet={connectedWallet}>
+            {
+              connectedWallet
+              ? <><StyledCopyImage>{uphold}</StyledCopyImage> Add, withdraw and manage funds at <b>Uphold</b>.</>
+              : <><StyledCopyImage>{uphold}</StyledCopyImage> Brave wallet is managed by <b>Uphold</b>.</>
+            }
         </StyledCopy>
         : null
       }

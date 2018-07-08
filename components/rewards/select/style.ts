@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled, {css} from 'styled-components'
-import { Props } from './index';
+import { Props, Theme } from './index';
 
 const check = require('./assets/check')
 const arrow = require('./assets/arrow')
@@ -21,19 +21,19 @@ export const StyledSelectWrapper = styled.div`
 export const StyledSelect = styled.div`
   line-height: normal;
   border-radius: 3px;
-  border: solid 1px #dfdfe8;
+  border: ${(p: {show: boolean, theme: Theme}) => p.theme && p.theme.border ? p.theme.border : 'solid 1px #dfdfe8'};
   font-family: Poppins;
   font-size: 14px;
   color: #686978;
   background: #fff;
   width: 100%;
-  padding: 10px 31px 10px 13px;
+  padding: ${(p: {show: boolean, theme: Theme}) => p.theme && p.theme.padding ? p.theme.padding : '10px 31px 10px 13px'};
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background: url("data:image/svg+xml,${arrow}") no-repeat right 15px top 16px #fff;
+  background: url("data:image/svg+xml,${arrow}") no-repeat right ${(p: {show: boolean, theme: Theme}) => p.theme && p.theme.arrowPadding ? p.theme.arrowPadding : '15px'} center #fff;
   
-  ${(p: {show: boolean}) => p.show
+  ${(p: {show: boolean, theme: Theme}) => p.show
     ? css`
       border-color: #a1a8f2;
     ` : ''

@@ -51,6 +51,10 @@ exports[`gridSystem tests grid component basic tests matches the snapshot 1`] = 
   background-color: inherit;
   font-family: inherit;
   font-size: inherit;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 <div

@@ -13,6 +13,7 @@ export interface GridTheme {
   color?: string,
   backgroundColor?: string
   margin?: string
+  alignItems?: string
 }
 
 export interface GridProps {

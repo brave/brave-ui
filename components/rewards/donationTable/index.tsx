@@ -110,6 +110,24 @@ export default class DonationTable extends React.PureComponent<Props, {}> {
     })
   }
 
+  get headers (): Cell[] {
+    return [
+      {
+        content: 'Site visited'
+      },
+      {
+        content: 'Type'
+      },
+      {
+        content: 'Tokens',
+        theme: {
+          'text-align': 'right',
+          'padding-right': '7px'
+        }
+      },
+    ]
+  }
+
   render () {
     const { id, children, rows, numItems, allItems, onClick } = this.props
 
@@ -118,6 +136,7 @@ export default class DonationTable extends React.PureComponent<Props, {}> {
         <Table
           children={children}
           rows={this.getRows(rows)}
+          header={this.headers}
         />
         {
           !allItems

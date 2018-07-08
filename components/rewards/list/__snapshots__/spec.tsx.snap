@@ -12,10 +12,10 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
   -webkit-align-content: flex-start;
   -ms-flex-line-pack: start;
   align-content: flex-start;
@@ -23,10 +23,10 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   margin-bottom: 8px;
+  font-family: Poppins;
 }
 
 .c1 {
-  font-family: Poppins;
   font-size: 16px;
   line-height: 1;
   color: #4b4c5c;
@@ -66,6 +66,10 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   />
   <div
     className="c2"
-  />
+  >
+    <div
+      className=""
+    />
+  </div>
 </div>
 `;
