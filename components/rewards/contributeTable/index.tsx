@@ -41,7 +41,7 @@ export interface Props {
   rows?: DetailRow[]
   numSites?: number
   allSites?: boolean
-  onClick?: () => void
+  onShowAll?: () => void
   showRowAmount?: boolean
 }
 
@@ -120,7 +120,7 @@ export default class ContributeTable extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { id, header, children, rows, numSites, allSites, onClick } = this.props
+    const { id, header, children, rows, numSites, allSites, onShowAll } = this.props
 
     return (
       <StyledWrapper id={id}>
@@ -131,7 +131,7 @@ export default class ContributeTable extends React.PureComponent<Props, {}> {
         />
         {
           !allSites
-          ? <StyledToggle onClick={onClick}>See all {numSites || 0} sites</StyledToggle>
+          ? <StyledToggle onClick={onShowAll}>See all {numSites || 0} sites</StyledToggle>
           : null
         }
       </StyledWrapper>

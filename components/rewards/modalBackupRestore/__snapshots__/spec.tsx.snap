@@ -62,6 +62,7 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   top: 19px;
   right: 19px;
   padding: 10px;
+  cursor: pointer;
 }
 
 <div

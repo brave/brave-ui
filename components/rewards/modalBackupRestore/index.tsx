@@ -23,7 +23,7 @@ export interface Props {
   recoveryKey: string
   error?: React.ReactNode
   activeTabId: TabsType
-  onTabChange: (tab: string) => void
+  onTabChange: (tab: TabsType) => void
   onClose: () => void
   onCopy: (key: string) => void
   onPrint: (key: string) => void
@@ -95,8 +95,8 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
               defaultValue={''}
             />
             <StyledActionsWrapper>
-              <Button text={'Cancel'} type={'secondary'} size={'medium'} color={'brand'} onClick={onRestore.bind(this, recoveryKey)} />
-              <Button text={'Copy'} type={'primary'} size={'medium'} color={'brand'} onClick={onClose} />
+              <Button text={'Cancel'} type={'secondary'} size={'medium'} color={'brand'} onClick={onClose} />
+              <Button text={'Restore'} type={'primary'} size={'medium'} color={'brand'} onClick={onRestore.bind(this, recoveryKey)} />
             </StyledActionsWrapper>
           </div>
         </Tabs>

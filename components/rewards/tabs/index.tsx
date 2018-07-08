@@ -9,7 +9,7 @@ export interface Props {
   id?: string
   activeTabId: string
   children?: React.ReactNode
-  onChange: (tabId: string) => void
+  onChange: (tabId: any) => void
 }
 
 export default class Tabs extends React.PureComponent<Props, {}> {
