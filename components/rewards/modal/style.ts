@@ -31,6 +31,7 @@ export const StyledClose = styled.div`
   top: 19px;
   right: 19px;
   padding: 10px;
+  cursor: pointer;
 ` as any
 
 export const StyledContent = styled.div`

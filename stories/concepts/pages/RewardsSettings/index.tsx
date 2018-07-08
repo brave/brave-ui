@@ -19,10 +19,12 @@ import Checkbox from '../../../../components/rewards/checkbox';
 import DisabledContent from '../../../../components/rewards/disabledContent';
 import MainToggle from '../../../../components/rewards/mainToggle';
 import Panel from '../../../../components/rewards/panel';
-import ContributeTable from '../../../../components/rewards/contributeTable';
+import ContributeTable, { DetailRow as ContributeDetailRow } from '../../../../components/rewards/contributeTable';
 import { boolean } from '@storybook/addon-knobs';
 import Alert from '../../../../components/rewards/alert';
-import DonationTable from '../../../../components/rewards/donationTable';
+import DonationTable, { DetailRow as DonationDetailRow } from '../../../../components/rewards/donationTable';
+import ModalContribute from '../../../../components/rewards/modalContribute';
+import ModalBackupRestore, { TabsType } from '../../../../components/rewards/modalBackupRestore';
 
 // Images
 const donateImg = require('../../../assets/img/rewards_donate.svg')
@@ -43,6 +45,9 @@ interface State {
   adsToggle: boolean
   contributeToggle: boolean
   mainToggle: boolean
+  modalContribute: boolean
+  modalBackup: boolean
+  modalBackupActive: TabsType
 }
 
 class Settings extends React.PureComponent<{}, State> {
@@ -51,8 +56,129 @@ class Settings extends React.PureComponent<{}, State> {
     this.state = {
       adsToggle: false,
       contributeToggle: true,
-      mainToggle: true
+      mainToggle: true,
+      modalContribute: false,
+      modalBackup: false,
+      modalBackupActive: 'backup'
     }
+  }
+
+  get contributeRows (): ContributeDetailRow[] {
+    return [
+      {
+        profile: {
+          name: 'Bart Baker',
+          verified: true,
+          provider: 'youtube',
+          src: bartBaker
+        },
+        contribute: {
+          attention: 40,
+          tokens: 4,
+          converted: 5
+        },
+        onRemove: () => {}
+      },
+      {
+        profile: {
+          name: 'duckduckgo.com',
+          verified: true,
+          src: ddgo
+        },
+        contribute: {
+          attention: 20,
+          tokens: 2,
+          converted: 1
+        },
+        onRemove: () => {
+        }
+      },
+      {
+        profile: {
+          name: 'buzzfeed.com',
+          verified: false,
+          src: buzz
+        },
+        contribute: {
+          attention: 10,
+          tokens: 1,
+          converted: 0.5
+        },
+        onRemove: () => {}
+      },
+      {
+        profile: {
+          name: 'theguardian.com',
+          verified: true,
+          src: guardian
+        },
+        contribute: {
+          attention: 5,
+          tokens: 0.5,
+          converted: 0.25
+        },
+        onRemove: () => {}
+      },
+      {
+        profile: {
+          name: 'wikipedia.org',
+          verified: false,
+          src: wiki
+        },
+        contribute: {
+          attention: 4,
+          tokens: 0.4,
+          converted: 0.25
+        },
+        onRemove: () => {}
+      }
+    ]
+  }
+
+  get donationRows (): DonationDetailRow[] {
+    return [
+      {
+        profile: {
+          name: 'Bart Baker',
+          verified: true,
+          provider: 'youtube',
+          src: bartBaker
+        },
+        type: 'recurring',
+        contribute: {
+          tokens: 2,
+          converted: 0.2
+        },
+        onRemove: () => {}
+      },
+      {
+        profile: {
+          verified: false,
+          name: 'theguardian.com',
+          src: guardian
+        },
+        type: 'donation',
+        contribute: {
+          tokens: 12,
+          converted: 6.2
+        },
+        text: 'May 7',
+      },
+      {
+        profile: {
+          verified: false,
+          name: 'BrendanEich',
+          provider: 'twitter',
+          src: eich
+        },
+        type: 'tip',
+        contribute: {
+          tokens: 7,
+          converted: 3.2
+        },
+        text: 'May 2',
+      }
+    ]
   }
 
   adsSettingsChild = () => {
@@ -164,6 +290,7 @@ class Settings extends React.PureComponent<{}, State> {
 
   render () {
     const showNotification = boolean('Show notification', false)
+    const self = this
 
     return (
       <div style={{maxWidth: '1000px', margin: '50px auto'}}>
@@ -200,6 +327,14 @@ class Settings extends React.PureComponent<{}, State> {
               disabledContent={this.contributeDisabled()}
               onToggle={() => {this.setState({contributeToggle: !this.state.contributeToggle})}}
             >
+              {
+                this.state.modalContribute
+                ? <ModalContribute
+                    rows={this.contributeRows}
+                    onClose={() => self.setState({modalContribute: false})}
+                  />
+                : null
+              }
               <List title={locale.contributionMonthly}>
                 <Tokens value={15} converted={6} />
               </List>
@@ -212,77 +347,10 @@ class Settings extends React.PureComponent<{}, State> {
                   'Attentions',
                   'Tokens'
                 ]}
-                rows={[
-                  {
-                    profile: {
-                      name: 'Bart Baker',
-                      verified: true,
-                      provider: 'youtube',
-                      src: bartBaker
-                    },
-                    contribute: {
-                      attention: 40,
-                      tokens: 4,
-                      converted: 5
-                    },
-                    onRemove: () => {}
-                  },
-                  {
-                    profile: {
-                      name: 'duckduckgo.com',
-                      verified: true,
-                      src: ddgo
-                    },
-                    contribute: {
-                      attention: 20,
-                      tokens: 2,
-                      converted: 1
-                    },
-                    onRemove: () => {
-                    }
-                  },
-                  {
-                    profile: {
-                      name: 'buzzfeed.com',
-                      verified: false,
-                      src: buzz
-                    },
-                    contribute: {
-                      attention: 10,
-                      tokens: 1,
-                      converted: 0.5
-                    },
-                    onRemove: () => {}
-                  },
-                  {
-                    profile: {
-                      name: 'theguardian.com',
-                      verified: true,
-                      src: guardian
-                    },
-                    contribute: {
-                      attention: 5,
-                      tokens: 0.5,
-                      converted: 0.25
-                    },
-                    onRemove: () => {}
-                  },
-                  {
-                    profile: {
-                      name: 'wikipedia.org',
-                      verified: false,
-                      src: wiki
-                    },
-                    contribute: {
-                      attention: 4,
-                      tokens: 0.4,
-                      converted: 0.25
-                    },
-                    onRemove: () => {}
-                  }
-                ]}
+                rows={this.contributeRows}
                 allSites={false}
                 numSites={55}
+                onShowAll={() => self.setState({modalContribute: true})}
               >
                 Please visit some sites
               </ContributeTable>
@@ -301,49 +369,7 @@ class Settings extends React.PureComponent<{}, State> {
                 <Tokens value={3} hideText/>
               </List>
               <DonationTable
-                rows={[
-                  {
-                    profile: {
-                      name: 'Bart Baker',
-                      verified: true,
-                      provider: 'youtube',
-                      src: bartBaker
-                    },
-                    type: 'recurring',
-                    contribute: {
-                      tokens: 2,
-                      converted: 0.2
-                    },
-                    onRemove: () => {}
-                  },
-                  {
-                    profile: {
-                      verified: false,
-                      name: 'theguardian.com',
-                      src: guardian
-                    },
-                    type: 'donation',
-                    contribute: {
-                      tokens: 12,
-                      converted: 6.2
-                    },
-                    text: 'May 7',
-                  },
-                  {
-                    profile: {
-                      verified: false,
-                      name: 'BrendanEich',
-                      provider: 'twitter',
-                      src: eich
-                    },
-                    type: 'tip',
-                    contribute: {
-                      tokens: 7,
-                      converted: 3.2
-                    },
-                    text: 'May 2',
-                  }
-                ]}
+                rows={this.donationRows}
                 allItems
               >
                 Please visit some sites
@@ -351,6 +377,21 @@ class Settings extends React.PureComponent<{}, State> {
             </Box>
           </Column>
           <Column size={1}>
+            {
+                this.state.modalBackup
+                ? <ModalBackupRestore
+                  activeTabId={this.state.modalBackupActive}
+                  recoveryKey={'crouch  hint  glow  recall  round  angry  weasel  luggage save  hood  census  near  still   power  vague  balcony camp  law  now  certain  wagon  affair  butter  choice '}
+                  onTabChange={(tabId: TabsType) => self.setState({ modalBackupActive: tabId })}
+                  onClose={() => self.setState({modalBackup: false})}
+                  onCopy={() => {}}
+                  onPrint={() => {}}
+                  onSaveFile={() => {}}
+                  onRestore={() => {}}
+                  onImport={() => {}}
+                  />
+                : null
+              }
             <Panel
               title={'Your Wallet'}
               balanceTitle={'balance'}
@@ -373,7 +414,7 @@ class Settings extends React.PureComponent<{}, State> {
                 },
                 {
                   name: 'Backup & Restore',
-                  action: () => {},
+                  action: () => self.setState({modalBackup: true}),
                   icon: gear
                 }
               ]}
