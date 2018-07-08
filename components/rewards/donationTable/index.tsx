@@ -4,7 +4,7 @@
 
 import * as React from 'react'
 import { StyledWrapper, StyledType, StyledDate, StyledRemove, StyledRemoveIcon, StyledToggle } from './style'
-import Table, { Cell } from '../table';
+import Table, { Cell, Row } from '../table';
 import Profile, { Provider } from '../profile';
 import Tokens from '../tokens';
 
@@ -17,17 +17,21 @@ interface ProfileCell {
 
 type DonationType = 'donation' | 'tip' | 'recurring'
 
-export interface DetailCell {
-  profile?: ProfileCell,
-  text?: string | React.ReactNode,
-  onClick?: () => void,
+export interface DetailRow {
+  profile: ProfileCell
+  contribute: {
+    tokens: number
+    converted: number
+  }
+  text?: string | React.ReactNode
+  onRemove?: () => void
   type: DonationType
 }
 
 export interface Props {
   id?: string
   children?: React.ReactNode
-  rows?: DetailCell[][]
+  rows?: DetailRow[]
   numItems?: number
   allItems?: boolean
   onClick?: () => void
@@ -40,69 +44,69 @@ const removeIcon = require('./assets/close')
   - add local
  */
 export default class DonationTable extends React.PureComponent<Props, {}> {
-  getRows (rows?: DetailCell[][]): Cell[][] | undefined {
+  getTypeContent (row: DetailRow): Cell {
+    switch (row.type) {
+      case 'recurring':
+        return {
+          content: <>
+            <StyledType>Recurring</StyledType>
+            <StyledRemove onClick={row.onRemove}>
+              <StyledRemoveIcon> {removeIcon} </StyledRemoveIcon>remove
+            </StyledRemove>
+          </>
+        }
+      case 'donation':
+        return {
+          content: <>
+            <StyledType>One time</StyledType>
+            <StyledDate>{row.text}</StyledDate>
+          </>
+        }
+      case 'tip':
+        return {
+           content: <>
+            <StyledType>Tip on like</StyledType>
+            <StyledDate>{row.text}</StyledDate>
+          </>
+        }
+    }
+  }
+
+  getRows (rows?: DetailRow[]): Row[] | undefined {
     if (!rows) {
       return
     }
 
-    return rows.map((row: DetailCell[]): Cell[] => {
-      return row.map((cell: DetailCell, i: number): Cell => {
-        if (cell.profile) {
-          return {
+    return rows.map((row: DetailRow): Row => {
+      return {
+        content: [
+          {
             content: <Profile
-              title={cell.profile.name}
-              provider={cell.profile.provider}
-              verified={cell.profile.verified}
+              title={row.profile.name}
+              provider={row.profile.provider}
+              verified={row.profile.verified}
               type={'small'}
-              src={cell.profile.src}
+              src={row.profile.src}
             />
-          }
-        }
-
-        if (i === 1) {
-          switch (cell.type) {
-            case 'recurring':
-              return {
-                content: <>
-                  <StyledType>Recurring</StyledType>
-                  <StyledRemove onClick={cell.onClick}>
-                    <StyledRemoveIcon> {removeIcon} </StyledRemoveIcon>remove
-                  </StyledRemove>
-                </>
-              }
-            case 'donation':
-              return {
-                content: <>
-                  <StyledType>One time</StyledType>
-                  <StyledDate>{cell.text}</StyledDate>
-                </>
-              }
-            case 'tip':
-              return {
-                 content: <>
-                  <StyledType>Tip on like</StyledType>
-                  <StyledDate>{cell.text}</StyledDate>
-                </>
-              }
-          }
-        }
-
-        if (i === 2) {
-          return {
+          },
+          this.getTypeContent(row),
+          {
             content: <Tokens
-              value={cell.text as string}
-              theme={{size: '14px', color: {number: '#686978', text: '#9e9fab'}}}
+              value={row.contribute.tokens}
+              converted={row.contribute.converted}
+              hideText={true}
+              theme={{
+                display: 'block',
+                size: {token: '14px', text: '10px'},
+                color: {token: '#686978', text: '#9e9fab'}
+              }}
             />,
             theme: {
               'text-align': 'right'
             }
           }
-        }
-
-        return {
-          content: null
-        }
-      })
+        ]
+      }
     })
   }
 

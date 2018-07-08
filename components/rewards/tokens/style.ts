@@ -8,19 +8,20 @@ import { Props } from './index';
 export const StyledTokens = styled.span`
   font-family: Poppins;
   font-weight: 300;
-  line-height: 1.75;
-  color: ${(p: Props) => p.theme && p.theme.color && p.theme.color.text ? p.theme.color.text : '#4b4c5c'}
-  font-size: ${(p: Props) => p.theme && p.theme.size ? p.theme.size : '16px'}
+  line-height: 1.4;
+  color: ${(p: Props) => p.theme && p.theme.color && p.theme.color.token ? p.theme.color.token : '#4b4c5c'}
+  font-size: ${(p: Props) => p.theme && p.theme.size && p.theme.size.token ? p.theme.size.token : '16px'}
+  display: ${(p: Props) => p.theme && p.theme.display ? p.theme.display : 'inline-block'}
 ` as any
 
 export const StyledTokenValue = styled.span`
   font-weight: 600;
-  color: ${(p: Props) => p.theme && p.theme.color && p.theme.color.number ? p.theme.color.number : '#4b4c5c'}
 ` as any
 
 export const StyledContent = styled.span`
+  color: ${(p: Props) => p.theme && p.theme.color && p.theme.color.text ? p.theme.color.text : '#4b4c5c'}
+  font-size: ${(p: Props) => p.theme && p.theme.size && p.theme.size.text ? p.theme.size.text : '14px'}
   font-family: Muli;
-  font-size: 14px;
   line-height: 1.29;
   color: #b8b9c4;
   display: inline-block;

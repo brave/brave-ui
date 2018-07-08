@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled, { css } from 'styled-components'
-import { Cell } from './index';
+import { Cell, Row } from './index';
 
 export const StyledWrapper = styled.div`
 ` as any
@@ -24,12 +24,24 @@ export const StyledTH = styled.th`
   text-transform: uppercase;
   text-align: left;
   font-family: Poppins;
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 2.55;
-  border-bottom: solid 1px #cb91cc;  
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 2.33;
+  border-bottom: 2px solid #dedfe4;
+  border-top: 2px solid #dedfe4;
+  color: #4B4C5C;
+  padding: 9px 0;
   
   ${(p: Cell) => p.theme
+    ? css`
+      ${p.theme}
+    `
+    : ''
+  }
+` as any
+
+export const StyledTR = styled.tr`
+  ${(p: Row) => p.theme
     ? css`
       ${p.theme}
     `
