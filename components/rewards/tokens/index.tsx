@@ -9,6 +9,7 @@ import { StyledTokens, StyledContent, StyledTokenValue } from './style'
 interface Theme {
   color?: {
     token?: CSS.Color
+    tokenNum?: CSS.Color
     text?: CSS.Color
   }
   size?: {
@@ -24,6 +25,7 @@ export interface Props {
   converted?: string | number
   currency?: string
   hideText?: boolean
+  isNegative?: boolean
   theme?: Theme
 }
 /*
@@ -32,13 +34,15 @@ export interface Props {
  */
 export default class Tokens extends React.PureComponent<Props, {}> {
   render () {
-    const { id, converted, value, currency, hideText, theme } = this.props
+    const { id, converted, value, currency, hideText, isNegative, theme } = this.props
     const defaultCurrency = 'USD'
 
     return (
       <div id={id}>
         <StyledTokens theme={theme}>
-          <StyledTokenValue>{value}</StyledTokenValue> { !hideText ? <span>tokens</span> : null }
+          <StyledTokenValue theme={theme}>
+            { isNegative ? '-' : '' }{value}
+          </StyledTokenValue> { !hideText ? <span>tokens</span> : null }
         </StyledTokens>
         {
           converted

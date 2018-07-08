@@ -15,6 +15,7 @@ export const StyledTokens = styled.span`
 ` as any
 
 export const StyledTokenValue = styled.span`
+  color: ${(p: Props) => p.theme && p.theme.color && p.theme.color.tokenNum ? p.theme.color.tokenNum : 'inherit'}
   font-weight: 600;
 ` as any
 

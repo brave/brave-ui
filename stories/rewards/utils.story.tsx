@@ -72,6 +72,7 @@ storiesOf('Rewards/Utils', module)
       value={text('Tokens value', '10')}
       converted={text('Converted value', '4')}
       currency={text('Currency', 'USD')}
+      isNegative={boolean('Is negative', false)}
     />
   })
   .add('Checkbox', withState({'yt': true, 'tw': false, 'inst': false}, (store) => {
