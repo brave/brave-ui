@@ -15,6 +15,7 @@ export const StyledTabWrapper = styled.div`
 export const StyledTab = styled.div`
   border-radius: 6px 6px 0 0;
   border: 1px solid #DFDFE8;
+  border-bottom: ${(p: {selected: boolean}) => p.selected ? '1px solid #FFF' : '1px solid #DFDFE8'};
   color: ${(p: {selected: boolean}) => p.selected ? '#FB542B' : '#686978'};
   font-size: 16px;
   font-family: Poppins;
@@ -25,8 +26,11 @@ export const StyledTab = styled.div`
   cursor:pointer;
   min-width: 230px;
   padding: 0 10px;
+  margin: 0 2px;
+  position: relative;
+  top: 1px
 ` as any
 
 export const StyledContent = styled.div`
-  padding: 34px 0 34px 0;
+  padding: 34px 56px 34px;
 ` as any

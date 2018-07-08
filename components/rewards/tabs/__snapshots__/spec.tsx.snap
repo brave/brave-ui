@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs tests basic tests matches the snapshot 1`] = `
+.c0 {
+  border-bottom: 1px solid #DFDFE8;
+  text-align: center;
+}
+
+.c1 {
+  padding: 34px 56px 34px;
+}
+
+<div
+  className=""
+  id="tabs"
+>
+  <div
+    className="c0"
+  />
+  <div
+    className="c1"
+  />
+</div>
+`;
