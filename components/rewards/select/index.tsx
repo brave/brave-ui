@@ -17,7 +17,7 @@ export interface Props {
   id?: string
   disabled?: boolean
   value?: string
-  title?: string
+  title?: React.ReactNode
   onChange?: (child: React.ReactNode) => void
   children: React.ReactNode
   theme?: Theme

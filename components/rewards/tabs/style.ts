@@ -32,5 +32,5 @@ export const StyledTab = styled.div`
 ` as any
 
 export const StyledContent = styled.div`
-  padding: 34px 56px 34px;
+  padding: 34px 56px 20px;
 ` as any
