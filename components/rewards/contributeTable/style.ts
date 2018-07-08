@@ -18,9 +18,10 @@ export const StyledText = styled.div`
 
 export const StyledTokens = styled(StyledText)`
   display: flex;
-  width: 80px;
+  width: ${(p: {oneLine: boolean}) => p.oneLine ? 'auto' : '80px'};
   justify-content: flex-end;
   float: right;
+  padding-right: 7px;
 ` as any
 
 export const StyledRemove = styled.span`
@@ -32,6 +33,10 @@ export const StyledTHSite = styled.div`
 
 export const StyledTHOther = styled.div`
   text-align: right;
+` as any
+
+export const StyledTHLast = styled(StyledTHOther)`
+  padding-right: 7px;
 ` as any
 
 export const StyledToggle = styled.div`

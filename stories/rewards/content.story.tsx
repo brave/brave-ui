@@ -22,12 +22,19 @@ import Donate from '../../components/rewards/donate'
 import Modal from '../../components/rewards/modal'
 import Tabs from '../../components/rewards/tabs'
 import ModalBackupRestore, { TabsType } from '../../components/rewards/modalBackupRestore';
+import ModalContribute from '../../components/rewards/modalContribute';
+import { DetailRow } from '../../components/rewards/contributeTable';
 
 const donate = require('../assets/img/rewards_donate.svg')
 const wallet = require('../assets/img/rewards_wallet.svg')
 const activity = require('../assets/img/rewards_activity.svg')
 const funds = require('../assets/img/rewards_funds.svg')
 const gear = require('../assets/img/rewards_gear.svg')
+const bart = require('../assets/img/bartBaker.jpeg')
+const ddgo = require('../assets/img/ddgo.jpg')
+const wiki = require('../assets/img/wiki.jpg')
+const buzz = require('../assets/img/buzz.jpg')
+const guardian = require('../assets/img/guardian.jpg')
 
 addDecorator(withKnobs)
 addDecorator(BetterVisualizer)
@@ -206,3 +213,79 @@ storiesOf('Rewards/Content', module)
       />
     </div>
   }))
+  .add('Modal - Contribute', () => {
+    const rows: DetailRow[] = [
+      {
+        profile: {
+          name: 'Bart Baker',
+          verified: true,
+          provider: 'youtube',
+          src: bart
+        },
+        contribute: {
+          attention: 40,
+          tokens: 4,
+          converted: 5
+        },
+        onRemove: () => {}
+      },
+      {
+        profile: {
+          name: 'duckduckgo.com',
+          verified: true,
+          src: ddgo
+        },
+        contribute: {
+          attention: 20,
+          tokens: 2,
+          converted: 1
+        },
+        onRemove: () => {
+        }
+      },
+      {
+        profile: {
+          name: 'buzzfeed.com',
+          verified: false,
+          src: buzz
+        },
+        contribute: {
+          attention: 10,
+          tokens: 1,
+          converted: 0.5
+        },
+        onRemove: () => {}
+      },
+      {
+        profile: {
+          name: 'theguardian.com',
+          verified: true,
+          src: guardian
+        },
+        contribute: {
+          attention: 5,
+          tokens: 0.5,
+          converted: 0.25
+        },
+        onRemove: () => {}
+      },
+      {
+        profile: {
+          name: 'wikipedia.org',
+          verified: false,
+          src: wiki
+        },
+        contribute: {
+          attention: 4,
+          tokens: 0.4,
+          converted: 0.25
+        },
+        onRemove: () => {}
+      }
+    ]
+
+    return <ModalContribute
+      rows={rows}
+      onClose={() => {}}
+    />
+  })

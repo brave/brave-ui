@@ -3,7 +3,16 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledWrapper, StyledText, StyledRemove, StyledToggle, StyledTHSite, StyledTHOther, StyledTokens } from './style'
+import {
+  StyledWrapper,
+  StyledText,
+  StyledRemove,
+  StyledToggle,
+  StyledTHSite,
+  StyledTHOther,
+  StyledTokens,
+  StyledTHLast
+} from './style'
 import Table, { Row } from '../table';
 import Profile, { Provider } from '../profile';
 import Tokens from '../tokens';
@@ -18,7 +27,7 @@ interface ProfileCell {
 export interface DetailRow {
   profile: ProfileCell
   contribute: {
-    attention: string
+    attention: number
     tokens: number
     converted: number
   }
@@ -51,18 +60,23 @@ export default class ContributeTable extends React.PureComponent<Props, {}> {
 
     return header.map((item: string, i: number) => {
       return {
-        content: i === 0 ? <StyledTHSite>{item}</StyledTHSite> : <StyledTHOther>{item}</StyledTHOther>
+        content: i === 0
+        ? <StyledTHSite>{item}</StyledTHSite>
+        : (i - 1) === header.length
+          ? <StyledTHOther>{item}</StyledTHOther>
+          : <StyledTHLast>{item}</StyledTHLast>
       }
     })
   }
 
-  getRows (rows?: DetailRow[]): Row[] | undefined {
+  getRows = (rows?: DetailRow[]): Row[] | undefined => {
+    const self = this
     if (!rows) {
       return
     }
 
     return rows.map((row: DetailRow): Row => {
-      const cell = {
+      const cell: Row = {
         content: [
           {
             content: <Profile
@@ -74,16 +88,16 @@ export default class ContributeTable extends React.PureComponent<Props, {}> {
             />
           },
           {
-            content: <StyledText>{row.contribute.attention}</StyledText>
+            content: <StyledText>{row.contribute.attention}%</StyledText>
           },
           {
-            content: <StyledTokens>
+            content: <StyledTokens oneLine={self.props.showRowAmount}>
               <Tokens
                 value={row.contribute.tokens}
                 converted={row.contribute.converted}
-                hideText={true}
+                hideText={!self.props.showRowAmount}
                 theme={{
-                  display: 'block',
+                  display: self.props.showRowAmount ? 'inline-block' : 'block',
                   size: {text: '10px', token: '14px'},
                   color: {token: '#686978', text: '#9e9fab'}
                 }}
@@ -95,7 +109,10 @@ export default class ContributeTable extends React.PureComponent<Props, {}> {
       }
 
       if (this.props.showRowAmount) {
-
+        const remaining = 100 - row.contribute.attention
+        cell.theme = {
+          background: `linear-gradient(90deg, #FFF ${remaining}%, #d2c6f3 ${row.contribute.attention}%)`
+        }
       }
 
       return cell
