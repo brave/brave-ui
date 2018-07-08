@@ -109,11 +109,13 @@ export const StyledActionIcon = styled.img`
 export const StyledCopy = styled.div`
   font-size: 12px;
   color: #838391;
-  padding: 14px 33px;
+  padding: 19px 15px;
+  background: ${(p: {connectedWallet:boolean}) => p.connectedWallet ? '#ccdfea' : '#dee2e6'};
+  text-align: center;
 ` as any
 
 export const StyledCopyImage = styled.span`
-  vertical-align: text-bottom;
+  vertical-align: middle;
   display: inline-block;
   margin-right: 5px;
 ` as any

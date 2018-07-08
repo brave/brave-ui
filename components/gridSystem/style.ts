@@ -19,6 +19,7 @@ const StyledGrid = styled.div`
   background-color: ${(p: GridProps) => setTheme(p.theme, 'backgroundColor') || 'inherit'};
   font-family: inherit;
   font-size: inherit;
+  align-items: ${(p: GridProps) => setTheme(p.theme, 'alignItems') || 'flex-start'};
 
   ${(p: GridProps) => p.disabled
     ? css`

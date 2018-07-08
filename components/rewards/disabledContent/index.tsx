@@ -25,7 +25,7 @@ export default class DisabledContent extends React.PureComponent<Props, {}> {
 
     return (
       <StyledWrapper id={id}>
-        <Grid columns={3} theme={{gridGap: '32px'}}>
+        <Grid columns={3} theme={{gridGap: '32px', alignItems: 'center'}}>
           <Column size={1} theme={{justifyContent: 'flex-end'}}>
             <StyledImage src={image} />
           </Column>

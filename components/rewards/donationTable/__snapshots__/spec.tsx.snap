@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DonationTable tests basic tests matches the snapshot 1`] = `
-.c1 {
+.c3 {
   font-family: Poppins;
   font-size: 13px;
   color: #4c54d2;
@@ -10,10 +10,36 @@ exports[`DonationTable tests basic tests matches the snapshot 1`] = `
 }
 
 .c0 {
-  text-align: center;
-  padding: 30px 0;
-  color: #999ea2;
-  font-size: 14px;
+  width: 100%;
+  margin-bottom: 11px;
+}
+
+.c1 {
+  text-transform: uppercase;
+  text-align: left;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 2.33;
+  border-bottom: 2px solid #dedfe4;
+  border-top: 2px solid #dedfe4;
+  color: #4B4C5C;
+  padding: 9px 0;
+}
+
+.c2 {
+  text-transform: uppercase;
+  text-align: left;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 2.33;
+  border-bottom: 2px solid #dedfe4;
+  border-top: 2px solid #dedfe4;
+  color: #4B4C5C;
+  padding: 9px 0;
+  text-align: right;
+  padding-right: 7px;
 }
 
 <div
@@ -24,12 +50,32 @@ exports[`DonationTable tests basic tests matches the snapshot 1`] = `
     className=""
     id={undefined}
   >
-    <div
+    <table
       className="c0"
-    />
+    >
+      <thead>
+        <tr>
+          <th
+            className="c1"
+          >
+            Site visited
+          </th>
+          <th
+            className="c1"
+          >
+            Type
+          </th>
+          <th
+            className="c2"
+          >
+            Tokens
+          </th>
+        </tr>
+      </thead>
+    </table>
   </div>
   <div
-    className="c1"
+    className="c3"
     onClick={undefined}
   >
     See all 
