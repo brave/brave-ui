@@ -25,7 +25,7 @@ export const StyledTokens = styled(StyledText)`
 ` as any
 
 export const StyledRemove = styled.span`
-  margin-left: 7px;
+  margin-left: 10px;
 ` as any
 
 export const StyledTHSite = styled.div`

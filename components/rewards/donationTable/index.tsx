@@ -3,7 +3,8 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledWrapper, StyledType, StyledDate, StyledRemove, StyledRemoveIcon, StyledToggle } from './style'
+import * as CSS from 'csstype'
+import { StyledWrapper, StyledType, StyledDate, StyledRemove, StyledRemoveIcon, StyledToggle, StyledRecurringIcon } from './style'
 import Table, { Cell, Row } from '../table';
 import Profile, { Provider } from '../profile';
 import Tokens from '../tokens';
@@ -35,9 +36,15 @@ export interface Props {
   numItems?: number
   allItems?: boolean
   onClick?: () => void
+  theme?: Theme
+}
+
+interface Theme {
+  headerColor?: CSS.Color
 }
 
 const removeIcon = require('./assets/close')
+const monthlyIcon = require('./assets/monthly')
 
 /*
   TODO
@@ -49,7 +56,7 @@ export default class DonationTable extends React.PureComponent<Props, {}> {
       case 'recurring':
         return {
           content: <>
-            <StyledType>Recurring</StyledType>
+            <StyledType>Recurring <StyledRecurringIcon>{monthlyIcon}</StyledRecurringIcon></StyledType>
             <StyledRemove onClick={row.onRemove}>
               <StyledRemoveIcon> {removeIcon} </StyledRemoveIcon>remove
             </StyledRemove>
@@ -102,7 +109,8 @@ export default class DonationTable extends React.PureComponent<Props, {}> {
               }}
             />,
             theme: {
-              'text-align': 'right'
+              'text-align': 'right',
+              'padding-right': '7px'
             }
           }
         ]
@@ -111,19 +119,33 @@ export default class DonationTable extends React.PureComponent<Props, {}> {
   }
 
   get headers (): Cell[] {
+    let theme = {}
+
+    if (this.props.theme && this.props.theme.headerColor) {
+      theme = {
+        border: 'none',
+        'border-bottom': `1px solid ${this.props.theme.headerColor}`,
+        'padding-top': '0',
+        'padding-bottom': '0',
+        color: this.props.theme.headerColor
+      }
+    }
+
     return [
       {
-        content: 'Site visited'
+        content: 'Site visited',
+        theme
       },
       {
-        content: 'Type'
+        content: 'Type',
+        theme
       },
       {
         content: 'Tokens',
-        theme: {
+        theme: Object.assign({
           'text-align': 'right',
           'padding-right': '7px'
-        }
+        }, theme)
       },
     ]
   }

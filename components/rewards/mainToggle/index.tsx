@@ -11,16 +11,20 @@ import {
   StyledLeft,
   StyledRight,
   StyleTitle,
-  StyleText
+  StyleText,
+  StyledNotification,
+  StyledContent
 } from './style'
 import Toggle from '../toggle';
 
 const logo = require('./assets/bat')
+const bellIcon = require('./assets/bell')
 
 export interface Props {
   id?: string
   enabled: boolean
   onToggle: () => void
+  newNotifications?: boolean
 }
 
 /*
@@ -30,7 +34,7 @@ export interface Props {
  */
 export default class MainToggle extends React.PureComponent<Props, {}> {
   render () {
-    const { id, enabled, onToggle } = this.props
+    const { id, enabled, onToggle, newNotifications } = this.props
 
     return (
       <StyledWrapper id={id}>
@@ -41,11 +45,18 @@ export default class MainToggle extends React.PureComponent<Props, {}> {
           </StyledTitle>
         </StyledLeft>
         <StyledRight>
+          {
+            enabled
+            ? <StyledNotification newNotifications={newNotifications}>
+              {bellIcon}
+            </StyledNotification>
+            : null
+          }
           <Toggle checked={enabled} onClick={onToggle} size={'large'} />
         </StyledRight>
         {
           !enabled
-          ? <>
+          ? <StyledContent>
             <StyleTitle>Why Brave Rewards…</StyleTitle>
             <StyleText>
               Do you know that you’ve been paying for the web content with your data for the digital ads?
@@ -57,10 +68,9 @@ export default class MainToggle extends React.PureComponent<Props, {}> {
               Your attention is valuable. Get paid for the ads. And pay directly the favorite content
               creators at your will. That way, they can grow and continue delivering the content that delights you.
             </StyleText>
-          </>
+          </StyledContent>
           : null
         }
-
       </StyledWrapper>
     )
   }

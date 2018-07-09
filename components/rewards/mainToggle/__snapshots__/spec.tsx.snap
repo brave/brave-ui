@@ -46,6 +46,10 @@ exports[`MainToggle tests basic tests matches the snapshot 1`] = `
 
 .c4 {
   padding: 10px 0 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c2 {
@@ -71,19 +75,25 @@ exports[`MainToggle tests basic tests matches the snapshot 1`] = `
   vertical-align: text-top;
 }
 
-.c8 {
+.c9 {
   font-size: 22px;
   line-height: 1.27;
   color: #4b4c5c;
   margin-top: 40px;
 }
 
-.c9 {
+.c10 {
   font-family: Muli;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.75;
   color: #838391;
+}
+
+.c8 {
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
 }
 
 .c5 {
@@ -196,29 +206,33 @@ exports[`MainToggle tests basic tests matches the snapshot 1`] = `
       />
     </div>
   </div>
-  <span
+  <div
     className="c8"
   >
-    Why Brave Rewards…
-  </span>
-  <div
-    className="c9"
-  >
-    Do you know that you’ve been paying for the web content with your data for the digital ads? You didn’t have a voice in it and worse, you’re exposed to privacy and security risks. 
-    <br />
-    <b>
-      Brave Rewards allows you to take control back.
-    </b>
-  </div>
-  <span
-    className="c8"
-  >
-    How does it work?
-  </span>
-  <div
-    className="c9"
-  >
-    Your attention is valuable. Get paid for the ads. And pay directly the favorite content creators at your will. That way, they can grow and continue delivering the content that delights you.
+    <div
+      className="c9"
+    >
+      Why Brave Rewards…
+    </div>
+    <div
+      className="c10"
+    >
+      Do you know that you’ve been paying for the web content with your data for the digital ads? You didn’t have a voice in it and worse, you’re exposed to privacy and security risks. 
+      <br />
+      <b>
+        Brave Rewards allows you to take control back.
+      </b>
+    </div>
+    <div
+      className="c9"
+    >
+      How does it work?
+    </div>
+    <div
+      className="c10"
+    >
+      Your attention is valuable. Get paid for the ads. And pay directly the favorite content creators at your will. That way, they can grow and continue delivering the content that delights you.
+    </div>
   </div>
 </div>
 `;
