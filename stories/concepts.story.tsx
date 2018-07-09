@@ -13,6 +13,7 @@ import BraveShields from './concepts/features/braveShields';
 import Settings from './concepts/pages/RewardsSettings';
 import SiteBanner from '../components/rewards/siteBanner';
 import Tip from '../components/rewards/tip';
+import RewardsWelcome from './concepts/pages/rewardsWelcome';
 
 addDecorator(withKnobs)
 
@@ -30,6 +31,7 @@ const donationAmount = [
 storiesOf('Concepts/Pages', module)
   .add('Private Tab', () => <PrivateTab />)
   .add('Rewards Settings', () => <Settings />)
+  .add('Rewards Welcome', () => <RewardsWelcome />)
 storiesOf('Concepts/Features', module)
   .add('Brave Shields Panel', () => <BraveShields />)
 storiesOf('Concepts/Features', module)
