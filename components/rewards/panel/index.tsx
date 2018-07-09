@@ -5,42 +5,65 @@
 import * as React from 'react'
 import {
   StyledWrapper,
-  StyledPanel,
   StyledHeader,
   StyledTitle,
-  StyledTM,
   StyledBalance,
   StyledBalanceTitle,
   StyledBalanceTokens,
   StyledContent,
-  StyledFooter,
   StyledAction,
   StyledActionIcon,
   StyledCopy,
-  StyledCopyImage
+  StyledCopyImage,
+  StyledIconActions,
+  StyledIconAction,
+  StyledBalanceConverted,
+  StyledGrantWrapper,
+  StyledGrant,
+  StyledActionWrapper
 } from './style'
+import Button from '../button';
+
+type Grant = {tokens: number, expireDate: string}
 
 export interface Props {
   id?: string
-  title: string
-  balanceTitle: string
   tokens: number
-  showTm?: boolean
+  converted: string
   connectedWallet?: boolean
   showCopy?: boolean
   children?: React.ReactNode
-  actions?: {icon: string, name: string, action: ()=> void}[]
+  actions: {icon: string, name: string, action: ()=> void}[]
+  showSecActions?: boolean
+  onSettingsClick?: () => void
+  onActivityClick?: () => void
+  grants?: Grant[]
 }
 
 const panel = require('./assets/panel')
-const uphold = require('./assets/uphold')
+const upholdIcon = require('./assets/uphold')
+const upholdColorIcon = require('./assets/upholdColor')
+const activityIcon = require('./assets/activity')
+const gearIcon = require('./assets/gear')
 
 /*
   TODO
-  - localize
-  - add colored uphold logo
+  - add local
+  - add arrow up/down to the button
  */
-export default class Panel extends React.PureComponent<Props, {}> {
+
+interface State {
+  grantDetails: boolean
+}
+
+export default class Panel extends React.PureComponent<Props, State> {
+  constructor (props: Props) {
+    super(props)
+    this.state = {
+      grantDetails: false
+    }
+  }
+
   formatTokens (tokens: number) {
     if (isNaN(tokens)) {
       return '00.00'
@@ -50,61 +73,93 @@ export default class Panel extends React.PureComponent<Props, {}> {
   }
 
   generateActions (actions: {icon: string, name: string, action: ()=> void}[], id?: string) {
-    return actions.map((action, i: number) => {
+    return actions && actions.map((action, i: number) => {
       return <StyledAction key={`${id}-${i}`} onClick={action.action}>
         <StyledActionIcon src={action.icon} />{action.name}
       </StyledAction>
     })
   }
 
+  toggleGrantDetails = () => {
+    this.setState({grantDetails: !this.state.grantDetails})
+  }
+
+  hasGrants = (grants?: Grant[]) => {
+    return grants && grants.length > 0
+  }
+
   render () {
     const {
       id,
-      title,
       children,
-      balanceTitle,
       tokens,
-      showTm,
+      converted,
       actions,
       showCopy,
-      connectedWallet
+      connectedWallet,
+      showSecActions,
+      grants,
+      onSettingsClick
     } = this.props
 
-    return <StyledWrapper>
-      <StyledPanel id={id}>
-        <StyledHeader bg={panel}>
-          <StyledTitle>
-            {title}
-            <StyledTM>{showTm ? 'TM': <>&nbsp;</>}</StyledTM>
-          </StyledTitle>
-          <StyledBalance>
-            <StyledBalanceTitle>{balanceTitle}</StyledBalanceTitle>
-            <StyledBalanceTokens>
-              <b>{this.formatTokens(tokens)}</b> tokens
-            </StyledBalanceTokens>
-          </StyledBalance>
-        </StyledHeader>
-        <StyledContent>
-          {children}
-        </StyledContent>
+    return <StyledWrapper id={id}>
+      <StyledHeader bg={panel}>
+        <StyledTitle>Your wallet</StyledTitle>
         {
-          actions && actions.length
-          ? <StyledFooter>{this.generateActions(actions, id)}</StyledFooter>
+          showSecActions
+          ? <StyledIconActions>
+            <StyledIconAction onClick={onSettingsClick}>
+              {gearIcon}
+            </StyledIconAction>
+            <StyledIconAction>
+              {activityIcon}
+            </StyledIconAction>
+          </StyledIconActions>
           : null
         }
-      </StyledPanel>
+
+        <StyledBalance>
+          <StyledBalanceTitle>Token balance</StyledBalanceTitle>
+          <StyledBalanceTokens>{this.formatTokens(tokens)}</StyledBalanceTokens>
+          <StyledBalanceConverted>~ {converted}</StyledBalanceConverted>
+          <Button
+            text={'Detail'}
+            type={'secondary'}
+            size={'small'}
+            color={'subtle'}
+            onClick={this.toggleGrantDetails}
+            disabled={!this.hasGrants(grants)}
+          />
+        </StyledBalance>
+        {
+          this.state.grantDetails && this.hasGrants(grants)
+          ? <StyledGrantWrapper>
+            {
+              grants && grants.map((grant: Grant) => {
+                return <StyledGrant><b>{grant.tokens} tokens</b> <span>expires on {grant.expireDate}</span></StyledGrant>
+              })
+            }
+          </StyledGrantWrapper>
+          : null
+        }
+        <StyledActionWrapper>
+          {this.generateActions(actions, id)}
+        </StyledActionWrapper>
+      </StyledHeader>
+      <StyledContent>
+        {children}
+      </StyledContent>
       {
         showCopy
         ? <StyledCopy connectedWallet={connectedWallet}>
             {
               connectedWallet
-              ? <><StyledCopyImage>{uphold}</StyledCopyImage> Add, withdraw and manage funds at <b>Uphold</b>.</>
-              : <><StyledCopyImage>{uphold}</StyledCopyImage> Brave wallet is managed by <b>Uphold</b>.</>
+              ? <><StyledCopyImage>{upholdColorIcon}</StyledCopyImage> Add, withdraw and manage funds at <b>Uphold</b>.</>
+              : <><StyledCopyImage>{upholdIcon}</StyledCopyImage> Brave wallet is managed by <b>Uphold</b>.</>
             }
         </StyledCopy>
         : null
       }
-
     </StyledWrapper>
   }
 }
