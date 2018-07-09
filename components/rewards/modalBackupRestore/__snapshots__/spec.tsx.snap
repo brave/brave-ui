@@ -181,7 +181,6 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   text-align: center;
   box-sizing: border-box;
   font-family: Poppins;
-  text-align: center;
   -webkit-letter-spacing: 0;
   -moz-letter-spacing: 0;
   -ms-letter-spacing: 0;
@@ -189,6 +188,10 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   font-weight: 600;
   line-height: 1;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   font-weight: 500;
   color: rgb(184,185,196);
   padding: 10.5px 10px;
@@ -206,7 +209,6 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   text-align: center;
   box-sizing: border-box;
   font-family: Poppins;
-  text-align: center;
   -webkit-letter-spacing: 0;
   -moz-letter-spacing: 0;
   -ms-letter-spacing: 0;
@@ -214,6 +216,10 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   font-weight: 600;
   line-height: 1;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   background: rgb(251,84,43);
   color: #fff;
   padding: 13.5px 10px;

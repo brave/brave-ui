@@ -5,98 +5,59 @@
 import styled from 'styled-components'
 
 export const StyledWrapper = styled.div`
-  font-family: Poppins;
-  width: 373px;
-` as any
-
-export const StyledPanel = styled.div`
   border-radius: 6px;
-  background-color: #f9fbfc;
   box-shadow: 0 0 8px 0 rgba(99, 105, 110, 0.12);
   overflow: hidden;
-  width: 100%;
+  font-family: Poppins;
+  width: 373px;
+  background: url(${(p: {bg: string}) => `"data:image/svg+xml,${p.bg}"`}) no-repeat top left, linear-gradient(172deg, #392dd1, rgba(255, 26, 26, 0.53)), linear-gradient(#7d7bdc, #7d7bdc);
 ` as any
 
 export const StyledHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  align-content: flex-start;
-  flex-wrap: nowrap;
-  background: url(${(p: {bg: string}) => `"data:image/svg+xml,${p.bg}"`}) no-repeat top left, linear-gradient(152deg, #392dd1, rgba(255, 26, 26, 0.53)), linear-gradient(#7d7bdc, #7d7bdc);
-  padding: 10px 16px 15px 29px;
+  padding: 16px 21px 0 19px;
+  position: relative;
 ` as any
 
 export const StyledTitle = styled.div`
-  font-size: 22px;
+  font-family: Poppins;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.38;
   letter-spacing: -0.2px;
-  color: #ffffff;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 50%;
-  padding: 13px 0 0;
-  height: 42px;
-  overflow: hidden;
-  line-height: 1;
-` as any
-
-export const StyledTM = styled.span`
-  font-size: 6px;
-  font-weight: 500;
-  letter-spacing: 0.6px;
-  color: #ffffff;
-  vertical-align: text-top;
+  color: rgba(255, 255, 255, 0.65);
 ` as any
 
 export const StyledBalance = styled.div`
-  text-align: left;
+  text-align: center;
 ` as any
 
 export const StyledBalanceTitle = styled.div`
-  opacity: 0.63;
+  font-family: Poppins;
   font-size: 12px;
+  font-weight: 500;
   line-height: 1.83;
-  color: #ffffff;
-  margin-bottom: 3px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #6cc7fd;
 ` as any
 
 export const StyledBalanceTokens = styled.div`
-  font-size: 12px;
-  font-weight: 300;
-  line-height: 1.83;
-  color: #ffffff;
-  
-  b {
-    font-size: 26px;
-    font-weight: 600;
-    line-height: 0.85;
-    letter-spacing: -0.3px;
-    display: inline-block;
-    margin-right: 3px;
-  }
+  font-family: Poppins;
+  font-size: 36px;
+  line-height: 0.61;
+  letter-spacing: -0.4px;
+  color: #fff;
+  margin-top: 10px;
 ` as any
 
 export const StyledContent = styled.div`
   padding: 31px 28px 19px;
   position: relative;
+  background: #f9fbfc;
 ` as any
 
-export const StyledFooter = styled.div`
-  background-color: #dee2e6;
-  border: solid 1px #dbdfe3;
-  padding: 23px 33px 8px;
-  display: flex;
-  flex-wrap: wrap;
-` as any
-
-export const StyledAction = styled.div`
-  font-size: 13px;
-  font-weight: 500;
-  color: #838391;
-  flex-basis: 50%;
-  margin-bottom: 15px;
+export const StyledAction = styled.span`
+  display: inline-block;
 ` as any
 
 export const StyledActionIcon = styled.img`
@@ -118,4 +79,61 @@ export const StyledCopyImage = styled.span`
   vertical-align: middle;
   display: inline-block;
   margin-right: 5px;
+` as any
+
+export const StyledIconActions = styled.div`
+  position: absolute;
+  top: 21px;
+  right: 21px;
+` as any
+
+export const StyledIconAction = styled.div`
+  margin-bottom: 17px;
+  cursor:pointer;
+` as any
+
+export const StyledBalanceConverted = styled.div`
+  font-family: Muli;
+  font-size: 12px;
+  line-height: 1.17;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 15px 0 10px;
+` as any
+
+export const StyledGrantWrapper = styled.div`
+  margin-top: 13px;
+` as any
+
+export const StyledGrant = styled.div`
+  font-family: Muli;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.60);
+  text-align: center;
+  margin-bottom: 3px;
+  
+  b {
+    font-weight: 600;
+    color: #fff;
+    min-width: 81px;
+    text-align: right;
+    display: inline-block;
+  }
+  
+  span {
+    min-width: 135px;
+    text-align: left;
+    display: inline-block;
+  }
+` as any
+
+export const StyledActionWrapper = styled.div`
+  text-align: center;
+  font-family: Poppins;
+  font-size: 12px;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0 0;
+  padding-bottom: 20px;
 ` as any

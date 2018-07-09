@@ -8,7 +8,7 @@ import { Color, Props, Size, Type } from './index';
 const getColor = (color: Color, disabled: boolean) => {
   let colorCode = ''
 
-  if (disabled) {
+  if (disabled && color !== 'subtle') {
     return '#EBECF0'
   }
 
@@ -41,17 +41,21 @@ const generateWrapper = (type: Type, size: Size, color: Color, disabled: boolean
       break
   }
 
-  const border = `
+  let border = `
     border: 1px solid rgb(${colorCode});
-    
-    :hover {
-      border-color: rgba(${colorCode}, 0.9);
-    }
-    
-    :active {
-      border-color: rgba(${colorCode}, 0.6);
-    }
   `
+
+  if (!disabled) {
+    border += `
+      :hover {
+        border-color: rgba(${colorCode}, 0.9);
+      }
+      
+      :active {
+        border-color: rgba(${colorCode}, 0.6);
+      }
+    `
+  }
 
   let props = ``
   switch (size)  {
@@ -154,7 +158,8 @@ const generateContent = (size: Size, type: Type, color: Color, disabled: boolean
       break
   }
 
-  if (disabled) {
+  // TODO improve disabled
+  if (disabled && color !== 'subtle') {
     props = `
       background: ${colorCode};
       color: #fff;
@@ -201,11 +206,11 @@ export const StyledContent = styled.div`
   text-align: center;
   box-sizing: border-box;
   font-family: Poppins;
-  text-align: center;
   letter-spacing: 0;
   font-weight: 600;
   line-height: 1;
-  cursor: pointer;
+  cursor: ${(p: Props) => p.disabled ? 'default' : 'pointer'};
+  user-select: none;
   
   ${(p: Props) => p.color === 'subtle'
     ? css`
