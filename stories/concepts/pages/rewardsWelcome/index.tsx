@@ -4,21 +4,50 @@
 
 import * as React from 'react'
 
-// Components
+// Generic Components
 import Page from '../../../../components/page'
+import { Heading } from '../../../../components/headings'
+import Paragraph from '../../../../components/paragraph'
+import BoxedContent from '../../../../components/boxedContent'
+
+// Rewards Components
+import Hero from '../../../../components/rewards/hero'
+import Button from '../../../../components/rewards/button'
 
 // Styles
 import theme from './theme'
 
 // Assets
-// import locale from './fakeLocale'
+import locale from './fakeLocale'
 // import data from './fakeData'
 
 class RewardsWelcome extends React.PureComponent {
   render () {
     return (
       <Page theme={theme.page}>
-        Rewards Welcome
+        <Hero
+         id={'rewards-hero'}>
+         <Heading level={1} text={locale.braveRewardsTitle}/>
+         <Heading level={2} text={locale.braveRewardsSubTitle}/>
+         <Paragraph text={locale.braveRewardsDesc}/>
+         <Button
+           size={'medium'}
+           type={'cta'}
+           color={'subtle'}
+           onClick={() => {window.alert('Opt In')}}
+           text={locale.braveRewardsOptInText}/>
+         <Paragraph text={locale.braveRewardsTeaser}/>
+        </Hero>
+        <BoxedContent>
+          <Heading level={1} text={locale.whyBraveRewards}/>
+          <Paragraph text={locale.whyBraveRewardsDesc}/>
+          <Paragraph text={locale.whyBraveRewardsBold}/>
+        </BoxedContent>
+        <BoxedContent>
+          <Heading level={1} text={locale.howDoesItWork}/>
+          <Paragraph text={locale.whyBraveRewardsDesc}/>
+          <Paragraph text={locale.whyBraveRewardsBold}/>
+        </BoxedContent>
       </Page>
     )
   }
