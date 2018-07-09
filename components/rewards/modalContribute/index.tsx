@@ -21,8 +21,7 @@ export default class ModalContribute extends React.PureComponent<Props, {}> {
   get headers () {
     return [
       'Site visited',
-      'Your attention metric',
-      'Token allocation'
+      'Your attention metric'
     ]
   }
 

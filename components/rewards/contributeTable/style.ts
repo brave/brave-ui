@@ -16,16 +16,9 @@ export const StyledText = styled.div`
   color: #686978;
 ` as any
 
-export const StyledTokens = styled(StyledText)`
-  display: flex;
-  width: ${(p: {oneLine: boolean}) => p.oneLine ? 'auto' : '80px'};
-  justify-content: flex-end;
-  float: right;
-  padding-right: 7px;
-` as any
-
 export const StyledRemove = styled.span`
   margin-left: 10px;
+  padding-right: 7px;
 ` as any
 
 export const StyledTHSite = styled.div`

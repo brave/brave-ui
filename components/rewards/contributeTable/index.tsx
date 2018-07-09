@@ -11,12 +11,10 @@ import {
   StyledToggle,
   StyledTHSite,
   StyledTHOther,
-  StyledTokens,
   StyledTHLast
 } from './style'
 import Table, { Row } from '../table';
 import Profile, { Provider } from '../profile';
-import Tokens from '../tokens';
 
 interface ProfileCell {
   verified: boolean
@@ -27,11 +25,7 @@ interface ProfileCell {
 
 export interface DetailRow {
   profile: ProfileCell
-  contribute: {
-    attention: number
-    tokens: number
-    converted: number
-  }
+  attention: number
   onRemove?: () => void
 }
 
@@ -51,7 +45,7 @@ interface Theme {
   headerColor?: CSS.Color
 }
 
-const closeIcon = require('./assets/close')
+const removeIcon = require('./assets/close')
 
 /*
   TODO
@@ -88,7 +82,6 @@ export default class ContributeTable extends React.PureComponent<Props, {}> {
   }
 
   getRows = (rows?: DetailRow[]): Row[] | undefined => {
-    const self = this
     if (!rows) {
       return
     }
@@ -106,30 +99,17 @@ export default class ContributeTable extends React.PureComponent<Props, {}> {
             />
           },
           {
-            content: <StyledText>{row.contribute.attention}%</StyledText>
-          },
-          {
-            content: <StyledTokens oneLine={self.props.showRowAmount}>
-              <Tokens
-                value={row.contribute.tokens}
-                converted={row.contribute.converted}
-                hideText={!self.props.showRowAmount}
-                theme={{
-                  display: self.props.showRowAmount ? 'inline-block' : 'block',
-                  size: {text: '10px', token: '14px'},
-                  color: {token: '#686978', text: '#9e9fab'}
-                }}
-              />
-              <StyledRemove onClick={row.onRemove}>{closeIcon}</StyledRemove>
-            </StyledTokens>
+            content: <StyledText>
+              {row.attention}% <StyledRemove onClick={row.onRemove}>{removeIcon}</StyledRemove>
+            </StyledText>
           }
         ]
       }
 
       if (this.props.showRowAmount) {
-        const remaining = 100 - row.contribute.attention
+        const remaining = 100 - row.attention
         cell.theme = {
-          background: `linear-gradient(90deg, #FFF ${remaining}%, #d2c6f3 ${row.contribute.attention}%)`
+          background: `linear-gradient(90deg, #FFF ${remaining}%, #d2c6f3 ${row.attention}%)`
         }
       }
 
