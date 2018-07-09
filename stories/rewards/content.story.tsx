@@ -119,12 +119,15 @@ storiesOf('Rewards/Content', module)
     </Panel>
   })
   .add('Main toggle', withState({ checked: false }, (store) => {
-    return <MainToggle
+    return <div style={{width: '800px'}}>
+      <MainToggle
       enabled={boolean('Enable', store.state.checked)}
+      newNotifications={boolean('New notification', true)}
       onToggle={() => (
         store.set({ checked: !store.state.checked })
       )}
     />
+    </div>
   }))
   .add('Donate', withState({donationAmount}, (store) => {
     return <div style={{background: '#696fdc'}}>

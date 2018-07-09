@@ -5,12 +5,56 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   margin-top: 33px;
 }
 
+.c8 {
+  font-family: Muli;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.63;
+  color: #686978;
+  margin-bottom: 39px;
+}
+
+.c13 {
+  text-align: center;
+}
+
+.c13 > div {
+  margin: 0 4px;
+}
+
+.c16 {
+  text-align: center;
+  margin-top: 59px;
+}
+
 .c4 {
   border-bottom: 1px solid #DFDFE8;
   text-align: center;
 }
 
 .c5 {
+  border-radius: 6px 6px 0 0;
+  border: 1px solid #DFDFE8;
+  border-bottom: 1px solid #FFF;
+  color: #FB542B;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 500;
+  -webkit-letter-spacing: -0.29px;
+  -moz-letter-spacing: -0.29px;
+  -ms-letter-spacing: -0.29px;
+  letter-spacing: -0.29px;
+  line-height: 44px;
+  display: inline-block;
+  cursor: pointer;
+  min-width: 230px;
+  padding: 0 10px;
+  margin: 0 2px;
+  position: relative;
+  top: 1px;
+}
+
+.c6 {
   border-radius: 6px 6px 0 0;
   border: 1px solid #DFDFE8;
   border-bottom: 1px solid #DFDFE8;
@@ -32,8 +76,41 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   top: 1px;
 }
 
-.c6 {
+.c7 {
   padding: 34px 56px 20px;
+}
+
+.c9 {
+  max-width: 100%;
+  width: 100%;
+}
+
+.c12 {
+  min-height: 112px;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: Muli;
+  border: 1px solid #DFDFE8;
+  border-radius: 6px;
+  padding: 15px 0px 15px 20px;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.c10 {
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.c11 {
+  width: 100%;
+  font-family: Poppins;
+  line-height: normal;
+  font-size: 14px;
+  font-weight: 500;
+  color: #686978;
+  margin-bottom: 6px;
 }
 
 .c0 {
@@ -63,6 +140,91 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   right: 19px;
   padding: 10px;
   cursor: pointer;
+}
+
+.c14 {
+  display: inline-block;
+  overflow: hidden;
+  border: 1px solid rgb(184,185,196);
+  font-size: 11px;
+  border-radius: 16px;
+  min-width: 88px;
+}
+
+.c14:hover {
+  border-color: rgba(184,185,196,0.9);
+}
+
+.c14:active {
+  border-color: rgba(184,185,196,0.6);
+}
+
+.c17 {
+  display: inline-block;
+  overflow: hidden;
+  border: 1px solid rgb(251,84,43);
+  background: #fff;
+  font-size: 13px;
+  border-radius: 20px;
+  min-width: 104px;
+}
+
+.c17:hover {
+  border-color: rgba(251,84,43,0.9);
+}
+
+.c17:active {
+  border-color: rgba(251,84,43,0.6);
+}
+
+.c15 {
+  text-align: center;
+  box-sizing: border-box;
+  font-family: Poppins;
+  text-align: center;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  font-weight: 500;
+  color: rgb(184,185,196);
+  padding: 10.5px 10px;
+}
+
+.c15:hover {
+  color: rgba(184,185,196,0.9);
+}
+
+.c15:active {
+  color: rgba(184,185,196,0.6);
+}
+
+.c18 {
+  text-align: center;
+  box-sizing: border-box;
+  font-family: Poppins;
+  text-align: center;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  background: rgb(251,84,43);
+  color: #fff;
+  padding: 13.5px 10px;
+}
+
+.c18:hover {
+  background: rgba(251,84,43,0.9);
+}
+
+.c18:active {
+  background: rgba(251,84,43,0.6);
 }
 
 <div
@@ -105,21 +267,124 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
             <div
               className="c5"
               onClick={[Function]}
-              selected={undefined}
+              selected={true}
             >
               Backup your Wallet
             </div>
             <div
-              className="c5"
+              className="c6"
               onClick={[Function]}
-              selected={undefined}
+              selected={false}
             >
               Restore your Wallet
             </div>
           </div>
           <div
-            className="c6"
-          />
+            className="c7"
+          >
+            <div
+              className="c8"
+            >
+              Keep this anonymized recovery key for your Brave wallet in the safe place in case you lose access to this browser. Your funds are safe as long as you keep this recovery key either on a paper or in a device with preferably no internet connection.
+            </div>
+            <div
+              className="c9"
+              id={undefined}
+            >
+              <div
+                className="c10"
+                id={undefined}
+              >
+                <div
+                  className="c11"
+                >
+                  Recovery Key
+                </div>
+                <textarea
+                  className="c12"
+                  defaultValue=""
+                  disabled={true}
+                  onChange={undefined}
+                />
+              </div>
+            </div>
+            <div
+              className="c13"
+            >
+              <div
+                className="c14"
+                color="subtle"
+                onClick={[Function]}
+                size="small"
+                type="secondary"
+              >
+                <div
+                  className="c15"
+                  color="subtle"
+                  disabled={undefined}
+                  size="small"
+                  type="secondary"
+                >
+                  Copy
+                </div>
+              </div>
+              <div
+                className="c14"
+                color="subtle"
+                onClick={[Function]}
+                size="small"
+                type="secondary"
+              >
+                <div
+                  className="c15"
+                  color="subtle"
+                  disabled={undefined}
+                  size="small"
+                  type="secondary"
+                >
+                  Print
+                </div>
+              </div>
+              <div
+                className="c14"
+                color="subtle"
+                onClick={[Function]}
+                size="small"
+                type="secondary"
+              >
+                <div
+                  className="c15"
+                  color="subtle"
+                  disabled={undefined}
+                  size="small"
+                  type="secondary"
+                >
+                  Save as File
+                </div>
+              </div>
+            </div>
+            <div
+              className="c16"
+            >
+              <div
+                className="c17"
+                color="brand"
+                onClick={[Function]}
+                size="medium"
+                type="primary"
+              >
+                <div
+                  className="c18"
+                  color="brand"
+                  disabled={undefined}
+                  size="medium"
+                  type="primary"
+                >
+                  Done
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

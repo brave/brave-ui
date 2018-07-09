@@ -3,6 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
+import * as CSS from 'csstype'
 import {
   StyledWrapper,
   StyledText,
@@ -43,6 +44,11 @@ export interface Props {
   allSites?: boolean
   onShowAll?: () => void
   showRowAmount?: boolean
+  theme?: Theme
+}
+
+interface Theme {
+  headerColor?: CSS.Color
 }
 
 const closeIcon = require('./assets/close')
@@ -53,9 +59,20 @@ const closeIcon = require('./assets/close')
   - add optional border above
  */
 export default class ContributeTable extends React.PureComponent<Props, {}> {
-  getHeader (header: string[]) {
+  getHeader = (header: string[]) => {
     if (!header) {
       return
+    }
+
+    let theme = {}
+
+    if (this.props.theme && this.props.theme.headerColor) {
+      theme = {
+        border: 'none',
+        'border-bottom': `1px solid ${this.props.theme.headerColor}`,
+        padding: '0',
+        color: this.props.theme.headerColor
+      }
     }
 
     return header.map((item: string, i: number) => {
@@ -64,7 +81,8 @@ export default class ContributeTable extends React.PureComponent<Props, {}> {
         ? <StyledTHSite>{item}</StyledTHSite>
         : (i - 1) === header.length
           ? <StyledTHOther>{item}</StyledTHOther>
-          : <StyledTHLast>{item}</StyledTHLast>
+          : <StyledTHLast>{item}</StyledTHLast>,
+        theme: theme
       }
     })
   }
