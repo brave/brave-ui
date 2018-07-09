@@ -52,3 +52,11 @@ export const StyledToggle = styled.div`
   text-align: right;
   text-transform: capitalize;
 ` as any
+
+export const StyledRecurringIcon = styled.span`
+  display: inline-block;
+  margin-left: 3px;
+  vertical-align: middle;
+` as any
+
+

@@ -248,6 +248,7 @@ class Settings extends React.PureComponent<{}, State> {
             <MainToggle
               onToggle={() => {this.setState({mainToggle: !this.state.mainToggle})}}
               enabled={this.state.mainToggle}
+              newNotifications
             />
             <Box
               title={locale.adsTitle}
@@ -303,7 +304,7 @@ class Settings extends React.PureComponent<{}, State> {
                 July 25th
               </List>
               <List title={locale.contributionSites}>
-                Total <Tokens value={55} hideText/>
+                Total &nbsp;<Tokens value={55} hideText/>
               </List>
               <ContributeTable
                 header={[
@@ -315,6 +316,9 @@ class Settings extends React.PureComponent<{}, State> {
                 allSites={false}
                 numSites={55}
                 onShowAll={() => self.setState({modalContribute: true})}
+                theme={{
+                  headerColor: '#9f22a1'
+                }}
               >
                 Please visit some sites
               </ContributeTable>
@@ -329,11 +333,14 @@ class Settings extends React.PureComponent<{}, State> {
                 <Tokens value={21} converted={7} />
               </List>
               <List title={locale.donationList}>
-                <Tokens value={3} hideText/>
+                Total &nbsp;<Tokens value={3} hideText/>
               </List>
               <DonationTable
                 rows={this.donationRows}
                 allItems
+                theme={{
+                  headerColor: '#4c54d2'
+                }}
               >
                 Please visit some sites
               </DonationTable>

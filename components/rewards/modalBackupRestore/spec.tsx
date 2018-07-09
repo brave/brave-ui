@@ -7,6 +7,8 @@ import ModalBackupRestore from './index'
 describe('ModalBackupRestore tests', () => {
   const baseComponent = (props?: object) => <ModalBackupRestore
     id='modal'
+    activeTabId={'backup'}
+    recoveryKey={''}
     onClose={() => {}}
     onCopy={() => {}}
     onPrint={() => {}}

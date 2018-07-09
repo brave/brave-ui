@@ -3,6 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
+import { Props } from './index';
 
 export const StyledWrapper = styled.div`
   font-family: Poppins;
@@ -28,6 +29,7 @@ export const StyledLeft = styled.div`
 
 export const StyledRight = styled.div`
   padding: 10px 0 0;
+  display: flex;
 ` as any
 
 export const StyledLogo = styled.span`
@@ -50,7 +52,7 @@ export const StyledTM = styled.span`
   vertical-align: text-top;
 ` as any
 
-export const StyleTitle = styled.span`
+export const StyleTitle = styled.div`
   font-size: 22px;
   line-height: 1.27;
   color: #4b4c5c;
@@ -63,4 +65,26 @@ export const StyleText = styled.div`
   font-weight: 300;
   line-height: 1.75;
   color: #838391;
+` as any
+
+export const StyledContent = styled.div`
+  flex-basis: 100%;
+` as any
+
+export const StyledNotification = styled.div`
+  position: relative;
+  margin-right: 45px;
+  cursor: ${(p: Props) => p.newNotifications ? 'pointer' : 'default'};
+  
+  :after {
+    content: '';
+    background: #fb542b;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: ${(p: Props) => p.newNotifications ? 'block' : 'none'};
+    position: absolute;
+    top: 2px;
+    right: -8px;
+  }
 ` as any
