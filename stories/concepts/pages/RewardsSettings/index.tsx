@@ -70,11 +70,7 @@ class Settings extends React.PureComponent<{}, State> {
           provider: 'youtube',
           src: bartBaker
         },
-        contribute: {
-          attention: 40,
-          tokens: 4,
-          converted: 5
-        },
+        attention: 40,
         onRemove: () => {}
       },
       {
@@ -83,11 +79,7 @@ class Settings extends React.PureComponent<{}, State> {
           verified: true,
           src: ddgo
         },
-        contribute: {
-          attention: 20,
-          tokens: 2,
-          converted: 1
-        },
+        attention: 20,
         onRemove: () => {
         }
       },
@@ -97,11 +89,7 @@ class Settings extends React.PureComponent<{}, State> {
           verified: false,
           src: buzz
         },
-        contribute: {
-          attention: 10,
-          tokens: 1,
-          converted: 0.5
-        },
+        attention: 10,
         onRemove: () => {}
       },
       {
@@ -110,11 +98,7 @@ class Settings extends React.PureComponent<{}, State> {
           verified: true,
           src: guardian
         },
-        contribute: {
-          attention: 5,
-          tokens: 0.5,
-          converted: 0.25
-        },
+        attention: 5,
         onRemove: () => {}
       },
       {
@@ -123,11 +107,7 @@ class Settings extends React.PureComponent<{}, State> {
           verified: false,
           src: wiki
         },
-        contribute: {
-          attention: 4,
-          tokens: 0.4,
-          converted: 0.25
-        },
+        attention: 4,
         onRemove: () => {}
       }
     ]
@@ -308,8 +288,7 @@ class Settings extends React.PureComponent<{}, State> {
               <ContributeTable
                 header={[
                   'Site visited',
-                  'Attentions',
-                  'Tokens'
+                  'Attentions'
                 ]}
                 rows={this.contributeRows}
                 allSites={false}

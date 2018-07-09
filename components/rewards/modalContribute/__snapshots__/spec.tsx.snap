@@ -153,15 +153,6 @@ exports[`ModalContribute tests basic tests matches the snapshot 1`] = `
                       Your attention metric
                     </div>
                   </th>
-                  <th
-                    className="c7"
-                  >
-                    <div
-                      className="c8 c9"
-                    >
-                      Token allocation
-                    </div>
-                  </th>
                 </tr>
               </thead>
             </table>
