@@ -19,7 +19,6 @@ exports[`Button tests basic tests matches the snapshot 1`] = `
   text-align: center;
   box-sizing: border-box;
   font-family: Poppins;
-  text-align: center;
   -webkit-letter-spacing: 0;
   -moz-letter-spacing: 0;
   -ms-letter-spacing: 0;
@@ -27,6 +26,10 @@ exports[`Button tests basic tests matches the snapshot 1`] = `
   font-weight: 600;
   line-height: 1;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 <div

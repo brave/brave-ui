@@ -27,9 +27,7 @@ import { DetailRow } from '../../components/rewards/contributeTable';
 
 const donate = require('../assets/img/rewards_donate.svg')
 const wallet = require('../assets/img/rewards_wallet.svg')
-const activity = require('../assets/img/rewards_activity.svg')
 const funds = require('../assets/img/rewards_funds.svg')
-const gear = require('../assets/img/rewards_gear.svg')
 const bart = require('../assets/img/bartBaker.jpeg')
 const ddgo = require('../assets/img/ddgo.jpg')
 const wiki = require('../assets/img/wiki.jpg')
@@ -86,10 +84,8 @@ storiesOf('Rewards/Content', module)
   })
   .add('Panel',() => {
     return <Panel
-      title={text('Panel title', 'Your Wallet')}
-      showTm={boolean('Show tm', true)}
-      balanceTitle={text('Balance title', 'balance')}
       tokens={number('Tokens', 25)}
+      converted={text('Converted', '163230.50 USD')}
       actions={[
         {
           name: 'Add funds',
@@ -100,20 +96,25 @@ storiesOf('Rewards/Content', module)
           name: 'Withdraw Funds',
           action: () => {},
           icon: funds
-        },
-        {
-          name: 'Wallet Activity',
-          action: () => {},
-          icon: activity
-        },
-        {
-          name: 'Backup & Restore',
-          action: () => {},
-          icon: gear
         }
       ]}
       showCopy={boolean('Show Uphold', false)}
+      showSecActions={boolean('Show secondary actions', true)}
       connectedWallet={boolean('Connected wallet', false)}
+      grants={object('Grants', [
+        {
+          tokens: 8,
+          expireDate: '7/15/2018'
+        },
+        {
+          tokens: 10,
+          expireDate: '9/10/2018'
+        },
+        {
+          tokens: 10,
+          expireDate: '10/10/2018'
+        }
+      ])}
     >
      Some content
     </Panel>

@@ -25,14 +25,13 @@ import Alert from '../../../../components/rewards/alert';
 import DonationTable, { DetailRow as DonationDetailRow } from '../../../../components/rewards/donationTable';
 import ModalContribute from '../../../../components/rewards/modalContribute';
 import ModalBackupRestore, { TabsType } from '../../../../components/rewards/modalBackupRestore';
+import PanelEmpty from '../../../../components/rewards/panelEmpty';
 
 // Images
 const adsImg = require('../../../assets/img/rewards_ads.svg')
 const contributeImg = require('../../../assets/img/rewards_contribute.svg')
 const wallet = require('../../../assets/img/rewards_wallet.svg')
-const activity = require('../../../assets/img/rewards_activity.svg')
 const funds = require('../../../assets/img/rewards_funds.svg')
-const gear = require('../../../assets/img/rewards_gear.svg')
 const bartBaker = require('../../../assets/img/bartBaker.jpeg')
 const ddgo = require('../../../assets/img/ddgo.jpg')
 const wiki = require('../../../assets/img/wiki.jpg')
@@ -363,9 +362,8 @@ class Settings extends React.PureComponent<{}, State> {
                 : null
               }
             <Panel
-              title={'Your Wallet'}
-              balanceTitle={'balance'}
               tokens={25}
+              converted={'6.0 USD'}
               actions={[
                 {
                   name: 'Add funds',
@@ -376,19 +374,27 @@ class Settings extends React.PureComponent<{}, State> {
                   name: 'Withdraw Funds',
                   action: () => {},
                   icon: funds
-                },
-                {
-                  name: 'Wallet Activity',
-                  action: () => {},
-                  icon: activity
-                },
-                {
-                  name: 'Backup & Restore',
-                  action: () => self.setState({modalBackup: true}),
-                  icon: gear
                 }
               ]}
+              onSettingsClick={() => self.setState({modalBackup: true})}
+              onActivityClick={() => {}}
               showCopy
+              showSecActions
+              grants={[
+                {
+                  tokens: 8,
+                  expireDate: '7/15/2018'
+                },
+                {
+                  tokens: 10,
+                  expireDate: '9/10/2018'
+                },
+                {
+                  tokens: 10,
+                  expireDate: '10/10/2018'
+                }
+              ]}
+              connectedWallet={boolean('Connected wallet', false)}
             >
               {
                 showNotification
@@ -397,7 +403,7 @@ class Settings extends React.PureComponent<{}, State> {
                 </Alert>
                 : null
               }
-             Some content
+             <PanelEmpty/>
             </Panel>
           </Column>
         </Grid>
