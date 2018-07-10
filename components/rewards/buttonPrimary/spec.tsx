@@ -2,10 +2,10 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import Button from './index'
+import ButtonPrimary from './index'
 
-describe('Button tests', () => {
-  const baseComponent = (props?: object) => <Button id='button' {...props} />
+describe('ButtonPrimary tests', () => {
+  const baseComponent = (props?: object) => <ButtonPrimary id='button' {...props} />
 
   describe('basic tests', () => {
     it('matches the snapshot', () => {

@@ -22,7 +22,7 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   margin: 0 4px;
 }
 
-.c16 {
+.c15 {
   text-align: center;
   margin-top: 59px;
 }
@@ -142,42 +142,52 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   cursor: pointer;
 }
 
-.c14 {
+.c16 {
   display: inline-block;
   overflow: hidden;
-  border: 1px solid rgb(184,185,196);
-  font-size: 11px;
-  border-radius: 16px;
-  min-width: 88px;
-}
-
-.c14:hover {
-  border-color: rgba(184,185,196,0.9);
-}
-
-.c14:active {
-  border-color: rgba(184,185,196,0.6);
-}
-
-.c17 {
-  display: inline-block;
-  overflow: hidden;
-  border: 1px solid rgb(251,84,43);
   background: #fff;
   font-size: 13px;
   border-radius: 20px;
   min-width: 104px;
 }
 
+.c17 {
+  text-align: center;
+  box-sizing: border-box;
+  font-family: Poppins;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: rgba(251,84,43,0.9);
+  color: #fff;
+  padding: 13.5px 10px;
+}
+
 .c17:hover {
-  border-color: rgba(251,84,43,0.9);
+  background: rgba(251,84,43,1);
 }
 
 .c17:active {
-  border-color: rgba(251,84,43,0.6);
+  background: rgba(251,84,43,0.6);
 }
 
-.c15 {
+.c14 {
+  display: inline-block;
+  overflow: hidden;
+  border: 1px solid rgba(184,185,196,0.9);
+  color: rgba(184,185,196,0.9);
+  font-size: 11px;
+  border-radius: 16px;
+  min-width: 88px;
+  padding: 10.5px 10px;
   text-align: center;
   box-sizing: border-box;
   font-family: Poppins;
@@ -193,44 +203,22 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   -ms-user-select: none;
   user-select: none;
   font-weight: 500;
-  color: rgb(184,185,196);
-  padding: 10.5px 10px;
 }
 
-.c15:hover {
-  color: rgba(184,185,196,0.9);
+.c14:hover {
+  border-color: rgba(184,185,196,1);
 }
 
-.c15:active {
+.c14:active {
+  border-color: rgba(184,185,196,0.6);
+}
+
+.c14:hover {
+  color: rgba(184,185,196,1);
+}
+
+.c14:active {
   color: rgba(184,185,196,0.6);
-}
-
-.c18 {
-  text-align: center;
-  box-sizing: border-box;
-  font-family: Poppins;
-  -webkit-letter-spacing: 0;
-  -moz-letter-spacing: 0;
-  -ms-letter-spacing: 0;
-  letter-spacing: 0;
-  font-weight: 600;
-  line-height: 1;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background: rgb(251,84,43);
-  color: #fff;
-  padding: 13.5px 10px;
-}
-
-.c18:hover {
-  background: rgba(251,84,43,0.9);
-}
-
-.c18:active {
-  background: rgba(251,84,43,0.6);
 }
 
 <div
@@ -322,69 +310,40 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
                 color="subtle"
                 onClick={[Function]}
                 size="small"
-                type="secondary"
               >
-                <div
-                  className="c15"
-                  color="subtle"
-                  disabled={undefined}
-                  size="small"
-                  type="secondary"
-                >
-                  Copy
-                </div>
+                Copy
               </div>
               <div
                 className="c14"
                 color="subtle"
                 onClick={[Function]}
                 size="small"
-                type="secondary"
               >
-                <div
-                  className="c15"
-                  color="subtle"
-                  disabled={undefined}
-                  size="small"
-                  type="secondary"
-                >
-                  Print
-                </div>
+                Print
               </div>
               <div
                 className="c14"
                 color="subtle"
                 onClick={[Function]}
                 size="small"
-                type="secondary"
               >
-                <div
-                  className="c15"
-                  color="subtle"
-                  disabled={undefined}
-                  size="small"
-                  type="secondary"
-                >
-                  Save as File
-                </div>
+                Save as File
               </div>
             </div>
             <div
-              className="c16"
+              className="c15"
             >
               <div
-                className="c17"
+                className="c16"
                 color="brand"
                 onClick={[Function]}
                 size="medium"
-                type="primary"
               >
                 <div
-                  className="c18"
+                  className="c17"
                   color="brand"
                   disabled={undefined}
                   size="medium"
-                  type="primary"
                 >
                   Done
                 </div>

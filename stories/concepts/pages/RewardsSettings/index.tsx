@@ -231,7 +231,7 @@ class Settings extends React.PureComponent<{}, State> {
             />
             <Box
               title={locale.adsTitle}
-              theme={{titleColor: '#9752cb'}}
+              theme={{titleColor: '#C12D7C'}}
               description={locale.adsDesc}
               toggle={false}
               disabledContent={this.adsDisabled()}
@@ -239,7 +239,7 @@ class Settings extends React.PureComponent<{}, State> {
             </Box>
             <Box
               title={locale.contributionTitle}
-              theme={{titleColor: '#9f22a1'}}
+              theme={{titleColor: '#9F22A1'}}
               description={locale.contributionDesc}
               toggle
               checked={this.state.contributeToggle}
@@ -295,7 +295,7 @@ class Settings extends React.PureComponent<{}, State> {
                 numSites={55}
                 onShowAll={() => self.setState({modalContribute: true})}
                 theme={{
-                  headerColor: '#9f22a1'
+                  headerColor: '#9F22A1'
                 }}
               >
                 Please visit some sites
@@ -303,7 +303,7 @@ class Settings extends React.PureComponent<{}, State> {
             </Box>
             <Box
               title={locale.donationTitle}
-              theme={{titleColor: '#4c54d2'}}
+              theme={{titleColor: '#696FDC'}}
               description={locale.donationDesc}
               settingsChild={this.donationSettingsChild()}
             >
@@ -317,7 +317,7 @@ class Settings extends React.PureComponent<{}, State> {
                 rows={this.donationRows}
                 allItems
                 theme={{
-                  headerColor: '#4c54d2'
+                  headerColor: '#696FDC'
                 }}
               >
                 Please visit some sites
