@@ -18,7 +18,9 @@ const locale = {
   braveAdsTitle: 'Brave Ads',
   braveAdsDesc: 'No action required. Just collect tokens. Your data is safe with our Shields.',
   braveContributeTitle: 'Brave Contribute',
-  braveContributeDesc: 'Set budget and browse normally. Your favorite sites get paid automatically.'
+  braveContributeDesc: 'Set budget and browse normally. Your favorite sites get paid automatically.',
+  readyToTakePart: 'Ready to take active part in the change?',
+  readyToTakePartDesc: 'You can start with the free 5 tokens in your wallet — our gift to you as a welcome! Access to many premium paid content will be available in the near future.'
 }
 
 export default locale

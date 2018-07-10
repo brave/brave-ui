@@ -4,9 +4,13 @@
 
 import * as React from 'react'
 
+import MediaContent from '../../mediaContent'
+import { Grid, Column } from '../../gridSystem'
+
 export interface InfoCardProps {
   title?: string
   description?: string
+  icon?: string
 }
 
 export interface InfoCardsProps {
@@ -16,10 +20,11 @@ export interface InfoCardsProps {
 class InfoCard extends React.PureComponent<InfoCardProps, {}> {
 
   render () {
-    const { title, description } = this.props
+    const { title, description, icon } = this.props
 
     return (
       <div>
+        <MediaContent media={icon}/>
         {`${title}|${description}`}
       </div>
     )
@@ -35,9 +40,22 @@ export default class InfoCards extends React.PureComponent<InfoCardsProps, {}> {
       return null
     }
       
-    return infoItems.map((item: InfoCardProps) => {
-      return <InfoCard title={item.title} description={item.description}/>
-    })
+    return <>
+      <Grid columns={infoItems.length}>
+        {
+          infoItems.map((item: InfoCardProps) => {
+            return <>
+              <Column size={1}>
+                <InfoCard 
+                  title={item.title} 
+                  description={item.description}
+                  icon={item.icon}/>
+              </Column>
+            </>
+          })
+        }
+      </Grid>
+    </>
   }
 }
 

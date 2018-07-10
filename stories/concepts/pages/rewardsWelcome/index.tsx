@@ -22,23 +22,33 @@ import theme from './theme'
 import locale from './fakeLocale'
 // import data from './fakeData'
 
+// Images
+const rewardsTitleImg = require('../../../assets/img/rewards_wallet.svg')
+
 class RewardsWelcome extends React.PureComponent {
 
   get infoItems (): InfoCardProps[] {
     return [
       {
         title: locale.turnOnRewardsTitle,
-        description: locale.turnOnRewardsDesc
+        description: locale.turnOnRewardsDesc,
+        icon: rewardsTitleImg
       },
       {
         title: locale.braveAdsTitle,
-        description: locale.braveAdsDesc
+        description: locale.braveAdsDesc,
+        icon: rewardsTitleImg
       },
       {
         title: locale.braveContributeTitle,
-        description: locale.braveContributeDesc
+        description: locale.braveContributeDesc,
+        icon: rewardsTitleImg
       }
     ]
+  }
+
+  optIn () {
+    window.alert('Opt-in action')
   }
 
   render () {
@@ -52,23 +62,33 @@ class RewardsWelcome extends React.PureComponent {
            size={'medium'}
            type={'cta'}
            color={'subtle'}
-           onClick={() => {window.alert('Opt In')}}
+           onClick={this.optIn}
            text={locale.braveRewardsOptInText}/>
          <Paragraph text={locale.braveRewardsTeaser}/>
         </Hero>
         <BoxedContent>
-          <Heading level={1} text={locale.whyBraveRewards}/>
+          <Heading level={2} text={locale.whyBraveRewards}/>
           <Paragraph text={locale.whyBraveRewardsDesc}/>
           <Paragraph text={locale.whyBraveRewardsBold}/>
         </BoxedContent>
         <BoxedContent>
-          <Heading level={1} text={locale.howDoesItWork}/>
+          <Heading level={2} text={locale.howDoesItWork}/>
           <Paragraph text={locale.whyBraveRewardsDesc}/>
           <Paragraph text={locale.whyBraveRewardsBold}/>
         </BoxedContent>
         <BoxedContent>
           <InfoCards
             infoItems={this.infoItems}/>
+        </BoxedContent>
+        <BoxedContent>
+          <Heading level={2} text={locale.readyToTakePart}/>
+          <Paragraph text={locale.readyToTakePartDesc}/>
+          <Button
+            size={'medium'}
+            type={'cta'}
+            color={'subtle'}
+            onClick={this.optIn}
+            text={locale.braveRewardsOptInText}/>
         </BoxedContent>
       </Page>
     )
