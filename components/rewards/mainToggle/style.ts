@@ -11,7 +11,7 @@ export const StyledWrapper = styled.div`
   width: 100%;
   border-radius: 6px;
   background-color: #dee2e6;
-  border: solid 1px #dbdfe3;
+  border: 1px solid #dbdfe3;
   justify-content: space-between;
   align-items: flex-start;
   align-content: flex-start;

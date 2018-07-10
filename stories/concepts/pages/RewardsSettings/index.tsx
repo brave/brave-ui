@@ -27,6 +27,7 @@ import ModalContribute from '../../../../components/rewards/modalContribute';
 import ModalBackupRestore, { TabsType } from '../../../../components/rewards/modalBackupRestore';
 import PanelEmpty from '../../../../components/rewards/panelEmpty';
 import PanelSummary from '../../../../components/rewards/panelSummary';
+import PanelOff from '../../../../components/rewards/panelOff';
 
 // Images
 const adsImg = require('../../../assets/img/rewards_ads.svg')
@@ -223,9 +224,10 @@ class Settings extends React.PureComponent<{}, State> {
       'Content',
       {
         empty: 'empty',
-        summary: 'summary'
+        summary: 'summary',
+        off: 'off'
       },
-      'empty' as 'empty' | 'summary'
+      'empty' as 'empty' | 'summary' | 'off'
     )
     const self = this
 
@@ -416,6 +418,9 @@ class Settings extends React.PureComponent<{}, State> {
                   onActivity={()=>{}}
                 />
                 : null
+              }
+              {
+                content === 'off' ? <PanelOff/> : null
               }
             </Panel>
           </Column>

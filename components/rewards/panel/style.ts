@@ -10,7 +10,10 @@ export const StyledWrapper = styled.div`
   overflow: hidden;
   font-family: Poppins;
   width: 373px;
-  background: url(${(p: {bg: string}) => `"data:image/svg+xml,${p.bg}"`}) no-repeat top left, linear-gradient(172deg, #392dd1, rgba(255, 26, 26, 0.53)), linear-gradient(#7d7bdc, #7d7bdc);
+  background:
+    url(${(p: {bg: string}) => `"data:image/svg+xml,${p.bg}"`}) no-repeat top left,
+    linear-gradient(172deg, #392dd1, rgba(255, 26, 26, 0.53)), 
+    linear-gradient(#7d7bdc, #7d7bdc);
 ` as any
 
 export const StyledHeader = styled.div`
@@ -19,7 +22,6 @@ export const StyledHeader = styled.div`
 ` as any
 
 export const StyledTitle = styled.div`
-  font-family: Poppins;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.38;
@@ -32,7 +34,6 @@ export const StyledBalance = styled.div`
 ` as any
 
 export const StyledBalanceTitle = styled.div`
-  font-family: Poppins;
   font-size: 12px;
   font-weight: 500;
   line-height: 1.83;
@@ -42,7 +43,6 @@ export const StyledBalanceTitle = styled.div`
 ` as any
 
 export const StyledBalanceTokens = styled.div`
-  font-family: Poppins;
   font-size: 36px;
   line-height: 0.61;
   letter-spacing: -0.4px;
@@ -126,7 +126,6 @@ export const StyledGrant = styled.div`
 
 export const StyledActionWrapper = styled.div`
   text-align: center;
-  font-family: Poppins;
   font-size: 12px;
   color: #fff;
   display: flex;

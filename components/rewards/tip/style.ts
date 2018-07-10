@@ -11,10 +11,10 @@ export const StyledWrapper = styled.div`
   overflow: hidden;
   position: relative;
   padding: 16px 0 0;
+  font-family: Poppins;
 ` as any
 
 export const StyledTitle = styled.div`
-  font-family: Poppins;
   font-size: 12px;
   line-height: 1.83;
   color: #fff;
@@ -34,7 +34,6 @@ export const StyledAllowToggle = styled.span`
 
 export const StyledAllowText = styled.span`
   opacity: 0.65;
-  font-family: Poppins;
   font-size: 10px;
   line-height: 3.9;
   color: #fff;

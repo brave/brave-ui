@@ -60,12 +60,12 @@ export const StyledWrapper = styled.div`
   font-size: 14px;
   border-radius: 28px;
   min-width: 235px;
+  font-family: Poppins;
 ` as any
 
 export const StyledContent = styled.div`
   text-align: center;
   box-sizing: border-box;
-  font-family: Poppins;
   letter-spacing: 0;
   font-weight: 600;
   line-height: 1;
@@ -73,7 +73,7 @@ export const StyledContent = styled.div`
   user-select: none;
   text-transform: uppercase;
   
-  ${(p: Props) => generateContent(p.color, (p.disabled || false))}
+  ${(p: Props) => generateContent(p.color, (p.disabled || false))};
 ` as any
 
 export const StyledIcon = styled.span`

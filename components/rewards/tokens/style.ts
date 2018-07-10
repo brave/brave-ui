@@ -4,6 +4,7 @@
 
 import styled from 'styled-components'
 import { Props } from './index';
+import { setTheme } from '../../helpers';
 
 export const StyledTokens = styled.span`
   font-family: Poppins;
@@ -11,7 +12,7 @@ export const StyledTokens = styled.span`
   line-height: 1.4;
   color: ${(p: Props) => p.theme && p.theme.color && p.theme.color.token ? p.theme.color.token : '#4b4c5c'};
   font-size: ${(p: Props) => p.theme && p.theme.size && p.theme.size.token ? p.theme.size.token : '16px'};
-  display: ${(p: Props) => p.theme && p.theme.display ? p.theme.display : 'inline-block'};
+  display: ${(p: Props) => setTheme(p.theme, 'display') || 'inline-block'};
 ` as any
 
 export const StyledTokenValue = styled.span`

@@ -12,6 +12,7 @@ export const StyledWrapper = styled.div`
   align-items: center;
   align-content: flex-start;
   flex-wrap: nowrap;
+  font-family: Poppins;
 ` as any
 
 export const StyledImageWrapper = styled.div`
@@ -28,7 +29,7 @@ export const StyledImage = styled.img`
       height: 48px;
     `
     : ''
-  }
+  };
   
   ${(p: Props) => p.type !== 'big'
     ? css`
@@ -36,7 +37,7 @@ export const StyledImage = styled.img`
       height: 24px;
     `
     : ''
-  }
+  };
 ` as any
 
 export const StyledVerified = styled.span`
@@ -50,22 +51,11 @@ export const StyledContent = styled.div`
   flex-shrink: 1;
   flex-basis: 50%;
   margin-top: -5px;
-  
-  ${(p: Props) => p.type === 'big'
-    ? css`
-      padding-left: 11px;
-    `
-    : ''
-  }
+  padding-left: ${(p: Props) => p.type === 'big' ? '11px': 0};
 ` as any
 
 export const StyledTitleWrap = styled.div`
-  ${(p: Props) => p.type !== 'big'
-    ? css`
-      margin-left: 10px;
-    `
-    : ''
-  }
+  margin-left: ${(p: Props) => p.type !== 'big' ? '10px' : 0};
 ` as any
 
 export const StyledTitle = styled.span`
@@ -73,7 +63,6 @@ export const StyledTitle = styled.span`
   
   ${(p: Props) => p.type === 'big'
     ? css`
-      font-family: Poppins;
       font-size: 18px;
       font-weight: 500;
       line-height: 1.22;
@@ -81,22 +70,19 @@ export const StyledTitle = styled.span`
       color: #4c54d2;
     `
     : ''
-  }
+  };
   
   ${(p: Props) => p.type !== 'big'
     ? css`
       font-family: Muli;
       font-size: 14px;
       font-weight: 600;
-      font-style: normal;
-      font-stretch: normal;
       line-height: 1.29;
       letter-spacing: -0.1px;
       color: #686978;
     `
     : ''
-  }
-  
+  };
 ` as any
 
 export const StyledProvider = styled.span`
@@ -106,27 +92,21 @@ export const StyledProvider = styled.span`
   ${(p: Props) => p.type === 'big'
     ? css`
       font-weight: 300;
-      color: #4b4c5c;
       font-size: 18px;
     `
     : ''
-  }
+  };
   
-  ${(p: Props) => p.type !== 'big'
-    ? css`
-      color: #b8b9c4;
-    `
-    : ''
-  }
+  color: ${(p: Props) => p.type === 'big' ? '#4b4c5c' : '#b8b9c4'};
 ` as any
 
 export const StyledProviderWrap = styled.div`
-  font-family: Poppins;
   font-size: 13px;
   color: #838391;
   margin-top: 3px;
 ` as any
 
-export const StyledInlineVerified = styled.img`
-  vertical-align: bottom;
+export const StyledInlineVerified = styled.span`
+  display: inline-block;
+  vertical-align: middle;
 ` as any

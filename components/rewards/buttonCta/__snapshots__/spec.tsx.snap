@@ -8,12 +8,12 @@ exports[`ButtonCta tests basic tests matches the snapshot 1`] = `
   font-size: 14px;
   border-radius: 28px;
   min-width: 235px;
+  font-family: Poppins;
 }
 
 .c1 {
   text-align: center;
   box-sizing: border-box;
-  font-family: Poppins;
   -webkit-letter-spacing: 0;
   -moz-letter-spacing: 0;
   -ms-letter-spacing: 0;
