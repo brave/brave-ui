@@ -5,9 +5,9 @@
 import * as React from 'react'
 import * as CSS from 'csstype'
 import { StyledWrapper, StyledType, StyledDate, StyledRemove, StyledRemoveIcon, StyledToggle, StyledRecurringIcon } from './style'
-import Table, { Cell, Row } from '../table';
-import Profile, { Provider } from '../profile';
-import Tokens from '../tokens';
+import Table, { Cell, Row } from '../table'
+import Profile, { Provider } from '../profile'
+import Tokens from '../tokens'
 
 interface ProfileCell {
   verified: boolean

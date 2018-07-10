@@ -5,7 +5,7 @@
 import * as React from 'react'
 import * as CSS from 'csstype'
 import { StyledWrapper, StyledImage, StyledContent } from './style'
-import { Column, Grid } from '../../gridSystem';
+import { Column, Grid } from '../../gridSystem'
 
 interface Theme {
   color: CSS.Color

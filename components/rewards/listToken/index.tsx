@@ -5,7 +5,7 @@
 import * as React from 'react'
 import * as CSS from 'csstype'
 import { StyledWrapper, StyledTitle, StyledContentWrapper } from './style'
-import Tokens from '../tokens';
+import Tokens from '../tokens'
 
 export interface Props {
   id?: string

@@ -32,8 +32,8 @@ import {
   StyledLogoText
 } from './style'
 
-import Donate from '../donate';
-import Checkbox from '../checkbox';
+import Donate from '../donate'
+import Checkbox from '../checkbox'
 
 type Social = {type: SocialType, name: string, handler: string}
 type SocialType = 'twitter' | 'youtube' | 'twitch'

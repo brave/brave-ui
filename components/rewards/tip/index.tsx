@@ -4,8 +4,8 @@
 
 import * as React from 'react'
 import { StyledWrapper, StyledTitle, StyledAllow, StyledAllowText, StyledClose, StyledAllowToggle } from './style'
-import Donate from '../donate';
-import Toggle from '../toggle';
+import Donate from '../donate'
+import Toggle from '../toggle'
 
 type Donation = {tokens: number, converted: number, selected?: boolean}
 

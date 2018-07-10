@@ -5,7 +5,7 @@
 import * as React from 'react'
 import * as CSS from 'csstype'
 import { StyledWrapper, StyledLabel, StyledBox } from './style'
-import ControlWrapper from '../controlWrapper';
+import ControlWrapper from '../controlWrapper'
 
 export interface Props {
   id?: string

@@ -11,11 +11,11 @@ import {
   StyledActionsWrapper,
   StyledDoneWrapper
 } from './style'
-import Tabs from '../tabs';
-import TextArea from '../textarea';
-import Modal from '../modal';
-import ButtonPrimary from '../buttonPrimary';
-import ButtonSecondary from '../buttonSecondary';
+import Tabs from '../tabs'
+import TextArea from '../textarea'
+import Modal from '../modal'
+import ButtonPrimary from '../buttonPrimary'
+import ButtonSecondary from '../buttonSecondary'
 
 export type TabsType = 'backup' | 'restore'
 

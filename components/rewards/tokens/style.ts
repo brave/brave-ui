@@ -3,8 +3,8 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
-import { Props } from './index';
-import { setTheme } from '../../helpers';
+import { Props } from './index'
+import { setTheme } from '../../helpers'
 
 export const StyledTokens = styled.span`
   font-family: Poppins;

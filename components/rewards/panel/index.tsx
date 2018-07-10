@@ -21,7 +21,7 @@ import {
   StyledGrant,
   StyledActionWrapper
 } from './style'
-import ButtonSecondary from '../buttonSecondary';
+import ButtonSecondary from '../buttonSecondary'
 
 type Grant = {tokens: number, expireDate: string}
 
