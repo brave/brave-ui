@@ -15,7 +15,6 @@ import {
   StyledActionIcon,
   StyledCopy,
   StyledCopyImage,
-  StyledIconActions,
   StyledIconAction,
   StyledBalanceConverted,
   StyledGrantWrapper,
@@ -43,8 +42,9 @@ export interface Props {
 const panel = require('./assets/panel')
 const upholdIcon = require('./assets/uphold')
 const upholdColorIcon = require('./assets/upholdColor')
-const activityIcon = require('./assets/activity')
 const gearIcon = require('./assets/gear')
+const arrowUpIcon = require('./assets/arrowUp')
+const arrowDownIcon = require('./assets/arrowDown')
 
 /*
   TODO
@@ -102,19 +102,16 @@ export default class Panel extends React.PureComponent<Props, State> {
       onSettingsClick
     } = this.props
 
+    const enabled = this.hasGrants(grants)
+
     return <StyledWrapper id={id}>
       <StyledHeader bg={panel}>
         <StyledTitle>Your wallet</StyledTitle>
         {
           showSecActions
-          ? <StyledIconActions>
-            <StyledIconAction onClick={onSettingsClick}>
-              {gearIcon}
-            </StyledIconAction>
-            <StyledIconAction>
-              {activityIcon}
-            </StyledIconAction>
-          </StyledIconActions>
+          ? <StyledIconAction onClick={onSettingsClick}>
+            {gearIcon}
+          </StyledIconAction>
           : null
         }
 
@@ -127,11 +124,12 @@ export default class Panel extends React.PureComponent<Props, State> {
             size={'small'}
             color={'subtle'}
             onClick={this.toggleGrantDetails}
-            disabled={!this.hasGrants(grants)}
+            disabled={!enabled}
+            icon={{position: 'right', image: this.state.grantDetails ? arrowUpIcon : arrowDownIcon}}
           />
         </StyledBalance>
         {
-          this.state.grantDetails && this.hasGrants(grants)
+          this.state.grantDetails && enabled
           ? <StyledGrantWrapper>
             {
               grants && grants.map((grant: Grant) => {
@@ -153,8 +151,12 @@ export default class Panel extends React.PureComponent<Props, State> {
         ? <StyledCopy connectedWallet={connectedWallet}>
             {
               connectedWallet
-              ? <><StyledCopyImage>{upholdColorIcon}</StyledCopyImage> Add, withdraw and manage funds at <b>Uphold</b>.</>
-              : <><StyledCopyImage>{upholdIcon}</StyledCopyImage> Brave wallet is managed by <b>Uphold</b>.</>
+              ? <>
+                  <StyledCopyImage>{upholdColorIcon}</StyledCopyImage> Add, withdraw and manage funds at <b>Uphold</b>.
+              </>
+              : <>
+                  <StyledCopyImage>{upholdIcon}</StyledCopyImage> Brave wallet is managed by <b>Uphold</b>.
+              </>
             }
         </StyledCopy>
         : null

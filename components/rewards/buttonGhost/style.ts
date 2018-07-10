@@ -91,7 +91,7 @@ export const StyledWrapper = styled.div`
   ${(p: Props) => generateContent(p.size, p.color, (p.disabled || false))};
 ` as any
 
-export const StyledIcon = styled.img`
+export const StyledIcon = styled.span`
   display: inline-block;
   vertical-align: bottom;
   margin: ${(p: Props) => p.icon && p.icon.position === 'left' ? '0 10px 0 0' : '0 0 0 10px'};

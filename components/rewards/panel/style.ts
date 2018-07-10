@@ -81,15 +81,12 @@ export const StyledCopyImage = styled.span`
   margin-right: 5px;
 ` as any
 
-export const StyledIconActions = styled.div`
-  position: absolute;
-  top: 21px;
-  right: 21px;
-` as any
-
 export const StyledIconAction = styled.div`
   margin-bottom: 17px;
   cursor:pointer;
+  position: absolute;
+  top: 21px;
+  right: 21px;
 ` as any
 
 export const StyledBalanceConverted = styled.div`

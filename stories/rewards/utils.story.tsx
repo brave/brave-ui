@@ -132,7 +132,7 @@ storiesOf('Rewards/Utils', module)
     let icon = undefined
     if (boolean('Show icon', false)) {
       icon = {
-        image: arrowImage,
+        image: <img src={arrowImage} />,
         position: select('Icon position', {left: 'left', right: 'right'}, 'right')
       }
     }
@@ -150,7 +150,7 @@ storiesOf('Rewards/Utils', module)
     let icon = undefined
     if (boolean('Show icon', false)) {
       icon = {
-        image: arrowImage,
+        image: <img src={arrowImage} />,
         position: select('Icon position', {left: 'left', right: 'right'}, 'right')
       }
     }
@@ -168,7 +168,7 @@ storiesOf('Rewards/Utils', module)
     let icon = undefined
     if (boolean('Show icon', false)) {
       icon = {
-        image: arrowImage,
+        image: <img src={arrowImage} />,
         position: select('Icon position', {left: 'left', right: 'right'}, 'right')
       }
     }
@@ -186,7 +186,7 @@ storiesOf('Rewards/Utils', module)
     let icon = undefined
     if (boolean('Show icon', false)) {
       icon = {
-        image: arrowImage,
+        image: <img src={arrowImage} />,
         position: select('Icon position', {left: 'left', right: 'right'}, 'right')
       }
     }
