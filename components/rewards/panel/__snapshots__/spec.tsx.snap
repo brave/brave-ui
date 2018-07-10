@@ -56,7 +56,7 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
   margin-top: 10px;
 }
 
-.c9 {
+.c10 {
   padding: 31px 28px 19px;
   position: relative;
   background: #f9fbfc;
@@ -71,7 +71,7 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
   margin: 15px 0 10px;
 }
 
-.c8 {
+.c9 {
   text-align: center;
   font-family: Poppins;
   font-size: 12px;
@@ -114,6 +114,12 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
   font-weight: 500;
 }
 
+.c8 {
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 0 0 0 10px;
+}
+
 <div
   className="c0"
   id="panel"
@@ -148,18 +154,68 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
         className="c7"
         color="subtle"
         disabled={true}
+        icon={
+          Object {
+            "image": <svg
+              height="5"
+              width="8"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 4.56a.558.558 0 0 1-.396-.164L.164.956A.56.56 0 1 1 .957.164L4 3.207 7.044.164a.56.56 0 0 1 .792.792l-3.44 3.44A.557.557 0 0 1 4 4.56z"
+                fill="#FFF"
+                fillOpacity="0.55"
+                fillRule="evenodd"
+              />
+            </svg>,
+            "position": "right",
+          }
+        }
         onClick={[Function]}
         size="small"
       >
         Detail
+        <span
+          className="c8"
+          icon={
+            Object {
+              "image": <svg
+                height="5"
+                width="8"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 4.56a.558.558 0 0 1-.396-.164L.164.956A.56.56 0 1 1 .957.164L4 3.207 7.044.164a.56.56 0 0 1 .792.792l-3.44 3.44A.557.557 0 0 1 4 4.56z"
+                  fill="#FFF"
+                  fillOpacity="0.55"
+                  fillRule="evenodd"
+                />
+              </svg>,
+              "position": "right",
+            }
+          }
+        >
+          <svg
+            height="5"
+            width="8"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 4.56a.558.558 0 0 1-.396-.164L.164.956A.56.56 0 1 1 .957.164L4 3.207 7.044.164a.56.56 0 0 1 .792.792l-3.44 3.44A.557.557 0 0 1 4 4.56z"
+              fill="#FFF"
+              fillOpacity="0.55"
+              fillRule="evenodd"
+            />
+          </svg>
+        </span>
       </div>
     </div>
     <div
-      className="c8"
+      className="c9"
     />
   </div>
   <div
-    className="c9"
+    className="c10"
   />
 </div>
 `;
