@@ -236,7 +236,6 @@ class Settings extends React.PureComponent<{}, State> {
             <MainToggle
               onToggle={() => {this.setState({mainToggle: !this.state.mainToggle})}}
               enabled={this.state.mainToggle}
-              newNotifications
             />
             <Box
               title={locale.adsTitle}

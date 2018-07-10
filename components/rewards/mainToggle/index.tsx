@@ -12,19 +12,16 @@ import {
   StyledRight,
   StyleTitle,
   StyleText,
-  StyledNotification,
   StyledContent
 } from './style'
 import Toggle from '../toggle';
 
 const logo = require('./assets/bat')
-const bellIcon = require('./assets/bell')
 
 export interface Props {
   id?: string
   enabled: boolean
   onToggle: () => void
-  newNotifications?: boolean
 }
 
 /*
@@ -34,7 +31,7 @@ export interface Props {
  */
 export default class MainToggle extends React.PureComponent<Props, {}> {
   render () {
-    const { id, enabled, onToggle, newNotifications } = this.props
+    const { id, enabled, onToggle } = this.props
 
     return (
       <StyledWrapper id={id}>
@@ -45,13 +42,6 @@ export default class MainToggle extends React.PureComponent<Props, {}> {
           </StyledTitle>
         </StyledLeft>
         <StyledRight>
-          {
-            enabled
-            ? <StyledNotification newNotifications={newNotifications}>
-              {bellIcon}
-            </StyledNotification>
-            : null
-          }
           <Toggle checked={enabled} onClick={onToggle} size={'large'} />
         </StyledRight>
         {
