@@ -3,7 +3,6 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
-import { Props } from './index';
 
 export const StyledWrapper = styled.div`
   font-family: Poppins;
@@ -69,22 +68,4 @@ export const StyleText = styled.div`
 
 export const StyledContent = styled.div`
   flex-basis: 100%;
-` as any
-
-export const StyledNotification = styled.div`
-  position: relative;
-  margin-right: 45px;
-  cursor: ${(p: Props) => p.newNotifications ? 'pointer' : 'default'};
-  
-  :after {
-    content: '';
-    background: #fb542b;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    display: ${(p: Props) => p.newNotifications ? 'block' : 'none'};
-    position: absolute;
-    top: 2px;
-    right: -8px;
-  }
 ` as any
