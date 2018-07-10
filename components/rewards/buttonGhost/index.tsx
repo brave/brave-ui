@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledWrapper } from './style'
+import { StyledWrapper, StyledIcon } from './style'
 
 export interface Props {
   text: string
@@ -18,15 +18,23 @@ export interface Props {
 export type Color = 'brand' | 'action'
 export type Size =  'large' | 'medium' | 'small'
 
-/*
-  TODO
-  - add icon option
- */
 export default class ButtonGhost extends React.PureComponent<Props, {}> {
   render () {
+    const icon = this.props.icon
+
     return (
       <StyledWrapper {...this.props}>
+          {
+            icon && icon.position === 'left'
+            ? <StyledIcon icon={icon} src={icon.image} />
+              : null
+          }
           {this.props.text}
+          {
+            icon && icon.position === 'right'
+            ? <StyledIcon icon={icon} src={icon.image} />
+              : null
+          }
       </StyledWrapper>
     )
   }

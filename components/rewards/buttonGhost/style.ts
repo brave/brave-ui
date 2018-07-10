@@ -90,3 +90,9 @@ export const StyledWrapper = styled.div`
   user-select: none;
   ${(p: Props) => generateContent(p.size, p.color, (p.disabled || false))};
 ` as any
+
+export const StyledIcon = styled.img`
+  display: inline-block;
+  vertical-align: bottom;
+  margin: ${(p: Props) => p.icon && p.icon.position === 'left' ? '0 10px 0 0' : '0 0 0 10px'};
+` as any
