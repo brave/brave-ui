@@ -9,7 +9,7 @@ export interface Props {
   text: string
   size: Size
   color: Color
-  onClick: () => void
+  onClick?: () => void
   id?: string
   disabled?: boolean
   icon?: {image: React.ReactNode, position: 'left' | 'right'}

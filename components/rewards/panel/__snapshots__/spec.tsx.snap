@@ -57,7 +57,7 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
 }
 
 .c10 {
-  padding: 31px 28px 19px;
+  padding: 31px 25px 19px;
   position: relative;
   background: #f9fbfc;
 }
@@ -92,7 +92,8 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
   display: inline-block;
   overflow: hidden;
   border: 1px solid rgba(184,185,196,0.9);
-  color: rgba(184,185,196,0.9);
+  opacity: 0.3;
+  color: rgba(184,185,196,1);
   font-size: 11px;
   border-radius: 16px;
   min-width: 88px;
@@ -171,7 +172,7 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
             "position": "right",
           }
         }
-        onClick={[Function]}
+        onClick={undefined}
         size="small"
       >
         Detail

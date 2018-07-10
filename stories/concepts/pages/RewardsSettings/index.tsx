@@ -20,12 +20,13 @@ import DisabledContent from '../../../../components/rewards/disabledContent';
 import MainToggle from '../../../../components/rewards/mainToggle';
 import Panel from '../../../../components/rewards/panel';
 import ContributeTable, { DetailRow as ContributeDetailRow } from '../../../../components/rewards/contributeTable';
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, select, object } from '@storybook/addon-knobs';
 import Alert from '../../../../components/rewards/alert';
 import DonationTable, { DetailRow as DonationDetailRow } from '../../../../components/rewards/donationTable';
 import ModalContribute from '../../../../components/rewards/modalContribute';
 import ModalBackupRestore, { TabsType } from '../../../../components/rewards/modalBackupRestore';
 import PanelEmpty from '../../../../components/rewards/panelEmpty';
+import PanelSummary from '../../../../components/rewards/panelSummary';
 
 // Images
 const adsImg = require('../../../assets/img/rewards_ads.svg')
@@ -218,6 +219,14 @@ class Settings extends React.PureComponent<{}, State> {
 
   render () {
     const showNotification = boolean('Show notification', false)
+    const content = select(
+      'Content',
+      {
+        empty: 'empty',
+        summary: 'summary'
+      },
+      'empty' as 'empty' | 'summary'
+    )
     const self = this
 
     return (
@@ -359,7 +368,7 @@ class Settings extends React.PureComponent<{}, State> {
               onActivityClick={() => {}}
               showCopy
               showSecActions
-              grants={[
+              grants={object('Claimed grants', [
                 {
                   tokens: 8,
                   expireDate: '7/15/2018'
@@ -372,7 +381,7 @@ class Settings extends React.PureComponent<{}, State> {
                   tokens: 10,
                   expireDate: '10/10/2018'
                 }
-              ]}
+              ])}
               connectedWallet={boolean('Connected wallet', false)}
             >
               {
@@ -382,7 +391,33 @@ class Settings extends React.PureComponent<{}, State> {
                 </Alert>
                 : null
               }
-             <PanelEmpty/>
+              {
+                content === 'empty' ? <PanelEmpty/> : null
+              }
+              {
+                content === 'summary'
+                ? <PanelSummary
+                  grant={{color: '#C12D7C', tokens: 10, converted: 0.25}}
+                  ads={{color: '#C12D7C', tokens: 10, converted: 0.25}}
+                  contribute={{color: '#9752CB', tokens: 10, converted: 0.25}}
+                  donation={{color: '#4C54D2', tokens: 2, converted: 0.25}}
+                  tips={{color: '#4C54D2', tokens: 19, converted: 5.25}}
+                  grants={object('Active grants',[
+                    {
+                      id: '1',
+                      tokens: 15,
+                      converted: 0.75
+                    },
+                    {
+                      id: '2',
+                      tokens: 10,
+                      converted: 0.50
+                    }
+                  ])}
+                  onActivity={()=>{}}
+                />
+                : null
+              }
             </Panel>
           </Column>
         </Grid>

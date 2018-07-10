@@ -24,6 +24,8 @@ import Tabs from '../../components/rewards/tabs'
 import ModalBackupRestore, { TabsType } from '../../components/rewards/modalBackupRestore';
 import ModalContribute from '../../components/rewards/modalContribute';
 import { DetailRow } from '../../components/rewards/contributeTable';
+import PanelEmpty from '../../components/rewards/panelEmpty';
+import PanelSummary from '../../components/rewards/panelSummary';
 
 const donate = require('../assets/img/rewards_donate.svg')
 const wallet = require('../assets/img/rewards_wallet.svg')
@@ -274,3 +276,31 @@ storiesOf('Rewards/Content', module)
       onClose={() => {}}
     />
   })
+  .add('Panel content - Empty', () => {
+    return <div style={{width: '373px', background: '#f9fbfc', padding: '0 25px'}}><PanelEmpty/></div>
+  })
+  .add('Panel content - Summary', () => {
+    return <div style={{width: '373px', background: '#f9fbfc', padding: '0 25px'}}>
+      <PanelSummary
+        grant={object('Grant', {color: '#C12D7C', tokens: 10, converted: 0.25})}
+        ads={object('Ads', {color: '#C12D7C', tokens: 10, converted: 0.25})}
+        contribute={object('Contribute', {color: '#9752CB', tokens: 10, converted: 0.25})}
+        donation={object('Donation', {color: '#4C54D2', tokens: 2, converted: 0.25})}
+        tips={object('Tips', {color: '#4C54D2', tokens: 19, converted: 5.25})}
+        grants={[
+          {
+            id: '1',
+            tokens: 15,
+            converted: 0.75
+          },
+          {
+            id: '2',
+            tokens: 10,
+            converted: 0.50
+          }
+        ]}
+        onActivity={()=>{}}
+      />
+    </div>
+  })
+

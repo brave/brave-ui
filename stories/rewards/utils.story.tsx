@@ -22,10 +22,11 @@ import Tooltip from '../../components/rewards/tooltip'
 import Profile from '../../components/rewards/profile'
 import Amount from '../../components/rewards/amount'
 import ButtonPrimary from '../../components/rewards/buttonPrimary'
-import TextArea from '../../components/rewards/textarea';
-import ButtonSecondary from '../../components/rewards/buttonSecondary';
-import ButtonGhost from '../../components/rewards/buttonGhost';
-import ButtonCta from '../../components/rewards/buttonCta';
+import TextArea from '../../components/rewards/textarea'
+import ButtonSecondary from '../../components/rewards/buttonSecondary'
+import ButtonGhost from '../../components/rewards/buttonGhost'
+import ButtonCta from '../../components/rewards/buttonCta'
+import ListToken from '../../components/rewards/listToken'
 
 const bart = require('../assets/img/bartBaker.jpeg')
 const arrowImage = require('../assets/img/icn-arrow.svg')
@@ -58,6 +59,17 @@ storiesOf('Rewards/Utils', module)
       >
         Some content
       </List>
+    </div>
+  })
+  .add('List - Token',() => {
+    return <div style={{width: '400px'}}>
+      <ListToken
+        title={text('Title', 'Brave Contribute')}
+        value={number('Value', 10)}
+        converted={number('Converted', 0.25)}
+        isNegative={boolean('Is negative', false)}
+        theme={{color: text('Color', '#9752cb')}}
+      />
     </div>
   })
   .add('Select',() => {
