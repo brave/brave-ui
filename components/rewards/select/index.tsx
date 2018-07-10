@@ -11,7 +11,7 @@ import {
   StyledOption,
   StyledSelectWrapper
 } from './style'
-import ControlWrapper from '../controlWrapper';
+import ControlWrapper from '../controlWrapper'
 
 export interface Props {
   id?: string

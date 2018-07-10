@@ -17,8 +17,8 @@ import {
   StyledActivityIcon,
   StyledGrantEmpty
 } from './style'
-import Tokens from '../tokens';
-import ListToken from '../listToken';
+import Tokens from '../tokens'
+import ListToken from '../listToken'
 
 const coinsIcon = require('./assets/coins')
 const activityIcon = require('./assets/activity')

@@ -15,7 +15,7 @@ import {
   StyledFundsText
 } from './style'
 
-import Amount from '../amount';
+import Amount from '../amount'
 
 const send = require('./assets/send')
 const sadFace = require('./assets/sadFace')

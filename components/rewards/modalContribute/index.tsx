@@ -4,8 +4,8 @@
 
 import * as React from 'react'
 import { StyledWrapper, StyledTitle, StyledContent, StyledNum } from './style'
-import Modal from '../modal';
-import ContributeTable, { DetailRow } from '../contributeTable';
+import Modal from '../modal'
+import ContributeTable, { DetailRow } from '../contributeTable'
 
 export interface Props {
   id?: string
