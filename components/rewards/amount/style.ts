@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
-import { Props } from './index';
+import { Props } from './index'
 
 export const StyledWrapper = styled.div`
   margin-bottom: 8px;

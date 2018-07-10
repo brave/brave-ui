@@ -3,8 +3,8 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
-import { Props, Theme } from './index';
-import { setTheme } from '../../helpers';
+import { Props, Theme } from './index'
+import { setTheme } from '../../helpers'
 
 const bg1 = require('./assets/bg_bats.svg')
 const bg2 = require('./assets/bg_hearts.svg')

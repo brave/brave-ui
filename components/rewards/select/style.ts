@@ -3,8 +3,8 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled, {css} from 'styled-components'
-import { Props, Theme } from './index';
-import { setTheme } from '../../helpers';
+import { Props, Theme } from './index'
+import { setTheme } from '../../helpers'
 
 const check = require('./assets/check')
 const arrow = require('./assets/arrow')

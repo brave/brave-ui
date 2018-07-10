@@ -3,8 +3,8 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
-import { Theme } from './index';
-import { setTheme } from '../../helpers';
+import { Theme } from './index'
+import { setTheme } from '../../helpers'
 
 export const StyledWrapper = styled.div`
   position: relative;

@@ -3,8 +3,8 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
-import { setTheme } from '../../helpers';
-import { Props } from './index';
+import { setTheme } from '../../helpers'
+import { Props } from './index'
 
 export const StyledWrapper = styled.div`
   width: 100%;

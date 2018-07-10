@@ -13,8 +13,8 @@ import {
   StyledTHOther,
   StyledTHLast
 } from './style'
-import Table, { Row } from '../table';
-import Profile, { Provider } from '../profile';
+import Table, { Row } from '../table'
+import Profile, { Provider } from '../profile'
 
 interface ProfileCell {
   verified: boolean

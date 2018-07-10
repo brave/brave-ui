@@ -14,7 +14,7 @@ import {
   StyleText,
   StyledContent
 } from './style'
-import Toggle from '../toggle';
+import Toggle from '../toggle'
 
 const logo = require('./assets/bat')
 
