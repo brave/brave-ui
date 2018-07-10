@@ -17,7 +17,6 @@ interface Props {
  */
 export default class PanelEmpty extends React.PureComponent<Props, {}> {
   render () {
-
     return (
       <StyledWrapper id={this.props.id}>
         {coins}

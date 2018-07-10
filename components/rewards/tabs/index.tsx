@@ -6,10 +6,10 @@ import * as React from 'react'
 import { StyledWrapper, StyledTabWrapper, StyledTab, StyledContent } from './style'
 
 export interface Props {
-  id?: string
   activeTabId: string
-  children?: React.ReactNode
   onChange: (tabId: any) => void
+  children?: React.ReactNode
+  id?: string
 }
 
 export default class Tabs extends React.PureComponent<Props, {}> {
@@ -25,7 +25,6 @@ export default class Tabs extends React.PureComponent<Props, {}> {
     }
 
     const tabs: React.ReactNode[] = React.Children.map(self.props.children, (child: any, i: number) => {
-
       if (child.props['data-key'] == undefined) {
         return null
       }
@@ -42,7 +41,7 @@ export default class Tabs extends React.PureComponent<Props, {}> {
       if (selected) {
         content = child.props.children
       }
-      return <StyledTab onClick={self.props.onChange.bind(self, key)} selected={selected}>
+      return <StyledTab key={`${self.props.id}-tab-${key}`} onClick={self.props.onChange.bind(key)} selected={selected}>
         {title}
       </StyledTab>
     })

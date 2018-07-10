@@ -47,11 +47,7 @@ export default class Profile extends React.PureComponent<Props, {}> {
   }
 
   getSrc (src?: string) {
-    if (!src) {
-      return ''
-    }
-
-    return src
+    return src ? src : ''
   }
 
   render () {

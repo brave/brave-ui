@@ -5,7 +5,6 @@
 import styled, {css} from 'styled-components'
 import { Props } from './index'
 import { setTheme } from '../../helpers'
-import set = Reflect.set;
 
 export const StyledWrapper = styled.div`
   position: relative;

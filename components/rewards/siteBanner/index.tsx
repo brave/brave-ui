@@ -40,19 +40,19 @@ type SocialType = 'twitter' | 'youtube' | 'twitch'
 type Donation = {tokens: number, converted: number, selected?: boolean}
 
 export interface Props {
+  balance: number
+  donationAmounts: Donation[]
+  onAmountSelection: (tokens: number) => void
   id?: string
   title?: string
   domain: string
   bgImage?: string
   logo?: string
   social?: Social[]
-  balance: number
   currentDonation?: number
-  donationAmounts: Donation[]
   children?: React.ReactNode
   onDonate: (amount: number, monthly: boolean) => void
   onClose?: () => void
-  onAmountSelection: (tokens: number) => void
   theme?: Theme
 }
 
@@ -80,11 +80,9 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
   }
 
   getLogo (logo: string | undefined, domain: string) {
-    if (!logo) {
-      return <StyledLogoText>{(domain && domain.substring(0,1)) || ''}</StyledLogoText>
-    }
-
-    return <StyledLogoImage src={logo} />
+    return !logo
+      ? <StyledLogoText>{(domain && domain.substring(0,1)) || ''}</StyledLogoText>
+      : <StyledLogoImage src={logo} />
   }
 
   getSocialLink (item: Social) {
@@ -100,25 +98,22 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
     return ''
   }
 
-  getSocial (social?: Social[]) {
+  getSocial = (social?: Social[]) => {
     if (!social || social.length === 0) {
       return null
     }
 
+    const self = this
     return social.map((item: Social) => {
       const icon = require(`./assets/${item.type}`)
-      return <StyledSocialItem key={`s-${item.type}`} href={this.getSocialLink(item)} target={'_blank'}>
+      return <StyledSocialItem key={`${self.props.id}-social-${item.type}`} href={self.getSocialLink(item)} target={'_blank'}>
         <StyledSocialIcon>{icon}</StyledSocialIcon> {item.name || item.handler}
       </StyledSocialItem>
     })
   }
 
   getTitle (title?: string) {
-    if (!title) {
-      return 'Welcome!'
-    }
-
-    return title
+    return title ? title : 'Welcome!'
   }
 
   getText (children?: React.ReactNode) {
@@ -216,7 +211,7 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
                 }}
               >
                 <Checkbox
-                  value={{make: false}}
+                  value={{make: this.state.monthly}}
                   onChange={this.onMonthlyChange.bind(this)}
                   theme={{checkColor: '#fff', borderColor: '#a1a8f2'}}
                 >

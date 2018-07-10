@@ -26,17 +26,17 @@ import ButtonSecondary from '../buttonSecondary'
 type Grant = {tokens: number, expireDate: string}
 
 export interface Props {
-  id?: string
   tokens: number
   converted: string
+  actions: {icon: string, name: string, action: ()=> void}[]
   connectedWallet?: boolean
   showCopy?: boolean
   children?: React.ReactNode
-  actions: {icon: string, name: string, action: ()=> void}[]
   showSecActions?: boolean
   onSettingsClick?: () => void
   onActivityClick?: () => void
   grants?: Grant[]
+  id?: string
 }
 
 const panel = require('./assets/panel')
@@ -49,7 +49,6 @@ const arrowDownIcon = require('./assets/arrowDown')
 /*
   TODO
   - add local
-  - add arrow up/down to the button
  */
 
 interface State {

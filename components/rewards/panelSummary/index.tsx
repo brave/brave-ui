@@ -32,10 +32,10 @@ export interface Props {
   contribute: Token
   donation: Token
   tips: Token
+  onActivity: () => void
   id?: string
   grants?: Grant[]
   onClaim?: (id: string) => void
-  onActivity: () => void
 }
 
 /*
@@ -44,7 +44,6 @@ export interface Props {
  */
 export default class PanelSummary extends React.PureComponent<Props, {}> {
   render () {
-
     const { id, grant, ads, contribute, donation, tips, grants, onClaim, onActivity } = this.props
 
     return (

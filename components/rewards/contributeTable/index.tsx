@@ -19,8 +19,8 @@ import Profile, { Provider } from '../profile'
 interface ProfileCell {
   verified: boolean
   name: string
-  provider?: Provider
   src: string
+  provider?: Provider
 }
 
 export interface DetailRow {
@@ -30,15 +30,15 @@ export interface DetailRow {
 }
 
 export interface Props {
-  id?: string
   header: string[]
+  showRowAmount?: boolean
+  id?: string
   children?: React.ReactNode
+  theme?: Theme
   rows?: DetailRow[]
   numSites?: number
   allSites?: boolean
   onShowAll?: () => void
-  showRowAmount?: boolean
-  theme?: Theme
 }
 
 interface Theme {
@@ -50,7 +50,6 @@ const removeIcon = require('./assets/close')
 /*
   TODO
   - add local
-  - add optional border above
  */
 export default class ContributeTable extends React.PureComponent<Props, {}> {
   getHeader = (header: string[]) => {
