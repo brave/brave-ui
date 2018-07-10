@@ -4,6 +4,7 @@
 
 import styled from 'styled-components'
 import { Props, Theme } from './index';
+import { setTheme } from '../../helpers';
 
 const bg1 = require('./assets/bg_bats.svg')
 const bg2 = require('./assets/bg_hearts.svg')
@@ -15,6 +16,7 @@ export const StyledWrapper = styled.div`
   left: 0;
   height: 100vh;
   width: 100%;
+  font-family: Poppins;
 ` as any
 
 export const StyledContentWrapper = styled.div`
@@ -47,7 +49,6 @@ export const StyledBanner = styled.div`
 ` as any
 
 export const StyledBannerImage = styled.div`
-  font-family: Poppins;
   font-size: ${(p: Props) => !p.bgImage ? '38px' : 0};
   font-weight: 600;
   line-height: 0.74;
@@ -76,7 +77,6 @@ export const StyledLogoText = styled.div`
 	color: transparent;
 	filter: invert(1) grayscale(1) contrast(9);
   font-size: 80px;
-  font-family: Poppins;
   font-weight: 600;
   text-align: center;
   letter-spacing: 0;
@@ -89,7 +89,7 @@ export const StyledLogoBorder = styled.div`
   border-radius: 50%;
   width: 160px;
   height: 160px;
-  background: ${(p: {theme: Theme, padding: boolean}) => p.theme && p.theme.logoBgColor ? p.theme.logoBgColor : '#DE4D26'};
+  background: ${(p: {theme: Theme, padding: boolean}) => setTheme(p.theme, 'logoBgColor') || '#DE4D26'};
   padding-top: ${(p: {theme: Theme, padding: boolean}) => p.padding ? '35px' : 0};
   margin: -66px 0 25px;
   overflow: hidden;
@@ -102,7 +102,6 @@ export const StyledTextWrapper = styled.div`
 ` as any
 
 export const StyledTitle = styled.div`
-  font-family: Poppins;
   font-size: 28px;
   font-weight: 600;
   line-height: 1;
@@ -120,7 +119,6 @@ export const StyledText = styled.div`
 
 export const StyledRecurring = styled.div`
   flex-basis: 100%;
-  font-family: Poppins;
   font-size: 14px;
   line-height: 2;
   color: #9e9fab;
@@ -139,7 +137,6 @@ export const StyledRemove = styled.span`
 ` as any
 
 export const StyledWallet = styled.div`
-  font-family: Poppins;
   font-size: 12px;
   color: #afb2f1;
   text-align: right;
@@ -148,7 +145,7 @@ export const StyledWallet = styled.div`
 ` as any
 
 export const StyledTokens = styled.span`
-  color: #ffffff;
+  color: #fff;
 ` as any
 
 export const StyledLogoImage = styled.img`
@@ -182,7 +179,6 @@ export const StyledIconRemove = styled.span`
 ` as any
 
 export const StyledSocialItem = styled.a`
-  font-family: Poppins;
   font-size: 12px;
   line-height: 2.5;
   letter-spacing: 0.2px;
@@ -196,5 +192,3 @@ export const StyledSocialIcon = styled.span`
   display: inline-block;
   margin-right: 5px;
 ` as any
-
-

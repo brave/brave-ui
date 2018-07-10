@@ -3,6 +3,7 @@
 exports[`Donate tests basic tests matches the snapshot 1`] = `
 .c0 {
   position: relative;
+  font-family: Poppins;
 }
 
 .c1 {
@@ -10,11 +11,10 @@ exports[`Donate tests basic tests matches the snapshot 1`] = `
 }
 
 .c2 {
-  font-family: Poppins;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.75;
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 14px;
   white-space: nowrap;
   overflow: hidden;
@@ -24,7 +24,6 @@ exports[`Donate tests basic tests matches the snapshot 1`] = `
 
 .c3 {
   background: #4c54d2;
-  font-family: Poppins;
   font-size: 13px;
   font-weight: 600;
   -webkit-letter-spacing: 0.2px;

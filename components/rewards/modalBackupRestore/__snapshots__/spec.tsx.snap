@@ -30,6 +30,7 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
 .c4 {
   border-bottom: 1px solid #DFDFE8;
   text-align: center;
+  font-family: Poppins;
 }
 
 .c5 {
@@ -38,7 +39,6 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   border-bottom: 1px solid #FFF;
   color: #FB542B;
   font-size: 16px;
-  font-family: Poppins;
   font-weight: 500;
   -webkit-letter-spacing: -0.29px;
   -moz-letter-spacing: -0.29px;
@@ -60,7 +60,6 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   border-bottom: 1px solid #DFDFE8;
   color: #686978;
   font-size: 16px;
-  font-family: Poppins;
   font-weight: 500;
   -webkit-letter-spacing: -0.29px;
   -moz-letter-spacing: -0.29px;
@@ -149,12 +148,12 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   font-size: 13px;
   border-radius: 20px;
   min-width: 104px;
+  font-family: Poppins;
 }
 
 .c17 {
   text-align: center;
   box-sizing: border-box;
-  font-family: Poppins;
   -webkit-letter-spacing: 0;
   -moz-letter-spacing: 0;
   -ms-letter-spacing: 0;

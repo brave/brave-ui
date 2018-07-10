@@ -10,6 +10,7 @@ export const StyledWrapper = styled.div`
 export const StyledTabWrapper = styled.div`
   border-bottom: 1px solid #DFDFE8;
   text-align: center;
+  font-family: Poppins;
 ` as any
 
 export const StyledTab = styled.div`
@@ -18,12 +19,11 @@ export const StyledTab = styled.div`
   border-bottom: ${(p: {selected: boolean}) => p.selected ? '1px solid #FFF' : '1px solid #DFDFE8'};
   color: ${(p: {selected: boolean}) => p.selected ? '#FB542B' : '#686978'};
   font-size: 16px;
-  font-family: Poppins;
   font-weight: 500;
   letter-spacing: -0.29px;
   line-height: 44px;
   display: inline-block;
-  cursor:pointer;
+  cursor: pointer;
   min-width: 230px;
   padding: 0 10px;
   margin: 0 2px;

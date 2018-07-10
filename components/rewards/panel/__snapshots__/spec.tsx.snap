@@ -7,7 +7,7 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
   overflow: hidden;
   font-family: Poppins;
   width: 373px;
-  background: url("data:image/svg+xml,undefined") no-repeat top left,linear-gradient(172deg,#392dd1,rgba(255,26,26,0.53)),linear-gradient(#7d7bdc,#7d7bdc);
+  background: url("data:image/svg+xml,undefined") no-repeat top left, linear-gradient(172deg,#392dd1,rgba(255,26,26,0.53)), linear-gradient(#7d7bdc,#7d7bdc);
 }
 
 .c1 {
@@ -16,7 +16,6 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
 }
 
 .c2 {
-  font-family: Poppins;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.38;
@@ -32,7 +31,6 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
 }
 
 .c4 {
-  font-family: Poppins;
   font-size: 12px;
   font-weight: 500;
   line-height: 1.83;
@@ -45,7 +43,6 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
 }
 
 .c5 {
-  font-family: Poppins;
   font-size: 36px;
   line-height: 0.61;
   -webkit-letter-spacing: -0.4px;
@@ -73,7 +70,6 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
 
 .c9 {
   text-align: center;
-  font-family: Poppins;
   font-size: 12px;
   color: #fff;
   display: -webkit-box;

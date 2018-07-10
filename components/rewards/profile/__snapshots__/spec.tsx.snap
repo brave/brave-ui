@@ -21,6 +21,7 @@ exports[`Profile tests basic tests matches the snapshot 1`] = `
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  font-family: Poppins;
 }
 
 .c1 {
@@ -48,6 +49,7 @@ exports[`Profile tests basic tests matches the snapshot 1`] = `
   -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
   margin-top: -5px;
+  padding-left: 0;
 }
 
 .c4 {
@@ -59,8 +61,6 @@ exports[`Profile tests basic tests matches the snapshot 1`] = `
   font-family: Muli;
   font-size: 14px;
   font-weight: 600;
-  font-style: normal;
-  font-stretch: normal;
   line-height: 1.29;
   -webkit-letter-spacing: -0.1px;
   -moz-letter-spacing: -0.1px;

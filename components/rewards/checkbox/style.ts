@@ -4,11 +4,12 @@
 
 import styled, { css } from 'styled-components'
 import { Props, Theme } from './index';
+import { setTheme } from '../../helpers';
 
 const check = require('./assets/check')
 
 export const StyledWrapper = styled.div`
-  max-width: ${(p: Props) => p.theme && p.theme.maxWidth ? p.theme.maxWidth : '254px'};
+  max-width: ${(p: Props) => setTheme(p.theme, 'maxWidth') || '254px'};
   width: 100%;
 ` as any
 
@@ -23,7 +24,7 @@ export const StyledBox = styled.span`
   width: 18px;
   height: 18px;
   border-radius: 2px;
-  border: solid 1px ${(p: {selected: boolean, theme: Theme}) => p.theme.borderColor ? p.theme.borderColor : '#d1d1db'};
+  border: solid 1px ${(p: {selected: boolean, theme: Theme}) => setTheme(p.theme, 'borderColor') || '#d1d1db'};
   display: inline-block;
   margin-right: 11px;
   position: relative;

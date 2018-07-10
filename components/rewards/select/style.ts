@@ -4,34 +4,34 @@
 
 import styled, {css} from 'styled-components'
 import { Props, Theme } from './index';
+import { setTheme } from '../../helpers';
 
 const check = require('./assets/check')
 const arrow = require('./assets/arrow')
 
 export const StyledWrapper = styled.div`
-  max-width: ${(p: Props) => p.theme && p.theme.maxWidth ? p.theme.maxWidth : '254px'};
+  max-width: ${(p: Props) => setTheme(p.theme, 'maxWidth') || '254px'};
   width: 100%;
 ` as any
 
 export const StyledSelectWrapper = styled.div`
   position: relative;
   outline: 0;
+  font-family: Poppins;
 ` as any
 
 export const StyledSelect = styled.div`
-  line-height: normal;
   border-radius: 3px;
-  border: ${(p: {show: boolean, theme: Theme}) => p.theme && p.theme.border ? p.theme.border : 'solid 1px #dfdfe8'};
-  font-family: Poppins;
   font-size: 14px;
   color: #686978;
   background: #fff;
   width: 100%;
-  padding: ${(p: {show: boolean, theme: Theme}) => p.theme && p.theme.padding ? p.theme.padding : '10px 31px 10px 13px'};
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background: url("data:image/svg+xml,${arrow}") no-repeat right ${(p: {show: boolean, theme: Theme}) => p.theme && p.theme.arrowPadding ? p.theme.arrowPadding : '15px'} center #fff;
+  padding: ${(p: {show: boolean, theme: Theme}) => setTheme(p.theme, 'padding') || '10px 31px 10px 13px'};
+  border: ${(p: {show: boolean, theme: Theme}) => setTheme(p.theme, 'border') || '1px solid #dfdfe8'};
+  background: url("data:image/svg+xml,${arrow}") no-repeat right ${(p: {show: boolean, theme: Theme}) => setTheme(p.theme, 'arrowPadding') || '15px'} center #fff;
   
   ${(p: {show: boolean, theme: Theme}) => p.show
     ? css`
@@ -41,28 +41,20 @@ export const StyledSelect = styled.div`
 ` as any
 
 export const StyledOptions = styled.div`
-  display: none;
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
   width: 100%;
   border-radius: 3px;
   box-shadow: 0 2px 5px 0 rgba(223, 223, 232, 0.5);
-  background-color: #ffffff;
+  background-color: #fff;
   border: solid 1px #dfdfe8;
   overflow: hidden;
   z-index: 2;
-  
-  ${(p: {show: boolean}) => p.show
-    ? css`
-      display: block;
-    ` : ''
-  }
+  display: ${(p: { show: boolean }) => p.show ? 'block' : 'none'};
 ` as any
 
-
 export const StyledOption = styled.div`
-  font-family: Poppins;
   font-size: 14px;
   line-height: 2.57;
   color: #1b1d2f;
@@ -76,5 +68,5 @@ export const StyledOption = styled.div`
     ? css`
       background: url("data:image/svg+xml,${check}") no-repeat 14px 12px #e9f0ff;
     ` : ''
-  }
+  };
 ` as any

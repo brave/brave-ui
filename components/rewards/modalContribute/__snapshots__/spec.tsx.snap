@@ -3,20 +3,22 @@
 exports[`ModalContribute tests basic tests matches the snapshot 1`] = `
 .c3 {
   font-family: Poppins;
+}
+
+.c4 {
   font-size: 16px;
   font-weight: 600;
   line-height: 2;
   color: #4b4c5c;
 }
 
-.c4 {
-  font-family: Poppins;
+.c5 {
   font-size: 28px;
   color: #696fdc;
   margin-bottom: 33px;
 }
 
-.c5 {
+.c6 {
   font-weight: 500;
   color: #0c0d21;
 }
@@ -50,20 +52,20 @@ exports[`ModalContribute tests basic tests matches the snapshot 1`] = `
   cursor: pointer;
 }
 
-.c9 {
+.c10 {
   text-align: right;
 }
 
-.c8 {
+.c9 {
   padding-right: 7px;
 }
 
-.c6 {
+.c7 {
   width: 100%;
   margin-bottom: 11px;
 }
 
-.c7 {
+.c8 {
   text-transform: uppercase;
   text-align: left;
   font-family: Poppins;
@@ -104,19 +106,19 @@ exports[`ModalContribute tests basic tests matches the snapshot 1`] = `
       className=""
     >
       <div
-        className=""
+        className="c3"
       >
         <div
-          className="c3"
+          className="c4"
         >
           Brave Contribute
         </div>
         <div
-          className="c4"
+          className="c5"
         >
           You’re currently supporting 
           <span
-            className="c5"
+            className="c6"
           >
             0
           </span>
@@ -131,12 +133,12 @@ exports[`ModalContribute tests basic tests matches the snapshot 1`] = `
             id={undefined}
           >
             <table
-              className="c6"
+              className="c7"
             >
               <thead>
                 <tr>
                   <th
-                    className="c7"
+                    className="c8"
                   >
                     <div
                       className=""
@@ -145,10 +147,10 @@ exports[`ModalContribute tests basic tests matches the snapshot 1`] = `
                     </div>
                   </th>
                   <th
-                    className="c7"
+                    className="c8"
                   >
                     <div
-                      className="c8 c9"
+                      className="c9 c10"
                     >
                       Your attention metric
                     </div>

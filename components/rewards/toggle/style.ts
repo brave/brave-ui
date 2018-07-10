@@ -4,6 +4,8 @@
 
 import styled, {css} from 'styled-components'
 import { Props } from './index'
+import { setTheme } from '../../helpers';
+import set = Reflect.set;
 
 export const StyledWrapper = styled.div`
   position: relative;
@@ -15,14 +17,14 @@ export const StyledWrapper = styled.div`
       animation: none;
       opacity: 0.25;
     ` : ''
-    }
+    };
     
   ${(p: Props) => p.size === 'small'
     ? css`
       width: 20px;
       height: 11px;
     ` : ''
-    }
+    };
   
     
   ${(p: Props) => p.size === 'medium'
@@ -30,14 +32,14 @@ export const StyledWrapper = styled.div`
       width: 30px;
       height: 18px;
     ` : ''
-    }
+    };
   
   ${(p: Props) => p.size === 'large'
     ? css`
       width: 40px;
       height: 24px;
     ` : ''
-    }
+    };
 ` as any
 
 export const StyledSlider = styled.div`
@@ -50,21 +52,21 @@ export const StyledSlider = styled.div`
       height: 4px;
       margin-top: 4.5px;
     ` : ''
-    }
+    };
   
   ${(p: Props) => p.size === 'medium'
     ? css`
       height: 6px;
       margin-top: 6px;
     ` : ''
-    }
+    };
   
   ${(p: Props) => p.size === 'large'
     ? css`
       height: 8px;
       margin-top: 8px;
     ` : ''
-    }
+    };
 ` as any
 
 export const StyledBullet = styled.div`
@@ -75,16 +77,16 @@ export const StyledBullet = styled.div`
   
   ${(p: Props) => p.checked
     ? css`
-      background-color: ${(p: Props) => p.theme && p.theme.onColor ? p.theme.onColor : '#6D73D2'};
+      background-color: ${(p: Props) => setTheme(p.theme, 'onColor') || '#6D73D2'};
     ` : ''
-    }
+    };
   
   ${(p: Props) => !p.checked
     ? css`
-      background-color: ${(p: Props) => p.theme && p.theme.offColor ? p.theme.offColor : '#CDD1D5'};
+      background-color: ${(p: Props) => setTheme(p.theme, 'offColor') || '#CDD1D5'};
       transform: translate(0, calc(-50% - 4px));
     ` : ''
-    }
+    };
     
   ${(p: Props) => p.size === 'small'
     ? css`
@@ -92,38 +94,38 @@ export const StyledBullet = styled.div`
       height: 11px;
       transform: translate(0, calc(-50% - 2px));
     ` : ''
-    }
+    };
     
     
   ${(p: Props) => p.checked && p.size === 'small'
     ? css`
       transform: translate(9px, calc(-50% - 2px));
     ` : ''
-    }
+    };
     
   ${(p: Props) => p.size === 'medium'
     ? css`
       width: 18px;
       height: 18px;
     ` : ''
-    }
+    };
     
   ${(p: Props) => p.checked && p.size === 'medium'
     ? css`
       transform: translate(12px, calc(-50% - 4px));
     ` : ''
-    }
+    };
   
   ${(p: Props) => p.size === 'large'
     ? css`
       width: 24px;
       height: 24px;
     ` : ''
-    }
+    };
     
   ${(p: Props) => p.checked && p.size === 'large'
     ? css`
       transform: translate(16px, calc(-50% - 4px));
     ` : ''
-    }
+    };
 ` as any

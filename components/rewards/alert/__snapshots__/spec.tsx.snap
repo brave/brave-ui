@@ -19,13 +19,14 @@ exports[`Alert tests basic tests matches the snapshot 1`] = `
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 0 1px 0 0 #dfdfe8;
   padding: 30px 38px 33px 19px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  font-family: Poppins;
 }
 
 .c1 {
@@ -45,7 +46,6 @@ exports[`Alert tests basic tests matches the snapshot 1`] = `
   -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
   padding-left: 11px;
-  font-family: Poppins;
   font-size: 14px;
   line-height: 1.57;
   color: #838391;

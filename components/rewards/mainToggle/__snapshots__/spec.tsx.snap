@@ -11,7 +11,7 @@ exports[`MainToggle tests basic tests matches the snapshot 1`] = `
   width: 100%;
   border-radius: 6px;
   background-color: #dee2e6;
-  border: solid 1px #dbdfe3;
+  border: 1px solid #dbdfe3;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;

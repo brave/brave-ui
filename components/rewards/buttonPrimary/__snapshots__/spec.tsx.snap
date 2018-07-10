@@ -5,12 +5,12 @@ exports[`ButtonPrimary tests basic tests matches the snapshot 1`] = `
   display: inline-block;
   overflow: hidden;
   background: #fff;
+  font-family: Poppins;
 }
 
 .c1 {
   text-align: center;
   box-sizing: border-box;
-  font-family: Poppins;
   -webkit-letter-spacing: 0;
   -moz-letter-spacing: 0;
   -ms-letter-spacing: 0;
