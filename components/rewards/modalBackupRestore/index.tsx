@@ -14,7 +14,8 @@ import {
 import Tabs from '../tabs';
 import TextArea from '../textarea';
 import Modal from '../modal';
-import Button from '../button';
+import ButtonPrimary from '../buttonPrimary';
+import ButtonSecondary from '../buttonSecondary';
 
 export type TabsType = 'backup' | 'restore'
 
@@ -70,12 +71,12 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
               disabled
             />
             <StyleButtonWrapper>
-              <Button text={'Copy'} type={'secondary'} size={'small'} color={'subtle'} onClick={onCopy.bind(this, recoveryKey)} />
-              <Button text={'Print'} type={'secondary'} size={'small'} color={'subtle'} onClick={onPrint.bind(this, recoveryKey)} />
-              <Button text={'Save as File'} type={'secondary'} size={'small'} color={'subtle'} onClick={onSaveFile.bind(this, recoveryKey)} />
+              <ButtonSecondary text={'Copy'} size={'small'} color={'subtle'} onClick={onCopy.bind(this, recoveryKey)} />
+              <ButtonSecondary text={'Print'} size={'small'} color={'subtle'} onClick={onPrint.bind(this, recoveryKey)} />
+              <ButtonSecondary text={'Save as File'} size={'small'} color={'subtle'} onClick={onSaveFile.bind(this, recoveryKey)} />
             </StyleButtonWrapper>
             <StyledDoneWrapper>
-              <Button text={'Done'} type={'primary'} size={'medium'} color={'brand'} onClick={onClose} />
+              <ButtonPrimary text={'Done'} size={'medium'} color={'brand'} onClick={onClose} />
             </StyledDoneWrapper>
           </div>
           <div id={`${id}-restore`} data-key={'restore'} data-title={'Restore your Wallet'}>
@@ -95,8 +96,8 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
               defaultValue={''}
             />
             <StyledActionsWrapper>
-              <Button text={'Cancel'} type={'secondary'} size={'medium'} color={'brand'} onClick={onClose} />
-              <Button text={'Restore'} type={'primary'} size={'medium'} color={'brand'} onClick={onRestore.bind(this, recoveryKey)} />
+              <ButtonSecondary text={'Cancel'} size={'medium'} color={'brand'} onClick={onClose} />
+              <ButtonPrimary text={'Restore'} size={'medium'} color={'brand'} onClick={onRestore.bind(this, recoveryKey)} />
             </StyledActionsWrapper>
           </div>
         </Tabs>

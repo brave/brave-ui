@@ -1,18 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button tests basic tests matches the snapshot 1`] = `
+exports[`ButtonCta tests basic tests matches the snapshot 1`] = `
 .c0 {
   display: inline-block;
   overflow: hidden;
-  border: 1px solid rgb();
-}
-
-.c0:hover {
-  border-color: rgba(,0.9);
-}
-
-.c0:active {
-  border-color: rgba(,0.6);
+  background: #fff;
+  font-size: 14px;
+  border-radius: 28px;
+  min-width: 235px;
 }
 
 .c1 {
@@ -30,6 +25,18 @@ exports[`Button tests basic tests matches the snapshot 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  text-transform: uppercase;
+  padding: 21px 15px;
+  background: rgba(,0.9);
+  color: #fff;
+}
+
+.c1:hover {
+  background: rgba(,1);
+}
+
+.c1:active {
+  background: rgba(,0.6);
 }
 
 <div
@@ -40,8 +47,6 @@ exports[`Button tests basic tests matches the snapshot 1`] = `
     className="c1"
     color={undefined}
     disabled={undefined}
-    size={undefined}
-    type={undefined}
   />
 </div>
 `;
