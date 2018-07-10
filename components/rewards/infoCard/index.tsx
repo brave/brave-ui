@@ -33,28 +33,30 @@ class InfoCard extends React.PureComponent<InfoCardProps, {}> {
 
 export default class InfoCards extends React.PureComponent<InfoCardsProps, {}> {
 
+  getCards (items: InfoCardProps[]) {
+    return <>
+      {items.map((item: InfoCardProps) => {
+        return <>
+          <Column size={1}>
+            <InfoCard
+              title={item.title}
+              description={item.description}
+              icon={item.icon}/>
+          </Column>
+        </>
+      })}
+    </>
+  }
+
   render () {
     const { infoItems } = this.props
 
-    if (!infoItems) {
-      return null
-    }
-      
     return <>
-      <Grid columns={infoItems.length}>
-        {
-          infoItems.map((item: InfoCardProps) => {
-            return <>
-              <Column size={1}>
-                <InfoCard 
-                  title={item.title} 
-                  description={item.description}
-                  icon={item.icon}/>
-              </Column>
-            </>
-          })
-        }
-      </Grid>
+      {infoItems
+        ? <Grid columns={infoItems.length}>
+            {this.getCards(infoItems)}
+          </Grid>
+        : null}
     </>
   }
 }
