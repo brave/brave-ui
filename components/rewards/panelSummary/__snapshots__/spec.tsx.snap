@@ -49,7 +49,7 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: #ffbbaa;
+  background: #fba;
   margin-bottom: 10px;
   border-radius: 6px;
   -webkit-box-pack: justify;

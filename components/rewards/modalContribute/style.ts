@@ -5,10 +5,10 @@
 import styled from 'styled-components'
 
 export const StyledWrapper = styled.div`
+  font-family: Poppins;
 ` as any
 
 export const StyledTitle = styled.div`
-  font-family: Poppins;
   font-size: 16px;
   font-weight: 600;
   line-height: 2;
@@ -16,7 +16,6 @@ export const StyledTitle = styled.div`
 ` as any
 
 export const StyledContent = styled.div`
-  font-family: Poppins;
   font-size: 28px;
   color: #696fdc;
   margin-bottom: 33px;

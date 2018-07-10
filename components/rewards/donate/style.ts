@@ -4,21 +4,22 @@
 
 import styled from 'styled-components'
 import { Theme } from './index';
+import { setTheme } from '../../helpers';
 
 export const StyledWrapper = styled.div`
   position: relative;
+  font-family: Poppins;
 ` as any
 
 export const StyledContent = styled.div`
-  padding: ${(p: {theme: Theme}) => p.theme && p.theme.paddingBox ? p.theme && p.theme.paddingBox : '0'};
+  padding: ${(p: {theme: Theme}) => setTheme(p.theme, 'paddingBox') || '0'};
 ` as any
 
 export const StyledDonationTitle = styled.div`
-  font-family: Poppins;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.75;
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 14px;
   white-space: nowrap;
   overflow: hidden;
@@ -27,13 +28,12 @@ export const StyledDonationTitle = styled.div`
 ` as any
 
 export const StyledSend = styled.div`
-  background: ${(p: {disabled: boolean, theme: Theme}) => p.theme && p.theme.sendBgColor ? p.theme.sendBgColor : '#4c54d2'};
-  font-family: Poppins;
+  background: ${(p: {disabled: boolean, theme: Theme}) => setTheme(p.theme, 'sendBgColor') || '#4c54d2'};
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.2px;
-  color: ${(p: {disabled: boolean, theme: Theme}) => p.disabled ? (p.theme && p.theme.disabledSendColor ? p.theme.disabledSendColor : '#3e45b2') : '#fff'};
-  padding: ${(p: {disabled: boolean, theme: Theme}) => p.theme && p.theme.paddingSend ? p.theme && p.theme.paddingSend : '0'};
+  color: ${(p: {disabled: boolean, theme: Theme}) => p.disabled ? (setTheme(p.theme, 'disabledSendColor') || '#3e45b2') : '#fff'};
+  padding: ${(p: {disabled: boolean, theme: Theme}) => setTheme(p.theme, 'paddingSend') || '0'};
   text-transform: uppercase;
 ` as any
 
@@ -48,8 +48,8 @@ export const StyledFunds = styled.div`
   font-size: 13px;
   font-weight: 300;
   line-height: 1.69;
-  color: #ffffff;
-  padding: ${(p: {theme: Theme}) => p.theme && p.theme.paddingFunds ? p.theme && p.theme.paddingFunds : '0'};
+  color: #fff;
+  padding: ${(p: {theme: Theme}) => setTheme(p.theme, 'paddingFunds') || '0'};
   background: #1b1d2f;
   display: flex;
   position:absolute;
@@ -73,5 +73,3 @@ export const StyledFundsText = styled.div`
   flex: 1;
   margin-right: 9px;
 ` as any
-
-

@@ -37,7 +37,7 @@ export const StyledTH = styled.th`
       ${p.theme}
     `
     : ''
-  }
+  };
 ` as any
 
 export const StyledTR = styled.tr`
@@ -46,7 +46,7 @@ export const StyledTR = styled.tr`
       ${p.theme}
     `
     : ''
-  }
+  };
 ` as any
 
 export const StyledTD = styled.td`
@@ -64,5 +64,5 @@ export const StyledTD = styled.td`
       ${p.theme}
     `
     : ''
-  }
+  };
 ` as any

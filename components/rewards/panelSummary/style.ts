@@ -29,7 +29,6 @@ export const StyledTitle = styled.div`
 ` as any
 
 export const StyledTokensWrapper = styled.div`
-  
 ` as any
 
 export const StyledGrantTitle = styled.div`
@@ -47,7 +46,7 @@ export const StyledGrantIcon = styled.span`
 
 export const StyledGrant = styled.div`
   display: flex;
-  background: #ffbbaa;
+  background: #fba;
   margin-bottom: 10px;
   border-radius: 6px;
   justify-content: space-between;

@@ -101,19 +101,19 @@ export const StyledWrapper = styled.div`
   display: inline-block;
   overflow: hidden;
   background: #fff;
-  ${(p: Props) => generateWrapper(p.size)}
+  ${(p: Props) => generateWrapper(p.size)};
+  font-family: Poppins;
 ` as any
 
 export const StyledContent = styled.div`
   text-align: center;
   box-sizing: border-box;
-  font-family: Poppins;
   letter-spacing: 0;
   font-weight: 600;
   line-height: 1;
   cursor: ${(p: Props) => p.disabled ? 'default' : 'pointer'};
   user-select: none;
-  ${(p: Props) => generateContent(p.size,p.color, (p.disabled || false))}
+  ${(p: Props) => generateContent(p.size,p.color, (p.disabled || false))};
 ` as any
 
 export const StyledIcon = styled.span`

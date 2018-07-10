@@ -4,6 +4,7 @@
 
 import styled from 'styled-components'
 import { Props } from './index';
+import { setTheme } from '../../helpers';
 
 export const StyledWrapper = styled.div`
   position: fixed;
@@ -17,7 +18,7 @@ export const StyledWrapper = styled.div`
 ` as any
 
 export const StyledDialog = styled.div`
-  max-width: ${(p: Props) => p.theme && p.theme.maxWidth ? p.theme.maxWidth : '920px'};
+  max-width: ${(p: Props) => setTheme(p.theme, 'maxWidth') || '920px'};
   margin: 52px auto;
   padding: 61px 50px;
   background: #fff;
@@ -35,5 +36,4 @@ export const StyledClose = styled.div`
 ` as any
 
 export const StyledContent = styled.div`
-
 ` as any

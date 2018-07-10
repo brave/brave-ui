@@ -8,10 +8,10 @@ exports[`Tip tests basic tests matches the snapshot 1`] = `
   overflow: hidden;
   position: relative;
   padding: 16px 0 0;
+  font-family: Poppins;
 }
 
 .c2 {
-  font-family: Poppins;
   font-size: 12px;
   line-height: 1.83;
   color: #fff;
@@ -28,7 +28,6 @@ exports[`Tip tests basic tests matches the snapshot 1`] = `
 
 .c6 {
   opacity: 0.65;
-  font-family: Poppins;
   font-size: 10px;
   line-height: 3.9;
   color: #fff;
@@ -42,6 +41,7 @@ exports[`Tip tests basic tests matches the snapshot 1`] = `
 
 .c3 {
   position: relative;
+  font-family: Poppins;
 }
 
 .c4 {
@@ -49,11 +49,10 @@ exports[`Tip tests basic tests matches the snapshot 1`] = `
 }
 
 .c5 {
-  font-family: Poppins;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.75;
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 14px;
   white-space: nowrap;
   overflow: hidden;
@@ -63,7 +62,6 @@ exports[`Tip tests basic tests matches the snapshot 1`] = `
 
 .c11 {
   background: #392dd1;
-  font-family: Poppins;
   font-size: 13px;
   font-weight: 600;
   -webkit-letter-spacing: 0.2px;

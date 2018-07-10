@@ -7,15 +7,6 @@ import styled from 'styled-components'
 export const StyledWrapper = styled.div`
 ` as any
 
-export const StyledText = styled.div`
-  font-family: Muli;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.29;
-  text-align: right;
-  color: #686978;
-` as any
-
 export const StyledRemove = styled.div`
   font-family: Muli;
   font-size: 14px;
@@ -58,5 +49,3 @@ export const StyledRecurringIcon = styled.span`
   margin-left: 3px;
   vertical-align: middle;
 ` as any
-
-

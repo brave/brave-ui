@@ -25,7 +25,7 @@ export const StyledArrow = styled.div`
       border-color: transparent transparent ${(p: Props) => p.theme && p.theme.color ? p.theme.color.background : defaultBg} transparent;
     `
     : ''
-  }
+  };
   
   ${(p: Props) => p.position === 'top'
     ? css`
@@ -35,7 +35,7 @@ export const StyledArrow = styled.div`
       border-color: ${(p: Props) => p.theme && p.theme.color ? p.theme.color.background : defaultBg} transparent transparent transparent;
     `
     : ''
-  }
+  };
   
   ${(p: Props) => p.position === 'left'
     ? css`
@@ -45,7 +45,7 @@ export const StyledArrow = styled.div`
       border-color: transparent transparent transparent ${(p: Props) => p.theme && p.theme.color ? p.theme.color.background : defaultBg};
     `
     : ''
-  }
+  };
   
   ${(p: Props) => p.position === 'right'
     ? css`
@@ -55,7 +55,7 @@ export const StyledArrow = styled.div`
       border-color: transparent ${(p: Props) => p.theme && p.theme.color ? p.theme.color.background : defaultBg} transparent transparent;
     `
     : ''
-  }
+  };
 ` as any
 
 export const StyledArrowOutline = styled.div`
@@ -72,7 +72,7 @@ export const StyledArrowOutline = styled.div`
       border-color: transparent transparent ${(p: Props) => p.theme && p.theme.color ? p.theme.color.border : defaultBg} transparent;
     `
     : ''
-  }
+  };
   
   ${(p: Props) => p.position === 'top'
     ? css`
@@ -82,7 +82,7 @@ export const StyledArrowOutline = styled.div`
       border-color: ${(p: Props) => p.theme && p.theme.color ? p.theme.color.border : defaultBg} transparent transparent transparent;
     `
     : ''
-  }
+  };
   
   ${(p: Props) => p.position === 'left'
     ? css`
@@ -92,7 +92,7 @@ export const StyledArrowOutline = styled.div`
       border-color: transparent transparent transparent ${(p: Props) => p.theme && p.theme.color ? p.theme.color.border : defaultBg};
     `
     : ''
-  }
+  };
   
   ${(p: Props) => p.position === 'right'
     ? css`
@@ -102,7 +102,7 @@ export const StyledArrowOutline = styled.div`
       border-color: transparent ${(p: Props) => p.theme && p.theme.color ? p.theme.color.border : defaultBg} transparent transparent;
     `
     : ''
-  }
+  };
 ` as any
 
 export const StyledTooltip = styled.div`
@@ -128,7 +128,7 @@ export const StyledTooltip = styled.div`
       left: -50%;
     `
     : ''
-  }
+  };
   
   ${(p: Props) => p.position === 'top'
     ? css`
@@ -137,7 +137,7 @@ export const StyledTooltip = styled.div`
       left: -50%;
     `
     : ''
-  }
+  };
   
   ${(p: Props) => p.position === 'left'
     ? css`
@@ -146,7 +146,7 @@ export const StyledTooltip = styled.div`
       top: -50%;
     `
     : ''
-  }
+  };
   
   ${(p: Props) => p.position === 'right'
     ? css`
@@ -155,8 +155,5 @@ export const StyledTooltip = styled.div`
       top: -50%;
     `
     : ''
-  }
-   
+  };
 ` as any
-
-

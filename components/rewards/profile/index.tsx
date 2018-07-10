@@ -79,7 +79,7 @@ export default class Profile extends React.PureComponent<Props, {}> {
           {
             verified && type === 'big'
             ? <StyledProviderWrap>
-              <StyledInlineVerified src={verifiedIcon} /> Brave Verified Publisher
+              <StyledInlineVerified>{verifiedIcon}</StyledInlineVerified> Brave Verified Publisher
             </StyledProviderWrap>
             : null
           }

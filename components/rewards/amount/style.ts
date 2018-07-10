@@ -8,13 +8,14 @@ import { Props } from './index';
 export const StyledWrapper = styled.div`
   margin-bottom: 8px;
   user-select: none;
+  font-family: Poppins;
 ` as any
 
 export const StyledAmount = styled.span`
   opacity: 1;
   border-radius: 20px;
   color: #fff;
-  border: solid 1px rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   background: ${(p: Props) => p.selected ? 'rgba(255, 255, 255, 0.35)' : 'transparent'};
   vertical-align: baseline;
   padding: ${(p: Props) => p.type === 'big' ? '10px 16px 13px' : '7px 12px 9px'};
@@ -25,7 +26,6 @@ export const StyledAmount = styled.span`
   margin-right: 12px;
 ` as any
 
-
 export const StyledTokens = styled.span`
   font-weight: 400;
 ` as any
@@ -35,11 +35,9 @@ export const StyledLogo = styled.span`
   margin-right: 6px;
 ` as any
 
-
 export const StyledConverted = styled.span`
   vertical-align: baseline;
   opacity: ${(p: Props) => p.selected ? 1 : 0.4};
-  font-family: Poppins;
   font-size: ${(p: Props) => p.type === 'big' ? '12px' : '10px'};
   color: #ffffff;
   font-weight: 500;

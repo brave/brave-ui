@@ -26,6 +26,7 @@ import ModalContribute from '../../components/rewards/modalContribute';
 import { DetailRow } from '../../components/rewards/contributeTable';
 import PanelEmpty from '../../components/rewards/panelEmpty';
 import PanelSummary from '../../components/rewards/panelSummary';
+import PanelOff from '../../components/rewards/panelOff';
 
 const donate = require('../assets/img/rewards_donate.svg')
 const wallet = require('../assets/img/rewards_wallet.svg')
@@ -301,5 +302,8 @@ storiesOf('Rewards/Content', module)
         onActivity={()=>{}}
       />
     </div>
+  })
+  .add('Panel content - Off', () => {
+    return <div style={{width: '373px', background: '#f9fbfc', padding: '0 25px'}}><PanelOff/></div>
   })
 
