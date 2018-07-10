@@ -10,20 +10,16 @@ import Toggle from '../toggle'
 type Donation = {tokens: number, converted: number, selected?: boolean}
 
 export interface Props {
-  id?: string
-  title?: string
   allow: boolean
   provider: string
   balance: number
   donationAmounts: Donation[]
-  onClose?: () => void
   onAllow: (allow: boolean) => void
   onDonate: (amount: number, allow: boolean) => void
   onAmountSelection?: (tokens: number) => void
-}
-
-interface State {
-  allow: boolean
+  onClose: () => void
+  id?: string
+  title?: string
 }
 
 const close = require('./assets/close')
@@ -32,11 +28,7 @@ const close = require('./assets/close')
   TODO
   - add local
  */
-export default class Tip extends React.PureComponent<Props, State> {
-  constructor(props: Props) {
-    super(props)
-  }
-
+export default class Tip extends React.PureComponent<Props, {}> {
   onDonate = (amount: number) => {
     if (this.props.onDonate) {
       this.props.onDonate(amount, this.props.allow)
@@ -48,7 +40,6 @@ export default class Tip extends React.PureComponent<Props, State> {
       this.props.onAllow(!this.props.allow)
     }
   }
-
 
   onAmountChange = (tokens: number) => {
     if (this.props.onAmountSelection) {

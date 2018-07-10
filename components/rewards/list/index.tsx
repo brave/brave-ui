@@ -9,24 +9,15 @@ export interface Props {
   id?: string
   title?: string
   children?: React.ReactNode
-  onClick?: () => void
   theme?: {[key: string]: string}
 }
 
 export default class List extends React.PureComponent<Props, {}> {
   render () {
-    const { id, onClick, title, children, theme } = this.props
-
-    const props: Props = {
-      id
-    }
-
-    if (onClick) {
-      props.onClick = onClick
-    }
+    const { id, title, children, theme } = this.props
 
     return (
-      <StyledWrapper {...props}>
+      <StyledWrapper id={id}>
         <StyledTitle>{title}</StyledTitle>
         <StyledContentWrapper>
           <StyledContent theme={theme}>{children}</StyledContent>

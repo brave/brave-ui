@@ -22,10 +22,10 @@ export interface Theme {
 }
 
 export interface Props {
+  content: React.ReactNode
   id?: string
   position?: 'top' | 'bottom' | 'left' | 'right'
   theme?: Theme
-  content: React.ReactNode
   children?: React.ReactNode
 }
 

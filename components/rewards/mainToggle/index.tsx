@@ -19,14 +19,13 @@ import Toggle from '../toggle'
 const logo = require('./assets/bat')
 
 export interface Props {
-  id?: string
   enabled: boolean
   onToggle: () => void
+  id?: string
 }
 
 /*
   TODO
-  - add notifications if needed
   - add local
  */
 export default class MainToggle extends React.PureComponent<Props, {}> {

@@ -13,8 +13,8 @@ interface Theme {
 }
 
 export interface Props {
-  id?: string
   type: 'error' | 'success'
+  id?: string
   children?: React.ReactNode
   onClose?: () => void
   theme?: Theme

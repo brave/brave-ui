@@ -91,6 +91,7 @@ storiesOf('Concepts/Features', module)
           provider={text('Provider', 'YouTube')}
           balance={5}
           onDonate={() => {}}
+          onClose={() => {}}
           onAllow={(allow: boolean) => store.set({allow})}
           onAmountSelection={(tokens: number) => {
             const list = store.state.donationAmount.map((item) => {

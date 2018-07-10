@@ -8,15 +8,15 @@ import { StyledWrapper, StyledImage, StyledContent } from './style'
 import { Column, Grid } from '../../gridSystem'
 
 interface Theme {
-  color: CSS.Color
-  boldColor: CSS.Color
+  color?: CSS.Color
+  boldColor?: CSS.Color
 }
 
 export interface Props {
+  children: React.ReactNode
   id?: string
   image?: string
   theme?: Theme
-  children: React.ReactNode
 }
 
 export default class DisabledContent extends React.PureComponent<Props, {}> {

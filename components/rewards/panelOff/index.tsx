@@ -15,7 +15,6 @@ interface Props {
  */
 export default class PanelOff extends React.PureComponent<Props, {}> {
   render () {
-
     return (
       <StyledWrapper id={this.props.id}>
         <StyledTitle>Get Rewarded for Browsing!</StyledTitle>

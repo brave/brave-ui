@@ -12,8 +12,8 @@ import Tokens from '../tokens'
 interface ProfileCell {
   verified: boolean
   name: string
-  provider?: Provider
   src: string
+  provider?: Provider
 }
 
 type DonationType = 'donation' | 'tip' | 'recurring'
@@ -24,9 +24,9 @@ export interface DetailRow {
     tokens: number
     converted: number
   }
+  type: DonationType
   text?: string | React.ReactNode
   onRemove?: () => void
-  type: DonationType
 }
 
 export interface Props {
@@ -162,7 +162,9 @@ export default class DonationTable extends React.PureComponent<Props, {}> {
         />
         {
           !allItems
-          ? <StyledToggle onClick={onClick}>See all {numItems || 0} items</StyledToggle>
+          ? <StyledToggle onClick={onClick}>
+              See all {numItems || 0} items
+          </StyledToggle>
           : null
         }
       </StyledWrapper>

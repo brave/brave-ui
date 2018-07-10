@@ -8,9 +8,9 @@ import Modal from '../modal'
 import ContributeTable, { DetailRow } from '../contributeTable'
 
 export interface Props {
-  id?: string
   rows: DetailRow[]
   onClose: () => void
+  id?: string
 }
 
 /*
@@ -27,7 +27,6 @@ export default class ModalContribute extends React.PureComponent<Props, {}> {
 
   render () {
     const { id, onClose, rows } = this.props
-
     const numSites = rows && rows.length || 0
 
     return (

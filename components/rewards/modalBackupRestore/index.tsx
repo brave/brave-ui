@@ -20,9 +20,7 @@ import ButtonSecondary from '../buttonSecondary'
 export type TabsType = 'backup' | 'restore'
 
 export interface Props {
-  id?: string
   recoveryKey: string
-  error?: React.ReactNode
   activeTabId: TabsType
   onTabChange: (tab: TabsType) => void
   onClose: () => void
@@ -31,6 +29,8 @@ export interface Props {
   onSaveFile: (key: string) => void
   onRestore: (key: string) => void
   onImport: () => void
+  error?: React.ReactNode
+  id?: string
 }
 
 /*
@@ -71,9 +71,9 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
               disabled
             />
             <StyleButtonWrapper>
-              <ButtonSecondary text={'Copy'} size={'small'} color={'subtle'} onClick={onCopy.bind(this, recoveryKey)} />
-              <ButtonSecondary text={'Print'} size={'small'} color={'subtle'} onClick={onPrint.bind(this, recoveryKey)} />
-              <ButtonSecondary text={'Save as File'} size={'small'} color={'subtle'} onClick={onSaveFile.bind(this, recoveryKey)} />
+              <ButtonSecondary text={'Copy'} size={'small'} color={'subtle'} onClick={onCopy.bind(recoveryKey)} />
+              <ButtonSecondary text={'Print'} size={'small'} color={'subtle'} onClick={onPrint.bind(recoveryKey)} />
+              <ButtonSecondary text={'Save as File'} size={'small'} color={'subtle'} onClick={onSaveFile.bind(recoveryKey)} />
             </StyleButtonWrapper>
             <StyledDoneWrapper>
               <ButtonPrimary text={'Done'} size={'medium'} color={'brand'} onClick={onClose} />
@@ -97,7 +97,7 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
             />
             <StyledActionsWrapper>
               <ButtonSecondary text={'Cancel'} size={'medium'} color={'brand'} onClick={onClose} />
-              <ButtonPrimary text={'Restore'} size={'medium'} color={'brand'} onClick={onRestore.bind(this, recoveryKey)} />
+              <ButtonPrimary text={'Restore'} size={'medium'} color={'brand'} onClick={onRestore.bind(recoveryKey)} />
             </StyledActionsWrapper>
           </div>
         </Tabs>
