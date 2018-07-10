@@ -14,12 +14,12 @@ import {
 import ControlWrapper from '../controlWrapper'
 
 export interface Props {
+  children: React.ReactNode
   id?: string
   disabled?: boolean
   value?: string
   title?: React.ReactNode
   onChange?: (child: React.ReactNode) => void
-  children: React.ReactNode
   theme?: Theme
 }
 
@@ -41,18 +41,27 @@ export interface Theme {
   - add tab option movement
   - add enter key confirm
   - add autoFocus
-  - make sure that props update is prepared into the state
  */
 export default class Select extends React.PureComponent<Props, State> {
   constructor (props: Props) {
     super(props)
 
     const obj = this.getDefaultValue(props)
-
     this.state = {
       value: obj.value,
       selected: obj.selected,
       show: false
+    }
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    if (prevProps.value !== this.props.value) {
+      const obj = this.getDefaultValue(this.props)
+      this.setState({
+        value: obj.value,
+        selected: obj.selected,
+        show: false
+      })
     }
   }
 
@@ -69,14 +78,14 @@ export default class Select extends React.PureComponent<Props, State> {
     }
 
     return {
-        value: child.props['data-value'],
-        selected: child.props.children
-      }
+      value: child.props['data-value'],
+      selected: child.props.children
+    }
   }
 
   generateOptions = (value: string | undefined, children: React.ReactNode) => {
     const self = this
-    return React.Children.map(children, (child: any) => {
+    return React.Children.map(children, (child: any, i: number) => {
       if (child.props['data-value'] == undefined) {
         return null
       }
@@ -84,7 +93,7 @@ export default class Select extends React.PureComponent<Props, State> {
       const element = child.props.children
       const value = child.props['data-value']
       const selected = value == self.state.value
-      return <StyledOption onClick={self.onOptionClick.bind(self, value, child, element)} selected={selected}>
+      return <StyledOption key={`${self.props.id}-option-${i}`} onClick={self.onOptionClick.bind(self, value, child, element)} selected={selected}>
         {element}
       </StyledOption>
     })
@@ -104,13 +113,13 @@ export default class Select extends React.PureComponent<Props, State> {
 
   onSelectClick = () => {
     this.setState({
-      show: !this.state.show,
+      show: !this.state.show
     })
   }
 
   onBlur = () => {
     this.setState({
-      show: false,
+      show: false
     })
   }
 

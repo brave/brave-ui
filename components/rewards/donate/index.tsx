@@ -16,6 +16,7 @@ import {
 } from './style'
 
 import Amount from '../amount'
+import { setTheme } from '../../helpers';
 
 const send = require('./assets/send')
 const sadFace = require('./assets/sadFace')
@@ -23,16 +24,16 @@ const sadFace = require('./assets/sadFace')
 type Donation = {tokens: number, converted: number, selected?: boolean}
 
 export interface Props {
-  id?: string
   actionText: string
   title: string
   balance: number
   donationAmounts: Donation[]
-  donateType?: 'big' | 'small'
-  children?: React.ReactNode
   onDonate: (amount: number) => void
   onAmountSelection?: (tokens: number) => void
+  id?: string
   theme?: Theme
+  donateType?: 'big' | 'small'
+  children?: React.ReactNode
 }
 
 interface State {
@@ -47,7 +48,10 @@ export interface Theme {
   sendBgColor?: CSS.Color
   disabledSendColor?: CSS.Color
 }
-
+/*
+  TODO
+  - add local
+ */
 export default class Donate extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props)
@@ -72,7 +76,7 @@ export default class Donate extends React.PureComponent<Props, State> {
 
   getCurrentAmount (amounts: Donation[]) {
     const amount = amounts && amounts.find((amount: Donation) => !!amount.selected)
-    return amount && amount.tokens || 0
+    return (amount && amount.tokens) || 0
   }
 
   validateDonation = () => {
@@ -109,7 +113,7 @@ export default class Donate extends React.PureComponent<Props, State> {
     const disabled = this.state.amount === 0
 
     const donateType = this.props.donateType ? this.props.donateType : 'big'
-    const sendColor = disabled ? (theme && theme.disabledSendColor ? theme.disabledSendColor : '#3e45b2') : '#a1a8f2'
+    const sendColor = disabled ? (setTheme(theme, 'disabledSendColor') || '#3e45b2') : '#a1a8f2'
 
     return <StyledWrapper>
       <StyledContent id={id} theme={theme}>
@@ -117,7 +121,7 @@ export default class Donate extends React.PureComponent<Props, State> {
         {
           donationAmounts && donationAmounts.map((donation: Donation) => {
             return <Amount
-              key={`${id}-${donation.tokens}`}
+              key={`${id}-donate-${donation.tokens}`}
               amount={donation.tokens}
               selected={donation.selected}
               onClick={this.onAmountChange}

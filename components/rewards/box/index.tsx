@@ -29,8 +29,8 @@ export interface Theme {
 }
 
 export interface Props {
-  id?: string
   title: string
+  id?: string
   theme?: Theme
   description?: string
   toggle?: boolean

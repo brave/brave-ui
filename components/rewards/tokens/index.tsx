@@ -20,8 +20,8 @@ interface Theme {
 }
 
 export interface Props {
-  id?: string
   value: string | number
+  id?: string
   converted?: string | number
   currency?: string
   hideText?: boolean

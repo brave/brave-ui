@@ -20,7 +20,7 @@ export type Size =  'large' | 'medium' | 'small'
 
 export default class ButtonGhost extends React.PureComponent<Props, {}> {
   render () {
-    const icon = this.props.icon
+    const { icon, text } = this.props
 
     return (
       <StyledWrapper {...this.props}>
@@ -29,7 +29,7 @@ export default class ButtonGhost extends React.PureComponent<Props, {}> {
             ? <StyledIcon icon={icon}>{icon.image}</StyledIcon>
             : null
           }
-          {this.props.text}
+          {text}
           {
             icon && icon.position === 'right'
             ? <StyledIcon icon={icon}>{icon.image}</StyledIcon>

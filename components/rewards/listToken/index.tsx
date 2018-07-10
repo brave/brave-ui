@@ -8,10 +8,10 @@ import { StyledWrapper, StyledTitle, StyledContentWrapper } from './style'
 import Tokens from '../tokens'
 
 export interface Props {
-  id?: string
   title: string
   value: number
   converted: number
+  id?: string
   theme?: Theme
   isNegative?: boolean
 }
