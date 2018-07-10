@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="14px" viewBox="0 0 8 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icn-arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="button/navnext-lg-default" transform="translate(-83.000000, -17.000000)" fill="#FFFFFF">
+            <g id="icn-arrow">
+                <polyline points="83 18.537 83 18.537 88.065 23.997 83 29.459 84.682 31 91 23.997 84.682 16.995 83 18.537"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

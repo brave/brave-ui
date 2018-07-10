@@ -121,3 +121,9 @@ export const StyledWrapper = styled.div`
     : ''
   }
 ` as any
+
+export const StyledIcon = styled.img`
+  display: inline-block;
+  vertical-align: bottom;
+  margin: ${(p: Props) => p.icon && p.icon.position === 'left' ? '0 10px 0 0' : '0 0 0 10px'};
+` as any
