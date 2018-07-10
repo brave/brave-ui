@@ -12,7 +12,7 @@ export interface Props {
   onClick: () => void
   id?: string
   disabled?: boolean
-  icon?: {image: string, position: 'left' | 'right'}
+  icon?: {image: React.ReactNode, position: 'left' | 'right'}
 }
 
 export type Color = 'brand' | 'action' | 'subtle'
@@ -26,14 +26,14 @@ export default class ButtonSecondary extends React.PureComponent<Props, {}> {
       <StyledWrapper {...this.props}>
           {
             icon && icon.position === 'left'
-            ? <StyledIcon icon={icon} src={icon.image} />
-              : null
+            ? <StyledIcon icon={icon}>{icon.image}</StyledIcon>
+            : null
           }
           {this.props.text}
           {
             icon && icon.position === 'right'
-            ? <StyledIcon icon={icon} src={icon.image} />
-              : null
+            ? <StyledIcon icon={icon}>{icon.image}</StyledIcon>
+            : null
           }
       </StyledWrapper>
     )
