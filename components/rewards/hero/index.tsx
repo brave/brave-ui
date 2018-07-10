@@ -11,10 +11,10 @@ export interface Props {
 
 export default class Hero extends React.PureComponent<Props, {}> {
   render () {
-    const { id, children} = this.props
+    const { children } = this.props
 
     return (
-      <div id={`${id}`}>
+      <div>
         {children}
       </div>
     )

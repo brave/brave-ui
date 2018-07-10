@@ -12,7 +12,13 @@ const locale = {
   whyBraveRewardsDesc: 'Do you know that you\'ve been paying for the web content with your data for the digital ads? You didn\'t have a voice in it and worse, you\'re exposed to privacy and security risks',
   whyBraveRewardsBold: 'Brave Rewards allows you to take control back',
   howDoesItWork: 'How does it work?',
-  howDoesItWorkDesc: 'Get paid for the ads. And pay directly the favorite content creators at your will. That way, they can grow and continue delivering the content that delights you.'
+  howDoesItWorkDesc: 'Get paid for the ads. And pay directly the favorite content creators at your will. That way, they can grow and continue delivering the content that delights you.',
+  turnOnRewardsTitle: 'Turn on Rewards',
+  turnOnRewardsDesc: 'This enables both Brave Ads and Brave Contribute. You can always opt out each any time.',
+  braveAdsTitle: 'Brave Ads',
+  braveAdsDesc: 'No action required. Just collect tokens. Your data is safe with our Shields.',
+  braveContributeTitle: 'Brave Contribute',
+  braveContributeDesc: 'Set budget and browse normally. Your favorite sites get paid automatically.'
 }
 
 export default locale

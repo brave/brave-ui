@@ -13,6 +13,7 @@ import BoxedContent from '../../../../components/boxedContent'
 // Rewards Components
 import Hero from '../../../../components/rewards/hero'
 import Button from '../../../../components/rewards/button'
+import { InfoCards, InfoCardProps } from '../../../../components/rewards/infoCard'
 
 // Styles
 import theme from './theme'
@@ -22,11 +23,28 @@ import locale from './fakeLocale'
 // import data from './fakeData'
 
 class RewardsWelcome extends React.PureComponent {
+
+  get infoItems (): InfoCardProps[] {
+    return [
+      {
+        title: locale.turnOnRewardsTitle,
+        description: locale.turnOnRewardsDesc
+      },
+      {
+        title: locale.braveAdsTitle,
+        description: locale.braveAdsDesc
+      },
+      {
+        title: locale.braveContributeTitle,
+        description: locale.braveContributeDesc
+      }
+    ]
+  }
+
   render () {
     return (
       <Page theme={theme.page}>
-        <Hero
-         id={'rewards-hero'}>
+        <Hero id={'rewards-hero'}>
          <Heading level={1} text={locale.braveRewardsTitle}/>
          <Heading level={2} text={locale.braveRewardsSubTitle}/>
          <Paragraph text={locale.braveRewardsDesc}/>
@@ -47,6 +65,10 @@ class RewardsWelcome extends React.PureComponent {
           <Heading level={1} text={locale.howDoesItWork}/>
           <Paragraph text={locale.whyBraveRewardsDesc}/>
           <Paragraph text={locale.whyBraveRewardsBold}/>
+        </BoxedContent>
+        <BoxedContent>
+          <InfoCards
+            infoItems={this.infoItems}/>
         </BoxedContent>
       </Page>
     )
