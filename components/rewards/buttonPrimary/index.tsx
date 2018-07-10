@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledWrapper, StyledContent } from './style'
+import { StyledWrapper, StyledContent, StyledIcon } from './style'
 
 export interface Props {
   text: string
@@ -18,17 +18,23 @@ export interface Props {
 export type Color = 'brand' | 'action'
 export type Size = 'large' | 'medium' | 'small'
 
-/*
-  TODO
-  - add icon option
- */
 export default class ButtonPrimary extends React.PureComponent<Props, {}> {
   render () {
-    const { size, color, disabled } = this.props
+    const { size, color, disabled, icon, text } = this.props
     return (
       <StyledWrapper  {...this.props}>
           <StyledContent size={size} color={color} disabled={disabled}>
-            {this.props.text}
+            {
+              icon && icon.position === 'left'
+              ? <StyledIcon icon={icon} src={icon.image} />
+                : null
+            }
+            {text}
+            {
+              icon && icon.position === 'right'
+              ? <StyledIcon icon={icon} src={icon.image} />
+                : null
+            }
           </StyledContent>
       </StyledWrapper>
     )
