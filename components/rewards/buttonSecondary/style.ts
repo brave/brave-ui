@@ -29,10 +29,7 @@ const getColor = (color: Color, disabled: boolean) => {
 
 const generateWrapper = (size: Size, color: Color, disabled: boolean) => {
   let colorCode = getColor(color, disabled)
-
-  let border = `
-    border: 1px solid rgba(${colorCode}, 0.9);
-  `
+  let border = `border: 1px solid rgba(${colorCode}, 0.9);`
 
   let props = `
     color: rgba(${colorCode}, 0.9);
@@ -60,11 +57,18 @@ const generateWrapper = (size: Size, color: Color, disabled: boolean) => {
   `
   }
 
-  if (disabled && color !== 'subtle') {
-    props = `
-      background: ${colorCode};
-      color: #fff;
-    `
+  if (disabled) {
+    if (color !== 'subtle') {
+      props = `
+        background: ${colorCode};
+        color: #fff;
+      `
+    } else {
+      props = `
+        opacity: 0.3
+        color: rgba(${colorCode}, 1);
+      `
+    }
   }
 
   switch (size)  {
