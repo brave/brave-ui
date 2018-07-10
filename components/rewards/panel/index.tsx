@@ -22,7 +22,7 @@ import {
   StyledGrant,
   StyledActionWrapper
 } from './style'
-import Button from '../button';
+import ButtonSecondary from '../buttonSecondary';
 
 type Grant = {tokens: number, expireDate: string}
 
@@ -122,9 +122,8 @@ export default class Panel extends React.PureComponent<Props, State> {
           <StyledBalanceTitle>Token balance</StyledBalanceTitle>
           <StyledBalanceTokens>{this.formatTokens(tokens)}</StyledBalanceTokens>
           <StyledBalanceConverted>~ {converted}</StyledBalanceConverted>
-          <Button
+          <ButtonSecondary
             text={'Detail'}
-            type={'secondary'}
             size={'small'}
             color={'subtle'}
             onClick={this.toggleGrantDetails}

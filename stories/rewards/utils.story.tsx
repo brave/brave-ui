@@ -21,8 +21,11 @@ import Checkbox from '../../components/rewards/checkbox'
 import Tooltip from '../../components/rewards/tooltip'
 import Profile from '../../components/rewards/profile'
 import Amount from '../../components/rewards/amount'
-import Button from '../../components/rewards/button'
+import ButtonPrimary from '../../components/rewards/buttonPrimary'
 import TextArea from '../../components/rewards/textarea';
+import ButtonSecondary from '../../components/rewards/buttonSecondary';
+import ButtonGhost from '../../components/rewards/buttonGhost';
+import ButtonCta from '../../components/rewards/buttonCta';
 
 const bart = require('../assets/img/bartBaker.jpeg')
 
@@ -124,11 +127,36 @@ storiesOf('Rewards/Utils', module)
     />
     </div>
   }))
-  .add('Button',() => {
-    return <Button
-      type={select('Type', {primary: 'primary', secondary: 'secondary', ghost: 'ghost', cta: 'cta'}, 'primary')}
+  .add('Button - Primary',() => {
+    return <ButtonPrimary
+      color={select('Color', {brand: 'brand', action: 'action'}, 'brand')}
+      size={select('Size', {large: 'large', medium: 'medium', small: 'small'}, 'medium')}
+      text={'Button'}
+      disabled={boolean('Disabled', false)}
+      onClick={() => {}}
+    />
+  })
+  .add('Button - Secondary',() => {
+    return <ButtonSecondary
       color={select('Color', {brand: 'brand', action: 'action', subtle: 'subtle'}, 'brand')}
-      size={select('Size', {xlarge: 'xlarge', large: 'large', medium: 'medium', small: 'small'}, 'medium')}
+      size={select('Size', {large: 'large', medium: 'medium', small: 'small'}, 'medium')}
+      text={'Button'}
+      disabled={boolean('Disabled', false)}
+      onClick={() => {}}
+    />
+  })
+  .add('Button - Ghost',() => {
+    return <ButtonGhost
+      color={select('Color', {brand: 'brand', action: 'action'}, 'brand')}
+      size={select('Size', {large: 'large', medium: 'medium', small: 'small'}, 'medium')}
+      text={'Button'}
+      disabled={boolean('Disabled', false)}
+      onClick={() => {}}
+    />
+  })
+  .add('Button - CTA',() => {
+    return <ButtonCta
+      color={select('Color', {brand: 'brand', action: 'action'}, 'brand')}
       text={'Button'}
       disabled={boolean('Disabled', false)}
       onClick={() => {}}

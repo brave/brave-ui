@@ -56,7 +56,7 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
   margin-top: 10px;
 }
 
-.c10 {
+.c9 {
   padding: 31px 28px 19px;
   position: relative;
   background: #f9fbfc;
@@ -71,7 +71,7 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
   margin: 15px 0 10px;
 }
 
-.c9 {
+.c8 {
   text-align: center;
   font-family: Poppins;
   font-size: 12px;
@@ -91,13 +91,12 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
 .c7 {
   display: inline-block;
   overflow: hidden;
-  border: 1px solid rgb(184,185,196);
+  border: 1px solid rgba(184,185,196,0.9);
+  color: rgba(184,185,196,0.9);
   font-size: 11px;
   border-radius: 16px;
   min-width: 88px;
-}
-
-.c8 {
+  padding: 10.5px 10px;
   text-align: center;
   box-sizing: border-box;
   font-family: Poppins;
@@ -113,16 +112,6 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
   -ms-user-select: none;
   user-select: none;
   font-weight: 500;
-  color: rgb(184,185,196);
-  padding: 10.5px 10px;
-}
-
-.c8:hover {
-  color: rgba(184,185,196,0.9);
-}
-
-.c8:active {
-  color: rgba(184,185,196,0.6);
 }
 
 <div
@@ -161,25 +150,16 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
         disabled={true}
         onClick={[Function]}
         size="small"
-        type="secondary"
       >
-        <div
-          className="c8"
-          color="subtle"
-          disabled={true}
-          size="small"
-          type="secondary"
-        >
-          Detail
-        </div>
+        Detail
       </div>
     </div>
     <div
-      className="c9"
+      className="c8"
     />
   </div>
   <div
-    className="c10"
+    className="c9"
   />
 </div>
 `;
