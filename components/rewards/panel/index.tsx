@@ -123,17 +123,19 @@ export default class Panel extends React.PureComponent<Props, State> {
             text={'Detail'}
             size={'small'}
             color={'subtle'}
-            onClick={this.toggleGrantDetails}
+            onClick={enabled ? this.toggleGrantDetails : undefined}
             disabled={!enabled}
-            icon={{position: 'right', image: this.state.grantDetails ? arrowUpIcon : arrowDownIcon}}
+            icon={{position: 'right', image: this.state.grantDetails && enabled ? arrowUpIcon : arrowDownIcon}}
           />
         </StyledBalance>
         {
           this.state.grantDetails && enabled
           ? <StyledGrantWrapper>
             {
-              grants && grants.map((grant: Grant) => {
-                return <StyledGrant><b>{grant.tokens} tokens</b> <span>expires on {grant.expireDate}</span></StyledGrant>
+              grants && grants.map((grant: Grant, i: number) => {
+                return <StyledGrant key={`${id}-grant-${i}`}>
+                  <b>{grant.tokens} tokens</b> <span>expires on {grant.expireDate}</span>
+                </StyledGrant>
               })
             }
           </StyledGrantWrapper>

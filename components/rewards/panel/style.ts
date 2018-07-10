@@ -51,7 +51,7 @@ export const StyledBalanceTokens = styled.div`
 ` as any
 
 export const StyledContent = styled.div`
-  padding: 31px 28px 19px;
+  padding: 31px 25px 19px;
   position: relative;
   background: #f9fbfc;
 ` as any
