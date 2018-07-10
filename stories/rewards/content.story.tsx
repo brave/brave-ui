@@ -125,7 +125,6 @@ storiesOf('Rewards/Content', module)
     return <div style={{width: '800px'}}>
       <MainToggle
       enabled={boolean('Enable', store.state.checked)}
-      newNotifications={boolean('New notification', true)}
       onToggle={() => (
         store.set({ checked: !store.state.checked })
       )}
