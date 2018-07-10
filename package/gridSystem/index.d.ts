@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import * as React from 'react';
 export interface GridTheme {
     padding?: string;
@@ -7,6 +6,8 @@ export interface GridTheme {
     height?: string;
     color?: string;
     backgroundColor?: string;
+    margin?: string;
+    alignItems?: string;
 }
 export interface GridProps {
     id?: string;
@@ -24,6 +25,7 @@ export interface ColumnTheme {
     alignItems?: string;
     backgroundColor?: string;
     flexDirection?: string;
+    flexWrap?: string;
     overflow?: string;
 }
 export interface ColumnProps {

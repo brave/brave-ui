@@ -1,0 +1,12 @@
+export declare const StyledWrapper: any;
+export declare const StyledSummary: any;
+export declare const StyledTitle: any;
+export declare const StyledTokensWrapper: any;
+export declare const StyledGrantTitle: any;
+export declare const StyledGrantIcon: any;
+export declare const StyledGrant: any;
+export declare const StyledGrantText: any;
+export declare const StyledGrantClaim: any;
+export declare const StyledActivity: any;
+export declare const StyledActivityIcon: any;
+export declare const StyledGrantEmpty: any;
