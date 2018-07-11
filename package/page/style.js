@@ -7,6 +7,8 @@ const StyledPage = styled_components_1.default.div `
   color: ${(p) => helpers_1.setTheme(p.theme, 'color') || 'inherit'};
   padding: ${(p) => helpers_1.setTheme(p.theme, 'padding') || '40px'};
   background: ${(p) => helpers_1.setTheme(p.theme, 'background') || 'inherit'};
+  align-items: ${(p) => helpers_1.setTheme(p.theme, 'alignItems')};
+  justify-content: ${(p) => helpers_1.setTheme(p.theme, 'justifyContent')};
   box-sizing: border-box;
   background-attachment: fixed;
   background-size: auto;

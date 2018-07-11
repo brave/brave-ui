@@ -11,6 +11,8 @@ const StyledPage = styled.div`
   color: ${(p: PageProps) => setTheme(p.theme, 'color') || 'inherit'};
   padding: ${(p: PageProps) => setTheme(p.theme, 'padding') || '40px'};
   background: ${(p: PageProps) => setTheme(p.theme, 'background') || 'inherit'};
+  align-items: ${(p: PageProps) => setTheme(p.theme, 'alignItems')};
+  justify-content: ${(p: PageProps) => setTheme(p.theme, 'justifyContent')};
   box-sizing: border-box;
   background-attachment: fixed;
   background-size: auto;

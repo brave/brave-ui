@@ -9,6 +9,8 @@ export interface PageTheme {
   color?: string,
   padding?: string,
   background?: string
+  alignItems?: string
+  justifyContent?: string
 }
 
 export interface PageProps {
