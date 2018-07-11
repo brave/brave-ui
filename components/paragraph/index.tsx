@@ -12,7 +12,10 @@ export interface ParagraphTheme {
   fontSize?: string,
   fontWeight?: string,
   fontStyle?: string,
-  margin?: string
+  fontFamily?: string,
+  margin?: string,
+  textAlign?: string,
+  lineHeight?: string
 }
 
 export interface ParagraphProps {

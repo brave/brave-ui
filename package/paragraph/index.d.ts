@@ -5,7 +5,10 @@ export interface ParagraphTheme {
     fontSize?: string;
     fontWeight?: string;
     fontStyle?: string;
+    fontFamily?: string;
     margin?: string;
+    textAlign?: string;
+    lineHeight?: string;
 }
 export interface ParagraphProps {
     id?: string;
