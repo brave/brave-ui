@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`panel tests basic tests matches the snapshot 1`] = `
+.c0 {
+  padding: 40px;
+  background-color: #FFF;
+  font-size: inherit;
+  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px 0 rgba(39,46,64,0.2);
+}
+
+<div
+  className="c0"
+  id="testPanel"
+/>
+`;
