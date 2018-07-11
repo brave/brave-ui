@@ -4,6 +4,8 @@ exports[`unstyledButton tests basic tests matches the snapshot 1`] = `
 .c0 {
   font-size: inherit;
   color: inherit;
+  padding: 0;
+  margin: 0;
   font-family: inherit;
   box-sizing: border-box;
   display: block;

@@ -10,6 +10,9 @@ const StyledUnstyledButton = styled.button`
   font-size: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'fontSize') || 'inherit'};
   color: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'color') || 'inherit'};
   user-select: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'userSelect')};
+  text-decoration: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'textDecoration')};
+  padding: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'padding') || '0'};
+  margin: 0;
   font-family: inherit;
   box-sizing: border-box;
   display: block;
@@ -18,6 +21,10 @@ const StyledUnstyledButton = styled.button`
   border: none;
   cursor: pointer;
   outline: inherit;
+
+  &:hover {
+    color: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'hoverColor')};
+  }
 ` as any
 
 export default StyledUnstyledButton

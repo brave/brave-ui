@@ -3,7 +3,9 @@ import * as React from 'react';
 export interface UnstyledButtonTheme {
     fontSize?: string;
     color?: string;
+    hoverColor?: string;
     userSelect?: string;
+    textDecoration?: string;
 }
 export interface UnstyledButtonProps {
     id?: string;
