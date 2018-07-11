@@ -28,6 +28,7 @@ import ModalBackupRestore, { TabsType } from '../../../../components/rewards/mod
 import PanelEmpty from '../../../../components/rewards/panelEmpty';
 import PanelSummary from '../../../../components/rewards/panelSummary';
 import PanelOff from '../../../../components/rewards/panelOff';
+import SettingsPage from '../../../../components/rewards/settingsPage';
 
 // Images
 const adsImg = require('../../../assets/img/rewards_ads.svg')
@@ -232,7 +233,7 @@ class Settings extends React.PureComponent<{}, State> {
     const self = this
 
     return (
-      <div style={{maxWidth: '1000px', margin: '50px auto'}}>
+      <SettingsPage>
         <Grid columns={3} theme={{gridGap: '32px'}}>
           <Column size={2} theme={{justifyContent: 'center', flexWrap: 'wrap'}}>
             <MainToggle
@@ -425,7 +426,7 @@ class Settings extends React.PureComponent<{}, State> {
             </Panel>
           </Column>
         </Grid>
-      </div>
+      </SettingsPage>
     )
   }
 }
