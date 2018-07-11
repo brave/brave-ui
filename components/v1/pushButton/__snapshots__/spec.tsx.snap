@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pushButton tests basic tests matches the snapshot 1`] = `
+.c0 {
+  font-size: 13px;
+  min-width: 112px;
+  min-height: 40px;
+  border-radius: 20px;
+  font-family: inherit;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  box-shadow: none;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: none;
+  line-height: 1.25;
+  width: auto;
+  white-space: nowrap;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: .1s opacity,.1s background;
+  transition: .1s opacity,.1s background;
+  -webkit-letter-spacing: 0.46px;
+  -moz-letter-spacing: 0.46px;
+  -ms-letter-spacing: 0.46px;
+  letter-spacing: 0.46px;
+  color: #5A5A5A;
+  stroke: #5A5A5A;
+  background-color: #FFF;
+}
+
+.c0:active {
+  bottom: -1px;
+}
+
+.c0:hover {
+  color: #000;
+}
+
+<button
+  className="c0"
+  color="default"
+  disabled={false}
+  id={undefined}
+  onClick={undefined}
+  size="medium"
+/>
+`;
