@@ -31,8 +31,7 @@ exports[`all heading tests heading tests basic tests matches the snapshot 1`] = 
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-family: inherit;
-  margin-top: 14px;
-  margin-bottom: 22px;
+  margin: 14px 0 22px;
   -webkit-letter-spacing: -0.4px;
   -moz-letter-spacing: -0.4px;
   -ms-letter-spacing: -0.4px;

@@ -26,6 +26,7 @@ export interface HeadingTheme {
     color?: string;
     fontFamily?: string;
     fontWeight?: string;
+    margin?: string;
 }
 export interface HeadingProps {
     id?: string;

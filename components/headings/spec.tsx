@@ -200,6 +200,12 @@ describe('all heading tests', () => {
         const tree = create(component).toJSON()
         expect(tree).toHaveStyleRule('font-family', 'Arial')
       })
+
+      it('allows theming the `margin` property', () => {
+        const component = baseHeadingComponent({theme: { margin: '30px' } })
+        const tree = create(component).toJSON()
+        expect(tree).toHaveStyleRule('margin', '30px')
+      })
     })
   })
 })

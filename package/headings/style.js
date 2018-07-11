@@ -46,8 +46,7 @@ const StyledH1 = styled_components_1.default.h1 `
   color: ${(p) => helpers_1.setTheme(p.theme, 'color')};
   font-weight: ${(p) => helpers_1.setTheme(p.theme, 'fontWeight') || '400'};
   font-family: ${(p) => helpers_1.setTheme(p.theme, 'fontFamily') || 'inherit'};
-  margin-top: 14px;
-  margin-bottom: 22px;
+  margin: ${(p) => helpers_1.setTheme(p.theme, 'margin') || '14px 0 22px'};
   letter-spacing: -0.4px;
   font-size: 30px;
 `;
