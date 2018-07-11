@@ -1,6 +1,6 @@
 {
-  "private": true,
-  "name": "brave-ui-wrapper",
+  "name": "brave-ui",
+  "main": "index.js",
   "version": "0.0.0",
   "description": "List of reusable React components to empower your brave UI",
   "author": "Brave Software",
@@ -8,6 +8,10 @@
     {
       "name": "Cezar Augusto",
       "email": "cezar@brave.com"
+    },
+    {
+      "name": "Nejc Zdovc",
+      "email": "nejc@brave.com"
     }
   ],
   "license": "MPL-2.0",
