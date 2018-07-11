@@ -53,6 +53,7 @@ import ListToken from './rewards/listToken'
 import Panel from './rewards/panel'
 import Select from './rewards/select'
 import Tip from './rewards/tip'
+import SettingsPage from './rewards/settingsPage'
 
 
 export {
@@ -109,5 +110,6 @@ export {
   ListToken,
   Panel,
   Select,
-  Tip
+  Tip,
+  SettingsPage
 }
