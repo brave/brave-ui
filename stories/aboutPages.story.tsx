@@ -5,12 +5,18 @@
 // Storybook requires
 import { storiesOf, addDecorator } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
+import { BetterPageVisualizer } from './storyUtil'
 
 // Components
 import * as React from 'react'
 import NewPrivateTab from './concepts/aboutPages/newPrivateTab/index'
+import WelcomePage from './concepts/aboutPages/welcomePage/index'
 
 addDecorator(withKnobs)
 
+// Globally adapt the story visualizer for this story
+addDecorator(BetterPageVisualizer)
+
 storiesOf('Concepts: About Pages', module)
   .add('New Private Tab', () => <NewPrivateTab />)
+  .add('Welcome Page', () => <WelcomePage />)
