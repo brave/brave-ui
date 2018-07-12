@@ -105,4 +105,6 @@ const tip_1 = require("./rewards/tip");
 exports.Tip = tip_1.default;
 const settingsPage_1 = require("./rewards/settingsPage");
 exports.SettingsPage = settingsPage_1.default;
+const helpers_1 = require("./helpers");
+exports.getLocale = helpers_1.getLocale;
 //# sourceMappingURL=index.js.map
