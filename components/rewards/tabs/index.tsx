@@ -38,10 +38,15 @@ export default class Tabs extends React.PureComponent<Props, {}> {
           i === 0
         )
       )
+
       if (selected) {
         content = child.props.children
       }
-      return <StyledTab key={`${self.props.id}-tab-${key}`} onClick={self.props.onChange.bind(key)} selected={selected}>
+      return <StyledTab
+        key={`${self.props.id}-tab-${key}`}
+        onClick={self.props.onChange.bind(key)}
+        selected={selected}
+      >
         {title}
       </StyledTab>
     })

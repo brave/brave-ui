@@ -39,3 +39,36 @@ export const setValueBasedOnSize = (
  * @param {any} prop - the theme prop to check against
  */
 export const setTheme = (theme: any, prop: any) => theme && theme[prop]
+
+type Locals = {[key: string]: string}
+type Replacements = {[key: string]: string | number}
+let local: Locals = {}
+/**
+ * Initialize localization
+ * @param {Locals} locals - array of translations
+ */
+export const initLocale = (locals: Locals) => {
+  local = locals
+}
+
+/**
+ * Gets the localized string
+ * @param {string} key - translation identifier
+ * @param {Replacements} replacements - replacements for specific translation, replacement should be defined as {{key}}
+ * @returns {string} - the localized string
+ */
+export const getLocale = (key: string, replacements?: Replacements) => {
+  if (!key || !local[key]) {
+    return `MISSING: ${key}`
+  }
+
+  let returnVal = local[key]
+  if (!replacements) {
+    return returnVal
+  }
+
+  for (let item in replacements) {
+    returnVal = returnVal.replace(new RegExp('{{\\s*' + item + '\\s*}}', 'g'), replacements[item].toString())
+  }
+  return returnVal
+}

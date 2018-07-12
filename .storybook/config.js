@@ -5,6 +5,8 @@
 import { configure } from '@storybook/react'
 import { setOptions } from '@storybook/addon-options'
 import { setDefaults } from '@storybook/addon-info'
+import { initLocale } from '../components/helpers'
+import locales from '../stories/assets/locale'
 
 setOptions({
   name: 'Brave UI',
@@ -19,6 +21,7 @@ setDefaults({
 })
 
 function loadStories () {
+  initLocale(locales)
   const req = require.context('../stories', true, /\.tsx$/)
   req.keys().forEach(filename => req(filename))
 }

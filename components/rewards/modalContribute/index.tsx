@@ -6,6 +6,7 @@ import * as React from 'react'
 import { StyledWrapper, StyledTitle, StyledContent, StyledNum } from './style'
 import Modal from '../modal'
 import ContributeTable, { DetailRow } from '../contributeTable'
+import { getLocale } from '../../helpers';
 
 export interface Props {
   rows: DetailRow[]
@@ -13,15 +14,11 @@ export interface Props {
   id?: string
 }
 
-/*
-  TODO
-  - add local
- */
 export default class ModalContribute extends React.PureComponent<Props, {}> {
   get headers () {
     return [
-      'Site visited',
-      'Your attention metric'
+      getLocale('rewardsContributeVisited'),
+      getLocale('rewardsContributeAttention')
     ]
   }
 
@@ -32,9 +29,9 @@ export default class ModalContribute extends React.PureComponent<Props, {}> {
     return (
       <Modal id={id} onClose={onClose}>
         <StyledWrapper>
-          <StyledTitle>Brave Contribute</StyledTitle>
+          <StyledTitle>{getLocale('rewardsContribute')}</StyledTitle>
           <StyledContent>
-            You’re currently supporting <StyledNum>{numSites}</StyledNum> sites.
+            {getLocale('rewardsContributeText1')} <StyledNum>{numSites}</StyledNum> {getLocale('sites')}.
           </StyledContent>
           <ContributeTable
             header={this.headers}

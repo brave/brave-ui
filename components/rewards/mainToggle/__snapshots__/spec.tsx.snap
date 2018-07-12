@@ -176,7 +176,8 @@ exports[`MainToggle tests basic tests matches the snapshot 1`] = `
     <div
       className="c2"
     >
-      Brave Rewards 
+      MISSING: braveRewards
+       
       <span
         className="c3"
       >
@@ -212,26 +213,27 @@ exports[`MainToggle tests basic tests matches the snapshot 1`] = `
     <div
       className="c9"
     >
-      Why Brave Rewards…
+      MISSING: rewardsWhy
     </div>
     <div
       className="c10"
     >
-      Do you know that you’ve been paying for the web content with your data for the digital ads? You didn’t have a voice in it and worse, you’re exposed to privacy and security risks. 
+      MISSING: rewardsOffText1
+       
       <br />
       <b>
-        Brave Rewards allows you to take control back.
+        MISSING: rewardsOffText2
       </b>
     </div>
     <div
       className="c9"
     >
-      How does it work?
+      MISSING: rewardsOffText3
     </div>
     <div
       className="c10"
     >
-      Your attention is valuable. Get paid for the ads. And pay directly the favorite content creators at your will. That way, they can grow and continue delivering the content that delights you.
+      MISSING: rewardsOffText4
     </div>
   </div>
 </div>

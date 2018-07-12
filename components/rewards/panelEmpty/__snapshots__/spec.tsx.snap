@@ -204,20 +204,23 @@ exports[`PanelEmpty tests basic tests matches the snapshot 1`] = `
   <div
     className="c1"
   >
-    Sadly, no tokens yet.
+    MISSING: rewardsPanelEmptyText1
   </div>
   <div
     className="c2"
   >
     <b>
-      3 ways to fill your wallet:
+      MISSING: rewardsPanelEmptyText2
     </b>
     <br />
-    • You can add funds. 
+    • 
+    MISSING: rewardsPanelEmptyText3
     <br />
-    • You can earn tokens from Brave Ads.
+    • 
+    MISSING: rewardsPanelEmptyText4
     <br />
-    • Occasionally, you will also receive token grants from Brave. So keep an eye out for the alert!
+    • 
+    MISSING: rewardsPanelEmptyText5
   </div>
 </div>
 `;

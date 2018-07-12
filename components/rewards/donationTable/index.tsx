@@ -8,6 +8,7 @@ import { StyledWrapper, StyledType, StyledDate, StyledRemove, StyledRemoveIcon, 
 import Table, { Cell, Row } from '../table'
 import Profile, { Provider } from '../profile'
 import Tokens from '../tokens'
+import { getLocale } from '../../helpers';
 
 interface ProfileCell {
   verified: boolean
@@ -46,33 +47,29 @@ interface Theme {
 const removeIcon = require('./assets/close')
 const monthlyIcon = require('./assets/monthly')
 
-/*
-  TODO
-  - add local
- */
 export default class DonationTable extends React.PureComponent<Props, {}> {
   getTypeContent (row: DetailRow): Cell {
     switch (row.type) {
       case 'recurring':
         return {
           content: <>
-            <StyledType>Recurring <StyledRecurringIcon>{monthlyIcon}</StyledRecurringIcon></StyledType>
+            <StyledType>{getLocale('recurring')} <StyledRecurringIcon>{monthlyIcon}</StyledRecurringIcon></StyledType>
             <StyledRemove onClick={row.onRemove}>
-              <StyledRemoveIcon> {removeIcon} </StyledRemoveIcon>remove
+              <StyledRemoveIcon> {removeIcon} </StyledRemoveIcon>{getLocale('remove')}
             </StyledRemove>
           </>
         }
       case 'donation':
         return {
           content: <>
-            <StyledType>One time</StyledType>
+            <StyledType>{getLocale('oneTime')}</StyledType>
             <StyledDate>{row.text}</StyledDate>
           </>
         }
       case 'tip':
         return {
            content: <>
-            <StyledType>Tip on like</StyledType>
+            <StyledType>{getLocale('tipOnLike')}</StyledType>
             <StyledDate>{row.text}</StyledDate>
           </>
         }
@@ -133,26 +130,27 @@ export default class DonationTable extends React.PureComponent<Props, {}> {
 
     return [
       {
-        content: 'Site visited',
+        content: getLocale('siteVisited'),
         theme
       },
       {
-        content: 'Type',
+        content: getLocale('type'),
         theme
       },
       {
-        content: 'Tokens',
+        content: getLocale('tokens'),
         theme: Object.assign({
           'text-align': 'right',
-          'padding-right': '7px'
+          'padding-right': '7px',
+          'text-transform': 'capitalize'
         }, theme)
       },
     ]
   }
 
   render () {
-    const { id, children, rows, numItems, allItems, onClick } = this.props
-
+    const { id, children, rows, allItems, onClick } = this.props
+    const numItems = this.props.numItems || 0
     return (
       <StyledWrapper id={id}>
         <Table
@@ -163,7 +161,7 @@ export default class DonationTable extends React.PureComponent<Props, {}> {
         {
           !allItems
           ? <StyledToggle onClick={onClick}>
-              See all {numItems || 0} items
+              {getLocale('seeAllItems', {numItems})}
           </StyledToggle>
           : null
         }

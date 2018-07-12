@@ -22,6 +22,7 @@ import {
   StyledActionWrapper
 } from './style'
 import ButtonSecondary from '../buttonSecondary'
+import { getLocale } from '../../helpers';
 
 type Grant = {tokens: number, expireDate: string}
 
@@ -45,11 +46,6 @@ const upholdColorIcon = require('./assets/upholdColor')
 const gearIcon = require('./assets/gear')
 const arrowUpIcon = require('./assets/arrowUp')
 const arrowDownIcon = require('./assets/arrowDown')
-
-/*
-  TODO
-  - add local
- */
 
 interface State {
   grantDetails: boolean
@@ -105,7 +101,7 @@ export default class Panel extends React.PureComponent<Props, State> {
 
     return <StyledWrapper id={id}>
       <StyledHeader bg={panel}>
-        <StyledTitle>Your wallet</StyledTitle>
+        <StyledTitle>{getLocale('yourWallet')}</StyledTitle>
         {
           showSecActions
           ? <StyledIconAction onClick={onSettingsClick}>
@@ -115,11 +111,11 @@ export default class Panel extends React.PureComponent<Props, State> {
         }
 
         <StyledBalance>
-          <StyledBalanceTitle>Token balance</StyledBalanceTitle>
+          <StyledBalanceTitle>{getLocale('tokenBalance')}</StyledBalanceTitle>
           <StyledBalanceTokens>{this.formatTokens(tokens)}</StyledBalanceTokens>
           <StyledBalanceConverted>~ {converted}</StyledBalanceConverted>
           <ButtonSecondary
-            text={'Detail'}
+            text={getLocale('detail')}
             size={'small'}
             color={'subtle'}
             onClick={enabled ? this.toggleGrantDetails : undefined}
@@ -133,7 +129,7 @@ export default class Panel extends React.PureComponent<Props, State> {
             {
               grants && grants.map((grant: Grant, i: number) => {
                 return <StyledGrant key={`${id}-grant-${i}`}>
-                  <b>{grant.tokens} tokens</b> <span>expires on {grant.expireDate}</span>
+                  <b>{grant.tokens} {getLocale('tokens')}</b> <span>{getLocale('expiresOn')} {grant.expireDate}</span>
                 </StyledGrant>
               })
             }
@@ -153,10 +149,10 @@ export default class Panel extends React.PureComponent<Props, State> {
             {
               connectedWallet
               ? <>
-                  <StyledCopyImage>{upholdColorIcon}</StyledCopyImage> Add, withdraw and manage funds at <b>Uphold</b>.
+                  <StyledCopyImage>{upholdColorIcon}</StyledCopyImage> {getLocale('rewardsPanelText1')} <b>Uphold</b>.
               </>
               : <>
-                  <StyledCopyImage>{upholdIcon}</StyledCopyImage> Brave wallet is managed by <b>Uphold</b>.
+                  <StyledCopyImage>{upholdIcon}</StyledCopyImage> {getLocale('rewardsPanelText2')} <b>Uphold</b>.
               </>
             }
         </StyledCopy>

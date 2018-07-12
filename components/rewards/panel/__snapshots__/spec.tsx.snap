@@ -127,7 +127,7 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
     <div
       className="c2"
     >
-      Your wallet
+      MISSING: yourWallet
     </div>
     <div
       className="c3"
@@ -135,7 +135,7 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
       <div
         className="c4"
       >
-        Token balance
+        MISSING: tokenBalance
       </div>
       <div
         className="c5"
@@ -171,7 +171,7 @@ exports[`Panel tests basic tests matches the snapshot 1`] = `
         onClick={undefined}
         size="small"
       >
-        Detail
+        MISSING: detail
         <span
           className="c8"
           icon={

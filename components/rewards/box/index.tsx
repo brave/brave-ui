@@ -20,6 +20,7 @@ import { StyledWrapper,
   StyledFlip
 } from './style'
 import Toggle from '../toggle'
+import { getLocale } from '../../helpers';
 
 const close = require('./assets/close')
 const settings = require('./assets/settings')
@@ -47,7 +48,6 @@ interface State {
 
 /*
   TODO
-  - add local
   - add fade effect
  */
 export default class Box extends React.PureComponent<Props, State> {
@@ -117,7 +117,7 @@ export default class Box extends React.PureComponent<Props, State> {
             </StyledSettingsClose>
             <StyledSettingsTitle>
               <StyledSettingsIcon>{settings}</StyledSettingsIcon>
-              <StyledSettingsText>{title} Settings</StyledSettingsText>
+              <StyledSettingsText>{title} {getLocale('settings')}</StyledSettingsText>
             </StyledSettingsTitle>
             {settingsChild}
           </StyledSettingsWrapper>

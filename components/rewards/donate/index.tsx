@@ -16,7 +16,7 @@ import {
 } from './style'
 
 import Amount from '../amount'
-import { setTheme } from '../../helpers';
+import { getLocale, setTheme } from '../../helpers';
 
 const send = require('./assets/send')
 const sadFace = require('./assets/sadFace')
@@ -48,10 +48,7 @@ export interface Theme {
   sendBgColor?: CSS.Color
   disabledSendColor?: CSS.Color
 }
-/*
-  TODO
-  - add local
- */
+
 export default class Donate extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props)
@@ -139,7 +136,7 @@ export default class Donate extends React.PureComponent<Props, State> {
         this.state.missingFunds
           ? <StyledFunds theme={theme}>
             <StyledIconFace>{sadFace}</StyledIconFace>
-            <StyledFundsText>Not enough tokens. Please <a href="#">add funds</a>.</StyledFundsText>
+            <StyledFundsText>{getLocale('notEnoughTokens')} <a href="#">{getLocale('addFunds')}</a>.</StyledFundsText>
           </StyledFunds>
           : null
       }

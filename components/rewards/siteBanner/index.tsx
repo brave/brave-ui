@@ -34,6 +34,7 @@ import {
 
 import Donate from '../donate'
 import Checkbox from '../checkbox'
+import { getLocale } from '../../helpers';
 
 type Social = {type: SocialType, name: string, handler: string}
 type SocialType = 'twitter' | 'youtube' | 'twitch'
@@ -67,10 +68,6 @@ interface State {
 const close = require('./assets/close')
 const monthly = require('./assets/monthly')
 
-/*
-  TODO
-  - add local
- */
 export default class SiteBanner extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props)
@@ -106,26 +103,28 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
     const self = this
     return social.map((item: Social) => {
       const icon = require(`./assets/${item.type}`)
-      return <StyledSocialItem key={`${self.props.id}-social-${item.type}`} href={self.getSocialLink(item)} target={'_blank'}>
+      return <StyledSocialItem
+        key={`${self.props.id}-social-${item.type}`}
+        href={self.getSocialLink(item)}
+        target={'_blank'}
+      >
         <StyledSocialIcon>{icon}</StyledSocialIcon> {item.name || item.handler}
       </StyledSocialItem>
     })
   }
 
   getTitle (title?: string) {
-    return title ? title : 'Welcome!'
+    return title ? title : getLocale('welcome')
   }
 
   getText (children?: React.ReactNode) {
     if (!children) {
       return <>
         <p>
-          Thanks for stopping by. We joined Brave’s vision of protecting your privacy because
-          we believe that fans like you would support us in our effort to keep the web a
-          clean and safe place to be.
+          {getLocale('rewardsBannerText1')}
         </p>
         <p>
-          Your donation is much appreciated and it encourages us to continue to improve our content.
+          {getLocale('rewardsBannerText2')}
         </p>
       </>
     }
@@ -185,9 +184,9 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
                 currentDonation && !isNaN(currentDonation) && currentDonation > 0
                 ? <StyledRecurring>
                   <StyledIconRecurringBig>{monthly('#696fdc')}</StyledIconRecurringBig>
-                  You're currently donating {currentDonation} BAT to this site every month.
+                  {getLocale('currentDonation', {currentDonation})}
                   <StyledRemove>
-                    <StyledIconRemove>{close}</StyledIconRemove>remove
+                    <StyledIconRemove>{close}</StyledIconRemove>{getLocale('remove')}
                   </StyledRemove>
                 </StyledRecurring>
                 : null
@@ -195,14 +194,14 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
             </StyledContent>
             <StyledDonation>
               <StyledWallet>
-                wallet balance <StyledTokens>{balance} tokens</StyledTokens>
+                {getLocale('walletBalance')} <StyledTokens>{balance} {getLocale('tokens')}</StyledTokens>
               </StyledWallet>
               <Donate
                 balance={balance}
                 donationAmounts={donationAmounts}
-                title={'Donation amount'}
+                title={getLocale('donationAmount')}
                 onDonate={this.onDonate}
-                actionText={'Send my donation'}
+                actionText={getLocale('sendDonation')}
                 onAmountSelection={onAmountSelection}
                 theme={{
                   paddingFunds: '13px 12px 13px 24px',
@@ -216,7 +215,7 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
                   theme={{checkColor: '#fff', borderColor: '#a1a8f2'}}
                 >
                   <div data-key='make'>
-                    <StyledOption>Make this monthly</StyledOption> <StyledIconRecurring>{monthly()}</StyledIconRecurring>
+                    <StyledOption>{getLocale('makeMonthly')}</StyledOption> <StyledIconRecurring>{monthly()}</StyledIconRecurring>
                   </div>
                 </Checkbox>
               </Donate>

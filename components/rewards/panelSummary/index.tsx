@@ -19,6 +19,7 @@ import {
 } from './style'
 import Tokens from '../tokens'
 import ListToken from '../listToken'
+import { getLocale } from '../../helpers';
 
 const coinsIcon = require('./assets/coins')
 const activityIcon = require('./assets/activity')
@@ -38,55 +39,54 @@ export interface Props {
   onClaim?: (id: string) => void
 }
 
-/*
-  TODO
-  - add local
- */
 export default class PanelSummary extends React.PureComponent<Props, {}> {
   render () {
     const { id, grant, ads, contribute, donation, tips, grants, onClaim, onActivity } = this.props
+    const date = new Date()
+    const month = getLocale(`month${date.toLocaleString('en-us', { month: "short" })}`)
+    const year = date.getFullYear()
 
     return (
       <StyledWrapper id={id}>
-        <StyledSummary>Rewards Summary</StyledSummary>
-        <StyledTitle>May 2018</StyledTitle>
+        <StyledSummary>{getLocale('rewardsSummary')}</StyledSummary>
+        <StyledTitle>{month} {year}</StyledTitle>
         <StyledTokensWrapper>
           <ListToken
             value={grant.tokens}
             converted={grant.converted}
             theme={{color: grant.color}}
-            title={'Token Grant'}
+            title={getLocale('tokenGrant')}
           />
           <ListToken
             value={ads.tokens}
             converted={ads.converted}
             theme={{color: ads.color}}
-            title={'Earnings from Brave Ads'}
+            title={getLocale('earningsAds')}
           />
           <ListToken
             value={contribute.tokens}
             converted={contribute.converted}
             theme={{color: contribute.color}}
-            title={'Brave Contribute'}
+            title={getLocale('rewardsContribute')}
             isNegative
           />
           <ListToken
             value={donation.tokens}
             converted={donation.converted}
             theme={{color: donation.color}}
-            title={'Recurring Donations'}
+            title={getLocale('recurringDonations')}
             isNegative
           />
           <ListToken
             value={tips.tokens}
             converted={tips.converted}
             theme={{color: tips.color, borderBottom: 'none'}}
-            title={'One-time Donations/Tips'}
+            title={getLocale('oneTimeDonation')}
             isNegative
           />
         </StyledTokensWrapper>
         <StyledGrantTitle>
-          <StyledGrantIcon>{coinsIcon}</StyledGrantIcon> Token Grant
+          <StyledGrantIcon>{coinsIcon}</StyledGrantIcon> {getLocale('tokenGrant')}
         </StyledGrantTitle>
         {
           grants && grants.map((grant: Grant, i: number) => {
@@ -108,17 +108,17 @@ export default class PanelSummary extends React.PureComponent<Props, {}> {
                   }}
                 />
               </StyledGrantText>
-              <StyledGrantClaim onClick={onClaim && onClaim.bind(grant.id)}>Claim</StyledGrantClaim>
+              <StyledGrantClaim onClick={onClaim && onClaim.bind(grant.id)}>{getLocale('claim')}</StyledGrantClaim>
             </StyledGrant>
           })
         }
         {
           !grants || grants.length === 0
-          ? <StyledGrantEmpty>Currently no token grant is available.</StyledGrantEmpty>
+          ? <StyledGrantEmpty>{getLocale('noGrants')}</StyledGrantEmpty>
           : null
         }
         <StyledActivity onClick={onActivity}>
-          <StyledActivityIcon>{activityIcon}</StyledActivityIcon> Wallet Activity/ Monthly Statement
+          <StyledActivityIcon>{activityIcon}</StyledActivityIcon> {getLocale('walletActivity')}
         </StyledActivity>
       </StyledWrapper>
     )

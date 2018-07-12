@@ -154,7 +154,8 @@ exports[`Tip tests basic tests matches the snapshot 1`] = `
         <span
           className="c6"
         >
-          Allow tips on 
+          MISSING: allowTip
+           
         </span>
         <span
           className="c7"
@@ -200,7 +201,7 @@ exports[`Tip tests basic tests matches the snapshot 1`] = `
           />
         </svg>
       </span>
-      Send my Tip
+      MISSING: sendTip
     </div>
   </div>
 </div>
