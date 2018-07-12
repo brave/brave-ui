@@ -103,4 +103,6 @@ const select_1 = require("./rewards/select");
 exports.Select = select_1.default;
 const tip_1 = require("./rewards/tip");
 exports.Tip = tip_1.default;
+const settingsPage_1 = require("./rewards/settingsPage");
+exports.SettingsPage = settingsPage_1.default;
 //# sourceMappingURL=index.js.map
