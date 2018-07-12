@@ -2,7 +2,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import PushButton from '../pushButton'
+import { PushButton } from '../pushButton'
 
 describe('pushButton tests', () => {
   const baseComponent = (props?: object) => (<PushButton {...props} />)

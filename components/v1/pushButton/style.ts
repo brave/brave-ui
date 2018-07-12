@@ -94,4 +94,9 @@ const StyledPushButton = styled.button`
   }
 ` as any
 
- export default StyledPushButton
+const StyledPushButtonLink = StyledPushButton.withComponent('a')
+
+export {
+  StyledPushButton,
+  StyledPushButtonLink
+}
