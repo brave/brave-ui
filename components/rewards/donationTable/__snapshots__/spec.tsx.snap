@@ -40,6 +40,7 @@ exports[`DonationTable tests basic tests matches the snapshot 1`] = `
   padding: 9px 0;
   text-align: right;
   padding-right: 7px;
+  text-transform: capitalize;
 }
 
 <div
@@ -58,17 +59,17 @@ exports[`DonationTable tests basic tests matches the snapshot 1`] = `
           <th
             className="c1"
           >
-            Site visited
+            MISSING: siteVisited
           </th>
           <th
             className="c1"
           >
-            Type
+            MISSING: type
           </th>
           <th
             className="c2"
           >
-            Tokens
+            MISSING: tokens
           </th>
         </tr>
       </thead>
@@ -78,9 +79,7 @@ exports[`DonationTable tests basic tests matches the snapshot 1`] = `
     className="c3"
     onClick={undefined}
   >
-    See all 
-    0
-     items
+    MISSING: seeAllItems
   </div>
 </div>
 `;

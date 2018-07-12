@@ -15,6 +15,7 @@ import {
 } from './style'
 import Table, { Row } from '../table'
 import Profile, { Provider } from '../profile'
+import { getLocale } from '../../helpers';
 
 interface ProfileCell {
   verified: boolean
@@ -47,10 +48,6 @@ interface Theme {
 
 const removeIcon = require('./assets/close')
 
-/*
-  TODO
-  - add local
- */
 export default class ContributeTable extends React.PureComponent<Props, {}> {
   getHeader = (header: string[]) => {
     if (!header) {
@@ -117,7 +114,8 @@ export default class ContributeTable extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { id, header, children, rows, numSites, allSites, onShowAll } = this.props
+    const { id, header, children, rows, allSites, onShowAll } = this.props
+    const numSites = this.props.numSites || 0
 
     return (
       <StyledWrapper id={id}>
@@ -128,7 +126,7 @@ export default class ContributeTable extends React.PureComponent<Props, {}> {
         />
         {
           !allSites
-          ? <StyledToggle onClick={onShowAll}>See all {numSites || 0} sites</StyledToggle>
+          ? <StyledToggle onClick={onShowAll}>{getLocale('seeAllSites', {numSites})}</StyledToggle>
           : null
         }
       </StyledWrapper>

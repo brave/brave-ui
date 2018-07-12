@@ -224,7 +224,8 @@ exports[`Box tests basic tests matches the snapshot 1`] = `
           className="c13"
         >
           test
-           Settings
+           
+          MISSING: settings
         </span>
       </div>
     </div>

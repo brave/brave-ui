@@ -111,18 +111,21 @@ exports[`ModalContribute tests basic tests matches the snapshot 1`] = `
         <div
           className="c4"
         >
-          Brave Contribute
+          MISSING: rewardsContribute
         </div>
         <div
           className="c5"
         >
-          You’re currently supporting 
+          MISSING: rewardsContributeText1
+           
           <span
             className="c6"
           >
             0
           </span>
-           sites.
+           
+          MISSING: sites
+          .
         </div>
         <div
           className=""
@@ -143,7 +146,7 @@ exports[`ModalContribute tests basic tests matches the snapshot 1`] = `
                     <div
                       className=""
                     >
-                      Site visited
+                      MISSING: rewardsContributeVisited
                     </div>
                   </th>
                   <th
@@ -152,7 +155,7 @@ exports[`ModalContribute tests basic tests matches the snapshot 1`] = `
                     <div
                       className="c9 c10"
                     >
-                      Your attention metric
+                      MISSING: rewardsContributeAttention
                     </div>
                   </th>
                 </tr>

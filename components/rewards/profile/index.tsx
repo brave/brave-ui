@@ -15,6 +15,7 @@ import {
   StyledProviderWrap,
   StyledInlineVerified
 } from './style'
+import { getLocale } from '../../helpers';
 
 export type Provider = 'twitter' | 'youtube' | 'twitch'
 
@@ -31,18 +32,17 @@ const verifiedIcon = require('./assets/verified')
 
 /*
   TODO
-  - add local
   - add fallback image
  */
 export default class Profile extends React.PureComponent<Props, {}> {
   getProviderName (provider: Provider) {
     switch (provider) {
       case 'youtube':
-        return 'on YouTube'
+        return `${getLocale('on')} YouTube`
       case 'twitter':
-        return 'on Twitter'
+        return `${getLocale('on')} Twitter`
       case 'twitch':
-        return 'on Twitch'
+        return `${getLocale('on')} Twitch`
     }
   }
 
@@ -75,7 +75,7 @@ export default class Profile extends React.PureComponent<Props, {}> {
           {
             verified && type === 'big'
             ? <StyledProviderWrap>
-              <StyledInlineVerified>{verifiedIcon}</StyledInlineVerified> Brave Verified Publisher
+              <StyledInlineVerified>{verifiedIcon}</StyledInlineVerified> {getLocale('verifiedPublisher')}
             </StyledProviderWrap>
             : null
           }

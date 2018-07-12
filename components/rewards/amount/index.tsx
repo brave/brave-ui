@@ -4,6 +4,7 @@
 
 import * as React from 'react'
 import { StyledWrapper, StyledAmount, StyledLogo, StyledConverted, StyledTokens } from './style'
+import { getLocale } from '../../helpers';
 
 export interface Props {
   amount: number
@@ -12,20 +13,16 @@ export interface Props {
   id?: string
   selected?: boolean
   type?: 'big' | 'small'
+  currency?: string
 }
 
 const logo = require('./assets/logo')
-
-/*
-  TODO
-  - add local
-  - add support for multiple currencies
- */
 
 export default class Amount extends React.PureComponent<Props, {}> {
   render () {
     const { id, onClick, amount, selected, type } = this.props
     const converted = this.props.converted || 0
+    const currency = this.props.currency || 'USD'
 
     return (
       <StyledWrapper id={id} onClick={onClick.bind(amount)}>
@@ -33,7 +30,7 @@ export default class Amount extends React.PureComponent<Props, {}> {
           <StyledLogo>{logo}</StyledLogo>{amount} <StyledTokens>{type === 'big' ? 'tokens' : null}</StyledTokens>
         </StyledAmount>
         <StyledConverted selected={selected} type={type}>
-          about {converted.toFixed(2)} USD
+          {getLocale('about')} {converted.toFixed(2)} {currency}
         </StyledConverted>
       </StyledWrapper>
     )

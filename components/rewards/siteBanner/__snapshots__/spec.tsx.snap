@@ -302,16 +302,16 @@ exports[`List tests basic tests matches the snapshot 1`] = `
           <div
             className="c11"
           >
-            Welcome!
+            MISSING: welcome
           </div>
           <div
             className="c12"
           >
             <p>
-              Thanks for stopping by. We joined Brave’s vision of protecting your privacy because we believe that fans like you would support us in our effort to keep the web a clean and safe place to be.
+              MISSING: rewardsBannerText1
             </p>
             <p>
-              Your donation is much appreciated and it encourages us to continue to improve our content.
+              MISSING: rewardsBannerText2
             </p>
           </div>
         </div>
@@ -322,11 +322,13 @@ exports[`List tests basic tests matches the snapshot 1`] = `
         <div
           className="c14"
         >
-          wallet balance 
+          MISSING: walletBalance
+           
           <span
             className="c15"
           >
-             tokens
+             
+            MISSING: tokens
           </span>
         </div>
         <div
@@ -339,7 +341,7 @@ exports[`List tests basic tests matches the snapshot 1`] = `
             <div
               className="c18"
             >
-              Donation amount
+              MISSING: donationAmount
             </div>
             <div
               className="c19"
@@ -361,7 +363,7 @@ exports[`List tests basic tests matches the snapshot 1`] = `
                   <span
                     className="c23"
                   >
-                    Make this monthly
+                    MISSING: makeMonthly
                   </span>
                    
                   <span
@@ -403,7 +405,7 @@ exports[`List tests basic tests matches the snapshot 1`] = `
                 />
               </svg>
             </span>
-            Send my donation
+            MISSING: sendDonation
           </div>
         </div>
       </div>

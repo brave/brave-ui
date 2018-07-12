@@ -16,6 +16,7 @@ import TextArea from '../textarea'
 import Modal from '../modal'
 import ButtonPrimary from '../buttonPrimary'
 import ButtonSecondary from '../buttonSecondary'
+import { getLocale } from '../../helpers';
 
 export type TabsType = 'backup' | 'restore'
 
@@ -35,7 +36,6 @@ export interface Props {
 
 /*
   TODO
-  - add local
   - add error flow
  */
 export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
@@ -58,32 +58,48 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
       <Modal id={id} onClose={onClose} theme={{maxWidth: '666px'}}>
         <StyledWrapper>
           <Tabs activeTabId={activeTabId} onChange={onTabChange}>
-          <div id={`${id}-backup`} data-key={'backup'} data-title={'Backup your Wallet'}>
+          <div id={`${id}-backup`} data-key={'backup'} data-title={getLocale('rewardsBackupText1')}>
             <StyledContent>
-              Keep this anonymized recovery key for your Brave wallet in the safe place in case you lose access
-              to this browser. Your funds are safe as long as you keep this recovery key either on a paper
-              or in a device with preferably no internet connection.
+              {getLocale('rewardsBackupText2')}
             </StyledContent>
             <TextArea
-              title={'Recovery Key'}
+              title={getLocale('recoveryKeys')}
               theme={{maxWidth: '100%', minHeight: '112px'}}
               defaultValue={recoveryKey}
               disabled
             />
             <StyleButtonWrapper>
-              <ButtonSecondary text={'Copy'} size={'small'} color={'subtle'} onClick={onCopy.bind(recoveryKey)} />
-              <ButtonSecondary text={'Print'} size={'small'} color={'subtle'} onClick={onPrint.bind(recoveryKey)} />
-              <ButtonSecondary text={'Save as File'} size={'small'} color={'subtle'} onClick={onSaveFile.bind(recoveryKey)} />
+              <ButtonSecondary
+                text={getLocale('copy')}
+                size={'small'}
+                color={'subtle'}
+                onClick={onCopy.bind(recoveryKey)}
+              />
+              <ButtonSecondary
+                text={getLocale('print')}
+                size={'small'}
+                color={'subtle'}
+                onClick={onPrint.bind(recoveryKey)}
+              />
+              <ButtonSecondary
+                text={getLocale('saveAsFile')}
+                size={'small'}
+                color={'subtle'}
+                onClick={onSaveFile.bind(recoveryKey)}
+              />
             </StyleButtonWrapper>
             <StyledDoneWrapper>
-              <ButtonPrimary text={'Done'} size={'medium'} color={'brand'} onClick={onClose} />
+              <ButtonPrimary
+                text={getLocale('done')}
+                size={'medium'}
+                color={'brand'}
+                onClick={onClose}
+              />
             </StyledDoneWrapper>
           </div>
-          <div id={`${id}-restore`} data-key={'restore'} data-title={'Restore your Wallet'}>
+          <div id={`${id}-restore`} data-key={'restore'} data-title={getLocale('rewardsRestoreText1')}>
             <StyledContent>
-              Enter the recovery key to restore your Brave wallet. Make sure that the current wallet doesn’t
-              have any balance or is backed up safely. Restoring a wallet replaces the current wallet and you
-              will loose any balance if you don’t back up its recovery key.
+              {getLocale('rewardsRestoreText2')}
             </StyledContent>
             {
               error
@@ -91,13 +107,25 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
               : null
             }
             <TextArea
-              title={<>Enter your recovery key or <StyledImport onClick={onImport}>import</StyledImport></>}
+              title={<>
+                {getLocale('rewardsRestoreText3')}<StyledImport onClick={onImport}>{getLocale('import')}</StyledImport>
+              </>}
               theme={{maxWidth: '100%', minHeight: '112px'}}
               defaultValue={''}
             />
             <StyledActionsWrapper>
-              <ButtonSecondary text={'Cancel'} size={'medium'} color={'brand'} onClick={onClose} />
-              <ButtonPrimary text={'Restore'} size={'medium'} color={'brand'} onClick={onRestore.bind(recoveryKey)} />
+              <ButtonSecondary
+                text={getLocale('cancel')}
+                size={'medium'}
+                color={'brand'}
+                onClick={onClose}
+              />
+              <ButtonPrimary
+                text={getLocale('restore')}
+                size={'medium'}
+                color={'brand'}
+                onClick={onRestore.bind(recoveryKey)}
+              />
             </StyledActionsWrapper>
           </div>
         </Tabs>
