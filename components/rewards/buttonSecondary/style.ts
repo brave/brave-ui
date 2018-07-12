@@ -9,7 +9,7 @@ const getColor = (color: Color, disabled: boolean) => {
   let colorCode = ''
 
   if (disabled && color !== 'subtle') {
-    return '#EBECF0'
+    return '223, 223, 232'
   }
 
   switch (color) {
@@ -42,7 +42,7 @@ const generateWrapper = (size: Size, color: Color, disabled: boolean) => {
       }
       
       :active {
-        border-color: rgba(${colorCode}, 0.6);
+        border-color: rgba(${colorCode}, 0.4);
       }
     `
 
@@ -52,23 +52,17 @@ const generateWrapper = (size: Size, color: Color, disabled: boolean) => {
       }
       
       :active {
-        color: rgba(${colorCode}, 0.6);
+        color: rgba(${colorCode}, 0.4);
       }
   `
   }
 
   if (disabled) {
-    if (color !== 'subtle') {
-      props = `
-        background: ${colorCode};
-        color: #fff;
-      `
-    } else {
-      props = `
-        opacity: 0.3
-        color: rgba(${colorCode}, 1);
-      `
-    }
+    border = `border: 1px solid rgba(${colorCode}, 1);`
+    props = `
+      opacity: 0.4
+      color: rgba(${colorCode}, 1);
+    `
   }
 
   switch (size)  {
