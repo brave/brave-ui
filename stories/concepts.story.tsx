@@ -9,9 +9,8 @@ import { boolean, number, object, text, withKnobs } from '@storybook/addon-knobs
 import { BetterPageVisualizer } from './storyUtil'
 
 // Components
-import * as React from 'react'
-import NewPrivateTab from './concepts/aboutPages/newPrivateTab/index'
-import WelcomePage from './concepts/aboutPages/welcomePage/index'
+import NewPrivateTab from './concepts/pages/newPrivateTab'
+import WelcomePage from './concepts/pages/welcomePage'
 import BraveShields from './concepts/features/braveShields'
 import Settings from './concepts/pages/RewardsSettings'
 import SiteBanner from '../components/rewards/siteBanner'
