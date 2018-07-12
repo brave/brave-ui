@@ -6,6 +6,7 @@ export interface Props {
     id?: string;
     selected?: boolean;
     type?: 'big' | 'small';
+    currency?: string;
 }
 export default class Amount extends React.PureComponent<Props, {}> {
     render(): JSX.Element;

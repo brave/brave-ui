@@ -2,20 +2,24 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const style_1 = require("./style");
+const helpers_1 = require("../../helpers");
 const coins = require('./assets/coins');
 class PanelEmpty extends React.PureComponent {
     render() {
         return (React.createElement(style_1.StyledWrapper, { id: this.props.id },
             coins,
-            React.createElement(style_1.StyledTitle, null, "Sadly, no tokens yet."),
+            React.createElement(style_1.StyledTitle, null, helpers_1.getLocale('rewardsPanelEmptyText1')),
             React.createElement(style_1.StyledContent, null,
-                React.createElement("b", null, "3 ways to fill your wallet:"),
+                React.createElement("b", null, helpers_1.getLocale('rewardsPanelEmptyText2')),
                 React.createElement("br", null),
-                "\u2022 You can add funds. ",
+                "\u2022 ",
+                helpers_1.getLocale('rewardsPanelEmptyText3'),
                 React.createElement("br", null),
-                "\u2022 You can earn tokens from Brave Ads.",
+                "\u2022 ",
+                helpers_1.getLocale('rewardsPanelEmptyText4'),
                 React.createElement("br", null),
-                "\u2022 Occasionally, you will also receive token grants from Brave. So keep an eye out for the alert!")));
+                "\u2022 ",
+                helpers_1.getLocale('rewardsPanelEmptyText5'))));
     }
 }
 exports.default = PanelEmpty;

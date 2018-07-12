@@ -4,7 +4,7 @@ const styled_components_1 = require("styled-components");
 const getColor = (color, disabled) => {
     let colorCode = '';
     if (disabled) {
-        return '#EBECF0';
+        return '#DFDFE8';
     }
     switch (color) {
         case 'brand':
@@ -26,13 +26,12 @@ const generateContent = (size, color, disabled) => {
     }
     
     :active {
-      color: rgba(${colorCode}, 0.6);
+      color: rgba(${colorCode}, 0.4);
     }
   `;
     if (disabled) {
         props = `
-      background: ${colorCode};
-      color: #fff;
+      color: ${colorCode};
     `;
     }
     switch (size) {

@@ -69,8 +69,9 @@ class Donate extends React.PureComponent {
                 ? React.createElement(style_1.StyledFunds, { theme: theme },
                     React.createElement(style_1.StyledIconFace, null, sadFace),
                     React.createElement(style_1.StyledFundsText, null,
-                        "Not enough tokens. Please ",
-                        React.createElement("a", { href: "#" }, "add funds"),
+                        helpers_1.getLocale('notEnoughTokens'),
+                        " ",
+                        React.createElement("a", { href: "#" }, helpers_1.getLocale('addFunds')),
                         "."))
                 : null);
     }
