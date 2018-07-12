@@ -48,5 +48,5 @@ import Panel from './rewards/panel';
 import Select from './rewards/select';
 import Tip from './rewards/tip';
 import SettingsPage from './rewards/settingsPage';
-import { getLocale } from './helpers';
-export { TextLabel, Anchor, UnstyledButton, PushButton, SwitchButton, SelectOption, Grid, Column, ContentToggleArrow, Separator, BoxedContent, Paragraph, MediaContent, TitleHeading, SectionHeading, FeatureHeading, Heading, Page, DataBlock, DataItem, Clock, Alert, ButtonPrimary, DisabledContent, MainToggle, PanelEmpty, SiteBanner, Toggle, Amount, ButtonSecondary, Donate, Modal, PanelOff, Table, Tokens, Box, Checkbox, DonationTable, ModalBackupRestore, PanelSummary, Tabs, Tooltip, ButtonCta, ContributeTable, List, ModalContribute, Profile, Textarea, ButtonGhost, ControlWrapper, ListToken, Panel, Select, Tip, SettingsPage, getLocale };
+import { initLocale } from './helpers';
+export { TextLabel, Anchor, UnstyledButton, PushButton, SwitchButton, SelectOption, Grid, Column, ContentToggleArrow, Separator, BoxedContent, Paragraph, MediaContent, TitleHeading, SectionHeading, FeatureHeading, Heading, Page, DataBlock, DataItem, Clock, Alert, ButtonPrimary, DisabledContent, MainToggle, PanelEmpty, SiteBanner, Toggle, Amount, ButtonSecondary, Donate, Modal, PanelOff, Table, Tokens, Box, Checkbox, DonationTable, ModalBackupRestore, PanelSummary, Tabs, Tooltip, ButtonCta, ContributeTable, List, ModalContribute, Profile, Textarea, ButtonGhost, ControlWrapper, ListToken, Panel, Select, Tip, SettingsPage, initLocale };

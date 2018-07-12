@@ -54,7 +54,7 @@ import Panel from './rewards/panel'
 import Select from './rewards/select'
 import Tip from './rewards/tip'
 import SettingsPage from './rewards/settingsPage'
-import { getLocale } from './helpers'
+import { initLocale } from './helpers'
 
 export {
   TextLabel,
@@ -112,5 +112,5 @@ export {
   Select,
   Tip,
   SettingsPage,
-  getLocale
+  initLocale
 }
