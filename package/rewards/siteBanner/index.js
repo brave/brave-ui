@@ -4,6 +4,7 @@ const React = require("react");
 const style_1 = require("./style");
 const donate_1 = require("../donate");
 const checkbox_1 = require("../checkbox");
+const helpers_1 = require("../../helpers");
 const close = require('./assets/close');
 const monthly = require('./assets/monthly');
 class SiteBanner extends React.PureComponent {
@@ -48,13 +49,13 @@ class SiteBanner extends React.PureComponent {
         return '';
     }
     getTitle(title) {
-        return title ? title : 'Welcome!';
+        return title ? title : helpers_1.getLocale('welcome');
     }
     getText(children) {
         if (!children) {
             return React.createElement(React.Fragment, null,
-                React.createElement("p", null, "Thanks for stopping by. We joined Brave\u2019s vision of protecting your privacy because we believe that fans like you would support us in our effort to keep the web a clean and safe place to be."),
-                React.createElement("p", null, "Your donation is much appreciated and it encourages us to continue to improve our content."));
+                React.createElement("p", null, helpers_1.getLocale('rewardsBannerText1')),
+                React.createElement("p", null, helpers_1.getLocale('rewardsBannerText2')));
         }
         return children;
     }
@@ -79,27 +80,27 @@ class SiteBanner extends React.PureComponent {
                         currentDonation && !isNaN(currentDonation) && currentDonation > 0
                             ? React.createElement(style_1.StyledRecurring, null,
                                 React.createElement(style_1.StyledIconRecurringBig, null, monthly('#696fdc')),
-                                "You're currently donating ",
-                                currentDonation,
-                                " BAT to this site every month.",
+                                helpers_1.getLocale('currentDonation', { currentDonation }),
                                 React.createElement(style_1.StyledRemove, null,
                                     React.createElement(style_1.StyledIconRemove, null, close),
-                                    "remove"))
+                                    helpers_1.getLocale('remove')))
                             : null),
                     React.createElement(style_1.StyledDonation, null,
                         React.createElement(style_1.StyledWallet, null,
-                            "wallet balance ",
+                            helpers_1.getLocale('walletBalance'),
+                            " ",
                             React.createElement(style_1.StyledTokens, null,
                                 balance,
-                                " tokens")),
-                        React.createElement(donate_1.default, { balance: balance, donationAmounts: donationAmounts, title: 'Donation amount', onDonate: this.onDonate, actionText: 'Send my donation', onAmountSelection: onAmountSelection, theme: {
+                                " ",
+                                helpers_1.getLocale('tokens'))),
+                        React.createElement(donate_1.default, { balance: balance, donationAmounts: donationAmounts, title: helpers_1.getLocale('donationAmount'), onDonate: this.onDonate, actionText: helpers_1.getLocale('sendDonation'), onAmountSelection: onAmountSelection, theme: {
                                 paddingFunds: '13px 12px 13px 24px',
                                 paddingSend: '16px 19px 16px 55px',
                                 paddingBox: '0 19px 0 55px'
                             } },
                             React.createElement(checkbox_1.default, { value: { make: this.state.monthly }, onChange: this.onMonthlyChange.bind(this), theme: { checkColor: '#fff', borderColor: '#a1a8f2' } },
                                 React.createElement("div", { "data-key": 'make' },
-                                    React.createElement(style_1.StyledOption, null, "Make this monthly"),
+                                    React.createElement(style_1.StyledOption, null, helpers_1.getLocale('makeMonthly')),
                                     " ",
                                     React.createElement(style_1.StyledIconRecurring, null, monthly())))))))));
     }

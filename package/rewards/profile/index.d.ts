@@ -9,7 +9,7 @@ export interface Props {
     verified?: boolean;
 }
 export default class Profile extends React.PureComponent<Props, {}> {
-    getProviderName(provider: Provider): "on YouTube" | "on Twitter" | "on Twitch";
+    getProviderName(provider: Provider): string;
     getSrc(src?: string): string;
     render(): JSX.Element;
 }

@@ -2,16 +2,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const style_1 = require("./style");
+const helpers_1 = require("../../helpers");
 const verifiedIcon = require('./assets/verified');
 class Profile extends React.PureComponent {
     getProviderName(provider) {
         switch (provider) {
             case 'youtube':
-                return 'on YouTube';
+                return `${helpers_1.getLocale('on')} YouTube`;
             case 'twitter':
-                return 'on Twitter';
+                return `${helpers_1.getLocale('on')} Twitter`;
             case 'twitch':
-                return 'on Twitch';
+                return `${helpers_1.getLocale('on')} Twitch`;
         }
     }
     getSrc(src) {
@@ -34,7 +35,8 @@ class Profile extends React.PureComponent {
                 verified && type === 'big'
                     ? React.createElement(style_1.StyledProviderWrap, null,
                         React.createElement(style_1.StyledInlineVerified, null, verifiedIcon),
-                        " Brave Verified Publisher")
+                        " ",
+                        helpers_1.getLocale('verifiedPublisher'))
                     : null)));
     }
 }

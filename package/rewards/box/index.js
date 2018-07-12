@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const style_1 = require("./style");
 const toggle_1 = require("../toggle");
+const helpers_1 = require("../../helpers");
 const close = require('./assets/close');
 const settings = require('./assets/settings');
 class Box extends React.PureComponent {
@@ -40,7 +41,8 @@ class Box extends React.PureComponent {
                         React.createElement(style_1.StyledSettingsIcon, null, settings),
                         React.createElement(style_1.StyledSettingsText, null,
                             title,
-                            " Settings")),
+                            " ",
+                            helpers_1.getLocale('settings'))),
                     settingsChild))));
     }
 }

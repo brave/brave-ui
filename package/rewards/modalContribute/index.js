@@ -4,11 +4,12 @@ const React = require("react");
 const style_1 = require("./style");
 const modal_1 = require("../modal");
 const contributeTable_1 = require("../contributeTable");
+const helpers_1 = require("../../helpers");
 class ModalContribute extends React.PureComponent {
     get headers() {
         return [
-            'Site visited',
-            'Your attention metric'
+            helpers_1.getLocale('rewardsContributeVisited'),
+            helpers_1.getLocale('rewardsContributeAttention')
         ];
     }
     render() {
@@ -16,11 +17,14 @@ class ModalContribute extends React.PureComponent {
         const numSites = rows && rows.length || 0;
         return (React.createElement(modal_1.default, { id: id, onClose: onClose },
             React.createElement(style_1.StyledWrapper, null,
-                React.createElement(style_1.StyledTitle, null, "Brave Contribute"),
+                React.createElement(style_1.StyledTitle, null, helpers_1.getLocale('rewardsContribute')),
                 React.createElement(style_1.StyledContent, null,
-                    "You\u2019re currently supporting ",
+                    helpers_1.getLocale('rewardsContributeText1'),
+                    " ",
                     React.createElement(style_1.StyledNum, null, numSites),
-                    " sites."),
+                    " ",
+                    helpers_1.getLocale('sites'),
+                    "."),
                 React.createElement(contributeTable_1.default, { header: this.headers, rows: rows, numSites: numSites, allSites: true, showRowAmount: true }))));
     }
 }

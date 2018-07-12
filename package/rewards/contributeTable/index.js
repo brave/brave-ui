@@ -4,6 +4,7 @@ const React = require("react");
 const style_1 = require("./style");
 const table_1 = require("../table");
 const profile_1 = require("../profile");
+const helpers_1 = require("../../helpers");
 const removeIcon = require('./assets/close');
 class ContributeTable extends React.PureComponent {
     constructor() {
@@ -61,14 +62,12 @@ class ContributeTable extends React.PureComponent {
         };
     }
     render() {
-        const { id, header, children, rows, numSites, allSites, onShowAll } = this.props;
+        const { id, header, children, rows, allSites, onShowAll } = this.props;
+        const numSites = this.props.numSites || 0;
         return (React.createElement(style_1.StyledWrapper, { id: id },
             React.createElement(table_1.default, { header: this.getHeader(header), children: children, rows: this.getRows(rows) }),
             !allSites
-                ? React.createElement(style_1.StyledToggle, { onClick: onShowAll },
-                    "See all ",
-                    numSites || 0,
-                    " sites")
+                ? React.createElement(style_1.StyledToggle, { onClick: onShowAll }, helpers_1.getLocale('seeAllSites', { numSites }))
                 : null));
     }
 }

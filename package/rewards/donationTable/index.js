@@ -5,6 +5,7 @@ const style_1 = require("./style");
 const table_1 = require("../table");
 const profile_1 = require("../profile");
 const tokens_1 = require("../tokens");
+const helpers_1 = require("../../helpers");
 const removeIcon = require('./assets/close');
 const monthlyIcon = require('./assets/monthly');
 class DonationTable extends React.PureComponent {
@@ -14,25 +15,26 @@ class DonationTable extends React.PureComponent {
                 return {
                     content: React.createElement(React.Fragment, null,
                         React.createElement(style_1.StyledType, null,
-                            "Recurring ",
+                            helpers_1.getLocale('recurring'),
+                            " ",
                             React.createElement(style_1.StyledRecurringIcon, null, monthlyIcon)),
                         React.createElement(style_1.StyledRemove, { onClick: row.onRemove },
                             React.createElement(style_1.StyledRemoveIcon, null,
                                 " ",
                                 removeIcon,
                                 " "),
-                            "remove"))
+                            helpers_1.getLocale('remove')))
                 };
             case 'donation':
                 return {
                     content: React.createElement(React.Fragment, null,
-                        React.createElement(style_1.StyledType, null, "One time"),
+                        React.createElement(style_1.StyledType, null, helpers_1.getLocale('oneTime')),
                         React.createElement(style_1.StyledDate, null, row.text))
                 };
             case 'tip':
                 return {
                     content: React.createElement(React.Fragment, null,
-                        React.createElement(style_1.StyledType, null, "Tip on like"),
+                        React.createElement(style_1.StyledType, null, helpers_1.getLocale('tipOnLike')),
                         React.createElement(style_1.StyledDate, null, row.text))
                 };
         }
@@ -76,31 +78,30 @@ class DonationTable extends React.PureComponent {
         }
         return [
             {
-                content: 'Site visited',
+                content: helpers_1.getLocale('siteVisited'),
                 theme
             },
             {
-                content: 'Type',
+                content: helpers_1.getLocale('type'),
                 theme
             },
             {
-                content: 'Tokens',
+                content: helpers_1.getLocale('tokens'),
                 theme: Object.assign({
                     'text-align': 'right',
-                    'padding-right': '7px'
+                    'padding-right': '7px',
+                    'text-transform': 'capitalize'
                 }, theme)
             },
         ];
     }
     render() {
-        const { id, children, rows, numItems, allItems, onClick } = this.props;
+        const { id, children, rows, allItems, onClick } = this.props;
+        const numItems = this.props.numItems || 0;
         return (React.createElement(style_1.StyledWrapper, { id: id },
             React.createElement(table_1.default, { children: children, rows: this.getRows(rows), header: this.headers }),
             !allItems
-                ? React.createElement(style_1.StyledToggle, { onClick: onClick },
-                    "See all ",
-                    numItems || 0,
-                    " items")
+                ? React.createElement(style_1.StyledToggle, { onClick: onClick }, helpers_1.getLocale('seeAllItems', { numItems }))
                 : null));
     }
 }
