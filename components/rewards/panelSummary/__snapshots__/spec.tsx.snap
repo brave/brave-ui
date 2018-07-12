@@ -258,12 +258,14 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
   <div
     className="c1"
   >
-    Rewards Summary
+    MISSING: rewardsSummary
   </div>
   <div
     className="c2"
   >
-    May 2018
+    MISSING: monthJul
+     
+    2018
   </div>
   <div
     className=""
@@ -275,7 +277,7 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
       <div
         className="c4"
       >
-        Token Grant
+        MISSING: tokenGrant
       </div>
       <div
         className="c5"
@@ -294,7 +296,7 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
             </span>
              
             <span>
-              tokens
+              MISSING: tokens
             </span>
           </span>
           <span
@@ -315,7 +317,7 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
       <div
         className="c4"
       >
-        Earnings from Brave Ads
+        MISSING: earningsAds
       </div>
       <div
         className="c5"
@@ -334,7 +336,7 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
             </span>
              
             <span>
-              tokens
+              MISSING: tokens
             </span>
           </span>
           <span
@@ -355,7 +357,7 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
       <div
         className="c4"
       >
-        Brave Contribute
+        MISSING: rewardsContribute
       </div>
       <div
         className="c5"
@@ -374,7 +376,7 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
             </span>
              
             <span>
-              tokens
+              MISSING: tokens
             </span>
           </span>
           <span
@@ -395,7 +397,7 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
       <div
         className="c4"
       >
-        Recurring Donations
+        MISSING: recurringDonations
       </div>
       <div
         className="c5"
@@ -414,7 +416,7 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
             </span>
              
             <span>
-              tokens
+              MISSING: tokens
             </span>
           </span>
           <span
@@ -435,7 +437,7 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
       <div
         className="c4"
       >
-        One-time Donations/Tips
+        MISSING: oneTimeDonation
       </div>
       <div
         className="c5"
@@ -454,7 +456,7 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
             </span>
              
             <span>
-              tokens
+              MISSING: tokens
             </span>
           </span>
           <span
@@ -517,7 +519,8 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
         </g>
       </svg>
     </span>
-     Token Grant
+     
+    MISSING: tokenGrant
   </div>
   <div
     className="c14"
@@ -539,7 +542,7 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
           </span>
            
           <span>
-            tokens
+            MISSING: tokens
           </span>
         </span>
         <span
@@ -556,7 +559,7 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
       className="c19"
       onClick={undefined}
     >
-      Claim
+      MISSING: claim
     </div>
   </div>
   <div
@@ -579,7 +582,7 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
           </span>
            
           <span>
-            tokens
+            MISSING: tokens
           </span>
         </span>
         <span
@@ -596,7 +599,7 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
       className="c19"
       onClick={undefined}
     >
-      Claim
+      MISSING: claim
     </div>
   </div>
   <div
@@ -618,7 +621,8 @@ exports[`PanelSummary tests basic tests matches the snapshot 1`] = `
         />
       </svg>
     </span>
-     Wallet Activity/ Monthly Statement
+     
+    MISSING: walletActivity
   </div>
 </div>
 `;

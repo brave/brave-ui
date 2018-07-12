@@ -9,7 +9,7 @@ const getColor = (color: Color, disabled: boolean) => {
   let colorCode = ''
 
   if (disabled) {
-    return '#EBECF0'
+    return '#DFDFE8'
   }
 
   switch (color) {
@@ -35,14 +35,13 @@ const generateContent = (size: Size, color: Color, disabled: boolean) => {
     }
     
     :active {
-      color: rgba(${colorCode}, 0.6);
+      color: rgba(${colorCode}, 0.4);
     }
   `
 
   if (disabled) {
     props = `
-      background: ${colorCode};
-      color: #fff;
+      color: ${colorCode};
     `
   }
 

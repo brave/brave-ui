@@ -6,6 +6,7 @@ import * as React from 'react'
 import { StyledWrapper, StyledTitle, StyledAllow, StyledAllowText, StyledClose, StyledAllowToggle } from './style'
 import Donate from '../donate'
 import Toggle from '../toggle'
+import { getLocale } from '../../helpers';
 
 type Donation = {tokens: number, converted: number, selected?: boolean}
 
@@ -24,10 +25,6 @@ export interface Props {
 
 const close = require('./assets/close')
 
-/*
-  TODO
-  - add local
- */
 export default class Tip extends React.PureComponent<Props, {}> {
   onDonate = (amount: number) => {
     if (this.props.onDonate) {
@@ -56,7 +53,7 @@ export default class Tip extends React.PureComponent<Props, {}> {
         <StyledTitle>Send my tip to</StyledTitle>
         <Donate
           title={title || ''}
-          actionText={'Send my Tip'}
+          actionText={getLocale('sendTip')}
           balance={balance}
           donationAmounts={donationAmounts}
           onAmountSelection={this.onAmountChange}
@@ -71,7 +68,7 @@ export default class Tip extends React.PureComponent<Props, {}> {
           }}
         >
           <StyledAllow>
-            <StyledAllowText>Allow tips on {provider}</StyledAllowText>
+            <StyledAllowText>{getLocale('allowTip')} {provider}</StyledAllowText>
             <StyledAllowToggle>
               <Toggle
                 onClick={this.onToggle}

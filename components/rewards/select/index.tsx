@@ -41,6 +41,7 @@ export interface Theme {
   - add tab option movement
   - add enter key confirm
   - add autoFocus
+  - add empty first choice?
  */
 export default class Select extends React.PureComponent<Props, State> {
   constructor (props: Props) {
@@ -93,7 +94,11 @@ export default class Select extends React.PureComponent<Props, State> {
       const element = child.props.children
       const value = child.props['data-value']
       const selected = value == self.state.value
-      return <StyledOption key={`${self.props.id}-option-${i}`} onClick={self.onOptionClick.bind(self, value, child, element)} selected={selected}>
+      return <StyledOption
+        key={`${self.props.id}-option-${i}`}
+        onClick={self.onOptionClick.bind(self, value, child, element)}
+        selected={selected}
+      >
         {element}
       </StyledOption>
     })

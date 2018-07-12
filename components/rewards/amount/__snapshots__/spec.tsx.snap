@@ -98,9 +98,11 @@ exports[`Amount tests basic tests matches the snapshot 1`] = `
     selected={undefined}
     type={undefined}
   >
-    about 
+    MISSING: about
+     
     0.40
-     USD
+     
+    USD
   </span>
 </div>
 `;

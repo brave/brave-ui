@@ -15,6 +15,7 @@ import {
   StyledContent
 } from './style'
 import Toggle from '../toggle'
+import { getLocale } from '../../helpers';
 
 const logo = require('./assets/bat')
 
@@ -24,10 +25,6 @@ export interface Props {
   id?: string
 }
 
-/*
-  TODO
-  - add local
- */
 export default class MainToggle extends React.PureComponent<Props, {}> {
   render () {
     const { id, enabled, onToggle } = this.props
@@ -37,7 +34,7 @@ export default class MainToggle extends React.PureComponent<Props, {}> {
         <StyledLeft>
           <StyledLogo>{logo}</StyledLogo>
           <StyledTitle>
-            Brave Rewards <StyledTM>TM</StyledTM>
+            {getLocale('braveRewards')} <StyledTM>TM</StyledTM>
           </StyledTitle>
         </StyledLeft>
         <StyledRight>
@@ -46,16 +43,14 @@ export default class MainToggle extends React.PureComponent<Props, {}> {
         {
           !enabled
           ? <StyledContent>
-            <StyleTitle>Why Brave Rewards…</StyleTitle>
+            <StyleTitle>{getLocale('rewardsWhy')}</StyleTitle>
             <StyleText>
-              Do you know that you’ve been paying for the web content with your data for the digital ads?
-              You didn’t have a voice in it and worse, you’re exposed to privacy and security risks. <br/>
-              <b>Brave Rewards allows you to take control back.</b>
+              {getLocale('rewardsOffText1')} <br/>
+              <b>{getLocale('rewardsOffText2')}</b>
             </StyleText>
-            <StyleTitle>How does it work?</StyleTitle>
+            <StyleTitle>{getLocale('rewardsOffText3')}</StyleTitle>
             <StyleText>
-              Your attention is valuable. Get paid for the ads. And pay directly the favorite content
-              creators at your will. That way, they can grow and continue delivering the content that delights you.
+              {getLocale('rewardsOffText4')}
             </StyleText>
           </StyledContent>
           : null

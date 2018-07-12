@@ -34,12 +34,12 @@ exports[`PanelOff tests basic tests matches the snapshot 1`] = `
   <div
     className="c1"
   >
-    Get Rewarded for Browsing!
+    MISSING: rewardsPanelOffText1
   </div>
   <div
     className="c2"
   >
-    Earn tokens for your attention to ads and pay it forward to support content creators you value!
+    MISSING: rewardsPanelOffText2
   </div>
 </div>
 `;

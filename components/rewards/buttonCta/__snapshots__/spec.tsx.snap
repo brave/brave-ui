@@ -36,7 +36,7 @@ exports[`ButtonCta tests basic tests matches the snapshot 1`] = `
 }
 
 .c1:active {
-  background: rgba(,0.6);
+  background: rgba(,0.4);
 }
 
 <div

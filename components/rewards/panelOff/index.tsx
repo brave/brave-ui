@@ -4,23 +4,18 @@
 
 import * as React from 'react'
 import { StyledWrapper, StyledTitle, StyledContent } from './style'
+import { getLocale } from '../../helpers';
 
 interface Props {
   id?: string
 }
 
-/*
-  TODO
-  - add local
- */
 export default class PanelOff extends React.PureComponent<Props, {}> {
   render () {
     return (
       <StyledWrapper id={this.props.id}>
-        <StyledTitle>Get Rewarded for Browsing!</StyledTitle>
-        <StyledContent>
-          Earn tokens for your attention to ads and pay it forward to support content creators you value!
-        </StyledContent>
+        <StyledTitle>{getLocale('rewardsPanelOffText1')}</StyledTitle>
+        <StyledContent>{getLocale('rewardsPanelOffText2')}</StyledContent>
       </StyledWrapper>
     )
   }

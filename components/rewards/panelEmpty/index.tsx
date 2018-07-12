@@ -4,6 +4,7 @@
 
 import * as React from 'react'
 import { StyledWrapper, StyledTitle, StyledContent } from './style'
+import { getLocale } from '../../helpers';
 
 const coins = require('./assets/coins')
 
@@ -11,21 +12,17 @@ interface Props {
   id?: string
 }
 
-/*
-  TODO
-  - add local
- */
 export default class PanelEmpty extends React.PureComponent<Props, {}> {
   render () {
     return (
       <StyledWrapper id={this.props.id}>
         {coins}
-        <StyledTitle>Sadly, no tokens yet.</StyledTitle>
+        <StyledTitle>{getLocale('rewardsPanelEmptyText1')}</StyledTitle>
         <StyledContent>
-          <b>3 ways to fill your wallet:</b><br/>
-          • You can add funds. <br/>
-          • You can earn tokens from Brave Ads.<br/>
-          • Occasionally, you will also receive  token grants from Brave. So keep an eye out for the alert!
+          <b>{getLocale('rewardsPanelEmptyText2')}</b><br/>
+          • {getLocale('rewardsPanelEmptyText3')}<br/>
+          • {getLocale('rewardsPanelEmptyText4')}<br/>
+          • {getLocale('rewardsPanelEmptyText5')}
         </StyledContent>
       </StyledWrapper>
     )
