@@ -85,5 +85,7 @@ const StyledPushButton = styled_components_1.default.button `
       }
     ` : ''}
 `;
-exports.default = StyledPushButton;
+exports.StyledPushButton = StyledPushButton;
+const StyledPushButtonLink = StyledPushButton.withComponent('a');
+exports.StyledPushButtonLink = StyledPushButtonLink;
 //# sourceMappingURL=style.js.map

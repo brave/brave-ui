@@ -1,2 +1,3 @@
 declare const StyledPushButton: any;
-export default StyledPushButton;
+declare const StyledPushButtonLink: any;
+export { StyledPushButton, StyledPushButtonLink };

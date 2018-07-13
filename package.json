@@ -17,7 +17,7 @@
     "lint": "standard --verbose",
     "lint-fix": "standard --fix --verbose",
     "build": "lerna exec --parallel -- tsc",
-    "publish": "lerna publish && npm run storybook-deploy",
+    "publish": "lerna publish",
     "storybook-start": "start-storybook -p 9091 -c .storybook",
     "storybook-deploy": "storybook-to-ghpages -s public -o .out",
     "test-unit": "jest -t",

@@ -18,4 +18,17 @@ export interface PushButtonProps {
 declare class PushButton extends React.PureComponent<PushButtonProps, {}> {
     render(): JSX.Element;
 }
-export default PushButton;
+export interface PushButtonLinkProps {
+    id?: string;
+    color?: string;
+    size?: 'small' | 'medium' | 'large';
+    disabled?: boolean;
+    href?: string;
+    target?: '_blank' | '_parent' | '_self' | '_top';
+    theme?: PushButtonTheme;
+    children?: React.ReactNode;
+}
+declare class PushButtonLink extends React.PureComponent<PushButtonLinkProps, {}> {
+    render(): JSX.Element;
+}
+export { PushButton, PushButtonLink };
