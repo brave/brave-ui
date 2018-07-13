@@ -9,6 +9,8 @@ const StyledPushButton = styled_components_1.default.button `
   min-height: ${(p) => helpers_1.setValueBasedOnSize(p.size, '40px', undefined, '52px')};
   border-radius: ${(p) => helpers_1.setValueBasedOnSize(p.size, '20px', undefined, '32px')};
   text-transform: ${(p) => helpers_1.setTheme(p.theme, 'textTransform')};
+  line-height: ${(p) => helpers_1.setValueBasedOnSize(p.size, '26px', undefined, '42px')};
+  text-decoration: none;
   font-family: inherit;
   position: relative;
   display: inline-block;
