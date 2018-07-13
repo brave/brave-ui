@@ -6,6 +6,9 @@ exports[`pushButton tests basic tests matches the snapshot 1`] = `
   min-width: 112px;
   min-height: 40px;
   border-radius: 20px;
+  line-height: 26px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font-family: inherit;
   position: relative;
   display: inline-block;
