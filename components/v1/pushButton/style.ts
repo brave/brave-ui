@@ -26,7 +26,6 @@ const StyledPushButton = styled.button`
   background-position: center center;
   background-repeat: no-repeat;
   background-image: none;
-  line-height: 1.25;
   width: auto;
   white-space: nowrap;
   padding-top: 5px;

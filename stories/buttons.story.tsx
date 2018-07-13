@@ -24,7 +24,7 @@ import { BetterVisualizer } from './storyUtil'
 
 // Components
 import * as React from 'react'
-import PushButton from '../components/pushButton'
+import { PushButtonLink } from '../components/v1/pushButton'
 import UnstyledButton from '../components/unstyledButton'
 import SwitchButton from '../components/switchButton'
 import ContentToggleArrow from '../components/contentToggleArrow'
@@ -58,10 +58,9 @@ storiesOf('Buttons', module)
     const value = select(label, options, defaultValue)
 
     return (
-      <PushButton
+      <PushButtonLink
         color={value}
         disabled={boolean('Disabled', false)}
-        onClick={action('clicked the standard button!')}
         theme={{
           minWidth: text('Width', '78px'),
           minHeight: text('Height', '32px'),
@@ -69,7 +68,7 @@ storiesOf('Buttons', module)
         }}
         >
         {text('Label', 'Hello Button')}
-      </PushButton>
+      </PushButtonLink>
     )
   })
   .add('SwitchButton', withState({ checked: false }, (store) => {

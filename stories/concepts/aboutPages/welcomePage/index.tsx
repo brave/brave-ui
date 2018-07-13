@@ -10,7 +10,7 @@ import Paragraph from '../../../../components/paragraph'
 import { Grid, Column } from '../../../../components/gridSystem'
 import Panel from '../../../../components/v1/panel'
 import UnstyledButton from '../../../../components/unstyledButton'
-import PushButton from '../../../../components/v1/pushButton'
+import { PushButton } from '../../../../components/v1/pushButton'
 import Image from '../../../../components/v1/image'
 import ArrowRight from '../../../../components/v1/icons/arrowRight'
 
