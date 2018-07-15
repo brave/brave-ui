@@ -54,8 +54,9 @@ const StyledH1 = styled.h1`
   font-weight: ${(p: HeadingProps) => setTheme(p.theme, 'fontWeight') || '400'};
   font-family: ${(p: HeadingProps) => setTheme(p.theme, 'fontFamily') || 'inherit'};
   margin: ${(p: HeadingProps) => setTheme(p.theme, 'margin') || '14px 0 22px'};
-  font-size: 30px;
+  font-size: ${(p: HeadingProps) => setTheme(p.theme, 'fontSize') || '30px'};
   text-align: ${(p: HeadingProps) => setTheme(p.theme, 'textAlign')};
+  line-height: ${(p: HeadingProps) => setTheme(p.theme, 'lineHeight')};
 
 ` as any
 

@@ -15,14 +15,13 @@ const theme = {
   panel: {
     backgroundColor: 'rgba(255,255,255,0.95)',
     maxWidth: '600px',
-    height: '660px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    padding: '60px'
+    padding: '50px 60px'
   },
   braveLogo: {
-    width: '100px'
+    width: '90px'
   },
   paymentsImage: {
     width: '230px'
@@ -41,7 +40,8 @@ const theme = {
     fontSize: '32px',
     color: '#212121',
     margin: '30px 0 0',
-    textAlign: 'center'
+    textAlign: 'center',
+    lineHeight: '44px'
   },
   text: {
     fontFamily: '"Muli", sans-serif',
@@ -68,7 +68,7 @@ const theme = {
     justifyContent: 'center',
     alignItems: 'center',
     flex: '1',
-    marginBottom: '40px'
+    marginBottom: '50px'
   },
   skip: {
     color: '#76777A',
