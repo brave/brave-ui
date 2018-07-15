@@ -5,6 +5,7 @@ export interface PushButtonTheme {
     minHeight?: string;
     fontSize?: string;
     textTransform?: string;
+    fontWeight?: string;
 }
 export interface PushButtonProps {
     id?: string;

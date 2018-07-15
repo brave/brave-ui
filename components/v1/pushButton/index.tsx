@@ -20,7 +20,8 @@ export interface PushButtonTheme {
   minWidth?: string,
   minHeight?: string,
   fontSize?: string,
-  textTransform?: string
+  textTransform?: string,
+  fontWeight?: string
 }
 
 export interface PushButtonProps {

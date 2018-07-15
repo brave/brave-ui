@@ -10,6 +10,7 @@ const StyledPushButton = styled_components_1.default.button `
   border-radius: ${(p) => helpers_1.setValueBasedOnSize(p.size, '20px', undefined, '32px')};
   text-transform: ${(p) => helpers_1.setTheme(p.theme, 'textTransform')};
   line-height: ${(p) => helpers_1.setValueBasedOnSize(p.size, '26px', undefined, '42px')};
+  font-weight: ${(p) => helpers_1.setTheme(p.theme, 'fontWeight')};
   text-decoration: none;
   font-family: inherit;
   position: relative;
@@ -36,7 +37,7 @@ const StyledPushButton = styled_components_1.default.button `
   cursor: pointer;
   user-select: none;
   transition: .1s opacity, .1s background;
-  letter-spacing: 1px;
+  letter-spacing: 0.46px;
 
   &:active {
     bottom: -1px;

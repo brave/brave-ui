@@ -14,6 +14,7 @@ const StyledPushButton = styled.button`
   border-radius: ${(p: PushButtonProps) => setValueBasedOnSize(p.size, '20px', undefined, '32px')};
   text-transform: ${(p: PushButtonProps) => setTheme(p.theme, 'textTransform')};
   line-height: ${(p: PushButtonProps) => setValueBasedOnSize(p.size, '26px', undefined, '42px')};
+  font-weight: ${(p: PushButtonProps) => setTheme(p.theme, 'fontWeight')};
   text-decoration: none;
   font-family: inherit;
   position: relative;
