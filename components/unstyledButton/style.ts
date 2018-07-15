@@ -12,6 +12,7 @@ const StyledUnstyledButton = styled.button`
   user-select: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'userSelect')};
   text-decoration: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'textDecoration')};
   padding: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'padding') || '0'};
+  font-weight: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'fontWeight')};
   margin: 0;
   font-family: inherit;
   box-sizing: border-box;

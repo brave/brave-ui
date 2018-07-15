@@ -22,7 +22,7 @@ const theme = {
     padding: '60px'
   },
   braveLogo: {
-    width: '120px'
+    width: '100px'
   },
   paymentsImage: {
     width: '230px'
@@ -31,7 +31,7 @@ const theme = {
     width: '215px'
   },
   shieldsImage: {
-    width: '170px'
+    width: '185px'
   },
   featuresImage: {
     width: '300px'
@@ -40,7 +40,8 @@ const theme = {
     fontFamily: '"Poppins", sans-serif',
     fontSize: '32px',
     color: '#212121',
-    margin: '40px 0 0'
+    margin: '30px 0 0',
+    textAlign: 'center'
   },
   text: {
     fontFamily: '"Muli", sans-serif',
@@ -71,7 +72,9 @@ const theme = {
   },
   skip: {
     color: '#76777A',
-    textDecoration: 'underline'
+    hoverColor: '#8B8A8E',
+    textDecoration: 'underline',
+    fontWeight: '300'
   },
   footer: {
     gridGap: '0',
@@ -96,8 +99,8 @@ const theme = {
     fontSize: '40px'
   },
   bullet: {
-    color: '#7D7D7D',
-    hoverColor: '#FB542B',
+    color: '#76777A',
+    hoverColor: '#8B8A8E',
     padding: '0 7px',
     fontSize: '40px'
   }
