@@ -19,6 +19,7 @@ const theme = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
+    padding: '60px'
   },
   braveLogo: {
     width: '120px'
@@ -53,7 +54,8 @@ const theme = {
     textTransform: 'uppercase'
   },
   sideButton: {
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    fontWeight: '500'
   },
   arrow: {
     display: 'inline-block',

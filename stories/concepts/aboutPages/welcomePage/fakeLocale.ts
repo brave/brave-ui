@@ -5,7 +5,7 @@
 const locale = {
   // first screen
   welcome: 'Welcome to Brave',
-  whatIsBrave: 'Brave is so much more than a browser. Let\'s show you how to make the most of it',
+  whatIsBrave: 'Brave is so much more than a browser. Let\'s show you how to make the most of it.',
   letsGo: 'Let\'s go',
   // second screen
   enableBraveRewards: 'Enable Brave Rewards',
@@ -17,11 +17,11 @@ const locale = {
   importNow: 'Import Now',
   // fourth screen
   manageShields: 'Manage your shield settings',
-  adjustProtectionLevel: 'Adjust and monitor your level of protection by clicking the Brave logo in the toolbar. Manage your global shield settings in the preferences panel',
+  adjustProtectionLevel: 'Adjust and monitor your level of protection by clicking the Brave logo in the toolbar. Manage your global shield settings in the preferences panel.',
   shieldSettings: 'Shield Settings',
   // fifth screen
   customizePreferences: 'Customize your preferences',
-  configure: 'Tabs, appearance, extensions and history setting can be configured in the preferences panel. You might even find a dark theme in there ;)',
+  configure: 'Tabs, appearance, extensions and history setting can be configured in the preferences panel. You might even find a dark theme in there.',
   preferences: 'Preferences',
   // footer
   skipWelcomeTour: 'Skip welcome tour',
