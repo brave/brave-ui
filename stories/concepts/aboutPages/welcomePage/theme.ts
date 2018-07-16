@@ -15,6 +15,7 @@ const theme = {
   panel: {
     backgroundColor: 'rgba(255,255,255,0.95)',
     maxWidth: '600px',
+    minHeight: '580px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
