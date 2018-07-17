@@ -43,7 +43,7 @@ describe('Checkbox tests', () => {
     it('can respond to onClick', () => {
       const value = {target: { checked: true }}
       const onClick = jest.fn()
-      const wrapper = shallow(baseComponent({onClick}))
+      const wrapper = shallow(baseComponent({onToggle: onClick}))
       wrapper.find('#checkbox').simulate('click', value)
       expect(onClick).toBeCalledWith(value)
     })

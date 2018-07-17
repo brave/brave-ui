@@ -47,7 +47,7 @@ storiesOf('Rewards/Utils', module)
         offColor: text('Off color', '#CDD1D5'),
         onColor: text('On color', '#6D73D2')
       }}
-      onClick={() => (
+      onToggle={() => (
         store.set({ checked: !store.state.checked })
       )}
     />
@@ -103,7 +103,7 @@ storiesOf('Rewards/Utils', module)
       >
         <div data-key='yt'>YouTube</div>
         <div data-key='tw'>Twitter</div>
-        <div data-key='inst'>Instagram</div>
+        <div data-key='inst'>Instagram Instagram Instagram Instagram Instagram</div>
     </Checkbox>
   }))
   .add('Profile',() => {
@@ -134,7 +134,7 @@ storiesOf('Rewards/Utils', module)
       converted={number('Converted', 1.5)}
       selected={boolean('Selected', store.state.selected)}
       type={select('Type', {big: 'Big', small: 'Small'}, 'big')}
-      onClick={() => (
+      onSelect={() => (
         store.set({ selected: !store.state.selected })
       )}
     />

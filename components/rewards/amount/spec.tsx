@@ -5,7 +5,7 @@ import { create } from 'react-test-renderer'
 import Amount from './index'
 
 describe('Amount tests', () => {
-  const baseComponent = (props?: object) => <Amount id='amount' amount={1} converted={0.4} onClick={() => {}} {...props}  />
+  const baseComponent = (props?: object) => <Amount id='amount' amount={1} converted={0.4} onSelect={() => {}} {...props}  />
 
   describe('basic tests', () => {
     it('matches the snapshot', () => {

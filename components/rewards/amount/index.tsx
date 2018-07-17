@@ -9,7 +9,7 @@ import { getLocale } from '../../helpers';
 export interface Props {
   amount: number
   converted: number
-  onClick: (amount: number) => void
+  onSelect: (amount: number) => void
   id?: string
   selected?: boolean
   type?: 'big' | 'small'
@@ -20,12 +20,12 @@ const logo = require('./assets/logo')
 
 export default class Amount extends React.PureComponent<Props, {}> {
   render () {
-    const { id, onClick, amount, selected, type } = this.props
+    const { id, onSelect, amount, selected, type } = this.props
     const converted = this.props.converted || 0
     const currency = this.props.currency || 'USD'
 
     return (
-      <StyledWrapper id={id} onClick={onClick.bind(amount)}>
+      <StyledWrapper id={id} onClick={onSelect.bind(this, amount)}>
         <StyledAmount selected={selected} type={type}>
           <StyledLogo>{logo}</StyledLogo>{amount} <StyledTokens>{type === 'big' ? 'tokens' : null}</StyledTokens>
         </StyledAmount>

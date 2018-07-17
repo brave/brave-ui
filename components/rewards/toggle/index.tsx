@@ -11,7 +11,7 @@ export interface Props {
   disabled?: boolean
   checked?: boolean
   size?: 'large' | 'medium' | 'small'
-  onClick?: () => void
+  onToggle?: () => void
   theme?: Theme
 }
 
@@ -22,7 +22,7 @@ interface Theme {
 
 export default class Toggle extends React.PureComponent<Props, {}> {
   render () {
-    const { id, onClick, size, disabled, checked, theme } = this.props
+    const { id, onToggle, size, disabled, checked, theme } = this.props
 
     const props: Props = {
       id,
@@ -31,12 +31,8 @@ export default class Toggle extends React.PureComponent<Props, {}> {
       size: size ? size : 'medium'
     }
 
-    if (!disabled) {
-      props.onClick = onClick
-    }
-
     return (
-      <StyledWrapper {...props}>
+      <StyledWrapper onClick={!disabled ? onToggle : null} {...props}>
         <StyledSlider size={props.size} />
         <StyledBullet size={props.size} checked={checked} theme={theme}/>
       </StyledWrapper>

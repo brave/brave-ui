@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox tests basic tests matches the snapshot 1`] = `
+.c0 {
+  max-width: 254px;
+  width: 100%;
+}
+
+.c3 {
+  font-family: Poppins;
+  font-size: 14px;
+  line-height: 1.3;
+  color: #686978;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.c4 {
+  -webkit-flex-basis: 18px;
+  -ms-flex-preferred-size: 18px;
+  flex-basis: 18px;
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  border: solid 1px #d1d1db;
+  margin-right: 11px;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-color: #a1a8f2;
+}
+
+.c6 {
+  -webkit-flex-basis: 18px;
+  -ms-flex-preferred-size: 18px;
+  flex-basis: 18px;
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  border: solid 1px #d1d1db;
+  margin-right: 11px;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c1 {
+  max-width: 254px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.c2 {
+  width: 100%;
+  font-family: Poppins;
+  line-height: normal;
+  font-size: 14px;
+  font-weight: 500;
+  color: #686978;
+  margin-bottom: 6px;
+}
+
+<div
+  className="c0"
+  id="checkbox"
+>
+  <div
+    className="c1"
+    id={undefined}
+  >
+    <div
+      className="c2"
+    >
+      Enable ability to give tips on ‘Like’ posts
+    </div>
+    <div
+      className="c3"
+      onClick={[Function]}
+    >
+      <span
+        className="c4"
+        selected={true}
+      >
+        <svg
+          height="7"
+          width="9"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M.278 3.166l1.14-1.164 2.156 2.04L7.429-.005l1.21 1.172-5.065 5.17z"
+            fill="#696FDC"
+            fillRule="evenodd"
+          />
+        </svg>
+      </span>
+      <span
+        className="c5"
+      >
+        YouTube
+      </span>
+    </div>
+    <div
+      className="c3"
+      onClick={[Function]}
+    >
+      <span
+        className="c6"
+        selected={false}
+      />
+      <span
+        className="c5"
+      >
+        Twitter
+      </span>
+    </div>
+    <div
+      className="c3"
+      onClick={[Function]}
+    >
+      <span
+        className="c6"
+        selected={false}
+      />
+      <span
+        className="c5"
+      >
+        Instagram
+      </span>
+    </div>
+  </div>
+</div>
+`;

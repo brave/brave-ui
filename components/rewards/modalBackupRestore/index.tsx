@@ -73,19 +73,19 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
                 text={getLocale('copy')}
                 size={'small'}
                 color={'subtle'}
-                onClick={onCopy.bind(recoveryKey)}
+                onClick={onCopy.bind(this, recoveryKey)}
               />
               <ButtonSecondary
                 text={getLocale('print')}
                 size={'small'}
                 color={'subtle'}
-                onClick={onPrint.bind(recoveryKey)}
+                onClick={onPrint.bind(this, recoveryKey)}
               />
               <ButtonSecondary
                 text={getLocale('saveAsFile')}
                 size={'small'}
                 color={'subtle'}
-                onClick={onSaveFile.bind(recoveryKey)}
+                onClick={onSaveFile.bind(this, recoveryKey)}
               />
             </StyleButtonWrapper>
             <StyledDoneWrapper>
@@ -124,7 +124,7 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
                 text={getLocale('restore')}
                 size={'medium'}
                 color={'brand'}
-                onClick={onRestore.bind(recoveryKey)}
+                onClick={onRestore.bind(this, recoveryKey)}
               />
             </StyledActionsWrapper>
           </div>

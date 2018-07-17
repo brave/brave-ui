@@ -6,8 +6,6 @@ import styled, { css } from 'styled-components'
 import { Props, Theme } from './index'
 import { setTheme } from '../../helpers'
 
-const check = require('./assets/check')
-
 export const StyledWrapper = styled.div`
   max-width: ${(p: Props) => setTheme(p.theme, 'maxWidth') || '254px'};
   width: 100%;
@@ -16,24 +14,32 @@ export const StyledWrapper = styled.div`
 export const StyledLabel = styled.div`
   font-family: Poppins;
   font-size: 14px;
-  line-height: 2.79;
+  line-height: 1.3;
   color: #686978;
+  display: flex;
+  margin-bottom: 20px;
 ` as any
 
+
 export const StyledBox = styled.span`
+  flex-basis: 18px;
   width: 18px;
   height: 18px;
   border-radius: 2px;
   border: solid 1px ${(p: {selected: boolean, theme: Theme}) => setTheme(p.theme, 'borderColor') || '#d1d1db'};
-  display: inline-block;
   margin-right: 11px;
-  position: relative;
-  top: 3px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
  ${(p: {selected: boolean, theme: Theme}) => p.selected
     ? css`
       border-color: #a1a8f2;
-      background: url("data:image/svg+xml,${check(p.theme.checkColor)}") no-repeat 3px 5px;
     ` : ''
   }
+` as any
+
+export const StyledText = styled.span`
+  flex: 1;
 ` as any

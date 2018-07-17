@@ -108,7 +108,7 @@ export default class PanelSummary extends React.PureComponent<Props, {}> {
                   }}
                 />
               </StyledGrantText>
-              <StyledGrantClaim onClick={onClaim && onClaim.bind(grant.id)}>{getLocale('claim')}</StyledGrantClaim>
+              <StyledGrantClaim onClick={onClaim && onClaim.bind(this, grant.id)}>{getLocale('claim')}</StyledGrantClaim>
             </StyledGrant>
           })
         }
