@@ -1,6 +1,6 @@
 {
   "name": "brave-ui",
-  "version": "0.20.0-beta.8",
+  "version": "0.20.0-beta.9",
   "description": "List of reusable React components to enhance your brave UI",
   "main": "dist/index.js",
   "homepage": "https://github.com/brave/brave-ui#readme",
