@@ -25,7 +25,7 @@ export default class Amount extends React.PureComponent<Props, {}> {
     const currency = this.props.currency || 'USD'
 
     return (
-      <StyledWrapper id={id} onClick={onClick.bind(amount)}>
+      <StyledWrapper id={id} onClick={onClick.bind(this, amount)}>
         <StyledAmount selected={selected} type={type}>
           <StyledLogo>{logo}</StyledLogo>{amount} <StyledTokens>{type === 'big' ? 'tokens' : null}</StyledTokens>
         </StyledAmount>

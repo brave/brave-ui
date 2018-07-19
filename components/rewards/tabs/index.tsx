@@ -44,7 +44,7 @@ export default class Tabs extends React.PureComponent<Props, {}> {
       }
       return <StyledTab
         key={`${self.props.id}-tab-${key}`}
-        onClick={self.props.onChange.bind(key)}
+        onClick={self.props.onChange.bind(self, key)}
         selected={selected}
       >
         {title}
