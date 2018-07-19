@@ -4,7 +4,7 @@
 
 import * as React from 'react'
 import * as CSS from 'csstype'
-import { StyledWrapper, StyledLabel, StyledBox } from './style'
+import { StyledWrapper, StyledLabel, StyledBox, StyledText } from './style'
 import ControlWrapper from '../controlWrapper'
 
 export interface Props {
@@ -35,7 +35,7 @@ export default class Checkbox extends React.PureComponent<Props, {}> {
       const key = child.props['data-key']
       const selected = self.props.value[key] || false
       return <StyledLabel key={`${self.props.id}-checkbox-${i}`} onClick={self.onOptionClick.bind(self, key, child, selected)}>
-        <StyledBox selected={selected} theme={self.props.theme} /> {element}
+        <StyledBox selected={selected} theme={self.props.theme} /> <StyledText>{element}</StyledText>
       </StyledLabel>
     })
   }

@@ -103,7 +103,7 @@ storiesOf('Rewards/Utils', module)
       >
         <div data-key='yt'>YouTube</div>
         <div data-key='tw'>Twitter</div>
-        <div data-key='inst'>Instagram</div>
+        <div data-key='inst'>Instagram Instagram Instagram Instagram Instagram</div>
     </Checkbox>
   }))
   .add('Profile',() => {
