@@ -86,7 +86,7 @@ export default class Box extends React.PureComponent<Props, State> {
             <StyledRight>
               {
                 toggle ?
-                <Toggle onClick={onToggle} checked={checked} size={'large'} />
+                <Toggle onToggle={onToggle} checked={checked} size={'large'} />
                 : null
               }
             </StyledRight>

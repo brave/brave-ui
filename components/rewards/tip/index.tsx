@@ -71,7 +71,7 @@ export default class Tip extends React.PureComponent<Props, {}> {
             <StyledAllowText>{getLocale('allowTip')} {provider}</StyledAllowText>
             <StyledAllowToggle>
               <Toggle
-                onClick={this.onToggle}
+                onToggle={this.onToggle}
                 checked={allow}
                 theme={{onColor: '#fb542b', offColor: '#fb542b'}}
                 size={'small'}

@@ -121,7 +121,7 @@ export default class Donate extends React.PureComponent<Props, State> {
               key={`${id}-donate-${donation.tokens}`}
               amount={donation.tokens}
               selected={donation.selected}
-              onClick={this.onAmountChange}
+              onSelect={this.onAmountChange}
               converted={donation.converted}
               type={donateType}
             />
