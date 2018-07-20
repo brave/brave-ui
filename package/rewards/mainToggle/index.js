@@ -16,7 +16,7 @@ class MainToggle extends React.PureComponent {
                     " ",
                     React.createElement(style_1.StyledTM, null, "TM"))),
             React.createElement(style_1.StyledRight, null,
-                React.createElement(toggle_1.default, { checked: enabled, onClick: onToggle, size: 'large' })),
+                React.createElement(toggle_1.default, { checked: enabled, onToggle: onToggle, size: 'large' })),
             !enabled
                 ? React.createElement(style_1.StyledContent, null,
                     React.createElement(style_1.StyleTitle, null, helpers_1.getLocale('rewardsWhy')),

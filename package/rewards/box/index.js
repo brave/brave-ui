@@ -24,7 +24,7 @@ class Box extends React.PureComponent {
                     React.createElement(style_1.StyledLeft, null,
                         React.createElement(style_1.StyledTitle, { theme: theme, checked: checked }, title)),
                     React.createElement(style_1.StyledRight, null, toggle ?
-                        React.createElement(toggle_1.default, { onClick: onToggle, checked: checked, size: 'large' })
+                        React.createElement(toggle_1.default, { onToggle: onToggle, checked: checked, size: 'large' })
                         : null),
                     React.createElement(style_1.StyledBreak, null),
                     React.createElement(style_1.StyledLeft, null,

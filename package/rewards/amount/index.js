@@ -6,10 +6,10 @@ const helpers_1 = require("../../helpers");
 const logo = require('./assets/logo');
 class Amount extends React.PureComponent {
     render() {
-        const { id, onClick, amount, selected, type } = this.props;
+        const { id, onSelect, amount, selected, type } = this.props;
         const converted = this.props.converted || 0;
         const currency = this.props.currency || 'USD';
-        return (React.createElement(style_1.StyledWrapper, { id: id, onClick: onClick.bind(amount) },
+        return (React.createElement(style_1.StyledWrapper, { id: id, onClick: onSelect.bind(this, amount) },
             React.createElement(style_1.StyledAmount, { selected: selected, type: type },
                 React.createElement(style_1.StyledLogo, null, logo),
                 amount,

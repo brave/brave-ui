@@ -43,7 +43,7 @@ class PanelSummary extends React.PureComponent {
                                     text: '14px'
                                 }
                             } })),
-                    React.createElement(style_1.StyledGrantClaim, { onClick: onClaim && onClaim.bind(grant.id) }, helpers_1.getLocale('claim')));
+                    React.createElement(style_1.StyledGrantClaim, { onClick: onClaim && onClaim.bind(this, grant.id) }, helpers_1.getLocale('claim')));
             }),
             !grants || grants.length === 0
                 ? React.createElement(style_1.StyledGrantEmpty, null, helpers_1.getLocale('noGrants'))

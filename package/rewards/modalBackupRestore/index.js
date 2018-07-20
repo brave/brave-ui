@@ -18,9 +18,9 @@ class ModalBackupRestore extends React.PureComponent {
                         React.createElement(style_1.StyledContent, null, helpers_1.getLocale('rewardsBackupText2')),
                         React.createElement(textarea_1.default, { title: helpers_1.getLocale('recoveryKeys'), theme: { maxWidth: '100%', minHeight: '112px' }, defaultValue: recoveryKey, disabled: true }),
                         React.createElement(style_1.StyleButtonWrapper, null,
-                            React.createElement(buttonSecondary_1.default, { text: helpers_1.getLocale('copy'), size: 'small', color: 'subtle', onClick: onCopy.bind(recoveryKey) }),
-                            React.createElement(buttonSecondary_1.default, { text: helpers_1.getLocale('print'), size: 'small', color: 'subtle', onClick: onPrint.bind(recoveryKey) }),
-                            React.createElement(buttonSecondary_1.default, { text: helpers_1.getLocale('saveAsFile'), size: 'small', color: 'subtle', onClick: onSaveFile.bind(recoveryKey) })),
+                            React.createElement(buttonSecondary_1.default, { text: helpers_1.getLocale('copy'), size: 'small', color: 'subtle', onClick: onCopy.bind(this, recoveryKey) }),
+                            React.createElement(buttonSecondary_1.default, { text: helpers_1.getLocale('print'), size: 'small', color: 'subtle', onClick: onPrint.bind(this, recoveryKey) }),
+                            React.createElement(buttonSecondary_1.default, { text: helpers_1.getLocale('saveAsFile'), size: 'small', color: 'subtle', onClick: onSaveFile.bind(this, recoveryKey) })),
                         React.createElement(style_1.StyledDoneWrapper, null,
                             React.createElement(buttonPrimary_1.default, { text: helpers_1.getLocale('done'), size: 'medium', color: 'brand', onClick: onClose }))),
                     React.createElement("div", { id: `${id}-restore`, "data-key": 'restore', "data-title": helpers_1.getLocale('rewardsRestoreText1') },
@@ -35,7 +35,7 @@ class ModalBackupRestore extends React.PureComponent {
                                 React.createElement(style_1.StyledImport, { onClick: onImport }, helpers_1.getLocale('import'))), theme: { maxWidth: '100%', minHeight: '112px' }, defaultValue: '' }),
                         React.createElement(style_1.StyledActionsWrapper, null,
                             React.createElement(buttonSecondary_1.default, { text: helpers_1.getLocale('cancel'), size: 'medium', color: 'brand', onClick: onClose }),
-                            React.createElement(buttonPrimary_1.default, { text: helpers_1.getLocale('restore'), size: 'medium', color: 'brand', onClick: onRestore.bind(recoveryKey) })))))));
+                            React.createElement(buttonPrimary_1.default, { text: helpers_1.getLocale('restore'), size: 'medium', color: 'brand', onClick: onRestore.bind(this, recoveryKey) })))))));
     }
 }
 exports.default = ModalBackupRestore;

@@ -43,7 +43,7 @@ class Tip extends React.PureComponent {
                         " ",
                         provider),
                     React.createElement(style_1.StyledAllowToggle, null,
-                        React.createElement(toggle_1.default, { onClick: this.onToggle, checked: allow, theme: { onColor: '#fb542b', offColor: '#fb542b' }, size: 'small' }))))));
+                        React.createElement(toggle_1.default, { onToggle: this.onToggle, checked: allow, theme: { onColor: '#fb542b', offColor: '#fb542b' }, size: 'small' }))))));
     }
 }
 exports.default = Tip;

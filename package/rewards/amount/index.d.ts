@@ -2,7 +2,7 @@ import * as React from 'react';
 export interface Props {
     amount: number;
     converted: number;
-    onClick: (amount: number) => void;
+    onSelect: (amount: number) => void;
     id?: string;
     selected?: boolean;
     type?: 'big' | 'small';
