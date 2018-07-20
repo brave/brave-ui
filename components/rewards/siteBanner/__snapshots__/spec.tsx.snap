@@ -243,8 +243,20 @@ exports[`List tests basic tests matches the snapshot 1`] = `
   height: 18px;
   border-radius: 2px;
   border: solid 1px #a1a8f2;
-  display: inline-block;
   margin-right: 11px;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c23 {
@@ -371,7 +383,6 @@ exports[`List tests basic tests matches the snapshot 1`] = `
                     className="c22"
                     selected={false}
                   />
-                   
                   <span
                     className="c23"
                   >

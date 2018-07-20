@@ -6,9 +6,6 @@ import styled, {css} from 'styled-components'
 import { Props, Theme } from './index'
 import { setTheme } from '../../helpers'
 
-const check = require('./assets/check')
-const arrow = require('./assets/arrow')
-
 export const StyledWrapper = styled.div`
   max-width: ${(p: Props) => setTheme(p.theme, 'maxWidth') || '254px'};
   width: 100%;
@@ -26,18 +23,29 @@ export const StyledSelect = styled.div`
   color: #686978;
   background: #fff;
   width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  padding: ${(p: {show: boolean, theme: Theme}) => setTheme(p.theme, 'padding') || '10px 31px 10px 13px'};
+  padding: ${(p: {show: boolean, theme: Theme}) => setTheme(p.theme, 'padding') || '10px 0'};
   border: ${(p: {show: boolean, theme: Theme}) => setTheme(p.theme, 'border') || '1px solid #dfdfe8'};
-  background: url("data:image/svg+xml,${arrow}") no-repeat right ${(p: {show: boolean, theme: Theme}) => setTheme(p.theme, 'arrowPadding') || '15px'} center #fff;
+  display: flex;
+  align-items: center;
   
   ${(p: {show: boolean, theme: Theme}) => p.show
     ? css`
       border-color: #a1a8f2;
     ` : ''
   }
+` as any
+
+export const StyledSelectArrow = styled.div`
+  padding-right: ${(p: {show: boolean, theme: Theme}) => setTheme(p.theme, 'arrowPadding') || '15px'};
+  flex-basis: 26px;
+` as any
+
+export const StyledSelectText = styled.div`
+  flex-grow: 1;
+  padding: 0 5px 0 13px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 ` as any
 
 export const StyledOptions = styled.div`
@@ -59,14 +67,20 @@ export const StyledOption = styled.div`
   line-height: 2.57;
   color: #1b1d2f;
   position: relative;
+  padding: 0 0 0 12px;
+  display: flex;
+  background: ${(p: {selected: boolean}) => p.selected ? '#e9f0ff' : '#fff'};
+` as any
+
+
+export const StyledOptionCheck = styled.div`
+  flex-basis: 12px;
+` as any
+
+export const StyledOptionText = styled.div`
+  flex-grow: 1;
+  padding: 0 21px 0 6px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  padding: 1px 21px 0 30px;
-  
-  ${(p: {selected: boolean}) => p.selected
-    ? css`
-      background: url("data:image/svg+xml,${check}") no-repeat 14px 12px #e9f0ff;
-    ` : ''
-  };
 ` as any

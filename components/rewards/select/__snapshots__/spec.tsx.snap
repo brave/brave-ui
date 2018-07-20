@@ -1,0 +1,238 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select tests basic tests matches the snapshot 1`] = `
+.c0 {
+  max-width: 254px;
+  width: 100%;
+}
+
+.c2 {
+  position: relative;
+  outline: 0;
+  font-family: Poppins;
+}
+
+.c3 {
+  border-radius: 3px;
+  font-size: 14px;
+  color: #686978;
+  background: #fff;
+  width: 100%;
+  padding: 10px 0;
+  border: 1px solid #dfdfe8;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 {
+  padding-right: 15px;
+  -webkit-flex-basis: 26px;
+  -ms-flex-preferred-size: 26px;
+  flex-basis: 26px;
+}
+
+.c4 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding: 0 5px 0 13px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.c6 {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px 0 rgba(223,223,232,0.5);
+  background-color: #fff;
+  border: solid 1px #dfdfe8;
+  overflow: hidden;
+  z-index: 2;
+  display: none;
+}
+
+.c7 {
+  font-size: 14px;
+  line-height: 2.57;
+  color: #1b1d2f;
+  position: relative;
+  padding: 0 0 0 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #e9f0ff;
+}
+
+.c10 {
+  font-size: 14px;
+  line-height: 2.57;
+  color: #1b1d2f;
+  position: relative;
+  padding: 0 0 0 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fff;
+}
+
+.c8 {
+  -webkit-flex-basis: 12px;
+  -ms-flex-preferred-size: 12px;
+  flex-basis: 12px;
+}
+
+.c9 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding: 0 21px 0 6px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.c1 {
+  max-width: 254px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+<div
+  className="c0"
+  id="select"
+>
+  <div
+    className="c1"
+    id={undefined}
+  >
+    <div
+      className="c2"
+      onBlur={[Function]}
+      tabIndex="0"
+    >
+      <div
+        className="c3"
+        disabled={undefined}
+        onClick={[Function]}
+      >
+        <div
+          className="c4"
+        >
+          01
+        </div>
+        <div
+          className="c5"
+        >
+          <svg
+            height="6"
+            width="11"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h2.165l2.837 3.625h.92L8.755 0h2.285L6.283 5.958H4.759z"
+              fill="#B8B9C4"
+              fillRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+          onClick={[Function]}
+          selected={true}
+        >
+          <div
+            className="c8"
+          >
+            <svg
+              height="9"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 4.227l1.519-1.551 2.875 2.72L9.534 0l1.614 1.563-1.424 1.453-5.33 5.439z"
+                fill="#A1A8F2"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+          <div
+            className="c9"
+          >
+            01
+          </div>
+        </div>
+        <div
+          className="c10"
+          onClick={[Function]}
+          selected={false}
+        >
+          <div
+            className="c8"
+          >
+            <svg
+              height="9"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 4.227l1.519-1.551 2.875 2.72L9.534 0l1.614 1.563-1.424 1.453-5.33 5.439z"
+                fill="#A1A8F2"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+          <div
+            className="c9"
+          >
+            11
+          </div>
+        </div>
+        <div
+          className="c10"
+          onClick={[Function]}
+          selected={false}
+        >
+          <div
+            className="c8"
+          >
+            <svg
+              height="9"
+              width="12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 4.227l1.519-1.551 2.875 2.72L9.534 0l1.614 1.563-1.424 1.453-5.33 5.439z"
+                fill="#A1A8F2"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+          <div
+            className="c9"
+          >
+            12
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

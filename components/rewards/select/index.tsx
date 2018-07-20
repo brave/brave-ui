@@ -9,7 +9,11 @@ import {
   StyledSelect,
   StyledOptions,
   StyledOption,
-  StyledSelectWrapper
+  StyledSelectWrapper,
+  StyledSelectText,
+  StyledSelectArrow,
+  StyledOptionCheck,
+  StyledOptionText
 } from './style'
 import ControlWrapper from '../controlWrapper'
 
@@ -35,6 +39,9 @@ export interface Theme {
   padding?: CSS.PaddingProperty<1>
   arrowPadding?: CSS.RightProperty<1>
 }
+
+const check = require('./assets/check')
+const arrow = require('./assets/arrow')
 
 /*
   TODO
@@ -99,7 +106,7 @@ export default class Select extends React.PureComponent<Props, State> {
         onClick={self.onOptionClick.bind(self, value, child, element)}
         selected={selected}
       >
-        {element}
+        <StyledOptionCheck>{check}</StyledOptionCheck><StyledOptionText>{element}</StyledOptionText>
       </StyledOption>
     })
   }
@@ -145,7 +152,8 @@ export default class Select extends React.PureComponent<Props, State> {
             num > 0
             ? <StyledSelectWrapper tabIndex='0' onBlur={this.onBlur}>
               <StyledSelect onClick={this.onSelectClick} disabled={disabled} show={this.state.show} theme={theme}>
-                {this.state.selected}
+                <StyledSelectText>{this.state.selected}</StyledSelectText>
+                <StyledSelectArrow>{arrow}</StyledSelectArrow>
               </StyledSelect>
               <StyledOptions show={this.state.show}>
                 {data}
