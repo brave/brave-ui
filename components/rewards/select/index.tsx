@@ -23,7 +23,7 @@ export interface Props {
   disabled?: boolean
   value?: string
   title?: React.ReactNode
-  onChange?: (child: React.ReactNode) => void
+  onChange?: (value: string, child: React.ReactNode) => void
   theme?: Theme
 }
 
@@ -119,7 +119,7 @@ export default class Select extends React.PureComponent<Props, State> {
     })
 
     if (this.props.onChange) {
-      this.props.onChange(child)
+      this.props.onChange(value, child)
     }
   }
 
