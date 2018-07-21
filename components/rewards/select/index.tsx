@@ -106,7 +106,7 @@ export default class Select extends React.PureComponent<Props, State> {
         onClick={self.onOptionClick.bind(self, value, child, element)}
         selected={selected}
       >
-        <StyledOptionCheck>{check}</StyledOptionCheck><StyledOptionText>{element}</StyledOptionText>
+        <StyledOptionCheck>{selected ? check : null}</StyledOptionCheck><StyledOptionText>{element}</StyledOptionText>
       </StyledOption>
     })
   }

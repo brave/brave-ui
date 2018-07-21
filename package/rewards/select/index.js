@@ -18,7 +18,7 @@ class Select extends React.PureComponent {
                 const value = child.props['data-value'];
                 const selected = value == self.state.value;
                 return React.createElement(style_1.StyledOption, { key: `${self.props.id}-option-${i}`, onClick: self.onOptionClick.bind(self, value, child, element), selected: selected },
-                    React.createElement(style_1.StyledOptionCheck, null, check),
+                    React.createElement(style_1.StyledOptionCheck, null, selected ? check : null),
                     React.createElement(style_1.StyledOptionText, null, element));
             });
         };
