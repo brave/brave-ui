@@ -6,7 +6,8 @@ const theme = {
   welcomePage: {
     fontFamily: '"Poppins", sans-serif',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    height: '-webkit-fill-available',
   },
   waveBackground: {
     height: '-webkit-fill-available',
