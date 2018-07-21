@@ -13,13 +13,13 @@ const StyledPage = styled.div`
   background: ${(p: PageProps) => setTheme(p.theme, 'background') || 'inherit'};
   align-items: ${(p: PageProps) => setTheme(p.theme, 'alignItems')};
   justify-content: ${(p: PageProps) => setTheme(p.theme, 'justifyContent')};
+  height: ${(p: PageProps) => setTheme(p.theme, 'height') || 'initial'};
+  background-size: ${(p: PageProps) => setTheme(p.theme, 'backgroundSize') || 'auto'};
   box-sizing: border-box;
   background-attachment: fixed;
-  background-size: auto;
   font-size: inherit;
   display: flex;
   flex-direction: column;
-  height: initial;
   min-height: 100%;
 ` as any
 
