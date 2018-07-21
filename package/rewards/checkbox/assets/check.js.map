@@ -1,1 +1,1 @@
-{"version":3,"file":"check.js","sourceRoot":"","sources":["../../../../components/rewards/checkbox/assets/check.tsx"],"names":[],"mappings":";AAKA,MAAM,CAAC,OAAO,GAAG,CAAC,QAAgB,SAAS,EAAE,EAAE,CAC7C;;kBAEgB,KAAK;SACd,CAAA"}
+{"version":3,"file":"check.js","sourceRoot":"","sources":["../../../../components/rewards/checkbox/assets/check.tsx"],"names":[],"mappings":";;AAKA,+BAA8B;AAE9B,MAAM,CAAC,OAAO;IACZ,6BAAK,KAAK,EAAC,GAAG,EAAC,MAAM,EAAC,GAAG,EAAC,KAAK,EAAC,4BAA4B;QAC1D,8BAAM,CAAC,EAAC,qEAAqE,EACvE,IAAI,EAAC,SAAS,EAAC,QAAQ,EAAC,SAAS,GAAE,CACrC,CAAA"}

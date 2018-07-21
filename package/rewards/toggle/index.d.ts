@@ -5,7 +5,7 @@ export interface Props {
     disabled?: boolean;
     checked?: boolean;
     size?: 'large' | 'medium' | 'small';
-    onClick?: () => void;
+    onToggle?: () => void;
     theme?: Theme;
 }
 interface Theme {

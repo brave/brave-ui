@@ -4,6 +4,7 @@ const React = require("react");
 const style_1 = require("./style");
 const donate_1 = require("../donate");
 const toggle_1 = require("../toggle");
+const helpers_1 = require("../../helpers");
 const close = require('./assets/close');
 class Tip extends React.PureComponent {
     constructor() {
@@ -29,7 +30,7 @@ class Tip extends React.PureComponent {
         return (React.createElement(style_1.StyledWrapper, { id: id },
             React.createElement(style_1.StyledClose, { onClick: onClose }, close),
             React.createElement(style_1.StyledTitle, null, "Send my tip to"),
-            React.createElement(donate_1.default, { title: title || '', actionText: 'Send my Tip', balance: balance, donationAmounts: donationAmounts, onAmountSelection: this.onAmountChange, onDonate: this.onDonate, donateType: 'small', theme: {
+            React.createElement(donate_1.default, { title: title || '', actionText: helpers_1.getLocale('sendTip'), balance: balance, donationAmounts: donationAmounts, onAmountSelection: this.onAmountChange, onDonate: this.onDonate, donateType: 'small', theme: {
                     sendBgColor: '#392dd1',
                     paddingBox: '0 0 0 23px',
                     paddingSend: '16px 0 16px 51px',
@@ -38,10 +39,11 @@ class Tip extends React.PureComponent {
                 } },
                 React.createElement(style_1.StyledAllow, null,
                     React.createElement(style_1.StyledAllowText, null,
-                        "Allow tips on ",
+                        helpers_1.getLocale('allowTip'),
+                        " ",
                         provider),
                     React.createElement(style_1.StyledAllowToggle, null,
-                        React.createElement(toggle_1.default, { onClick: this.onToggle, checked: allow, theme: { onColor: '#fb542b', offColor: '#fb542b' }, size: 'small' }))))));
+                        React.createElement(toggle_1.default, { onToggle: this.onToggle, checked: allow, theme: { onColor: '#fb542b', offColor: '#fb542b' }, size: 'small' }))))));
     }
 }
 exports.default = Tip;

@@ -3,6 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const style_1 = require("./style");
 const controlWrapper_1 = require("../controlWrapper");
+const check = require('./assets/check');
+const arrow = require('./assets/arrow');
 class Select extends React.PureComponent {
     constructor(props) {
         super(props);
@@ -15,7 +17,9 @@ class Select extends React.PureComponent {
                 const element = child.props.children;
                 const value = child.props['data-value'];
                 const selected = value == self.state.value;
-                return React.createElement(style_1.StyledOption, { key: `${self.props.id}-option-${i}`, onClick: self.onOptionClick.bind(self, value, child, element), selected: selected }, element);
+                return React.createElement(style_1.StyledOption, { key: `${self.props.id}-option-${i}`, onClick: self.onOptionClick.bind(self, value, child, element), selected: selected },
+                    React.createElement(style_1.StyledOptionCheck, null, selected ? check : null),
+                    React.createElement(style_1.StyledOptionText, null, element));
             });
         };
         this.onOptionClick = (value, child, element) => {
@@ -25,7 +29,7 @@ class Select extends React.PureComponent {
                 show: false
             });
             if (this.props.onChange) {
-                this.props.onChange(child);
+                this.props.onChange(value, child);
             }
         };
         this.onSelectClick = () => {
@@ -79,7 +83,9 @@ class Select extends React.PureComponent {
         return (React.createElement(style_1.StyledWrapper, { id: id, theme: theme },
             React.createElement(controlWrapper_1.default, { title: title, theme: theme }, num > 0
                 ? React.createElement(style_1.StyledSelectWrapper, { tabIndex: '0', onBlur: this.onBlur },
-                    React.createElement(style_1.StyledSelect, { onClick: this.onSelectClick, disabled: disabled, show: this.state.show, theme: theme }, this.state.selected),
+                    React.createElement(style_1.StyledSelect, { onClick: this.onSelectClick, disabled: disabled, show: this.state.show, theme: theme },
+                        React.createElement(style_1.StyledSelectText, null, this.state.selected),
+                        React.createElement(style_1.StyledSelectArrow, null, arrow)),
                     React.createElement(style_1.StyledOptions, { show: this.state.show }, data))
                 : null)));
     }

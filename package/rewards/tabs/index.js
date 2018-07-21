@@ -26,7 +26,7 @@ class Tabs extends React.PureComponent {
                 if (selected) {
                     content = child.props.children;
                 }
-                return React.createElement(style_1.StyledTab, { key: `${self.props.id}-tab-${key}`, onClick: self.props.onChange.bind(key), selected: selected }, title);
+                return React.createElement(style_1.StyledTab, { key: `${self.props.id}-tab-${key}`, onClick: self.props.onChange.bind(self, key), selected: selected }, title);
             });
             return {
                 tabs,

@@ -4,7 +4,7 @@ const styled_components_1 = require("styled-components");
 const getColor = (color, disabled) => {
     let colorCode = '';
     if (disabled && color !== 'subtle') {
-        return '#EBECF0';
+        return '223, 223, 232';
     }
     switch (color) {
         case 'brand':
@@ -32,7 +32,7 @@ const generateWrapper = (size, color, disabled) => {
       }
       
       :active {
-        border-color: rgba(${colorCode}, 0.6);
+        border-color: rgba(${colorCode}, 0.4);
       }
     `;
         props += `
@@ -41,23 +41,16 @@ const generateWrapper = (size, color, disabled) => {
       }
       
       :active {
-        color: rgba(${colorCode}, 0.6);
+        color: rgba(${colorCode}, 0.4);
       }
   `;
     }
     if (disabled) {
-        if (color !== 'subtle') {
-            props = `
-        background: ${colorCode};
-        color: #fff;
-      `;
-        }
-        else {
-            props = `
-        opacity: 0.3
-        color: rgba(${colorCode}, 1);
-      `;
-        }
+        border = `border: 1px solid rgba(${colorCode}, 1);`;
+        props = `
+      opacity: 0.4
+      color: rgba(${colorCode}, 1);
+    `;
     }
     switch (size) {
         case 'large':

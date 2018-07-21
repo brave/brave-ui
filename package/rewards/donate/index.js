@@ -59,7 +59,7 @@ class Donate extends React.PureComponent {
             React.createElement(style_1.StyledContent, { id: id, theme: theme },
                 React.createElement(style_1.StyledDonationTitle, null, title),
                 donationAmounts && donationAmounts.map((donation) => {
-                    return React.createElement(amount_1.default, { key: `${id}-donate-${donation.tokens}`, amount: donation.tokens, selected: donation.selected, onClick: this.onAmountChange, converted: donation.converted, type: donateType });
+                    return React.createElement(amount_1.default, { key: `${id}-donate-${donation.tokens}`, amount: donation.tokens, selected: donation.selected, onSelect: this.onAmountChange, converted: donation.converted, type: donateType });
                 }),
                 children),
             React.createElement(style_1.StyledSend, { disabled: disabled, onClick: this.validateDonation(), theme: theme },
@@ -69,8 +69,9 @@ class Donate extends React.PureComponent {
                 ? React.createElement(style_1.StyledFunds, { theme: theme },
                     React.createElement(style_1.StyledIconFace, null, sadFace),
                     React.createElement(style_1.StyledFundsText, null,
-                        "Not enough tokens. Please ",
-                        React.createElement("a", { href: "#" }, "add funds"),
+                        helpers_1.getLocale('notEnoughTokens'),
+                        " ",
+                        React.createElement("a", { href: "#" }, helpers_1.getLocale('addFunds')),
                         "."))
                 : null);
     }

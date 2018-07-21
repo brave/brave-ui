@@ -2,8 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const styled_components_1 = require("styled-components");
 const helpers_1 = require("../../helpers");
-const check = require('./assets/check');
-const arrow = require('./assets/arrow');
 exports.StyledWrapper = styled_components_1.default.div `
   max-width: ${(p) => helpers_1.setTheme(p.theme, 'maxWidth') || '254px'};
   width: 100%;
@@ -19,17 +17,26 @@ exports.StyledSelect = styled_components_1.default.div `
   color: #686978;
   background: #fff;
   width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  padding: ${(p) => helpers_1.setTheme(p.theme, 'padding') || '10px 31px 10px 13px'};
+  padding: ${(p) => helpers_1.setTheme(p.theme, 'padding') || '10px 0'};
   border: ${(p) => helpers_1.setTheme(p.theme, 'border') || '1px solid #dfdfe8'};
-  background: url("data:image/svg+xml,${arrow}") no-repeat right ${(p) => helpers_1.setTheme(p.theme, 'arrowPadding') || '15px'} center #fff;
+  display: flex;
+  align-items: center;
   
   ${(p) => p.show
     ? styled_components_1.css `
       border-color: #a1a8f2;
     ` : ''}
+`;
+exports.StyledSelectArrow = styled_components_1.default.div `
+  padding-right: ${(p) => helpers_1.setTheme(p.theme, 'arrowPadding') || '15px'};
+  flex-basis: 26px;
+`;
+exports.StyledSelectText = styled_components_1.default.div `
+  flex-grow: 1;
+  padding: 0 5px 0 13px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 exports.StyledOptions = styled_components_1.default.div `
   position: absolute;
@@ -49,14 +56,18 @@ exports.StyledOption = styled_components_1.default.div `
   line-height: 2.57;
   color: #1b1d2f;
   position: relative;
+  padding: 0 0 0 12px;
+  display: flex;
+  background: ${(p) => p.selected ? '#e9f0ff' : '#fff'};
+`;
+exports.StyledOptionCheck = styled_components_1.default.div `
+  flex-basis: 12px;
+`;
+exports.StyledOptionText = styled_components_1.default.div `
+  flex-grow: 1;
+  padding: 0 21px 0 6px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  padding: 1px 21px 0 30px;
-  
-  ${(p) => p.selected
-    ? styled_components_1.css `
-      background: url("data:image/svg+xml,${check}") no-repeat 14px 12px #e9f0ff;
-    ` : ''};
 `;
 //# sourceMappingURL=style.js.map

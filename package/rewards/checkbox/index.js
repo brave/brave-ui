@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const style_1 = require("./style");
 const controlWrapper_1 = require("../controlWrapper");
+const check = require('./assets/check');
 class Checkbox extends React.PureComponent {
     constructor() {
         super(...arguments);
@@ -16,9 +17,8 @@ class Checkbox extends React.PureComponent {
                 const key = child.props['data-key'];
                 const selected = self.props.value[key] || false;
                 return React.createElement(style_1.StyledLabel, { key: `${self.props.id}-checkbox-${i}`, onClick: self.onOptionClick.bind(self, key, child, selected) },
-                    React.createElement(style_1.StyledBox, { selected: selected, theme: self.props.theme }),
-                    " ",
-                    element);
+                    React.createElement(style_1.StyledBox, { selected: selected, theme: self.props.theme }, selected ? check : null),
+                    React.createElement(style_1.StyledText, null, element));
             });
         };
         this.onOptionClick = (key, child, selected) => {
