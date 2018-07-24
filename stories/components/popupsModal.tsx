@@ -20,20 +20,23 @@ addDecorator(BetterVisualizer)
 
 storiesOf('Components/Popups and Modals', module)
   .add('Dialog', withState({ visible: true }, (store) => {
-    return <>
+    const onClose = () => {
+      store.set({ visible: !store.state.visible })
+    }
+
+    return (
+      <>
       {
         boolean('Visible', store.state.visible)
-          ? <Modal
+        ? <Modal
           id={'modal'}
           outsideClose={boolean('Close with click outside', false)}
-          onClose={() => (
-            store.set({ visible: !store.state.visible })
-          )}
+          onClose={onClose}
         >
           Content
         </Modal>
         : null
       }
     </>
+    )
   }))
-

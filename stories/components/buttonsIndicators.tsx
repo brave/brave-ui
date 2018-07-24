@@ -12,12 +12,16 @@ import * as React from 'react'
 import { BetterVisualizer } from '../storyUtil'
 
 // Components
-import {ButtonPrimary, ButtonSecondary, ButtonGhost, ButtonCta} from '../../src/components'
+import { ButtonPrimary, ButtonSecondary, ButtonGhost, ButtonCta } from '../../src/components'
 
 const arrowImage = require('../assets/img/icn-arrow.svg')
 
 addDecorator(withKnobs)
 addDecorator(BetterVisualizer)
+
+const onClick = () => {
+  console.log('Clicked')
+}
 
 storiesOf('Components/Buttons & Indicators/Buttons', module)
   .add('Primary',() => {
@@ -25,69 +29,77 @@ storiesOf('Components/Buttons & Indicators/Buttons', module)
     if (boolean('Show icon', false)) {
       icon = {
         image: <img src={arrowImage} />,
-        position: select('Icon position', {left: 'left', right: 'right'}, 'right')
+        position: select('Icon position', { left: 'left', right: 'right' }, 'right')
       }
     }
 
-    return <ButtonPrimary
-      color={select('Color', {brand: 'brand', action: 'action'}, 'brand')}
-      size={select('Size', {large: 'large', medium: 'medium', small: 'small'}, 'medium')}
-      text={'Button'}
-      disabled={boolean('Disabled', false)}
-      icon={icon}
-      onClick={() => {}}
-    />
+    return (
+      <ButtonPrimary
+        color={select('Color', { brand: 'brand', action: 'action' }, 'brand')}
+        size={select('Size', { large: 'large', medium: 'medium', small: 'small' }, 'medium')}
+        text={'Button'}
+        disabled={boolean('Disabled', false)}
+        icon={icon}
+        onClick={onClick}
+      />
+    )
   })
   .add('Secondary',() => {
     let icon = undefined
     if (boolean('Show icon', false)) {
       icon = {
         image: <img src={arrowImage} />,
-        position: select('Icon position', {left: 'left', right: 'right'}, 'right')
+        position: select('Icon position', { left: 'left', right: 'right' }, 'right')
       }
     }
 
-    return <ButtonSecondary
-      color={select('Color', {brand: 'brand', action: 'action', subtle: 'subtle'}, 'brand')}
-      size={select('Size', {large: 'large', medium: 'medium', small: 'small'}, 'medium')}
-      text={'Button'}
-      disabled={boolean('Disabled', false)}
-      icon={icon}
-      onClick={() => {}}
-    />
+    return (
+      <ButtonSecondary
+        color={select('Color', { brand: 'brand', action: 'action', subtle: 'subtle' }, 'brand')}
+        size={select('Size', { large: 'large', medium: 'medium', small: 'small' }, 'medium')}
+        text={'Button'}
+        disabled={boolean('Disabled', false)}
+        icon={icon}
+        onClick={onClick}
+      />
+    )
   })
   .add('Ghost',() => {
     let icon = undefined
     if (boolean('Show icon', false)) {
       icon = {
         image: <img src={arrowImage} />,
-        position: select('Icon position', {left: 'left', right: 'right'}, 'right')
+        position: select('Icon position', { left: 'left', right: 'right' }, 'right')
       }
     }
 
-    return <ButtonGhost
-      color={select('Color', {brand: 'brand', action: 'action'}, 'brand')}
-      size={select('Size', {large: 'large', medium: 'medium', small: 'small'}, 'medium')}
-      text={'Button'}
-      disabled={boolean('Disabled', false)}
-      icon={icon}
-      onClick={() => {}}
-    />
+    return (
+      <ButtonGhost
+        color={select('Color', { brand: 'brand', action: 'action' }, 'brand')}
+        size={select('Size', { large: 'large', medium: 'medium', small: 'small' }, 'medium')}
+        text={'Button'}
+        disabled={boolean('Disabled', false)}
+        icon={icon}
+        onClick={onClick}
+      />
+    )
   })
   .add('CTA',() => {
     let icon = undefined
     if (boolean('Show icon', false)) {
       icon = {
         image: <img src={arrowImage} />,
-        position: select('Icon position', {left: 'left', right: 'right'}, 'right')
+        position: select('Icon position', { left: 'left', right: 'right' }, 'right')
       }
     }
 
-    return <ButtonCta
-      color={select('Color', {brand: 'brand', action: 'action'}, 'brand')}
-      text={'Button'}
-      disabled={boolean('Disabled', false)}
-      icon={icon}
-      onClick={() => {}}
-    />
+    return (
+      <ButtonCta
+        color={select('Color', { brand: 'brand', action: 'action' }, 'brand')}
+        text={'Button'}
+        disabled={boolean('Disabled', false)}
+        icon={icon}
+        onClick={onClick}
+      />
+    )
   })
