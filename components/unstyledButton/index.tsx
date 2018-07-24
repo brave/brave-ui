@@ -6,27 +6,27 @@ import * as React from 'react'
 import StyledUnstyledButton from './style'
 
 /**
-* Implementor notes:
-* This button is almost unopinonated in styles
-* and should be used only when PushButton can't
-* such as actions in buttons that have no UI (link-like buttons).
-* This has limited usage on purpose.
-* Consider either using pushButton or creating a new component as needed
-* as this file shouldn't be changed much.
-**/
+ * Implementor notes:
+ * This button is almost unopinonated in styles
+ * and should be used only when PushButton can't
+ * such as actions in buttons that have no UI (link-like buttons).
+ * This has limited usage on purpose.
+ * Consider either using pushButton or creating a new component as needed
+ * as this file shouldn't be changed much.
+ */
 
 export interface UnstyledButtonTheme {
-  fontSize?: string,
-  color?: string,
-  hoverColor?: string,
-  userSelect?: string,
+  fontSize?: string
+  color?: string
+  hoverColor?: string
+  userSelect?: string
   textDecoration?: string
 }
 
 export interface UnstyledButtonProps {
-  id?: string,
-  onClick?: (e: any) => void,
-  text?: string | number,
+  id?: string
+  onClick?: (e: any) => void
+  text?: string | number
   theme?: UnstyledButtonTheme
 }
 
@@ -35,7 +35,7 @@ class UnstyledButton extends React.PureComponent<UnstyledButtonProps, {}> {
     const { id, onClick, theme, text } = this.props
     return (
       <StyledUnstyledButton id={id} theme={theme} onClick={onClick}>
-        { text ? text.toString() : null }
+        {text ? text.toString() : null}
       </StyledUnstyledButton>
     )
   }

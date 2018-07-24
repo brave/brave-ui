@@ -25,14 +25,14 @@ export default class Tabs extends React.PureComponent<Props, {}> {
     }
 
     const tabs: React.ReactNode[] = React.Children.map(self.props.children, (child: any, i: number) => {
-      if (child.props['data-key'] == undefined) {
+      if (child.props['data-key'] === undefined) {
         return null
       }
 
       const key = child.props['data-key']
       const title = child.props['data-title'] || `Tab - ${i}`
       const selected = self.props.activeTabId && (
-        self.props.activeTabId == key ||
+        self.props.activeTabId === key ||
         (
           self.props.activeTabId.length === 0 &&
           i === 0
@@ -42,13 +42,16 @@ export default class Tabs extends React.PureComponent<Props, {}> {
       if (selected) {
         content = child.props.children
       }
-      return <StyledTab
-        key={`${self.props.id}-tab-${key}`}
-        onClick={self.props.onChange.bind(self, key)}
-        selected={selected}
-      >
-        {title}
-      </StyledTab>
+
+      return (
+        <StyledTab
+          key={`${self.props.id}-tab-${key}`}
+          onClick={self.props.onChange.bind(self, key)}
+          selected={selected}
+        >
+          {title}
+        </StyledTab>
+      )
     })
 
     return {
@@ -58,7 +61,7 @@ export default class Tabs extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const {content, tabs} = this.generateTabs()
+    const { content, tabs } = this.generateTabs()
 
     return (
       <StyledWrapper id={this.props.id}>

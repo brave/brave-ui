@@ -8,19 +8,19 @@ import * as React from 'react'
 import StyledParagraph from './style'
 
 export interface ParagraphTheme {
-  color?: string,
-  fontSize?: string,
-  fontWeight?: string,
-  fontStyle?: string,
-  fontFamily?: string,
-  margin?: string,
-  textAlign?: string,
+  color?: string
+  fontSize?: string
+  fontWeight?: string
+  fontStyle?: string
+  fontFamily?: string
+  margin?: string
+  textAlign?: string
   lineHeight?: string
 }
 
 export interface ParagraphProps {
-  id?: string,
-  text?: string,
+  id?: string
+  text?: string
   theme?: ParagraphTheme
 }
 

@@ -1,0 +1,11 @@
+{
+  "extends": ["tslint-react", "tslint-config-standard"],
+  "linterOptions": {
+    "exclude": [
+      "package/"
+    ]
+  },
+  "rules": {
+    "jsx-no-multiline-js": false
+  }
+}

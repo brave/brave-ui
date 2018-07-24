@@ -13,12 +13,12 @@ import {
 } from './style'
 
 export interface ContentToggleArrowProps {
-  id?: string,
-  summary: string,
-  open?: boolean,
-  defaultOpen?: boolean,
-  withSeparator?: boolean,
-  children?: React.ReactNode,
+  id?: string
+  summary: string
+  open?: boolean
+  defaultOpen?: boolean
+  withSeparator?: boolean
+  children?: React.ReactNode
   onClick?: (e: any) => void
 }
 
@@ -31,7 +31,7 @@ class ContentToggleArrow extends React.PureComponent<ContentToggleArrowProps, Co
     super(props)
     // defaultOpen is only valid when there's no user activity
     // which means open is undefined
-    this.state = { open: props.open != null ? props.open : props.defaultOpen }
+    this.state = { open: props.open !== undefined ? props.open : props.defaultOpen }
     this.handleClick = this.handleClick.bind(this)
   }
 
@@ -42,7 +42,7 @@ class ContentToggleArrow extends React.PureComponent<ContentToggleArrowProps, Co
   }
 
   handleClick (e: any) {
-    this.setState((prevState: ContentToggleArrowState) => ({open: !prevState.open}))
+    this.setState((prevState: ContentToggleArrowState) => ({ open: !prevState.open }))
 
     this.props.onClick!({
       target: {
@@ -52,7 +52,7 @@ class ContentToggleArrow extends React.PureComponent<ContentToggleArrowProps, Co
     })
   }
 
-  render() {
+  render () {
     const { id, summary, withSeparator, children } = this.props
     const { open } = this.state
 

@@ -12,20 +12,20 @@ import {
 } from './style'
 
 export interface SwitchButtonTheme {
-  labelColor?: string,
+  labelColor?: string
   userSelect?: string
 }
 
 export interface SwitchButtonProps {
-  checked: boolean,
-  disabled?: boolean,
-  onChange?: (e: any) => void,
-  id: string,
-  readOnly?: boolean,
-  autoFocus?: boolean,
-  leftText?: string,
-  rightText?: string,
-  size?: 'large' | 'medium' | 'small',
+  checked: boolean
+  disabled?: boolean
+  onChange?: (e: any) => void
+  id: string
+  readOnly?: boolean
+  autoFocus?: boolean
+  leftText?: string
+  rightText?: string
+  size?: 'large' | 'medium' | 'small'
   theme?: SwitchButtonTheme
 }
 
@@ -72,7 +72,7 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
         size={this.props.size}
         theme={this.props.theme}
       >
-        { side === 'left' ? this.props.leftText : this.props.rightText }
+        {side === 'left' ? this.props.leftText : this.props.rightText}
       </StyledSwitchButtonLabel>
     )
   }
@@ -92,7 +92,7 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
 
     return (
       <StyledSwitchButtonWrapper disabled={disabled}>
-        { leftText && this.getLabel('left') }
+        {leftText && this.getLabel('left')}
           <StyledSwitchButton
             type='checkbox'
             id={id}
@@ -103,7 +103,7 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
             size={size}
             onChange={this.handleChange}
           />
-        { rightText && this.getLabel('right') }
+        {rightText && this.getLabel('right')}
       </StyledSwitchButtonWrapper>
     )
   }

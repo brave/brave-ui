@@ -62,7 +62,7 @@ export default class Select extends React.PureComponent<Props, State> {
     }
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate (prevProps: Props) {
     if (prevProps.value !== this.props.value) {
       const obj = this.getDefaultValue(this.props)
       this.setState({
@@ -76,13 +76,12 @@ export default class Select extends React.PureComponent<Props, State> {
   getDefaultValue (props: Props) {
     const children = React.Children.toArray(props.children)
     let child: any
+    const value: string = (props.value || '').toString()
 
-    if (props.value != undefined) {
-      child = children.find((child: any) => child.props['data-value'] == props.value)
-    }
+    child = children.find((child: any) => child.props['data-value'] === value)
 
-    if (child == undefined) {
-      child = children.find((child: any) => child && child.props['data-value'] != undefined)
+    if (child === undefined) {
+      child = children.find((child: any) => child && child.props['data-value'] !== undefined)
     }
 
     return {
@@ -94,20 +93,22 @@ export default class Select extends React.PureComponent<Props, State> {
   generateOptions = (value: string | undefined, children: React.ReactNode) => {
     const self = this
     return React.Children.map(children, (child: any, i: number) => {
-      if (child.props['data-value'] == undefined) {
+      if (child.props['data-value'] === undefined) {
         return null
       }
 
       const element = child.props.children
       const value = child.props['data-value']
-      const selected = value == self.state.value
-      return <StyledOption
-        key={`${self.props.id}-option-${i}`}
-        onClick={self.onOptionClick.bind(self, value, child, element)}
-        selected={selected}
-      >
-        <StyledOptionCheck>{selected ? check : null}</StyledOptionCheck><StyledOptionText>{element}</StyledOptionText>
-      </StyledOption>
+      const selected = value === self.state.value
+      return (
+        <StyledOption
+          key={`${self.props.id}-option-${i}`}
+          onClick={self.onOptionClick.bind(self, value, child, element)}
+          selected={selected}
+        >
+          <StyledOptionCheck>{selected ? check : null}</StyledOptionCheck><StyledOptionText>{element}</StyledOptionText>
+        </StyledOption>
+      )
     })
   }
 

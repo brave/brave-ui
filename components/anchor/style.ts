@@ -16,4 +16,3 @@ const StyledAnchor = styled.a`
 ` as any
 
 export default StyledAnchor
-

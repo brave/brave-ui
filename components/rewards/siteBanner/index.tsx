@@ -34,7 +34,7 @@ import {
 
 import Donate from '../donate'
 import Checkbox from '../checkbox'
-import { getLocale } from '../../helpers';
+import { getLocale } from '../../helpers'
 
 type Social = {type: SocialType, name: string, handler: string}
 type SocialType = 'twitter' | 'youtube' | 'twitch'
@@ -69,7 +69,7 @@ const close = require('./assets/close')
 const monthly = require('./assets/monthly')
 
 export default class SiteBanner extends React.PureComponent<Props, State> {
-  constructor(props: Props) {
+  constructor (props: Props) {
     super(props)
     this.state = {
       monthly: false
@@ -103,13 +103,15 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
     const self = this
     return social.map((item: Social) => {
       const icon = require(`./assets/${item.type}`)
-      return <StyledSocialItem
-        key={`${self.props.id}-social-${item.type}`}
-        href={self.getSocialLink(item)}
-        target={'_blank'}
-      >
-        <StyledSocialIcon>{icon}</StyledSocialIcon> {item.name || item.handler}
-      </StyledSocialItem>
+      return (
+        <StyledSocialItem
+          key={`${self.props.id}-social-${item.type}`}
+          href={self.getSocialLink(item)}
+          target={'_blank'}
+        >
+          <StyledSocialIcon>{icon}</StyledSocialIcon> {item.name || item.handler}
+        </StyledSocialItem>
+      )
     })
   }
 
@@ -119,21 +121,23 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
 
   getText (children?: React.ReactNode) {
     if (!children) {
-      return <>
-        <p>
-          {getLocale('rewardsBannerText1')}
-        </p>
-        <p>
-          {getLocale('rewardsBannerText2')}
-        </p>
-      </>
+      return (
+        <>
+          <p>
+            {getLocale('rewardsBannerText1')}
+          </p>
+          <p>
+            {getLocale('rewardsBannerText2')}
+          </p>
+        </>
+      )
     }
 
     return children
   }
 
-  onMonthlyChange (key: string, selected: boolean) {
-    this.setState({monthly: selected})
+  onMonthlyChange = (key: string, selected: boolean) => {
+    this.setState({ monthly: selected })
   }
 
   onDonate = (amount: number) => {
@@ -184,7 +188,7 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
                 currentDonation && !isNaN(currentDonation) && currentDonation > 0
                 ? <StyledRecurring>
                   <StyledIconRecurringBig>{monthly('#696fdc')}</StyledIconRecurringBig>
-                  {getLocale('currentDonation', {currentDonation})}
+                  {getLocale('currentDonation', { currentDonation })}
                   <StyledRemove>
                     <StyledIconRemove>{close}</StyledIconRemove>{getLocale('remove')}
                   </StyledRemove>
@@ -210,9 +214,9 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
                 }}
               >
                 <Checkbox
-                  value={{make: this.state.monthly}}
-                  onChange={this.onMonthlyChange.bind(this)}
-                  theme={{checkColor: '#fff', borderColor: '#a1a8f2'}}
+                  value={{ make: this.state.monthly }}
+                  onChange={this.onMonthlyChange}
+                  theme={{ checkColor: '#fff', borderColor: '#a1a8f2' }}
                 >
                   <div data-key='make'>
                     <StyledOption>{getLocale('makeMonthly')}</StyledOption> <StyledIconRecurring>{monthly()}</StyledIconRecurring>

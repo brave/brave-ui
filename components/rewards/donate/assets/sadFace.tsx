@@ -4,7 +4,7 @@
 */
 import * as React from 'react'
 
-module.exports =
+module.exports = (
   <svg width='24' height='24' xmlns='http://www.w3.org/2000/svg'>
     <g fill='#838391' fillRule='evenodd'>
       <path
@@ -15,3 +15,4 @@ module.exports =
       />
     </g>
   </svg>
+)

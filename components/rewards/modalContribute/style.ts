@@ -21,7 +21,7 @@ export const StyledContent = styled.div`
   margin-bottom: 33px;
 ` as any
 
-export const StyledNum = styled.span` 
+export const StyledNum = styled.span`
   font-weight: 500;
   color: #0c0d21;
 ` as any

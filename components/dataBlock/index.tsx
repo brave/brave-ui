@@ -9,8 +9,8 @@ import {
 } from './style'
 
 export interface DataProps {
-  id?: string,
-  asList?: boolean,
+  id?: string
+  asList?: boolean
   children?: React.ReactNode
 }
 
@@ -23,18 +23,18 @@ class DataBlock extends React.PureComponent<DataProps, {}> {
   }
 }
 export interface DataItemTheme {
-  counterColor?: string,
-  descriptionColor?: string,
+  counterColor?: string
+  descriptionColor?: string
   userSelect?: string
 }
 
 export interface DataItemProps {
-  id?: string,
-  counter?: string | number,
-  text?: string,
-  description?: string,
-  size?: 'medium' | 'small',
-  onClick?: (e: any) => void,
+  id?: string
+  counter?: string | number
+  text?: string
+  description?: string
+  size?: 'medium' | 'small'
+  onClick?: (e: any) => void
   theme?: DataItemTheme
 }
 
@@ -54,10 +54,14 @@ class DataItem extends React.PureComponent<DataItemProps, {}> {
       <StyledDataItem id={id} theme={theme} onClick={onClick} size={size}>
         <StyledDataItemCounter theme={theme} size={size}>{counter}</StyledDataItemCounter>
           {
-            text && <StyledDataItemText theme={theme} size={size}>{text}</StyledDataItemText>
+            text
+            ? <StyledDataItemText theme={theme} size={size}>{text}</StyledDataItemText>
+            : null
           }
           {
-          description && <StyledDataItemDescription theme={theme} size={size}>{description}</StyledDataItemDescription>
+            description
+            ? <StyledDataItemDescription theme={theme} size={size}>{description}</StyledDataItemDescription>
+            : null
           }
       </StyledDataItem>
     )

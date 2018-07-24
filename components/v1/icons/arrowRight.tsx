@@ -5,6 +5,10 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
+const StyledSVG = styled.svg`
+  stroke: inherit;
+` as any
+
 class ArrowRight extends React.PureComponent {
   render () {
     return (
@@ -17,9 +21,5 @@ class ArrowRight extends React.PureComponent {
     )
   }
 }
-
-const StyledSVG = styled.svg`
-  stroke: inherit;
-` as any
 
 export default ArrowRight

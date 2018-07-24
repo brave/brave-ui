@@ -20,7 +20,7 @@ export default class ButtonCta extends React.PureComponent<Props, {}> {
   render () {
     const { color, disabled, icon, text } = this.props
     return (
-      <StyledWrapper  {...this.props}>
+      <StyledWrapper {...this.props}>
           <StyledContent color={color} disabled={disabled}>
             {
               icon && icon.position === 'left'

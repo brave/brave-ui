@@ -2,9 +2,9 @@
 * License, v. 2.0. If a copy of the MPL was not distributed with this file,
 * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
- import * as React  from 'react'
+import * as React from 'react'
 
- import {
+import {
    StyledClock,
    StyledPeriod,
    StyledTime,
@@ -15,12 +15,12 @@ export interface ClockTheme {
   color?: string
 }
 export interface ClockProps {
-  id?: string,
+  id?: string
   theme?: ClockTheme
 }
 
 export interface ClockState {
-  currentTime: Array<{type: string, value: string}>,
+  currentTime: Array<{type: string, value: string}>
   date: Date
 }
 
@@ -91,4 +91,4 @@ class Clock extends React.PureComponent<ClockProps, ClockState> {
   }
 }
 
- export default Clock
+export default Clock

@@ -56,4 +56,3 @@ export {
   StyledPeriod,
   StyledTimeSeparator
 }
-

@@ -18,7 +18,6 @@ export const StyledTitle = styled.div`
   margin-top: 32px;
 ` as any
 
-
 export const StyledContent = styled.div`
   font-family: Muli;
   font-size: 14px;
@@ -28,7 +27,7 @@ export const StyledContent = styled.div`
   text-align: left;
   max-width: 250px;
   width: 100%;
-  
+
   b {
     font-weight: 600;
     color: #686978;

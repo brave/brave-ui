@@ -4,7 +4,7 @@
 */
 import * as React from 'react'
 
-module.exports =
+module.exports = (
   <svg width='50' height='48' xmlns='http://www.w3.org/2000/svg'>
     <g fill='none' fillRule='evenodd'>
       <path fill='#373743' opacity='0.2' d='M37.55 47.795l12.43.03-5.238-9.696-44.68.06z'/>
@@ -15,3 +15,4 @@ module.exports =
       <path stroke='#999EA2' strokeWidth='0.88' d='M23.426 16L14 31h19z'/>
     </g>
   </svg>
+)

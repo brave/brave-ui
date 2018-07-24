@@ -16,7 +16,7 @@ export interface Props {
 }
 
 export type Color = 'brand' | 'action'
-export type Size =  'large' | 'medium' | 'small'
+export type Size = 'large' | 'medium' | 'small'
 
 export default class ButtonGhost extends React.PureComponent<Props, {}> {
   render () {

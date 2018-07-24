@@ -40,7 +40,7 @@ const generateWrapper = (size: Size, color: Color, disabled: boolean) => {
       :hover {
         border-color: rgba(${colorCode}, 1);
       }
-      
+
       :active {
         border-color: rgba(${colorCode}, 0.4);
       }
@@ -50,7 +50,7 @@ const generateWrapper = (size: Size, color: Color, disabled: boolean) => {
       :hover {
         color: rgba(${colorCode}, 1);
       }
-      
+
       :active {
         color: rgba(${colorCode}, 0.4);
       }
@@ -65,9 +65,9 @@ const generateWrapper = (size: Size, color: Color, disabled: boolean) => {
     `
   }
 
-  switch (size)  {
+  switch (size) {
     case 'large':
-      props +=`
+      props += `
         font-size: 14px;
         border-radius: 24px;
         min-width: 116px;
@@ -75,7 +75,7 @@ const generateWrapper = (size: Size, color: Color, disabled: boolean) => {
       `
       break
     case 'medium':
-      props +=`
+      props += `
         font-size: 13px;
         border-radius: 20px;
         min-width: 104px;
@@ -83,7 +83,7 @@ const generateWrapper = (size: Size, color: Color, disabled: boolean) => {
       `
       break
     case 'small':
-      props +=`
+      props += `
         font-size: 11px;
         border-radius: 16px;
         min-width: 88px;
@@ -98,7 +98,6 @@ const generateWrapper = (size: Size, color: Color, disabled: boolean) => {
   `
 }
 
-
 export const StyledWrapper = styled.div`
   display: inline-block;
   overflow: hidden;
@@ -111,7 +110,7 @@ export const StyledWrapper = styled.div`
   line-height: 1;
   cursor: ${(p: Props) => p.disabled ? 'default' : 'pointer'};
   user-select: none;
-  
+
   ${(p: Props) => p.color === 'subtle'
     ? css`
       font-weight: 500;

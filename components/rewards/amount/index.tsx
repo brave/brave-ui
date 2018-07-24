@@ -4,7 +4,7 @@
 
 import * as React from 'react'
 import { StyledWrapper, StyledAmount, StyledLogo, StyledConverted, StyledTokens } from './style'
-import { getLocale } from '../../helpers';
+import { getLocale } from '../../helpers'
 
 export interface Props {
   amount: number

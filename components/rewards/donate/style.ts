@@ -57,7 +57,7 @@ export const StyledFunds = styled.div`
   left: 0;
   z-index: 10;
   width: 100%;
-  
+
   a {
     color: #6cc7fd;
     text-decoration: none;

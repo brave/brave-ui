@@ -6,21 +6,21 @@ import * as React from 'react'
 import { StyledPicture, StyledFigure, StyledImage, StyledFigcaption } from './style'
 
 export interface ImageTheme {
-  maxWidth?: string,
-  minWidth?: string,
-  width?: string,
-  height?: string,
-  minHeight?: string,
-  margin?: string,
+  maxWidth?: string
+  minWidth?: string
+  width?: string
+  height?: string
+  minHeight?: string
+  margin?: string
   padding?: string
 }
 
 export interface ImageProps {
-  theme?: ImageTheme,
-  id?: string,
-  children?: HTMLSourceElement,
-  src?: string,
-  caption?: string,
+  theme?: ImageTheme
+  id?: string
+  children?: HTMLSourceElement
+  src?: string
+  caption?: string
 }
 
 class Image extends React.PureComponent<ImageProps, {}> {
@@ -33,7 +33,7 @@ class Image extends React.PureComponent<ImageProps, {}> {
           <StyledImage src={src} theme={theme} />
         </StyledFigure>
 
-        { caption && <StyledFigcaption>{caption}</StyledFigcaption> }
+        {caption && <StyledFigcaption>{caption}</StyledFigcaption>}
       </StyledPicture>
     )
   }

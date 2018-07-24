@@ -7,15 +7,15 @@ import * as React from 'react'
 import StyledBoxedContent from './style'
 
 export interface BoxedContentTheme {
-  maxWidth?: string,
-  margin?: string,
-  fontFamily?: string,
+  maxWidth?: string
+  margin?: string
+  fontFamily?: string
   color?: string
 }
 
 export interface BoxedContentProps {
-  id?: string,
-  theme?: BoxedContentTheme,
+  id?: string
+  theme?: BoxedContentTheme
   children?: React.ReactNode
 }
 

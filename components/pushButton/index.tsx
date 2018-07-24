@@ -17,17 +17,17 @@ import * as React from 'react'
 import StyledPushButton from './style'
 
 export interface PushButtonTheme {
-  minWidth?: string,
-  minHeight?: string,
+  minWidth?: string
+  minHeight?: string
   fontSize?: string
 }
 
 export interface PushButtonProps {
-  id?: string,
-  color?: string,
-  disabled?: boolean,
-  onClick?: (e: any) => void,
-  theme?: PushButtonTheme,
+  id?: string
+  color?: string
+  disabled?: boolean
+  onClick?: (e: any) => void
+  theme?: PushButtonTheme
   children?: React.ReactNode
 }
 

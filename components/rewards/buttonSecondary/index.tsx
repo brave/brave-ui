@@ -20,7 +20,7 @@ export type Size = 'large' | 'medium' | 'small'
 
 export default class ButtonSecondary extends React.PureComponent<Props, {}> {
   render () {
-    const { icon, text} = this.props
+    const { icon, text } = this.props
 
     return (
       <StyledWrapper {...this.props}>

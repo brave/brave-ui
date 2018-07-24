@@ -20,7 +20,7 @@ import { StyledWrapper,
   StyledFlip
 } from './style'
 import Toggle from '../toggle'
-import { getLocale } from '../../helpers';
+import { getLocale } from '../../helpers'
 
 const close = require('./assets/close')
 const settings = require('./assets/settings')
@@ -59,7 +59,7 @@ export default class Box extends React.PureComponent<Props, State> {
   }
 
   settingsClick = () => {
-    this.setState({settingsOpened: !this.state.settingsOpened})
+    this.setState({ settingsOpened: !this.state.settingsOpened })
   }
 
   render () {

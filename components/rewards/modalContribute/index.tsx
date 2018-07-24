@@ -6,7 +6,7 @@ import * as React from 'react'
 import { StyledWrapper, StyledTitle, StyledContent, StyledNum } from './style'
 import Modal from '../modal'
 import ContributeTable, { DetailRow } from '../contributeTable'
-import { getLocale } from '../../helpers';
+import { getLocale } from '../../helpers'
 
 export interface Props {
   rows: DetailRow[]
@@ -37,8 +37,8 @@ export default class ModalContribute extends React.PureComponent<Props, {}> {
             header={this.headers}
             rows={rows}
             numSites={numSites}
-            allSites
-            showRowAmount
+            allSites={true}
+            showRowAmount={true}
           />
         </StyledWrapper>
       </Modal>

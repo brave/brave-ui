@@ -29,11 +29,11 @@ const generateContent = (size: Size, color: Color, disabled: boolean) => {
 
   let props = `
     color: rgba(${colorCode}, 0.9);
-    
+
     :hover {
       color: rgba(${colorCode}, 1);
     }
-    
+
     :active {
       color: rgba(${colorCode}, 0.4);
     }
@@ -45,9 +45,9 @@ const generateContent = (size: Size, color: Color, disabled: boolean) => {
     `
   }
 
-  switch (size)  {
+  switch (size) {
     case 'large':
-      props +=`
+      props += `
         font-size: 14px;
         border-radius: 24px;
         min-width: 116px;
@@ -55,7 +55,7 @@ const generateContent = (size: Size, color: Color, disabled: boolean) => {
       `
       break
     case 'medium':
-      props +=`
+      props += `
         font-size: 13px;
         border-radius: 20px;
         min-width: 104px;
@@ -63,7 +63,7 @@ const generateContent = (size: Size, color: Color, disabled: boolean) => {
       `
       break
     case 'small':
-      props +=`
+      props += `
         font-size: 11px;
         border-radius: 16px;
         min-width: 88px;

@@ -18,13 +18,13 @@ export const StyledContent = styled.div`
   font-weight: 500;
   line-height: 1.5;
   color: ${(p: Props) => setTheme(p.theme, 'color') || '#4b4c5c'};
-  
+
   b,
   a {
     font-weight: 500;
     color: ${(p: Props) => setTheme(p.theme, 'boldColor') || '#4b4c5c'};
   }
-  
+
   h3 {
     margin: 0;
     display: inline-block;

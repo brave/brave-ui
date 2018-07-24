@@ -15,7 +15,7 @@ import {
   StyledContent
 } from './style'
 import Toggle from '../toggle'
-import { getLocale } from '../../helpers';
+import { getLocale } from '../../helpers'
 
 const logo = require('./assets/bat')
 

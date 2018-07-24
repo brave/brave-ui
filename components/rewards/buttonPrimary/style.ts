@@ -25,7 +25,7 @@ const getColor = (color: Color, disabled: boolean) => {
 }
 
 const generateWrapper = (size: Size) => {
-  switch (size)  {
+  switch (size) {
     case 'large':
       return css`
         font-size: 14px;
@@ -55,11 +55,11 @@ const generateContent = (size: Size, color: Color, disabled: boolean) => {
   let props = `
     background: rgba(${colorCode}, 0.9);
     color: #fff;
-    
+
     :hover {
       background: rgba(${colorCode}, 1);
     }
-    
+
     :active {
       background: rgba(${colorCode}, 0.4);
     }
@@ -73,19 +73,19 @@ const generateContent = (size: Size, color: Color, disabled: boolean) => {
   }
 
   let padding = ``
-  switch (size)  {
+  switch (size) {
     case 'large':
-      padding =`
+      padding = `
         padding: 17px 15px;
       `
       break
     case 'medium':
-      padding =`
+      padding = `
         padding: 13.5px 10px;
       `
       break
     case 'small':
-      padding =`
+      padding = `
         padding: 10.5px 10px;
       `
       break
