@@ -1,6 +1,6 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
-* License. v. 2.0. If a copy of the MPL was not distributed with this file.
-* You can obtain one at http://mozilla.org/MPL/2.0/. */
+ License. v. 2.0. If a copy of the MPL was not distributed with this file.
+ You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled, { css } from 'styled-components'
 import { SwitchButtonProps } from './index'
@@ -8,9 +8,9 @@ import defaultTheme from '../defaultTheme'
 import { setValueBasedOnSize, setTheme } from '../helpers'
 
 /**
-* Wrapper for the switch button
-* Wraps both labels and the switch
-*/
+ * Wrapper for the switch button
+ * Wraps both labels and the switch
+ */
 const StyledSwitchButtonWrapper = styled.div`
   box-sizing: border-box;
   display: flex;
@@ -25,9 +25,9 @@ const StyledSwitchButtonWrapper = styled.div`
 ` as any
 
 /**
-* Label for the switch button
-* Sets the styles for both left and right labels
-*/
+ * Label for the switch button
+ * Sets the styles for both left and right labels
+ */
 const StyledSwitchButtonLabel = styled.label`
   box-sizing: border-box;
   font-size: ${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, 'inherit', 'inherit', '24px')};
@@ -40,8 +40,8 @@ const StyledSwitchButtonLabel = styled.label`
 ` as any
 
 /**
-* The switch button itself
-*/
+ * The switch button itself
+ */
 const StyledSwitchButton = styled.input`
   box-sizing: border-box;
   -webkit-appearance: none;

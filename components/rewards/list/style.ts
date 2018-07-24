@@ -8,7 +8,7 @@ import { Props } from './index'
 export const StyledWrapper = styled.div`
   position: relative;
   display: flex;
-  border-bottom: solid 1px #cfd5da;  
+  border-bottom: solid 1px #cfd5da;
   justify-content: space-between;
   align-items: baseline;
   align-content: flex-start;

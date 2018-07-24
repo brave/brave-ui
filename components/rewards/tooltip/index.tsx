@@ -38,7 +38,7 @@ interface State {
   maybe https://github.com/tvkhoa/react-tippy
  */
 export default class Tooltip extends React.PureComponent<Props, State> {
-  constructor(props: Props) {
+  constructor (props: Props) {
     super(props)
 
     this.state = {
@@ -46,11 +46,11 @@ export default class Tooltip extends React.PureComponent<Props, State> {
     }
   }
   onMouseEnter = () => {
-    this.setState({open: true})
+    this.setState({ open: true })
   }
 
   onMouseLeave = () => {
-    this.setState({open: false})
+    this.setState({ open: false })
   }
 
   get position () {

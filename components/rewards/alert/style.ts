@@ -10,7 +10,7 @@ export const StyledWrapper = styled.div`
   position: ${(p: Props) => setTheme(p.theme, 'position') || 'relative'};
   top: ${(p: Props) => setTheme(p.theme, 'top') || 0};
   left: ${(p: Props) => setTheme(p.theme, 'left') || 0};
-  display: flex; 
+  display: flex;
   justify-content: flex-start;
   align-content: flex-start;
   flex-wrap: nowrap;
@@ -34,7 +34,7 @@ export const StyledContent = styled.div`
   font-size: 14px;
   line-height: 1.57;
   color: #838391;
-  
+
   b {
     font-weight: 600;
     color: #4b4c5c;

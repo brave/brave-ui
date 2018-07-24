@@ -16,7 +16,7 @@ import {
 } from './style'
 
 import Amount from '../amount'
-import { getLocale, setTheme } from '../../helpers';
+import { getLocale, setTheme } from '../../helpers'
 
 const send = require('./assets/send')
 const sadFace = require('./assets/sadFace')
@@ -50,7 +50,7 @@ export interface Theme {
 }
 
 export default class Donate extends React.PureComponent<Props, State> {
-  constructor(props: Props) {
+  constructor (props: Props) {
     super(props)
     this.state = {
       amount: this.getCurrentAmount(this.props.donationAmounts),
@@ -58,7 +58,7 @@ export default class Donate extends React.PureComponent<Props, State> {
     }
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate (prevProps: Props) {
     if (
       this.props.balance !== prevProps.balance ||
       this.props.donationAmounts !== prevProps.donationAmounts
@@ -67,7 +67,7 @@ export default class Donate extends React.PureComponent<Props, State> {
     }
 
     if (this.props.donationAmounts !== prevProps.donationAmounts) {
-      this.setState({amount: this.getCurrentAmount(this.props.donationAmounts)})
+      this.setState({ amount: this.getCurrentAmount(this.props.donationAmounts) })
     }
   }
 
@@ -86,18 +86,18 @@ export default class Donate extends React.PureComponent<Props, State> {
     }
   }
 
-  validateAmount (balance: number, tokens?:number) {
-    if (tokens == null) {
+  validateAmount (balance: number, tokens?: number) {
+    if (tokens === undefined) {
       tokens = this.state.amount
     }
 
     const valid = tokens > balance
-    this.setState({missingFunds: valid})
+    this.setState({ missingFunds: valid })
     return valid
   }
 
   onAmountChange = (tokens: number) => {
-    this.setState({amount: tokens})
+    this.setState({ amount: tokens })
     this.validateAmount(this.props.balance, tokens)
 
     if (this.props.onAmountSelection) {
@@ -112,34 +112,36 @@ export default class Donate extends React.PureComponent<Props, State> {
     const donateType = this.props.donateType ? this.props.donateType : 'big'
     const sendColor = disabled ? (setTheme(theme, 'disabledSendColor') || '#3e45b2') : '#a1a8f2'
 
-    return <StyledWrapper>
-      <StyledContent id={id} theme={theme}>
-        <StyledDonationTitle>{title}</StyledDonationTitle>
+    return (
+      <StyledWrapper>
+        <StyledContent id={id} theme={theme}>
+          <StyledDonationTitle>{title}</StyledDonationTitle>
+          {
+            donationAmounts && donationAmounts.map((donation: Donation) => {
+              return <Amount
+                key={`${id}-donate-${donation.tokens}`}
+                amount={donation.tokens}
+                selected={donation.selected}
+                onSelect={this.onAmountChange}
+                converted={donation.converted}
+                type={donateType}
+              />
+            })
+          }
+          {children}
+        </StyledContent>
+        <StyledSend disabled={disabled} onClick={this.validateDonation()} theme={theme}>
+          <StyledIconSend>{send(sendColor)}</StyledIconSend>{actionText}
+        </StyledSend>
         {
-          donationAmounts && donationAmounts.map((donation: Donation) => {
-            return <Amount
-              key={`${id}-donate-${donation.tokens}`}
-              amount={donation.tokens}
-              selected={donation.selected}
-              onSelect={this.onAmountChange}
-              converted={donation.converted}
-              type={donateType}
-            />
-          })
+          this.state.missingFunds
+            ? <StyledFunds theme={theme}>
+              <StyledIconFace>{sadFace}</StyledIconFace>
+              <StyledFundsText>{getLocale('notEnoughTokens')} <a href='#'>{getLocale('addFunds')}</a>.</StyledFundsText>
+            </StyledFunds>
+            : null
         }
-        {children}
-      </StyledContent>
-      <StyledSend disabled={disabled} onClick={this.validateDonation()} theme={theme}>
-        <StyledIconSend>{send(sendColor)}</StyledIconSend>{actionText}
-      </StyledSend>
-      {
-        this.state.missingFunds
-          ? <StyledFunds theme={theme}>
-            <StyledIconFace>{sadFace}</StyledIconFace>
-            <StyledFundsText>{getLocale('notEnoughTokens')} <a href="#">{getLocale('addFunds')}</a>.</StyledFundsText>
-          </StyledFunds>
-          : null
-      }
-    </StyledWrapper>
+      </StyledWrapper>
+    )
   }
 }

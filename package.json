@@ -18,8 +18,7 @@
   "scripts": {
     "ts": "tsc",
     "ts-watch": "tsc -w",
-    "lint": "standard --verbose",
-    "lint-fix": "standard --fix --verbose",
+    "lint": "tslint --project tsconfig.json '{components, stories}/**/*.{ts,tsx}'",
     "build": "lerna exec --parallel -- tsc",
     "publish": "lerna publish",
     "storybook-start": "start-storybook -p 9091 -c .storybook",
@@ -64,8 +63,10 @@
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-test-renderer": "^16.3.0",
-    "standard": "^11.0.1",
     "ts-jest": "^22.4.2",
+    "tslint": "^5.8.0",
+    "tslint-config-standard": "^7.0.0",
+    "tslint-react": "^3.2.0",
     "typescript": "^2.8.1"
   },
   "pre-commit": {

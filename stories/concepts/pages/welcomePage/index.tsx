@@ -29,16 +29,12 @@ const background = require('../../../assets/img/welcomebg.svg')
 import '../../../assets/fonts/muli.css'
 import '../../../assets/fonts/poppins.css'
 
-export interface WelcomePageProps {
-
-}
-
 export interface WelcomePageState {
   currentScreen: number
 }
 
-class WelcomePage extends React.PureComponent<WelcomePageProps, WelcomePageState> {
-  constructor (props: WelcomePageProps) {
+class WelcomePage extends React.PureComponent<{}, WelcomePageState> {
+  constructor (props: {}) {
     super(props)
     this.onClickNext = this.onClickNext.bind(this)
     this.onSkipWelcomeTour = this.onSkipWelcomeTour.bind(this)

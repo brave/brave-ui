@@ -14,8 +14,8 @@ import {
 } from './style'
 
 export interface TitleHeadingProps {
-  id?: string,
-  text?: string,
+  id?: string
+  text?: string
   label?: string
 }
 
@@ -26,7 +26,9 @@ class TitleHeading extends React.PureComponent<TitleHeadingProps, {}> {
       <StyledHeadingTitle id={id}>
         {text}
         {
-          label && <StyledHeadingTitleLabel>{label}</StyledHeadingTitleLabel>
+          label
+          ? <StyledHeadingTitleLabel>{label}</StyledHeadingTitleLabel>
+          : null
         }
       </StyledHeadingTitle>
     )
@@ -34,7 +36,7 @@ class TitleHeading extends React.PureComponent<TitleHeadingProps, {}> {
 }
 
 export interface SectionHeadingProps {
-  id?: string,
+  id?: string
   text?: string
 }
 
@@ -48,7 +50,7 @@ class SectionHeading extends React.PureComponent<SectionHeadingProps, {}> {
 }
 
 export interface FeatureHeadingProps {
-  id?: string,
+  id?: string
   text?: string
 }
 
@@ -62,16 +64,16 @@ class FeatureHeading extends React.PureComponent<FeatureHeadingProps, {}> {
 }
 
 export interface HeadingTheme {
-  color?: string,
-  fontFamily?: string,
-  fontWeight?: string,
+  color?: string
+  fontFamily?: string
+  fontWeight?: string
   margin?: string
 }
 
 export interface HeadingProps {
-  id?: string,
-  level?: 1 | 2 | 3 | 4 | 5 | 6,
-  text?: string,
+  id?: string
+  level?: 1 | 2 | 3 | 4 | 5 | 6
+  text?: string
   theme?: HeadingTheme
 }
 
@@ -99,7 +101,7 @@ class Heading extends React.PureComponent<HeadingProps, {}> {
 
 export {
   TitleHeading, // to be used as a page's title
-  SectionHeading, // the main title coveering one/more features
+  SectionHeading, // the main title covering one/more features
   FeatureHeading, // to be used as a feature title
   Heading // general heading styles ranging from 1-6
 }

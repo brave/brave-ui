@@ -22,7 +22,7 @@ export const StyledImageWrapper = styled.div`
 
 export const StyledImage = styled.img`
   border-radius: 50%;
-  
+
   ${(p: Props) => p.type === 'big'
     ? css`
       width: 48px;
@@ -30,7 +30,7 @@ export const StyledImage = styled.img`
     `
     : ''
   };
-  
+
   ${(p: Props) => p.type !== 'big'
     ? css`
       width: 24px;
@@ -51,7 +51,7 @@ export const StyledContent = styled.div`
   flex-shrink: 1;
   flex-basis: 50%;
   margin-top: -5px;
-  padding-left: ${(p: Props) => p.type === 'big' ? '11px': 0};
+  padding-left: ${(p: Props) => p.type === 'big' ? '11px' : 0};
 ` as any
 
 export const StyledTitleWrap = styled.div`
@@ -60,7 +60,7 @@ export const StyledTitleWrap = styled.div`
 
 export const StyledTitle = styled.span`
   white-space: nowrap;
-  
+
   ${(p: Props) => p.type === 'big'
     ? css`
       font-size: 18px;
@@ -71,7 +71,7 @@ export const StyledTitle = styled.span`
     `
     : ''
   };
-  
+
   ${(p: Props) => p.type !== 'big'
     ? css`
       font-family: Muli;
@@ -88,7 +88,7 @@ export const StyledTitle = styled.span`
 export const StyledProvider = styled.span`
   white-space: nowrap;
   padding-left: 5px;
-  
+
   ${(p: Props) => p.type === 'big'
     ? css`
       font-weight: 300;
@@ -96,7 +96,7 @@ export const StyledProvider = styled.span`
     `
     : ''
   };
-  
+
   color: ${(p: Props) => p.type === 'big' ? '#4b4c5c' : '#b8b9c4'};
 ` as any
 

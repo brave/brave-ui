@@ -74,7 +74,7 @@ export const StyledGrantClaim = styled.div`
   text-align: center;
   color: #fff;
   padding: 0 10px;
-  
+
   :hover {
     background: rgba(251, 84, 43, 1);
   }

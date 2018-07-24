@@ -15,7 +15,7 @@ import {
   StyledProviderWrap,
   StyledInlineVerified
 } from './style'
-import { getLocale } from '../../helpers';
+import { getLocale } from '../../helpers'
 
 export type Provider = 'twitter' | 'youtube' | 'twitch'
 

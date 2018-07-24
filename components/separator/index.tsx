@@ -6,7 +6,6 @@ import * as React from 'react'
 import StyledSeparator from './style'
 
 export interface SeparatorProps {
-  // component styles
   noMargin?: boolean
 }
 

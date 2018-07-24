@@ -16,7 +16,7 @@ import TextArea from '../textarea'
 import Modal from '../modal'
 import ButtonPrimary from '../buttonPrimary'
 import ButtonSecondary from '../buttonSecondary'
-import { getLocale } from '../../helpers';
+import { getLocale } from '../../helpers'
 
 export type TabsType = 'backup' | 'restore'
 
@@ -55,7 +55,7 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
     } = this.props
 
     return (
-      <Modal id={id} onClose={onClose} theme={{maxWidth: '666px'}}>
+      <Modal id={id} onClose={onClose} theme={{ maxWidth: '666px' }}>
         <StyledWrapper>
           <Tabs activeTabId={activeTabId} onChange={onTabChange}>
           <div id={`${id}-backup`} data-key={'backup'} data-title={getLocale('rewardsBackupText1')}>
@@ -64,9 +64,9 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
             </StyledContent>
             <TextArea
               title={getLocale('recoveryKeys')}
-              theme={{maxWidth: '100%', minHeight: '112px'}}
+              theme={{ maxWidth: '100%', minHeight: '112px' }}
               defaultValue={recoveryKey}
-              disabled
+              disabled={true}
             />
             <StyleButtonWrapper>
               <ButtonSecondary
@@ -110,7 +110,7 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
               title={<>
                 {getLocale('rewardsRestoreText3')}<StyledImport onClick={onImport}>{getLocale('import')}</StyledImport>
               </>}
-              theme={{maxWidth: '100%', minHeight: '112px'}}
+              theme={{ maxWidth: '100%', minHeight: '112px' }}
               defaultValue={''}
             />
             <StyledActionsWrapper>

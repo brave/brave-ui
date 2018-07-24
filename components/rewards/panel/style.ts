@@ -12,7 +12,7 @@ export const StyledWrapper = styled.div`
   width: 373px;
   background:
     url(${(p: {bg: string}) => `"data:image/svg+xml,${p.bg}"`}) no-repeat top left,
-    linear-gradient(172deg, #392dd1, rgba(255, 26, 26, 0.53)), 
+    linear-gradient(172deg, #392dd1, rgba(255, 26, 26, 0.53)),
     linear-gradient(#7d7bdc, #7d7bdc);
 ` as any
 
@@ -71,7 +71,7 @@ export const StyledCopy = styled.div`
   font-size: 12px;
   color: #838391;
   padding: 19px 15px;
-  background: ${(p: {connectedWallet:boolean}) => p.connectedWallet ? '#ccdfea' : '#dee2e6'};
+  background: ${(p: {connectedWallet: boolean}) => p.connectedWallet ? '#ccdfea' : '#dee2e6'};
   text-align: center;
 ` as any
 
@@ -108,7 +108,7 @@ export const StyledGrant = styled.div`
   color: rgba(255, 255, 255, 0.60);
   text-align: center;
   margin-bottom: 3px;
-  
+
   b {
     font-weight: 600;
     color: #fff;
@@ -116,7 +116,7 @@ export const StyledGrant = styled.div`
     text-align: right;
     display: inline-block;
   }
-  
+
   span {
     min-width: 135px;
     text-align: left;

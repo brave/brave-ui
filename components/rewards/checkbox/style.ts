@@ -20,7 +20,6 @@ export const StyledLabel = styled.div`
   margin-bottom: 20px;
 ` as any
 
-
 export const StyledBox = styled.span`
   flex-basis: 18px;
   width: 18px;
@@ -32,7 +31,7 @@ export const StyledBox = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
  ${(p: {selected: boolean, theme: Theme}) => p.selected
     ? css`
       border-color: #a1a8f2;

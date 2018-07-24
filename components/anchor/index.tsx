@@ -6,23 +6,24 @@ import * as React from 'react'
 import StyledAnchor from './style'
 
 export interface AnchorTheme {
-  textDecoration?: string,
-  color?: string,
-  fontSize?: string,
+  textDecoration?: string
+  color?: string
+  fontSize?: string
   userSelect?: string
 }
 
 export interface AnchorProps {
-  id?: string,
-  href: string,
-  target?: '_blank' | '_parent' | '_self' | '_top',
-  text?: string | number,
+  id?: string
+  href: string
+  target?: '_blank' | '_parent' | '_self' | '_top'
+  text?: string | number
   theme?: AnchorTheme
 }
 
 class Anchor extends React.PureComponent<AnchorProps, {}> {
   render () {
     const { id, href, target, theme, text } = this.props
+
     return (
       <StyledAnchor
         id={id}

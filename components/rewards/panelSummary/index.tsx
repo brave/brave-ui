@@ -19,7 +19,7 @@ import {
 } from './style'
 import Tokens from '../tokens'
 import ListToken from '../listToken'
-import { getLocale } from '../../helpers';
+import { getLocale } from '../../helpers'
 
 const coinsIcon = require('./assets/coins')
 const activityIcon = require('./assets/activity')
@@ -43,7 +43,7 @@ export default class PanelSummary extends React.PureComponent<Props, {}> {
   render () {
     const { id, grant, ads, contribute, donation, tips, grants, onClaim, onActivity } = this.props
     const date = new Date()
-    const month = getLocale(`month${date.toLocaleString('en-us', { month: "short" })}`)
+    const month = getLocale(`month${date.toLocaleString('en-us', { month: 'short' })}`)
     const year = date.getFullYear()
 
     return (
@@ -54,35 +54,35 @@ export default class PanelSummary extends React.PureComponent<Props, {}> {
           <ListToken
             value={grant.tokens}
             converted={grant.converted}
-            theme={{color: grant.color}}
+            theme={{ color: grant.color }}
             title={getLocale('tokenGrant')}
           />
           <ListToken
             value={ads.tokens}
             converted={ads.converted}
-            theme={{color: ads.color}}
+            theme={{ color: ads.color }}
             title={getLocale('earningsAds')}
           />
           <ListToken
             value={contribute.tokens}
             converted={contribute.converted}
-            theme={{color: contribute.color}}
+            theme={{ color: contribute.color }}
             title={getLocale('rewardsContribute')}
-            isNegative
+            isNegative={true}
           />
           <ListToken
             value={donation.tokens}
             converted={donation.converted}
-            theme={{color: donation.color}}
+            theme={{ color: donation.color }}
             title={getLocale('recurringDonations')}
-            isNegative
+            isNegative={true}
           />
           <ListToken
             value={tips.tokens}
             converted={tips.converted}
-            theme={{color: tips.color, borderBottom: 'none'}}
+            theme={{ color: tips.color, borderBottom: 'none' }}
             title={getLocale('oneTimeDonation')}
-            isNegative
+            isNegative={true}
           />
         </StyledTokensWrapper>
         <StyledGrantTitle>
@@ -103,7 +103,7 @@ export default class PanelSummary extends React.PureComponent<Props, {}> {
                     },
                     size: {
                       token: '22px',
-                      text:'14px'
+                      text: '14px'
                     }
                   }}
                 />

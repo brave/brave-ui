@@ -26,7 +26,7 @@ export const StyledArrow = styled.div`
     `
     : ''
   };
-  
+
   ${(p: Props) => p.position === 'top'
     ? css`
       bottom: -7px;
@@ -36,7 +36,7 @@ export const StyledArrow = styled.div`
     `
     : ''
   };
-  
+
   ${(p: Props) => p.position === 'left'
     ? css`
       top: 8px;
@@ -46,7 +46,7 @@ export const StyledArrow = styled.div`
     `
     : ''
   };
-  
+
   ${(p: Props) => p.position === 'right'
     ? css`
       top: 8px;
@@ -73,7 +73,7 @@ export const StyledArrowOutline = styled.div`
     `
     : ''
   };
-  
+
   ${(p: Props) => p.position === 'top'
     ? css`
       bottom: -9px;
@@ -83,7 +83,7 @@ export const StyledArrowOutline = styled.div`
     `
     : ''
   };
-  
+
   ${(p: Props) => p.position === 'left'
     ? css`
       top: 8px;
@@ -93,7 +93,7 @@ export const StyledArrowOutline = styled.div`
     `
     : ''
   };
-  
+
   ${(p: Props) => p.position === 'right'
     ? css`
       top: 8px;
@@ -120,7 +120,7 @@ export const StyledTooltip = styled.div`
   background: ${(p: Props) => p.theme && p.theme.color ? p.theme.color.background : defaultBg};
   border: ${(p: Props) => p.theme && p.theme.border ? p.theme.border : `1px solid ${defaultBg}`};
   color: ${(p: Props) => p.theme && p.theme.color ? p.theme.color.text : '#fff'};
-  
+
   ${(p: Props) => p.position === 'bottom'
     ? css`
       margin-top: ${(p: Props) => p.theme && p.theme.offSet ? p.theme.offSet : 14}px;
@@ -129,7 +129,7 @@ export const StyledTooltip = styled.div`
     `
     : ''
   };
-  
+
   ${(p: Props) => p.position === 'top'
     ? css`
       margin-bottom: ${(p: Props) => p.theme && p.theme.offSet ? p.theme.offSet : 14}px;
@@ -138,7 +138,7 @@ export const StyledTooltip = styled.div`
     `
     : ''
   };
-  
+
   ${(p: Props) => p.position === 'left'
     ? css`
       margin-right: ${(p: Props) => p.theme && p.theme.offSet ? p.theme.offSet : 14}px;
@@ -147,7 +147,7 @@ export const StyledTooltip = styled.div`
     `
     : ''
   };
-  
+
   ${(p: Props) => p.position === 'right'
     ? css`
       margin-left: ${(p: Props) => p.theme && p.theme.offSet ? p.theme.offSet : 14}px;

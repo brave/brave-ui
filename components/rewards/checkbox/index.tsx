@@ -29,16 +29,18 @@ export default class Checkbox extends React.PureComponent<Props, {}> {
   generateChecks = (children: React.ReactNode) => {
     const self = this
     return React.Children.map(children, (child: any, i: number) => {
-      if (child.props['data-key'] == undefined) {
+      if (child.props['data-key'] === undefined) {
         return null
       }
 
       const element = child.props.children
       const key = child.props['data-key']
       const selected = self.props.value[key] || false
-      return <StyledLabel key={`${self.props.id}-checkbox-${i}`} onClick={self.onOptionClick.bind(self, key, child, selected)}>
-        <StyledBox selected={selected} theme={self.props.theme}>{selected ? check : null}</StyledBox><StyledText>{element}</StyledText>
-      </StyledLabel>
+      return (
+        <StyledLabel key={`${self.props.id}-checkbox-${i}`} onClick={self.onOptionClick.bind(self, key, child, selected)}>
+          <StyledBox selected={selected} theme={self.props.theme}>{selected ? check : null}</StyledBox><StyledText>{element}</StyledText>
+        </StyledLabel>
+      )
     })
   }
 
@@ -51,7 +53,7 @@ export default class Checkbox extends React.PureComponent<Props, {}> {
     Object.keys(this.props.value).map((item: string) => {
       newState[item] = multiple ? checked[item] : false
 
-      if (key == item) {
+      if (key === item) {
         newState[item] = selected
       }
     })

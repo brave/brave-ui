@@ -15,7 +15,7 @@ import {
 } from './style'
 import Table, { Row } from '../table'
 import Profile, { Provider } from '../profile'
-import { getLocale } from '../../helpers';
+import { getLocale } from '../../helpers'
 
 interface ProfileCell {
   verified: boolean
@@ -86,18 +86,22 @@ export default class ContributeTable extends React.PureComponent<Props, {}> {
       const cell: Row = {
         content: [
           {
-            content: <Profile
-              title={row.profile.name}
-              provider={row.profile.provider}
-              verified={row.profile.verified}
-              type={'small'}
-              src={row.profile.src}
-            />
+            content: (
+              <Profile
+                title={row.profile.name}
+                provider={row.profile.provider}
+                verified={row.profile.verified}
+                type={'small'}
+                src={row.profile.src}
+              />
+            )
           },
           {
-            content: <StyledText>
-              {row.attention}% <StyledRemove onClick={row.onRemove}>{removeIcon}</StyledRemove>
-            </StyledText>
+            content: (
+              <StyledText>
+                {row.attention}% <StyledRemove onClick={row.onRemove}>{removeIcon}</StyledRemove>
+              </StyledText>
+            )
           }
         ]
       }
@@ -126,7 +130,7 @@ export default class ContributeTable extends React.PureComponent<Props, {}> {
         />
         {
           !allSites
-          ? <StyledToggle onClick={onShowAll}>{getLocale('seeAllSites', {numSites})}</StyledToggle>
+          ? <StyledToggle onClick={onShowAll}>{getLocale('seeAllSites', { numSites })}</StyledToggle>
           : null
         }
       </StyledWrapper>

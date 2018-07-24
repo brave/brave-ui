@@ -9,8 +9,8 @@ import { setTheme } from '../../helpers'
 export const StyledWrapper = styled.div`
   position: relative;
   display: flex;
-  border-bottom: ${(p: Props) => setTheme(p.theme, 'borderBottom') || '1px solid #d0d6dc'};  
-  border-top: ${(p: Props) => setTheme(p.theme, 'borderTop') || 'none'};  
+  border-bottom: ${(p: Props) => setTheme(p.theme, 'borderBottom') || '1px solid #d0d6dc'};
+  border-top: ${(p: Props) => setTheme(p.theme, 'borderTop') || 'none'};
   justify-content: space-between;
   align-items: baseline;
   align-content: flex-start;

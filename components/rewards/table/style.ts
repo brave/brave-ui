@@ -31,7 +31,7 @@ export const StyledTH = styled.th`
   border-top: 2px solid #dedfe4;
   color: #4B4C5C;
   padding: 9px 0;
-  
+
   ${(p: Cell) => p.theme
     ? css`
       ${p.theme}
@@ -58,7 +58,7 @@ export const StyledTD = styled.td`
   border-bottom: solid 1px #e4e8ec;
   padding: 9px 0;
   text-align: left;
-  
+
   ${(p: Cell) => p.theme
     ? css`
       ${p.theme}

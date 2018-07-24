@@ -2,7 +2,7 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled, {css} from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Props, Theme } from './index'
 import { setTheme } from '../../helpers'
 
@@ -27,7 +27,7 @@ export const StyledSelect = styled.div`
   border: ${(p: {show: boolean, theme: Theme}) => setTheme(p.theme, 'border') || '1px solid #dfdfe8'};
   display: flex;
   align-items: center;
-  
+
   ${(p: {show: boolean, theme: Theme}) => p.show
     ? css`
       border-color: #a1a8f2;
@@ -71,7 +71,6 @@ export const StyledOption = styled.div`
   display: flex;
   background: ${(p: {selected: boolean}) => p.selected ? '#e9f0ff' : '#fff'};
 ` as any
-
 
 export const StyledOptionCheck = styled.div`
   flex-basis: 12px;

@@ -11,14 +11,14 @@ import {
 } from './style'
 
 export interface MediaTheme {
-  width?: string,
+  width?: string
   margin?: string
 }
 
 export interface MediaContentProps {
-  id?: string,
-  media?: string,
-  children?: React.ReactNode,
+  id?: string
+  media?: string
+  children?: React.ReactNode
   theme?: MediaTheme
 }
 

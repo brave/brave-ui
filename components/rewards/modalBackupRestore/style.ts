@@ -24,7 +24,7 @@ export const StyledImport = styled.span`
 
 export const StyleButtonWrapper = styled.div`
   text-align: center;
-  
+
   > div {
     margin: 0 4px;
   }
@@ -38,7 +38,7 @@ export const StyledDoneWrapper = styled.div`
 export const StyledActionsWrapper = styled.div`
   margin-top: 108px;
   text-align: center;
-  
+
   > div {
     margin: 0 8px;
   }

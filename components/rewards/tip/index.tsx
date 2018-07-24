@@ -6,7 +6,7 @@ import * as React from 'react'
 import { StyledWrapper, StyledTitle, StyledAllow, StyledAllowText, StyledClose, StyledAllowToggle } from './style'
 import Donate from '../donate'
 import Toggle from '../toggle'
-import { getLocale } from '../../helpers';
+import { getLocale } from '../../helpers'
 
 type Donation = {tokens: number, converted: number, selected?: boolean}
 
@@ -73,7 +73,7 @@ export default class Tip extends React.PureComponent<Props, {}> {
               <Toggle
                 onToggle={this.onToggle}
                 checked={allow}
-                theme={{onColor: '#fb542b', offColor: '#fb542b'}}
+                theme={{ onColor: '#fb542b', offColor: '#fb542b' }}
                 size={'small'}
               />
             </StyledAllowToggle>

@@ -17,20 +17,20 @@ import * as React from 'react'
 import { StyledPushButton, StyledPushButtonLink } from './style'
 
 export interface PushButtonTheme {
-  minWidth?: string,
-  minHeight?: string,
-  fontSize?: string,
-  textTransform?: string,
+  minWidth?: string
+  minHeight?: string
+  fontSize?: string
+  textTransform?: string
   fontWeight?: string
 }
 
 export interface PushButtonProps {
-  id?: string,
-  color?: string,
-  size?: 'small'| 'medium' | 'large'
-  disabled?: boolean,
-  onClick?: (e: any) => void,
-  theme?: PushButtonTheme,
+  id?: string
+  color?: string
+  size?: 'small' | 'medium' | 'large'
+  disabled?: boolean
+  onClick?: (e: any) => void
+  theme?: PushButtonTheme
   children?: React.ReactNode
 }
 
@@ -53,13 +53,13 @@ class PushButton extends React.PureComponent<PushButtonProps, {}> {
 }
 
 export interface PushButtonLinkProps {
-  id?: string,
-  color?: string,
-  size?: 'small'| 'medium' | 'large'
-  disabled?: boolean,
-  href?: string,
-  target?: '_blank' | '_parent' | '_self' | '_top',
-  theme?: PushButtonTheme,
+  id?: string
+  color?: string
+  size?: 'small' | 'medium' | 'large'
+  disabled?: boolean
+  href?: string
+  target?: '_blank' | '_parent' | '_self' | '_top'
+  theme?: PushButtonTheme
   children?: React.ReactNode
 }
 

@@ -6,12 +6,12 @@ import * as React from 'react'
 import { StyledWrapper, StyledTH, StyledNoContent, StyledTable, StyledTD, StyledTR } from './style'
 
 export interface Cell {
-  theme?: {[key: string]: string},
+  theme?: {[key: string]: string}
   content: React.ReactNode
 }
 
 export interface Row {
-  theme?: {[key: string]: string},
+  theme?: {[key: string]: string}
   content: Cell[]
 }
 

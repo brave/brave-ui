@@ -4,7 +4,7 @@
 
 import * as React from 'react'
 import { StyledWrapper, StyledTitle, StyledContent } from './style'
-import { getLocale } from '../../helpers';
+import { getLocale } from '../../helpers'
 
 const coins = require('./assets/coins')
 

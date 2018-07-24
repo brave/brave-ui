@@ -30,11 +30,11 @@ const generateContent = (color: Color, disabled: boolean) => {
   let props = `
     background: rgba(${colorCode}, 0.9);
     color: #fff;
-    
+
     :hover {
       background: rgba(${colorCode}, 1);
     }
-    
+
     :active {
       background: rgba(${colorCode}, 0.4);
     }
@@ -72,7 +72,7 @@ export const StyledContent = styled.div`
   cursor: ${(p: Props) => p.disabled ? 'default' : 'pointer'};
   user-select: none;
   text-transform: uppercase;
-  
+
   ${(p: Props) => generateContent(p.color, (p.disabled || false))};
 ` as any
 

@@ -20,7 +20,7 @@ export const StyledWrapper = styled.div`
 ` as any
 
 export const StyledContentWrapper = styled.div`
-  display: flex; 
+  display: flex;
   justify-content: space-between;
   align-items: stretch;
   align-content: flex-start;
@@ -54,8 +54,8 @@ export const StyledBannerImage = styled.div`
   line-height: 0.74;
   color: #d1d1db;
   height: 176px;
-  background: ${(p: Props) => p.bgImage 
-    ? `url(${p.bgImage}) no-repeat top center / cover` 
+  background: ${(p: Props) => p.bgImage
+    ? `url(${p.bgImage}) no-repeat top center / cover`
     : `url(${bg1}) no-repeat top left, url(${bg2}) no-repeat top right, #9e9fab`
   };
 ` as any

@@ -100,4 +100,4 @@ const StyledPushButton = styled.button`
   }
 ` as any
 
- export default StyledPushButton
+export default StyledPushButton

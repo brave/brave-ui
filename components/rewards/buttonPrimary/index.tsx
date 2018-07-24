@@ -22,7 +22,7 @@ export default class ButtonPrimary extends React.PureComponent<Props, {}> {
   render () {
     const { size, color, disabled, icon, text } = this.props
     return (
-      <StyledWrapper  {...this.props}>
+      <StyledWrapper {...this.props}>
           <StyledContent size={size} color={color} disabled={disabled}>
             {
               icon && icon.position === 'left'

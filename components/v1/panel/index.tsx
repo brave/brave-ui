@@ -7,25 +7,25 @@ import * as React from 'react'
 import StyledPanel from './style'
 
 export interface PanelTheme {
-  display?: string,
-  flexDirection?: string,
-  justifyContent?: string,
-  alignItems?: string,
-  maxWidth?: string,
-  minWidth?: string,
-  width?: string,
-  height?: string,
-  minHeight?: string,
-  margin?: string,
-  padding?: string,
-  backgroundColor?: string,
-  fontFamily?: string,
+  display?: string
+  flexDirection?: string
+  justifyContent?: string
+  alignItems?: string
+  maxWidth?: string
+  minWidth?: string
+  width?: string
+  height?: string
+  minHeight?: string
+  margin?: string
+  padding?: string
+  backgroundColor?: string
+  fontFamily?: string
   color?: string
 }
 
 export interface PanelProps {
-  id?: string,
-  theme?: PanelTheme,
+  id?: string
+  theme?: PanelTheme
   children?: React.ReactNode
 }
 

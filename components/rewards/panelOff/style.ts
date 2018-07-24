@@ -19,7 +19,6 @@ export const StyledTitle = styled.div`
   color: #5bc4fe;
 ` as any
 
-
 export const StyledContent = styled.div`
   font-family: Muli;
   font-size: 16px;

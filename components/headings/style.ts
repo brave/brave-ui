@@ -24,7 +24,7 @@ const StyledHeadingTitle = StyledSharedHeading.withComponent('h1').extend`
   white-space: nowrap;
   font-size: 28px;
   color: rgb(255, 80, 0);
-` as any
+`
 
 const StyledHeadingTitleLabel = styled.sup`
   box-sizing: border-box;
@@ -37,7 +37,7 @@ const StyledSectionHeading = StyledSharedHeading.withComponent('h2').extend`
   font-size: 20px;
   margin: 0 0 20px;
   font-weight: 400;
-` as any
+`
 
 const StyledFeatureHeading = StyledSharedHeading.withComponent('h2').extend`
   color: #444444;
@@ -45,7 +45,7 @@ const StyledFeatureHeading = StyledSharedHeading.withComponent('h2').extend`
   font-size: 14px;
   margin: 18px 0 8px;
   min-width: 160px;
-` as any
+`
 
 const StyledH1 = styled.h1`
   box-sizing: border-box;

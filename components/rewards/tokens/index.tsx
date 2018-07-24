@@ -5,7 +5,7 @@
 import * as React from 'react'
 import * as CSS from 'csstype'
 import { StyledTokens, StyledContent, StyledTokenValue } from './style'
-import { getLocale } from '../../helpers';
+import { getLocale } from '../../helpers'
 
 interface Theme {
   color?: {
@@ -33,14 +33,14 @@ export interface Props {
 export default class Tokens extends React.PureComponent<Props, {}> {
   render () {
     const { id, converted, value, hideText, isNegative, theme } = this.props
-    const currency =  this.props.currency || 'USD'
+    const currency = this.props.currency || 'USD'
 
     return (
       <span id={id}>
         <StyledTokens theme={theme}>
           <StyledTokenValue theme={theme}>
-            { isNegative ? '-' : '' }{value}
-          </StyledTokenValue> { !hideText ? <span>{getLocale('tokens')}</span> : null }
+            {isNegative ? '-' : ''}{value}
+          </StyledTokenValue> {!hideText ? <span>{getLocale('tokens')}</span> : null}
         </StyledTokens>
         {
           converted

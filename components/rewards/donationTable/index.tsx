@@ -8,7 +8,7 @@ import { StyledWrapper, StyledType, StyledDate, StyledRemove, StyledRemoveIcon, 
 import Table, { Cell, Row } from '../table'
 import Profile, { Provider } from '../profile'
 import Tokens from '../tokens'
-import { getLocale } from '../../helpers';
+import { getLocale } from '../../helpers'
 
 interface ProfileCell {
   verified: boolean
@@ -52,26 +52,32 @@ export default class DonationTable extends React.PureComponent<Props, {}> {
     switch (row.type) {
       case 'recurring':
         return {
-          content: <>
-            <StyledType>{getLocale('recurring')} <StyledRecurringIcon>{monthlyIcon}</StyledRecurringIcon></StyledType>
-            <StyledRemove onClick={row.onRemove}>
-              <StyledRemoveIcon> {removeIcon} </StyledRemoveIcon>{getLocale('remove')}
-            </StyledRemove>
-          </>
+          content: (
+            <>
+              <StyledType>{getLocale('recurring')} <StyledRecurringIcon>{monthlyIcon}</StyledRecurringIcon></StyledType>
+              <StyledRemove onClick={row.onRemove}>
+                <StyledRemoveIcon> {removeIcon} </StyledRemoveIcon>{getLocale('remove')}
+              </StyledRemove>
+            </>
+          )
         }
       case 'donation':
         return {
-          content: <>
-            <StyledType>{getLocale('oneTime')}</StyledType>
-            <StyledDate>{row.text}</StyledDate>
-          </>
+          content: (
+            <>
+              <StyledType>{getLocale('oneTime')}</StyledType>
+              <StyledDate>{row.text}</StyledDate>
+            </>
+          )
         }
       case 'tip':
         return {
-           content: <>
-            <StyledType>{getLocale('tipOnLike')}</StyledType>
-            <StyledDate>{row.text}</StyledDate>
-          </>
+          content: (
+            <>
+              <StyledType>{getLocale('tipOnLike')}</StyledType>
+              <StyledDate>{row.text}</StyledDate>
+            </>
+          )
         }
     }
   }
@@ -85,26 +91,30 @@ export default class DonationTable extends React.PureComponent<Props, {}> {
       return {
         content: [
           {
-            content: <Profile
-              title={row.profile.name}
-              provider={row.profile.provider}
-              verified={row.profile.verified}
-              type={'small'}
-              src={row.profile.src}
-            />
+            content: (
+              <Profile
+                title={row.profile.name}
+                provider={row.profile.provider}
+                verified={row.profile.verified}
+                type={'small'}
+                src={row.profile.src}
+              />
+            )
           },
           this.getTypeContent(row),
           {
-            content: <Tokens
-              value={row.contribute.tokens}
-              converted={row.contribute.converted}
-              hideText
-              theme={{
-                display: 'block',
-                size: {token: '14px', text: '10px'},
-                color: {token: '#686978', text: '#9e9fab'}
-              }}
-            />,
+            content: (
+              <Tokens
+                value={row.contribute.tokens}
+                converted={row.contribute.converted}
+                hideText={true}
+                theme={{
+                  display: 'block',
+                  size: { token: '14px', text: '10px' },
+                  color: { token: '#686978', text: '#9e9fab' }
+                }}
+              />
+            ),
             theme: {
               'text-align': 'right',
               'padding-right': '7px'
@@ -144,7 +154,7 @@ export default class DonationTable extends React.PureComponent<Props, {}> {
           'padding-right': '7px',
           'text-transform': 'capitalize'
         }, theme)
-      },
+      }
     ]
   }
 
@@ -161,7 +171,7 @@ export default class DonationTable extends React.PureComponent<Props, {}> {
         {
           !allItems
           ? <StyledToggle onClick={onClick}>
-              {getLocale('seeAllItems', {numItems})}
+              {getLocale('seeAllItems', { numItems })}
           </StyledToggle>
           : null
         }

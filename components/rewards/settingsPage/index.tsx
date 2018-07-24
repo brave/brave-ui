@@ -17,7 +17,7 @@ export default class SettingsPage extends React.PureComponent<Props, {}> {
 
     return (
       <StyledWrapper id={id}>
-        <StyleHeader></StyleHeader>
+        <StyleHeader />
         <StyledContent>
           {children}
         </StyledContent>

@@ -15,14 +15,14 @@ export interface SelectOptionTheme {
 }
 
 export interface SelectOptionProps {
-  titleName?: string,
-  id?: string,
-  multiple?: boolean,
-  autoFocus?: boolean,
-  disabled?: boolean,
-  value?: string,
-  onChange?: (e: any) => void,
-  children: React.ReactNode,
+  titleName?: string
+  id?: string
+  multiple?: boolean
+  autoFocus?: boolean
+  disabled?: boolean
+  value?: string
+  onChange?: (e: any) => void
+  children: React.ReactNode
   theme?: SelectOptionTheme
 }
 
