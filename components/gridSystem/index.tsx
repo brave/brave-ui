@@ -12,6 +12,8 @@ export interface GridTheme {
   height?: string,
   color?: string,
   backgroundColor?: string
+  margin?: string
+  alignItems?: string
 }
 
 export interface GridProps {
@@ -45,6 +47,7 @@ export interface ColumnTheme {
   alignItems?: string,
   backgroundColor?: string,
   flexDirection?: string,
+  flexWrap?: string,
   overflow?: string
 }
 

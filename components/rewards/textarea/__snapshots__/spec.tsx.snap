@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextArea tests basic tests matches the snapshot 1`] = `
+.c0 {
+  max-width: 254px;
+  width: 100%;
+}
+
+.c2 {
+  min-height: auto;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: Muli;
+  border: 1px solid #DFDFE8;
+  border-radius: 6px;
+  padding: 15px 0px 15px 20px;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.c1 {
+  max-width: 254px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+<div
+  className="c0"
+  id="area"
+>
+  <div
+    className="c1"
+    id={undefined}
+  >
+    <textarea
+      className="c2"
+      defaultValue={undefined}
+      disabled={undefined}
+      onChange={undefined}
+    />
+  </div>
+</div>
+`;

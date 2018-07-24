@@ -21,6 +21,9 @@ exports[`gridSystem tests column component basic tests matches the snapshot 1`] 
   -webkit-flex-direction: initial;
   -ms-flex-direction: initial;
   flex-direction: initial;
+  -webkit-flex-wrap: initial;
+  -ms-flex-wrap: initial;
+  flex-wrap: initial;
   font-family: inherit;
   font-size: inherit;
   color: inherit;
@@ -41,12 +44,17 @@ exports[`gridSystem tests grid component basic tests matches the snapshot 1`] = 
   grid-template-columns: repeat(12,1fr);
   grid-gap: 15px;
   padding: 0;
+  margin: 0;
   max-width: initial;
   height: initial;
   color: inherit;
   background-color: inherit;
   font-family: inherit;
   font-size: inherit;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 <div

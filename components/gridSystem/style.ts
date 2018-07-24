@@ -12,12 +12,14 @@ const StyledGrid = styled.div`
   grid-template-columns: repeat(${(p: GridProps) => p.columns ? p.columns : '12'}, 1fr);
   grid-gap: ${(p: GridProps) => setTheme(p.theme, 'gridGap') || '15px'};
   padding: ${(p: GridProps) => setTheme(p.theme, 'padding') || '0'};
+  margin: ${(p: GridProps) => setTheme(p.theme, 'margin') || '0'};
   max-width: ${(p: GridProps) => setTheme(p.theme, 'maxWidth') || 'initial'};
   height: ${(p: GridProps) => setTheme(p.theme, 'height') || 'initial'};
   color: ${(p: GridProps) => setTheme(p.theme, 'color') || 'inherit'};
   background-color: ${(p: GridProps) => setTheme(p.theme, 'backgroundColor') || 'inherit'};
   font-family: inherit;
   font-size: inherit;
+  align-items: ${(p: GridProps) => setTheme(p.theme, 'alignItems') || 'flex-start'};
 
   ${(p: GridProps) => p.disabled
     ? css`
@@ -36,6 +38,7 @@ const StyledColumn = styled.div`
   align-items: ${(p: ColumnProps) => setTheme(p.theme, 'alignItems') || 'initial'};
   background-color: ${(p: ColumnProps) => setTheme(p.theme, 'backgroundColor') || 'inherit'};
   flex-direction: ${(p: ColumnProps) => setTheme(p.theme, 'flexDirection') || 'initial'};
+  flex-wrap:${(p: ColumnProps) => setTheme(p.theme, 'flexWrap') || 'initial'};
   overflow: ${(p: ColumnProps) => setTheme(p.theme, 'overflow')};
   font-family: inherit;
   font-size: inherit;
