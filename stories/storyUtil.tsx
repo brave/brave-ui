@@ -4,10 +4,6 @@
 
 import * as React from 'react'
 
-export const BetterVisualizer = (storyFn: any) => <div style={featureStyles}>{storyFn()}</div>
-
-export const BetterPageVisualizer = (storyFn: any) => <div style={pageStyles}>{storyFn()}</div>
-
 const featureStyles: object = {
   display: 'flex',
   justifyContent: 'center',
@@ -20,3 +16,7 @@ const pageStyles: object = {
   width: '-webkit-fill-available',
   height: '-webkit-fill-available'
 }
+
+export const BetterVisualizer = (storyFn: any) => <div style={featureStyles}>{storyFn()}</div>
+
+export const BetterPageVisualizer = (storyFn: any) => <div style={pageStyles}>{storyFn()}</div>

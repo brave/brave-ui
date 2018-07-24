@@ -66,7 +66,7 @@ storiesOf('Old/Typography, Text and Links', module)
   })
   .add('Heading', () => {
     const levelOptions = {
-      1: 'h1', 2: 'h2', 3: 'h3', /* TBD:  4: 'h4', 5: 'h5', 6: 'h6' */
+      1: 'h1', 2: 'h2', 3: 'h3' /* TBD:  4: 'h4', 5: 'h5', 6: 'h6' */
     }
     const levelDefaultValue = 1
     const levelValue = select('Heading Level', levelOptions, levelDefaultValue)

@@ -11,7 +11,7 @@ import * as React from 'react'
 import { BetterVisualizer } from '../storyUtil'
 
 // Components
-import Table, { Cell, Row } from '../../src/components/dataTables/table';
+import Table, { Cell, Row } from '../../src/components/dataTables/table'
 
 addDecorator(withKnobs)
 addDecorator(BetterVisualizer)
@@ -74,12 +74,14 @@ storiesOf('Components/Data Tables', module)
       }
     ]
 
-    return <div style={{width: '595px'}}>
-      <Table
-        header={object('Header', header)}
-        rows={object('Rows', rows)}
-      >
-        404: Publishers not found :)
-      </Table>
-    </div>
+    return (
+      <div style={{ width: '595px' }}>
+        <Table
+          header={object('Header', header)}
+          rows={object('Rows', rows)}
+        >
+          404: Publishers not found :)
+        </Table>
+      </div>
+    )
   })

@@ -66,7 +66,7 @@ storiesOf('Old/Buttons', module)
           minHeight: text('Height', '32px'),
           fontSize: text('Font Size', '13px')
         }}
-        >
+      >
         {text('Label', 'Hello Button')}
       </PushButtonLink>
     )
@@ -80,33 +80,36 @@ storiesOf('Old/Buttons', module)
     }
     const defaultValue = 'medium'
     const value = select(label, options, defaultValue)
+    const onChange = () => {
+      store.set({ checked: !store.state.checked })
+    }
     return (
       <SwitchButton
         {...store.state}
         id='sampleSwitch'
         leftText={text('Left Label', 'Some label here')}
         rightText={text('Right Label', 'Some label here too')}
-        theme={{labelColor: text('Label Color', '#303030')}}
+        theme={{ labelColor: text('Label Color', '#303030') }}
         size={value}
         checked={boolean('Checked?', store.state.checked)}
         disabled={boolean('Disabled?', false)}
         autoFocus={boolean('AutoFocus?', false)}
-        onChange={(checked) => (
-          store.set({ checked: !store.state.checked })
-        )}
+        onChange={onChange}
       />
     )
   }))
   .add('ContentToggleArrow', withState({ open: true }, (store) => {
+    const onClick = () => {
+      store.set({ open: !store.state.open })
+    }
     return (
       <ContentToggleArrow
         {...store.state}
         withSeparator={boolean('with separator?', true)}
         open={boolean('Open?', store.state.open)}
         summary={text('Summary text', 'Some text here')}
-        onClick={(open) => (
-          store.set({ open: !store.state.open })
-        )}>
+        onClick={onClick}
+      >
         <h1>Some text inside!</h1>
       </ContentToggleArrow>
     )

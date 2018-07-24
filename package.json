@@ -18,7 +18,7 @@
   "scripts": {
     "ts": "tsc",
     "ts-watch": "tsc -w",
-    "lint": "tslint --project tsconfig.json '{src, stories}/**/*.{ts,tsx}'",
+    "lint": "tslint --project tsconfig.json 'src/**/*.{ts,tsx}' && tslint --project tsconfig-story.json 'stories/**/*.{ts,tsx}'",
     "build": "lerna exec --parallel -- tsc",
     "publish": "lerna publish",
     "storybook-start": "start-storybook -p 9091 -c .storybook",

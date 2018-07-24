@@ -20,33 +20,37 @@ addDecorator(BetterVisualizer)
 
 storiesOf('Components/Layout', module)
   .add('Tabs', withState({ tabId: 'cont1' }, (store) => {
-    return <div style={{maxWidth: '900px', background: '#fff', padding: '30px'}}>
-      <Tabs
-        activeTabId={store.state.tabId}
-        onChange={(tabId: string) => (
-          store.set({ tabId })
-        )}
-      >
-        <div data-key='cont1' data-title={'Content 1'}>
-          1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor incidunt laudantium magnam maiores molestias
-          numquam quae quas tempore. Accusamus animi aperiam aspernatur autem commodi cumque cupiditate dignissimos
-          dolore eius exercitationem fuga modi molestiae natus nemo nesciunt nihil nisi nobis obcaecati quasi quibusdam,
-          sunt tempora temporibus ut veniam vitae! Exercitationem, possimus?
-        </div>
-        <div data-key='cont2' data-title={'Content 2'}>
-          2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at delectus dolores eaque eius
-          eligendi error, et eveniet ex facere facilis fugit harum id in nesciunt non odit officia pariatur
-          placeat porro, quam quisquam quos recusandae saepe totam. Ipsa nam nulla obcaecati perspiciatis
-          saepe ullam. Aliquid amet architecto consequuntur dolor dolorem doloribus, eaque explicabo illum
-          nam numquam quia quis voluptatem.
-        </div>
-        <div data-key='cont3' data-title={'Content 3'}>
-          3Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut distinctio dolore eaque eveniet
-          fuga illo molestiae natus, officiis qui quia sit soluta sunt veniam. Dolorum eveniet illum
-          quibusdam ratione temporibus tenetur voluptatum. Ab alias assumenda earum expedita odio tempore vitae?
-        </div>
-      </Tabs>
-    </div>
+    const onChange = (tabId: string) => {
+      store.set({ tabId })
+    }
+
+    return (
+      <div style={{ maxWidth: '900px', background: '#fff', padding: '30px' }}>
+        <Tabs
+          activeTabId={store.state.tabId}
+          onChange={onChange}
+        >
+          <div data-key='cont1' data-title={'Content 1'}>
+            1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor incidunt laudantium magnam maiores molestias
+            numquam quae quas tempore. Accusamus animi aperiam aspernatur autem commodi cumque cupiditate dignissimos
+            dolore eius exercitationem fuga modi molestiae natus nemo nesciunt nihil nisi nobis obcaecati quasi quibusdam,
+            sunt tempora temporibus ut veniam vitae! Exercitationem, possimus?
+          </div>
+          <div data-key='cont2' data-title={'Content 2'}>
+            2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at delectus dolores eaque eius
+            eligendi error, et eveniet ex facere facilis fugit harum id in nesciunt non odit officia pariatur
+            placeat porro, quam quisquam quos recusandae saepe totam. Ipsa nam nulla obcaecati perspiciatis
+            saepe ullam. Aliquid amet architecto consequuntur dolor dolorem doloribus, eaque explicabo illum
+            nam numquam quia quis voluptatem.
+          </div>
+          <div data-key='cont3' data-title={'Content 3'}>
+            3Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut distinctio dolore eaque eveniet
+            fuga illo molestiae natus, officiis qui quia sit soluta sunt veniam. Dolorum eveniet illum
+            quibusdam ratione temporibus tenetur voluptatum. Ab alias assumenda earum expedita odio tempore vitae?
+          </div>
+        </Tabs>
+      </div>
+    )
   }))
   .add('Grid List', () => {
     const options = {}
@@ -66,12 +70,14 @@ storiesOf('Components/Layout', module)
     return (
       <div>
         <h2>Playground! (see "knobs" for usage)</h2>
-        <Grid theme={{
-          backgroundColor: text('Grid Background', 'gray'),
-          maxWidth: text('Max Grid Width', '100%'),
-          padding: text('Own Grid Gutter (padding)', '15px'),
-          gridGap: text('Grid Gutter (for columns)', '15px')
-        }}>
+        <Grid
+          theme={{
+            backgroundColor: text('Grid Background', 'gray'),
+            maxWidth: text('Max Grid Width', '100%'),
+            padding: text('Own Grid Gutter (padding)', '15px'),
+            gridGap: text('Grid Gutter (for columns)', '15px')
+          }}
+        >
           <Column
             size={value1}
             theme={{
@@ -81,7 +87,8 @@ storiesOf('Components/Layout', module)
                 'Column #1 Vertical Align (flexbox-based)',
                 'flex-end'
               )
-            }}>
+            }}
+          >
             {`${value1}/12`}
           </Column>
           <Column
@@ -93,11 +100,11 @@ storiesOf('Components/Layout', module)
                 'Column #1 Vertical Align (flexbox-based)',
                 'flex-start'
               )
-            }}>
+            }}
+          >
             {`${value2}/12`}
           </Column>
         </Grid>
       </div>
     )
   })
-
