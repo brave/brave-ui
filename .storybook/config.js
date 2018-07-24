@@ -5,7 +5,7 @@
 import { configure } from '@storybook/react'
 import { setOptions } from '@storybook/addon-options'
 import { setDefaults } from '@storybook/addon-info'
-import { initLocale } from '../components/helpers'
+import { initLocale } from '../src/helpers'
 import locales from '../stories/assets/locale'
 
 setOptions({

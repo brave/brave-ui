@@ -18,7 +18,7 @@
   "scripts": {
     "ts": "tsc",
     "ts-watch": "tsc -w",
-    "lint": "tslint --project tsconfig.json '{components, stories}/**/*.{ts,tsx}'",
+    "lint": "tslint --project tsconfig.json '{src, stories}/**/*.{ts,tsx}'",
     "build": "lerna exec --parallel -- tsc",
     "publish": "lerna publish",
     "storybook-start": "start-storybook -p 9091 -c .storybook",
@@ -107,11 +107,11 @@
     "resetModules": true,
     "collectCoverage": false,
     "collectCoverageFrom": [
-      "components/**/*.tsx",
-      "!components/**/index.ts"
+      "src/**/*.tsx",
+      "!src/**/index.ts"
     ],
     "testMatch": [
-      "<rootDir>/components/**/spec.tsx"
+      "<rootDir>/src/**/spec.tsx"
     ],
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/"

@@ -1,0 +1,14 @@
+export declare const StyledWrapper: any;
+export declare const StyledFlip: any;
+export declare const StyledContentWrapper: any;
+export declare const StyledLeft: any;
+export declare const StyledRight: any;
+export declare const StyledTitle: any;
+export declare const StyledBreak: any;
+export declare const StyledDescription: any;
+export declare const StyledSettingsIcon: any;
+export declare const StyledContent: any;
+export declare const StyledSettingsWrapper: any;
+export declare const StyledSettingsClose: any;
+export declare const StyledSettingsTitle: any;
+export declare const StyledSettingsText: any;

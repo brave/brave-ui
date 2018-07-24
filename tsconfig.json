@@ -17,10 +17,10 @@
   },
 
   "include": [
-    "./components"
+    "./src"
   ],
   "exclude": [
     "./stories",
-    "./components/**/spec.tsx"
+    "./src/**/spec.tsx"
   ]
 }
