@@ -4,12 +4,13 @@
 
 import * as React from 'react'
 
-import { Image, ImageTheme } from '../../v1/image'
-import { Grid, Column } from '../../gridSystem'
-import { 
+import { Grid, Column } from '../../../components/layout/gridList'
+import {
   StyledTitle,
   StyledDesc,
-  StyledInfoCard
+  StyledInfoCard,
+  StyledImage,
+  StyledFigure
 } from './style'
 
 export interface InfoCardProps {
@@ -25,20 +26,13 @@ export interface InfoCardsProps {
 
 class InfoCard extends React.PureComponent<InfoCardProps, {}> {
 
-  get imageTheme(): ImageTheme {
-    return {
-      maxWidth: '80px', 
-      margin: '10px auto 20px auto'
-    }
-  } 
-
   render () {
     const { title, description, icon } = this.props
     return (
       <StyledInfoCard>
-        <Image 
-          src={icon}
-          theme={this.imageTheme}/>
+        <StyledFigure>
+          <StyledImage src={icon}/>
+        </StyledFigure>
         <StyledTitle>{title}</StyledTitle>
         <StyledDesc>{description}</StyledDesc>
       </StyledInfoCard>
@@ -48,30 +42,41 @@ class InfoCard extends React.PureComponent<InfoCardProps, {}> {
 
 export default class InfoCards extends React.PureComponent<InfoCardsProps, {}> {
 
+  get gridTheme () {
+    return {
+      gridGap: '0px',
+      maxWidth: '900px',
+      margin: '0 auto'
+    }
+  }
+
   getCards (items: InfoCardProps[]) {
-    return <Grid theme={{gridGap: '40px'}} columns={items.length}>
-      {items.map((item: InfoCardProps) => {
-        return <>
-          <Column size={1}>
-            <InfoCard
-              title={item.title}
-              description={item.description}
-              icon={item.icon}/>
-          </Column>
-        </>
-      })}
-    </Grid>
+    return (
+      <Grid theme={this.gridTheme} columns={items.length}>
+        {items.map((item: InfoCardProps, index: number) => {
+          return <Column key={`${index}`} size={1}>
+              <InfoCard
+                title={item.title}
+                description={item.description}
+                icon={item.icon}
+              />
+            </Column>
+        })}
+      </Grid>
+    )
   }
 
   render () {
     const { id, infoItems } = this.props
-    return <>
-      {infoItems
-        ? <div id={id}>
-            {this.getCards(infoItems)}
-          </div>
-        : null}
-    </>
+    return (
+      <section id={id}>
+        {infoItems
+          ? <div>
+              {this.getCards(infoItems)}
+            </div>
+          : null}
+      </section>
+    )
   }
 }
 

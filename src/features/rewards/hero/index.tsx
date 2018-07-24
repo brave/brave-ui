@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import {StyledHero} from './style'
+import { StyledHero } from './style'
 
 export interface Props {
   id?: string
@@ -12,10 +12,10 @@ export interface Props {
 
 export default class Hero extends React.PureComponent<Props, {}> {
   render () {
-    const { children } = this.props
+    const { id, children } = this.props
 
     return (
-      <StyledHero>
+      <StyledHero id={id}>
         {children}
       </StyledHero>
     )
