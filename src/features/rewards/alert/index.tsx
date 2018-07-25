@@ -4,6 +4,7 @@
 
 import * as React from 'react'
 import * as CSS from 'csstype'
+import SimpleIcon from '../../../components/media/simpleIcon'
 import { StyledWrapper, StyledContent, StyledClose, StyledIcon } from './style'
 
 interface Theme {
@@ -20,17 +21,17 @@ export interface Props {
   theme?: Theme
 }
 
-const success = require('./assets/success')
-const error = require('./assets/error')
-const close = require('./assets/close')
-
 export default class Alert extends React.PureComponent<Props, {}> {
   get icon () {
     switch (this.props.type) {
       case 'error':
-        return error
+        return (
+          <SimpleIcon type='error' theme={{ color: '#F43405' }}/>
+        )
       case 'success':
-        return success
+        return (
+          <SimpleIcon type='success' theme={{ color: '#1BBA6A' }}/>
+        )
     }
 
     return null
@@ -47,7 +48,9 @@ export default class Alert extends React.PureComponent<Props, {}> {
         </StyledContent>
         {
           onClose
-          ? <StyledClose>{close}</StyledClose>
+          ? <StyledClose>
+              <SimpleIcon type='close' theme={{ color: '#DFDFE8' }}/>
+            </StyledClose>
           : null
         }
       </StyledWrapper>

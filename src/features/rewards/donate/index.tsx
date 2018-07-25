@@ -17,9 +17,7 @@ import {
 
 import Amount from '../amount/index'
 import { getLocale, setTheme } from '../../../helpers'
-
-const send = require('./assets/send')
-const sadFace = require('./assets/sadFace')
+import SimpleIcon from '../../../components/media/simpleIcon'
 
 type Donation = {tokens: number, converted: number, selected?: boolean}
 
@@ -131,12 +129,16 @@ export default class Donate extends React.PureComponent<Props, State> {
           {children}
         </StyledContent>
         <StyledSend disabled={disabled} onClick={this.validateDonation()} theme={theme}>
-          <StyledIconSend>{send(sendColor)}</StyledIconSend>{actionText}
+          <StyledIconSend>
+            <SimpleIcon type='send' theme={{ color: sendColor }}/>
+          </StyledIconSend>{actionText}
         </StyledSend>
         {
           this.state.missingFunds
             ? <StyledFunds theme={theme}>
-              <StyledIconFace>{sadFace}</StyledIconFace>
+              <StyledIconFace>
+                <SimpleIcon type='sadFace' theme={{ color: '#838391' }}/>
+              </StyledIconFace>
               <StyledFundsText>{getLocale('notEnoughTokens')} <a href='#'>{getLocale('addFunds')}</a>.</StyledFundsText>
             </StyledFunds>
             : null

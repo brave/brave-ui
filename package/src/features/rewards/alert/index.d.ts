@@ -13,7 +13,7 @@ export interface Props {
     theme?: Theme;
 }
 export default class Alert extends React.PureComponent<Props, {}> {
-    readonly icon: any;
+    readonly icon: JSX.Element | null;
     render(): JSX.Element;
 }
 export {};

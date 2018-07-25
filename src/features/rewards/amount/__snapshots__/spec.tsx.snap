@@ -55,37 +55,39 @@ exports[`Amount tests basic tests matches the snapshot 1`] = `
     <span
       className="c2"
     >
-      <svg
-        height="14"
-        width="17"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g
-          fill="none"
-          fillRule="evenodd"
+      <span>
+        <svg
+          height="14"
+          width="17"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            d="M8.803 0L8.8 9.085l8 4.515L8.803 0"
-            fill="#8D2557"
-          />
-          <path
-            d="M.8 13.6l7.992-4.502L8.8 0l-8 13.6"
-            fill="#DE4E2A"
-          />
-          <path
-            d="M16.8 13.6l-7.984-4-8.016 4h16"
-            fill="#582D7A"
-          />
-          <path
-            d="M5.6 10.4h5.6L8.378 5.6z"
-            fill="#FFFFFE"
-          />
-          <path
-            d="M7.975 4.901l-.043-.026L4.8 10.4h6.4L7.975 4.8l-.043.075.043.026-.042.027 3.091 5.369h-6.05l3.044-5.37-.043-.026-.042.027.042-.027"
-            fill="#DE4E2A"
-          />
-        </g>
-      </svg>
+          <g
+            fill="none"
+            fillRule="evenodd"
+          >
+            <path
+              d="M8.803 0L8.8 9.085l8 4.515L8.803 0"
+              fill="#8D2557"
+            />
+            <path
+              d="M.8 13.6l7.992-4.502L8.8 0l-8 13.6"
+              fill="#DE4E2A"
+            />
+            <path
+              d="M16.8 13.6l-7.984-4-8.016 4h16"
+              fill="#582D7A"
+            />
+            <path
+              d="M5.6 10.4h5.6L8.378 5.6z"
+              fill="#FFFFFE"
+            />
+            <path
+              d="M7.975 4.901l-.043-.026L4.8 10.4h6.4L7.975 4.8l-.043.075.043.026-.042.027 3.091 5.369h-6.05l3.044-5.37-.043-.026-.042.027.042-.027"
+              fill="#DE4E2A"
+            />
+          </g>
+        </svg>
+      </span>
     </span>
     1
      

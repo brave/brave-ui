@@ -33,6 +33,7 @@ import {
 } from './style'
 
 import Donate from '../donate/index'
+import SimpleIcon from '../../../components/media/simpleIcon'
 import Checkbox from '../../../components/formControls/checkbox/index'
 import { getLocale } from '../../../helpers'
 
@@ -64,9 +65,6 @@ export interface Theme {
 interface State {
   monthly: boolean
 }
-
-const close = require('./assets/close')
-const monthly = require('./assets/monthly')
 
 export default class SiteBanner extends React.PureComponent<Props, State> {
   constructor (props: Props) {
@@ -102,14 +100,13 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
 
     const self = this
     return social.map((item: Social) => {
-      const icon = require(`./assets/${item.type}`)
       return (
         <StyledSocialItem
           key={`${self.props.id}-social-${item.type}`}
           href={self.getSocialLink(item)}
           target={'_blank'}
         >
-          <StyledSocialIcon>{icon}</StyledSocialIcon> {item.name || item.handler}
+          <StyledSocialIcon><SimpleIcon type={item.type}/></StyledSocialIcon> {item.name || item.handler}
         </StyledSocialItem>
       )
     })
@@ -166,7 +163,9 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
     return (
       <StyledWrapper id={id}>
         <StyledBanner>
-          <StyledClose onClick={onClose}>{close}</StyledClose>
+          <StyledClose onClick={onClose}>
+            <SimpleIcon type='close' theme={{ color: '#DFDFE8' }}/>
+          </StyledClose>
           <StyledBannerImage bgImage={bgImage}>
             <StyledCenter>
               {domain}
@@ -187,10 +186,12 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
               {
                 currentDonation && !isNaN(currentDonation) && currentDonation > 0
                 ? <StyledRecurring>
-                  <StyledIconRecurringBig>{monthly('#696fdc')}</StyledIconRecurringBig>
+                  <StyledIconRecurringBig>
+                    <SimpleIcon type='monthly' theme={{ color: '#696FDC' }}/>
+                  </StyledIconRecurringBig>
                   {getLocale('currentDonation', { currentDonation })}
                   <StyledRemove>
-                    <StyledIconRemove>{close}</StyledIconRemove>{getLocale('remove')}
+                    <StyledIconRemove><SimpleIcon type='close' theme={{ color: '#DFDFE8' }}/></StyledIconRemove>{getLocale('remove')}
                   </StyledRemove>
                 </StyledRecurring>
                 : null
@@ -219,7 +220,7 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
                   theme={{ checkColor: '#fff', borderColor: '#a1a8f2' }}
                 >
                   <div data-key='make'>
-                    <StyledOption>{getLocale('makeMonthly')}</StyledOption> <StyledIconRecurring>{monthly()}</StyledIconRecurring>
+                    <StyledOption>{getLocale('makeMonthly')}</StyledOption> <StyledIconRecurring><SimpleIcon type='monthly' theme={{ color: '#696FDC' }}/></StyledIconRecurring>
                   </div>
                 </Checkbox>
               </Donate>
