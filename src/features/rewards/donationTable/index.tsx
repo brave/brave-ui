@@ -9,6 +9,7 @@ import Table, { Cell, Row } from '../../../components/dataTables/table/index'
 import Profile, { Provider } from '../profile/index'
 import Tokens from '../tokens/index'
 import { getLocale } from '../../../helpers'
+import SimpleIcon from '../../../components/media/simpleIcon'
 
 interface ProfileCell {
   verified: boolean
@@ -44,9 +45,6 @@ interface Theme {
   headerColor?: CSS.Color
 }
 
-const removeIcon = require('./assets/close')
-const monthlyIcon = require('./assets/monthly')
-
 export default class DonationTable extends React.PureComponent<Props, {}> {
   getTypeContent (row: DetailRow): Cell {
     switch (row.type) {
@@ -54,9 +52,9 @@ export default class DonationTable extends React.PureComponent<Props, {}> {
         return {
           content: (
             <>
-              <StyledType>{getLocale('recurring')} <StyledRecurringIcon>{monthlyIcon}</StyledRecurringIcon></StyledType>
+              <StyledType>{getLocale('recurring')} <StyledRecurringIcon><SimpleIcon type='monthly' theme={{ color: '#696FDC' }}/></StyledRecurringIcon></StyledType>
               <StyledRemove onClick={row.onRemove}>
-                <StyledRemoveIcon> {removeIcon} </StyledRemoveIcon>{getLocale('remove')}
+                <StyledRemoveIcon> <SimpleIcon type='close' theme={{ color: '#DFDFE8' }}/> </StyledRemoveIcon>{getLocale('remove')}
               </StyledRemove>
             </>
           )

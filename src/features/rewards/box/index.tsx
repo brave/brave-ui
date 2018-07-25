@@ -19,11 +19,9 @@ import { StyledWrapper,
   StyledContentWrapper,
   StyledFlip
 } from './style'
+import SimpleIcon from '../../../components/media/simpleIcon'
 import Toggle from '../../../components/formControls/toggle/index'
 import { getLocale } from '../../../helpers'
-
-const close = require('./assets/close')
-const settings = require('./assets/settings')
 
 export interface Theme {
   titleColor: CSS.Color
@@ -99,7 +97,9 @@ export default class Box extends React.PureComponent<Props, State> {
             <StyledRight>
               {
                 settingsChild && ((toggle && checked) || !toggle) ?
-                <StyledSettingsIcon float={'right'} onClick={this.settingsClick}>{settings}</StyledSettingsIcon>
+                <StyledSettingsIcon float={'right'} onClick={this.settingsClick}>
+                  <SimpleIcon type='settings' theme={{ color: 'none' }}/>
+                </StyledSettingsIcon>
                 : null
               }
             </StyledRight>
@@ -113,10 +113,12 @@ export default class Box extends React.PureComponent<Props, State> {
           </StyledContentWrapper>
           <StyledSettingsWrapper open={this.state.settingsOpened}>
             <StyledSettingsClose onClick={this.settingsClick} open={this.state.settingsOpened}>
-              {close}
+              <SimpleIcon type='close' theme={{ color: '#DFDFE8' }}/>
             </StyledSettingsClose>
             <StyledSettingsTitle>
-              <StyledSettingsIcon>{settings}</StyledSettingsIcon>
+              <StyledSettingsIcon>
+                <SimpleIcon type='settings' theme={{ color: 'none' }}/>
+              </StyledSettingsIcon>
               <StyledSettingsText>{title} {getLocale('settings')}</StyledSettingsText>
             </StyledSettingsTitle>
             {settingsChild}

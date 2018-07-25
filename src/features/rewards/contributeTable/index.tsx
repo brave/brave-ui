@@ -13,6 +13,7 @@ import {
   StyledTHOther,
   StyledTHLast
 } from './style'
+import SimpleIcon from '../../../components/media/simpleIcon'
 import Table, { Row } from '../../../components/dataTables/table/index'
 import Profile, { Provider } from '../profile/index'
 import { getLocale } from '../../../helpers'
@@ -45,8 +46,6 @@ export interface Props {
 interface Theme {
   headerColor?: CSS.Color
 }
-
-const removeIcon = require('./assets/close')
 
 export default class ContributeTable extends React.PureComponent<Props, {}> {
   getHeader = (header: string[]) => {
@@ -99,7 +98,7 @@ export default class ContributeTable extends React.PureComponent<Props, {}> {
           {
             content: (
               <StyledText>
-                {row.attention}% <StyledRemove onClick={row.onRemove}>{removeIcon}</StyledRemove>
+                {row.attention}% <StyledRemove onClick={row.onRemove}><SimpleIcon type='close' theme={{ color: '#DFDFE8' }}/></StyledRemove>
               </StyledText>
             )
           }

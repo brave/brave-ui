@@ -7,6 +7,7 @@ import { StyledWrapper, StyledTitle, StyledAllow, StyledAllowText, StyledClose, 
 import Donate from '../donate/index'
 import Toggle from '../../../components/formControls/toggle/index'
 import { getLocale } from '../../../helpers'
+import SimpleIcon from '../../../components/media/simpleIcon'
 
 type Donation = {tokens: number, converted: number, selected?: boolean}
 
@@ -22,8 +23,6 @@ export interface Props {
   id?: string
   title?: string
 }
-
-const close = require('./assets/close')
 
 export default class Tip extends React.PureComponent<Props, {}> {
   onDonate = (amount: number) => {
@@ -49,7 +48,9 @@ export default class Tip extends React.PureComponent<Props, {}> {
 
     return (
       <StyledWrapper id={id}>
-        <StyledClose onClick={onClose}>{close}</StyledClose>
+        <StyledClose onClick={onClose}>
+          <SimpleIcon type='close' theme={{ color: '#DFDFE8' }}/>
+        </StyledClose>
         <StyledTitle>Send my tip to</StyledTitle>
         <Donate
           title={title || ''}

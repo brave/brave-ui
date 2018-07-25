@@ -63,28 +63,30 @@ exports[`Alert tests basic tests matches the snapshot 1`] = `
   <span
     className="c1"
   >
-    <svg
-      height="42"
-      width="42"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g
-        fill="none"
-        fillRule="evenodd"
-        transform="translate(1 1)"
+    <span>
+      <svg
+        height="42"
+        width="42"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d="M13 21.045l1.6-1.48 3.166 2.848h1.483L27.48 15l1.49 1.39-9.72 10.117h-.69z"
-          fill="#1BBA6A"
-        />
-        <circle
-          cx="20"
-          cy="20"
-          r="20"
-          stroke="#67D79D"
-        />
-      </g>
-    </svg>
+        <g
+          fill="none"
+          fillRule="evenodd"
+          transform="translate(1 1)"
+        >
+          <path
+            d="M13 21.045l1.6-1.48 3.166 2.848h1.483L27.48 15l1.49 1.39-9.72 10.117h-.69z"
+            fill="#1BBA6A"
+          />
+          <circle
+            cx="20"
+            cy="20"
+            r="20"
+            stroke="#67D79D"
+          />
+        </g>
+      </svg>
+    </span>
   </span>
   <div
     className="c2"

@@ -3,6 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
+import SimpleIcon from '../../../components/media/simpleIcon'
 import { StyledWrapper, StyledAmount, StyledLogo, StyledConverted, StyledTokens } from './style'
 import { getLocale } from '../../../helpers'
 
@@ -16,8 +17,6 @@ export interface Props {
   currency?: string
 }
 
-const logo = require('./assets/logo')
-
 export default class Amount extends React.PureComponent<Props, {}> {
   render () {
     const { id, onSelect, amount, selected, type } = this.props
@@ -27,7 +26,9 @@ export default class Amount extends React.PureComponent<Props, {}> {
     return (
       <StyledWrapper id={id} onClick={onSelect.bind(this, amount)}>
         <StyledAmount selected={selected} type={type}>
-          <StyledLogo>{logo}</StyledLogo>{amount} <StyledTokens>{type === 'big' ? 'tokens' : null}</StyledTokens>
+          <StyledLogo>
+            <SimpleIcon type='logo' theme={{ color: '#DE4E2A' }}/>
+          </StyledLogo>{amount} <StyledTokens>{type === 'big' ? 'tokens' : null}</StyledTokens>
         </StyledAmount>
         <StyledConverted selected={selected} type={type}>
           {getLocale('about')} {converted.toFixed(2)} {currency}
