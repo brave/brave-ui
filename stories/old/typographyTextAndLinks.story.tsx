@@ -20,9 +20,10 @@
  * Separator
  */
 
-import { storiesOf, addDecorator } from '@storybook/react'
+import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
-import { BetterVisualizer } from '../storyUtil'
+// @ts-ignore
+import centered from '@storybook/addon-centered/dist'
 
 // Components
 import * as React from 'react'
@@ -31,17 +32,14 @@ import {
   SectionHeading,
   FeatureHeading,
   Heading
-} from '../../src/old/headings/index'
-import Paragraph from '../../src/old/paragraph/index'
-import Anchor from '../../src/old/anchor/index'
-import Separator from '../../src/old/separator/index'
-
-addDecorator(withKnobs)
-
-// Globally adapt the story visualizer for this story
-addDecorator(BetterVisualizer)
+} from '../../src/old/headings'
+import Paragraph from '../../src/old/paragraph'
+import Anchor from '../../src/old/anchor'
+import Separator from '../../src/old/separator'
 
 storiesOf('Old/Typography, Text and Links', module)
+  .addDecorator(withKnobs)
+  .addDecorator(centered)
   .add('TitleHeading', () => {
     return (
       <TitleHeading

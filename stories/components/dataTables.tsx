@@ -3,20 +3,19 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 // Storybook requires
-import { storiesOf, addDecorator } from '@storybook/react'
+import { storiesOf } from '@storybook/react'
 import { withKnobs, object } from '@storybook/addon-knobs'
+// @ts-ignore
+import centered from '@storybook/addon-centered/dist'
 
 import * as React from 'react'
-// Utils
-import { BetterVisualizer } from '../storyUtil'
 
 // Components
 import Table, { Cell, Row } from '../../src/components/dataTables/table'
 
-addDecorator(withKnobs)
-addDecorator(BetterVisualizer)
-
 storiesOf('Components/Data Tables', module)
+  .addDecorator(withKnobs)
+  .addDecorator(centered)
   .add('Table',() => {
     const rowTheme = {
       'text-align': 'right',

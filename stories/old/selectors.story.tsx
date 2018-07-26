@@ -13,20 +13,18 @@
  */
 
 // Storybook requires
-import { storiesOf, addDecorator } from '@storybook/react'
+import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
-import { BetterVisualizer } from '../storyUtil'
+// @ts-ignore
+import centered from '@storybook/addon-centered/dist'
 
 // Components
 import * as React from 'react'
 import SelectOption from '../../src/old/selectOption/index'
 
-addDecorator(withKnobs)
-
-// Globally adapt the story visualizer for this story
-addDecorator(BetterVisualizer)
-
 storiesOf('Old/Selectors', module)
+  .addDecorator(withKnobs)
+  .addDecorator(centered)
   .add('SelectOption', () => {
     return (
       <SelectOption

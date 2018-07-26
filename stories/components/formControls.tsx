@@ -3,22 +3,20 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 // Storybook requires
-import { storiesOf, addDecorator } from '@storybook/react'
+import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, select, text, object } from '@storybook/addon-knobs'
 
 import * as React from 'react'
 import { withState } from '@dump247/storybook-state'
-
-// Utils
-import { BetterVisualizer } from '../storyUtil'
+// @ts-ignore
+import centered from '@storybook/addon-centered/dist'
 
 // Components
 import { Toggle, Select, Checkbox, TextArea } from '../../src/components'
 
-addDecorator(withKnobs)
-addDecorator(BetterVisualizer)
-
 storiesOf('Components/Form controls', module)
+  .addDecorator(withKnobs)
+  .addDecorator(centered)
   .add('Toggle', withState({ checked: false }, (store) => {
     const sizeOptions = { 'small': 'small', 'medium': 'medium', 'large': 'large' }
     const size = select('Weight', sizeOptions, 'medium')

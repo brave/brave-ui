@@ -3,22 +3,20 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 // Storybook requires
-import { storiesOf, addDecorator } from '@storybook/react'
+import { storiesOf } from '@storybook/react'
 import { withKnobs, select, text } from '@storybook/addon-knobs'
+// @ts-ignore
+import centered from '@storybook/addon-centered/dist'
 
 import * as React from 'react'
 import { withState } from '@dump247/storybook-state'
 
-// Utils
-import { BetterVisualizer } from '../storyUtil'
-
 // Components
 import { Tabs, Column, Grid } from '../../src/components'
 
-addDecorator(withKnobs)
-addDecorator(BetterVisualizer)
-
 storiesOf('Components/Layout', module)
+  .addDecorator(withKnobs)
+  .addDecorator(centered)
   .add('Tabs', withState({ tabId: 'cont1' }, (store) => {
     const onChange = (tabId: string) => {
       store.set({ tabId })
