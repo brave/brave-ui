@@ -3,27 +3,25 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 // Storybook requires
-import { storiesOf, addDecorator } from '@storybook/react'
+import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, select } from '@storybook/addon-knobs'
+// @ts-ignore
+import centered from '@storybook/addon-centered/dist'
 
 import * as React from 'react'
-
-// Utils
-import { BetterVisualizer } from '../storyUtil'
 
 // Components
 import { ButtonPrimary, ButtonSecondary, ButtonGhost, ButtonCta } from '../../src/components'
 
 const arrowImage = require('../assets/img/icn-arrow.svg')
 
-addDecorator(withKnobs)
-addDecorator(BetterVisualizer)
-
 const onClick = () => {
   console.log('Clicked')
 }
 
 storiesOf('Components/Buttons & Indicators/Buttons', module)
+  .addDecorator(withKnobs)
+  .addDecorator(centered)
   .add('Primary',() => {
     let icon = undefined
     if (boolean('Show icon', false)) {

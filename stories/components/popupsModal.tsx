@@ -3,22 +3,20 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 // Storybook requires
-import { storiesOf, addDecorator } from '@storybook/react'
+import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean } from '@storybook/addon-knobs'
+// @ts-ignore
+import centered from '@storybook/addon-centered/dist'
 
 import * as React from 'react'
 import { withState } from '@dump247/storybook-state'
 
-// Utils
-import { BetterVisualizer } from '../storyUtil'
-
 // Components
 import { Modal } from '../../src/components'
 
-addDecorator(withKnobs)
-addDecorator(BetterVisualizer)
-
 storiesOf('Components/Popups and Modals', module)
+  .addDecorator(withKnobs)
+  .addDecorator(centered)
   .add('Dialog', withState({ visible: true }, (store) => {
     const onClose = () => {
       store.set({ visible: !store.state.visible })

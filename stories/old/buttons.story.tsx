@@ -16,11 +16,12 @@
  */
 
 // Storybook requires
-import { storiesOf, addDecorator } from '@storybook/react'
+import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import { withState } from '@dump247/storybook-state'
-import { BetterVisualizer } from '../storyUtil'
+// @ts-ignore
+import centered from '@storybook/addon-centered/dist'
 
 // Components
 import * as React from 'react'
@@ -29,12 +30,9 @@ import UnstyledButton from '../../src/old/unstyledButton'
 import SwitchButton from '../../src/old/switchButton/index'
 import ContentToggleArrow from '../../src/old/contentToggleArrow/index'
 
-addDecorator(withKnobs)
-
-// Globally adapt the story visualizer for this story
-addDecorator(BetterVisualizer)
-
 storiesOf('Old/Buttons', module)
+  .addDecorator(withKnobs)
+  .addDecorator(centered)
   .add('UnstyledButton', () => {
     return (
       <UnstyledButton

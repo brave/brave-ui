@@ -15,23 +15,21 @@
  * DataBlock
  */
 
-import { storiesOf, addDecorator } from '@storybook/react'
+import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
-import { BetterVisualizer } from '../storyUtil'
+// @ts-ignore
+import centered from '@storybook/addon-centered/dist'
 import { action } from '@storybook/addon-actions'
 
 // Components
 import * as React from 'react'
 // TBD import Clock from '../components/clock'
-import Page from '../../src/old/page/index'
-import { DataBlock, DataItem } from '../../src/old/dataBlock/index'
-
-addDecorator(withKnobs)
-
-// Globally adapt the story visualizer for this story
-addDecorator(BetterVisualizer)
+import Page from '../../src/old/page'
+import { DataBlock, DataItem } from '../../src/old/dataBlock'
 
 storiesOf('Old/Views', module)
+  .addDecorator(withKnobs)
+  .addDecorator(centered)
   .add('Page', () => {
     return (
       <Page
