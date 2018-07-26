@@ -17,7 +17,7 @@ const defaultTheme = {
       borderHoverColor: '#FFF'
     },
     secondary: {
-      background: '#FFF',
+      background: 'transparent',
       color: '#76777A',
       borderColor: '#76777A',
       hoverColor: '#FB542B',

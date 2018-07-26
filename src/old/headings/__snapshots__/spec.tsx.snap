@@ -32,10 +32,7 @@ exports[`all heading tests heading tests basic tests matches the snapshot 1`] = 
   font-weight: 400;
   font-family: inherit;
   margin: 14px 0 22px;
-  -webkit-letter-spacing: -0.4px;
-  -moz-letter-spacing: -0.4px;
-  -ms-letter-spacing: -0.4px;
-  letter-spacing: -0.4px;
+  font-size: 30px;
   font-size: 30px;
 }
 
