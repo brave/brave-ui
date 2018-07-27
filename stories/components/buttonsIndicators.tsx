@@ -12,6 +12,7 @@ import * as React from 'react'
 
 // Components
 import { ButtonPrimary, ButtonSecondary, ButtonGhost, ButtonCta } from '../../src/components'
+import { CheckCircleIcon } from '../../src/components/icons'
 
 const arrowImage = require('../assets/img/icn-arrow.svg')
 
@@ -26,7 +27,7 @@ storiesOf('Components/Buttons & Indicators/Buttons', module)
     let icon = undefined
     if (boolean('Show icon', false)) {
       icon = {
-        image: <img src={arrowImage} />,
+        image: <CheckCircleIcon />,
         position: select('Icon position', { left: 'left', right: 'right' }, 'right')
       }
     }
