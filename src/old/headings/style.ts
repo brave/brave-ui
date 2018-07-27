@@ -55,8 +55,8 @@ const StyledH1 = styled.h1`
   font-family: ${(p: HeadingProps) => setTheme(p.theme, 'fontFamily') || 'inherit'};
   margin: ${(p: HeadingProps) => setTheme(p.theme, 'margin') || '14px 0 22px'};
   font-size: ${(p: HeadingProps) => setTheme(p.theme, 'fontSize') || '30px'};
-  text-align: ${(p: HeadingProps) => setTheme(p.theme, 'textAlign')};
-  line-height: ${(p: HeadingProps) => setTheme(p.theme, 'lineHeight')};
+  text-align: ${(p: HeadingProps) => setTheme(p.theme, 'textAlign') || 'left'};
+  line-height: ${(p: HeadingProps) => setTheme(p.theme, 'lineHeight') || '44px'};
 ` as any
 
 const StyledH2 = styled.h2`
