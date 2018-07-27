@@ -57,7 +57,6 @@ const StyledH1 = styled.h1`
   font-size: ${(p: HeadingProps) => setTheme(p.theme, 'fontSize') || '30px'};
   text-align: ${(p: HeadingProps) => setTheme(p.theme, 'textAlign')};
   line-height: ${(p: HeadingProps) => setTheme(p.theme, 'lineHeight')};
-
 ` as any
 
 const StyledH2 = styled.h2`
