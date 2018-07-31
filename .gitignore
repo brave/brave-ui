@@ -13,11 +13,6 @@ coverage
 # Dependency directory
 node_modules
 
-# No need for package-lock.json in the brave-ui repo
-# as yarn is used for prod
-package/package-lock.json
-package-lock.json
-
 # Temp files
 .DS_Store
 .DS-Store

@@ -81,11 +81,6 @@
       "test-unit-all"
     ]
   },
-  "standard": {
-    "ignore": [
-      "package/**/*.js"
-    ]
-  },
   "storybook-deployer": {
     "gitUsername": "Brave Nespresso Drinker and Static Deployer Bot",
     "gitEmail": "deploying-for-the-deployer-lord@brave.com",
