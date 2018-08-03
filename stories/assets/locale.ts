@@ -2,8 +2,9 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-const locale: {[key: string]: string} = {
+const locale: Record<string, string> = {
   about: 'about',
+  accept: 'Accept',
   addFunds: 'add funds',
   allowTip: 'Allow tips on',
   braveRewards: 'Brave Rewards',
@@ -11,13 +12,17 @@ const locale: {[key: string]: string} = {
   claim: 'Claim',
   copy: 'Copy',
   currentDonation: 'You’re currently donating {{currentDonation}} BAT to this site every month.',
+  dndCaptcha: 'Drag and drop the token logo onto the target',
   donationAmount: 'Donation amount',
   done: 'Done',
   earningsAds: 'Earnings from Brave Ads',
   expiresOn: 'expires on',
   grants: 'Grants',
+  grantDisclaimer: 'Unused tokens by the expiration date will be automatically returned to the Brave User Growth Pool.',
+  grantExpire: 'Grant Expiration Date',
   import: 'import',
   makeMonthly: 'Make this monthly',
+  maybeLater: 'Maybe later',
   monthApr: 'Apr',
   monthAug: 'August',
   monthDec: 'December',
@@ -31,8 +36,10 @@ const locale: {[key: string]: string} = {
   monthOct: 'October',
   monthSep: 'September',
   newGrant: 'New token grant is available.',
+  newTokenGrant: 'New Token Grant',
   noGrants: 'Currently no token grant is available.',
   notEnoughTokens: 'Not enough tokens. Please',
+  ok: 'ok',
   on: 'on',
   oneTime: 'One time',
   oneTimeDonation: 'One-time Donations/Tips',
