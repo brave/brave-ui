@@ -42,14 +42,14 @@ storiesOf('Components/Form controls', module)
   }))
   .add('Select',() => {
     return (
-      <Select
-        title={text('Title', 'Limit Sites to')}
-      >
+     <div style={{ width: '250px' }}>
+      <Select title={text('Title', 'Limit Sites to')}>
         <div data-value='0'>No Limit</div>
         <div data-value='10'>Pay Only Top 10</div>
         <div data-value='50'>Pay Top 50</div>
         <div data-value='100000'>Really long limit that I know of 100000</div>
       </Select>
+     </div>
     )
   })
   .add('Checkbox', withState({ 'yt': true, 'tw': false, 'inst': false }, (store) => {

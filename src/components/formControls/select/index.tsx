@@ -154,7 +154,7 @@ export default class Select extends React.PureComponent<Props, State> {
             ? <StyledSelectWrapper tabIndex='0' onBlur={this.onBlur}>
               <StyledSelect onClick={this.onSelectClick} disabled={disabled} show={this.state.show} theme={theme}>
                 <StyledSelectText>{this.state.selected}</StyledSelectText>
-                <StyledSelectArrow>{arrow}</StyledSelectArrow>
+                <StyledSelectArrow theme={theme}>{arrow}</StyledSelectArrow>
               </StyledSelect>
               <StyledOptions show={this.state.show}>
                 {data}
