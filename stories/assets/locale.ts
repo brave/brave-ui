@@ -54,7 +54,7 @@ const locale: Record<string, string> = {
   rewardsBannerText1: 'Thanks for stopping by. We joined Brave’s vision of protecting your privacy because we believe that fans like you would support us in our effort to keep the web a clean and safe place to be.',
   rewardsBannerText2: 'Your donation is much appreciated and it encourages us to continue to improve our content.',
   rewardsContribute: 'Brave Contribute',
-  rewardsContributeAttention: 'Your attention metric',
+  rewardsContributeAttention: 'Your attention score',
   rewardsContributeText1: 'You’re currently supporting',
   rewardsContributeVisited: 'Site visited',
   rewardsOffText1: 'Do you know that you’ve been paying for the web content with your data for the digital ads? You didn’t have a voice in it and worse, you’re exposed to privacy and security risks.',
