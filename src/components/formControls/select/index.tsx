@@ -80,8 +80,15 @@ export default class Select extends React.PureComponent<Props, State> {
 
     child = children.find((child: any) => child.props['data-value'] === value)
 
-    if (child === undefined) {
+    if (child === undefined && children) {
       child = children.find((child: any) => child && child.props['data-value'] !== undefined)
+    }
+
+    if (!child || !child.props) {
+      return {
+        value: '',
+        selected: null
+      }
     }
 
     return {

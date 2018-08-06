@@ -75,6 +75,8 @@ export const StyledOption = styled.div`
 export const StyledOptionCheck = styled.div`
   flex-basis: 12px;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
 ` as any
 
 export const StyledOptionText = styled.div`

@@ -10,12 +10,12 @@ exports[`Modal tests basic tests matches the snapshot 1`] = `
   background: rgba(12,13,33,0.85);
   z-index: 99;
   padding: 0 20px;
+  overflow: hidden;
 }
 
 .c1 {
   max-width: 920px;
   margin: 52px auto;
-  padding: 61px 50px;
   background: #fff;
   border-radius: 6px;
   overflow: hidden;
@@ -28,6 +28,12 @@ exports[`Modal tests basic tests matches the snapshot 1`] = `
   right: 19px;
   padding: 10px;
   cursor: pointer;
+}
+
+.c3 {
+  padding: 61px 50px;
+  overflow-y: auto;
+  max-height: calc(100vh - 100px);
 }
 
 <div
@@ -55,7 +61,7 @@ exports[`Modal tests basic tests matches the snapshot 1`] = `
       </svg>
     </div>
     <div
-      className=""
+      className="c3"
     />
   </div>
 </div>
