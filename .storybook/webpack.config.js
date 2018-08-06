@@ -5,7 +5,10 @@ module.exports = (baseConfig, env) => {
   const config = genDefaultConfig(baseConfig, env)
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
-    loader: require.resolve('awesome-typescript-loader')
+    loader: require.resolve('awesome-typescript-loader'),
+    options: {
+      configFileName: './.storybook/tsconfig.json'
+    }
   })
   config.resolve.extensions.push('.ts', '.tsx')
   return config
