@@ -5,7 +5,7 @@ exports[`ButtonPrimary tests basic tests matches the snapshot 1`] = `
   display: inline-block;
   overflow: hidden;
   background: #fff;
-  font-family: Poppins;
+  font-family: Poppins,sans-serif;
 }
 
 .c1 {

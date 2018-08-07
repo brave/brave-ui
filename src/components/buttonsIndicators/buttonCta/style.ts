@@ -60,7 +60,7 @@ export const StyledWrapper = styled.div`
   font-size: 14px;
   border-radius: 28px;
   min-width: 235px;
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
 ` as any
 
 export const StyledContent = styled.div`

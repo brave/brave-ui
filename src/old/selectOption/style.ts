@@ -21,7 +21,7 @@ const StyledSelectOption = styled.select`
   width: 100%;
   background-color: #fbfbfb;
   background-size: 12px 12px;
-  -webkit-appearance: none;
+  appearance: none;
   min-height: 32px;
   margin-bottom: 12px;
 

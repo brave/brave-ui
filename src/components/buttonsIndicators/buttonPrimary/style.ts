@@ -102,7 +102,7 @@ export const StyledWrapper = styled.div`
   overflow: hidden;
   background: #fff;
   ${(p: Props) => generateWrapper(p.size)};
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
 ` as any
 
 export const StyledContent = styled.div`

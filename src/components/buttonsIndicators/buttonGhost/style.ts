@@ -81,7 +81,7 @@ export const StyledWrapper = styled.div`
   display: inline-block;
   text-align: center;
   box-sizing: border-box;
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   letter-spacing: 0;
   font-weight: 600;
   line-height: 1;

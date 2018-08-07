@@ -18,6 +18,8 @@ exports[`switchButton tests basic tests matches the snapshot 1`] = `
 .c1 {
   box-sizing: border-box;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   position: relative;
   min-width: 48px;
   height: 16px;

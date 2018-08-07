@@ -15,7 +15,6 @@ const StyledSharedHeading = styled.span`
   -webkit-font-smoothing: antialiased;
   user-select: none;
   cursor: default;
-  font-family: inherit;
 ` as any
 
 const StyledHeadingTitle = StyledSharedHeading.withComponent('h1').extend`

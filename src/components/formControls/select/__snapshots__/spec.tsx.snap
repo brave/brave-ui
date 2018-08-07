@@ -9,7 +9,7 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
 .c2 {
   position: relative;
   outline: 0;
-  font-family: Poppins;
+  font-family: Poppins,sans-serif;
 }
 
 .c3 {
