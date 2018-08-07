@@ -30,7 +30,7 @@ export default class Table extends React.PureComponent<Props, {}> {
     return (
       <StyledWrapper id={id}>
         {
-          rows && rows.length > 0 || header && header.length > 0
+          header && header.length > 0
           ? <StyledTable>
             {
               header
@@ -63,9 +63,14 @@ export default class Table extends React.PureComponent<Props, {}> {
               : null
             }
           </StyledTable>
-          : <StyledNoContent>
+          : null
+        }
+        {
+          !rows || rows.length === 0
+          ? <StyledNoContent>
             {children}
           </StyledNoContent>
+          : null
         }
       </StyledWrapper>
     )

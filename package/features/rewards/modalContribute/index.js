@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const style_1 = require("./style");
 const index_1 = require("../../../components/popupModals/modal/index");
-const index_2 = require("../contributeTable/index");
+const index_2 = require("../tableContribute/index");
 const helpers_1 = require("../../../helpers");
 class ModalContribute extends React.PureComponent {
     get headers() {
@@ -25,7 +25,7 @@ class ModalContribute extends React.PureComponent {
                     " ",
                     helpers_1.getLocale('sites'),
                     "."),
-                React.createElement(index_2.default, { header: this.headers, rows: rows, numSites: numSites, allSites: true, showRowAmount: true }))));
+                React.createElement(index_2.default, { header: this.headers, rows: rows, numSites: numSites, allSites: true, showRowAmount: true, showRemove: true }))));
     }
 }
 exports.default = ModalContribute;

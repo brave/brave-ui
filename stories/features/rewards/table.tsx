@@ -9,8 +9,9 @@ import { withKnobs, boolean, object, number } from '@storybook/addon-knobs'
 import centered from '@storybook/addon-centered/dist'
 
 // Components
-import ContributeTable, { DetailRow as ContributeDetailRow } from '../../../src/features/rewards/contributeTable'
-import DonationTable, { DetailRow as DonationDetailRow } from '../../../src/features/rewards/donationTable'
+import TableContribute, { DetailRow as ContributeDetailRow } from '../../../src/features/rewards/tableContribute'
+import TableDonation, { DetailRow as DonationDetailRow } from '../../../src/features/rewards/tableDonation'
+import TableTransactions, { DetailRow as TransactionsRow } from '../../../src/features/rewards/tableTransactions'
 
 const bart = require('../../assets/img/bartBaker.jpeg')
 const ddgo = require('../../assets/img/ddgo.jpg')
@@ -82,14 +83,16 @@ storiesOf('Feature Components/Rewards/Table', module)
     ]
     return (
       <div style={{ width: '595px' }}>
-        <ContributeTable
+        <TableContribute
           header={object('Header', header)}
           rows={object('Rows', rows)}
           allSites={boolean('Are this all sites?', false)}
           numSites={number('Number of all sites?', 55)}
+          showRowAmount={boolean('Show row amount', false)}
+          showRemove={boolean('Show remove action', true)}
         >
           Please visit some sites
-        </ContributeTable>
+        </TableContribute>
       </div>
     )
   })
@@ -139,13 +142,58 @@ storiesOf('Feature Components/Rewards/Table', module)
     ]
     return (
       <div style={{ width: '595px' }}>
-        <DonationTable
+        <TableDonation
           rows={object('Rows', rows)}
           allItems={boolean('Are this all items?', false)}
           numItems={number('Number of all items?', 55)}
         >
           Please visit some sites
-        </DonationTable>
+        </TableDonation>
+      </div>
+    )
+  })
+  .add('Transactions',() => {
+    const rows: TransactionsRow[] = [
+      {
+        date: '6/1',
+        type: 'deposit',
+        description: 'Brave Ads payment for May',
+        amount: {
+          value: 5,
+          converted: 5
+        }
+      },
+      {
+        date: '6/9',
+        type: 'tipOnLike',
+        description: {
+          publisher: 'Bart Baker',
+          platform: 'YouTube'
+        },
+        amount: {
+          isNegative: true,
+          value: 5,
+          converted: 11
+        }
+      },
+      {
+        date: '6/31',
+        type: 'contribute',
+        description: 'Monthly payment',
+        amount: {
+          isNegative: true,
+          value: 5,
+          converted: 15
+        }
+      }
+    ]
+    return (
+      <div style={{ width: '595px' }}>
+        <TableTransactions
+          rows={object('Rows', rows)}
+        >
+          Sorry no transactions.
+        </TableTransactions>
       </div>
     )
   })

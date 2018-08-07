@@ -1,0 +1,413 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WalletSummary tests basic tests matches the snapshot 1`] = `
+.c0 {
+  font-family: Poppins;
+  margin-top: 21px;
+}
+
+.c1 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.57;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  color: #a1a8f2;
+  text-transform: uppercase;
+}
+
+.c2 {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 0.79;
+  -webkit-letter-spacing: 0.4px;
+  -moz-letter-spacing: 0.4px;
+  -ms-letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
+  color: #4c54d2;
+  margin-bottom: 26px;
+  text-transform: uppercase;
+}
+
+.c13 {
+  font-size: 12px;
+  color: #686978;
+  margin-top: 26px;
+  text-align: center;
+}
+
+.c14 {
+  vertical-align: sub;
+  margin-right: 11px;
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #d0d6dc;
+  border-top: none;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  margin-bottom: 8px;
+  font-family: Poppins;
+}
+
+.c12 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: none;
+  border-top: none;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  margin-bottom: 8px;
+  font-family: Poppins;
+}
+
+.c4 {
+  font-size: 14px;
+  line-height: 2.79;
+  color: #4b4c5c;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: 60%;
+  -ms-flex-preferred-size: 60%;
+  flex-basis: 60%;
+}
+
+.c5 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-basis: 40%;
+  -ms-flex-preferred-size: 40%;
+  flex-basis: 40%;
+  text-align: right;
+}
+
+.c6 {
+  font-family: Poppins;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #686978;
+  display: inline-block;
+}
+
+.c7 {
+  color: #C12D7C;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.c10 {
+  color: #9752CB;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.c11 {
+  color: #4C54D2;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.c9 {
+  color: #9E9FAB;
+  font-size: 10px;
+  font-family: Muli;
+  line-height: 1.29;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.c8 {
+  font-size: 12px;
+  font-weight: 300;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+<div
+  className="c0"
+  id="empty"
+>
+  <div
+    className="c1"
+  >
+    MISSING: rewardsSummary
+  </div>
+  <div
+    className="c2"
+  >
+    MISSING: monthAug
+     
+    2018
+  </div>
+  <div
+    className=""
+  >
+    <div
+      className="c3"
+      id={undefined}
+    >
+      <div
+        className="c4"
+      >
+        MISSING: tokenGrant
+      </div>
+      <div
+        className="c5"
+      >
+        <span
+          id={undefined}
+        >
+          <span
+            className="c6"
+          >
+            <span
+              className="c7"
+            >
+              
+              10.00
+            </span>
+            <span
+              className="c8"
+            >
+              BAT
+            </span>
+          </span>
+          <span
+            className="c9"
+          >
+            0.25
+             
+            USD
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      className="c3"
+      id={undefined}
+    >
+      <div
+        className="c4"
+      >
+        MISSING: earningsAds
+      </div>
+      <div
+        className="c5"
+      >
+        <span
+          id={undefined}
+        >
+          <span
+            className="c6"
+          >
+            <span
+              className="c7"
+            >
+              
+              10.00
+            </span>
+            <span
+              className="c8"
+            >
+              BAT
+            </span>
+          </span>
+          <span
+            className="c9"
+          >
+            0.25
+             
+            USD
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      className="c3"
+      id={undefined}
+    >
+      <div
+        className="c4"
+      >
+        MISSING: rewardsContribute
+      </div>
+      <div
+        className="c5"
+      >
+        <span
+          id={undefined}
+        >
+          <span
+            className="c6"
+          >
+            <span
+              className="c10"
+            >
+              -
+              10.00
+            </span>
+            <span
+              className="c8"
+            >
+              BAT
+            </span>
+          </span>
+          <span
+            className="c9"
+          >
+            0.25
+             
+            USD
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      className="c3"
+      id={undefined}
+    >
+      <div
+        className="c4"
+      >
+        MISSING: recurringDonations
+      </div>
+      <div
+        className="c5"
+      >
+        <span
+          id={undefined}
+        >
+          <span
+            className="c6"
+          >
+            <span
+              className="c11"
+            >
+              -
+              2.00
+            </span>
+            <span
+              className="c8"
+            >
+              BAT
+            </span>
+          </span>
+          <span
+            className="c9"
+          >
+            0.25
+             
+            USD
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      className="c12"
+      id={undefined}
+    >
+      <div
+        className="c4"
+      >
+        MISSING: oneTimeDonation
+      </div>
+      <div
+        className="c5"
+      >
+        <span
+          id={undefined}
+        >
+          <span
+            className="c6"
+          >
+            <span
+              className="c11"
+            >
+              -
+              19.00
+            </span>
+            <span
+              className="c8"
+            >
+              BAT
+            </span>
+          </span>
+          <span
+            className="c9"
+          >
+            5.25
+             
+            USD
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c13"
+    onClick={[Function]}
+  >
+    <span
+      className="c14"
+    >
+      <svg
+        height="16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M14.75 14.375a.375.375 0 0 1-.375.375h-8.75a.375.375 0 0 1-.375-.375V13h5.125c.896 0 1.625-.729 1.625-1.625V4.494c0-.409-.153-.801-.434-1.104l-.129-.14h2.938c.207 0 .375.168.375.375v10.75zm-13.5-3v-9.75c0-.207.168-.375.375-.375h4.518v2.822c0 .897.729 1.625 1.625 1.625h2.982v5.678a.375.375 0 0 1-.375.375h-8.75a.375.375 0 0 1-.375-.375zm8.298-8.323a.209.209 0 0 1 .02.022l1.08 1.164a.364.364 0 0 1 .083.209H7.768a.376.376 0 0 1-.375-.375V1.25h.32c.104 0 .204.044.276.12l1.559 1.682zM10.277 2L8.905.521A1.627 1.627 0 0 0 7.713 0H1.625C.729 0 0 .729 0 1.625v9.75C0 12.271.729 13 1.625 13H4v1.375C4 15.271 4.729 16 5.625 16h8.75c.896 0 1.625-.729 1.625-1.625V3.625C16 2.729 15.271 2 14.375 2h-4.098z"
+          fill="#A1A8F2"
+          fillRule="evenodd"
+        />
+      </svg>
+    </span>
+     
+    MISSING: viewMonthly
+  </div>
+</div>
+`;

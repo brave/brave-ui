@@ -8,7 +8,7 @@ import { StyledWrapper, StyledTitle, StyledContentWrapper } from './style'
 import Tokens from '../tokens/index'
 
 export interface Props {
-  title: string
+  title: React.ReactNode
   value: number
   converted: number
   id?: string
@@ -18,8 +18,10 @@ export interface Props {
 
 interface Theme {
   color?: CSS.Color
+  fontWeight?: CSS.FontWeightProperty
   borderTop?: CSS.BorderTopProperty<1>
   borderBottom?: CSS.BorderTopProperty<1>
+  marginBottom?: CSS.MarginBottomProperty<1>
 }
 
 export default class ListToken extends React.PureComponent<Props, {}> {
@@ -42,7 +44,8 @@ export default class ListToken extends React.PureComponent<Props, {}> {
               },
               size: {
                 text: '10px',
-                token: '14px'
+                token: '12px',
+                tokenNum: '14px'
               }
             }}
           />

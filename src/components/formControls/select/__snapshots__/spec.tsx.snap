@@ -32,9 +32,9 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
 
 .c5 {
   padding-right: 15px;
-  -webkit-flex-basis: 26px;
-  -ms-flex-preferred-size: 26px;
-  flex-basis: 26px;
+  -webkit-flex-basis: 17px;
+  -ms-flex-preferred-size: 17px;
+  flex-basis: 17px;
 }
 
 .c4 {
@@ -92,6 +92,17 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   -webkit-flex-basis: 12px;
   -ms-flex-preferred-size: 12px;
   flex-basis: 12px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c9 {

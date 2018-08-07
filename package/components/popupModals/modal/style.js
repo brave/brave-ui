@@ -11,11 +11,11 @@ exports.StyledWrapper = styled_components_1.default.div `
   background: rgba(12, 13, 33, 0.85);
   z-index: 99;
   padding: 0 20px;
+  overflow: hidden;
 `;
 exports.StyledDialog = styled_components_1.default.div `
   max-width: ${(p) => helpers_1.setTheme(p.theme, 'maxWidth') || '920px'};
   margin: 52px auto;
-  padding: 61px 50px;
   background: #fff;
   border-radius: 6px;
   overflow: hidden;
@@ -29,5 +29,8 @@ exports.StyledClose = styled_components_1.default.div `
   cursor: pointer;
 `;
 exports.StyledContent = styled_components_1.default.div `
+  padding: 61px 50px;
+  overflow-y: auto;
+  max-height: calc(100vh - 100px);
 `;
 //# sourceMappingURL=style.js.map

@@ -37,7 +37,7 @@ export const StyledSelect = styled.div`
 
 export const StyledSelectArrow = styled.div`
   padding-right: ${(p: {show: boolean, theme: Theme}) => setTheme(p.theme, 'arrowPadding') || '15px'};
-  flex-basis: 26px;
+  flex-basis: 17px;
 ` as any
 
 export const StyledSelectText = styled.div`
@@ -74,6 +74,9 @@ export const StyledOption = styled.div`
 
 export const StyledOptionCheck = styled.div`
   flex-basis: 12px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
 ` as any
 
 export const StyledOptionText = styled.div`

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DetailRow } from '../contributeTable/index';
+import { DetailRow } from '../tableContribute/index';
 export interface Props {
     rows: DetailRow[];
     onClose: () => void;

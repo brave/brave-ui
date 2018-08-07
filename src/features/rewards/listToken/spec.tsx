@@ -5,7 +5,7 @@ import { create } from 'react-test-renderer'
 import ListToken from './index'
 
 describe('ListToken tests', () => {
-  const baseComponent = (props?: object) => <ListToken id='list' {...props} />
+  const baseComponent = (props?: object) => <ListToken id='list' {...props} value={10} />
 
   describe('basic tests', () => {
     it('matches the snapshot', () => {

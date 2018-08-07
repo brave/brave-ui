@@ -15,12 +15,12 @@ export const StyledWrapper = styled.div`
   background: rgba(12, 13, 33, 0.85);
   z-index: 99;
   padding: 0 20px;
+  overflow: hidden;
 ` as any
 
 export const StyledDialog = styled.div`
   max-width: ${(p: Props) => setTheme(p.theme, 'maxWidth') || '920px'};
   margin: 52px auto;
-  padding: 61px 50px;
   background: #fff;
   border-radius: 6px;
   overflow: hidden;
@@ -36,4 +36,7 @@ export const StyledClose = styled.div`
 ` as any
 
 export const StyledContent = styled.div`
+  padding: 61px 50px;
+  overflow-y: auto;
+  max-height: calc(100vh - 100px);
 ` as any
