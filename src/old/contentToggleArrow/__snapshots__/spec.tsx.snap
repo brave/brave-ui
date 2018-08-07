@@ -4,6 +4,8 @@ exports[`contentToggleArrow tests basic tests matches the snapshot 1`] = `
 .c0 {
   box-sizing: border-box;
   width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill-available;
   color: inherit;
   font-size: inherit;
   font-family: inherit;
@@ -54,6 +56,8 @@ exports[`contentToggleArrow tests basic tests matches the snapshot 1`] = `
   overflow: hidden;
   height: 0;
   width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill-available;
 }
 
 <div

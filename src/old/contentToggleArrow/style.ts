@@ -7,7 +7,7 @@ import { ContentToggleArrowState } from './index'
 
 const StyledContentToggleArrow = styled.div`
   box-sizing: border-box;
-  width: -webkit-fill-available;
+  width: fill-available;
   color: inherit;
   font-size: inherit;
   font-family: inherit;
@@ -28,7 +28,7 @@ const StyledContentToggleArrowControl = styled.div`
     align-items: center;
     height: 100%;
     position: absolute;
-    top 0;
+    top: 0;
     left: 0;
   }
 ` as any
@@ -48,7 +48,7 @@ const StyledContentToggleArrowContent = styled.div`
   font-family: inherit;
   overflow: ${(s: ContentToggleArrowState) => s.open ? 'auto' : 'hidden'};
   height: ${(s: ContentToggleArrowState) => s.open ? 'fit-content' : '0'};
-  width: -webkit-fill-available;
+  width: fill-available;
 ` as any
 
 export {

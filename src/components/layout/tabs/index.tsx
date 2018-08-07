@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledWrapper, StyledTabWrapper, StyledTab, StyledContent } from './style'
+import { StyledTabWrapper, StyledTab, StyledContent } from './style'
 
 export interface Props {
   activeTabId: string
@@ -64,14 +64,14 @@ export default class Tabs extends React.PureComponent<Props, {}> {
     const { content, tabs } = this.generateTabs()
 
     return (
-      <StyledWrapper id={this.props.id}>
+      <div id={this.props.id}>
         <StyledTabWrapper>
           {tabs}
         </StyledTabWrapper>
         <StyledContent>
           {content}
         </StyledContent>
-      </StyledWrapper>
+      </div>
     )
   }
 }

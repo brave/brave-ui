@@ -12,7 +12,7 @@ export const StyledWrapper = styled.div`
 ` as any
 
 export const StyledLabel = styled.div`
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   font-size: 14px;
   line-height: 1.3;
   color: #686978;

@@ -5,9 +5,6 @@
 import styled, { css } from 'styled-components'
 import { Cell, Row } from './index'
 
-export const StyledWrapper = styled.div`
-` as any
-
 export const StyledNoContent = styled.div`
   text-align: center;
   padding: 30px 0;
@@ -23,7 +20,7 @@ export const StyledTable = styled.table`
 export const StyledTH = styled.th`
   text-transform: uppercase;
   text-align: left;
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   font-size: 12px;
   font-weight: 500;
   line-height: 2.33;
@@ -50,7 +47,7 @@ export const StyledTR = styled.tr`
 ` as any
 
 export const StyledTD = styled.td`
-  font-family: Muli;
+  font-family: Muli, sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.29;

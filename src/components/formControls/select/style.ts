@@ -14,7 +14,7 @@ export const StyledWrapper = styled.div`
 export const StyledSelectWrapper = styled.div`
   position: relative;
   outline: 0;
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
 ` as any
 
 export const StyledSelect = styled.div`

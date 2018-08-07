@@ -15,7 +15,7 @@ export const StyledArea = styled.textarea`
   min-height: ${(p: Props) => setTheme(p.theme, 'minHeight') || 'auto'};
   box-sizing: border-box;
   width: 100%;
-  font-family: Muli;
+  font-family: Muli, sans-serif;
   border: 1px solid #DFDFE8;
   border-radius: 6px;
   padding: 15px 0px 15px 20px;

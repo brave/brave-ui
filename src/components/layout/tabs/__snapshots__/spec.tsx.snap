@@ -4,7 +4,7 @@ exports[`Tabs tests basic tests matches the snapshot 1`] = `
 .c0 {
   border-bottom: 1px solid #DFDFE8;
   text-align: center;
-  font-family: Poppins;
+  font-family: Poppins,sans-serif;
 }
 
 .c1 {
@@ -12,7 +12,6 @@ exports[`Tabs tests basic tests matches the snapshot 1`] = `
 }
 
 <div
-  className=""
   id="tabs"
 >
   <div

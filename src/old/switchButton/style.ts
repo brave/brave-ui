@@ -44,7 +44,7 @@ const StyledSwitchButtonLabel = styled.label`
  */
 const StyledSwitchButton = styled.input`
   box-sizing: border-box;
-  -webkit-appearance: none;
+  appearance: none;
   position: relative;
   min-width: ${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, '48px', '40px','60px')};
   height: ${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, '16px', '14px', '26px')};

@@ -9,7 +9,6 @@ exports[`Table tests basic tests matches the snapshot 1`] = `
 }
 
 <div
-  className=""
   id="list"
 >
   <div

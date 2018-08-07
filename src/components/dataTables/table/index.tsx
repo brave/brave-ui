@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledWrapper, StyledTH, StyledNoContent, StyledTable, StyledTD, StyledTR } from './style'
+import { StyledTH, StyledNoContent, StyledTable, StyledTD, StyledTR } from './style'
 
 export interface Cell {
   theme?: {[key: string]: string}
@@ -28,7 +28,7 @@ export default class Table extends React.PureComponent<Props, {}> {
     const { id, header, rows, children } = this.props
 
     return (
-      <StyledWrapper id={id}>
+      <div id={id}>
         {
           header && header.length > 0
           ? <StyledTable>
@@ -72,7 +72,7 @@ export default class Table extends React.PureComponent<Props, {}> {
           </StyledNoContent>
           : null
         }
-      </StyledWrapper>
+      </div>
     )
   }
 }

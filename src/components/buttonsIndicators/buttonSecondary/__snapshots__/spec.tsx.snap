@@ -8,7 +8,7 @@ exports[`ButtonSecondary tests basic tests matches the snapshot 1`] = `
   color: rgba(,0.9);
   text-align: center;
   box-sizing: border-box;
-  font-family: Poppins;
+  font-family: Poppins,sans-serif;
   -webkit-letter-spacing: 0;
   -moz-letter-spacing: 0;
   -ms-letter-spacing: 0;

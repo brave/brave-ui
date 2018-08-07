@@ -4,13 +4,10 @@
 
 import styled from 'styled-components'
 
-export const StyledWrapper = styled.div`
-` as any
-
 export const StyledTabWrapper = styled.div`
   border-bottom: 1px solid #DFDFE8;
   text-align: center;
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
 ` as any
 
 export const StyledTab = styled.div`

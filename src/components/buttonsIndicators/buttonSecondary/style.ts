@@ -104,7 +104,7 @@ export const StyledWrapper = styled.div`
   ${(p: Props) => generateWrapper(p.size, p.color, (p.disabled || false))};
   text-align: center;
   box-sizing: border-box;
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   letter-spacing: 0;
   font-weight: 600;
   line-height: 1;
