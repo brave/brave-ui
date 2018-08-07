@@ -22,3 +22,6 @@ node_modules
 
 # webstrom
 .idea
+
+# storybook
+.storybook/temp
