@@ -52,12 +52,13 @@ export const StyledTR = styled.tr`
 export const StyledTD = styled.td`
   font-family: Muli;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.29;
   color: #686978;
   border-bottom: solid 1px #e4e8ec;
   padding: 9px 0;
   text-align: left;
+  height: 42px;
 
   ${(p: Cell) => p.theme
     ? css`

@@ -41,12 +41,13 @@ exports.StyledTR = styled_components_1.default.tr `
 exports.StyledTD = styled_components_1.default.td `
   font-family: Muli;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.29;
   color: #686978;
   border-bottom: solid 1px #e4e8ec;
   padding: 9px 0;
   text-align: left;
+  height: 42px;
 
   ${(p) => p.theme
     ? styled_components_1.css `

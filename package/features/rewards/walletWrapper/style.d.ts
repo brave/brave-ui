@@ -1,0 +1,16 @@
+export declare const StyledWrapper: any;
+export declare const StyledHeader: any;
+export declare const StyledTitle: any;
+export declare const StyledBalance: any;
+export declare const StyledBalanceTokens: any;
+export declare const StyledContent: any;
+export declare const StyledAction: any;
+export declare const StyledActionIcon: any;
+export declare const StyledCopy: any;
+export declare const StyledCopyImage: any;
+export declare const StyledIconAction: any;
+export declare const StyledBalanceConverted: any;
+export declare const StyledGrantWrapper: any;
+export declare const StyledGrant: any;
+export declare const StyledActionWrapper: any;
+export declare const StyledBalanceCurrency: any;

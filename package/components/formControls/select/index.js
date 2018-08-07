@@ -64,8 +64,14 @@ class Select extends React.PureComponent {
         let child;
         const value = (props.value || '').toString();
         child = children.find((child) => child.props['data-value'] === value);
-        if (child === undefined) {
+        if (child === undefined && children) {
             child = children.find((child) => child && child.props['data-value'] !== undefined);
+        }
+        if (!child || !child.props) {
+            return {
+                value: '',
+                selected: null
+            };
         }
         return {
             value: child.props['data-value'],
@@ -84,7 +90,7 @@ class Select extends React.PureComponent {
                 ? React.createElement(style_1.StyledSelectWrapper, { tabIndex: '0', onBlur: this.onBlur },
                     React.createElement(style_1.StyledSelect, { onClick: this.onSelectClick, disabled: disabled, show: this.state.show, theme: theme },
                         React.createElement(style_1.StyledSelectText, null, this.state.selected),
-                        React.createElement(style_1.StyledSelectArrow, null, arrow)),
+                        React.createElement(style_1.StyledSelectArrow, { theme: theme }, arrow)),
                     React.createElement(style_1.StyledOptions, { show: this.state.show }, data))
                 : null)));
     }

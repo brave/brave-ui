@@ -29,7 +29,7 @@ exports.StyledSelect = styled_components_1.default.div `
 `;
 exports.StyledSelectArrow = styled_components_1.default.div `
   padding-right: ${(p) => helpers_1.setTheme(p.theme, 'arrowPadding') || '15px'};
-  flex-basis: 26px;
+  flex-basis: 17px;
 `;
 exports.StyledSelectText = styled_components_1.default.div `
   flex-grow: 1;
@@ -62,6 +62,9 @@ exports.StyledOption = styled_components_1.default.div `
 `;
 exports.StyledOptionCheck = styled_components_1.default.div `
   flex-basis: 12px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
 `;
 exports.StyledOptionText = styled_components_1.default.div `
   flex-grow: 1;

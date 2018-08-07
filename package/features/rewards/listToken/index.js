@@ -17,7 +17,8 @@ class ListToken extends React.PureComponent {
                         },
                         size: {
                             text: '10px',
-                            token: '14px'
+                            token: '12px',
+                            tokenNum: '14px'
                         }
                     } }))));
     }

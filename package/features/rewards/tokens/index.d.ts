@@ -8,16 +8,18 @@ interface Theme {
     };
     size?: {
         token?: CSS.FontSizeProperty<1>;
+        tokenNum?: CSS.FontSizeProperty<1>;
         text?: CSS.FontSizeProperty<1>;
     };
     display?: CSS.DisplayProperty;
 }
 export interface Props {
-    value: string | number;
+    value: number;
     id?: string;
-    converted?: string | number;
+    converted?: number;
     currency?: string;
     hideText?: boolean;
+    toFixed?: boolean;
     isNegative?: boolean;
     theme?: Theme;
 }

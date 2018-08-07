@@ -5,24 +5,24 @@
 import Alert from './alert'
 import DisabledContent from './disabledContent'
 import MainToggle from './mainToggle'
-import PanelEmpty from './panelEmpty'
+import WalletEmpty from './walletEmpty'
 import SiteBanner from './siteBanner'
 import Amount from './amount'
 import Donate from './donate'
-import PanelOff from './panelOff'
+import WalletOff from './walletOff'
 import Tokens from './tokens'
 import Box from './box'
-import DonationTable from './donationTable'
+import TableDonation from './tableDonation'
+import TableContribute from './tableContribute'
 import ModalBackupRestore from './modalBackupRestore'
-import PanelSummary from './panelSummary'
+import WalletSummary from './walletSummary'
 import Tooltip from './tooltip'
-import ContributeTable from './contributeTable'
 import List from './list'
 import ModalContribute from './modalContribute'
 import Profile from './profile'
 import ControlWrapper from './controlWrapper'
 import ListToken from './listToken'
-import Panel from './panel'
+import WalletWrapper from './walletWrapper'
 import Tip from './tip'
 import SettingsPage from './settingsPage'
 
@@ -30,24 +30,24 @@ export {
   Alert,
   DisabledContent,
   MainToggle,
-  PanelEmpty,
+  WalletEmpty,
   SiteBanner,
   Amount,
   Donate,
-  PanelOff,
+  WalletOff,
   Tokens,
   Box,
-  DonationTable,
+  TableDonation,
   ModalBackupRestore,
-  PanelSummary,
+  WalletSummary,
   Tooltip,
-  ContributeTable,
+  TableContribute,
   List,
   ModalContribute,
   Profile,
   ControlWrapper,
   ListToken,
-  Panel,
+  WalletWrapper,
   Tip,
   SettingsPage
 }

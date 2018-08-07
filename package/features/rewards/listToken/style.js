@@ -11,7 +11,7 @@ exports.StyledWrapper = styled_components_1.default.div `
   align-items: baseline;
   align-content: flex-start;
   flex-wrap: nowrap;
-  margin-bottom: 8px;
+  margin-bottom: ${(p) => helpers_1.setTheme(p.theme, 'marginBottom') || '8px'};
   font-family: Poppins;
 `;
 exports.StyledTitle = styled_components_1.default.div `
