@@ -14,6 +14,7 @@ import Card from './layout/card'
 import TextArea from './formControls/textarea'
 import Toggle from './formControls/toggle'
 import { Grid, Column } from './layout/gridList'
+import Heading from './text/heading'
 
 export {
   Button,
@@ -21,6 +22,7 @@ export {
   Column,
   ControlWrapper,
   Grid,
+  Heading,
   Input,
   Modal,
   Select,
