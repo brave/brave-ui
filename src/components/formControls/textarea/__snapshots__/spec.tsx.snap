@@ -34,9 +34,9 @@ exports[`TextArea tests basic tests matches the snapshot 1`] = `
   >
     <textarea
       className="c2"
-      defaultValue={undefined}
       disabled={undefined}
       onChange={undefined}
+      value={undefined}
     />
   </div>
 </div>

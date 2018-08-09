@@ -10,7 +10,7 @@ import ControlWrapper from '../../../features/rewards/controlWrapper/index'
 export interface Props {
   id?: string
   title?: React.ReactNode
-  defaultValue?: string
+  value?: string
   disabled?: boolean
   theme?: Theme
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>, child: React.ReactNode) => void
@@ -23,12 +23,12 @@ interface Theme {
 
 export default class TextArea extends React.PureComponent<Props, {}> {
   render () {
-    const { id, onChange, defaultValue, title, theme, disabled } = this.props
+    const { id, onChange, value, title, theme, disabled } = this.props
 
     return (
       <StyledWrapper id={id} theme={theme}>
         <ControlWrapper title={title} theme={theme}>
-          <StyledArea onChange={onChange} disabled={disabled} defaultValue={defaultValue} theme={theme} />
+          <StyledArea onChange={onChange} disabled={disabled} value={value} theme={theme} />
         </ControlWrapper>
       </StyledWrapper>
     )
