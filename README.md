@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/brave/brave-ui/master/logo-dev.png" align="right" width="130px" height="130px"/>
 
-# Brave UI [![npm](https://img.shields.io/npm/v/brave-ui.svg)]()
+# Brave UI [![npm](https://img.shields.io/npm/v/brave-ui.svg)](https://www.npmjs.com/package/brave-ui)
 > List of reusable React components to empower your brave UI
 
 [![Travis](https://img.shields.io/travis/brave/brave-ui.svg)](https://travis-ci.org/brave/brave-ui) [![Known Vulnerabilities](https://snyk.io/test/github/brave/brave-ui/badge.svg)](https://snyk.io/test/github/brave/brave-ui) [![npm](https://img.shields.io/npm/dt/brave-ui.svg)]() [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
