@@ -12,7 +12,7 @@ import * as React from 'react'
 import { withState } from '@dump247/storybook-state'
 
 // Components
-import { Tabs, Column, Grid } from '../../src/components'
+import { Tabs, Column, Grid, Card } from '../../src/components'
 
 storiesOf('Components/Layout', module)
   .addDecorator(withKnobs)
@@ -104,5 +104,22 @@ storiesOf('Components/Layout', module)
           </Column>
         </Grid>
       </div>
+    )
+  })
+  .add('Card', () => {
+    return (
+      <Card
+        theme={{
+          margin: text('Margin', '0px'),
+          padding: text('Padding', ''),
+          minHeight: text('Min Height', '150px'),
+          width: text('Width', '400px'),
+          maxWidth: text('Max Width', '100%'),
+          boxShadow: text('Box Shadow', ''),
+          backgroundColor: text('Background Color', 'white')
+        }}
+      >
+        <p>Hello I'm a card!</p>
+      </Card>
     )
   })

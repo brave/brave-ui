@@ -8,6 +8,7 @@ import Modal from './popupModals/modal'
 import Select from './formControls/select'
 import Table from './dataTables/table'
 import Tabs from './layout/tabs'
+import Card from './layout/card'
 import TextArea from './formControls/textarea'
 import Toggle from './formControls/toggle'
 import { Grid, Column } from './layout/gridList'
@@ -21,6 +22,7 @@ export {
   Select,
   Table,
   Tabs,
+  Card,
   TextArea,
   Toggle
 }
