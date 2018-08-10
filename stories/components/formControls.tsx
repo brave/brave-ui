@@ -12,7 +12,8 @@ import { withState } from '@dump247/storybook-state'
 import centered from '@storybook/addon-centered/dist'
 
 // Components
-import { Toggle, Select, Checkbox, TextArea, ControlWrapper } from '../../src/components'
+import { Toggle, Select, Checkbox, TextArea, Input, ControlWrapper } from '../../src/components'
+import { CheckCircleIcon } from '../../src/components/icons'
 
 storiesOf('Components/Form controls', module)
   .addDecorator(withKnobs)
@@ -153,5 +154,21 @@ storiesOf('Components/Form controls', module)
           />
         </ControlWrapper>
       </div>
+    )
+  }))
+  .add('Input', withState({ value: '' }, (store) => {
+    const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      store.set({ value: event.target.value })
+    }
+    const typeOptions = { text: 'text', email: 'email', search: 'search', password: 'password' }
+    const type = select('Type', typeOptions, 'text')
+    return (
+      <Input
+        type={type}
+        icon={<CheckCircleIcon />}
+        value={text('Value', store.state.value)}
+        disabled={boolean('Disabled', false)}
+        onChange={onChange}
+      />
     )
   }))
