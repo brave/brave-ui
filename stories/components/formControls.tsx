@@ -70,13 +70,13 @@ storiesOf('Components/Form controls', module)
       </Checkbox>
     )
   }))
-  .add('TextArea', withState({ defaultValue: '' }, (store) => {
+  .add('TextArea', withState({ value: '' }, (store) => {
     const onChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-      store.set({ defaultValue: event.target.value })
+      store.set({ value: event.target.value })
     }
     return (
       <TextArea
-        defaultValue={text('Value', store.state.defaultValue)}
+        value={text('Value', store.state.value)}
         title={text('Title', 'Recovery keys')}
         onChange={onChange}
       />
