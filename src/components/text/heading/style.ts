@@ -4,44 +4,36 @@
 
 import styled from 'styled-components'
 import { HeadingProps } from './index'
-import { setTheme } from '../../../helpers'
+import theme from '../../../theme/brave-default'
 
-// All feature-based text inherits from StyledSharedHeading
-// which excludes normal h1...h6 headings
-const StyledSharedHeading = styled.span`
+const StyledSharedHeading = styled<HeadingProps, 'span'>('span')`
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: ${theme.fontFamily.heading};
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
-` as any
-
-const StyledH1 = StyledSharedHeading.withComponent('h1').extend`
-  color: ${(p: HeadingProps) => setTheme(p.theme, 'color') || '#4b4c5c'};
-  margin: ${(p: HeadingProps) => setTheme(p.theme, 'margin') || '0'};
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 0.2px;
+  margin: 0;
 `
 
-const StyledH2 = StyledSharedHeading.withComponent('h2').extend`
-  color: ${(p: HeadingProps) => setTheme(p.theme, 'color') || '#4b4c5c'};
-  margin: ${(p: HeadingProps) => setTheme(p.theme, 'margin') || '20px 0 10px'};
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 1.27;
-  letter-spacing: normal;
+export const StyledH1 = StyledSharedHeading.withComponent('h1').extend`
+  font-size: 48px;
 `
 
-const StyledH3 = StyledSharedHeading.withComponent('h3').extend`
-  color: ${(p: HeadingProps) => setTheme(p.theme, 'color') || '#4b4c5c'};
-  margin: ${(p: HeadingProps) => setTheme(p.theme, 'margin') || '0'};
+export const StyledH2 = StyledSharedHeading.withComponent('h2').extend`
+  font-size: 40px;
+`
+
+export const StyledH3 = StyledSharedHeading.withComponent('h3').extend`
+  font-size: 32px;
+`
+
+export const StyledH4 = StyledSharedHeading.withComponent('h4').extend`
+  font-size: 24px;
+`
+
+export const StyledH5 = StyledSharedHeading.withComponent('h5').extend`
+  font-size: 20px;
+`
+
+export const StyledH6 = StyledSharedHeading.withComponent('h6').extend`
   font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: normal;
 `
-
-export {
-  StyledH1,
-  StyledH2,
-  StyledH3
-}

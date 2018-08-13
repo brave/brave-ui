@@ -16,23 +16,30 @@ import { Heading } from '../../src/components'
 storiesOf('Components/Text', module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
-  .add('Heading', () => {
+  .add('Heading playground', () => {
     const label = 'Level'
     const defaultValue = 1
     const options = {
       range: true,
       min: 1,
-      max: 3,
+      max: 6,
       step: 1
     }
     return (
-      <Heading
-        level={number(label, defaultValue, options)}
-        theme={{
-          color: text('Color', ''),
-          margin: text('Margin', '')
-        }}
-        text={text('Text', 'Heading on fire')}
-      />
+      <Heading level={number(label, defaultValue, options)}>
+        {text('Text', 'Heading on fire')}
+      </Heading>
+    )
+  })
+  .add('Heading Demonstration', () => {
+    return (
+      <>
+        <Heading level={1}>Heading level 1</Heading>
+        <Heading level={2}>Heading level 2</Heading>
+        <Heading level={3}>Heading level 3</Heading>
+        <Heading level={4}>Heading level 4</Heading>
+        <Heading level={5}>Heading level 5</Heading>
+        <Heading level={6}>Heading level 6</Heading>
+      </>
     )
   })

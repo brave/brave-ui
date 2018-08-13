@@ -6,7 +6,7 @@ import Heading from './index'
 
 describe('all heading tests', () => {
   const baseHeadingComponent = (props?: object) => (
-    <Heading id='testHeading' {...props} />
+    <Heading testId='testHeading' {...props} />
   )
   describe('heading tests', () => {
     describe('basic tests', () => {
@@ -17,55 +17,47 @@ describe('all heading tests', () => {
       })
 
       it('renders the component', () => {
-        const wrapper = shallow(baseHeadingComponent({id: 'toughTitleHeading'}))
-        const assertion = wrapper.find('#toughTitleHeading').length
-        expect(assertion).toBe(1)
+        const wrapper = shallow(baseHeadingComponent({testId: 'toughTitleHeading'}))
+        const assertion = wrapper.props()['data-test-id']
+        expect(assertion).toBe('toughTitleHeading')
       })
     })
 
     describe('component behavior', () => {
-      it('can have an id', () => {
-        const wrapper = shallow(baseHeadingComponent({id: 'titleHeadingThing'}))
-        const assertion = wrapper.props().id
-        expect(assertion).toBe('titleHeadingThing')
-      })
-
-      it('can be an h1 when level === 1', () => {
+      it('should be an h1 when level === 1', () => {
         const wrapper = shallow(baseHeadingComponent({level: 1}))
         const assertion = wrapper.html().includes('h1')
         expect(assertion).toBe(true)
       })
 
-      it('can be an h2 when level === 2', () => {
+      it('should be an h2 when level === 2', () => {
         const wrapper = shallow(baseHeadingComponent({level: 2}))
         const assertion = wrapper.html().includes('h2')
         expect(assertion).toBe(true)
       })
 
-      it('can be an h3 when level === 3', () => {
+      it('should be an h3 when level === 3', () => {
         const wrapper = shallow(baseHeadingComponent({level: 3}))
         const assertion = wrapper.html().includes('h3')
         expect(assertion).toBe(true)
       })
 
-      it('can pass text', () => {
-        const wrapper = shallow(baseHeadingComponent({text: 'nsync rlz'}))
-        const assertion = wrapper.html().includes('nsync rlz')
+      it('should be an h3 when level === 4', () => {
+        const wrapper = shallow(baseHeadingComponent({level: 4}))
+        const assertion = wrapper.html().includes('h4')
         expect(assertion).toBe(true)
       })
-    })
 
-    describe('theming', () => {
-      it('allows theming the `color` property', () => {
-        const component = baseHeadingComponent({theme: { color: 'orange' } })
-        const tree = create(component).toJSON()
-        expect(tree).toHaveStyleRule('color', 'orange')
+      it('should be an h3 when level === 5', () => {
+        const wrapper = shallow(baseHeadingComponent({level: 5}))
+        const assertion = wrapper.html().includes('h5')
+        expect(assertion).toBe(true)
       })
 
-      it('allows theming the `margin` property', () => {
-        const component = baseHeadingComponent({theme: { margin: '30px' } })
-        const tree = create(component).toJSON()
-        expect(tree).toHaveStyleRule('margin', '30px')
+      it('should be an h3 when level === 6', () => {
+        const wrapper = shallow(baseHeadingComponent({level: 6}))
+        const assertion = wrapper.html().includes('h6')
+        expect(assertion).toBe(true)
       })
     })
   })

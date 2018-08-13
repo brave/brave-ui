@@ -3,20 +3,15 @@
 exports[`all heading tests heading tests basic tests matches the snapshot 1`] = `
 .c0 {
   box-sizing: border-box;
-  font-family: "Poppins",sans-serif;
+  font-family: Poppins,sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  color: #4b4c5c;
   margin: 0;
-  font-size: 28px;
-  font-weight: 600;
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
+  font-size: 48px;
 }
 
 <h1
   className="c0"
-  id="testHeading"
+  data-test-id="testHeading"
 />
 `;
