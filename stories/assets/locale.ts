@@ -104,6 +104,7 @@ const locale: Record<string, string> = {
   tipOnLike: 'Tip on like',
   tokenGrant: 'Token Grant',
   tokenAllocation: 'Token Allocation',
+  tokens: 'tokens',
   total: 'Total',
   transactions: 'Transactions',
   type: 'Type',
