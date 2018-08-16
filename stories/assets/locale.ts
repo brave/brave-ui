@@ -131,9 +131,9 @@ const locale: Record<string, string> = {
   braveContributeTitle: 'Brave Contribute',
   braveContributeDesc: 'Set budget and browse normally. Your favorite sites get paid automatically.',
   readyToTakePart: 'Ready to take active part in the change?',
-  readyToTakePartStart: 'You can start with the ',
+  readyToTakePartStart: 'You can start with the',
   readyToTakePartBold: '5 free tokens',
-  readyToTakePartDesc: ' in your wallet — our gift to you as a welcome! Access to many premium paid content will be available in the near future.',
+  readyToTakePartDesc: 'in your wallet — our gift to you as a welcome! Access to many premium paid content will be available in the near future.',
   readyToTakePartOptInText: 'Yes I\'m Ready!'
 }
 
