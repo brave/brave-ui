@@ -30,11 +30,12 @@ storiesOf('Feature Components/Rewards/Modal', module)
     const onTabChange = (tabId: string) => {
       store.set({ tabId })
     }
+
     return (
       <div style={{ maxWidth: '900px', background: '#fff', padding: '30px' }}>
         <ModalBackupRestore
           activeTabId={store.state.tabId as TabsType}
-          recoveryKey={'crouch  hint  glow  recall  round  angry  weasel  luggage save  hood  census  near  still   power  vague  balcony camp  law  now  certain  wagon  affair  butter  choice '}
+          backupKey={'crouch  hint  glow  recall  round  angry  weasel  luggage save  hood  census  near  still   power  vague  balcony camp  law  now  certain  wagon  affair  butter  choice '}
           error={text('Error', '')}
           onTabChange={onTabChange}
           onClose={doNothing}
@@ -42,7 +43,6 @@ storiesOf('Feature Components/Rewards/Modal', module)
           onPrint={doNothing}
           onSaveFile={doNothing}
           onRestore={doNothing}
-          onImport={doNothing}
         />
       </div>
     )

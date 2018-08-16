@@ -3,22 +3,18 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
-import { Props } from './index'
-import { setTheme } from '../../../helpers'
 
 export const StyledWrapper = styled.div`
-  position: ${(p: Props) => setTheme(p.theme, 'position') || 'relative'};
-  top: ${(p: Props) => setTheme(p.theme, 'top') || 0};
-  left: ${(p: Props) => setTheme(p.theme, 'left') || 0};
+  height: ${(p: {fullSize: boolean, bgColor: string}) => p.fullSize ? '100%' : 'auto'};
+  background: ${(p: {fullSize: boolean , bgColor: string}) => p.bgColor};
   display: flex;
   justify-content: flex-start;
   align-content: flex-start;
-  flex-wrap: nowrap;
-  background-color: #fff;
-  box-shadow: 0 1px 0 0 #dfdfe8;
-  padding: 30px 38px 33px 19px;
   align-items: center;
+  flex-wrap: nowrap;
+  padding: 15px 38px 15px 19px;
   font-family: Poppins, sans-serif;
+  width: 100%;
 ` as any
 
 export const StyledIcon = styled.span`
@@ -30,14 +26,16 @@ export const StyledIcon = styled.span`
 export const StyledContent = styled.div`
   flex-grow: 1;
   flex-basis: 50%;
-  padding-left: 11px;
-  font-size: 14px;
-  line-height: 1.57;
-  color: #838391;
+  padding-left: 19px;
+  font-family: Muli, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: -0.3px;
+  color: ${(p: {color: string}) => p.color || '#838391'};
 
   b {
     font-weight: 600;
-    color: #4b4c5c;
+    color: ${(p: {color: string}) => p.color || '#4b4c5c'};
   }
 ` as any
 

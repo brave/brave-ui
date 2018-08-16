@@ -9,7 +9,8 @@ import {
   StyledImport,
   StyleButtonWrapper,
   StyledActionsWrapper,
-  StyledDoneWrapper
+  StyledDoneWrapper,
+  StyledStatus
 } from './style'
 import Tabs from '../../../components/layout/tabs/index'
 import TextArea from '../../../components/formControls/textarea/index'
@@ -17,11 +18,12 @@ import Modal from '../../../components/popupModals/modal/index'
 import ButtonPrimary from '../../../components/buttonsIndicators/buttonPrimary/index'
 import ButtonSecondary from '../../../components/buttonsIndicators/buttonSecondary/index'
 import { getLocale } from '../../../helpers'
+import Alert from '../alert'
 
 export type TabsType = 'backup' | 'restore'
 
 export interface Props {
-  recoveryKey: string
+  backupKey: string
   activeTabId: TabsType
   onTabChange: (tab: TabsType) => void
   onClose: () => void
@@ -29,28 +31,74 @@ export interface Props {
   onPrint: (key: string) => void
   onSaveFile: (key: string) => void
   onRestore: (key: string) => void
-  onImport: () => void
   error?: React.ReactNode
   id?: string
+}
+
+interface State {
+  recoveryKey: string
 }
 
 /*
   TODO
   - add error flow
  */
-export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
+export default class ModalBackupRestore extends React.PureComponent<Props, State> {
+
+  constructor (props: Props) {
+    super(props)
+    this.state = {
+      recoveryKey: ''
+    }
+  }
+  onFileUpload = (inputFile: React.ChangeEvent<HTMLInputElement>) => {
+    const input: HTMLInputElement = inputFile.target
+    const self = this
+
+    if (!input.files) {
+      return
+    }
+
+    const reader = new FileReader()
+    reader.onload = function () {
+      if (reader.result) {
+        self.onRestore((reader.result.toString() || '').trim())
+      } else {
+        self.onRestore('')
+      }
+    }
+
+    try {
+      reader.readAsText(input.files[0])
+    } catch (e) {
+      self.onRestore('')
+    }
+  }
+
+  setRecoveryKey = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    this.setState({
+      recoveryKey: event.target.value
+    })
+  }
+
+  onRestore = (key?: string) => {
+    key = typeof key === 'string' ? key : this.state.recoveryKey
+    this.setState({
+      recoveryKey: ''
+    })
+    this.props.onRestore(key)
+  }
+
   render () {
     const {
       id,
-      recoveryKey,
+      backupKey,
       activeTabId,
       onClose,
       onTabChange,
       onCopy,
       onPrint,
       onSaveFile,
-      onRestore,
-      onImport,
       error
     } = this.props
 
@@ -64,8 +112,8 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
             </StyledContent>
             <TextArea
               title={getLocale('recoveryKeys')}
-              theme={{ maxWidth: '100%', minHeight: '112px' }}
-              defaultValue={recoveryKey}
+              theme={{ maxWidth: '100%', minHeight: '140px' }}
+              value={backupKey}
               disabled={true}
             />
             <StyleButtonWrapper>
@@ -73,19 +121,19 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
                 text={getLocale('copy')}
                 size={'small'}
                 color={'subtle'}
-                onClick={onCopy.bind(this, recoveryKey)}
+                onClick={onCopy.bind(this, backupKey)}
               />
               <ButtonSecondary
                 text={getLocale('print')}
                 size={'small'}
                 color={'subtle'}
-                onClick={onPrint.bind(this, recoveryKey)}
+                onClick={onPrint.bind(this, backupKey)}
               />
               <ButtonSecondary
                 text={getLocale('saveAsFile')}
                 size={'small'}
                 color={'subtle'}
-                onClick={onSaveFile.bind(this, recoveryKey)}
+                onClick={onSaveFile.bind(this, backupKey)}
               />
             </StyleButtonWrapper>
             <StyledDoneWrapper>
@@ -101,17 +149,33 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
             <StyledContent>
               {getLocale('rewardsRestoreText2')}
             </StyledContent>
-            {
-              error
-              ? <div>TODO: {error}</div>
-              : null
-            }
+            <StyledStatus error={error}>
+              {
+                error
+                ? <Alert type={'error'} color={true} bg={true}>
+                    {error}
+                </Alert>
+                : null
+              }
+            </StyledStatus>
             <TextArea
               title={<>
-                {getLocale('rewardsRestoreText3')}<StyledImport onClick={onImport}>{getLocale('import')}</StyledImport>
+                {getLocale('rewardsRestoreText3')} <StyledImport
+                  htmlFor={'recoverFile'}
+                >
+                  {getLocale('import')}
+                </StyledImport>
+                <input
+                  type='file'
+                  id='recoverFile'
+                  name='recoverFile'
+                  style={{ display: 'none' }}
+                  onChange={this.onFileUpload}
+                />
               </>}
-              theme={{ maxWidth: '100%', minHeight: '112px' }}
-              defaultValue={''}
+              theme={{ maxWidth: '100%', minHeight: '140px' }}
+              value={this.state.recoveryKey}
+              onChange={this.setRecoveryKey}
             />
             <StyledActionsWrapper>
               <ButtonSecondary
@@ -124,7 +188,7 @@ export default class ModalBackupRestore extends React.PureComponent<Props, {}> {
                 text={getLocale('restore')}
                 size={'medium'}
                 color={'brand'}
-                onClick={onRestore.bind(this, recoveryKey)}
+                onClick={this.onRestore}
               />
             </StyledActionsWrapper>
           </div>

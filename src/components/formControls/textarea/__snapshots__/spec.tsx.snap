@@ -13,7 +13,7 @@ exports[`TextArea tests basic tests matches the snapshot 1`] = `
   font-family: Muli,sans-serif;
   border: 1px solid #DFDFE8;
   border-radius: 6px;
-  padding: 15px 0px 15px 20px;
+  padding: 15px 20px;
   font-size: 16px;
   line-height: 26px;
 }
@@ -34,9 +34,9 @@ exports[`TextArea tests basic tests matches the snapshot 1`] = `
   >
     <textarea
       className="c2"
-      defaultValue={undefined}
       disabled={undefined}
       onChange={undefined}
+      value={undefined}
     />
   </div>
 </div>

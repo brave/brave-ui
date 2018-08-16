@@ -18,7 +18,7 @@ export const StyledArea = styled.textarea`
   font-family: Muli, sans-serif;
   border: 1px solid #DFDFE8;
   border-radius: 6px;
-  padding: 15px 0px 15px 20px;
+  padding: 15px 20px;
   font-size: 16px;
   line-height: 26px;
 ` as any

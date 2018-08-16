@@ -45,7 +45,7 @@ export const StyledBalanceTokens = styled.div`
 ` as any
 
 export const StyledContent = styled.div`
-  padding: 31px 25px 19px;
+  padding: 11px 25px 19px;
   position: relative;
   background: #f9fbfc;
 ` as any
@@ -135,4 +135,44 @@ export const StyledBalanceCurrency = styled.span`
   font-size: 16px;
   line-height: 0.88;
   color: #fff;
+` as any
+
+export const StyledCurve = styled.div`
+    padding: 10px 0;
+    position: relative;
+    overflow: hidden;
+    margin: 0 -21px 0 -19px;
+    z-index: 5;
+
+    :before {
+      content: "";
+      position: absolute;
+      bottom: -16px;
+      margin-left: -50%;
+      height: 240px;
+      width: 200%;
+      border-radius: 100%;
+      border: 20px solid #f9fbfc;
+    }
+` as any
+
+export const StyledAlert = styled.div`
+    display: flex;
+    align-items: stretch;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 5;
+    width: 100%;
+` as any
+
+export const StyledAlertClose = styled.button`
+    position: absolute;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    top: 16px;
+    right: 16px;
 ` as any

@@ -11,7 +11,6 @@ import { DetailRow as ContributeDetailRow } from '../../../../src/features/rewar
 import { DetailRow as TransactionsRow } from '../../../../src/features/rewards/tableTransactions'
 
 import {
-  Alert,
   ModalActivity,
   ModalBackupRestore,
   WalletEmpty,
@@ -229,7 +228,6 @@ class PageWallet extends React.Component<{}, State> {
   }
 
   render () {
-    const showNotification = boolean('Show notification', false)
     const content = select(
       'Content',
       {
@@ -245,7 +243,7 @@ class PageWallet extends React.Component<{}, State> {
       <>
         <WalletWrapper
           tokens={25}
-          converted={'6.0 USD'}
+          converted={'6.00 USD'}
           actions={[
             {
               name: 'Add funds',
@@ -279,23 +277,17 @@ class PageWallet extends React.Component<{}, State> {
           connectedWallet={boolean('Connected wallet', false)}
         >
           {
-            showNotification
-              ? <Alert type={'error'} theme={{ position: 'absolute' }}>
-                <b>Funds received!</b> 25 tokens are added to your wallet successfully.
-              </Alert>
-              : null
-          }
-          {
             content === 'empty' ? <WalletEmpty/> : null
           }
           {
             content === 'summary'
               ? <WalletSummary
-                grant={{ color: '#C12D7C', tokens: 10, converted: 0.25 }}
-                ads={{ color: '#C12D7C', tokens: 10, converted: 0.25 }}
-                contribute={{ color: '#9752CB', tokens: 10, converted: 0.25 }}
-                donation={{ color: '#4C54D2', tokens: 2, converted: 0.25 }}
-                tips={{ color: '#4C54D2', tokens: 19, converted: 5.25 }}
+                grant={{ tokens: 10, converted: 0.25 }}
+                ads={{ tokens: 10, converted: 0.25 }}
+                contribute={{ tokens: 10, converted: 0.25 }}
+                donation={{ tokens: 2, converted: 0.25 }}
+                tips={{ tokens: 19, converted: 5.25 }}
+                total={{ tokens: 1, converted: 5.25 }}
                 onActivity={this.onActivity}
               />
               : null
@@ -308,14 +300,13 @@ class PageWallet extends React.Component<{}, State> {
           this.state.modalBackup
           ? <ModalBackupRestore
             activeTabId={this.state.modalBackupActive}
-            recoveryKey={'crouch  hint  glow  recall  round  angry  weasel  luggage save  hood  census  near  still   power  vague  balcony camp  law  now  certain  wagon  affair  butter  choice '}
+            backupKey={'crouch  hint  glow  recall  round  angry  weasel  luggage save  hood  census  near  still   power  vague  balcony camp  law  now  certain  wagon  affair  butter  choice '}
             onTabChange={this.onBackupTabChange.bind(self)}
             onClose={this.onBackupModalClose.bind(self)}
             onCopy={doNothing}
             onPrint={doNothing}
             onSaveFile={doNothing}
             onRestore={doNothing}
-            onImport={doNothing}
           />
           : null
         }
