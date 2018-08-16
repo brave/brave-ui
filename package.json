@@ -27,6 +27,7 @@
     "publish": "npm run build && lerna publish",
     "storybook-start": "start-storybook -p 9091 -c .storybook",
     "storybook-deploy": "storybook-to-ghpages -s public -o .out",
+    "storybook-build": "build-storybook -c .storybook -o .storybook-out",
     "test-unit": "jest -t",
     "test-unit-all": "jest --verbose",
     "test-security": "npm audit",
