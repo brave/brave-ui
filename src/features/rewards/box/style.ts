@@ -47,7 +47,7 @@ export const StyledRight = styled.div`
 ` as any
 
 export const StyledTitle = styled.div`
-  height: 36px;
+  height: 35px;
   font-size: 22px;
   font-weight: 600;
   line-height: 1.27;
