@@ -32,7 +32,7 @@ export const StyledRight = styled.div`
 ` as any
 
 export const StyledTitle = styled.div`
-  font-size: 28px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.2px;
   color: #4b4c5c;

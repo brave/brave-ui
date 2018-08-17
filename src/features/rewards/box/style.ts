@@ -49,7 +49,7 @@ export const StyledRight = styled.div`
 export const StyledTitle = styled.div`
   height: 36px;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.27;
   letter-spacing: normal;
   color: ${(p: Props) => {
