@@ -60,7 +60,7 @@ storiesOf('Components/Data Tables', module)
         content: 'Site visited'
       },
       {
-        content: 'Attentions',
+        content: 'Attention',
         theme: {
           'text-align': 'right'
         }
