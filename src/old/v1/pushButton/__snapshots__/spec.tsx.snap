@@ -38,10 +38,10 @@ exports[`pushButton tests basic tests matches the snapshot 1`] = `
   user-select: none;
   -webkit-transition: .1s opacity,.1s background;
   transition: .1s opacity,.1s background;
-  -webkit-letter-spacing: 0.46px;
-  -moz-letter-spacing: 0.46px;
-  -ms-letter-spacing: 0.46px;
-  letter-spacing: 0.46px;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
   color: #5A5A5A;
   stroke: #5A5A5A;
   background-color: #FFF;

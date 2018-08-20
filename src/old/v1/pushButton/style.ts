@@ -41,7 +41,7 @@ const StyledPushButton = styled.button`
   cursor: pointer;
   user-select: none;
   transition: .1s opacity, .1s background;
-  letter-spacing: 0.46px;
+  letter-spacing: 1px;
 
   &:active {
     bottom: -1px;

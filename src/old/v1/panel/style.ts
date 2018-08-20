@@ -8,6 +8,7 @@ import { setTheme } from '../../../helpers'
 
 const StyledPanel = styled.div`
   max-width: ${(p: PanelProps) => setTheme(p.theme, 'maxWidth')};
+  min-height: ${(p: PanelProps) => setTheme(p.theme, 'minHeight')};
   min-width: ${(p: PanelProps) => setTheme(p.theme, 'minWidth')};
   width: ${(p: PanelProps) => setTheme(p.theme, 'width')};
   height: ${(p: PanelProps) => setTheme(p.theme, 'height')};

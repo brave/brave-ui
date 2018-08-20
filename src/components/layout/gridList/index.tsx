@@ -49,6 +49,7 @@ export interface ColumnTheme {
   flexDirection?: string
   flexWrap?: string
   overflow?: string
+  margin?: string
 }
 
 export interface ColumnProps {

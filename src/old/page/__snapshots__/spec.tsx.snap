@@ -6,9 +6,10 @@ exports[`page tests basic tests matches the snapshot 1`] = `
   color: inherit;
   padding: 40px;
   background: inherit;
+  height: initial;
+  background-size: auto;
   box-sizing: border-box;
   background-attachment: fixed;
-  background-size: auto;
   font-size: inherit;
   display: -webkit-box;
   display: -webkit-flex;
@@ -17,7 +18,6 @@ exports[`page tests basic tests matches the snapshot 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: initial;
   min-height: 100%;
 }
 
