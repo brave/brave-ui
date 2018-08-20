@@ -4,20 +4,17 @@
 
 import styled from 'styled-components'
 import { CardProps } from './index'
-import { setTheme } from '../../../helpers'
 
-const StyledCard = styled.div`
-  max-width: ${(p: CardProps) => setTheme(p.theme, 'maxWidth')};
-  width: ${(p: CardProps) => setTheme(p.theme, 'width')};
-  min-height: ${(p: CardProps) => setTheme(p.theme, 'minHeight')};
-  margin: ${(p: CardProps) => setTheme(p.theme, 'margin')};
-  padding: ${(p: CardProps) => setTheme(p.theme, 'padding') || '40px'};
-  background-color: ${(p: CardProps) => setTheme(p.theme, 'backgroundColor') || '#FFF'};
-  border-radius: ${(p: CardProps) => setTheme(p.theme, 'borderRadius') || '6px'};
-  box-shadow: ${(p: CardProps) => setTheme(p.theme, 'boxShadow') || '0 0 8px 0 rgba(99,105,110,0.12)'};
+export const StyledCard = styled<CardProps, 'div'>('div')`
+  max-width: 100%;
+  width: 100%;
+  min-height: auto;
+  margin: 0;
+  padding: 30px 36px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 8px 0 rgba(99,105,110,0.12);
   font-size: inherit;
   box-sizing: border-box;
   position: relative;
-` as any
-
-export default StyledCard
+`

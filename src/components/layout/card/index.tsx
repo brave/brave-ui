@@ -3,33 +3,25 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import * as CSS from 'csstype'
 
-import StyledCard from './style'
-
-export interface CardTheme {
-  maxWidth?: CSS.MaxWidthProperty<1>
-  width?: CSS.WidthProperty<1>
-  minHeight?: CSS.MinHeightProperty<1>
-  margin?: CSS.MarginProperty<1>
-  padding?: CSS.PaddingProperty<1>
-  backgroundColor?: CSS.BackgroundColorProperty
-  boxShadow?: CSS.BoxShadowProperty
-}
+import { StyledCard } from './style'
 
 export interface CardProps {
-  id?: string
-  theme?: CardTheme
+  testId?: string
   children?: React.ReactNode
 }
 
-class Card extends React.PureComponent<CardProps, {}> {
+/**
+ * Card Component
+ * Styled block simulating a *card* style usually made as a styled wrapper
+ * @prop {string} testId - the test id to be used for testing
+ * @prop {React.ReactNode} children - the child components/elements to be included
+ */
+export default class Card extends React.PureComponent<CardProps, {}> {
   render () {
-    const { id, theme, children } = this.props
+    const { testId, children } = this.props
     return (
-      <StyledCard id={id} theme={theme}>{children}</StyledCard>
+      <StyledCard data-test-id={testId}>{children}</StyledCard>
     )
   }
 }
-
-export default Card

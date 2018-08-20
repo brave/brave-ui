@@ -2,8 +2,12 @@
 
 exports[`card tests basic tests matches the snapshot 1`] = `
 .c0 {
-  padding: 40px;
-  background-color: #FFF;
+  max-width: 100%;
+  width: 100%;
+  min-height: auto;
+  margin: 0;
+  padding: 30px 36px;
+  background-color: #fff;
   border-radius: 6px;
   box-shadow: 0 0 8px 0 rgba(99,105,110,0.12);
   font-size: inherit;
@@ -13,6 +17,6 @@ exports[`card tests basic tests matches the snapshot 1`] = `
 
 <div
   className="c0"
-  id="testCard"
+  data-test-id="testCard"
 />
 `;

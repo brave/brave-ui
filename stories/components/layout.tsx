@@ -108,17 +108,7 @@ storiesOf('Components/Layout', module)
   })
   .add('Card', () => {
     return (
-      <Card
-        theme={{
-          margin: text('Margin', '0px'),
-          padding: text('Padding', ''),
-          minHeight: text('Min Height', '150px'),
-          width: text('Width', '400px'),
-          maxWidth: text('Max Width', '100%'),
-          boxShadow: text('Box Shadow', ''),
-          backgroundColor: text('Background Color', 'white')
-        }}
-      >
+      <Card>
         <p>Hello I'm a card!</p>
       </Card>
     )
