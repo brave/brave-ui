@@ -24,15 +24,20 @@ export const StyledTitle = styled.div`
   line-height: 0.79;
   letter-spacing: 0.4px;
   color: #4c54d2;
-  margin-bottom: 26px;
+  margin: 4px 0 26px;
   text-transform: uppercase;
 ` as any
 
-export const StyledActivity = styled.div`
+export const StyledActivity = styled.button`
   font-size: 12px;
   color: #686978;
   margin-top: 26px;
   text-align: center;
+  padding: 0;
+  border: none;
+  background: none;
+  width: 100%;
+  cursor: pointer;
 ` as any
 
 export const StyledActivityIcon = styled.span`

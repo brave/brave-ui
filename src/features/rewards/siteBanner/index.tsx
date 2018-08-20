@@ -41,6 +41,7 @@ type Donation = {tokens: number, converted: number, selected?: boolean}
 
 export interface Props {
   balance: number
+  currentAmount: number
   donationAmounts: Donation[]
   onAmountSelection: (tokens: number) => void
   id?: string
@@ -145,6 +146,12 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
     }
   }
 
+  onKeyUp = (e: KeyboardEvent) => {
+    if (e.key.toLowerCase() === 'escape' && this.props.onClose) {
+      this.props.onClose()
+    }
+  }
+
   render () {
     const {
       id,
@@ -159,11 +166,12 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
       donationAmounts,
       domain,
       onAmountSelection,
-      theme
+      theme,
+      currentAmount
     } = this.props
 
     return (
-      <StyledWrapper id={id}>
+      <StyledWrapper id={id} onKeyUp={this.onKeyUp} tabIndex='0'>
         <StyledBanner>
           <StyledClose onClick={onClose}>{close}</StyledClose>
           <StyledBannerImage bgImage={bgImage}>
@@ -207,6 +215,7 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
                 actionText={getLocale('sendDonation')}
                 onAmountSelection={onAmountSelection}
                 donateType={'big'}
+                currentAmount={currentAmount}
               >
                 <Checkbox
                   value={{ make: this.state.monthly }}
