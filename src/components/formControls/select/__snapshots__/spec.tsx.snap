@@ -3,6 +3,7 @@
 exports[`Select tests basic tests matches the snapshot 1`] = `
 .c0 {
   width: 100%;
+  margin: 0px;
 }
 
 .c1 {

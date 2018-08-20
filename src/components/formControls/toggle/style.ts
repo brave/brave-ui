@@ -66,7 +66,11 @@ export const StyledSlider = styled<Props, 'div'>('div')`
 
 export const StyledBullet = styled<Props, 'div'>('div')`
   position: relative;
-  z-index: 2;
+  ${(p: Props) => p.highZ
+    ? css`
+      z-index: 3;
+    ` : ''
+    };
   border-radius: 50%;
   transition: 200ms ease-out;
   ${getBulletStyle};
