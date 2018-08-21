@@ -38,7 +38,7 @@ storiesOf('Old/Buttons', module)
       <UnstyledButton
         onClick={action('clicked the action button!')}
         text={text('Text', 'Example UnstyledButton')}
-        theme={{
+        customStyle={{
           fontSize: text('Font Size', '16px'),
           color: text('Color', '#000')
         }}
@@ -59,7 +59,7 @@ storiesOf('Old/Buttons', module)
       <PushButtonLink
         color={value}
         disabled={boolean('Disabled', false)}
-        theme={{
+        customStyle={{
           minWidth: text('Width', '78px'),
           minHeight: text('Height', '32px'),
           fontSize: text('Font Size', '13px')
@@ -87,7 +87,7 @@ storiesOf('Old/Buttons', module)
         id='sampleSwitch'
         leftText={text('Left Label', 'Some label here')}
         rightText={text('Right Label', 'Some label here too')}
-        theme={{ labelColor: text('Label Color', '#303030') }}
+        customStyle={{ labelColor: text('Label Color', '#303030') }}
         size={value}
         checked={boolean('Checked?', store.state.checked)}
         disabled={boolean('Disabled?', false)}

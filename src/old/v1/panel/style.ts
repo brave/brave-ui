@@ -7,18 +7,18 @@ import { PanelProps } from './index'
 import { setTheme } from '../../../helpers'
 
 const StyledPanel = styled.div`
-  max-width: ${(p: PanelProps) => setTheme(p.theme, 'maxWidth')};
-  min-height: ${(p: PanelProps) => setTheme(p.theme, 'minHeight')};
-  min-width: ${(p: PanelProps) => setTheme(p.theme, 'minWidth')};
-  width: ${(p: PanelProps) => setTheme(p.theme, 'width')};
-  height: ${(p: PanelProps) => setTheme(p.theme, 'height')};
-  margin: ${(p: PanelProps) => setTheme(p.theme, 'margin')};
-  padding: ${(p: PanelProps) => setTheme(p.theme, 'padding') || '40px'};
-  display: ${(p: PanelProps) => setTheme(p.theme, 'display')};
-  flex-direction: ${(p: PanelProps) => setTheme(p.theme, 'flexDirection')};
-  justify-content: ${(p: PanelProps) => setTheme(p.theme, 'justifyContent')};
-  align-items: ${(p: PanelProps) => setTheme(p.theme, 'alignItems')};
-  background-color: ${(p: PanelProps) => setTheme(p.theme, 'backgroundColor') || '#FFF'};
+  max-width: ${(p: PanelProps) => setTheme(p.customStyle, 'maxWidth')};
+  min-height: ${(p: PanelProps) => setTheme(p.customStyle, 'minHeight')};
+  min-width: ${(p: PanelProps) => setTheme(p.customStyle, 'minWidth')};
+  width: ${(p: PanelProps) => setTheme(p.customStyle, 'width')};
+  height: ${(p: PanelProps) => setTheme(p.customStyle, 'height')};
+  margin: ${(p: PanelProps) => setTheme(p.customStyle, 'margin')};
+  padding: ${(p: PanelProps) => setTheme(p.customStyle, 'padding') || '40px'};
+  display: ${(p: PanelProps) => setTheme(p.customStyle, 'display')};
+  flex-direction: ${(p: PanelProps) => setTheme(p.customStyle, 'flexDirection')};
+  justify-content: ${(p: PanelProps) => setTheme(p.customStyle, 'justifyContent')};
+  align-items: ${(p: PanelProps) => setTheme(p.customStyle, 'alignItems')};
+  background-color: ${(p: PanelProps) => setTheme(p.customStyle, 'backgroundColor') || '#FFF'};
   font-size: inherit;
   box-sizing: border-box;
   border-radius: 20px;

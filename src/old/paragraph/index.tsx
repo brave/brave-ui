@@ -21,7 +21,7 @@ export interface ParagraphTheme {
 export interface ParagraphProps {
   id?: string
   text?: string
-  theme?: ParagraphTheme
+  customStyle?: ParagraphTheme
 }
 
 /**
@@ -33,9 +33,9 @@ export interface ParagraphProps {
 
 class Paragraph extends React.PureComponent<ParagraphProps, {}> {
   render () {
-    const { id, theme, text } = this.props
+    const { id, customStyle, text } = this.props
     return (
-      <StyledParagraph id={id} theme={theme}>
+      <StyledParagraph id={id} customStyle={customStyle}>
         {text && text.toString()}
       </StyledParagraph>
     )

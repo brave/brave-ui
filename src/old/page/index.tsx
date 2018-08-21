@@ -17,7 +17,7 @@ export interface PageProps {
   id?: string
   title?: string
   label?: string
-  theme?: PageTheme
+  customStyle?: PageTheme
   children?: React.ReactNode
 }
 
@@ -27,12 +27,12 @@ class Page extends React.PureComponent<PageProps, {}> {
       id,
       title,
       label,
-      theme,
+      customStyle,
       children
     } = this.props
 
     return (
-      <StyledPage id={id} title={title} label={label} theme={theme}>
+      <StyledPage id={id} title={title} label={label} customStyle={customStyle}>
         {
           title
           ? <TitleHeading text={title} label={label} />

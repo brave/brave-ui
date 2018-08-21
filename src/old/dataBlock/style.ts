@@ -29,7 +29,7 @@ const StyledDataBlock = styled.ul`
 ` as any
 
 const StyledDataItem = styled.li`
-  user-select: ${(p: DataItemProps) => setTheme(p.theme, 'userSelect') || 'auto'};
+  user-select: ${(p: DataItemProps) => setTheme(p.customStyle, 'userSelect') || 'auto'};
   box-sizing: border-box;
   vertical-align: middle;
   list-style-type: none;
@@ -38,7 +38,7 @@ const StyledDataItem = styled.li`
 ` as any
 
 const StyledDataItemCounter = styled.span`
-  color: ${(p: DataItemProps) => setTheme(p.theme, 'counterColor') || 'inherit'};
+  color: ${(p: DataItemProps) => setTheme(p.customStyle, 'counterColor') || 'inherit'};
   font-size: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '44px', '26px', undefined)};
   line-height: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '52px', '24px', undefined)};
   width: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '7ch', '3ch', undefined)};
@@ -52,7 +52,7 @@ const StyledDataItemCounter = styled.span`
 ` as any
 
 const StyledDataItemText = styled.span`
-  color: ${(p: DataItemProps) => setTheme(p.theme, 'counterColor') || 'inherit'};
+  color: ${(p: DataItemProps) => setTheme(p.customStyle, 'counterColor') || 'inherit'};
   font-size: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '20px', '13px', undefined)};
   line-height: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '24px', '16px', undefined)};
   margin-left: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '3px', '10px', undefined)};
@@ -67,7 +67,7 @@ const StyledDataItemDescription = styled.div`
   font-size: 13px;
   line-height: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '24px', '16px', undefined)};
   font-family: inherit;
-  color: ${(p: DataItemProps) => setTheme(p.theme, 'descriptionColor') || 'inherit'};
+  color: ${(p: DataItemProps) => setTheme(p.customStyle, 'descriptionColor') || 'inherit'};
   margin-left: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '3px', '1ch', undefined)};
 ` as any
 

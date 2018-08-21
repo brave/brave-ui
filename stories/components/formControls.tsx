@@ -25,7 +25,7 @@ storiesOf('Components/Form controls', module)
       store.set({ checked: !store.state.checked })
     }
 
-    const theme = {
+    const customStyle = {
       offColor: text('Off color', '#CDD1D5'),
       onColor: text('On color', '#6D73D2')
     }
@@ -35,7 +35,7 @@ storiesOf('Components/Form controls', module)
         size={size}
         disabled={boolean('Disabled?', false)}
         checked={boolean('Checked?', store.state.checked)}
-        theme={theme}
+        customStyle={customStyle}
         onToggle={onToggle}
       />
     )
@@ -62,7 +62,7 @@ storiesOf('Components/Form controls', module)
         value={object('Checkbox values', store.state)}
         multiple={boolean('Is multiple?', false)}
         onChange={onChange}
-        theme={{ maxWidth: '315px' }}
+        customStyle={{ maxWidth: '315px' }}
       >
         <div data-key='yt'>YouTube</div>
         <div data-key='tw'>Twitter</div>

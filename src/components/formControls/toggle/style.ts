@@ -76,13 +76,13 @@ export const StyledBullet = styled.div`
 
   ${(p: Props) => p.checked
     ? css`
-      background-color: ${(p: Props) => setTheme(p.theme, 'onColor') || '#6D73D2'};
+      background-color: ${(p: Props) => setTheme(p.customStyle, 'onColor') || '#6D73D2'};
     ` : ''
     };
 
   ${(p: Props) => !p.checked
     ? css`
-      background-color: ${(p: Props) => setTheme(p.theme, 'offColor') || '#CDD1D5'};
+      background-color: ${(p: Props) => setTheme(p.customStyle, 'offColor') || '#CDD1D5'};
       transform: translate(0, calc(-50% - 4px));
     ` : ''
     };

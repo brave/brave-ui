@@ -29,18 +29,18 @@ export const StyledTH = styled.th`
   color: #4B4C5C;
   padding: 9px 0;
 
-  ${(p: Cell) => p.theme
+  ${(p: Cell) => p.customStyle
     ? css`
-      ${p.theme}
+      ${p.customStyle}
     `
     : ''
   };
 ` as any
 
 export const StyledTR = styled.tr`
-  ${(p: Row) => p.theme
+  ${(p: Row) => p.customStyle
     ? css`
-      ${p.theme}
+      ${p.customStyle}
     `
     : ''
   };
@@ -57,9 +57,9 @@ export const StyledTD = styled.td`
   text-align: left;
   height: 42px;
 
-  ${(p: Cell) => p.theme
+  ${(p: Cell) => p.customStyle
     ? css`
-      ${p.theme}
+      ${p.customStyle}
     `
     : ''
   };

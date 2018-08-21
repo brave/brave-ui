@@ -19,16 +19,16 @@ export interface MediaContentProps {
   id?: string
   media?: string
   children?: React.ReactNode
-  theme?: MediaTheme
+  customStyle?: MediaTheme
 }
 
 class MediaContent extends React.PureComponent<MediaContentProps, {}> {
   render () {
-    const { id, media, theme, children } = this.props
+    const { id, media, customStyle, children } = this.props
     return (
       <StyledMediaContent id={id}>
-        <StyledMedia src={media} theme={theme} />
-        <StyledMediaBody theme={theme}>{children}</StyledMediaBody>
+        <StyledMedia src={media} customStyle={customStyle} />
+        <StyledMediaBody customStyle={customStyle}>{children}</StyledMediaBody>
       </StyledMediaContent>
     )
   }

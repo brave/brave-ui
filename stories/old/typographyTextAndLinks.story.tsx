@@ -75,7 +75,7 @@ storiesOf('Old/Typography, Text and Links', module)
       <Heading
         level={levelValue}
         text={text('Heading text', 'Some text')}
-        theme={{
+        customStyle={{
           color: text('Color', '#000000'),
           fontWeight: weightValue
         }}
@@ -89,7 +89,7 @@ storiesOf('Old/Typography, Text and Links', module)
     return (
       <Paragraph
         text={text('Text', 'Some text here')}
-        theme={{
+        customStyle={{
           fontSize: text('Size', '16px'),
           color: text('Color', '#000000'),
           fontWeight: weightValue,
@@ -105,7 +105,7 @@ storiesOf('Old/Typography, Text and Links', module)
     return (
       <Anchor
         href='#'
-        theme={{
+        customStyle={{
           textDecoration,
           color: text('Color', '#000000'),
           fontSize: text('Size', '16px')

@@ -19,7 +19,7 @@ export const StyledWrapper = styled.div`
 ` as any
 
 export const StyledDialog = styled.div`
-  max-width: ${(p: Props) => setTheme(p.theme, 'maxWidth') || '920px'};
+  max-width: ${(p: Props) => setTheme(p.customStyle, 'maxWidth') || '920px'};
   margin: 52px auto;
   background: #fff;
   border-radius: 6px;

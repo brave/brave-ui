@@ -48,25 +48,25 @@ describe('anchor tests', () => {
 
   describe('theming', () => {
     it('allows theming the `textDecoration` property', () => {
-      const component = <Anchor href='#' theme={ { textDecoration: 'underline' } } />
+      const component = <Anchor href='#' customStyle={ { textDecoration: 'underline' } } />
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('text-decoration', 'underline')
     })
 
     it('allows theming the `color` property', () => {
-      const component = <Anchor href='#' theme={ { color: 'brown' } } />
+      const component = <Anchor href='#' customStyle={ { color: 'brown' } } />
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('color', 'brown')
     })
 
     it('allows theming the `fontSize` property', () => {
-      const component = <Anchor href='#' theme={ { fontSize: '300px' } } />
+      const component = <Anchor href='#' customStyle={ { fontSize: '300px' } } />
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('font-size', '300px')
     })
 
     it('allows theming the `user-select` property', () => {
-      const component = <Anchor href='#' theme={ { userSelect: 'none' } } />
+      const component = <Anchor href='#' customStyle={ { userSelect: 'none' } } />
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('user-select', 'none')
     })

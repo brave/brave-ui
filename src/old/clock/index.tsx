@@ -16,7 +16,7 @@ export interface ClockTheme {
 }
 export interface ClockProps {
   id?: string
-  theme?: ClockTheme
+  customStyle?: ClockTheme
 }
 
 export interface ClockState {
@@ -81,9 +81,9 @@ class Clock extends React.PureComponent<ClockProps, ClockState> {
   }
 
   render () {
-    const { id, theme } = this.props
+    const { id, customStyle } = this.props
     return (
-      <StyledClock id={id} theme={theme}>
+      <StyledClock id={id} customStyle={customStyle}>
         <StyledTime>{this.formattedTime}</StyledTime>
         <StyledPeriod>{this.formattedTimePeriod}</StyledPeriod>
       </StyledClock>

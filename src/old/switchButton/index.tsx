@@ -26,7 +26,7 @@ export interface SwitchButtonProps {
   leftText?: string
   rightText?: string
   size?: 'large' | 'medium' | 'small'
-  theme?: SwitchButtonTheme
+  customStyle?: SwitchButtonTheme
 }
 
 export interface SwitchButtonState {
@@ -70,7 +70,7 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
         id={`${this.props.id + capitalize(side)}Text`}
         htmlFor={this.props.id}
         size={this.props.size}
-        theme={this.props.theme}
+        customStyle={this.props.customStyle}
       >
         {side === 'left' ? this.props.leftText : this.props.rightText}
       </StyledSwitchButtonLabel>

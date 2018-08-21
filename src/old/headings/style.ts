@@ -49,13 +49,13 @@ const StyledFeatureHeading = StyledSharedHeading.withComponent('h2').extend`
 const StyledH1 = styled.h1`
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  color: ${(p: HeadingProps) => setTheme(p.theme, 'color')};
-  font-weight: ${(p: HeadingProps) => setTheme(p.theme, 'fontWeight') || '400'};
-  font-family: ${(p: HeadingProps) => setTheme(p.theme, 'fontFamily') || 'inherit'};
-  margin: ${(p: HeadingProps) => setTheme(p.theme, 'margin') || '14px 0 22px'};
-  font-size: ${(p: HeadingProps) => setTheme(p.theme, 'fontSize') || '30px'};
-  text-align: ${(p: HeadingProps) => setTheme(p.theme, 'textAlign') || 'left'};
-  line-height: ${(p: HeadingProps) => setTheme(p.theme, 'lineHeight') || '44px'};
+  color: ${(p: HeadingProps) => setTheme(p.customStyle, 'color')};
+  font-weight: ${(p: HeadingProps) => setTheme(p.customStyle, 'fontWeight') || '400'};
+  font-family: ${(p: HeadingProps) => setTheme(p.customStyle, 'fontFamily') || 'inherit'};
+  margin: ${(p: HeadingProps) => setTheme(p.customStyle, 'margin') || '14px 0 22px'};
+  font-size: ${(p: HeadingProps) => setTheme(p.customStyle, 'fontSize') || '30px'};
+  text-align: ${(p: HeadingProps) => setTheme(p.customStyle, 'textAlign') || 'left'};
+  line-height: ${(p: HeadingProps) => setTheme(p.customStyle, 'lineHeight') || '44px'};
 ` as any
 
 const StyledH2 = styled.h2`

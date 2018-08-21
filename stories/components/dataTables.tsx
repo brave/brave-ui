@@ -30,11 +30,11 @@ storiesOf('Components/Data Tables', module)
           },
           {
             content: '40%',
-            theme: rowTheme
+            customStyle: rowTheme
           },
           {
             content: '4',
-            theme: rowTheme
+            customStyle: rowTheme
           }
         ]
       },
@@ -45,11 +45,11 @@ storiesOf('Components/Data Tables', module)
           },
           {
             content: '20%',
-            theme: rowTheme
+            customStyle: rowTheme
           },
           {
             content: '2',
-            theme: rowTheme
+            customStyle: rowTheme
           }
         ]
       }
@@ -61,13 +61,13 @@ storiesOf('Components/Data Tables', module)
       },
       {
         content: 'Attention',
-        theme: {
+        customStyle: {
           'text-align': 'right'
         }
       },
       {
         content: 'Tokens',
-        theme: {
+        customStyle: {
           'text-align': 'right'
         }
       }

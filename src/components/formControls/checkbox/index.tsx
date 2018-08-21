@@ -15,7 +15,7 @@ export interface Props {
   id?: string
   multiple?: boolean
   title?: React.ReactNode
-  theme?: Theme
+  customStyle?: Theme
   onChange?: (key: string, selected: boolean, child: React.ReactNode, all: {[key: string]: boolean}) => void
 }
 
@@ -38,7 +38,7 @@ export default class Checkbox extends React.PureComponent<Props, {}> {
       const selected = self.props.value[key] || false
       return (
         <StyledLabel key={`${self.props.id}-checkbox-${i}`} onClick={self.onOptionClick.bind(self, key, child, selected)}>
-          <StyledBox selected={selected} theme={self.props.theme}>{selected ? check : null}</StyledBox><StyledText>{element}</StyledText>
+          <StyledBox selected={selected} customStyle={self.props.customStyle}>{selected ? check : null}</StyledBox><StyledText>{element}</StyledText>
         </StyledLabel>
       )
     })
@@ -64,7 +64,7 @@ export default class Checkbox extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { id, children, title, theme } = this.props
+    const { id, children, title, customStyle } = this.props
     const num = React.Children.count(children)
     let data = null
 
@@ -74,7 +74,7 @@ export default class Checkbox extends React.PureComponent<Props, {}> {
 
     return (
       <StyledWrapper id={id}>
-        <ControlWrapper title={title} theme={theme}>
+        <ControlWrapper title={title} customStyle={customStyle}>
           {data}
         </ControlWrapper>
       </StyledWrapper>

@@ -32,25 +32,25 @@ describe('boxedContent tests', () => {
 
   describe('theming', () => {
     it('allows theming the `maxWidth` property', () => {
-      const component = baseComponent({theme: { maxWidth: '80%' } })
+      const component = baseComponent({customStyle: { maxWidth: '80%' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('max-width', '80%')
     })
 
     it('allows theming the `margin` property', () => {
-      const component = baseComponent({theme: { margin: '10px 20px' } } )
+      const component = baseComponent({customStyle: { margin: '10px 20px' } } )
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('margin', '10px 20px')
     })
 
     it('allows theming the `font-family` property', () => {
-      const component = baseComponent({theme: { fontFamily: 'Verdana' } })
+      const component = baseComponent({customStyle: { fontFamily: 'Verdana' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('font-family', 'Verdana')
     })
 
     it('allows theming the `color` property', () => {
-      const component = baseComponent({theme: { color: 'yellow' } })
+      const component = baseComponent({customStyle: { color: 'yellow' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('color', 'yellow')
     })

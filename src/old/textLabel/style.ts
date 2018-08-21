@@ -7,12 +7,12 @@ import { TextLabelProps } from './index'
 import { setTheme } from '../../helpers'
 
 const StyledTextLabel = styled.p`
-  font-weight: ${(p: TextLabelProps) => setTheme(p.theme, 'fontWeight') || 'normal'};
-  padding: ${(p: TextLabelProps) => setTheme(p.theme, 'padding') || '0'};
-  font-size: ${(p: TextLabelProps) => setTheme(p.theme, 'fontSize') || '13px'};
-  color: ${(p: TextLabelProps) => setTheme(p.theme, 'color') || 'inherit'};
-  line-height: ${(p: TextLabelProps) => setTheme(p.theme, 'lineHeight')};
-  cursor: ${(p: TextLabelProps) => setTheme(p.theme, 'cursor')};
+  font-weight: ${(p: TextLabelProps) => setTheme(p.customStyle, 'fontWeight') || 'normal'};
+  padding: ${(p: TextLabelProps) => setTheme(p.customStyle, 'padding') || '0'};
+  font-size: ${(p: TextLabelProps) => setTheme(p.customStyle, 'fontSize') || '13px'};
+  color: ${(p: TextLabelProps) => setTheme(p.customStyle, 'color') || 'inherit'};
+  line-height: ${(p: TextLabelProps) => setTheme(p.customStyle, 'lineHeight')};
+  cursor: ${(p: TextLabelProps) => setTheme(p.customStyle, 'cursor')};
   user-select: none;
   font-family: inherit;
   box-sizing: border-box;

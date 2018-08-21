@@ -27,18 +27,18 @@ export interface PushButtonProps {
   color?: string
   disabled?: boolean
   onClick?: (e: any) => void
-  theme?: PushButtonTheme
+  customStyle?: PushButtonTheme
   children?: React.ReactNode
 }
 
 class PushButton extends React.PureComponent<PushButtonProps, {}> {
   render () {
-    const { id, color, theme, onClick, disabled, children } = this.props
+    const { id, color, customStyle, onClick, disabled, children } = this.props
     return (
       <StyledPushButton
         id={id}
         color={color ? color : 'default'}
-        theme={theme}
+        customStyle={customStyle}
         onClick={onClick}
         disabled={disabled ? disabled : false}
       >

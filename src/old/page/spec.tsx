@@ -45,25 +45,25 @@ describe('page tests', () => {
 
   describe('theming', () => {
     it('allows theming the `font-family` property', () => {
-      const component = baseComponent({theme: { fontFamily: 'Helvetica' } })
+      const component = baseComponent({customStyle: { fontFamily: 'Helvetica' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('font-family', 'Helvetica')
     })
 
     it('allows theming the `color` property', () => {
-      const component = baseComponent({theme: { color: 'pink' } })
+      const component = baseComponent({customStyle: { color: 'pink' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('color', 'pink')
     })
 
     it('allows theming the `padding` property', () => {
-      const component = baseComponent({theme: { padding: '30px' } })
+      const component = baseComponent({customStyle: { padding: '30px' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('padding', '30px')
     })
 
     it('allows theming the `background` property', () => {
-      const component = baseComponent({theme: { background: 'purple' } })
+      const component = baseComponent({customStyle: { background: 'purple' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('background', 'purple')
     })

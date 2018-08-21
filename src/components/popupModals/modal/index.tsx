@@ -11,7 +11,7 @@ export interface Props {
   outsideClose?: boolean
   children?: React.ReactNode
   onClose?: () => void
-  theme?: Theme
+  customStyle?: Theme
 }
 
 interface Theme {
@@ -32,11 +32,11 @@ export default class Modal extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { id, onClose, children, theme } = this.props
+    const { id, onClose, children, customStyle } = this.props
 
     return (
       <StyledWrapper id={id || 'modal'} onClick={this.outsideClose}>
-        <StyledDialog theme={theme}>
+        <StyledDialog customStyle={customStyle}>
           <StyledClose onClick={onClose}>
             {close}
           </StyledClose>

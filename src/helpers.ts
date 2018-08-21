@@ -34,11 +34,11 @@ export const setValueBasedOnSize = (
 }
 
 /**
- * Sets the user input theme if defined
- * @param {any} theme - the component's theme object
- * @param {any} prop - the theme prop to check against
+ * Sets the user input customStyle if defined
+ * @param {any} customStyle - the component's customStyle object
+ * @param {any} prop - the customStyle prop to check against
  */
-export const setTheme = (theme: any, prop: any) => theme && theme[prop]
+export const setTheme = (customStyle: any, prop: any) => customStyle && customStyle[prop]
 
 type Locals = {[key: string]: string}
 type Replacements = {[key: string]: string | number}

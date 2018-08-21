@@ -47,37 +47,37 @@ describe('textLabel tests', () => {
 
   describe('theming', () => {
     it('allows theming the `color` property', () => {
-      const component = baseComponent({theme: { color: 'orange' } })
+      const component = baseComponent({customStyle: { color: 'orange' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('color', 'orange')
     })
 
     it('allows theming the `font-size` property', () => {
-      const component = baseComponent({theme: { fontSize: '15px' } })
+      const component = baseComponent({customStyle: { fontSize: '15px' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('font-size', '15px')
     })
 
     it('allows theming the `font-weight` property', () => {
-      const component = baseComponent({theme: { fontWeight: 'bold' } })
+      const component = baseComponent({customStyle: { fontWeight: 'bold' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('font-weight', 'bold')
     })
 
     it('allows theming the `padding` property', () => {
-      const component = baseComponent({theme: { padding: '30px' } })
+      const component = baseComponent({customStyle: { padding: '30px' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('padding', '30px')
     })
 
     it('allows theming the `line-height` property', () => {
-      const component = baseComponent({theme: { lineHeight: '2' } })
+      const component = baseComponent({customStyle: { lineHeight: '2' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('line-height', '2')
     })
 
     it('allows theming the `cursor` property', () => {
-      const component = baseComponent({theme: { cursor: 'pointer' } })
+      const component = baseComponent({customStyle: { cursor: 'pointer' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('cursor', 'pointer')
     })

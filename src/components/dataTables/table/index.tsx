@@ -6,12 +6,12 @@ import * as React from 'react'
 import { StyledTH, StyledNoContent, StyledTable, StyledTD, StyledTR } from './style'
 
 export interface Cell {
-  theme?: {[key: string]: string}
+  customStyle?: {[key: string]: string}
   content: React.ReactNode
 }
 
 export interface Row {
-  theme?: {[key: string]: string}
+  customStyle?: {[key: string]: string}
   content: Cell[]
 }
 
@@ -38,7 +38,7 @@ export default class Table extends React.PureComponent<Props, {}> {
                 <tr>
                 {
                   header.map((cell: Cell, i: number) => {
-                    return <StyledTH key={`${id}-th-${i}`} theme={cell.theme}>{cell.content}</StyledTH>
+                    return <StyledTH key={`${id}-th-${i}`} customStyle={cell.customStyle}>{cell.content}</StyledTH>
                   })
                 }
                 </tr>
@@ -50,10 +50,10 @@ export default class Table extends React.PureComponent<Props, {}> {
               ? <tbody>
                 {
                   rows.map((row: Row, i: number) =>
-                     <StyledTR key={i} theme={row.theme}>
+                     <StyledTR key={i} customStyle={row.customStyle}>
                       {
                         row.content.map((cell: Cell, j: number) => {
-                          return <StyledTD key={`${id}-td-${i}-${j}`} theme={cell.theme}>{cell.content}</StyledTD>
+                          return <StyledTD key={`${id}-td-${i}-${j}`} customStyle={cell.customStyle}>{cell.content}</StyledTD>
                         })
                       }
                     </StyledTR>
