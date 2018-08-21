@@ -1,43 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Grant complete tests basic tests matches the snapshot 1`] = `
+exports[`Button tests basic tests matches the snapshot 1`] = `
 .c0 {
-  text-align: center;
-  width: 100%;
-  margin: 40px 0 0;
-  font-family: Poppins,sans-serif;
-}
-
-.c1 {
-  border-radius: 6px;
-  background-color: #f1f1f5;
-  padding: 5px 10px 20px;
-}
-
-.c2 {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.57;
-  color: #838391;
-  margin: 11px 0 5px;
-}
-
-.c3 {
-  font-size: 18px;
-  line-height: 1.22;
-  text-align: center;
-  color: #c12d7c;
-}
-
-.c4 {
-  font-family: Muli,sans-serif;
-  font-size: 14px;
-  line-height: 1.29;
-  color: #838391;
-  margin: 44px 0 25px;
-}
-
-.c5 {
   --button-main-color: #242536;
   --button-main-color-hover: #131525;
   --button-main-color-active: #343546;
@@ -79,15 +43,15 @@ exports[`Grant complete tests basic tests matches the snapshot 1`] = `
   background: var(--button-state-color);
 }
 
-.c5:hover:enabled {
+.c0:hover:enabled {
   --button-state-color: var(--button-main-color-hover);
 }
 
-.c5:active:enabled {
+.c0:active:enabled {
   --button-state-color: var(--button-main-color-active);
 }
 
-.c6 {
+.c1 {
   min-height: var(--icon-size);
   display: -webkit-box;
   display: -webkit-flex;
@@ -107,51 +71,19 @@ exports[`Grant complete tests basic tests matches the snapshot 1`] = `
   line-height: 1;
 }
 
-<div
+<button
   className="c0"
-  id="complete"
+  id="button"
+  size="medium"
+  type="default"
 >
   <div
     className="c1"
-  >
-    <div
-      className="c2"
-    >
-      MISSING: newTokenGrant
-    </div>
-    <div
-      className="c3"
-    >
-       BAT
-    </div>
-    <div
-      className="c2"
-    >
-      MISSING: grantExpire
-    </div>
-    <div
-      className="c3"
-    />
-  </div>
-  <div
-    className="c4"
-  >
-    MISSING: grantDisclaimer
-  </div>
-  <button
-    className="c5"
-    onClick={undefined}
+    id="button"
     size="medium"
     type="default"
   >
-    <div
-      className="c6"
-      onClick={undefined}
-      size="medium"
-      type="default"
-    >
-      MISSING: ok
-    </div>
-  </button>
-</div>
+    test
+  </div>
+</button>
 `;
