@@ -12,7 +12,6 @@ const StyledPanel = styled.div`
   min-width: ${(p: PanelProps) => setTheme(p.theme, 'minWidth')};
   width: ${(p: PanelProps) => setTheme(p.theme, 'width')};
   height: ${(p: PanelProps) => setTheme(p.theme, 'height')};
-  min-height: ${(p: PanelProps) => setTheme(p.theme, 'minHeight')};
   margin: ${(p: PanelProps) => setTheme(p.theme, 'margin')};
   padding: ${(p: PanelProps) => setTheme(p.theme, 'padding') || '40px'};
   display: ${(p: PanelProps) => setTheme(p.theme, 'display')};
