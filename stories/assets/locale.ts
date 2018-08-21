@@ -51,7 +51,6 @@ const locale: Record<string, string> = {
   grants: 'Grants',
   grantDisclaimer: 'Unused tokens by the expiration date will be automatically returned to the Brave User Growth Pool.',
   grantExpire: 'Grant Expiration Date',
-  grants: 'Grants',
   howDoesItWork: 'How does it work?',
   howDoesItWorkDesc: 'Get paid for the ads. And pay directly the favorite content creators at your will. That way, they can grow and continue delivering the content that delights you.',
   import: 'import',
