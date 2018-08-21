@@ -7,11 +7,11 @@ import { UnstyledButtonProps } from './index'
 import { setTheme } from '../../helpers'
 
 const StyledUnstyledButton = styled.button`
-  font-size: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'fontSize') || 'inherit'};
-  color: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'color') || 'inherit'};
-  user-select: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'userSelect')};
-  text-decoration: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'textDecoration')};
-  padding: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'padding') || '0'};
+  font-size: ${(p: UnstyledButtonProps) => setTheme(p.customStyle, 'fontSize') || 'inherit'};
+  color: ${(p: UnstyledButtonProps) => setTheme(p.customStyle, 'color') || 'inherit'};
+  user-select: ${(p: UnstyledButtonProps) => setTheme(p.customStyle, 'userSelect')};
+  text-decoration: ${(p: UnstyledButtonProps) => setTheme(p.customStyle, 'textDecoration')};
+  padding: ${(p: UnstyledButtonProps) => setTheme(p.customStyle, 'padding') || '0'};
   margin: 0;
   font-family: inherit;
   box-sizing: border-box;
@@ -23,7 +23,7 @@ const StyledUnstyledButton = styled.button`
   outline: inherit;
 
   &:hover {
-    color: ${(p: UnstyledButtonProps) => setTheme(p.theme, 'hoverColor')};
+    color: ${(p: UnstyledButtonProps) => setTheme(p.customStyle, 'hoverColor')};
   }
 ` as any
 

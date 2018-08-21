@@ -7,7 +7,7 @@ import { Props, Theme } from './index'
 import { setTheme } from '../../../helpers'
 
 export const StyledWrapper = styled.div`
-  max-width: ${(p: Props) => setTheme(p.theme, 'maxWidth') || '254px'};
+  max-width: ${(p: Props) => setTheme(p.customStyle, 'maxWidth') || '254px'};
   width: 100%;
 ` as any
 
@@ -23,12 +23,12 @@ export const StyledSelect = styled.div`
   color: #686978;
   background: #fff;
   width: 100%;
-  padding: ${(p: {show: boolean, theme: Theme}) => setTheme(p.theme, 'padding') || '10px 0'};
-  border: ${(p: {show: boolean, theme: Theme}) => setTheme(p.theme, 'border') || '1px solid #dfdfe8'};
+  padding: ${(p: {show: boolean, customStyle: Theme}) => setTheme(p.customStyle, 'padding') || '10px 0'};
+  border: ${(p: {show: boolean, customStyle: Theme}) => setTheme(p.customStyle, 'border') || '1px solid #dfdfe8'};
   display: flex;
   align-items: center;
 
-  ${(p: {show: boolean, theme: Theme}) => p.show
+  ${(p: {show: boolean, customStyle: Theme}) => p.show
     ? css`
       border-color: #a1a8f2;
     ` : ''
@@ -36,7 +36,7 @@ export const StyledSelect = styled.div`
 ` as any
 
 export const StyledSelectArrow = styled.div`
-  padding-right: ${(p: {show: boolean, theme: Theme}) => setTheme(p.theme, 'arrowPadding') || '15px'};
+  padding-right: ${(p: {show: boolean, customStyle: Theme}) => setTheme(p.customStyle, 'arrowPadding') || '15px'};
   flex-basis: 17px;
 ` as any
 

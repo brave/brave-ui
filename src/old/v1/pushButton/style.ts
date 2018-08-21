@@ -12,9 +12,9 @@ const StyledPushButton = styled.button`
   min-width: ${(p: PushButtonProps) => setValueBasedOnSize(p.size, '112px', undefined, '190px')};
   min-height: ${(p: PushButtonProps) => setValueBasedOnSize(p.size, '40px', undefined, '52px')};
   border-radius: ${(p: PushButtonProps) => setValueBasedOnSize(p.size, '20px', undefined, '32px')};
-  text-transform: ${(p: PushButtonProps) => setTheme(p.theme, 'textTransform')};
+  text-transform: ${(p: PushButtonProps) => setTheme(p.customStyle, 'textTransform')};
   line-height: ${(p: PushButtonProps) => setValueBasedOnSize(p.size, '26px', undefined, '42px')};
-  font-weight: ${(p: PushButtonProps) => setTheme(p.theme, 'fontWeight')};
+  font-weight: ${(p: PushButtonProps) => setTheme(p.customStyle, 'fontWeight')};
   text-decoration: none;
   font-family: inherit;
   position: relative;

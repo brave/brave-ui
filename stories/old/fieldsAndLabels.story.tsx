@@ -33,7 +33,7 @@ storiesOf('Old/Fields and Labels', module)
       <TextLabel
         onClick={action('clicked the textLabel!')}
         text={text('Text', 'Example TextLabel')}
-        theme={{
+        customStyle={{
           fontSize: text('Font size', '13px'),
           color: text('Color', '#000000'),
           padding: text('Padding', '0px'),

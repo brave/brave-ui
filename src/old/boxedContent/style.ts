@@ -7,10 +7,10 @@ import { BoxedContentProps } from './index'
 import { setTheme } from '../../helpers'
 
 const StyledBoxedContent = styled.div`
-  max-width: ${(p: BoxedContentProps) => setTheme(p.theme, 'maxWidth')};
-  margin: ${(p: BoxedContentProps) => setTheme(p.theme, 'margin')};
-  font-family: ${(p: BoxedContentProps) => setTheme(p.theme, 'fontFamily')};
-  color: ${(p: BoxedContentProps) => setTheme(p.theme, 'color')};
+  max-width: ${(p: BoxedContentProps) => setTheme(p.customStyle, 'maxWidth')};
+  margin: ${(p: BoxedContentProps) => setTheme(p.customStyle, 'margin')};
+  font-family: ${(p: BoxedContentProps) => setTheme(p.customStyle, 'fontFamily')};
+  color: ${(p: BoxedContentProps) => setTheme(p.customStyle, 'color')};
   font-size: inherit;
   box-sizing: border-box;
 ` as any

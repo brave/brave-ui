@@ -25,15 +25,15 @@ export interface PanelTheme {
 
 export interface PanelProps {
   id?: string
-  theme?: PanelTheme
+  customStyle?: PanelTheme
   children?: React.ReactNode
 }
 
 class Panel extends React.PureComponent<PanelProps, {}> {
   render () {
-    const { id, theme, children } = this.props
+    const { id, customStyle, children } = this.props
     return (
-      <StyledPanel id={id} theme={theme}>{children}</StyledPanel>
+      <StyledPanel id={id} customStyle={customStyle}>{children}</StyledPanel>
     )
   }
 }

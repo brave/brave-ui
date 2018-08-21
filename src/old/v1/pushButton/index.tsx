@@ -30,19 +30,19 @@ export interface PushButtonProps {
   size?: 'small' | 'medium' | 'large'
   disabled?: boolean
   onClick?: (e: any) => void
-  theme?: PushButtonTheme
+  customStyle?: PushButtonTheme
   children?: React.ReactNode
 }
 
 class PushButton extends React.PureComponent<PushButtonProps, {}> {
   render () {
-    const { id, color, size, theme, onClick, disabled, children } = this.props
+    const { id, color, size, customStyle, onClick, disabled, children } = this.props
     return (
       <StyledPushButton
         id={id}
         color={color ? color : 'default'}
         size={size ? size : 'medium'}
-        theme={theme}
+        customStyle={customStyle}
         onClick={onClick}
         disabled={disabled ? disabled : false}
       >
@@ -59,19 +59,19 @@ export interface PushButtonLinkProps {
   disabled?: boolean
   href?: string
   target?: '_blank' | '_parent' | '_self' | '_top'
-  theme?: PushButtonTheme
+  customStyle?: PushButtonTheme
   children?: React.ReactNode
 }
 
 class PushButtonLink extends React.PureComponent<PushButtonLinkProps, {}> {
   render () {
-    const { id, color, size, theme, href, target, disabled, children } = this.props
+    const { id, color, size, customStyle, href, target, disabled, children } = this.props
     return (
       <StyledPushButtonLink
         id={id}
         color={color ? color : 'default'}
         size={size ? size : 'medium'}
-        theme={theme}
+        customStyle={customStyle}
         href={href}
         target={target}
         disabled={disabled ? disabled : false}

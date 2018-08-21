@@ -7,13 +7,13 @@ import { ImageProps } from './index'
 import { setTheme } from '../../../helpers'
 
 const StyledPicture = styled.picture`
-  max-width: ${(p: ImageProps) => setTheme(p.theme, 'maxWidth')};
-  min-width: ${(p: ImageProps) => setTheme(p.theme, 'minWidth')};
-  width: ${(p: ImageProps) => setTheme(p.theme, 'width')};
-  height: ${(p: ImageProps) => setTheme(p.theme, 'height')};
-  min-height: ${(p: ImageProps) => setTheme(p.theme, 'minHeight')};
-  margin: ${(p: ImageProps) => setTheme(p.theme, 'margin')};
-  padding: ${(p: ImageProps) => setTheme(p.theme, 'padding')};
+  max-width: ${(p: ImageProps) => setTheme(p.customStyle, 'maxWidth')};
+  min-width: ${(p: ImageProps) => setTheme(p.customStyle, 'minWidth')};
+  width: ${(p: ImageProps) => setTheme(p.customStyle, 'width')};
+  height: ${(p: ImageProps) => setTheme(p.customStyle, 'height')};
+  min-height: ${(p: ImageProps) => setTheme(p.customStyle, 'minHeight')};
+  margin: ${(p: ImageProps) => setTheme(p.customStyle, 'margin')};
+  padding: ${(p: ImageProps) => setTheme(p.customStyle, 'padding')};
   box-sizing: border-box;
   display: block;
 ` as any

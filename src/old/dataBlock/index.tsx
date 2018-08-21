@@ -35,14 +35,14 @@ export interface DataItemProps {
   description?: string
   size?: 'medium' | 'small'
   onClick?: (e: any) => void
-  theme?: DataItemTheme
+  customStyle?: DataItemTheme
 }
 
 class DataItem extends React.PureComponent<DataItemProps, {}> {
   render () {
     const {
       id,
-      theme,
+      customStyle,
       counter,
       text,
       description,
@@ -51,16 +51,16 @@ class DataItem extends React.PureComponent<DataItemProps, {}> {
     } = this.props
 
     return (
-      <StyledDataItem id={id} theme={theme} onClick={onClick} size={size}>
-        <StyledDataItemCounter theme={theme} size={size}>{counter}</StyledDataItemCounter>
+      <StyledDataItem id={id} customStyle={customStyle} onClick={onClick} size={size}>
+        <StyledDataItemCounter customStyle={customStyle} size={size}>{counter}</StyledDataItemCounter>
           {
             text
-            ? <StyledDataItemText theme={theme} size={size}>{text}</StyledDataItemText>
+            ? <StyledDataItemText customStyle={customStyle} size={size}>{text}</StyledDataItemText>
             : null
           }
           {
             description
-            ? <StyledDataItemDescription theme={theme} size={size}>{description}</StyledDataItemDescription>
+            ? <StyledDataItemDescription customStyle={customStyle} size={size}>{description}</StyledDataItemDescription>
             : null
           }
       </StyledDataItem>

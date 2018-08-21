@@ -39,19 +39,19 @@ describe('unstyledButton tests', () => {
 
   describe('theming', () => {
     it('allows theming the `color` property', () => {
-      const component = baseComponent({theme: { color: 'orange' } })
+      const component = baseComponent({customStyle: { color: 'orange' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('color', 'orange')
     })
 
     it('allows theming the `font-size` property', () => {
-      const component = baseComponent({theme: { fontSize: '14px' } })
+      const component = baseComponent({customStyle: { fontSize: '14px' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('font-size', '14px')
     })
 
     it('allows theming the `user-select` property', () => {
-      const component = baseComponent({theme: { userSelect: 'none' } })
+      const component = baseComponent({customStyle: { userSelect: 'none' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('user-select', 'none')
     })

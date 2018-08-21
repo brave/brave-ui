@@ -7,7 +7,7 @@ import { Props, Theme } from './index'
 import { setTheme } from '../../../helpers'
 
 export const StyledWrapper = styled.div`
-  max-width: ${(p: Props) => setTheme(p.theme, 'maxWidth') || '254px'};
+  max-width: ${(p: Props) => setTheme(p.customStyle, 'maxWidth') || '254px'};
   width: 100%;
 ` as any
 
@@ -25,14 +25,14 @@ export const StyledBox = styled.span`
   width: 18px;
   height: 18px;
   border-radius: 2px;
-  border: solid 1px ${(p: {selected: boolean, theme: Theme}) => setTheme(p.theme, 'borderColor') || '#d1d1db'};
+  border: solid 1px ${(p: {selected: boolean, customStyle: Theme}) => setTheme(p.customStyle, 'borderColor') || '#d1d1db'};
   margin-right: 11px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
 
- ${(p: {selected: boolean, theme: Theme}) => p.selected
+ ${(p: {selected: boolean, customStyle: Theme}) => p.selected
     ? css`
       border-color: #a1a8f2;
     ` : ''

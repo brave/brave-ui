@@ -22,17 +22,17 @@ export interface GridProps {
   columns?: number
   onClick?: (e: any) => void
   children?: React.ReactNode
-  theme?: GridTheme
+  customStyle?: GridTheme
 }
 
 class Grid extends React.PureComponent<GridProps, {}> {
   render () {
-    const { id, disabled, columns, theme, onClick, children } = this.props
+    const { id, disabled, columns, customStyle, onClick, children } = this.props
     return (
       <StyledGrid
         id={id}
         disabled={disabled || false}
-        theme={theme}
+        customStyle={customStyle}
         onClick={onClick}
         columns={columns}
       >
@@ -55,19 +55,19 @@ export interface ColumnTheme {
 export interface ColumnProps {
   id?: string
   size?: number | string
-  theme?: ColumnTheme
+  customStyle?: ColumnTheme
   onClick?: (e: any) => void
   children?: React.ReactNode
 }
 
 class Column extends React.PureComponent<ColumnProps, {}> {
   render () {
-    const { id, size, theme, children, onClick } = this.props
+    const { id, size, customStyle, children, onClick } = this.props
     return (
       <StyledColumn
         id={id}
         size={size}
-        theme={theme}
+        customStyle={customStyle}
         onClick={onClick}
       >
         {children}

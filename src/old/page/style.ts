@@ -7,14 +7,14 @@ import { PageProps } from './index'
 import { setTheme } from '../../helpers'
 
 const StyledPage = styled.div`
-  font-family: ${(p: PageProps) => setTheme(p.theme, 'fontFamily') || 'inherit'};
-  color: ${(p: PageProps) => setTheme(p.theme, 'color') || 'inherit'};
-  padding: ${(p: PageProps) => setTheme(p.theme, 'padding') || '40px'};
-  background: ${(p: PageProps) => setTheme(p.theme, 'background') || 'inherit'};
-  align-items: ${(p: PageProps) => setTheme(p.theme, 'alignItems')};
-  justify-content: ${(p: PageProps) => setTheme(p.theme, 'justifyContent')};
-  height: ${(p: PageProps) => setTheme(p.theme, 'height') || 'initial'};
-  background-size: ${(p: PageProps) => setTheme(p.theme, 'backgroundSize') || 'auto'};
+  font-family: ${(p: PageProps) => setTheme(p.customStyle, 'fontFamily') || 'inherit'};
+  color: ${(p: PageProps) => setTheme(p.customStyle, 'color') || 'inherit'};
+  padding: ${(p: PageProps) => setTheme(p.customStyle, 'padding') || '40px'};
+  background: ${(p: PageProps) => setTheme(p.customStyle, 'background') || 'inherit'};
+  align-items: ${(p: PageProps) => setTheme(p.customStyle, 'alignItems')};
+  justify-content: ${(p: PageProps) => setTheme(p.customStyle, 'justifyContent')};
+  height: ${(p: PageProps) => setTheme(p.customStyle, 'height') || 'initial'};
+  background-size: ${(p: PageProps) => setTheme(p.customStyle, 'backgroundSize') || 'auto'};
   box-sizing: border-box;
   background-attachment: fixed;
   font-size: inherit;

@@ -17,19 +17,19 @@ export interface AnchorProps {
   href: string
   target?: '_blank' | '_parent' | '_self' | '_top'
   text?: string | number
-  theme?: AnchorTheme
+  customStyle?: AnchorTheme
 }
 
 class Anchor extends React.PureComponent<AnchorProps, {}> {
   render () {
-    const { id, href, target, theme, text } = this.props
+    const { id, href, target, customStyle, text } = this.props
 
     return (
       <StyledAnchor
         id={id}
         href={href}
         target={target}
-        theme={theme}
+        customStyle={customStyle}
         rel='noreferrer noopener'
       >
         {

@@ -3,9 +3,10 @@ import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
 import Table from './index'
+import { TestThemeProvider } from '../../../theme'
 
 describe('Table tests', () => {
-  const baseComponent = (props?: object) => <Table id='list' {...props} />
+  const baseComponent = (props?: object) => <TestThemeProvider><Table id='list' {...props} /></TestThemeProvider>
 
   describe('basic tests', () => {
     it('matches the snapshot', () => {

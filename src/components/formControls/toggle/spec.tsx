@@ -1,11 +1,12 @@
 /* global jest, expect, describe, it, afterEach */
 import * as React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import { create } from 'react-test-renderer'
 import Checkbox from './index'
+import { TestThemeProvider } from '../../../theme'
 
 describe('Checkbox tests', () => {
-  const baseComponent = (props?: object) => <Checkbox id='checkbox' {...props} />
+  const baseComponent = (props?: object) => <TestThemeProvider><Checkbox id='checkbox' {...props} /></TestThemeProvider>
 
   describe('basic tests', () => {
     it('matches the snapshot', () => {
@@ -41,11 +42,14 @@ describe('Checkbox tests', () => {
     })
 
     it('can respond to onClick', () => {
+      const onToggle = jest.fn()
+      const wrapper = mount(baseComponent({onToggle}))
       const value = {target: { checked: true }}
-      const onClick = jest.fn()
-      const wrapper = shallow(baseComponent({onToggle: onClick}))
-      wrapper.find('#checkbox').simulate('click', value)
-      expect(onClick).toBeCalledWith(value)
+      wrapper.find('#checkbox').first().simulate('click', value)
+      expect(onToggle).toHaveBeenCalledTimes(1)
+      const callValue = onToggle.mock.calls[0][0]
+      console.log(callValue.target)
+      expect(callValue).toMatchObject(value)
     })
   })
 })

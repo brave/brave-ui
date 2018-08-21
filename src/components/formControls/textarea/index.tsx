@@ -12,7 +12,7 @@ export interface Props {
   title?: React.ReactNode
   value?: string
   disabled?: boolean
-  theme?: Theme
+  customStyle?: Theme
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>, child: React.ReactNode) => void
 }
 
@@ -23,12 +23,12 @@ interface Theme {
 
 export default class TextArea extends React.PureComponent<Props, {}> {
   render () {
-    const { id, onChange, value, title, theme, disabled } = this.props
+    const { id, onChange, value, title, customStyle, disabled } = this.props
 
     return (
-      <StyledWrapper id={id} theme={theme}>
-        <ControlWrapper title={title} theme={theme}>
-          <StyledArea onChange={onChange} disabled={disabled} value={value} theme={theme} />
+      <StyledWrapper id={id} customStyle={customStyle}>
+        <ControlWrapper title={title} customStyle={customStyle}>
+          <StyledArea onChange={onChange} disabled={disabled} value={value} customStyle={customStyle} />
         </ControlWrapper>
       </StyledWrapper>
     )

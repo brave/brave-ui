@@ -69,7 +69,7 @@ storiesOf('Components/Layout', module)
       <div>
         <h2>Playground! (see "knobs" for usage)</h2>
         <Grid
-          theme={{
+          customStyle={{
             backgroundColor: text('Grid Background', 'gray'),
             maxWidth: text('Max Grid Width', '100%'),
             padding: text('Own Grid Gutter (padding)', '15px'),
@@ -78,7 +78,7 @@ storiesOf('Components/Layout', module)
         >
           <Column
             size={value1}
-            theme={{
+            customStyle={{
               backgroundColor: text('Column #1 Background', 'darkgray'),
               justifyContent: text('Column #1 Align (flexbox-based)', 'flex-end'),
               alignItems: text(
@@ -91,7 +91,7 @@ storiesOf('Components/Layout', module)
           </Column>
           <Column
             size={value2}
-            theme={{
+            customStyle={{
               backgroundColor: text('Column #2 Background', 'darkgray'),
               justifyContent: text('Column #1 Align (flexbox-based)', 'flex-start'),
               alignItems: text(

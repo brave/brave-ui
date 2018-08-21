@@ -27,14 +27,14 @@ export interface UnstyledButtonProps {
   id?: string
   onClick?: (e: any) => void
   text?: string | number
-  theme?: UnstyledButtonTheme
+  customStyle?: UnstyledButtonTheme
 }
 
 class UnstyledButton extends React.PureComponent<UnstyledButtonProps, {}> {
   render () {
-    const { id, onClick, theme, text } = this.props
+    const { id, onClick, customStyle, text } = this.props
     return (
-      <StyledUnstyledButton id={id} theme={theme} onClick={onClick}>
+      <StyledUnstyledButton id={id} customStyle={customStyle} onClick={onClick}>
         {text ? text.toString() : null}
       </StyledUnstyledButton>
     )

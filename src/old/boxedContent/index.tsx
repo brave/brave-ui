@@ -15,15 +15,15 @@ export interface BoxedContentTheme {
 
 export interface BoxedContentProps {
   id?: string
-  theme?: BoxedContentTheme
+  customStyle?: BoxedContentTheme
   children?: React.ReactNode
 }
 
 class BoxedContent extends React.PureComponent<BoxedContentProps, {}> {
   render () {
-    const { id, theme, children } = this.props
+    const { id, customStyle, children } = this.props
     return (
-      <StyledBoxedContent id={id} theme={theme}>{children}</StyledBoxedContent>
+      <StyledBoxedContent id={id} customStyle={customStyle}>{children}</StyledBoxedContent>
     )
   }
 }

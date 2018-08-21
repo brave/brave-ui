@@ -24,7 +24,7 @@ describe('clock tests', () => {
 
   describe('theming', () => {
     it('allows theming the `color` property', () => {
-      const component = baseComponent({theme: { color: 'white' } })
+      const component = baseComponent({customStyle: { color: 'white' } })
       const tree = create(component).toJSON()
       expect(tree).toHaveStyleRule('color', 'white')
     })

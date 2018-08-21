@@ -10,16 +10,16 @@ const StyledGrid = styled.div`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(${(p: GridProps) => p.columns ? p.columns : '12'}, 1fr);
-  grid-gap: ${(p: GridProps) => setTheme(p.theme, 'gridGap') || '15px'};
-  padding: ${(p: GridProps) => setTheme(p.theme, 'padding') || '0'};
-  margin: ${(p: GridProps) => setTheme(p.theme, 'margin') || '0'};
-  max-width: ${(p: GridProps) => setTheme(p.theme, 'maxWidth') || 'initial'};
-  height: ${(p: GridProps) => setTheme(p.theme, 'height') || 'initial'};
-  color: ${(p: GridProps) => setTheme(p.theme, 'color') || 'inherit'};
-  background-color: ${(p: GridProps) => setTheme(p.theme, 'backgroundColor') || 'inherit'};
+  grid-gap: ${(p: GridProps) => setTheme(p.customStyle, 'gridGap') || '15px'};
+  padding: ${(p: GridProps) => setTheme(p.customStyle, 'padding') || '0'};
+  margin: ${(p: GridProps) => setTheme(p.customStyle, 'margin') || '0'};
+  max-width: ${(p: GridProps) => setTheme(p.customStyle, 'maxWidth') || 'initial'};
+  height: ${(p: GridProps) => setTheme(p.customStyle, 'height') || 'initial'};
+  color: ${(p: GridProps) => setTheme(p.customStyle, 'color') || 'inherit'};
+  background-color: ${(p: GridProps) => setTheme(p.customStyle, 'backgroundColor') || 'inherit'};
   font-family: inherit;
   font-size: inherit;
-  align-items: ${(p: GridProps) => setTheme(p.theme, 'alignItems') || 'flex-start'};
+  align-items: ${(p: GridProps) => setTheme(p.customStyle, 'alignItems') || 'flex-start'};
 
   ${(p: GridProps) => p.disabled
     ? css`
@@ -34,12 +34,12 @@ const StyledColumn = styled.div`
   position: relative;
   display: flex;
   grid-column: ${(p: ColumnProps) => p.size ? `span ${p.size}` : 'span 12'};
-  justify-content: ${(p: ColumnProps) => setTheme(p.theme, 'justifyContent') || 'initial'};
-  align-items: ${(p: ColumnProps) => setTheme(p.theme, 'alignItems') || 'initial'};
-  background-color: ${(p: ColumnProps) => setTheme(p.theme, 'backgroundColor') || 'inherit'};
-  flex-direction: ${(p: ColumnProps) => setTheme(p.theme, 'flexDirection') || 'initial'};
-  flex-wrap:${(p: ColumnProps) => setTheme(p.theme, 'flexWrap') || 'initial'};
-  overflow: ${(p: ColumnProps) => setTheme(p.theme, 'overflow')};
+  justify-content: ${(p: ColumnProps) => setTheme(p.customStyle, 'justifyContent') || 'initial'};
+  align-items: ${(p: ColumnProps) => setTheme(p.customStyle, 'alignItems') || 'initial'};
+  background-color: ${(p: ColumnProps) => setTheme(p.customStyle, 'backgroundColor') || 'inherit'};
+  flex-direction: ${(p: ColumnProps) => setTheme(p.customStyle, 'flexDirection') || 'initial'};
+  flex-wrap:${(p: ColumnProps) => setTheme(p.customStyle, 'flexWrap') || 'initial'};
+  overflow: ${(p: ColumnProps) => setTheme(p.customStyle, 'overflow')};
   font-family: inherit;
   font-size: inherit;
   color: inherit;

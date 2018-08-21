@@ -16,7 +16,7 @@ export interface ImageTheme {
 }
 
 export interface ImageProps {
-  theme?: ImageTheme
+  customStyle?: ImageTheme
   id?: string
   children?: HTMLSourceElement
   src?: string
@@ -25,12 +25,12 @@ export interface ImageProps {
 
 class Image extends React.PureComponent<ImageProps, {}> {
   render () {
-    const { id, theme, children, src, caption } = this.props
+    const { id, customStyle, children, src, caption } = this.props
     return (
-      <StyledPicture id={id} theme={theme}>
+      <StyledPicture id={id} customStyle={customStyle}>
         <StyledFigure>
           {children}
-          <StyledImage src={src} theme={theme} />
+          <StyledImage src={src} customStyle={customStyle} />
         </StyledFigure>
 
         {caption && <StyledFigcaption>{caption}</StyledFigcaption>}

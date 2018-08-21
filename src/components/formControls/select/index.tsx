@@ -24,7 +24,7 @@ export interface Props {
   value?: string
   title?: React.ReactNode
   onChange?: (value: string, child: React.ReactNode) => void
-  theme?: Theme
+  customStyle?: Theme
 }
 
 interface State {
@@ -144,7 +144,7 @@ export default class Select extends React.PureComponent<Props, State> {
   }
 
   render () {
-    const { id, children, disabled, value, title, theme } = this.props
+    const { id, children, disabled, value, title, customStyle } = this.props
 
     const num = React.Children.count(children)
     let data = null
@@ -154,14 +154,14 @@ export default class Select extends React.PureComponent<Props, State> {
     }
 
     return (
-      <StyledWrapper id={id} theme={theme}>
-        <ControlWrapper title={title} theme={theme}>
+      <StyledWrapper id={id} customStyle={customStyle}>
+        <ControlWrapper title={title} customStyle={customStyle}>
           {
             num > 0
             ? <StyledSelectWrapper tabIndex='0' onBlur={this.onBlur}>
-              <StyledSelect onClick={this.onSelectClick} disabled={disabled} show={this.state.show} theme={theme}>
+              <StyledSelect onClick={this.onSelectClick} disabled={disabled} show={this.state.show} customStyle={customStyle}>
                 <StyledSelectText>{this.state.selected}</StyledSelectText>
-                <StyledSelectArrow theme={theme}>{arrow}</StyledSelectArrow>
+                <StyledSelectArrow customStyle={customStyle}>{arrow}</StyledSelectArrow>
               </StyledSelect>
               <StyledOptions show={this.state.show}>
                 {data}

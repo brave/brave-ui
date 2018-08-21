@@ -48,7 +48,7 @@ storiesOf('Old/Views', module)
       <DataBlock asList={boolean('show as list?', false)}>
         <DataItem
           size={sizeValue}
-          theme={{
+          customStyle={{
             counterColor: text('Counter Color', 'orange'),
             descriptionColor: text('Description Color', 'black'),
             userSelect: userSelectValue
@@ -60,7 +60,7 @@ storiesOf('Old/Views', module)
         />
         <DataItem
           size={sizeValue}
-          theme={{
+          customStyle={{
             counterColor: text('Counter Color', 'orange'),
             descriptionColor: text('Description Color', 'black'),
             userSelect: userSelectValue

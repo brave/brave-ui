@@ -59,7 +59,7 @@ const StyledSelectOptionWrapper = styled.div`
 
 const StyledSelectOptionTitle = styled.p`
   margin: 0 0 4px 2px;
-  user-select: ${(p: SelectOptionProps) => setTheme(p.theme, 'userSelect')};
+  user-select: ${(p: SelectOptionProps) => setTheme(p.customStyle, 'userSelect')};
 ` as any
 
 export {

@@ -23,7 +23,7 @@ export interface SelectOptionProps {
   value?: string
   onChange?: (e: any) => void
   children: React.ReactNode
-  theme?: SelectOptionTheme
+  customStyle?: SelectOptionTheme
 }
 
 class SelectOption extends React.PureComponent<SelectOptionProps, {}> {
