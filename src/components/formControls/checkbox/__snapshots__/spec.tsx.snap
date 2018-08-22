@@ -2,160 +2,164 @@
 
 exports[`Checkbox tests basic tests matches the snapshot 1`] = `
 .c0 {
-  max-width: 254px;
-  width: 100%;
-}
-
-.c3 {
   font-family: Poppins,sans-serif;
-  font-size: 14px;
   line-height: 1.3;
-  color: #686978;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 20px;
-}
-
-.c4 {
-  -webkit-flex-basis: 18px;
-  -ms-flex-preferred-size: 18px;
-  flex-basis: 18px;
-  width: 18px;
-  height: 18px;
-  border-radius: 2px;
-  border: solid 1px #d1d1db;
-  margin-right: 11px;
-  text-align: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-color: #a1a8f2;
-}
-
-.c6 {
-  -webkit-flex-basis: 18px;
-  -ms-flex-preferred-size: 18px;
-  flex-basis: 18px;
-  width: 18px;
-  height: 18px;
-  border-radius: 2px;
-  border: solid 1px #d1d1db;
-  margin-right: 11px;
-  text-align: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c5 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+  color: #686978;
+  font-size: 14px;
 }
 
 .c1 {
-  max-width: 254px;
-  width: 100%;
-  margin-bottom: 12px;
+  border-radius: 2px;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0 2.5px;
+  -webkit-flex-basis: 18px;
+  -ms-flex-preferred-size: 18px;
+  flex-basis: 18px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #A1A8F2;
+  color: #696FDC;
+  margin-right: 12px;
+}
+
+.c4 {
+  border-radius: 2px;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0 2.5px;
+  -webkit-flex-basis: 18px;
+  -ms-flex-preferred-size: 18px;
+  flex-basis: 18px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #D1D1DB;
+  color: #696FDC;
+  margin-right: 12px;
+}
+
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-top: 1px;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
 }
 
 .c2 {
   width: 100%;
-  font-family: Poppins,sans-serif;
-  line-height: normal;
-  font-size: 14px;
-  font-weight: 500;
-  color: #686978;
-  margin-bottom: 6px;
+  height: 100%;
+  fill: currentColor;
 }
 
 <div
-  className="c0"
   id="checkbox"
 >
   <div
-    className="c1"
-    id={undefined}
+    className="c0"
+    onClick={[Function]}
+    size="small"
+    type="light"
   >
-    <div
-      className="c2"
+    <span
+      className="c1"
+      disabled={false}
+      selected={true}
+      size="small"
+      type="light"
     >
-      Enable ability to give tips on ‘Like’ posts
-    </div>
-    <div
+      <svg
+        aria-hidden="true"
+        className="c2"
+        focusable="false"
+        role={undefined}
+        viewBox="0 0 32 32"
+      >
+        <path
+          d="M13.06676 25.00001c-.263 0-.517-.104-.704-.29l-8.067-8c-.392-.389-.395-1.022-.005-1.414.387-.392 1.021-.395 1.414-.006l7.309 7.249 13.233-15.196c.361-.416.993-.46 1.41-.097.417.363.46.994.098 1.411l-13.934 16c-.181.208-.441.332-.717.342-.013.001-.025.001-.037.001"
+          fillRule="evenodd"
+        />
+      </svg>
+    </span>
+    <span
       className="c3"
-      onClick={[Function]}
+      disabled={false}
+      size="small"
     >
-      <span
-        className="c4"
-        selected={true}
-      >
-        <svg
-          height="7"
-          width="9"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M.278 3.166l1.14-1.164 2.156 2.04L7.429-.005l1.21 1.172-5.065 5.17z"
-            fill="#696FDC"
-            fillRule="evenodd"
-          />
-        </svg>
-      </span>
-      <span
-        className="c5"
-      >
-        YouTube
-      </span>
-    </div>
-    <div
+      YouTube
+    </span>
+  </div>
+  <div
+    className="c0"
+    onClick={[Function]}
+    size="small"
+    type="light"
+  >
+    <span
+      className="c4"
+      disabled={false}
+      selected={false}
+      size="small"
+      type="light"
+    />
+    <span
       className="c3"
-      onClick={[Function]}
+      disabled={false}
+      size="small"
     >
-      <span
-        className="c6"
-        selected={false}
-      />
-      <span
-        className="c5"
-      >
-        Twitter
-      </span>
-    </div>
-    <div
+      Twitter
+    </span>
+  </div>
+  <div
+    className="c0"
+    onClick={[Function]}
+    size="small"
+    type="light"
+  >
+    <span
+      className="c4"
+      disabled={false}
+      selected={false}
+      size="small"
+      type="light"
+    />
+    <span
       className="c3"
-      onClick={[Function]}
+      disabled={false}
+      size="small"
     >
-      <span
-        className="c6"
-        selected={false}
-      />
-      <span
-        className="c5"
-      >
-        Instagram
-      </span>
-    </div>
+      Instagram
+    </span>
   </div>
 </div>
 `;

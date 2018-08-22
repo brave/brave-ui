@@ -3,27 +3,30 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import * as CSS from 'csstype'
-import { StyledWrapper, StyledTitle } from './style'
+import { StyledWrapper, StyledLabel } from './style'
+
+export type Type = 'dark' | 'light'
 
 export interface Props {
   id?: string
-  title?: React.ReactNode
-  children?: React.ReactNode
-  customStyle?: Theme
-}
-
-interface Theme {
-  maxWidth?: CSS.MaxWidthProperty<1>
+  text: React.ReactNode
+  children: React.ReactNode
+  type?: Type
+  disabled?: boolean
 }
 
 export default class ControlWrapper extends React.PureComponent<Props, {}> {
+  static defaultProps = {
+    type: 'light',
+    disabled: false
+  }
+
   render () {
-    const { id, title, children, customStyle } = this.props
+    const { id, text, children, type, disabled } = this.props
 
     return (
-      <StyledWrapper id={id} customStyle={customStyle}>
-        {title ? <StyledTitle>{title}</StyledTitle> : null}
+      <StyledWrapper id={id}>
+        <StyledLabel type={type} disabled={disabled}>{text}</StyledLabel>
         {children}
       </StyledWrapper>
     )

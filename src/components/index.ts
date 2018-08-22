@@ -4,6 +4,7 @@
 
 import Button from './buttonsIndicators/button'
 import Checkbox from './formControls/checkbox'
+import ControlWrapper from './formControls/controlWrapper'
 import Modal from './popupModals/modal'
 import Select from './formControls/select'
 import Table from './dataTables/table'
@@ -16,6 +17,7 @@ export {
   Button,
   Checkbox,
   Column,
+  ControlWrapper,
   Grid,
   Modal,
   Select,

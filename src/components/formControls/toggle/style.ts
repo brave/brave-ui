@@ -4,127 +4,83 @@
 
 import styled, { css } from 'styled-components'
 import { Props } from './index'
-import { setTheme } from '../../../helpers'
 
-export const StyledWrapper = styled.div`
+const getBulletStyle = (p: Props) => {
+  // default is large with dark variation
+  let size = 24
+  let offX = 16
+  let offY = 4
+  let bgColor = '#6D73D2'
+
+  if (p.size === 'small') {
+    size = 16
+    offX = 12
+    offY = 3
+  }
+
+  if (p.type === 'light') {
+    bgColor = '#fb542b'
+  }
+
+  if (!p.checked) {
+    offX = -1
+    bgColor = '#CDD1D5'
+  }
+
+  if (p.disabled) {
+    bgColor = '#EBECF0'
+  }
+
+  return css`
+    width: ${size}px;
+    height: ${size}px;
+    transform: translate(${offX}px, calc(-50% - ${offY}px));
+    background-color: ${bgColor};
+  `
+}
+
+export const StyledWrapper = styled<Props, 'div'>('div')`
+  display: flex;
+`
+
+export const StyleToggle = styled<Props, 'div'>('div')`
   position: relative;
   display: block;
+  height: ${(p: Props) => p.size === 'small' ? '16px' : '24px'};
+  width: ${(p: Props) => p.size === 'small' ? '28px' : '40px'};
 
   ${(p: Props) => p.disabled
     ? css`
       pointer-events: none;
       animation: none;
-      opacity: 0.25;
     ` : ''
     };
+`
 
-  ${(p: Props) => p.size === 'small'
-    ? css`
-      width: 20px;
-      height: 11px;
-    ` : ''
-    };
-
-
-  ${(p: Props) => p.size === 'medium'
-    ? css`
-      width: 30px;
-      height: 18px;
-    ` : ''
-    };
-
-  ${(p: Props) => p.size === 'large'
-    ? css`
-      width: 40px;
-      height: 24px;
-    ` : ''
-    };
-` as any
-
-export const StyledSlider = styled.div`
-  background: #A7ACB2;
+export const StyledSlider = styled<Props, 'div'>('div')`
+  background: ${(p: Props) => p.disabled ? '#F6F6FA' : '#A7ACB2'};
+  height: ${(p: Props) => p.size === 'small' ? '6px' : '8px'};
+  margin-top: ${(p: Props) => p.size === 'small' ? '5px' : '8px'};
   width: 100%;
   border-radius: 3px;
+`
 
-  ${(p: Props) => p.size === 'small'
-    ? css`
-      height: 4px;
-      margin-top: 4.5px;
-    ` : ''
-    };
-
-  ${(p: Props) => p.size === 'medium'
-    ? css`
-      height: 6px;
-      margin-top: 6px;
-    ` : ''
-    };
-
-  ${(p: Props) => p.size === 'large'
-    ? css`
-      height: 8px;
-      margin-top: 8px;
-    ` : ''
-    };
-` as any
-
-export const StyledBullet = styled.div`
+export const StyledBullet = styled<Props, 'div'>('div')`
   position: relative;
   z-index: 2;
   border-radius: 50%;
   transition: 200ms ease-out;
+  ${getBulletStyle};
+`
 
-  ${(p: Props) => p.checked
-    ? css`
-      background-color: ${(p: Props) => setTheme(p.customStyle, 'onColor') || '#6D73D2'};
-    ` : ''
-    };
-
-  ${(p: Props) => !p.checked
-    ? css`
-      background-color: ${(p: Props) => setTheme(p.customStyle, 'offColor') || '#CDD1D5'};
-      transform: translate(0, calc(-50% - 4px));
-    ` : ''
-    };
-
-  ${(p: Props) => p.size === 'small'
-    ? css`
-      width: 11px;
-      height: 11px;
-      transform: translate(0, calc(-50% - 2px));
-    ` : ''
-    };
-
-
-  ${(p: Props) => p.checked && p.size === 'small'
-    ? css`
-      transform: translate(9px, calc(-50% - 2px));
-    ` : ''
-    };
-
-  ${(p: Props) => p.size === 'medium'
-    ? css`
-      width: 18px;
-      height: 18px;
-    ` : ''
-    };
-
-  ${(p: Props) => p.checked && p.size === 'medium'
-    ? css`
-      transform: translate(12px, calc(-50% - 4px));
-    ` : ''
-    };
-
-  ${(p: Props) => p.size === 'large'
-    ? css`
-      width: 24px;
-      height: 24px;
-    ` : ''
-    };
-
-  ${(p: Props) => p.checked && p.size === 'large'
-    ? css`
-      transform: translate(16px, calc(-50% - 4px));
-    ` : ''
-    };
-` as any
+export const StyledText = styled<Props, 'div'>('div')`
+  color: #838391;
+  font-size: ${(p: Props) => p.size === 'small' ? '12px' : '14px'};
+  font-family: Poppins, sans-serif;
+  text-align: right;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin: ${(p: Props) => p.size === 'small' ? '0px' : '4px'} 8px 0 0;
+  opacity: ${(p: Props) => !p.checked && !p.disabled ? 1 : 0 };
+  transition: 100ms ease-out;
+`

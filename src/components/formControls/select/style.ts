@@ -3,52 +3,77 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled, { css } from 'styled-components'
-import { Props, Theme } from './index'
-import { setTheme } from '../../../helpers'
+import { Props } from './index'
 
-export const StyledWrapper = styled.div`
-  max-width: ${(p: Props) => setTheme(p.customStyle, 'maxWidth') || '254px'};
+const getSelectColors = (p: StyleProps) => {
+  let color = '#686978'
+  let borderColor = '#DFDFE8'
+
+  if (p.type === 'dark') {
+    color = '#fff'
+    borderColor = '#686978'
+  }
+
+  if (p.show) {
+    borderColor = '#A1A8F2'
+  }
+
+  if (p.disabled) {
+    borderColor = '#E5E5EA'
+    color = '#D1D1DB'
+
+    if (p.type === 'dark') {
+      color = '#686978'
+      borderColor = '#686978'
+    }
+  }
+
+  return css`
+    color: ${color};
+    border: 1px solid ${borderColor}
+  `
+}
+
+interface StyleProps extends Props {
+  show?: boolean
+}
+
+export const StyledWrapper = styled<StyleProps, 'div'>('div')`
   width: 100%;
-` as any
+`
 
-export const StyledSelectWrapper = styled.div`
+export const StyledSelectWrapper = styled<StyleProps, 'div'>('div')`
   position: relative;
   outline: 0;
   font-family: Poppins, sans-serif;
-` as any
+`
 
-export const StyledSelect = styled.div`
+export const StyledSelect = styled<StyleProps, 'div'>('div')`
   border-radius: 3px;
   font-size: 14px;
-  color: #686978;
-  background: #fff;
   width: 100%;
-  padding: ${(p: {show: boolean, customStyle: Theme}) => setTheme(p.customStyle, 'padding') || '10px 0'};
-  border: ${(p: {show: boolean, customStyle: Theme}) => setTheme(p.customStyle, 'border') || '1px solid #dfdfe8'};
+  padding: 11px 0;
   display: flex;
   align-items: center;
+  ${getSelectColors};
+`
+// TODO update width when we get new icons
+export const StyledSelectArrow = styled<StyleProps, 'div'>('div')`
+  margin-right: 15px;
+  flex-basis: 35px;
+  width: 35px;
+  flex-shrink: 0;
+`
 
-  ${(p: {show: boolean, customStyle: Theme}) => p.show
-    ? css`
-      border-color: #a1a8f2;
-    ` : ''
-  }
-` as any
-
-export const StyledSelectArrow = styled.div`
-  padding-right: ${(p: {show: boolean, customStyle: Theme}) => setTheme(p.customStyle, 'arrowPadding') || '15px'};
-  flex-basis: 17px;
-` as any
-
-export const StyledSelectText = styled.div`
+export const StyledSelectText = styled<StyleProps, 'div'>('div')`
   flex-grow: 1;
   padding: 0 5px 0 13px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-` as any
+`
 
-export const StyledOptions = styled.div`
+export const StyledOptions = styled<StyleProps, 'div'>('div')`
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
@@ -60,29 +85,31 @@ export const StyledOptions = styled.div`
   overflow: hidden;
   z-index: 2;
   display: ${(p: { show: boolean }) => p.show ? 'block' : 'none'};
-` as any
+  padding: 9px 0;
+`
 
-export const StyledOption = styled.div`
+export const StyledOption = styled<StyleProps, 'div'>('div')`
   font-size: 14px;
-  line-height: 2.57;
+  line-height: 36px;
   color: #1b1d2f;
   position: relative;
   padding: 0 0 0 12px;
   display: flex;
   background: ${(p: {selected: boolean}) => p.selected ? '#e9f0ff' : '#fff'};
-` as any
+`
 
-export const StyledOptionCheck = styled.div`
-  flex-basis: 12px;
+export const StyledOptionCheck = styled<StyleProps, 'div'>('div')`
+  flex-basis: 11px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
-` as any
+  color: #A1A8F2;
+`
 
-export const StyledOptionText = styled.div`
+export const StyledOptionText = styled<StyleProps, 'div'>('div')`
   flex-grow: 1;
   padding: 0 21px 0 6px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-` as any
+`

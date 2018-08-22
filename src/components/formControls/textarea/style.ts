@@ -4,21 +4,25 @@
 
 import styled from 'styled-components'
 import { Props } from './index'
-import { setTheme } from '../../../helpers'
 
-export const StyledWrapper = styled.div`
-  max-width: ${(p: Props) => setTheme(p.customStyle, 'maxWidth') || '254px'};
+export const StyledWrapper = styled<{}, 'div'>('div')`
   width: 100%;
-` as any
+`
 
-export const StyledArea = styled.textarea`
-  min-height: ${(p: Props) => setTheme(p.customStyle, 'minHeight') || 'auto'};
+export const StyledArea = styled<Props, 'textarea'>('textarea')`
+  min-height: 140px;
   box-sizing: border-box;
   width: 100%;
   font-family: Muli, sans-serif;
-  border: 1px solid #DFDFE8;
+  border: 1px solid ${(p: Props) => p.disabled ? '#E5E5EA' : '#DFDFE8'};
+  color: ${(p: Props) => p.disabled ? '#D1D1DB' : '#686978'};
   border-radius: 6px;
   padding: 15px 20px;
   font-size: 16px;
   line-height: 26px;
-` as any
+
+  &:focus {
+    border-color: #A1A8F2;
+    outline: none;
+  }
+`

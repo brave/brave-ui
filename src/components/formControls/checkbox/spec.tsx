@@ -9,7 +9,6 @@ describe('Checkbox tests', () => {
     value={{'yt': true, 'tw': false, 'inst': false}}
     id={'checkbox'}
     multiple={false}
-    title={'Enable ability to give tips on ‘Like’ posts'}
   >
     <div data-key='yt'>YouTube</div>
     <div data-key='tw'>Twitter</div>
