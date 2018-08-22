@@ -21,6 +21,7 @@ export interface Props {
   onClick?: () => void
   id?: string
   disabled?: boolean
+  center?: boolean
   icon?: {image: React.ReactNode, position: 'before' | 'after'},
   className?: string
 }
@@ -38,7 +39,8 @@ export default class ThemedButton extends React.PureComponent<Props, {}> {
     size: 'medium',
     type: 'default',
     level: 'primary',
-    main: false
+    main: false,
+    center: false
   }
 
   getButtonComponent () {
