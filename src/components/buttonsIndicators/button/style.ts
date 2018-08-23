@@ -80,7 +80,6 @@ const StyledButton = styled<Props, 'button'>('button')`
   font-family: Poppins, sans-serif;
   cursor: ${p => p.disabled ? 'default' : 'pointer'};
   user-select: none;
-  ${p => p.center ? 'margin: 0 auto' : ''};
   font-size: ${largeMediumSmall('14px', '13px', '11px')};
   border-radius: ${largeMediumSmall('24px', '20px', '16px', '28px')};
   width: ${p => p.size === 'call-to-action' ? '100%' : 'auto'};
