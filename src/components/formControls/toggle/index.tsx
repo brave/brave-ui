@@ -13,6 +13,7 @@ export interface Props {
   size?: 'large' | 'small'
   type?: 'dark' | 'light'
   onToggle?: (event: React.MouseEvent<HTMLDivElement>) => void
+  testId?: string
 }
 
 export default class Toggle extends React.PureComponent<Props, {}> {
@@ -22,15 +23,15 @@ export default class Toggle extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { id, onToggle, disabled, checked, type, size } = this.props
+    const { id, onToggle, disabled, checked, type, size, testId } = this.props
 
     return (
       <StyledWrapper id={id}>
         <StyledText size={size} checked={checked} disabled={disabled}>
           {getLocale('off')}
         </StyledText>
-        <StyleToggle data-test-id='toggle' onClick={!disabled ? onToggle : undefined} size={size}>
-          <StyledSlider size={size} disabled={disabled} />
+        <StyleToggle data-test-id='toggle' data-test-id2={testId} onClick={!disabled ? onToggle : undefined} size={size}>
+          <StyledSlider size={size} disabled={disabled}/>
           <StyledBullet size={size} checked={checked} type={type} disabled={disabled} />
         </StyleToggle>
       </StyledWrapper>
