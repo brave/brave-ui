@@ -77,7 +77,7 @@ const StyledButton = styled<Props, 'button'>('button')`
   flex-direction: ${p => p.icon && p.icon.position === 'after' ? 'row' : 'row-reverse'};
   justify-content: center;
   align-items: center;
-  font-family: Poppins, sans-serif;
+  font-family: ${p => p.theme.fontFamily.heading};
   cursor: ${p => p.disabled ? 'default' : 'pointer'};
   user-select: none;
   font-size: ${largeMediumSmall('14px', '13px', '11px')};
