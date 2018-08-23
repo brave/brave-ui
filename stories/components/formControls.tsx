@@ -53,7 +53,11 @@ storiesOf('Components/Form controls', module)
             type={'light'}
             disabled={boolean('Disabled', false)}
           >
-            <Select type={'light'} disabled={boolean('Disabled', false)}>
+            <Select
+              type={'light'}
+              disabled={boolean('Disabled', false)}
+              floating={boolean('Floating', false)}
+            >
               <div data-value='0'>No Limit</div>
               <div data-value='10'>Pay Only Top 10</div>
               <div data-value='50'>Pay Top 50</div>
@@ -67,7 +71,11 @@ storiesOf('Components/Form controls', module)
             type={'dark'}
             disabled={boolean('Disabled', false)}
           >
-            <Select type={'dark'} disabled={boolean('Disabled', false)}>
+            <Select
+              type={'dark'}
+              disabled={boolean('Disabled', false)}
+              floating={boolean('Floating', false)}
+            >
               <div data-value='0'>No Limit</div>
               <div data-value='10'>Pay Only Top 10</div>
               <div data-value='50'>Pay Top 50</div>

@@ -28,9 +28,14 @@ const getSelectColors = (p: StyleProps) => {
     }
   }
 
+  let border = `1px solid ${borderColor}`
+  if (p.floating) {
+    border = 'none'
+  }
+
   return css`
     color: ${color};
-    border: 1px solid ${borderColor}
+    border: ${border};
   `
 }
 
@@ -52,22 +57,22 @@ export const StyledSelect = styled<StyleProps, 'div'>('div')`
   border-radius: 3px;
   font-size: 14px;
   width: 100%;
-  padding: 11px 0;
+  padding: ${(p: Props) => p.floating ? 0 : 8}px 0;
   display: flex;
   align-items: center;
   ${getSelectColors};
 `
 // TODO update width when we get new icons
 export const StyledSelectArrow = styled<StyleProps, 'div'>('div')`
-  margin-right: 15px;
-  flex-basis: 35px;
-  width: 35px;
+  margin-right: ${(p: Props) => p.floating ? 0 : 15}px;
+  flex-basis: 22px;
   flex-shrink: 0;
+  height: 22px;
 `
 
 export const StyledSelectText = styled<StyleProps, 'div'>('div')`
   flex-grow: 1;
-  padding: 0 5px 0 13px;
+  padding: ${(p: Props) => p.floating ? 0 : '0 5px 0 13px'};
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

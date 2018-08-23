@@ -22,6 +22,7 @@ export interface Props {
   children: React.ReactNode
   id?: string
   disabled?: boolean
+  floating?: boolean
   value?: string
   onChange?: (value: string, child: React.ReactNode) => void
   type?: Type
@@ -140,7 +141,7 @@ export default class Select extends React.PureComponent<Props, State> {
   }
 
   render () {
-    const { id, children, disabled, value, type } = this.props
+    const { id, children, disabled, value, type, floating } = this.props
 
     const num = React.Children.count(children)
     let data = null
@@ -154,9 +155,17 @@ export default class Select extends React.PureComponent<Props, State> {
         {
           num > 0
           ? <StyledSelectWrapper tabIndex={0} onBlur={this.onBlur}>
-            <StyledSelect onClick={!disabled ? this.onSelectClick : undefined} disabled={disabled} show={this.state.show} type={type}>
-              <StyledSelectText>{this.state.selected}</StyledSelectText>
-              <StyledSelectArrow>
+            <StyledSelect
+              onClick={!disabled ? this.onSelectClick : undefined}
+              disabled={disabled}
+              show={this.state.show}
+              type={type}
+              floating={floating}
+            >
+              <StyledSelectText floating={floating}>
+                {this.state.selected}
+              </StyledSelectText>
+              <StyledSelectArrow floating={floating}>
                 <CaratDownIcon />
               </StyledSelectArrow>
             </StyledSelect>
