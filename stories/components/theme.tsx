@@ -20,7 +20,7 @@ const PaletteItemContainer = styled.div`
   width: ${(p: any) => p.individual ? '25%' : '10%'};
   min-height: 150px;
   margin: 5px;
-  border: 4px dotted #888;
+  border-radius: 2px;
   background: white;
   padding: 2px;
   display: flex;
