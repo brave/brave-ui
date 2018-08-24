@@ -87,4 +87,5 @@ export const StyledText = styled<Partial<StyleProps>, 'span'>('span')`
   flex: 1;
   padding-top: ${(p) => p.size === 'big' ? '2px' : '1px'};
   letter-spacing: 0;
+  display: flex;
 `
