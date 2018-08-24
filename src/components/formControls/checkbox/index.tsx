@@ -3,29 +3,31 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import * as CSS from 'csstype'
-import { StyledWrapper, StyledLabel, StyledBox, StyledText } from './style'
-import ControlWrapper from '../../../features/rewards/controlWrapper/index'
+import { StyledLabel, StyledBox, StyledText } from './style'
+import { CheckIcon } from '../../icons'
 
-const check = require('./assets/check')
+export type Type = 'dark' | 'light'
+export type Size = 'big' | 'small'
 
 export interface Props {
   value: {[key: string]: boolean}
-  children: React.ReactNode
   id?: string
+  children: React.ReactNode
   multiple?: boolean
-  title?: React.ReactNode
-  customStyle?: Theme
+  disabled?: boolean
+  type?: Type
+  size?: Size
   onChange?: (key: string, selected: boolean, child: React.ReactNode, all: {[key: string]: boolean}) => void
 }
 
-export interface Theme {
-  checkColor?: CSS.Color
-  borderColor?: CSS.Color
-  maxWidth?: CSS.MaxWidthProperty<1>
-}
-
 export default class Checkbox extends React.PureComponent<Props, {}> {
+  static defaultProps = {
+    type: 'light',
+    size: 'small',
+    disabled: false,
+    multiple: false
+  }
+
   generateChecks = (children: React.ReactNode) => {
     const self = this
     return React.Children.map(children, (child: any, i: number) => {
@@ -37,8 +39,26 @@ export default class Checkbox extends React.PureComponent<Props, {}> {
       const key = child.props['data-key']
       const selected = self.props.value[key] || false
       return (
-        <StyledLabel key={`${self.props.id}-checkbox-${i}`} onClick={self.onOptionClick.bind(self, key, child, selected)}>
-          <StyledBox selected={selected} customStyle={self.props.customStyle}>{selected ? check : null}</StyledBox><StyledText>{element}</StyledText>
+        <StyledLabel
+          key={`checkbox-${i}`}
+          onClick={!self.props.disabled ? self.onOptionClick.bind(self, key, child, selected) : undefined}
+          type={self.props.type}
+          size={self.props.size}
+        >
+          <StyledBox
+            selected={selected}
+            type={self.props.type}
+            disabled={self.props.disabled}
+            size={self.props.size}
+          >
+            {selected ? <CheckIcon /> : null}
+          </StyledBox>
+          <StyledText
+            disabled={self.props.disabled}
+            size={self.props.size}
+          >
+            {element}
+          </StyledText>
         </StyledLabel>
       )
     })
@@ -64,7 +84,7 @@ export default class Checkbox extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { id, children, title, customStyle } = this.props
+    const { id, children } = this.props
     const num = React.Children.count(children)
     let data = null
 
@@ -73,11 +93,9 @@ export default class Checkbox extends React.PureComponent<Props, {}> {
     }
 
     return (
-      <StyledWrapper id={id}>
-        <ControlWrapper title={title} customStyle={customStyle}>
-          {data}
-        </ControlWrapper>
-      </StyledWrapper>
+      <div id={id}>
+        {data}
+      </div>
     )
   }
 }

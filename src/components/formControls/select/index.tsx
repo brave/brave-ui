@@ -3,7 +3,6 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import * as CSS from 'csstype'
 import {
   StyledWrapper,
   StyledSelect,
@@ -15,16 +14,18 @@ import {
   StyledOptionCheck,
   StyledOptionText
 } from './style'
-import ControlWrapper from '../../../features/rewards/controlWrapper/index'
+import { CheckIcon, CaratDownIcon } from '../../icons'
+
+export type Type = 'dark' | 'light'
 
 export interface Props {
   children: React.ReactNode
   id?: string
   disabled?: boolean
+  floating?: boolean
   value?: string
-  title?: React.ReactNode
   onChange?: (value: string, child: React.ReactNode) => void
-  customStyle?: Theme
+  type?: Type
 }
 
 interface State {
@@ -32,16 +33,6 @@ interface State {
   selected: React.ReactNode
   show: boolean
 }
-
-export interface Theme {
-  maxWidth?: CSS.MaxWidthProperty<1>
-  border?: CSS.BorderProperty<1>
-  padding?: CSS.PaddingProperty<1>
-  arrowPadding?: CSS.RightProperty<1>
-}
-
-const check = require('./assets/check')
-const arrow = require('./assets/arrow')
 
 /*
   TODO
@@ -60,6 +51,10 @@ export default class Select extends React.PureComponent<Props, State> {
       selected: obj.selected,
       show: false
     }
+  }
+
+  static defaultProps = {
+    type: 'light'
   }
 
   componentDidUpdate (prevProps: Props) {
@@ -113,7 +108,9 @@ export default class Select extends React.PureComponent<Props, State> {
           onClick={self.onOptionClick.bind(self, value, child, element)}
           selected={selected}
         >
-          <StyledOptionCheck>{selected ? check : null}</StyledOptionCheck><StyledOptionText>{element}</StyledOptionText>
+          <StyledOptionCheck>
+            {selected ? <CheckIcon /> : null}
+          </StyledOptionCheck><StyledOptionText>{element}</StyledOptionText>
         </StyledOption>
       )
     })
@@ -144,7 +141,7 @@ export default class Select extends React.PureComponent<Props, State> {
   }
 
   render () {
-    const { id, children, disabled, value, title, customStyle } = this.props
+    const { id, children, disabled, value, type, floating } = this.props
 
     const num = React.Children.count(children)
     let data = null
@@ -154,22 +151,30 @@ export default class Select extends React.PureComponent<Props, State> {
     }
 
     return (
-      <StyledWrapper id={id} customStyle={customStyle}>
-        <ControlWrapper title={title} customStyle={customStyle}>
-          {
-            num > 0
-            ? <StyledSelectWrapper tabIndex='0' onBlur={this.onBlur}>
-              <StyledSelect onClick={this.onSelectClick} disabled={disabled} show={this.state.show} customStyle={customStyle}>
-                <StyledSelectText>{this.state.selected}</StyledSelectText>
-                <StyledSelectArrow customStyle={customStyle}>{arrow}</StyledSelectArrow>
-              </StyledSelect>
-              <StyledOptions show={this.state.show}>
-                {data}
-              </StyledOptions>
-            </StyledSelectWrapper>
-            : null
-          }
-        </ControlWrapper>
+      <StyledWrapper id={id}>
+        {
+          num > 0
+          ? <StyledSelectWrapper tabIndex={0} onBlur={this.onBlur}>
+            <StyledSelect
+              onClick={!disabled ? this.onSelectClick : undefined}
+              disabled={disabled}
+              show={this.state.show}
+              type={type}
+              floating={floating}
+            >
+              <StyledSelectText floating={floating}>
+                {this.state.selected}
+              </StyledSelectText>
+              <StyledSelectArrow floating={floating}>
+                <CaratDownIcon />
+              </StyledSelectArrow>
+            </StyledSelect>
+            <StyledOptions show={this.state.show}>
+              {data}
+            </StyledOptions>
+          </StyledSelectWrapper>
+          : null
+        }
       </StyledWrapper>
     )
   }

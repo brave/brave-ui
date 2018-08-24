@@ -3,42 +3,88 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled, { css } from 'styled-components'
-import { Props, Theme } from './index'
-import { setTheme } from '../../../helpers'
+import { Props } from './index'
 
-export const StyledWrapper = styled.div`
-  max-width: ${(p: Props) => setTheme(p.customStyle, 'maxWidth') || '254px'};
-  width: 100%;
-` as any
+interface StyleProps extends Props {
+  selected?: boolean
+}
 
-export const StyledLabel = styled.div`
+const getBox = (p: Partial<StyleProps>) => {
+  let size = 18
+  let borderColor = '#D1D1DB'
+  let color = '#696FDC'
+  let spacing = 12
+  if (p.size === 'big') {
+    size = 24
+    spacing = 17
+  }
+
+  if (p.type === 'dark') {
+    color = '#A1A8F2'
+  }
+
+  if (p.selected) {
+    borderColor = p.type === 'dark' ? '#696FDC' : '#A1A8F2'
+  }
+
+  if (p.disabled) {
+    borderColor = p.type === 'dark' ? '#686978' : '#EBECF0'
+  }
+
+  return css`
+    --checkbox-box-size: ${size}px;
+    --checkbox-box-borderColor: ${borderColor};
+    --checkbox-box-color: ${color};
+    --checkbox-box-spacing: ${spacing}px;
+  `
+}
+
+const getLabel = (p: Partial<StyleProps>) => {
+  let color = '#686978'
+  let size = 14
+  if (p.size === 'big') {
+    size = 16
+  }
+
+  if (p.type === 'dark') {
+    color = '#B8B9C4'
+  }
+
+  return css`
+    --checkbox-label-color: ${color};
+    --checkbox-label-size: ${size}px;
+  `
+}
+
+export const StyledLabel = styled<Partial<StyleProps>, 'div'>('div')`
   font-family: Poppins, sans-serif;
-  font-size: 14px;
   line-height: 1.3;
-  color: #686978;
   display: flex;
   margin-bottom: 20px;
-` as any
+  ${getLabel};
+  color: var(--checkbox-label-color);
+  font-size: var(--checkbox-label-size);
+  cursor: pointer;
+`
 
-export const StyledBox = styled.span`
-  flex-basis: 18px;
-  width: 18px;
-  height: 18px;
+export const StyledBox = styled<Partial<StyleProps>, 'span'>('span')`
   border-radius: 2px;
-  border: solid 1px ${(p: {selected: boolean, customStyle: Theme}) => setTheme(p.customStyle, 'borderColor') || '#d1d1db'};
-  margin-right: 11px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 2.5px;
+  ${getBox};
+  flex-basis: var(--checkbox-box-size);
+  width: var(--checkbox-box-size);
+  height: var(--checkbox-box-size);
+  color: var(--checkbox-box-color);
+  border: 1px solid var(--checkbox-box-borderColor);
+  margin-right: var(--checkbox-box-spacing);
+`
 
- ${(p: {selected: boolean, customStyle: Theme}) => p.selected
-    ? css`
-      border-color: #a1a8f2;
-    ` : ''
-  }
-` as any
-
-export const StyledText = styled.span`
+export const StyledText = styled<Partial<StyleProps>, 'span'>('span')`
   flex: 1;
-` as any
+  padding-top: ${(p) => p.size === 'big' ? '2px' : '1px'};
+  letter-spacing: 0;
+`

@@ -63,6 +63,7 @@ const locale: Record<string, string> = {
   noGrants: 'Currently no token grant is available.',
   notEnoughTokens: 'Not enough tokens. Please',
   noThankYou: 'No, thank you',
+  off: 'off',
   ok: 'ok',
   on: 'on',
   oneTime: 'One time',

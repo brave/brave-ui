@@ -6,7 +6,7 @@ import Checkbox from './index'
 import { TestThemeProvider } from '../../../theme'
 
 describe('Checkbox tests', () => {
-  const baseComponent = (props?: object) => <TestThemeProvider><Checkbox id='checkbox' {...props} /></TestThemeProvider>
+  const baseComponent = (props?: object) => <TestThemeProvider><Checkbox id='toggle' {...props} /></TestThemeProvider>
 
   describe('basic tests', () => {
     it('matches the snapshot', () => {
@@ -17,7 +17,7 @@ describe('Checkbox tests', () => {
 
     it('renders the component', () => {
       const wrapper = shallow(baseComponent())
-      const assertion = wrapper.find('#checkbox').length
+      const assertion = wrapper.find('#toggle').length
       expect(assertion).toBe(1)
     })
   })
@@ -25,19 +25,19 @@ describe('Checkbox tests', () => {
   describe('component behavior', () => {
     it('can be checked', () => {
       const wrapper = shallow(baseComponent({checked: true}))
-      const assertion = wrapper.find('#checkbox').props().checked
+      const assertion = wrapper.find('#toggle').props().checked
       expect(assertion).toEqual(true)
     })
 
     it('can be unchecked', () => {
       const wrapper = shallow(baseComponent({checked: false}))
-      const assertion = wrapper.find('#checkbox').props().checked
+      const assertion = wrapper.find('#toggle').props().checked
       expect(assertion).toEqual(false)
     })
 
     it('can be disabled', () => {
       const wrapper = shallow(baseComponent({disabled: true}))
-      const assertion = wrapper.find('#checkbox').props().disabled
+      const assertion = wrapper.find('#toggle').props().disabled
       expect(assertion).toBe(true)
     })
 
@@ -45,7 +45,7 @@ describe('Checkbox tests', () => {
       const onToggle = jest.fn()
       const wrapper = mount(baseComponent({onToggle}))
       const value = {target: { checked: true }}
-      wrapper.find('#checkbox').first().simulate('click', value)
+      wrapper.find('[data-test-id="toggle"]').first().simulate('click', value)
       expect(onToggle).toHaveBeenCalledTimes(1)
       const callValue = onToggle.mock.calls[0][0]
       console.log(callValue.target)

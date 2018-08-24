@@ -1,9 +1,9 @@
 import { StyledComponentClass } from 'styled-components'
 
 // simple
-export { default as ArrowRightIcon } from './arrow'
+export { default as ArrowLeftIcon } from './arrow'
 export { default as AlertCirlceIcon } from './alert-cirlce'
-export { default as CaratIcon } from './carat'
+export { default as CaratDownIcon } from './carat'
 export { default as CheckCircleIcon } from './check-circle'
 export { default as CloseCircleIcon } from './close-circle'
 export { default as CheckIcon } from './check'
@@ -40,13 +40,13 @@ function RotatedIconComponent (iconComponent: StyledComponentClass<any, any>, de
   `
 }
 import ArrowIcon from './arrow'
-export const ArrowDownIcon = RotatedIconComponent(ArrowIcon, 90)
-export const ArrowLeftIcon = RotatedIconComponent(ArrowIcon, 180)
-export const ArrowUpIcon = RotatedIconComponent(ArrowIcon, -90)
+export const ArrowRightIcon = RotatedIconComponent(ArrowIcon, 180)
+export const ArrowDownIcon = RotatedIconComponent(ArrowIcon, -90)
+export const ArrowUpIcon = RotatedIconComponent(ArrowIcon, 90)
 import CaratIcon from './carat'
-export const CaratDownIcon = RotatedIconComponent(CaratIcon, 90)
-export const CaratLeftIcon = RotatedIconComponent(CaratIcon, 180)
-export const CaratUpIcon = RotatedIconComponent(CaratIcon, -90)
+export const CaratRightIcon = RotatedIconComponent(CaratIcon, -90)
+export const CaratLeftIcon = RotatedIconComponent(CaratIcon, 90)
+export const CaratUpIcon = RotatedIconComponent(CaratIcon, 180)
 import ThumbsUpIcon from './thumbs-up'
 export const ThumbsDownIcom = ThumbsUpIcon.extend`
   transform: scaleY(-1);

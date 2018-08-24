@@ -2,24 +2,20 @@
 
 exports[`Select tests basic tests matches the snapshot 1`] = `
 .c0 {
-  max-width: 254px;
   width: 100%;
 }
 
-.c2 {
+.c1 {
   position: relative;
   outline: 0;
   font-family: Poppins,sans-serif;
 }
 
-.c3 {
+.c2 {
   border-radius: 3px;
   font-size: 14px;
-  color: #686978;
-  background: #fff;
   width: 100%;
-  padding: 10px 0;
-  border: 1px solid #dfdfe8;
+  padding: 8px 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,16 +24,24 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.c5 {
-  padding-right: 15px;
-  -webkit-flex-basis: 17px;
-  -ms-flex-preferred-size: 17px;
-  flex-basis: 17px;
+  --select-select-color: #686978;
+  --select-select-border: 1px solid #DFDFE8;
+  color: var(--select-select-color);
+  border: var(--select-select-border);
 }
 
 .c4 {
+  margin-right: 15px;
+  -webkit-flex-basis: 22px;
+  -ms-flex-preferred-size: 22px;
+  flex-basis: 22px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 22px;
+}
+
+.c3 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -60,11 +64,12 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   overflow: hidden;
   z-index: 2;
   display: none;
+  padding: 9px 0;
 }
 
 .c7 {
   font-size: 14px;
-  line-height: 2.57;
+  line-height: 36px;
   color: #1b1d2f;
   position: relative;
   padding: 0 0 0 12px;
@@ -75,9 +80,9 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   background: #e9f0ff;
 }
 
-.c10 {
+.c11 {
   font-size: 14px;
-  line-height: 2.57;
+  line-height: 36px;
   color: #1b1d2f;
   position: relative;
   padding: 0 0 0 12px;
@@ -89,9 +94,9 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
 }
 
 .c8 {
-  -webkit-flex-basis: 12px;
-  -ms-flex-preferred-size: 12px;
-  flex-basis: 12px;
+  -webkit-flex-basis: 11px;
+  -ms-flex-preferred-size: 11px;
+  flex-basis: 11px;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -103,9 +108,10 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #A1A8F2;
 }
 
-.c9 {
+.c10 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -116,10 +122,16 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   text-overflow: ellipsis;
 }
 
-.c1 {
-  max-width: 254px;
+.c5 {
   width: 100%;
-  margin-bottom: 12px;
+  height: 100%;
+  fill: currentColor;
+}
+
+.c9 {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
 }
 
 <div
@@ -128,95 +140,92 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
 >
   <div
     className="c1"
-    id={undefined}
+    onBlur={[Function]}
+    tabIndex={0}
   >
     <div
       className="c2"
-      onBlur={[Function]}
-      tabIndex="0"
+      disabled={undefined}
+      onClick={[Function]}
+      type="light"
     >
       <div
         className="c3"
-        disabled={undefined}
+      >
+        01
+      </div>
+      <div
+        className="c4"
+      >
+        <svg
+          aria-hidden="true"
+          className="c5"
+          focusable="false"
+          role={undefined}
+          viewBox="0 0 32 32"
+        >
+          <path
+            d="M16 17.68292l6.3492-5.44218c.41933-.35942 1.05063-.31086 1.41006.10847.35942.41932.31086 1.05062-.10847 1.41005l-7 6c-.37449.32099-.9271.32099-1.30158 0l-7-6c-.41933-.35943-.46789-.99073-.10847-1.41005.35943-.41933.99073-.46789 1.41005-.10847L16 17.68292z"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c6"
+    >
+      <div
+        className="c7"
         onClick={[Function]}
+        selected={true}
       >
         <div
-          className="c4"
-        >
-          01
-        </div>
-        <div
-          className="c5"
+          className="c8"
         >
           <svg
-            height="6"
-            width="11"
-            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            className="c9"
+            focusable="false"
+            role={undefined}
+            viewBox="0 0 32 32"
           >
             <path
-              d="M0 0h2.165l2.837 3.625h.92L8.755 0h2.285L6.283 5.958H4.759z"
-              fill="#B8B9C4"
+              d="M13.06676 25.00001c-.263 0-.517-.104-.704-.29l-8.067-8c-.392-.389-.395-1.022-.005-1.414.387-.392 1.021-.395 1.414-.006l7.309 7.249 13.233-15.196c.361-.416.993-.46 1.41-.097.417.363.46.994.098 1.411l-13.934 16c-.181.208-.441.332-.717.342-.013.001-.025.001-.037.001"
               fillRule="evenodd"
             />
           </svg>
         </div>
+        <div
+          className="c10"
+        >
+          01
+        </div>
       </div>
       <div
-        className="c6"
+        className="c11"
+        onClick={[Function]}
+        selected={false}
       >
         <div
-          className="c7"
-          onClick={[Function]}
-          selected={true}
-        >
-          <div
-            className="c8"
-          >
-            <svg
-              height="9"
-              width="12"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0 4.227l1.519-1.551 2.875 2.72L9.534 0l1.614 1.563-1.424 1.453-5.33 5.439z"
-                fill="#A1A8F2"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-          <div
-            className="c9"
-          >
-            01
-          </div>
-        </div>
+          className="c8"
+        />
         <div
           className="c10"
-          onClick={[Function]}
-          selected={false}
         >
-          <div
-            className="c8"
-          />
-          <div
-            className="c9"
-          >
-            11
-          </div>
+          11
         </div>
+      </div>
+      <div
+        className="c11"
+        onClick={[Function]}
+        selected={false}
+      >
+        <div
+          className="c8"
+        />
         <div
           className="c10"
-          onClick={[Function]}
-          selected={false}
         >
-          <div
-            className="c8"
-          />
-          <div
-            className="c9"
-          >
-            12
-          </div>
+          12
         </div>
       </div>
     </div>

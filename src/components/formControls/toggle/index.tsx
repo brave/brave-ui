@@ -3,38 +3,36 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import * as CSS from 'csstype'
-import { StyledWrapper, StyledSlider, StyledBullet } from './style'
+import { StyledWrapper, StyledSlider, StyledBullet, StyleToggle, StyledText } from './style'
+import { getLocale } from '../../../helpers'
 
 export interface Props {
   id?: string
   disabled?: boolean
   checked?: boolean
-  size?: 'large' | 'medium' | 'small'
-  onToggle?: () => void
-  customStyle?: Theme
-}
-
-interface Theme {
-  onColor?: CSS.Color
-  offColor?: CSS.Color
+  size?: 'large' | 'small'
+  type?: 'dark' | 'light'
+  onToggle?: (event: React.MouseEvent<HTMLDivElement>) => void
 }
 
 export default class Toggle extends React.PureComponent<Props, {}> {
-  render () {
-    const { id, onToggle, size, disabled, checked, customStyle } = this.props
+  static defaultProps = {
+    size: 'large',
+    type: 'dark'
+  }
 
-    const props: Props = {
-      id,
-      disabled,
-      checked,
-      size: size ? size : 'medium'
-    }
+  render () {
+    const { id, onToggle, disabled, checked, type, size } = this.props
 
     return (
-      <StyledWrapper onClick={!disabled ? onToggle : null} {...props}>
-        <StyledSlider size={props.size} />
-        <StyledBullet size={props.size} checked={checked} customStyle={customStyle}/>
+      <StyledWrapper id={id}>
+        <StyledText size={size} checked={checked} disabled={disabled}>
+          {getLocale('off')}
+        </StyledText>
+        <StyleToggle data-test-id='toggle' onClick={!disabled ? onToggle : undefined} size={size}>
+          <StyledSlider size={size} disabled={disabled} />
+          <StyledBullet size={size} checked={checked} type={type} disabled={disabled} />
+        </StyleToggle>
       </StyledWrapper>
     )
   }

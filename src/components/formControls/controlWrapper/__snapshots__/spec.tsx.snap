@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlWrapper tests basic tests matches the snapshot 1`] = `
+.c0 {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.c1 {
+  width: 100%;
+  font-family: Poppins,sans-serif;
+  line-height: normal;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 7px;
+  padding-left: 2px;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+  --controlWrapper-label-color: #686978;
+  color: var(--controlWrapper-label-color);
+}
+
+<div
+  className="c0"
+  id="wrapper"
+>
+  <div
+    className="c1"
+    disabled={false}
+    type="light"
+  />
+</div>
+`;
