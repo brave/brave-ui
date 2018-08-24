@@ -11,18 +11,16 @@ export const InputComponent = styled<InputProps, 'div'>('div')`
   min-height: auto;
   box-sizing: border-box;
   width: 100%;
-  max-width: 100;
-  border: 1px solid #DFDFE8;
+  border: 1px solid ${p => p.disabled ? '#E5E5EA' : '#DFDFE8'};
   border-radius: 3px;
   padding: 8px 10px;
-  opacity: ${(p: InputProps) => p.disabled ? '0.3' : '1'};
 
   &:focus-within {
     border-color: #A1A8F2;
   }
 `
 
-export const StyledIcon = styled<InputProps, 'div'>('div')`
+export const StyledIcon = styled<{}, 'div'>('div')`
   display: inline-block;
   vertical-align: middle;
   width: 20px;
@@ -40,7 +38,7 @@ export const StyledInput = styled<InputProps, 'input'>('input')`
   font-size: 14px;
   font-family: ${theme.fontFamily.heading};
   border: none;
-  color: #686978;
+  color: ${p => p.disabled ? '#D1D1DB' : '#686978'};
   outline: unset;
 
   &::placeholder {
