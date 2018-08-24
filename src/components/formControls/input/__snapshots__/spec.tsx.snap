@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input tests basic tests matches the snapshot 1`] = `
+.c0 {
+  background-color: #fff;
+  min-height: auto;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #DFDFE8;
+  border-radius: 3px;
+  padding: 8px 10px;
+}
+
+.c0:focus-within {
+  border-color: #A1A8F2;
+}
+
+.c1 {
+  display: inline-block;
+  vertical-align: middle;
+  min-height: auto;
+  box-sizing: border-box;
+  width: calc(100% - 30px);
+  max-width: 100%;
+  font-size: 14px;
+  font-family: Poppins,sans-serif;
+  border: none;
+  color: #686978;
+  outline: unset;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #B8B9C4;
+  font-weight: normal;
+  text-align: left;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+}
+
+.c1::-moz-placeholder {
+  color: #B8B9C4;
+  font-weight: normal;
+  text-align: left;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+}
+
+.c1:-ms-input-placeholder {
+  color: #B8B9C4;
+  font-weight: normal;
+  text-align: left;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+}
+
+.c1::placeholder {
+  color: #B8B9C4;
+  font-weight: normal;
+  text-align: left;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+}
+
+<div
+  className="c0"
+  data-test-id="input"
+  disabled={undefined}
+>
+  <input
+    className="c1"
+    disabled={undefined}
+    onChange={undefined}
+    placeholder={undefined}
+    type="text"
+    value={undefined}
+  />
+</div>
+`;
