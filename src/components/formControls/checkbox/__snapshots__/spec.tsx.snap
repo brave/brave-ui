@@ -9,8 +9,11 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 20px;
-  color: #686978;
-  font-size: 14px;
+  --checkbox-label-color: #686978;
+  --checkbox-label-size: 14px;
+  color: var(--checkbox-label-color);
+  font-size: var(--checkbox-label-size);
+  cursor: pointer;
 }
 
 .c1 {
@@ -29,14 +32,18 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   padding: 0 2.5px;
-  -webkit-flex-basis: 18px;
-  -ms-flex-preferred-size: 18px;
-  flex-basis: 18px;
-  width: 18px;
-  height: 18px;
-  border: 1px solid #A1A8F2;
-  color: #696FDC;
-  margin-right: 12px;
+  --checkbox-box-size: 18px;
+  --checkbox-box-borderColor: #A1A8F2;
+  --checkbox-box-color: #696FDC;
+  --checkbox-box-spacing: 12px;
+  -webkit-flex-basis: var(--checkbox-box-size);
+  -ms-flex-preferred-size: var(--checkbox-box-size);
+  flex-basis: var(--checkbox-box-size);
+  width: var(--checkbox-box-size);
+  height: var(--checkbox-box-size);
+  color: var(--checkbox-box-color);
+  border: 1px solid var(--checkbox-box-borderColor);
+  margin-right: var(--checkbox-box-spacing);
 }
 
 .c4 {
@@ -55,14 +62,18 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   padding: 0 2.5px;
-  -webkit-flex-basis: 18px;
-  -ms-flex-preferred-size: 18px;
-  flex-basis: 18px;
-  width: 18px;
-  height: 18px;
-  border: 1px solid #D1D1DB;
-  color: #696FDC;
-  margin-right: 12px;
+  --checkbox-box-size: 18px;
+  --checkbox-box-borderColor: #D1D1DB;
+  --checkbox-box-color: #696FDC;
+  --checkbox-box-spacing: 12px;
+  -webkit-flex-basis: var(--checkbox-box-size);
+  -ms-flex-preferred-size: var(--checkbox-box-size);
+  flex-basis: var(--checkbox-box-size);
+  width: var(--checkbox-box-size);
+  height: var(--checkbox-box-size);
+  color: var(--checkbox-box-color);
+  border: 1px solid var(--checkbox-box-borderColor);
+  margin-right: var(--checkbox-box-spacing);
 }
 
 .c3 {

@@ -20,8 +20,8 @@ storiesOf('Components/Form controls', module)
   .add('Wrapper',() => {
     return (
       <ControlWrapper
-        disabled={boolean('Disabled?', false)}
         text={text('Label', 'Control label')}
+        disabled={boolean('Disabled?', false)}
       >
         Content
       </ControlWrapper>
@@ -96,6 +96,7 @@ storiesOf('Components/Form controls', module)
         <ControlWrapper
           text={text('Title', 'Enable ability to give tips on ‘Like’ posts')}
           type={'light'}
+          disabled={boolean('Disabled', false)}
         >
           <Checkbox
             value={object('Checkbox values', store.state)}
@@ -115,6 +116,7 @@ storiesOf('Components/Form controls', module)
         <ControlWrapper
           text={text('Title', 'Enable ability to give tips on ‘Like’ posts')}
           type={'dark'}
+          disabled={boolean('Disabled', false)}
         >
           <Checkbox
             value={object('Checkbox values', store.state)}

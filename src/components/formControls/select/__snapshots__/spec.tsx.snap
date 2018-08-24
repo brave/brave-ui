@@ -24,8 +24,10 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #686978;
-  border: 1px solid #DFDFE8;
+  --select-select-color: #686978;
+  --select-select-border: 1px solid #DFDFE8;
+  color: var(--select-select-color);
+  border: var(--select-select-border);
 }
 
 .c4 {

@@ -14,8 +14,8 @@ export const StyledArea = styled<Props, 'textarea'>('textarea')`
   box-sizing: border-box;
   width: 100%;
   font-family: Muli, sans-serif;
-  border: 1px solid ${(p: Props) => p.disabled ? '#E5E5EA' : '#DFDFE8'};
-  color: ${(p: Props) => p.disabled ? '#D1D1DB' : '#686978'};
+  border: 1px solid ${(p) => p.disabled ? '#E5E5EA' : '#DFDFE8'};
+  color: ${(p) => p.disabled ? '#D1D1DB' : '#686978'};
   border-radius: 6px;
   padding: 15px 20px;
   font-size: 16px;

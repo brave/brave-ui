@@ -21,7 +21,7 @@ const getColor = (p: Partial<Props>) => {
   }
 
   return css`
-    color: ${color};
+    --controlWrapper-label-color: ${color};
   `
 }
 
@@ -40,4 +40,5 @@ export const StyledLabel = styled<Partial<Props>, 'div'>('div')`
   padding-left: 2px;
   letter-spacing: 0;
   ${getColor};
+  color: var(--controlWrapper-label-color);
 `

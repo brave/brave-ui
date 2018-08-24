@@ -32,10 +32,9 @@ const getBulletStyle = (p: Props) => {
   }
 
   return css`
-    width: ${size}px;
-    height: ${size}px;
-    transform: translate(${offX}px, calc(-50% - ${offY}px));
-    background-color: ${bgColor};
+    --toggle-bullet-size: ${size}px;
+    --toggle-bullet-transform: translate(${offX}px, calc(-50% - ${offY}px));
+    --toggle-bullet-background: ${bgColor};
   `
 }
 
@@ -46,21 +45,21 @@ export const StyledWrapper = styled<Props, 'div'>('div')`
 export const StyleToggle = styled<Props, 'div'>('div')`
   position: relative;
   display: block;
-  height: ${(p: Props) => p.size === 'small' ? '16px' : '24px'};
-  width: ${(p: Props) => p.size === 'small' ? '28px' : '40px'};
+  height: ${(p) => p.size === 'small' ? '16px' : '24px'};
+  width: ${(p) => p.size === 'small' ? '28px' : '40px'};
 
-  ${(p: Props) => p.disabled
+  ${(p) => p.disabled
     ? css`
       pointer-events: none;
       animation: none;
     ` : ''
-    };
+  };
 `
 
 export const StyledSlider = styled<Props, 'div'>('div')`
-  background: ${(p: Props) => p.disabled ? '#F6F6FA' : '#A7ACB2'};
-  height: ${(p: Props) => p.size === 'small' ? '6px' : '8px'};
-  margin-top: ${(p: Props) => p.size === 'small' ? '5px' : '8px'};
+  background: ${(p) => p.disabled ? '#F6F6FA' : '#A7ACB2'};
+  height: ${(p) => p.size === 'small' ? '6px' : '8px'};
+  margin-top: ${(p) => p.size === 'small' ? '5px' : '8px'};
   width: 100%;
   border-radius: 3px;
 `
@@ -71,16 +70,20 @@ export const StyledBullet = styled<Props, 'div'>('div')`
   border-radius: 50%;
   transition: 200ms ease-out;
   ${getBulletStyle};
+  width: var(--toggle-bullet-size);
+  height: var(--toggle-bullet-size);
+  transform: var(--toggle-bullet-transform);
+  background-color: var(--toggle-bullet-background);
 `
 
 export const StyledText = styled<Props, 'div'>('div')`
   color: #838391;
-  font-size: ${(p: Props) => p.size === 'small' ? '12px' : '14px'};
+  font-size: ${(p) => p.size === 'small' ? '12px' : '14px'};
   font-family: Poppins, sans-serif;
   text-align: right;
   letter-spacing: 0.4px;
   text-transform: uppercase;
-  margin: ${(p: Props) => p.size === 'small' ? '0px' : '4px'} 8px 0 0;
-  opacity: ${(p: Props) => !p.checked && !p.disabled ? 1 : 0 };
+  margin: ${(p) => p.size === 'small' ? '0px' : '4px'} 8px 0 0;
+  opacity: ${(p) => !p.checked && !p.disabled ? 1 : 0 };
   transition: 100ms ease-out;
 `

@@ -32,12 +32,10 @@ const getBox = (p: Partial<StyleProps>) => {
   }
 
   return css`
-    flex-basis: ${size}px;
-    width: ${size}px;
-    height: ${size}px;
-    border: 1px solid ${borderColor};
-    color: ${color};
-    margin-right: ${spacing}px;
+    --checkbox-box-size: ${size}px;
+    --checkbox-box-borderColor: ${borderColor};
+    --checkbox-box-color: ${color};
+    --checkbox-box-spacing: ${spacing}px;
   `
 }
 
@@ -53,8 +51,8 @@ const getLabel = (p: Partial<StyleProps>) => {
   }
 
   return css`
-    color: ${color};
-    font-size: ${size}px;
+    --checkbox-label-color: ${color};
+    --checkbox-label-size: ${size}px;
   `
 }
 
@@ -64,6 +62,9 @@ export const StyledLabel = styled<Partial<StyleProps>, 'div'>('div')`
   display: flex;
   margin-bottom: 20px;
   ${getLabel};
+  color: var(--checkbox-label-color);
+  font-size: var(--checkbox-label-size);
+  cursor: pointer;
 `
 
 export const StyledBox = styled<Partial<StyleProps>, 'span'>('span')`
@@ -74,10 +75,16 @@ export const StyledBox = styled<Partial<StyleProps>, 'span'>('span')`
   justify-content: center;
   padding: 0 2.5px;
   ${getBox};
+  flex-basis: var(--checkbox-box-size);
+  width: var(--checkbox-box-size);
+  height: var(--checkbox-box-size);
+  color: var(--checkbox-box-color);
+  border: 1px solid var(--checkbox-box-borderColor);
+  margin-right: var(--checkbox-box-spacing);
 `
 
 export const StyledText = styled<Partial<StyleProps>, 'span'>('span')`
   flex: 1;
-  padding-top: ${(p: Partial<StyleProps>) => p.size === 'big' ? '2px' : '1px'};
+  padding-top: ${(p) => p.size === 'big' ? '2px' : '1px'};
   letter-spacing: 0;
 `
