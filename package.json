@@ -80,7 +80,8 @@
     "tslint": "^5.8.0",
     "tslint-config-standard": "^7.0.0",
     "tslint-react": "^3.2.0",
-    "typescript": "^3.0.1"
+    "typescript": "^3.0.1",
+    "typescript-plugin-styled-components": "0.0.6"
   },
   "peerDependencies": {
     "styled-components": "^3.2.5",

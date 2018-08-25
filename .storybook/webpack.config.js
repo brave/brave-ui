@@ -1,15 +1,31 @@
-// load the default config generator.
-const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js')
+const path = require('path')
 
-module.exports = (baseConfig, env) => {
-  const config = genDefaultConfig(baseConfig, env)
-  config.module.rules.push({
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default
+
+function getStyledComponentDisplay(filename, bindingName) {
+  return bindingName
+}
+
+// Export a function. Accept the base config as the only param.
+module.exports = (baseConfig, env, defaultConfig) => {
+  // Make whatever fine-grained changes you need
+  defaultConfig.module.rules.push({
     test: /\.(ts|tsx)$/,
     loader: require.resolve('awesome-typescript-loader'),
     options: {
-      configFileName: './.storybook/tsconfig.json'
+      configFileName: path.resolve(__dirname, 'tsconfig.json'),
+      getCustomTransformers: () => ({
+        before: [
+            createStyledComponentsTransformer({
+              options: {
+                getDisplayName: getStyledComponentDisplay
+              }
+            })
+        ]
+      })
     }
   })
-  config.resolve.extensions.push('.ts', '.tsx')
-  return config
+
+  defaultConfig.resolve.extensions.push('.ts', '.tsx')
+  return defaultConfig
 }
