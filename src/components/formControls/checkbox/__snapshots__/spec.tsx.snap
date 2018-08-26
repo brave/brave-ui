@@ -113,7 +113,6 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
         aria-hidden="true"
         className="c2"
         focusable="false"
-        role={undefined}
         viewBox="0 0 32 32"
       >
         <path

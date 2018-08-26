@@ -29,9 +29,6 @@ exports[`TextArea tests basic tests matches the snapshot 1`] = `
 >
   <textarea
     className="c1"
-    disabled={undefined}
-    onChange={undefined}
-    value={undefined}
   />
 </div>
 `;

@@ -40,16 +40,12 @@ exports[`switchButton tests basic tests matches the snapshot 1`] = `
 
 <div
   className="c0"
-  disabled={undefined}
 >
   <input
-    autoFocus={undefined}
     checked={false}
     className="c1"
-    disabled={undefined}
     id="switchButton"
     onChange={[Function]}
-    readOnly={undefined}
     size="medium"
     type="checkbox"
   />

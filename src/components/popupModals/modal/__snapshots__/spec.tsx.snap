@@ -46,7 +46,6 @@ exports[`Modal tests basic tests matches the snapshot 1`] = `
   >
     <div
       className="c2"
-      onClick={undefined}
     >
       <svg
         height="11"

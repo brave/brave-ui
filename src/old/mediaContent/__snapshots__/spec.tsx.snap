@@ -35,7 +35,6 @@ exports[`mediaContent tests basic tests matches the snapshot 1`] = `
 >
   <img
     className="c1"
-    src={undefined}
   />
   <div
     className="c2"

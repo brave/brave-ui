@@ -60,7 +60,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^22.4.3",
+    "jest": "^23.5.0",
     "jest-styled-components": "^5.0.1",
     "lerna": "^2.0.0",
     "ncp": "^2.0.0",
