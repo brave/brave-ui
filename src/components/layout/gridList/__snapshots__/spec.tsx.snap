@@ -31,9 +31,6 @@ exports[`gridSystem tests column component basic tests matches the snapshot 1`] 
 
 <div
   className="c0"
-  id={undefined}
-  onClick={undefined}
-  size={undefined}
 />
 `;
 
@@ -60,7 +57,5 @@ exports[`gridSystem tests grid component basic tests matches the snapshot 1`] = 
 <div
   className="c0"
   disabled={false}
-  id={undefined}
-  onClick={undefined}
 />
 `;

@@ -72,15 +72,10 @@ exports[`Input tests basic tests matches the snapshot 1`] = `
 <div
   className="c0"
   data-test-id="input"
-  disabled={undefined}
 >
   <input
     className="c1"
-    disabled={undefined}
-    onChange={undefined}
-    placeholder={undefined}
     type="text"
-    value={undefined}
   />
 </div>
 `;

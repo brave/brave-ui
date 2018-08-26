@@ -59,8 +59,6 @@ exports[`pushButton tests basic tests matches the snapshot 1`] = `
   className="c0"
   color="default"
   disabled={false}
-  id={undefined}
-  onClick={undefined}
   size="medium"
 />
 `;

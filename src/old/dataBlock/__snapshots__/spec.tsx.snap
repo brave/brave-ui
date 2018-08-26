@@ -21,7 +21,6 @@ exports[`dataBlock tests dataBlock component tests basic tests matches the snaps
 
 <ul
   className="c0"
-  id={undefined}
 />
 `;
 
@@ -57,8 +56,6 @@ exports[`dataBlock tests dataItem component tests basic tests matches the snapsh
 
 <li
   className="c0"
-  id={undefined}
-  onClick={undefined}
   size="medium"
 >
   <span

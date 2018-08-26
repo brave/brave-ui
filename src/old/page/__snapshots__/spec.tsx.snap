@@ -31,8 +31,6 @@ exports[`page tests basic tests matches the snapshot 1`] = `
 <div
   className="c0"
   id="testPage"
-  label={undefined}
-  title={undefined}
 >
   <main
     className="c1"

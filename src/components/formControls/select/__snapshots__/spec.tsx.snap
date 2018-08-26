@@ -145,7 +145,6 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   >
     <div
       className="c2"
-      disabled={undefined}
       onClick={[Function]}
       type="light"
     >
@@ -161,7 +160,6 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
           aria-hidden="true"
           className="c5"
           focusable="false"
-          role={undefined}
           viewBox="0 0 32 32"
         >
           <path
@@ -185,7 +183,6 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
             aria-hidden="true"
             className="c9"
             focusable="false"
-            role={undefined}
             viewBox="0 0 32 32"
           >
             <path

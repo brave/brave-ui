@@ -18,7 +18,5 @@ exports[`unstyledButton tests basic tests matches the snapshot 1`] = `
 
 <button
   className="c0"
-  id={undefined}
-  onClick={undefined}
 />
 `;

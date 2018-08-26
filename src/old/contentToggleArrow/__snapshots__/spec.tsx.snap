@@ -63,13 +63,11 @@ exports[`contentToggleArrow tests basic tests matches the snapshot 1`] = `
 <div
   className="c0"
   id="testContentToggleArrow"
-  open={undefined}
 >
   <div
     className="c1"
     id="testContentToggleArrowControl"
     onClick={[Function]}
-    open={undefined}
   >
     <div
       className="c2"
@@ -79,7 +77,6 @@ exports[`contentToggleArrow tests basic tests matches the snapshot 1`] = `
   </div>
   <div
     className="c3"
-    open={undefined}
   />
 </div>
 `;
