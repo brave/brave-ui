@@ -30,8 +30,10 @@ export const StyledClose = styled<{}, 'div'>('div')`
   position: absolute;
   top: 19px;
   right: 19px;
-  padding: 10px;
   cursor: pointer;
+  width: 27px;
+  height: 27px;
+  color: #B8B9C4;
 `
 
 export const StyledContent = styled<{}, 'div'>('div')`
