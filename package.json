@@ -31,7 +31,8 @@
     "test-unit": "jest -t",
     "test-unit-all": "jest --verbose",
     "test-security": "npm audit",
-    "coverage": "jest --coverage --verbose"
+    "coverage": "jest --coverage --verbose",
+    "create": "node ./tools/createComponent.js"
   },
   "dependencies": {
     "emptykit.css": "^1.0.1"
@@ -59,6 +60,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
+    "fs-extra": "^2.1.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.5.0",
     "jest-styled-components": "^5.0.1",
