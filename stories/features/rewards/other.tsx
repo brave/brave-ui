@@ -19,7 +19,6 @@ import {
   ListToken,
   Tokens,
   Profile,
-  Tooltip,
   Amount,
   PanelWelcome
 } from '../../../src/features/rewards'
@@ -81,7 +80,7 @@ storiesOf('Feature Components/Rewards/Other', module)
       <Alert
         type={select('Type', { error: 'error', success: 'success', warning: 'warning' }, 'success')}
         bg={boolean('Background color', false)}
-        color={boolean('Text color', false)}
+        colored={boolean('Text color', false)}
       >
         <b>Funds received!</b> 25 BAT are added to your wallet successfully.
       </Alert>
@@ -172,18 +171,6 @@ storiesOf('Feature Components/Rewards/Other', module)
             src={bart}
           />
         </div>
-      )
-    })
-    .add('Tooltip',() => {
-      return (
-        <Tooltip
-          position={select('Type', { left: 'left', right: 'right', top: 'top', bottom: 'bottom' }, 'bottom')}
-          content={'This is tooltip!'}
-        >
-          <div style={{ border: '1px solid red' }}>
-            I have tooltip
-          </div>
-        </Tooltip>
       )
     })
     .add('Amount', withState({ selected: false }, (store) => {

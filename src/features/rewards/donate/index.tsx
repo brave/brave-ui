@@ -16,9 +16,9 @@ import {
 
 import Amount from '../amount/index'
 import { getLocale } from '../../../helpers'
+import { EmoteSadIcon } from '../../../components/icons'
 
 const send = require('./assets/send')
-const sadFace = require('./assets/sadFace')
 
 export type DonateType = 'big' | 'small'
 
@@ -91,10 +91,9 @@ export default class Donate extends React.PureComponent<Props, State> {
   }
 
   render () {
-    const { id, donationAmounts, actionText, children, title, currentAmount } = this.props
+    const { id, donationAmounts, actionText, children, title, currentAmount, donateType } = this.props
     const disabled = currentAmount === 0
 
-    const donateType = this.props.donateType ? this.props.donateType : 'big'
     const sendColor = disabled ?
       donateType === 'small'
       ? '#1A22A8'
@@ -102,8 +101,8 @@ export default class Donate extends React.PureComponent<Props, State> {
     : '#a1a8f2'
 
     return (
-      <StyledWrapper>
-        <StyledContent id={id} donateType={donateType}>
+      <StyledWrapper donateType={donateType} disabled={disabled}>
+        <StyledContent id={id} >
           <StyledDonationTitle>{title}</StyledDonationTitle>
           {
             donationAmounts && donationAmounts.map((donation: Donation) => {
@@ -120,13 +119,15 @@ export default class Donate extends React.PureComponent<Props, State> {
           }
           {children}
         </StyledContent>
-        <StyledSend disabled={disabled} onClick={this.validateDonation()} donateType={donateType}>
+        <StyledSend onClick={this.validateDonation}>
           <StyledIconSend>{send(sendColor)}</StyledIconSend>{actionText}
         </StyledSend>
         {
           this.state.missingFunds
-            ? <StyledFunds donateType={donateType}>
-              <StyledIconFace>{sadFace}</StyledIconFace>
+            ? <StyledFunds>
+              <StyledIconFace>
+                <EmoteSadIcon />
+              </StyledIconFace>
               <StyledFundsText>{getLocale('notEnoughTokens')} <a href='#'>{getLocale('addFunds')}</a>.</StyledFundsText>
             </StyledFunds>
             : null

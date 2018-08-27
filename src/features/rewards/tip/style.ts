@@ -4,7 +4,7 @@
 
 import styled from 'styled-components'
 
-export const StyledWrapper = styled.div`
+export const StyledWrapper = styled<{}, 'div'>('div')`
   border-radius: 8px;
   background-image: linear-gradient(148deg, #2825a7, #5465e8), linear-gradient(#696fdc, #696fdc);
   width: 214px;
@@ -12,36 +12,45 @@ export const StyledWrapper = styled.div`
   position: relative;
   padding: 16px 0 0;
   font-family: Poppins, sans-serif;
-` as any
+`
 
-export const StyledTitle = styled.div`
+export const StyledTitle = styled<{}, 'div'>('div')`
   font-size: 12px;
   line-height: 1.83;
   color: #fff;
   opacity: 0.6;
   padding-left: 23px;
-` as any
+`
 
-export const StyledAllowToggle = styled.span`
+export const StyledAllowToggle = styled<{}, 'span'>('span')`
   display: inline-block;
   margin-left: 33px;
   vertical-align: middle;
   padding-top: 2px;
-` as any
+`
 
-export const StyledAllowText = styled.span`
+export const StyledAllowText = styled<{}, 'span'>('span')`
   opacity: 0.65;
   font-size: 10px;
-  line-height: 3.9;
+  line-height: 1.5;
   color: #fff;
-` as any
+`
 
-export const StyledClose = styled.button`
+export const StyledClose = styled<{}, 'button'>('button')`
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 12px;
+  right: 12px;
   border: none;
   background: none;
   padding: 0;
   cursor: pointer;
-` as any
+  color: #DFDFE8;
+  width: 20px;
+  z-index: 2;
+`
+
+export const StyledTipWrapper = styled<{}, 'div'>('div')`
+  display: flex;
+  max-width: 160px;
+  margin-bottom: 7px;
+`

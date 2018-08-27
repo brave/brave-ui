@@ -5,6 +5,7 @@
 import * as React from 'react'
 import { StyledWrapper, StyledAmount, StyledLogo, StyledConverted, StyledTokens } from './style'
 import { getLocale } from '../../../helpers'
+import { BatColorIcon } from '../../../components/icons'
 
 export interface Props {
   amount: number
@@ -16,18 +17,20 @@ export interface Props {
   currency?: string
 }
 
-const logo = require('./assets/logo')
-
 export default class Amount extends React.PureComponent<Props, {}> {
+  static defaultProps = {
+    type: 'small',
+    currency: 'USD',
+    converted: 0
+  }
+
   render () {
-    const { id, onSelect, amount, selected, type } = this.props
-    const converted = this.props.converted || 0
-    const currency = this.props.currency || 'USD'
+    const { id, onSelect, amount, selected, type, converted, currency } = this.props
 
     return (
       <StyledWrapper id={id} onClick={onSelect.bind(this, amount)}>
         <StyledAmount selected={selected} type={type}>
-          <StyledLogo>{logo}</StyledLogo>{amount} <StyledTokens>{type === 'big' ? 'tokens' : null}</StyledTokens>
+          <StyledLogo><BatColorIcon /></StyledLogo>{amount}<StyledTokens>{type === 'big' ? 'tokens' : null}</StyledTokens>
         </StyledAmount>
         <StyledConverted selected={selected} type={type}>
           {getLocale('about')} {converted.toFixed(2)} {currency}

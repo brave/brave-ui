@@ -3,7 +3,19 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledWrapper, StyledContent, StyledClose, StyledIcon } from './style'
+import {
+  StyledWrapper,
+  StyledContent,
+  StyledClose,
+  StyledIcon,
+  StyledError,
+  StyledSuccess,
+  StyledWarning
+} from './style'
+import { AlertCirlceIcon,
+  CheckCircleIcon,
+  CloseCircleIcon,
+  CloseStrokeIcon } from '../../../components/icons'
 
 export type Type = 'error' | 'success' | 'warning'
 
@@ -12,71 +24,50 @@ export interface Props {
   id?: string
   children?: React.ReactNode
   onClose?: () => void
-  color?: boolean
+  colored?: boolean
   bg?: boolean
 }
-
-const success = require('./assets/success')
-const error = require('./assets/error')
-const close = require('./assets/close')
-const warning = require('./assets/warning')
 
 export default class Alert extends React.PureComponent<Props, {}> {
   get icon () {
     switch (this.props.type) {
       case 'error':
-        return error
+        return (
+          <StyledError>
+            <CloseCircleIcon />
+          </StyledError>
+        )
       case 'success':
-        return success
+        return (
+          <StyledSuccess>
+            <CheckCircleIcon />
+          </StyledSuccess>
+        )
       case 'warning':
-        return warning
-    }
-
-    return null
-  }
-
-  get bgColor () {
-    if (this.props.bg) {
-      switch (this.props.type) {
-        case 'error':
-          return '#FFEEF1'
-        case 'success':
-          return '#E7F6FF'
-        case 'warning':
-          return '#FAF2DE'
-      }
-    }
-
-    return '#fff'
-  }
-
-  get color () {
-    if (this.props.color) {
-      switch (this.props.type) {
-        case 'error':
-          return '#F36980'
-        case 'success':
-          return '#67D79D'
-        case 'warning':
-          return '#FF7900'
-      }
+        return (
+          <StyledWarning>
+            <AlertCirlceIcon />
+          </StyledWarning>
+        )
     }
 
     return null
   }
 
   render () {
-    const { id, children, onClose } = this.props
+    const { id, children, onClose, colored, bg, type } = this.props
 
     return (
-      <StyledWrapper id={id} bgColor={this.bgColor}>
+      <StyledWrapper id={id} type={type} bg={bg}>
         <StyledIcon>{this.icon}</StyledIcon>
-        <StyledContent color={this.color}>
+        <StyledContent type={type} colored={colored} >
           {children}
         </StyledContent>
         {
           onClose
-          ? <StyledClose>{close}</StyledClose>
+          ? <StyledClose>
+            <CloseStrokeIcon />
+          </StyledClose>
           : null
         }
       </StyledWrapper>

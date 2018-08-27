@@ -16,6 +16,7 @@ import List from './list'
 import ListToken from './listToken'
 import MainToggle from './mainToggle'
 import ModalActivity from './modalActivity'
+import ModalAddFunds from './modalAddFunds'
 import ModalBackupRestore from './modalBackupRestore'
 import ModalContribute from './modalContribute'
 import NextContribution from './nextContribution'
@@ -28,7 +29,6 @@ import TableDonation from './tableDonation'
 import TableTransactions from './tableTransactions'
 import Tip from './tip'
 import Tokens from './tokens'
-import Tooltip from './tooltip'
 import WalletEmpty from './walletEmpty'
 import WalletOff from './walletOff'
 import WalletSummary from './walletSummary'
@@ -50,6 +50,7 @@ export {
   ListToken,
   MainToggle,
   ModalActivity,
+  ModalAddFunds,
   ModalBackupRestore,
   ModalContribute,
   NextContribution,
@@ -62,7 +63,6 @@ export {
   TableTransactions,
   Tip,
   Tokens,
-  Tooltip,
   WalletEmpty,
   WalletOff,
   WalletSummary,

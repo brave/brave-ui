@@ -3,10 +3,18 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledWrapper, StyledTitle, StyledAllowText, StyledClose, StyledAllowToggle } from './style'
-import Donate from '../donate/index'
-import Toggle from '../../../components/formControls/toggle/index'
+import {
+  StyledWrapper,
+  StyledTitle,
+  StyledAllowText,
+  StyledClose,
+  StyledAllowToggle,
+  StyledTipWrapper
+} from './style'
+import Donate from '../donate'
+import Toggle from '../../../components/formControls/toggle'
 import { getLocale } from '../../../helpers'
+import { CloseStrokeIcon } from '../../../components/icons'
 
 type Donation = {tokens: number, converted: number, selected?: boolean}
 
@@ -24,9 +32,11 @@ export interface Props {
   title?: string
 }
 
-const close = require('./assets/close')
-
 export default class Tip extends React.PureComponent<Props, {}> {
+  static defaultProps = {
+    title: ''
+  }
+
   onDonate = (amount: number) => {
     if (this.props.onDonate) {
       this.props.onDonate(amount, this.props.allow)
@@ -50,7 +60,9 @@ export default class Tip extends React.PureComponent<Props, {}> {
 
     return (
       <StyledWrapper id={id}>
-        <StyledClose onClick={onClose}>{close}</StyledClose>
+        <StyledClose onClick={onClose}>
+          <CloseStrokeIcon />
+        </StyledClose>
         <StyledTitle>Send my tip to</StyledTitle>
         <Donate
           title={title || ''}
@@ -62,7 +74,7 @@ export default class Tip extends React.PureComponent<Props, {}> {
           donateType={'small'}
           currentAmount={currentAmount}
         >
-          <div>
+          <StyledTipWrapper>
             <StyledAllowText>{getLocale('allowTip')} {provider}</StyledAllowText>
             <StyledAllowToggle>
               <Toggle
@@ -72,7 +84,7 @@ export default class Tip extends React.PureComponent<Props, {}> {
                 type={'light'}
               />
             </StyledAllowToggle>
-          </div>
+          </StyledTipWrapper>
         </Donate>
       </StyledWrapper>
     )

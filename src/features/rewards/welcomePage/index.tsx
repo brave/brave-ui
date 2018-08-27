@@ -36,11 +36,11 @@ import {
   StyledCenterParagraph,
   StyledBoldParagraph,
   StyledStrong,
-  StyledAnchor
+  StyledAnchor,
+  StyledOptInSecond
 } from './style'
+import { ArrowDownIcon, BatColorIcon } from '../../../components/icons'
 
-const batImage = require('./assets/bat')
-const arrowImage = require('./assets/arrow')
 const turnOnRewardsImage = require('./assets/turnOnRewards')
 const braveAdsImage = require('./assets/braveAds')
 const braveContributeImage = require('./assets/braveContribute')
@@ -81,7 +81,7 @@ class WelcomePage extends React.PureComponent<Props, {}> {
       <Hero id={'rewards-hero'}>
         <StyledSection>
           <StyledBatLogo>
-            {batImage}
+            <BatColorIcon />
           </StyledBatLogo>
           <StyledH1>
             {getLocale('braveRewardsTitle')}
@@ -97,7 +97,7 @@ class WelcomePage extends React.PureComponent<Props, {}> {
         <StyledOptInSection>
           <Button
             level='secondary'
-            size='large'
+            size='call-to-action'
             type='subtle'
             text={getLocale('braveRewardsOptInText')}
             onClick={this.props.optInAction}
@@ -109,7 +109,7 @@ class WelcomePage extends React.PureComponent<Props, {}> {
             {getLocale('braveRewardsTeaser')}
           </StyledTeaserParagraph>
           <StyledAnchor onClick={this.scrollToCenter}>
-            {arrowImage}
+            <ArrowDownIcon />
           </StyledAnchor>
         </StyledSection>
       </Hero>
@@ -159,13 +159,15 @@ class WelcomePage extends React.PureComponent<Props, {}> {
             {getLocale('readyToTakePartDesc')}
           </span>
         </StyledReadyParagraph>
-        <Button
-          level={'primary'}
-          size={'call-to-action'}
-          type={'accent'}
-          text={getLocale('readyToTakePartOptInText')}
-          onClick={this.props.optInAction}
-        />
+        <StyledOptInSecond>
+          <Button
+            level={'primary'}
+            size={'call-to-action'}
+            type={'accent'}
+            text={getLocale('readyToTakePartOptInText')}
+            onClick={this.props.optInAction}
+          />
+        </StyledOptInSecond>
       </StyledOptInInnerSection>
     )
   }

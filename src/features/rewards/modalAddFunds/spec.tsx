@@ -2,11 +2,11 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
-import Tooltip from './index'
+import ModalAddFunds from './index'
 import { TestThemeProvider } from '../../../theme'
 
-describe('Tooltip tests', () => {
-  const baseComponent = (props?: object) => <TestThemeProvider><Tooltip id='tooltip' {...props} /></TestThemeProvider>
+describe('ModalAddFunds tests', () => {
+  const baseComponent = (props?: object) => <TestThemeProvider><ModalAddFunds id='modal' {...props} /></TestThemeProvider>
 
   describe('basic tests', () => {
     it('matches the snapshot', () => {
@@ -17,7 +17,7 @@ describe('Tooltip tests', () => {
 
     it('renders the component', () => {
       const wrapper = shallow(baseComponent())
-      const assertion = wrapper.find('#tooltip').length
+      const assertion = wrapper.find('#modal').length
       expect(assertion).toBe(1)
     })
   })

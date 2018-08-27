@@ -3,7 +3,8 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledWrapper,
+import {
+  StyledCard,
   StyledLeft,
   StyledRight,
   StyledDescription,
@@ -20,9 +21,7 @@ import { StyledWrapper,
 } from './style'
 import Toggle from '../../../components/formControls/toggle/index'
 import { getLocale } from '../../../helpers'
-
-const close = require('./assets/close')
-const settings = require('./assets/settings')
+import { CloseStrokeIcon, SettingsIcon } from '../../../components/icons'
 
 export type Type = 'ads' | 'contribute' | 'donation'
 
@@ -74,7 +73,7 @@ export default class Box extends React.PureComponent<Props, State> {
     } = this.props
 
     return (
-      <StyledWrapper id={id}>
+      <StyledCard testId={id}>
         <StyledFlip>
           <StyledContentWrapper open={!this.state.settingsOpened}>
             <StyledLeft>
@@ -96,7 +95,9 @@ export default class Box extends React.PureComponent<Props, State> {
             <StyledRight>
               {
                 settingsChild && ((toggle && checked) || !toggle) ?
-                <StyledSettingsIcon float={'right'} onClick={this.settingsClick}>{settings}</StyledSettingsIcon>
+                <StyledSettingsIcon float={'right'} onClick={this.settingsClick}>
+                  <SettingsIcon />
+                </StyledSettingsIcon>
                 : null
               }
             </StyledRight>
@@ -110,16 +111,18 @@ export default class Box extends React.PureComponent<Props, State> {
           </StyledContentWrapper>
           <StyledSettingsWrapper open={this.state.settingsOpened}>
             <StyledSettingsClose onClick={this.settingsClick} open={this.state.settingsOpened}>
-              {close}
+              <CloseStrokeIcon />
             </StyledSettingsClose>
             <StyledSettingsTitle>
-              <StyledSettingsIcon>{settings}</StyledSettingsIcon>
+              <StyledSettingsIcon>
+                <SettingsIcon />
+              </StyledSettingsIcon>
               <StyledSettingsText>{title} {getLocale('settings')}</StyledSettingsText>
             </StyledSettingsTitle>
             {settingsChild}
           </StyledSettingsWrapper>
         </StyledFlip>
-      </StyledWrapper>
+      </StyledCard>
     )
   }
 }

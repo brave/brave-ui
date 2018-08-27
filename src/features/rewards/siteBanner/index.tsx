@@ -34,6 +34,7 @@ import {
 import Donate from '../donate/index'
 import Checkbox from '../../../components/formControls/checkbox/index'
 import { getLocale } from '../../../helpers'
+import { RefreshIcon, CloseStrokeIcon } from '../../../components/icons'
 
 type Social = {type: SocialType, name: string, handler: string}
 type SocialType = 'twitter' | 'youtube' | 'twitch'
@@ -54,19 +55,12 @@ export interface Props {
   children?: React.ReactNode
   onDonate: (amount: number, monthly: boolean) => void
   onClose?: () => void
-  customStyle?: Theme
-}
-
-export interface Theme {
-  logoBgColor: CSS.Color
+  logoBgColor?: CSS.Color
 }
 
 interface State {
   monthly: boolean
 }
-
-const close = require('./assets/close')
-const monthly = require('./assets/monthly')
 
 export default class SiteBanner extends React.PureComponent<Props, State> {
   constructor (props: Props) {
@@ -146,7 +140,7 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
     }
   }
 
-  onKeyUp = (e: KeyboardEvent) => {
+  onKeyUp = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key.toLowerCase() === 'escape' && this.props.onClose) {
       this.props.onClose()
     }
@@ -166,12 +160,12 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
       donationAmounts,
       domain,
       onAmountSelection,
-      customStyle,
+      logoBgColor,
       currentAmount
     } = this.props
 
     return (
-      <StyledWrapper id={id} onKeyUp={this.onKeyUp} tabIndex='0'>
+      <StyledWrapper id={id} onKeyUp={this.onKeyUp} tabIndex={0}>
         <StyledBanner>
           <StyledClose onClick={onClose}>{close}</StyledClose>
           <StyledBannerImage bgImage={bgImage}>
@@ -182,7 +176,7 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
           <StyledContentWrapper>
             <StyledContent>
               <StyledLogoWrapper>
-                <StyledLogoBorder padding={!logo} customStyle={customStyle}>
+                <StyledLogoBorder padding={!logo} bg={logoBgColor}>
                   {this.getLogo(logo, domain)}
                 </StyledLogoBorder>
                 {this.getSocial(social)}
@@ -194,10 +188,12 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
               {
                 currentDonation && !isNaN(currentDonation) && currentDonation > 0
                 ? <StyledRecurring>
-                  <StyledIconRecurringBig>{monthly('#696fdc')}</StyledIconRecurringBig>
-                  {getLocale('currentDonation', { currentDonation })}
+                  <StyledIconRecurringBig>
+                    <RefreshIcon />
+                  </StyledIconRecurringBig>
+                  <span>{getLocale('currentDonation', { currentDonation })}</span>
                   <StyledRemove>
-                    <StyledIconRemove>{close}</StyledIconRemove>{getLocale('remove')}
+                    <StyledIconRemove><CloseStrokeIcon /></StyledIconRemove>{getLocale('remove')}
                   </StyledRemove>
                 </StyledRecurring>
                 : null
@@ -223,7 +219,7 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
                   type={'dark'}
                 >
                   <div data-key='make'>
-                    <StyledOption>{getLocale('makeMonthly')}</StyledOption> <StyledIconRecurring>{monthly()}</StyledIconRecurring>
+                    <StyledOption>{getLocale('makeMonthly')}</StyledOption> <StyledIconRecurring><RefreshIcon /></StyledIconRecurring>
                   </div>
                 </Checkbox>
               </Donate>
