@@ -3,42 +3,41 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import * as CSS from 'csstype'
 import { StyledWrapper, StyledDialog, StyledClose, StyledContent } from './style'
+import { CloseStrokeIcon } from '../../icons'
 
 export interface Props {
   id?: string
   outsideClose?: boolean
   children?: React.ReactNode
   onClose?: () => void
-  customStyle?: Theme
+  size?: 'small' | 'normal'
 }
-
-interface Theme {
-  maxWidth?: CSS.MaxWidthProperty<1>
-}
-
-const close = require('./assets/close')
 
 export default class Modal extends React.PureComponent<Props, {}> {
-  outsideClose = (e: React.ChangeEvent<HTMLDivElement>) => {
+  static defaultProps = {
+    size: 'normal',
+    id: 'modal'
+  }
+
+  outsideClose = () => {
     if (!this.props.outsideClose) {
       return
     }
 
-    if (this.props.onClose && (e.target && e.target.id === this.props.id)) {
+    if (this.props.onClose) {
       this.props.onClose()
     }
   }
 
   render () {
-    const { id, onClose, children, customStyle } = this.props
+    const { id, onClose, children, size } = this.props
 
     return (
-      <StyledWrapper id={id || 'modal'} onClick={this.outsideClose}>
-        <StyledDialog customStyle={customStyle}>
+      <StyledWrapper id={id} onClick={this.outsideClose}>
+        <StyledDialog size={size}>
           <StyledClose onClick={onClose}>
-            {close}
+            <CloseStrokeIcon />
           </StyledClose>
           <StyledContent>
             {children}

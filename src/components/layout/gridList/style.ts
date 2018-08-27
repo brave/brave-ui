@@ -6,46 +6,41 @@ import styled, { css } from 'styled-components'
 import { GridProps, ColumnProps } from './index'
 import { setTheme } from '../../../helpers'
 
-const StyledGrid = styled.div`
+export const StyledGrid = styled<GridProps, 'div'>('div')`
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(${(p: GridProps) => p.columns ? p.columns : '12'}, 1fr);
-  grid-gap: ${(p: GridProps) => setTheme(p.customStyle, 'gridGap') || '15px'};
-  padding: ${(p: GridProps) => setTheme(p.customStyle, 'padding') || '0'};
-  margin: ${(p: GridProps) => setTheme(p.customStyle, 'margin') || '0'};
-  max-width: ${(p: GridProps) => setTheme(p.customStyle, 'maxWidth') || 'initial'};
-  height: ${(p: GridProps) => setTheme(p.customStyle, 'height') || 'initial'};
-  color: ${(p: GridProps) => setTheme(p.customStyle, 'color') || 'inherit'};
-  background-color: ${(p: GridProps) => setTheme(p.customStyle, 'backgroundColor') || 'inherit'};
+  grid-template-columns: repeat(${p => p.columns ? p.columns : '12'}, 1fr);
+  grid-gap: ${p => setTheme(p.customStyle, 'gridGap') || '15px'};
+  padding: ${p => setTheme(p.customStyle, 'padding') || '0'};
+  margin: ${p => setTheme(p.customStyle, 'margin') || '0'};
+  max-width: ${p => setTheme(p.customStyle, 'maxWidth') || 'initial'};
+  height: ${p => setTheme(p.customStyle, 'height') || 'initial'};
+  color: ${p => setTheme(p.customStyle, 'color') || 'inherit'};
+  background-color: ${p => setTheme(p.customStyle, 'backgroundColor') || 'inherit'};
   font-family: inherit;
   font-size: inherit;
-  align-items: ${(p: GridProps) => setTheme(p.customStyle, 'alignItems') || 'flex-start'};
+  align-items: ${p => setTheme(p.customStyle, 'alignItems') || 'flex-start'};
 
-  ${(p: GridProps) => p.disabled
+  ${p => p.disabled
     ? css`
       user-select: none;
       opacity: 0.25;
     ` : ''
   }
-` as any
+`
 
-const StyledColumn = styled.div`
+export const StyledColumn = styled<ColumnProps, 'div'>('div')`
   box-sizing: border-box;
   position: relative;
   display: flex;
-  grid-column: ${(p: ColumnProps) => p.size ? `span ${p.size}` : 'span 12'};
-  justify-content: ${(p: ColumnProps) => setTheme(p.customStyle, 'justifyContent') || 'initial'};
-  align-items: ${(p: ColumnProps) => setTheme(p.customStyle, 'alignItems') || 'initial'};
-  background-color: ${(p: ColumnProps) => setTheme(p.customStyle, 'backgroundColor') || 'inherit'};
-  flex-direction: ${(p: ColumnProps) => setTheme(p.customStyle, 'flexDirection') || 'initial'};
-  flex-wrap:${(p: ColumnProps) => setTheme(p.customStyle, 'flexWrap') || 'initial'};
-  overflow: ${(p: ColumnProps) => setTheme(p.customStyle, 'overflow')};
+  grid-column: ${p => p.size ? `span ${p.size}` : 'span 12'};
+  justify-content: ${p => setTheme(p.customStyle, 'justifyContent') || 'initial'};
+  align-items: ${p => setTheme(p.customStyle, 'alignItems') || 'initial'};
+  background-color: ${p => setTheme(p.customStyle, 'backgroundColor') || 'inherit'};
+  flex-direction: ${p => setTheme(p.customStyle, 'flexDirection') || 'initial'};
+  flex-wrap:${p => setTheme(p.customStyle, 'flexWrap') || 'initial'};
+  overflow: ${p => setTheme(p.customStyle, 'overflow')};
   font-family: inherit;
   font-size: inherit;
   color: inherit;
-` as any
-
-export {
-  StyledGrid,
-  StyledColumn
-}
+`

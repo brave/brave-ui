@@ -5,19 +5,19 @@
 import styled, { css } from 'styled-components'
 import { Cell, Row } from './index'
 
-export const StyledNoContent = styled.div`
+export const StyledNoContent = styled<{}, 'div'>('div')`
   text-align: center;
   padding: 30px 0;
   color: #999ea2;
   font-size: 14px;
-` as any
+`
 
-export const StyledTable = styled.table`
+export const StyledTable = styled<{}, 'table'>('table')`
   width: 100%;
   margin-bottom: 11px;
-` as any
+`
 
-export const StyledTH = styled.th`
+export const StyledTH = styled<Partial<Cell>, 'th'>('th')`
   text-transform: uppercase;
   text-align: left;
   font-family: Poppins, sans-serif;
@@ -29,24 +29,24 @@ export const StyledTH = styled.th`
   color: #4B4C5C;
   padding: 9px 0;
 
-  ${(p: Cell) => p.customStyle
+  ${p => p.customStyle
     ? css`
       ${p.customStyle}
     `
     : ''
   };
-` as any
+`
 
-export const StyledTR = styled.tr`
-  ${(p: Row) => p.customStyle
+export const StyledTR = styled<Partial<Row>, 'tr'>('tr')`
+  ${p => p.customStyle
     ? css`
       ${p.customStyle}
     `
     : ''
   };
-` as any
+`
 
-export const StyledTD = styled.td`
+export const StyledTD = styled<Partial<Cell>, 'td'>('td')`
   font-family: Muli, sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -57,10 +57,10 @@ export const StyledTD = styled.td`
   text-align: left;
   height: 42px;
 
-  ${(p: Cell) => p.customStyle
+  ${p => p.customStyle
     ? css`
       ${p.customStyle}
     `
     : ''
   };
-` as any
+`

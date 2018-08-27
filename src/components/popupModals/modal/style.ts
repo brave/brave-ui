@@ -4,9 +4,8 @@
 
 import styled from 'styled-components'
 import { Props } from './index'
-import { setTheme } from '../../../helpers'
 
-export const StyledWrapper = styled.div`
+export const StyledWrapper = styled<{}, 'div'>('div')`
   position: fixed;
   top: 0;
   left: 0;
@@ -16,27 +15,29 @@ export const StyledWrapper = styled.div`
   z-index: 99;
   padding: 0 20px;
   overflow: hidden;
-` as any
+`
 
-export const StyledDialog = styled.div`
-  max-width: ${(p: Props) => setTheme(p.customStyle, 'maxWidth') || '920px'};
+export const StyledDialog = styled<Props, 'div'>('div')`
+  max-width: ${p => p.size === 'small' ? '666px' : '920px'};
   margin: 52px auto;
   background: #fff;
   border-radius: 6px;
   overflow: hidden;
   position: relative;
-` as any
+`
 
-export const StyledClose = styled.div`
+export const StyledClose = styled<{}, 'div'>('div')`
   position: absolute;
   top: 19px;
   right: 19px;
-  padding: 10px;
   cursor: pointer;
-` as any
+  width: 27px;
+  height: 27px;
+  color: #B8B9C4;
+`
 
-export const StyledContent = styled.div`
+export const StyledContent = styled<{}, 'div'>('div')`
   padding: 61px 50px;
   overflow-y: auto;
   max-height: calc(100vh - 100px);
-` as any
+`
