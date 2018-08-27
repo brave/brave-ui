@@ -23,15 +23,21 @@ export interface GridProps {
   onClick?: (e: any) => void
   children?: React.ReactNode
   customStyle?: GridTheme
+  className?: string
 }
 
-class Grid extends React.PureComponent<GridProps, {}> {
+export class Grid extends React.PureComponent<GridProps, {}> {
+  static defaultProps = {
+    disabled: false
+  }
+
   render () {
-    const { id, disabled, columns, customStyle, onClick, children } = this.props
+    const { id, disabled, columns, customStyle, onClick, children, className } = this.props
     return (
       <StyledGrid
         id={id}
-        disabled={disabled || false}
+        disabled={disabled}
+        className={className}
         customStyle={customStyle}
         onClick={onClick}
         columns={columns}
@@ -58,15 +64,17 @@ export interface ColumnProps {
   customStyle?: ColumnTheme
   onClick?: (e: any) => void
   children?: React.ReactNode
+  className?: string
 }
 
-class Column extends React.PureComponent<ColumnProps, {}> {
+export class Column extends React.PureComponent<ColumnProps, {}> {
   render () {
-    const { id, size, customStyle, children, onClick } = this.props
+    const { id, size, customStyle, children, onClick, className } = this.props
     return (
       <StyledColumn
         id={id}
         size={size}
+        className={className}
         customStyle={customStyle}
         onClick={onClick}
       >
@@ -75,5 +83,3 @@ class Column extends React.PureComponent<ColumnProps, {}> {
     )
   }
 }
-
-export { Grid, Column }

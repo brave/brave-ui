@@ -4,17 +4,21 @@
 
 import styled from 'styled-components'
 
-export const StyledTabWrapper = styled.div`
+interface StyleProps {
+  selected: boolean
+}
+
+export const StyledTabWrapper = styled<{}, 'div'>('div')`
   border-bottom: 1px solid #DFDFE8;
   text-align: center;
   font-family: Poppins, sans-serif;
-` as any
+`
 
-export const StyledTab = styled.div`
+export const StyledTab = styled<StyleProps, 'div'>('div')`
   border-radius: 6px 6px 0 0;
   border: 1px solid #DFDFE8;
-  border-bottom: ${(p: {selected: boolean}) => p.selected ? '1px solid #FFF' : '1px solid #DFDFE8'};
-  color: ${(p: {selected: boolean}) => p.selected ? '#FB542B' : '#686978'};
+  border-bottom: 1px solid ${p => p.selected ? '#FFF' : '#DFDFE8'};
+  color: ${p => p.selected ? '#FB542B' : '#686978'};
   font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.29px;
@@ -26,8 +30,8 @@ export const StyledTab = styled.div`
   margin: 0 2px;
   position: relative;
   top: 1px
-` as any
+`
 
-export const StyledContent = styled.div`
+export const StyledContent = styled<{}, 'div'>('div')`
   padding: 34px 56px 20px;
-` as any
+`

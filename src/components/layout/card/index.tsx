@@ -9,6 +9,7 @@ import { StyledCard } from './style'
 export interface CardProps {
   testId?: string
   children?: React.ReactNode
+  className?: string
 }
 
 /**
@@ -19,9 +20,10 @@ export interface CardProps {
  */
 export default class Card extends React.PureComponent<CardProps, {}> {
   render () {
-    const { testId, children } = this.props
+    const { testId, children, className } = this.props
+
     return (
-      <StyledCard data-test-id={testId}>{children}</StyledCard>
+      <StyledCard className={className} data-test-id={testId}>{children}</StyledCard>
     )
   }
 }

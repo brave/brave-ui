@@ -10,6 +10,7 @@ export interface Props {
   onChange: (tabId: any) => void
   children?: React.ReactNode
   id?: string
+  className?: string
 }
 
 export default class Tabs extends React.PureComponent<Props, {}> {
@@ -31,7 +32,7 @@ export default class Tabs extends React.PureComponent<Props, {}> {
 
       const key = child.props['data-key']
       const title = child.props['data-title'] || `Tab - ${i}`
-      const selected = self.props.activeTabId && (
+      const selected = !!self.props.activeTabId && (
         self.props.activeTabId === key ||
         (
           self.props.activeTabId.length === 0 &&
@@ -61,10 +62,11 @@ export default class Tabs extends React.PureComponent<Props, {}> {
   }
 
   render () {
+    const { id, className } = this.props
     const { content, tabs } = this.generateTabs()
 
     return (
-      <div id={this.props.id}>
+      <div className={className} id={id}>
         <StyledTabWrapper>
           {tabs}
         </StyledTabWrapper>
