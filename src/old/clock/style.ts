@@ -21,7 +21,7 @@ const StyledTime = styled.span`
   box-sizing: border-box;
   letter-spacing: 0;
   font-size: 75px;
-  font-weight: 200;
+  font-weight: 300;
   color: inherit;
   font-family: inherit;
   display: inline-flex;
@@ -34,7 +34,7 @@ const StyledPeriod = styled.span`
   display: inline-block;
   font-size: 20px;
   letter-spacing: -0.2px;
-  font-weight: 200;
+  font-weight: 300;
   margin-top: 8px;
   margin-left: 3px;
   vertical-align: top;
@@ -45,7 +45,7 @@ const StyledTimeSeparator = styled.span`
   color: inherit;
   font-size: inherit;
   font-family: inherit;
-  font-weight: 200;
+  font-weight: 300;
   /* center colon vertically in the text-content line */
   margin-top: -0.1em;
 ` as any
