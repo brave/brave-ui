@@ -4,14 +4,16 @@
 
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, object, number, text, boolean } from '@storybook/addon-knobs'
+import { withKnobs, object, select, number, text, boolean } from '@storybook/addon-knobs'
 // @ts-ignore
 import centered from '@storybook/addon-centered/dist'
 
 // Components
-import { WalletSummary, WalletEmpty, WalletOff, WalletWrapper } from '../../../src/features/rewards'
+import { WalletSummary, WalletEmpty, WalletOff, WalletPanel, WalletSummarySlider, WalletWrapper } from '../../../src/features/rewards'
 import { Type } from '../../../src/features/rewards/alert'
 import { WalletAddIcon, WalletImportIcon } from '../../../src/components/icons'
+
+const bartBaker = require('../../assets/img/bartBaker.jpeg')
 
 const doNothing = () => {
   console.log('nothing')
@@ -30,6 +32,8 @@ storiesOf('Feature Components/Rewards/Wallet', module)
 
     return (
       <WalletWrapper
+        compact={false}
+        contentPadding={false}
         connectedWallet={boolean('Connected wallet', false)}
         showCopy={boolean('Show Uphold', false)}
         showSecActions={boolean('Show secondary actions', true)}
@@ -90,10 +94,43 @@ storiesOf('Feature Components/Rewards/Wallet', module)
       </div>
     )
   })
+  .add('Panel', () => {
+    return (
+      <div style={{ width: '373px', background: '#f9fbfc' }}>
+        <WalletPanel
+          id={'wallet-panel'}
+          platform={select('Provider', { youtube: 'YouTube', twitter: 'Twitter', twitch: 'Twitch' }, 'youtube')}
+          publisherImg={bartBaker}
+          publisherName={'Bart Baker'}
+          monthlyAmount={number('Amount', 10)}
+          isVerified={boolean('Verified', true)}
+          tipsEnabled={boolean('Tips Enabled', true)}
+          includeInAuto={boolean('Include in monthly', true)}
+          attentionScore={'15'}
+          donationAmounts={
+            [5, 10, 15, 20, 30, 50, 100]
+          }
+          onToggleTips={doNothing}
+          donationAction={doNothing}
+          onAmountChange={doNothing}
+          onIncludeInAuto={doNothing}
+        />
+      </div>
+    )
+  })
   .add('Off', () => {
     return (
       <div style={{ width: '373px', background: '#f9fbfc', padding: '0 25px' }}>
         <WalletOff/>
+      </div>
+    )
+  })
+  .add('Summary Slider', () => {
+    return (
+      <div style={{ width: '373px', padding: '0 25px' }}>
+        <WalletSummarySlider
+          id={'summary-slider'}
+        />
       </div>
     )
   })

@@ -28,10 +28,13 @@ import TableContribute from './tableContribute'
 import TableDonation from './tableDonation'
 import TableTransactions from './tableTransactions'
 import Tip from './tip'
+import ToggleTips from './toggleTips'
 import Tokens from './tokens'
 import WalletEmpty from './walletEmpty'
 import WalletOff from './walletOff'
+import WalletPanel from './walletPanel'
 import WalletSummary from './walletSummary'
+import WalletSummarySlider from './walletSummarySlider'
 import WalletWrapper from './walletWrapper'
 import WelcomePage from './welcomePage'
 
@@ -62,10 +65,13 @@ export {
   TableDonation,
   TableTransactions,
   Tip,
+  ToggleTips,
   Tokens,
   WalletEmpty,
   WalletOff,
+  WalletPanel,
   WalletSummary,
+  WalletSummarySlider,
   WalletWrapper,
   WelcomePage
 }

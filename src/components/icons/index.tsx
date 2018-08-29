@@ -2,7 +2,7 @@ import { StyledComponentClass } from 'styled-components'
 
 // simple
 export { default as ArrowLeftIcon } from './arrow'
-export { default as AlertCirlceIcon } from './alert-cirlce'
+export { default as AlertCircleIcon } from './alert-circle'
 export { default as CaratDownIcon } from './carat'
 export { default as CheckCircleIcon } from './check-circle'
 export { default as CloseCircleIcon } from './close-circle'

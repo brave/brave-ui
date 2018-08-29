@@ -69,7 +69,7 @@ export const StyledTitle = styled<Partial<Props>, 'span'>('span')`
       font-weight: 500;
       line-height: 1.22;
       letter-spacing: -0.2px;
-      color: #4c54d2;
+      color: #4B4C5C;
     `
     : ''
   };
@@ -112,4 +112,8 @@ export const StyledProviderWrap = styled<{}, 'div'>('div')`
 export const StyledInlineVerified = styled<{}, 'span'>('span')`
   width: 19px;
   color: #392DD1;
+`
+
+export const StyledSubTitle = styled<{}, 'span'>('span')`
+  margin-top: 5px;
 `

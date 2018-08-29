@@ -20,7 +20,8 @@ import {
   Tokens,
   Profile,
   Amount,
-  PanelWelcome
+  PanelWelcome,
+  ToggleTips
 } from '../../../src/features/rewards'
 import GrantClaim from '../../../src/features/rewards/grantClaim'
 
@@ -207,3 +208,16 @@ storiesOf('Feature Components/Rewards/Other', module)
         </div>
       )
     })
+    .add('Toggle Tips', withState({ tipsEnabled: true }, (store) => {
+      const onToggle = () => {
+        store.set({ tipsEnabled: !store.state.tipsEnabled })
+      }
+      return (
+        <ToggleTips
+          id={'toggle-tips'}
+          onToggleTips={onToggle}
+          tipsEnabled={boolean('Selected', store.state.tipsEnabled)}
+          provider={select('Provider', { youtube: 'YouTube', twitter: 'Twitter', twitch: 'Twitch' }, 'youtube')}
+        />
+      )
+    }))

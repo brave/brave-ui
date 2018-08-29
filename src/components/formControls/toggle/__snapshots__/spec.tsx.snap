@@ -25,7 +25,6 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
 
 .c4 {
   position: relative;
-  z-index: 2;
   border-radius: 50%;
   -webkit-transition: 200ms ease-out;
   transition: 200ms ease-out;

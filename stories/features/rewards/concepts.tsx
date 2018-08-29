@@ -9,9 +9,11 @@ import { withKnobs, boolean, text, object, number } from '@storybook/addon-knobs
 
 // Components
 import Settings from './settings/settings'
-import { SiteBanner, Tip, PanelWelcome } from '../../../src/features/rewards'
+import { SiteBanner, Tip, PanelWelcome, WalletPanel, WalletSummary, WalletSummarySlider, WalletWrapper } from '../../../src/features/rewards'
+import { BatColorIcon, WalletAddIcon } from '../../../src/components/icons'
 import WelcomePage from '../../../src/features/rewards/welcomePage'
 
+const bartBaker = require('../../assets/img/bartBaker.jpeg')
 const siteBgImage = require('../../assets/img/bg_siteBanner.jpg')
 const siteBgLogo = require('../../assets/img/ddgo_siteBanner.svg')
 const siteScreen = require('../../assets/img/ddgo_site.png')
@@ -149,3 +151,90 @@ storiesOf('Feature Components/Rewards/Concepts', module)
       </div>
     )
   })
+  .add('Wallet Panel', withState({ showPanel: true, tipsEnabled: true, includeInAuto: true }, (store) => {
+    const doNothing = () => {
+      console.log('do nothing')
+    }
+
+    const onIncludeInAuto = () => {
+      store.set({ includeInAuto: !store.state.includeInAuto })
+    }
+
+    const onToggleTips = () => {
+      store.set({ tipsEnabled: !store.state.tipsEnabled })
+    }
+
+    return (
+      <div style={{ background: `url(${tipScreen}) no-repeat top center`, width: '986px', height: '100vh', margin: '0 auto', position: 'relative' }}>
+        <div style={{ position: 'absolute', top: '50px', left: '560px' }}>
+          <WalletWrapper
+            contentPadding={false}
+            compact={store.state.showPanel}
+            tokens={number('Tokens', 30)}
+            converted={text('Converted', '15.50 USD')}
+            actions={[
+              {
+                name: 'Add funds',
+                action: doNothing,
+                icon: <WalletAddIcon />
+              },
+              {
+                name: 'Rewards Settings',
+                action: doNothing,
+                icon: <BatColorIcon />
+              }
+            ]}
+            showCopy={boolean('Show Uphold', false)}
+            showSecActions={false}
+            connectedWallet={boolean('Connected wallet', false)}
+            grants={object('Grants', [
+              {
+                tokens: 8,
+                expireDate: '7/15/2018'
+              },
+              {
+                tokens: 10,
+                expireDate: '9/10/2018'
+              },
+              {
+                tokens: 10,
+                expireDate: '10/10/2018'
+              }
+            ])}
+          >
+            <WalletSummarySlider id={'panel-slider'}>
+              <WalletPanel
+                id={'wallet-panel'}
+                platform={'youtube'}
+                publisherImg={bartBaker}
+                publisherName={'Bart Baker'}
+                monthlyAmount={10}
+                isVerified={true}
+                tipsEnabled={boolean('Tips enabled', store.state.tipsEnabled)}
+                includeInAuto={boolean('Tips enabled', store.state.includeInAuto)}
+                attentionScore={'17'}
+                donationAmounts={
+                  [5, 10, 15, 20, 30, 50, 100]
+                }
+                onToggleTips={onToggleTips}
+                donationAction={doNothing}
+                onAmountChange={doNothing}
+                onIncludeInAuto={onIncludeInAuto}
+              />
+              <div style={{ padding: '0px 7px 0px' }}>
+                <WalletSummary
+                  compact={true}
+                  grant={object('Grant', { tokens: 10, converted: 0.25 })}
+                  ads={object('Ads', { tokens: 10, converted: 0.25 })}
+                  contribute={object('Contribute', { tokens: 10, converted: 0.25 })}
+                  donation={object('Donation', { tokens: 2, converted: 0.25 })}
+                  tips={object('Tips', { tokens: 19, converted: 5.25 })}
+                  total={object('Total', { tokens: 1, converted: 5.25 })}
+                />
+              </div>
+            </WalletSummarySlider>
+          </WalletWrapper>
+        </div>
+      </div>
+    )
+  }))
