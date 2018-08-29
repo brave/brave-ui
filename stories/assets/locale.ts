@@ -41,7 +41,7 @@ const locale: Record<string, string> = {
   donation: 'Donation',
   donationAmount: 'Donation amount',
   donateMonthly: 'Donate to this site Monthly',
-  donateNow: 'Donate now',
+  donateNow: 'Donate Now…',
   done: 'Done',
   downloadPDF: 'Download as PDF',
   earningsAds: 'Earnings from Brave Ads',
