@@ -30,6 +30,7 @@
     "storybook-build": "build-storybook -c .storybook -o .storybook-out",
     "test-unit": "jest -t",
     "test-unit-all": "jest --verbose",
+    "test-unit-all-ci": "jest --verbose --maxWorkers=4",
     "test-security": "npm audit",
     "coverage": "jest --coverage --verbose",
     "create": "node ./tools/createComponent.js"
