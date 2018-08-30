@@ -11,7 +11,7 @@ branches:
     - master
 env:
   - TEST_SUITE=lint
-  - TEST_SUITE=test-unit-all
+  - TEST_SUITE=test-unit-all-ci
   - TEST_SUITE=test-security
 script:
   - npm run $TEST_SUITE
