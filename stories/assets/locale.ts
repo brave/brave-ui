@@ -20,7 +20,7 @@ const locale: Record<string, string> = {
   braveContributeDesc: 'Set budget and browse normally. Your favorite sites get paid automatically.',
   braveContributeTitle: 'Brave Contribute',
   braveRewards: 'Brave Rewards',
-  braveRewardsDesc: 'Earn tokens for your attention to ads and pay it forward to support content creators you value!',
+  braveRewardsDesc: 'Earn tokens for viewing privacy-respecting ads, and pay it forward by supporting content creators you love!',
   braveRewardsOptInText: 'Yes, I\'m In!',
   braveRewardsSubTitle: 'Get Rewarded for Browsing!',
   braveRewardsTeaser: 'How it works...',
