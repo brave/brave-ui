@@ -23,6 +23,7 @@ export interface Props {
   id?: string
   disabled?: boolean
   floating?: boolean
+  showAllContents?: boolean
   value?: string
   onChange?: (value: string, child: React.ReactNode) => void
   type?: Type
@@ -92,7 +93,7 @@ export default class Select extends React.PureComponent<Props, State> {
     }
   }
 
-  generateOptions = (value: string | undefined, children: React.ReactNode) => {
+  generateOptions = (value: string | undefined, children: React.ReactNode, showAllContents: boolean | undefined) => {
     const self = this
     return React.Children.map(children, (child: any, i: number) => {
       if (child.props['data-value'] === undefined) {
@@ -104,13 +105,14 @@ export default class Select extends React.PureComponent<Props, State> {
       const selected = value === self.state.value
       return (
         <StyledOption
+          showAllContents={showAllContents}
           key={`${self.props.id}-option-${i}`}
           onClick={self.onOptionClick.bind(self, value, child, element)}
           selected={selected}
         >
           <StyledOptionCheck>
             {selected ? <CheckIcon /> : null}
-          </StyledOptionCheck><StyledOptionText>{element}</StyledOptionText>
+          </StyledOptionCheck><StyledOptionText showAllContents={showAllContents}>{element}</StyledOptionText>
         </StyledOption>
       )
     })
@@ -141,13 +143,13 @@ export default class Select extends React.PureComponent<Props, State> {
   }
 
   render () {
-    const { id, children, disabled, value, type, floating } = this.props
+    const { id, children, disabled, value, type, floating, showAllContents } = this.props
 
     const num = React.Children.count(children)
     let data = null
 
     if (num > 0) {
-      data = this.generateOptions(value, children)
+      data = this.generateOptions(value, children, showAllContents)
     }
 
     return (
@@ -169,7 +171,10 @@ export default class Select extends React.PureComponent<Props, State> {
                 <CaratDownIcon />
               </StyledSelectArrow>
             </StyledSelect>
-            <StyledOptions show={this.state.show}>
+            <StyledOptions
+              show={this.state.show}
+              showAllContents={showAllContents}
+            >
               {data}
             </StyledOptions>
           </StyledSelectWrapper>
