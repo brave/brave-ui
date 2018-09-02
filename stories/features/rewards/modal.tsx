@@ -14,6 +14,7 @@ import { DetailRow as TransactionsRow } from '../../../src/features/rewards/tabl
 import { ModalContribute, ModalBackupRestore } from '../../../src/features/rewards'
 import ModalActivity from '../../../src/features/rewards/modalActivity'
 import ModalAddFunds, { Address } from '../../../src/features/rewards/modalAddFunds'
+import ModalRestore, { DetailRow as RestoreRow } from '../../../src/features/rewards/modalRestore'
 
 const bart = require('../../assets/img/bartBaker.jpeg')
 const ddgo = require('../../assets/img/ddgo.jpg')
@@ -380,6 +381,64 @@ storiesOf('Feature Components/Rewards/Modal', module)
       <ModalAddFunds
         addresses={addresses}
         onClose={doNothing}
+      />
+    )
+  })
+  .add('Deleted', () => {
+    const rows: RestoreRow[] = [
+      {
+        profile: {
+          name: 'Bart Baker',
+          verified: true,
+          provider: 'youtube',
+          src: bart
+        },
+        url: 'https://brave.com',
+        onRestore: doNothing
+      },
+      {
+        profile: {
+          name: 'duckduckgo.com',
+          verified: true,
+          src: ddgo
+        },
+        url: 'https://brave.com',
+        onRestore: doNothing
+      },
+      {
+        profile: {
+          name: 'buzzfeed.com',
+          verified: false,
+          src: buzz
+        },
+        url: 'https://brave.com',
+        onRestore: doNothing
+      },
+      {
+        profile: {
+          name: 'theguardian.com',
+          verified: true,
+          src: guardian
+        },
+        url: 'https://brave.com',
+        onRestore: doNothing
+      },
+      {
+        profile: {
+          name: 'wikipedia.org',
+          verified: false,
+          src: wiki
+        },
+        url: 'https://brave.com',
+        onRestore: doNothing
+      }
+    ]
+
+    return (
+      <ModalRestore
+        rows={rows}
+        onClose={doNothing}
+        onRestoreAll={doNothing}
       />
     )
   })

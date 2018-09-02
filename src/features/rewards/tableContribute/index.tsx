@@ -10,7 +10,8 @@ import {
   StyledTHOther,
   StyledTHLast,
   StyledToggleWrap,
-  StyledLink
+  StyledLink,
+  StyledRestore
 } from './style'
 import Table, { Row } from '../../../components/dataTables/table'
 import Profile, { Provider } from '../profile'
@@ -18,7 +19,7 @@ import { getLocale } from '../../../helpers'
 import Tokens from '../tokens'
 import { CloseStrokeIcon } from '../../../components/icons'
 
-interface ProfileCell {
+export interface ProfileCell {
   verified: boolean
   name: string
   src: string
@@ -44,6 +45,8 @@ export interface Props {
   numSites?: number
   allSites?: boolean
   onShowAll?: () => void
+  deletedPublishers?: boolean
+  onShowRestore?: () => void
 }
 
 export default class TableContribute extends React.PureComponent<Props, {}> {
@@ -167,7 +170,7 @@ export default class TableContribute extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { id, header, children, rows, allSites, onShowAll } = this.props
+    const { id, header, children, rows, allSites, onShowAll, onShowRestore, deletedPublishers } = this.props
     const numSites = this.props.numSites || 0
 
     return (
@@ -177,13 +180,22 @@ export default class TableContribute extends React.PureComponent<Props, {}> {
           children={children}
           rows={this.getRows(rows)}
         />
-        {
-          !allSites && numSites > 0
-          ? <StyledToggleWrap>
-              <StyledToggle onClick={onShowAll}>{getLocale('seeAllSites', { numSites })}</StyledToggle>
-            </StyledToggleWrap>
-          : null
-        }
+        <StyledToggleWrap>
+          <StyledRestore>
+            {
+              deletedPublishers
+              ? <span onClick={onShowRestore}>{getLocale('seeDeletedSites')}</span>
+              : null
+            }
+          </StyledRestore>
+          <StyledToggle>
+            {
+              !allSites && numSites > 0
+              ? <span onClick={onShowAll}>{getLocale('seeAllSites', { numSites })}</span>
+              : null
+            }
+          </StyledToggle>
+        </StyledToggleWrap>
       </div>
     )
   }

@@ -14,17 +14,11 @@ import {
   StyledLink
 } from './style'
 import Table, { Cell, Row } from '../../../components/dataTables/table/index'
-import Profile, { Provider } from '../profile/index'
+import Profile from '../profile/index'
 import Tokens from '../tokens/index'
 import { getLocale } from '../../../helpers'
 import { CloseStrokeIcon, RefreshIcon } from '../../../components/icons'
-
-interface ProfileCell {
-  verified: boolean
-  name: string
-  src: string
-  provider?: Provider
-}
+import { ProfileCell } from '../tableContribute'
 
 type DonationType = 'donation' | 'tip' | 'recurring'
 

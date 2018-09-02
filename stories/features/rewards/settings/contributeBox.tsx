@@ -15,6 +15,7 @@ import {
 } from '../../../../src/features/rewards'
 import { Column, Grid, Select, ControlWrapper } from '../../../../src/components'
 import { DetailRow as ContributeDetailRow } from '../../../../src/features/rewards/tableContribute'
+import ModalRestore, { DetailRow as RestoreDetailRow } from '../../../../src/features/rewards/modalRestore'
 
 // Utils
 import locale from './fakeLocale'
@@ -35,6 +36,7 @@ const doNothing = () => {
 interface State {
   contributeToggle: boolean
   modalContribute: boolean
+  modalRestore: boolean
 }
 
 class ContributeBox extends React.Component<{}, State> {
@@ -42,7 +44,8 @@ class ContributeBox extends React.Component<{}, State> {
     super(props)
     this.state = {
       contributeToggle: true,
-      modalContribute: false
+      modalContribute: false,
+      modalRestore: false
     }
   }
 
@@ -128,6 +131,57 @@ class ContributeBox extends React.Component<{}, State> {
     ]
   }
 
+  get restoreRows (): RestoreDetailRow[] {
+    return [
+      {
+        profile: {
+          name: 'Bart Baker',
+          verified: true,
+          provider: 'youtube',
+          src: bartBaker
+        },
+        url: 'https://brave.com',
+        onRestore: doNothing
+      },
+      {
+        profile: {
+          name: 'duckduckgo.com',
+          verified: true,
+          src: ddgo
+        },
+        url: 'https://brave.com',
+        onRestore: doNothing
+      },
+      {
+        profile: {
+          name: 'buzzfeed.com',
+          verified: false,
+          src: buzz
+        },
+        url: 'https://brave.com',
+        onRestore: doNothing
+      },
+      {
+        profile: {
+          name: 'theguardian.com',
+          verified: true,
+          src: guardian
+        },
+        url: 'https://brave.com',
+        onRestore: doNothing
+      },
+      {
+        profile: {
+          name: 'wikipedia.org',
+          verified: false,
+          src: wiki
+        },
+        url: 'https://brave.com',
+        onRestore: doNothing
+      }
+    ]
+  }
+
   contributeDisabled () {
     return (
       <DisabledContent
@@ -144,12 +198,12 @@ class ContributeBox extends React.Component<{}, State> {
     this.setState({ contributeToggle: !this.state.contributeToggle })
   }
 
-  onContributeModalClose = () => {
-    this.setState({ modalContribute: false })
+  onContributeModalToggle = () => {
+    this.setState({ modalContribute: !this.state.modalContribute })
   }
 
-  onContributeModalOpen = () => {
-    this.setState({ modalContribute: true })
+  onRestoreModalToggle = () => {
+    this.setState({ modalRestore: !this.state.modalRestore })
   }
 
   render () {
@@ -168,7 +222,16 @@ class ContributeBox extends React.Component<{}, State> {
           this.state.modalContribute
             ? <ModalContribute
               rows={this.contributeRows}
-              onClose={this.onContributeModalClose.bind(self)}
+              onClose={this.onContributeModalToggle.bind(self)}
+            />
+            : null
+        }
+        {
+          this.state.modalRestore
+            ? <ModalRestore
+              rows={this.restoreRows}
+              onClose={this.onRestoreModalToggle.bind(self)}
+              onRestoreAll={doNothing}
             />
             : null
         }
@@ -196,8 +259,10 @@ class ContributeBox extends React.Component<{}, State> {
           rows={this.contributeRows}
           allSites={false}
           numSites={55}
-          onShowAll={this.onContributeModalOpen.bind(self)}
+          onShowAll={this.onContributeModalToggle.bind(self)}
+          onShowRestore={this.onRestoreModalToggle.bind(self)}
           headerColor={true}
+          deletedPublishers={true}
         >
           Please visit some sites
         </TableContribute>

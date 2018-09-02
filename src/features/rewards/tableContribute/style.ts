@@ -32,7 +32,8 @@ export const StyledTHLast = styled(StyledTHOther)`
 `
 
 export const StyledToggleWrap = styled<{}, 'div'>('div')`
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
 `
 
 export const StyledToggle = styled<{}, 'button'>('button')`
@@ -48,4 +49,15 @@ export const StyledToggle = styled<{}, 'button'>('button')`
 
 export const StyledLink = styled<{}, 'a'>('a')`
   text-decoration: none;
+`
+
+export const StyledRestore = styled<{}, 'button'>('button')`
+  font-family: Poppins, sans-serif;
+  font-size: 13px;
+  color: #4c54d2;
+  text-transform: capitalize;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 `
