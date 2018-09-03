@@ -1,7 +1,7 @@
 {
   "name": "brave-ui",
   "main": "index.js",
-  "version": "0.23.0",
+  "version": "0.23.1",
   "description": "List of reusable React components to empower your brave UI",
   "author": "Brave Software",
   "contributors": [
@@ -12,6 +12,14 @@
     {
       "name": "Nejc Zdovc",
       "email": "nejc@brave.com"
+    },
+    {
+      "name": "Peter Miller",
+      "email": "peter@brave.com"
+    },
+    {
+      "name": "Ryan Lanese",
+      "email": "rlanese@brave.com"
     }
   ],
   "license": "MPL-2.0",
@@ -30,6 +38,7 @@
     "storybook-build": "build-storybook -c .storybook -o .storybook-out",
     "test-unit": "jest -t",
     "test-unit-all": "jest --verbose",
+    "test-unit-all-ci": "jest --verbose --maxWorkers=4",
     "test-security": "npm audit",
     "coverage": "jest --coverage --verbose",
     "create": "node ./tools/createComponent.js"
