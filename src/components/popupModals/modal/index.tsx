@@ -12,6 +12,7 @@ export interface Props {
   children?: React.ReactNode
   onClose?: () => void
   size?: 'small' | 'normal'
+  testId?: string
 }
 
 export default class Modal extends React.PureComponent<Props, {}> {
@@ -31,10 +32,10 @@ export default class Modal extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { id, onClose, children, size } = this.props
+    const { id, onClose, children, size, testId } = this.props
 
     return (
-      <StyledWrapper id={id} onClick={this.outsideClose}>
+      <StyledWrapper id={id} onClick={this.outsideClose} data-test-id={testId}>
         <StyledDialog size={size}>
           <StyledClose onClick={onClose}>
             <CloseStrokeIcon />
