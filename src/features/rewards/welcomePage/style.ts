@@ -156,4 +156,12 @@ export const StyledAnchor = styled<{}, 'button'>('button')`
   cursor: pointer;
   color: #bf9fe3;
   height: 38px;
+  overflow: hidden;
+`
+
+export const StyledAlert = styled<{}, 'div'>('div')`
+  margin-bottom: 30px;
+  border: 1px solid #FF7900;
+  border-radius: 4px;
+  overflow: hidden;
 `
