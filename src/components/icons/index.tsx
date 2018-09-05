@@ -43,6 +43,7 @@ export { default as LitecoinColorIcon } from './litecoin'
 export { default as TwitterColorIcon } from './twitter'
 export { default as EthereumColorIcon } from './ethereum'
 export { default as BitcoinColorIcon } from './bitcoin'
+export { default as PaperAirplaneIcon } from './paper-airplane'
 
 // rotated variants
 function RotatedIconComponent (iconComponent: StyledComponentClass<any, any>, degrees: number) {
