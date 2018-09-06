@@ -95,17 +95,17 @@ const StyledButton = styled<Props, 'button'>('button')`
 
 export default StyledButton
 
-export const PrimaryButton = StyledButton.extend`
+export const PrimaryButton = styled(StyledButton)`
   color: #fff;
   background: var(--button-state-color);
 `
 
-export const SecondaryButton = StyledButton.extend`
+export const SecondaryButton = styled(StyledButton)`
   border: 1px solid;
   color: var(--button-state-color);
 `
 
-export const TertiaryButton = StyledButton.extend`
+export const TertiaryButton = styled(StyledButton)`
   color: var(--button-state-color);
 `
 

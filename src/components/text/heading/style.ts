@@ -14,26 +14,26 @@ const StyledSharedHeading = styled<HeadingProps, 'span'>('span')`
   margin: 0;
 `
 
-export const StyledH1 = StyledSharedHeading.withComponent('h1').extend`
+export const StyledH1 = styled(StyledSharedHeading.withComponent('h1'))`
   font-size: 48px;
 `
 
-export const StyledH2 = StyledSharedHeading.withComponent('h2').extend`
+export const StyledH2 = styled(StyledSharedHeading.withComponent('h2'))`
   font-size: 40px;
 `
 
-export const StyledH3 = StyledSharedHeading.withComponent('h3').extend`
+export const StyledH3 = styled(StyledSharedHeading.withComponent('h3'))`
   font-size: 32px;
 `
 
-export const StyledH4 = StyledSharedHeading.withComponent('h4').extend`
+export const StyledH4 = styled(StyledSharedHeading.withComponent('h4'))`
   font-size: 24px;
 `
 
-export const StyledH5 = StyledSharedHeading.withComponent('h5').extend`
+export const StyledH5 = styled(StyledSharedHeading.withComponent('h5'))`
   font-size: 20px;
 `
 
-export const StyledH6 = StyledSharedHeading.withComponent('h6').extend`
+export const StyledH6 = styled(StyledSharedHeading.withComponent('h6'))`
   font-size: 16px;
 `

@@ -17,7 +17,7 @@ const StyledSharedHeading = styled.span`
   cursor: default;
 ` as any
 
-const StyledHeadingTitle = StyledSharedHeading.withComponent('h1').extend`
+const StyledHeadingTitle = styled(StyledSharedHeading.withComponent('h1'))`
   margin: 0;
   font-weight: 400;
   white-space: nowrap;
@@ -31,14 +31,14 @@ const StyledHeadingTitleLabel = styled.sup`
   font-size: 15px;
 ` as any
 
-const StyledSectionHeading = StyledSharedHeading.withComponent('h2').extend`
+const StyledSectionHeading = styled(StyledSharedHeading.withComponent('h2'))`
   color: rgb(68, 68, 68);
   font-size: 20px;
   margin: 0 0 20px;
   font-weight: 400;
 `
 
-const StyledFeatureHeading = StyledSharedHeading.withComponent('h2').extend`
+const StyledFeatureHeading = styled(StyledSharedHeading.withComponent('h2'))`
   color: #444444;
   font-weight: normal;
   font-size: 14px;

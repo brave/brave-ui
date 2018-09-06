@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button tests basic tests matches the snapshot 1`] = `
-.c0 {
+.c1 {
   --button-main-color: #242536;
   --button-main-color-hover: #131525;
   --button-main-color-active: #343546;
@@ -39,19 +39,22 @@ exports[`Button tests basic tests matches the snapshot 1`] = `
   width: auto;
   min-width: 104px;
   padding: 11px 10px;
+}
+
+.c1:hover:enabled {
+  --button-state-color: var(--button-main-color-hover);
+}
+
+.c1:active:enabled {
+  --button-state-color: var(--button-main-color-active);
+}
+
+.c0 {
   color: #fff;
   background: var(--button-state-color);
 }
 
-.c0:hover:enabled {
-  --button-state-color: var(--button-main-color-hover);
-}
-
-.c0:active:enabled {
-  --button-state-color: var(--button-main-color-active);
-}
-
-.c1 {
+.c2 {
   min-height: var(--icon-size);
   display: -webkit-box;
   display: -webkit-flex;
@@ -72,13 +75,13 @@ exports[`Button tests basic tests matches the snapshot 1`] = `
 }
 
 <button
-  className="c0"
+  className="c0 c1"
   id="button"
   size="medium"
   type="default"
 >
   <div
-    className="c1"
+    className="c2"
     id="button"
     size="medium"
     type="default"

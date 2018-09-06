@@ -1,17 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`all heading tests heading tests basic tests matches the snapshot 1`] = `
-.c0 {
+.c1 {
   box-sizing: border-box;
   font-family: Poppins,sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   margin: 0;
+}
+
+.c0 {
   font-size: 48px;
 }
 
 <h1
-  className="c0"
+  className="c0 c1"
   data-test-id="testHeading"
 />
 `;

@@ -1,4 +1,4 @@
-import { StyledComponentClass } from 'styled-components'
+import styled, { StyledComponentClass } from 'styled-components'
 
 // simple
 export { default as AlertCircleIcon } from './alert-circle'
@@ -46,7 +46,7 @@ export { default as BitcoinColorIcon } from './bitcoin'
 
 // rotated variants
 function RotatedIconComponent (iconComponent: StyledComponentClass<any, any>, degrees: number) {
-  return iconComponent.extend`
+  return styled(iconComponent)`
     transform: rotate(${degrees}deg);
   `
 }
@@ -60,6 +60,6 @@ export const CaratLeftIcon = RotatedIconComponent(CaratIcon, 90)
 export const CaratUpIcon = RotatedIconComponent(CaratIcon, 180)
 export const CaratDownIcon = CaratIcon
 import ThumbsUpIcon from './thumbs-up'
-export const ThumbsDownIcom = ThumbsUpIcon.extend`
+export const ThumbsDownIcom = styled(ThumbsUpIcon)`
   transform: scaleY(-1);
 `
