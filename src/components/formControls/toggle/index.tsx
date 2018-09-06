@@ -30,7 +30,7 @@ export default class Toggle extends React.PureComponent<Props, {}> {
         <StyledText size={size} checked={checked} disabled={disabled}>
           {getLocale('off')}
         </StyledText>
-        <StyleToggle data-test-id='toggle' data-test-id2={testId} onClick={!disabled ? onToggle : undefined} size={size}>
+        <StyleToggle data-test-id='toggle' data-test-id2={testId} data-toggled={checked} onClick={!disabled ? onToggle : undefined} size={size}>
           <StyledSlider size={size} disabled={disabled}/>
           <StyledBullet size={size} checked={checked} type={type} disabled={disabled} />
         </StyleToggle>
