@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`all heading tests featureHeading tests basic tests matches the snapshot 1`] = `
-.c0 {
+.c1 {
   box-sizing: border-box;
   font-family: inherit;
   color: inherit;
@@ -11,6 +11,9 @@ exports[`all heading tests featureHeading tests basic tests matches the snapshot
   -ms-user-select: none;
   user-select: none;
   cursor: default;
+}
+
+.c0 {
   color: #444444;
   font-weight: normal;
   font-size: 14px;
@@ -19,7 +22,7 @@ exports[`all heading tests featureHeading tests basic tests matches the snapshot
 }
 
 <h2
-  className="c0"
+  className="c0 c1"
   id="testFeatureHeading"
 />
 `;
@@ -43,7 +46,7 @@ exports[`all heading tests heading tests basic tests matches the snapshot 1`] = 
 `;
 
 exports[`all heading tests sectionHeading tests basic tests matches the snapshot 1`] = `
-.c0 {
+.c1 {
   box-sizing: border-box;
   font-family: inherit;
   color: inherit;
@@ -53,6 +56,9 @@ exports[`all heading tests sectionHeading tests basic tests matches the snapshot
   -ms-user-select: none;
   user-select: none;
   cursor: default;
+}
+
+.c0 {
   color: rgb(68,68,68);
   font-size: 20px;
   margin: 0 0 20px;
@@ -60,13 +66,13 @@ exports[`all heading tests sectionHeading tests basic tests matches the snapshot
 }
 
 <h2
-  className="c0"
+  className="c0 c1"
   id="testSectionHeading"
 />
 `;
 
 exports[`all heading tests titleHeading tests basic tests matches the snapshot 1`] = `
-.c0 {
+.c1 {
   box-sizing: border-box;
   font-family: inherit;
   color: inherit;
@@ -76,6 +82,9 @@ exports[`all heading tests titleHeading tests basic tests matches the snapshot 1
   -ms-user-select: none;
   user-select: none;
   cursor: default;
+}
+
+.c0 {
   margin: 0;
   font-weight: 400;
   white-space: nowrap;
@@ -84,7 +93,7 @@ exports[`all heading tests titleHeading tests basic tests matches the snapshot 1
 }
 
 <h1
-  className="c0"
+  className="c0 c1"
   id="testTitleHeading"
 />
 `;
