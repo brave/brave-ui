@@ -3,7 +3,6 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
-import theme from '../../../theme/brave-default'
 import { InputProps } from './index'
 
 export const InputComponent = styled<InputProps, 'div'>('div')`
@@ -36,7 +35,7 @@ export const StyledInput = styled<InputProps, 'input'>('input')`
   width: calc(100% - 30px);
   max-width: 100%;
   font-size: 14px;
-  font-family: ${theme.fontFamily.heading};
+  font-family: ${p => p.theme.fontFamily.heading};
   border: none;
   color: ${p => p.disabled ? '#D1D1DB' : '#686978'};
   outline: unset;

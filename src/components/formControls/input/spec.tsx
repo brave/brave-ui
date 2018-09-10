@@ -3,9 +3,10 @@ import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
 import Input from './index'
+import { TestThemeProvider } from '../../../theme'
 
 describe('Input tests', () => {
-  const baseComponent = (props?: object) => <Input testId='input' {...props} />
+  const baseComponent = (props?: object) => <TestThemeProvider><Input {...props} /></TestThemeProvider>
 
   describe('basic tests', () => {
     it('matches the snapshot', () => {
@@ -15,9 +16,9 @@ describe('Input tests', () => {
     })
 
     it('renders the component', () => {
-      const wrapper = shallow(baseComponent())
-      const assertion = wrapper.props()['data-test-id']
-      expect(assertion).toBe('input')
+      const wrapper = shallow(baseComponent({testId: 'testInput'}))
+      const assertion = wrapper.html().includes('testInput')
+      expect(assertion).toBe(true)
     })
   })
 })

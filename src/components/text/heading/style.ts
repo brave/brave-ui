@@ -4,11 +4,10 @@
 
 import styled from 'styled-components'
 import { HeadingProps } from './index'
-import theme from '../../../theme/brave-default'
 
 const StyledSharedHeading = styled<HeadingProps, 'span'>('span')`
   box-sizing: border-box;
-  font-family: ${theme.fontFamily.heading};
+  font-family: ${p => p.theme.fontFamily.heading};
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   margin: 0;

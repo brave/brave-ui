@@ -71,7 +71,6 @@ exports[`Input tests basic tests matches the snapshot 1`] = `
 
 <div
   className="c0"
-  data-test-id="input"
 >
   <input
     className="c1"
