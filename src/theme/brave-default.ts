@@ -31,9 +31,7 @@ const theme: ITheme = {
     disabled: colors.grey300,
     // backgrounds
     primaryBackground: colors.white,
-    secondaryBackground: colors.grey400,
-    privateTabBackground: '#4b3c6e',
-    privateTabBackground2: '#000'
+    secondaryBackground: colors.grey400
   },
   fontFamily: {
     heading: 'Poppins, sans-serif',
