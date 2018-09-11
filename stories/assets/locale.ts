@@ -13,6 +13,7 @@ const locale: Record<string, string> = {
   addFundsQR: 'Show QR Code',
   addFundsText: 'Brave makes it easy to transfer funds from your existing crypto-currency wallet to your Brave BAT Wallet.',
   addFundsTitle: 'Add funds to your Brave wallet',
+  adsTooltipTitle: 'Brave Ads Settings',
   allowTip: 'Allow tips on',
   amount: 'Amount',
   braveAdsDesc: 'No action required. Just collect tokens. Your data is safe with our Shields.',
