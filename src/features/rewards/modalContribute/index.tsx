@@ -18,7 +18,7 @@ import { getLocale } from '../../../helpers'
 export interface Props {
   rows: DetailRow[]
   onClose: () => void
-  onRestore: () => void
+  onRestore?: () => void
   id?: string
   numExcludedSites?: number
 }
