@@ -21,6 +21,10 @@ export const StyledArea = styled<Props, 'textarea'>('textarea')`
   font-size: 16px;
   line-height: 26px;
 
+  &:disabled {
+    background: #fff;
+  }
+
   &:focus {
     border-color: #A1A8F2;
     outline: none;
