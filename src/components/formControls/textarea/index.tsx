@@ -8,17 +8,27 @@ import { StyledWrapper, StyledArea } from './style'
 export interface Props {
   id?: string
   value?: string
+  defaultValue?: string
+  readOnly?: boolean
+  placeholder?: string
   disabled?: boolean
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
 }
 
 export default class TextArea extends React.PureComponent<Props, {}> {
   render () {
-    const { id, onChange, value, disabled } = this.props
+    const { id, onChange, value, defaultValue, readOnly, placeholder, disabled } = this.props
 
     return (
       <StyledWrapper id={id}>
-        <StyledArea onChange={onChange} disabled={disabled} value={value} />
+        <StyledArea
+          onChange={onChange}
+          disabled={disabled}
+          value={value}
+          readOnly={readOnly}
+          placeholder={placeholder}
+          defaultValue={defaultValue}
+        />
       </StyledWrapper>
     )
   }
