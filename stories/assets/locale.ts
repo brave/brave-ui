@@ -119,6 +119,8 @@ const locale: Record<string, string> = {
   rewardsPanelOffText2: 'Earn tokens for your attention to ads and pay it forward to support content creators you value!',
   rewardsPanelText1: 'Add, withdraw and manage funds at',
   rewardsPanelText2: 'Brave wallet is managed by',
+  rewardsPanelText3: 'Brave Rewards is built on the Basic Attention Token. Learn more about BAT',
+  rewardsPanelText4: 'here',
   rewardsRestoreText1: 'Restore your Wallet',
   rewardsRestoreText2: 'Enter the recovery key to restore your Brave wallet. Make sure that the current wallet doesn’t have any balance or is backed up safely. Restoring a wallet replaces the current wallet and you will loose any balance if you don’t back up its recovery key.',
   rewardsRestoreText3: 'Enter your recovery key or',
