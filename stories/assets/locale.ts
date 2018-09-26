@@ -56,6 +56,8 @@ const locale: Record<string, string> = {
   grants: 'Grants',
   grantDisclaimer: 'Unused tokens by the expiration date will be automatically returned to the Brave User Growth Pool.',
   grantExpire: 'Grant Expiration Date',
+  howDoesItWork: 'How does it work?',
+  howDoesItWorkDesc: 'Get paid for the ads. And pay directly the favorite content creators at your will. That way, they can grow and continue delivering the content that delights you.',
   import: 'import',
   includeInAuto: 'Include in Brave Auto-Contribute',
   makeMonthly: 'Make this monthly',
@@ -88,7 +90,9 @@ const locale: Record<string, string> = {
   paymentWarning: 'When your balance is not enough to cover the combined total of Brave Auto-Contribute and the recurring donations, these payments are skipped for the period.',
   pleaseNote: 'Please note:',
   print: 'Print',
-  readyToTakePart: 'Ready to get started?',
+  readyToTakePart: 'Ready to take active part in the change?',
+  readyToTakePartBold: '5 free tokens',
+  readyToTakePartDesc: 'in your wallet — our gift to you as a welcome! Access to many premium paid content will be available in the near future.',
   readyToTakePartOptInText: 'Yes I\'m Ready!',
   readyToTakePartStart: 'You can start with the',
   recoveryKeys: 'Recovery Key',
@@ -160,10 +164,9 @@ const locale: Record<string, string> = {
   welcomeFooterTextTwo: 'Learn More',
   welcomeHeaderOne: 'Brave Payments is now Brave Rewards with many upgrades.',
   welcomeHeaderTwo: 'You are about to start a very Brave way to browse the web.',
-  whyBraveRewards: 'Why Brave Rewards?',
-  whyBraveRewardsDesc: 'Did you know that the Internet is not actually free?',
-  whyBraveRewardsDesc1: 'With conventional browsers, you pay to browse the web by viewing ads with your valuable attention, spending your valuable time downloading invasive ad technology, that transmits your valuable private data to advertisers — without your consent.',
-  whyBraveRewardsDesc2: 'Well, you\'ve come to the right place. Brave welcomes you to the new internet. One where your time is valued, your personal data is kept private, and you actually get paid for your attention.',
+  whyBraveRewards: 'Why Brave Rewards...',
+  whyBraveRewardsBold: 'Brave Rewards allows you to take control back.',
+  whyBraveRewardsDesc: 'Do you know that you\'ve been paying for the web content with your data for the digital ads? You didn\'t have a voice in it and worse, you\'re exposed to privacy and security risks',
   yourWallet: 'Your wallet'
 }
 

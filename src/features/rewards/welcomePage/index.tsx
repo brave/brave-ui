@@ -32,7 +32,10 @@ import {
   StyledTrademark,
   StyledRewardsParagraph,
   StyledTeaserParagraph,
+  StyledReadyParagraph,
   StyledCenterParagraph,
+  StyledBoldParagraph,
+  StyledStrong,
   StyledAnchor,
   StyledOptInSecond,
   StyledAlert
@@ -125,11 +128,16 @@ class WelcomePage extends React.PureComponent<Props, {}> {
           <StyledCenterParagraph>
             {getLocale('whyBraveRewardsDesc')}
           </StyledCenterParagraph>
+          <StyledBoldParagraph>
+            {getLocale('whyBraveRewardsBold')}
+          </StyledBoldParagraph>
+        </StyledSection>
+        <StyledSection>
+          <StyledCenterTitle level={3}>
+            {getLocale('howDoesItWork')}
+          </StyledCenterTitle>
           <StyledCenterParagraph>
-            {getLocale('whyBraveRewardsDesc1')}
-          </StyledCenterParagraph>
-          <StyledCenterParagraph>
-            {getLocale('whyBraveRewardsDesc2')}
+            {getLocale('howDoesItWorkDesc')}
           </StyledCenterParagraph>
         </StyledSection>
       </StyledCenterContent>
@@ -142,6 +150,17 @@ class WelcomePage extends React.PureComponent<Props, {}> {
         <StyledActionTitle level={4}>
           {getLocale('readyToTakePart')}
         </StyledActionTitle>
+        <StyledReadyParagraph>
+          <span>
+            {getLocale('readyToTakePartStart')}
+          </span>
+          <StyledStrong>
+            {getLocale('readyToTakePartBold')}
+          </StyledStrong>
+          <span>
+            {getLocale('readyToTakePartDesc')}
+          </span>
+        </StyledReadyParagraph>
         <StyledOptInSecond>
           <Button
             level={'primary'}
