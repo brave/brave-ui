@@ -83,9 +83,7 @@ export const StyledSelectText = styled<StyleProps, 'div'>('div')`
 `
 
 export const StyledOptions = styled<StyleProps, 'div'>('div')`
-  position: absolute;
-  top: calc(100% + 4px);
-  left: 0;
+  position: fixed;
   width: ${p => p.showAllContents ? 'auto' : '100%'};
   border-radius: 3px;
   box-shadow: 0 2px 5px 0 rgba(223, 223, 232, 0.5);
