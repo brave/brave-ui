@@ -32,7 +32,9 @@ const theme: ITheme = {
     // backgrounds
     primaryBackground: colors.white,
     secondaryBackground: colors.grey400,
-    modalOverlayBackground: 'rgba(36,37,54,0.85)'
+    modalOverlayBackground: 'rgba(36,37,54,0.85)',
+    // text
+    detailDescription: colors.grey500
   },
   fontFamily: {
     heading: 'Poppins, sans-serif',

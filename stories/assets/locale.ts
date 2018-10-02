@@ -151,6 +151,7 @@ const locale: Record<string, string> = {
   type: 'Type',
   uhOh: 'Uh oh…',
   verifiedPublisher: 'Brave Verified Publisher',
+  viewDetails: 'View Details',
   viewMonthly: 'View Monthly Statement for Details',
   walletActivity: 'Wallet Activity',
   walletAddress: 'Wallet Address',
