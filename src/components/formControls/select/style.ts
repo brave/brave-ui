@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled, { css } from 'styled-components'
-import { Props } from './index'
+import { Props, OptionsPosition } from './index'
 
 const getSelectColors = (p: StyleProps) => {
   let color = '#686978'
@@ -43,7 +43,10 @@ interface StyleProps extends Props {
   show?: boolean
   selected?: boolean
   showAllContents?: boolean
+  opts?: OptionsPosition
 }
+
+const getOptsAtt = (opts: any | undefined, att: string) => opts[att] || false
 
 export const StyledWrapper = styled<StyleProps, 'div'>('div')`
   width: 100%;
@@ -83,7 +86,9 @@ export const StyledSelectText = styled<StyleProps, 'div'>('div')`
 `
 
 export const StyledOptions = styled<StyleProps, 'div'>('div')`
-  position: fixed;
+  position: ${p => getOptsAtt(p.opts, 'position') || 'absolute'};
+  top: ${p => getOptsAtt(p.opts, 'top') || 'calc(100% + 4px)'};
+  left: ${p => getOptsAtt(p.opts, 'left') || '0'};
   width: ${p => p.showAllContents ? 'auto' : '100%'};
   border-radius: 3px;
   box-shadow: 0 2px 5px 0 rgba(223, 223, 232, 0.5);

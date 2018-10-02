@@ -29,10 +29,55 @@ export interface Props {
   type?: Type
 }
 
+export interface OptionsPosition {
+  position: string
+  top: string
+  left: string
+}
+
 interface State {
   value: string | number
   selected: React.ReactNode
   show: boolean
+  optionsPosition: OptionsPosition
+}
+
+/* To do: Move all InetersectionObserver related interfaces to a d.ts file */
+
+interface Bounds {
+  height: number
+  width: number
+  top: number
+  left: number
+  right: number
+  bottom: number
+}
+
+interface IntersectionObserverEntry {
+  time: number
+  rootBounds: Bounds
+  boundingClientRect: Bounds
+  intersectionRect: Bounds
+  intersectionRatio: number
+  target: Element
+  isIntersecting: boolean
+}
+
+interface IntersectionObserver {
+  root: Element | null
+  rootMargin: string
+  thresholds: number[]
+
+  disconnect (): void
+  observe (target: Element): void
+  unobserve (target: Element): void
+  takeRecords (): IntersectionObserverEntry[]
+}
+
+interface IntersectionObserverOptions {
+  root: Element | null
+  rootMargin: string
+  threshold: number
 }
 
 /*
@@ -43,6 +88,9 @@ interface State {
   - add empty first choice?
  */
 export default class Select extends React.PureComponent<Props, State> {
+  private selectOptions: HTMLDivElement | null
+  private intersectionObserver: IntersectionObserver | null
+
   constructor (props: Props) {
     super(props)
 
@@ -50,8 +98,11 @@ export default class Select extends React.PureComponent<Props, State> {
     this.state = {
       value: obj.value,
       selected: obj.selected,
-      show: false
+      show: false,
+      optionsPosition: this.defaultOptionsPosition
     }
+    this.selectOptions = null
+    this.intersectionObserver = null
   }
 
   static defaultProps = {
@@ -130,7 +181,36 @@ export default class Select extends React.PureComponent<Props, State> {
     }
   }
 
+  get observerOptions (): IntersectionObserverOptions {
+    return {
+      root: null,
+      rootMargin: '0px',
+      threshold: 1.0
+    }
+  }
+
+  get defaultOptionsPosition (): OptionsPosition {
+    return {
+      position: 'absolute',
+      top: 'calc(100% + 4px)',
+      left: '0'
+    }
+  }
+
+  onSelectClip = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+    entries.map((entry: IntersectionObserverEntry) => {
+      console.log({ entry })
+    })
+  }
+
   onSelectClick = () => {
+    if (!this.state.show && this.selectOptions) {
+      if (!this.intersectionObserver) {
+        this.intersectionObserver = new IntersectionObserver(this.onSelectClip, this.observerOptions)
+        this.intersectionObserver.observe(this.selectOptions)
+      }
+    }
+
     this.setState({
       show: !this.state.show
     })
@@ -140,6 +220,10 @@ export default class Select extends React.PureComponent<Props, State> {
     this.setState({
       show: false
     })
+  }
+
+  refSet = (node: HTMLDivElement) => {
+    this.selectOptions = node
   }
 
   render () {
@@ -172,7 +256,9 @@ export default class Select extends React.PureComponent<Props, State> {
               </StyledSelectArrow>
             </StyledSelect>
             <StyledOptions
+              innerRef={this.refSet}
               show={this.state.show}
+              opts={this.state.optionsPosition}
               showAllContents={showAllContents}
             >
               {data}
