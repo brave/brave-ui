@@ -12,7 +12,8 @@ import { withState } from '@dump247/storybook-state'
 import centered from '@storybook/addon-centered/dist'
 
 // Components
-import { Toggle, Select, Checkbox, TextArea, Input, ControlWrapper } from '../../src/components'
+import { Tokens } from '../../src/features/rewards'
+import { Toggle, Select, Checkbox, TextArea, Input, ControlWrapper, Radio } from '../../src/components'
 import { CheckCircleIcon } from '../../src/components/icons'
 
 storiesOf('Components/Form controls', module)
@@ -131,6 +132,62 @@ storiesOf('Components/Form controls', module)
             <div data-key='tw'>Twitter</div>
             <div data-key='inst'>Instagram Instagram Instagram Instagram Instagram</div>
           </Checkbox>
+        </ControlWrapper>
+      </div>
+      </>
+    )
+  }))
+  .add('Radio', withState({ '5': true, '10': false, '15': false, '20': false }, (store) => {
+    const onChange = (key: string, selected: boolean, child: React.ReactNode, all: {[key: string]: boolean}) => {
+      store.set(all)
+    }
+    return (
+      <>
+       <div style={{ width: '295px', background: '#fff', padding: '30px 60px' }}>
+        <ControlWrapper
+          text={text('Title', 'Monthly Budget')}
+          type={'light'}
+          disabled={boolean('Disabled', false)}
+        >
+          <Radio
+            value={object('Radio values', store.state)}
+            size={select('Size', { small: 'small', big: 'big' }, 'small')}
+            disabled={boolean('Disabled', false)}
+            onChange={onChange}
+          >
+            <div data-key='5'>
+              <Tokens
+                size={'mini'}
+                value={5}
+                data-key={'5'}
+                color={'donation'}
+              />
+            </div>
+            <div data-key='10'>
+              <Tokens
+                size={'mini'}
+                value={10}
+                data-key={'10'}
+                color={'donation'}
+              />
+            </div>
+            <div data-key='15'>
+              <Tokens
+                size={'mini'}
+                value={15}
+                data-key={'15'}
+                color={'donation'}
+              />
+            </div>
+            <div data-key='20'>
+              <Tokens
+                size={'mini'}
+                value={20}
+                data-key={'20'}
+                color={'donation'}
+              />
+            </div>
+          </Radio>
         </ControlWrapper>
       </div>
       </>

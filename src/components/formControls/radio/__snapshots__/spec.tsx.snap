@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio tests basic tests matches the snapshot 1`] = `
+.c0 {
+  --radio-fill-size: 8px;
+  --radio-circle-size: 18px;
+  --radio-font-size: 14px;
+  --radio-right-margin: 12px;
+  line-height: 1.3;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+  font-size: var(--radio-font-size);
+  cursor: pointer;
+}
+
+.c4 {
+  opacity: 0;
+  position: absolute;
+}
+
+.c1 {
+  --radio-fill-size: 8px;
+  --radio-circle-size: 18px;
+  --radio-font-size: 14px;
+  --radio-right-margin: 12px;
+  --radio-fill-color: #4C54D2;
+  --radio-border-color: #4C54D2;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-basis: var(--radio-circle-size);
+  -ms-flex-preferred-size: var(--radio-circle-size);
+  flex-basis: var(--radio-circle-size);
+  width: var(--radio-circle-size);
+  height: var(--radio-circle-size);
+  border: 1px solid var(--radio-border-color);
+  margin-right: var(--radio-right-margin);
+  border-radius: 50%;
+}
+
+.c5 {
+  --radio-fill-size: 8px;
+  --radio-circle-size: 18px;
+  --radio-font-size: 14px;
+  --radio-right-margin: 12px;
+  --radio-fill-color: #4C54D2;
+  --radio-border-color: #AAAFEF;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-basis: var(--radio-circle-size);
+  -ms-flex-preferred-size: var(--radio-circle-size);
+  flex-basis: var(--radio-circle-size);
+  width: var(--radio-circle-size);
+  height: var(--radio-circle-size);
+  border: 1px solid var(--radio-border-color);
+  margin-right: var(--radio-right-margin);
+  border-radius: 50%;
+}
+
+.c2 {
+  --radio-fill-size: 8px;
+  --radio-circle-size: 18px;
+  --radio-font-size: 14px;
+  --radio-right-margin: 12px;
+  --radio-fill-color: #4C54D2;
+  --radio-border-color: #AAAFEF;
+  width: var(--radio-fill-size);
+  height: var(--radio-fill-size);
+  border-radius: 50%;
+  background: var(--radio-fill-color);
+}
+
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 1px;
+}
+
+<div
+  id="radio"
+>
+  <label
+    className="c0"
+    onClick={[Function]}
+    size="small"
+  >
+    <span
+      className="c1"
+      disabled={false}
+      selected={true}
+      size="small"
+    >
+      <div
+        className="c2"
+        size="small"
+      />
+    </span>
+    <span
+      className="c3"
+      disabled={false}
+      size="small"
+    >
+      5
+    </span>
+    <input
+      checked={true}
+      className="c4"
+      type="radio"
+    />
+  </label>
+  <label
+    className="c0"
+    onClick={[Function]}
+    size="small"
+  >
+    <span
+      className="c5"
+      disabled={false}
+      selected={false}
+      size="small"
+    />
+    <span
+      className="c3"
+      disabled={false}
+      size="small"
+    >
+      10
+    </span>
+    <input
+      checked={false}
+      className="c4"
+      type="radio"
+    />
+  </label>
+  <label
+    className="c0"
+    onClick={[Function]}
+    size="small"
+  >
+    <span
+      className="c5"
+      disabled={false}
+      selected={false}
+      size="small"
+    />
+    <span
+      className="c3"
+      disabled={false}
+      size="small"
+    >
+      15
+    </span>
+    <input
+      checked={false}
+      className="c4"
+      type="radio"
+    />
+  </label>
+</div>
+`;
