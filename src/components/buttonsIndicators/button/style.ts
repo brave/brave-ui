@@ -84,7 +84,7 @@ const StyledButton = styled<Props, 'button'>('button')`
   border-radius: ${largeMediumSmall('24px', '20px', '16px', '28px')};
   width: ${p => p.size === 'call-to-action' ? '100%' : 'auto'};
   min-width: ${largeMediumSmall('116px', '104px', '88px', '235px')};
-  padding: ${largeMediumSmall('14px 15px', '11px 10px', '7px 10px', '19px 15px')};
+  padding: ${largeMediumSmall('14px 18px', '11px 12px', '7px 12px', '19px 15px')};
   :hover:enabled {
     --button-state-color: var(--button-main-color-hover);
   }
@@ -115,8 +115,8 @@ export const StyledText = styled<Props, 'div'>('div')`
   display: flex;
   align-items: center;
   text-align: center;
-  letter-spacing: 0;
-  font-weight: 600;
+  letter-spacing: 1px;
+  font-weight: 500;
   text-transform: ${p => p.size === 'call-to-action' ? 'uppercase' : 'none'};
   line-height: 1;
 `
