@@ -4,18 +4,19 @@
 
 import styled, { css } from 'styled-components'
 import { Props } from './index'
+import colors from '../../../theme/palette'
 
 const getSelectColors = (p: StyleProps) => {
-  let color = '#686978'
-  let borderColor = '#DFDFE8'
+  let color = colors.grey700
+  let borderColor = colors.grey300
 
   if (p.type === 'dark') {
-    color = '#fff'
-    borderColor = '#686978'
+    color = colors.white
+    borderColor = colors.grey700
   }
 
   if (p.show) {
-    borderColor = '#A1A8F2'
+    borderColor = colors.grey300
   }
 
   if (p.disabled) {
@@ -23,8 +24,8 @@ const getSelectColors = (p: StyleProps) => {
     color = '#D1D1DB'
 
     if (p.type === 'dark') {
-      color = '#686978'
-      borderColor = '#686978'
+      color = colors.grey700
+      borderColor = colors.grey700
     }
   }
 
@@ -52,7 +53,7 @@ export const StyledWrapper = styled<StyleProps, 'div'>('div')`
 export const StyledSelectWrapper = styled<StyleProps, 'div'>('div')`
   position: relative;
   outline: 0;
-  font-family: Poppins, sans-serif;
+  font-family: Muli, sans-serif;
 `
 
 export const StyledSelect = styled<StyleProps, 'div'>('div')`
@@ -90,7 +91,7 @@ export const StyledOptions = styled<StyleProps, 'div'>('div')`
   border-radius: 3px;
   box-shadow: 0 2px 5px 0 rgba(223, 223, 232, 0.5);
   background-color: #fff;
-  border: solid 1px #dfdfe8;
+  border: solid 1px colors.grey300;
   overflow: hidden;
   z-index: 2;
   display: ${p => p.show ? 'block' : 'none'};
@@ -100,11 +101,11 @@ export const StyledOptions = styled<StyleProps, 'div'>('div')`
 export const StyledOption = styled<StyleProps, 'div'>('div')`
   font-size: 14px;
   line-height: 36px;
-  color: #1b1d2f;
+  color: colors.grey700;
   position: relative;
   padding: 0 0 0 ${(p) => p.showAllContents ? 4 : 12}px;
   display: flex;
-  background: ${p => p.selected ? '#e9f0ff' : '#fff'};
+  background: ${p => p.selected ? colors.blurple100 : colors.white};
 `
 
 export const StyledOptionCheck = styled<StyleProps, 'div'>('div')`
@@ -112,7 +113,7 @@ export const StyledOptionCheck = styled<StyleProps, 'div'>('div')`
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  color: #A1A8F2;
+  color: colors.blurple300
 `
 
 export const StyledOptionText = styled<StyleProps, 'div'>('div')`

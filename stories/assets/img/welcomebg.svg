@@ -1,16 +1,16 @@
-<svg width='2880' height='600' xmlns='http://www.w3.org/2000/svg'>
+<svg width='2880' height='1000' xmlns='http://www.w3.org/2000/svg'>
   <defs>
-    <linearGradient x1='0%' y1='50.706%' y2='50.706%' id='a'>
-      <stop stop-color='#F50' offset='0%'/>
-      <stop stop-color='#FF2000' offset='100%'/>
-    </linearGradient>
-    <linearGradient x1='100%' y1='50.706%' x2='0%' y2='50.706%' id='b'>
-      <stop stop-color='#F50' offset='0%'/>
-      <stop stop-color='#FF2000' offset='100%'/>
-    </linearGradient>
+     <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="1331.075" y1="608.348" x2="1332.075" y2="608.348" gradientTransform="matrix(1440 0 0 -378 -1915308 230216)">
+    <stop offset="0" stop-color="#f50"/>
+    <stop offset="1" stop-color="#ff2000"/>
+  </linearGradient>
+    <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="1332.075" y1="608.17" x2="1331.075" y2="608.17" gradientTransform="matrix(1440 0 0 -478.625 -1916748 291396)">
+    <stop offset="0" stop-color="#f50"/>
+    <stop offset="1" stop-color="#ff2000"/>
+  </linearGradient>
   </defs>
   <g fill='none'>
-    <path d='M0 0h1440v378c-294.536-66.792-525.471-100.188-692.805-100.188C579.862 277.813 330.797 311.209 0 378V0z' transform='translate(1440)' fill='url(#a)'/>
-    <path d='M0 0h1440v378c-403.849 67.083-692.971 100.625-867.367 100.625C398.237 478.625 207.359 445.083 0 378V0z' fill='url(#b)'/>
+       <path d="M1440 0h1440v520.7c-314.1-111.1-537.1-118.1-704.4-118.1-167.3 0-404.8 51.3-735.6 118.1V0z" fill="url(#a)"/>
+      <path d="M0 0h1440v520.7c-405.7 75.7-693 100.6-867.4 100.6S207.4 587.8 0 520.7V0z" fill="url(#b)"/>
   </g>
 </svg>
