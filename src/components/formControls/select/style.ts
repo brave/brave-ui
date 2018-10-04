@@ -122,3 +122,58 @@ export const StyledOptionText = styled<StyleProps, 'div'>('div')`
   white-space: nowrap;
   text-overflow: ${p => p.showAllContents ? 'initial' : 'ellipsis'};
 `
+
+export const StyledOptionsOverlay = styled<StyleProps, 'div'>('div')`
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: ${p => p.theme.color.modalOverlayBackground};
+  align-items: center;
+  z-index: 999;
+  justify-content: center;
+`
+
+export const StyledOptionsModal = styled<StyleProps, 'div'>('div')`
+  border-radius: 7px;
+  background: ${p => p.theme.color.primaryBackground};
+  height: 30%;
+  width: 50%;
+  z-index: 9999;
+  padding: 42px 55px 30px;
+
+  @media (max-width: 767px) {
+    width: 80%;
+  }
+  @media (max-height: 1080px) {
+    height: 40%;
+  }
+  @media (max-height: 900px) {
+    height: 55%;
+  }
+  @media (max-height: 620px) {
+    height: 65%;
+  }
+`
+
+export const StyledSelectTitle = styled<StyleProps, 'span'>('span')`
+  color: ${p => p.theme.color.defaultControlActive};
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 32px;
+  margin-bottom: 30px;
+`
+
+export const StyledModalContent = styled<StyleProps, 'div'>('div')`
+  display: block;
+`
+
+export const StyledRadioOptions = styled<StyleProps, 'div'>('div')`
+  display: block;
+  max-height: 225px;
+  overflow-y: scroll;
+`

@@ -12,8 +12,14 @@ import {
   StyledSelectText,
   StyledSelectArrow,
   StyledOptionCheck,
-  StyledOptionText
+  StyledOptionText,
+  StyledOptionsOverlay,
+  StyledOptionsModal,
+  StyledSelectTitle,
+  StyledModalContent,
+  StyledRadioOptions
 } from './style'
+import { Radio } from '../../'
 import { CheckIcon, CaratDownIcon } from '../../icons'
 
 export type Type = 'dark' | 'light'
@@ -21,6 +27,7 @@ export type Type = 'dark' | 'light'
 export interface Props {
   children: React.ReactNode
   id?: string
+  title?: string
   disabled?: boolean
   floating?: boolean
   showAllContents?: boolean
@@ -33,6 +40,11 @@ interface State {
   value: string | number
   selected: React.ReactNode
   show: boolean
+  radioShown: boolean
+}
+
+interface RadioOptionsObj {
+  [key: string]: boolean
 }
 
 /*
@@ -50,7 +62,8 @@ export default class Select extends React.PureComponent<Props, State> {
     this.state = {
       value: obj.value,
       selected: obj.selected,
-      show: false
+      show: false,
+      radioShown: false
     }
   }
 
@@ -93,6 +106,75 @@ export default class Select extends React.PureComponent<Props, State> {
     }
   }
 
+  getRadioOptions = (value: string | undefined, children: React.ReactNode) => {
+    const currentValue = this.state.value
+    let options: RadioOptionsObj = {}
+
+    React.Children.map(children, (child: any, i: number) => {
+      if (child.props['data-value'] === undefined) {
+        return null
+      }
+
+      const value = child.props['data-value']
+      const selected = value === currentValue
+
+      return options[value] = selected
+    })
+
+    return options
+  }
+
+  onRadioOptionClick = (key: string, selected: boolean, child: React.ReactNode, all: {[key: string]: boolean}) => {
+    this.setState({
+      value: key,
+      selected: child,
+      radioShown: false
+    })
+  }
+
+  onOverlayClick = (event: any) => {
+    if (event.target.hasAttribute('data-overlay')) {
+      this.setState({
+        radioShown: false
+      })
+    }
+  }
+
+  styledModalOverlay = (value: string | undefined, children: React.ReactNode) => {
+    if (!this.state.radioShown) {
+      return null
+    }
+
+    return (
+      <StyledOptionsOverlay
+        data-overlay='overlay'
+        onClick={this.onOverlayClick}
+      >
+        <StyledOptionsModal>
+          <StyledModalContent>
+            {
+              this.props.title
+              ? <StyledSelectTitle>
+                  {this.props.title}
+                </StyledSelectTitle>
+              : null
+            }
+            <StyledRadioOptions>
+              <Radio
+                size={'big'}
+                disabled={false}
+                onChange={this.onRadioOptionClick}
+                value={this.getRadioOptions(value, children)}
+              >
+                {this.props.children}
+              </Radio>
+            </StyledRadioOptions>
+          </StyledModalContent>
+        </StyledOptionsModal>
+      </StyledOptionsOverlay>
+    )
+  }
+
   generateOptions = (value: string | undefined, children: React.ReactNode, showAllContents: boolean | undefined) => {
     const self = this
     return React.Children.map(children, (child: any, i: number) => {
@@ -130,9 +212,20 @@ export default class Select extends React.PureComponent<Props, State> {
     }
   }
 
+  isTouchscreen = () => {
+    return 'ontouchstart' in document.documentElement
+  }
+
   onSelectClick = () => {
+    if (!this.isTouchscreen()) {
+      this.setState({
+        show: !this.state.show
+      })
+      return
+    }
+
     this.setState({
-      show: !this.state.show
+      radioShown: true
     })
   }
 
@@ -177,6 +270,7 @@ export default class Select extends React.PureComponent<Props, State> {
             >
               {data}
             </StyledOptions>
+            {this.styledModalOverlay(value, children)}
           </StyledSelectWrapper>
           : null
         }

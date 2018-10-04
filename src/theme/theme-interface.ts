@@ -12,6 +12,7 @@ export default interface IThemeProps {
     disabled: string,
     primaryBackground: string,
     secondaryBackground: string,
+    modalOverlayBackground: string,
     defaultControl: string,
     defaultControlInteracting: string,
     defaultControlActive: string

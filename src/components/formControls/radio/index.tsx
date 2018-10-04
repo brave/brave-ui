@@ -31,12 +31,12 @@ export default class Radio extends React.PureComponent<Props, {}> {
   generateChecks = (children: React.ReactNode) => {
     const self = this
     return React.Children.map(children, (child: any, i: number) => {
-      if (child.props['data-key'] === undefined) {
+      if (child.props['data-value'] === undefined) {
         return null
       }
 
       const element = child.props.children
-      const key = child.props['data-key']
+      const key = child.props['data-value']
       const selected = self.props.value[key] || false
 
       return (
@@ -61,6 +61,7 @@ export default class Radio extends React.PureComponent<Props, {}> {
           <StyledInput
             type={'radio'}
             checked={selected}
+            readOnly={true}
           />
         </StyledLabel>
       )
