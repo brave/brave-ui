@@ -7,6 +7,7 @@ import Checkbox from './formControls/checkbox'
 import ControlWrapper from './formControls/controlWrapper'
 import Input from './formControls/input'
 import Modal from './popupModals/modal'
+import Radio from './formControls/radio'
 import Select from './formControls/select'
 import Table from './dataTables/table'
 import Tabs from './layout/tabs'
@@ -25,6 +26,7 @@ export {
   Heading,
   Input,
   Modal,
+  Radio,
   Select,
   Table,
   Tabs,
