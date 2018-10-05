@@ -34,6 +34,7 @@ const locale: Record<string, string> = {
   contributeTooltip: 'Auto-Contribute Settings',
   copy: 'Copy',
   currentDonation: 'You’re currently donating {{currentDonation}} BAT to this site every month.',
+  braveRewardsCreatingText: 'Creating wallet',
   date: 'Date',
   deposit: 'Deposit',
   deposits: 'Deposits',
