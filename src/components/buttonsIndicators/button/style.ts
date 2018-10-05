@@ -66,7 +66,7 @@ const getThemeColors = (p: ThemedStyledProps<Props>) => {
 const StyledButton = styled<Props, 'button'>('button')`
   ${getThemeColors}
   --button-state-color: var(--button-main-color);
-  --icon-size: ${largeMediumSmall('18px', '16px', '14px')};
+  --icon-size: ${largeMediumSmall('20px', '16px', '12px')};
   --icon-spacing: ${largeMediumSmall('6px', '6px', '6px')};
   --webkit-appearance: none;
   box-sizing: border-box;
@@ -84,7 +84,7 @@ const StyledButton = styled<Props, 'button'>('button')`
   border-radius: ${largeMediumSmall('24px', '20px', '16px', '28px')};
   width: ${p => p.size === 'call-to-action' ? '100%' : 'auto'};
   min-width: ${largeMediumSmall('116px', '104px', '88px', '235px')};
-  padding: ${largeMediumSmall('14px 18px', '11px 12px', '7px 12px', '19px 15px')};
+  padding: ${largeMediumSmall('14px 15px', '11px 10px', '7px 10px', '19px 15px')};
   :hover:enabled {
     --button-state-color: var(--button-main-color-hover);
   }
