@@ -7,8 +7,8 @@ import { Props } from './index'
 
 const getBulletStyle = (p: Props) => {
   // default is large with dark variation
-  let size = 24
-  let offX = 16
+  let size = 20
+  let offX = 20
   let offY = 4
   let bgColor = '#6D73D2'
 
@@ -67,12 +67,13 @@ export const StyledSlider = styled<Props, 'div'>('div')`
 export const StyledBullet = styled<Props, 'div'>('div')`
   position: relative;
   border-radius: 50%;
-  transition: 200ms ease-out;
+  transition: all .4s ease;
   ${getBulletStyle};
   width: var(--toggle-bullet-size);
   height: var(--toggle-bullet-size);
   transform: var(--toggle-bullet-transform);
   background-color: var(--toggle-bullet-background);
+  box-shadow: 0 3px 3px rgba(0,0,0,0.05);
 `
 
 export const StyledText = styled<Props, 'div'>('div')`
