@@ -14,7 +14,7 @@ export const StyledNoContent = styled<{}, 'div'>('div')`
 
 export const StyledTable = styled<{}, 'table'>('table')`
   width: 100%;
-  margin-bottom: 11px;
+  margin-bottom: 20px;
 `
 
 export const StyledTH = styled<Partial<Cell>, 'th'>('th')`
