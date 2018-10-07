@@ -22,11 +22,11 @@ const theme: ITheme = {
     // warning controls
     warn: colors.red500,
     warnInteracting: colors.red600,
-    warnActive: colors.red300,
+    warnActive: colors.red700,
     // subtle controls
-    subtle: colors.grey300,
-    subtleInteracting: colors.grey400,
-    subtleActive: colors.grey200,
+    subtle: colors.grey400,
+    subtleInteracting: colors.grey500,
+    subtleActive: colors.grey600,
     // disabled controls
     disabled: colors.grey300,
     // backgrounds

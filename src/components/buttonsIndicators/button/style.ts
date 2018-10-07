@@ -116,7 +116,7 @@ export const StyledText = styled<Props, 'div'>('div')`
   align-items: center;
   text-align: center;
   letter-spacing: 0;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: ${p => p.size === 'call-to-action' ? 'uppercase' : 'none'};
   line-height: 1;
 `

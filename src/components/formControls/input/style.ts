@@ -36,7 +36,7 @@ export const StyledInput = styled<InputProps, 'input'>('input')`
   width: calc(100% - 30px);
   max-width: 100%;
   font-size: 14px;
-  font-family: ${theme.fontFamily.heading};
+  font-family: ${theme.fontFamily.body};
   border: none;
   color: ${p => p.disabled ? '#D1D1DB' : '#686978'};
   outline: unset;
