@@ -8,7 +8,7 @@ import * as React from 'react'
 import Button from '../../../src/components/buttonsIndicators/button'
 
 // Component-specific components
-import { Grid } from '../../../src/features/sync'
+import { Grid, FlexColumn } from '../../../src/features/sync'
 
 // Modals
 import NewToSyncModal from './modals/newToSync'
@@ -41,7 +41,7 @@ class SyncDisabledContent extends React.PureComponent<{}, SyncDisabledContentSta
 
   render () {
     return (
-      <Grid columns='auto 1fr'>
+      <Grid direction='row-reverse'>
         {
           this.state.newToSync
             ? <NewToSyncModal onClose={this.newToSyncModal} />
@@ -52,7 +52,16 @@ class SyncDisabledContent extends React.PureComponent<{}, SyncDisabledContentSta
             ? <ExistingSyncCodeModal onClose={this.existingSyncCodeModal} />
             : null
         }
-        <div>
+        <FlexColumn margin='0 10px 0 0'>
+          <Button
+            level='secondary'
+            type='subtle'
+            size='medium'
+            onClick={this.existingSyncCodeModal}
+            text={locale.iHaveAnExistingSyncCode}
+          />
+        </FlexColumn>
+        <FlexColumn margin='0 10px 0 0'>
           <Button
             level='primary'
             type='accent'
@@ -60,16 +69,7 @@ class SyncDisabledContent extends React.PureComponent<{}, SyncDisabledContentSta
             onClick={this.newToSyncModal}
             text={locale.iAmNewToSync}
           />
-        </div>
-        <div>
-          <Button
-            level='secondary'
-            type='accent'
-            size='medium'
-            onClick={this.existingSyncCodeModal}
-            text={locale.iHaveAnExistingSyncCode}
-          />
-        </div>
+        </FlexColumn>
       </Grid>
     )
   }

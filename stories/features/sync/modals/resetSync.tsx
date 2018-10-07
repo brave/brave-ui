@@ -51,23 +51,25 @@ class ResetSyncModal extends React.PureComponent<ResetSyncModalProps, ResetSyncM
           <ListBullet>{locale.resetSyncSecondBullet}</ListBullet>
           <ListBullet>{locale.resetSyncThirdBullet}</ListBullet>
         </ListOrdered>
-        <Grid columns='auto 0fr'>
-          <FlexColumn content='flex-end'>
+        <Grid direction='row-reverse'>
+          <FlexColumn margin='0 10px 0 0'>
             <Button
               level='secondary'
-              type='accent'
+              type='subtle'
               size='medium'
               onClick={onClose}
               text={locale.cancel}
             />
           </FlexColumn>
-          <Button
-            level='primary'
-            type='accent'
-            size='medium'
-            onClick={this.areYouSureAlert}
-            text={locale.resetSync}
-          />
+          <FlexColumn margin='0 10px 0 0'>
+            <Button
+              level='primary'
+              type='accent'
+              size='medium'
+              onClick={this.areYouSureAlert}
+              text={locale.resetSync}
+            />
+            </FlexColumn>
         </Grid>
       </Modal>
     )
