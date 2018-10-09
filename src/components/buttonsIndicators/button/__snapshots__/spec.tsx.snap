@@ -69,7 +69,7 @@ exports[`Button tests basic tests matches the snapshot 1`] = `
   -moz-letter-spacing: 0;
   -ms-letter-spacing: 0;
   letter-spacing: 0;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: none;
   line-height: 1;
 }
