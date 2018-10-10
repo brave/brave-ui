@@ -20,9 +20,9 @@ const siteScreen = require('../../assets/img/ddgo_site.png')
 const tipScreen = require('../../assets/img/tip_site.jpg')
 
 const donationAmounts = [
-  { tokens: 1, converted: 0.3, selected: false },
-  { tokens: 5, converted: 1.5, selected: false },
-  { tokens: 10, converted: 3, selected: false }
+  { tokens: '1.0', converted: '0.30', selected: false },
+  { tokens: '5.0', converted: '1.50', selected: false },
+  { tokens: '10.0', converted: '3.00', selected: false }
 ]
 
 const dummyOptInAction = () => {
@@ -64,7 +64,7 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
             domain={text('Domain', 'duckduckgo.com')}
             title={text('Title', '')}
             currentDonation={number('Current recurring donation', 0)}
-            balance={number('Balance ', 5)}
+            balance={text('Balance ', '5.0')}
             bgImage={boolean('Show bg image', false) ? siteBgImage : null}
             logo={boolean('Show logo', false) ? siteBgLogo : null}
             donationAmounts={object('Donations', store.state.donationAmounts)}
@@ -76,18 +76,15 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
             social={[
               {
                 type: 'twitter',
-                name: '@DuckDuckGo',
-                handler: 'DuckDuckGo'
+                url: 'https://twitter.com/DuckDuckGo'
               },
               {
                 type: 'youtube',
-                name: 'duckduckgo',
-                handler: 'UCm_TyecHNHucwF_p4XpeFkQ'
+                url: 'https://www.youtube.com/channel/UCm_TyecHNHucwF_p4XpeFkQ'
               },
               {
                 type: 'twitch',
-                name: 'duckDuckGo',
-                handler: 'duckduckgo'
+                url: 'https://www.twitch.tv/duckduckgo'
               }
             ]}
           />
@@ -122,7 +119,7 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
             title={text('Title', 'Bart Baker')}
             allow={boolean('Allow tips', store.state.allow)}
             provider={text('Provider', 'YouTube')}
-            balance={5}
+            balance={text('Balance', '5')}
             onDonate={onDonate}
             onClose={onClose}
             onAllow={onAllow}
@@ -136,13 +133,13 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
   .add('Pre Opt-In', () => {
     return (
       <div style={{ background: `url(${tipScreen}) no-repeat top center`, width: '986px', height: '912px', margin: '0 auto', position: 'relative' }}>
-        <div style={{ position: 'absolute', top: '40px', left: '120px', width: '373px', minHeight: '446px' }}>
+        <div style={{ position: 'absolute', top: '40px', left: '120px', width: '373px', minHeight: '446px', borderRadius: '8px', overflow: 'hidden' }}>
           <PanelWelcome
             variant={'one'}
             optInAction={dummyOptInAction}
           />
         </div>
-        <div style={{ position: 'absolute', top: '40px', left: '565px', width: '373px', minHeight: '446px' }}>
+        <div style={{ position: 'absolute', top: '40px', left: '565px', width: '373px', minHeight: '446px', borderRadius: '8px', overflow: 'hidden' }}>
           <PanelWelcome
             variant={'two'}
             optInAction={dummyOptInAction}
@@ -177,12 +174,12 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
 
     return (
       <div style={{ background: `url(${tipScreen}) no-repeat top center`, width: '986px', height: '100vh', margin: '0 auto', position: 'relative' }}>
-        <div style={{ position: 'absolute', top: '50px', left: '560px' }}>
+        <div style={{ position: 'absolute', top: '50px', left: '560px', borderRadius: '8px', overflow: 'hidden' }}>
           <WalletWrapper
             compact={true}
             contentPadding={false}
             gradientTop={getGradientColor()}
-            tokens={number('Tokens', 30)}
+            balance={text('Tokens', '30.0')}
             converted={text('Converted', '15.50 USD')}
             actions={[
               {
@@ -201,15 +198,15 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
             connectedWallet={boolean('Connected wallet', false)}
             grants={object('Grants', [
               {
-                tokens: 8,
+                tokens: '8.0',
                 expireDate: '7/15/2018'
               },
               {
-                tokens: 10,
+                tokens: '10.0',
                 expireDate: '9/10/2018'
               },
               {
-                tokens: 10,
+                tokens: '10.0',
                 expireDate: '10/10/2018'
               }
             ])}
@@ -229,7 +226,24 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
                 includeInAuto={boolean('Tips enabled', store.state.includeInAuto)}
                 attentionScore={'17'}
                 donationAmounts={
-                  [5, 10, 15, 20, 30, 50, 100]
+                  [
+                    {
+                      tokens: '0.0',
+                      converted: '0.00'
+                    },
+                    {
+                      tokens: '1.0',
+                      converted: '0.50'
+                    },
+                    {
+                      tokens: '5.0',
+                      converted: '2.50'
+                    },
+                    {
+                      tokens: '10.0',
+                      converted: '5.00'
+                    }
+                  ]
                 }
                 onToggleTips={onToggleTips}
                 donationAction={doNothing}
@@ -239,11 +253,11 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
               <WalletSummary
                 compact={true}
                 report={{
-                  grant: object('Grant', { tokens: 10, converted: 0.25 }),
-                  ads: object('Ads', { tokens: 10, converted: 0.25 }),
-                  contribute: object('Contribute', { tokens: 10, converted: 0.25 }),
-                  donation: object('Donation', { tokens: 2, converted: 0.25 }),
-                  tips: object('Tips', { tokens: 19, converted: 5.25 })
+                  grant: object('Grant', { tokens: '10.0', converted: '0.25' }),
+                  ads: object('Ads', { tokens: '10.0', converted: '0.25' }),
+                  contribute: object('Contribute', { tokens: '10.0', converted: '0.25' }),
+                  donation: object('Donation', { tokens: '2.0', converted: '0.25' }),
+                  tips: object('Tips', { tokens: '19.0', converted: '5.25' })
                 }}
               />
             </WalletSummarySlider>

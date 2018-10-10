@@ -158,7 +158,7 @@ storiesOf('Components/Form controls', module)
             <div data-key='5'>
               <Tokens
                 size={'mini'}
-                value={5}
+                value={'5'}
                 data-key={'5'}
                 color={'donation'}
               />
@@ -166,7 +166,7 @@ storiesOf('Components/Form controls', module)
             <div data-key='10'>
               <Tokens
                 size={'mini'}
-                value={10}
+                value={'10'}
                 data-key={'10'}
                 color={'donation'}
               />
@@ -174,7 +174,7 @@ storiesOf('Components/Form controls', module)
             <div data-key='15'>
               <Tokens
                 size={'mini'}
-                value={15}
+                value={'15'}
                 data-key={'15'}
                 color={'donation'}
               />
@@ -182,7 +182,7 @@ storiesOf('Components/Form controls', module)
             <div data-key='20'>
               <Tokens
                 size={'mini'}
-                value={20}
+                value={'20'}
                 data-key={'20'}
                 color={'donation'}
               />
