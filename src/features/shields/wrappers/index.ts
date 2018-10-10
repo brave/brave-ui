@@ -8,11 +8,7 @@ import Card from '../../../components/layout/card'
 export const ShieldsPanel = styled<any, 'main'>('main')`
   box-sizing: border-box;
   background: linear-gradient(to bottom, #131526, #343546);
-  border-radius: 6px;
   height: 100%;
-  min-height: ${p => p.enabled ? '585px' : '273px'};
-  max-height: ${p => p.enabled ? '585px' : '273px'};
-  transition: max-height 1.5s ease-in;
 `
 
 export const SiteCard = styled(Card)`
@@ -39,7 +35,7 @@ export const EnabledText = styled<{}, 'div'>('div')`
 `
 
 export const DisabledText = styled(EnabledText)`
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 2fr 4fr;
   max-width: 90%;
   margin: 10px auto 10px;
 `
