@@ -1,7 +1,7 @@
 {
   "name": "brave-ui",
   "main": "index.js",
-  "version": "0.26.2",
+  "version": "0.26.3",
   "description": "List of reusable React components to empower your brave UI",
   "author": "Brave Software",
   "contributors": [
@@ -95,8 +95,7 @@
     "typescript-plugin-styled-components": "0.0.6"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "styled-components": "^3.2.5"
+    "react": "^16.0.0"
   },
   "pre-commit": {
     "run": [
