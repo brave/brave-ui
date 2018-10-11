@@ -15,13 +15,13 @@ const getThemeSizes = (p: ThemedStyledProps<StyleProps>) => {
   let fillSize = '8'
   let circleSize = '18'
   let fontSize = '14'
-  let rightMargin = '12'
+  let rightMargin = '17'
 
   if (p.size === 'big') {
     fillSize = '10'
     circleSize = '24'
     fontSize = '16'
-    rightMargin = '17'
+    rightMargin = '25'
   }
 
   return css`
@@ -52,7 +52,7 @@ export const StyledLabel = styled<StyleProps, 'label'>('label')`
   ${p => getThemeSizes(p)}
   line-height: 1.3;
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 38px;
   font-size: var(--radio-font-size);
   cursor: pointer;
 `
