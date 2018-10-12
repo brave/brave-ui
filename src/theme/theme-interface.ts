@@ -9,6 +9,7 @@ export default interface IThemeProps {
     brandBat: string,
     brandBatInteracting: string,
     brandBatActive: string,
+    detailDescription: string,
     disabled: string,
     primaryBackground: string,
     secondaryBackground: string,
