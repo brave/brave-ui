@@ -9,6 +9,7 @@ import { withKnobs, boolean, text, object } from '@storybook/addon-knobs'
 
 // Components
 import Settings from './settings/settings'
+import SettingsMobile from './settingsMobile/settingsMobile'
 import { SiteBanner, Tip, PanelWelcome, WalletPanel, WalletSummary, WalletSummarySlider, WalletWrapper } from '../../../src/features/rewards'
 import { BatColorIcon, WalletAddIcon } from '../../../src/components/icons'
 import WelcomePage from '../../../src/features/rewards/welcomePage'
@@ -285,3 +286,4 @@ storiesOf('Feature Components/Rewards/Concepts/Mobile', module)
       optInAction={dummyOptInAction}
     />
   ))
+  .add('Settings', () => <SettingsMobile />)
