@@ -48,6 +48,7 @@ const locale: Record<string, string> = {
   donationFailureMsg: 'Looks like something went wrong. Please try again later.',
   donationSent: 'Donation Sent!',
   done: 'Done',
+  doMonthly: 'Set recurring donation',
   downloadPDF: 'Download as PDF',
   earningsAds: 'Earnings from Brave Ads',
   enableTips: 'Enable Tips',
