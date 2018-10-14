@@ -54,12 +54,15 @@ export default class ThemedButton extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { className, ...deepProps } = this.props
-    const { icon, text } = this.props
+    // separate DOM-related props out of props we want to pass to all children
+    const { className, onClick, ...deepProps } = this.props
+    const { icon, text } = deepProps
+    if (!onClick) {
+      console.warn('Button component not provided an onClick handler as a prop')
+    }
     let ButtonComponent = this.getButtonComponent()
-
     return (
-      <ButtonComponent className={className} {...deepProps}>
+      <ButtonComponent className={className} onClick={onClick} {...deepProps}>
         {
           text
           ? <StyledText {...deepProps}>
