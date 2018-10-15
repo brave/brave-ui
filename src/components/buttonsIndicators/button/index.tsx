@@ -14,14 +14,14 @@ import {
 export interface Props {
   text: string
   size?: Size
-  type?: Type,
-  brand?: Brand,
+  type?: Type
+  brand?: Brand
   level?: Level
   main?: boolean
   onClick?: () => void
   id?: string
   disabled?: boolean
-  icon?: {image: React.ReactNode, position: 'before' | 'after'},
+  icon?: {image: React.ReactNode, position: 'before' | 'after'}
   className?: string
 }
 
