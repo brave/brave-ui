@@ -6,7 +6,7 @@ import Amount from './index'
 import { TestThemeProvider } from '../../../theme'
 
 describe('Amount tests', () => {
-  const baseComponent = (props?: object) => <TestThemeProvider><Amount id='amount' amount={1} converted={0.4} onSelect={() => {}} {...props}  /></TestThemeProvider>
+  const baseComponent = (props?: object) => <TestThemeProvider><Amount id='amount' amount={'1'} converted={'0.4'} onSelect={() => {}} {...props} /></TestThemeProvider>
 
   describe('basic tests', () => {
     it('matches the snapshot', () => {
