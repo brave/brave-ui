@@ -284,72 +284,25 @@ storiesOf('Feature Components/Rewards/Modal', module)
         onMonthChange={doNothing}
         months={{ 'jun-2018': 'June 2018', 'may-2018': 'May 2018', 'apr-2018': 'April 2018' }}
         currentMonth={'jun-2018'}
-        summary={[
-          {
-            text: 'Token Grant available',
-            type: 'grant',
-            token: {
-              value: '10.0',
-              converted: '5.20'
-            }
-          },
-          {
-            text: 'Earnings from Brave Ads',
-            type: 'ads',
-            token: {
-              value: '10.0',
-              converted: '5.20'
-            }
-          },
-          {
-            text: 'Deposits',
-            type: 'deposit',
-            token: {
-              value: '10.0',
-              converted: '5.20'
-            }
-          },
-          {
-            text: 'Brave Contribute',
-            type: 'contribute',
-            notPaid: true,
-            token: {
-              value: '10.0',
-              converted: '5.20',
-              isNegative: true
-            }
-          },
-          {
-            text: 'Recurring Donations',
-            type: 'recurring',
-            notPaid: true,
-            token: {
-              value: '2.0',
-              converted: '1.10',
-              isNegative: true
-            }
-          },
-          {
-            text: 'One-time Donations/Tips',
-            type: 'donations',
-            token: {
-              value: '19.0',
-              converted: '10.10',
-              isNegative: true
-            }
-          }
-        ]}
+        report={{
+          grant: { tokens: '10.0', converted: '0.25' },
+          ads: { tokens: '10.0', converted: '0.25' },
+          deposit: { tokens: '10.0', converted: '0.25' },
+          contribute: { tokens: '10.0', converted: '0.25', notPaid: true },
+          donation: { tokens: '2.0', converted: '0.25', notPaid: true },
+          tips: { tokens: '19.0', converted: '5.25' }
+        }}
         total={{
-          value: '11.0',
-          converted: '0.5'
+          tokens: '11.0',
+          converted: '0.50'
         }}
         paymentDay={12}
         openBalance={{
-          value: '10.0',
+          tokens: '10.0',
           converted: '5.20'
         }}
         closingBalance={{
-          value: '21.0',
+          tokens: '21.0',
           converted: '5.30'
         }}
       />

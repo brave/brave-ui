@@ -46,34 +46,12 @@ exports[`ModalActivity tests basic tests matches the snapshot 1`] = `
 }
 
 .c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-right: 35px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c13 {
-  font-size: 14px;
-  line-height: 1.43;
-  color: #838391;
-  margin-left: 13px;
-}
-
-.c15 {
   background-color: #f9f9fd;
   margin: 0 -50px;
   padding: 0 50px;
 }
 
-.c29 {
+.c15 {
   max-width: 508px;
   margin-top: 46px;
   font-family: Muli,sans-serif;
@@ -83,41 +61,7 @@ exports[`ModalActivity tests basic tests matches the snapshot 1`] = `
   color: #686978;
 }
 
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 2.79;
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
-  color: #4b4c5c;
-  text-transform: uppercase;
-  padding-top: 14px;
-  margin-top: 28px;
-}
-
-.c21 {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 2.79;
-  -webkit-letter-spacing: 0.2px;
-  -moz-letter-spacing: 0.2px;
-  -ms-letter-spacing: 0.2px;
-  letter-spacing: 0.2px;
-  color: #4b4c5c;
-  text-transform: none;
-}
-
-.c25 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -132,16 +76,11 @@ exports[`ModalActivity tests basic tests matches the snapshot 1`] = `
   padding: 11px 0 32px;
 }
 
-.c28 {
+.c14 {
   margin-left: 5px;
 }
 
-.c11 {
-  color: #A1A8F2;
-  width: 27px;
-}
-
-.c26 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -150,71 +89,13 @@ exports[`ModalActivity tests basic tests matches the snapshot 1`] = `
   width: 19px;
 }
 
-.c23 {
-  text-align: right;
-}
-
-.c24 {
-  padding-right: 10px;
-}
-
-.c20 {
-  text-align: center;
-  padding: 30px 0;
-  color: #999ea2;
-  font-size: 14px;
-}
-
-.c17 {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.c18 {
-  text-transform: uppercase;
-  text-align: left;
-  font-family: Poppins,sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 2.33;
-  border-bottom: 2px solid #dedfe4;
-  border-top: 2px solid #dedfe4;
-  color: #4B4C5C;
-  padding: 9px 0;
-}
-
-.c22 {
-  text-transform: uppercase;
-  text-align: left;
-  font-family: Poppins,sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 2.33;
-  border-bottom: 2px solid #dedfe4;
-  border-top: 2px solid #dedfe4;
-  color: #4B4C5C;
-  padding: 9px 0;
-}
-
 .c3 {
   width: 100%;
   height: 100%;
   fill: currentColor;
 }
 
-.c14 {
-  width: 100%;
-  height: 100%;
-  fill: currentColor;
-}
-
-.c12 {
-  width: 100%;
-  height: 100%;
-  fill: currentColor;
-}
-
-.c27 {
+.c13 {
   width: 100%;
   height: 100%;
   fill: currentColor;
@@ -257,11 +138,6 @@ exports[`ModalActivity tests basic tests matches the snapshot 1`] = `
   max-height: calc(100vh - 100px);
 }
 
-.c19 {
-  text-align: right;
-  padding-right: 14px;
-}
-
 <div
   className="c0"
   id="activity"
@@ -302,166 +178,21 @@ exports[`ModalActivity tests basic tests matches the snapshot 1`] = `
           >
             <div
               className="c9"
-            >
-              <button
-                className="c10"
-              >
-                <span
-                  className="c11"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="c12"
-                    focusable="false"
-                    viewBox="0 0 32 32"
-                  >
-                    <path
-                      d="M23 13h1c.552 0 1 .447 1 1 0 .553-.448 1-1 1h-1c-.552 0-1-.447-1-1 0-.553.448-1 1-1zm3 9h-2v-4c0-.553-.448-1-1-1H9c-.552 0-1 .447-1 1v4H6V12h20v10zm-16 4h12v-7H10v7zm0-16h12V6H10v4zm16 0h-2V5c0-.553-.448-1-1-1H9c-.552 0-1 .447-1 1v5H6c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h2v3c0 .553.448 1 1 1h14c.552 0 1-.447 1-1v-3h2c1.103 0 2-.897 2-2V12c0-1.103-.897-2-2-2z"
-                      fillRule="evenodd"
-                    />
-                  </svg>
-                </span>
-                <div
-                  className="c13"
-                >
-                  MISSING: print
-                </div>
-              </button>
-              <button
-                className="c10"
-              >
-                <span
-                  className="c11"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="c14"
-                    focusable="false"
-                    viewBox="0 0 32 32"
-                  >
-                    <path
-                      d="M15.292 21.7061c.092.093.203.166.326.217.122.051.252.077.382.077s.26-.027.382-.077c.123-.051.234-.125.326-.217l4.998-4.988c.392-.391.392-1.024.002-1.414-.391-.393-1.023-.391-1.414-.002L17 18.5891V5.0001c0-.553-.447-1-1-1-.553 0-1 .447-1 1v13.589l-3.294-3.287c-.391-.389-1.023-.391-1.414.002-.39.39-.39 1.023.002 1.414l4.998 4.988zM28 20.0101v6c0 1.102-.897 2-2 2H6c-1.103 0-2-.898-2-2v-6c0-.553.447-1 1-1 .553 0 1 .447 1 1v6h20v-6c0-.553.447-1 1-1 .553 0 1 .447 1 1z"
-                      fillRule="evenodd"
-                    />
-                  </svg>
-                </span>
-                <div
-                  className="c13"
-                >
-                  MISSING: downloadPDF
-                </div>
-              </button>
-            </div>
+            />
           </div>
         </div>
         <div
-          className="c15"
+          className="c10"
         >
           <div
-            className="c16"
-          >
-            MISSING: transactions
-          </div>
-          <div>
-            <div>
-              <table
-                className="c17"
-              >
-                <thead>
-                  <tr>
-                    <th
-                      className="c18"
-                    >
-                      MISSING: date
-                    </th>
-                    <th
-                      className="c18"
-                    >
-                      MISSING: type
-                    </th>
-                    <th
-                      className="c18"
-                    >
-                      MISSING: description
-                    </th>
-                    <th
-                      className="c18"
-                    >
-                      <div
-                        className="c19"
-                      >
-                        MISSING: amount
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-              </table>
-              <div
-                className="c20"
-              />
-            </div>
-          </div>
-          <div
-            className="c16"
-          >
-            <span>
-              MISSING: contributeAllocation
-            </span>
-            <div
-              className="c21"
-            >
-              MISSING: paymentMonthly
-            </div>
-          </div>
-          <div>
-            <div>
-              <table
-                className="c17"
-              >
-                <thead>
-                  <tr>
-                    <th
-                      className="c22"
-                    >
-                      <div>
-                        MISSING: rewardsContributeVisited
-                      </div>
-                    </th>
-                    <th
-                      className="c22"
-                    >
-                      <div
-                        className="c23"
-                      >
-                        MISSING: rewardsContributeAttention
-                      </div>
-                    </th>
-                    <th
-                      className="c22"
-                    >
-                      <div
-                        className="c24 c23"
-                      >
-                        MISSING: payment
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-              </table>
-              <div
-                className="c20"
-              />
-            </div>
-          </div>
-          <div
-            className="c25"
+            className="c11"
           >
             <div
-              className="c26"
+              className="c12"
             >
               <svg
                 aria-hidden="true"
-                className="c27"
+                className="c13"
                 focusable="false"
                 viewBox="0 0 32 32"
               >
@@ -471,14 +202,14 @@ exports[`ModalActivity tests basic tests matches the snapshot 1`] = `
               </svg>
             </div>
             <div
-              className="c28"
+              className="c14"
             >
               MISSING: braveVerified
             </div>
           </div>
         </div>
         <div
-          className="c29"
+          className="c15"
         >
           <b>
             MISSING: pleaseNote

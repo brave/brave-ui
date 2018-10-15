@@ -36,31 +36,23 @@ import TableTransactions, { DetailRow as TransactionRow } from '../tableTransact
 import { Select, ControlWrapper, Modal } from '../../../components'
 import { AlertCircleIcon, DownloadIcon, PrintIcon, VerifiedFillIcon } from '../../../components/icons'
 import ListToken from '../listToken'
-import { Type as TokenType } from '../tokens'
+import { Type } from '../tokens'
 
 // Utils
 import { getLocale } from '../../../helpers'
 
 export interface Token {
-  value: string
+  tokens: string
   converted: string
   isNegative?: boolean
-}
-
-export type SummaryType = 'deposit' | 'grant' | 'ads' | 'contribute' | 'recurring' | 'donations'
-
-export interface SummaryItem {
-  type: SummaryType
-  token: Token
-  text: string
   notPaid?: boolean
 }
 
 export interface Props {
   contributeRows: ContributeRow[]
   onClose: () => void
-  onPrint: () => void
-  onDownloadPDF: () => void
+  onPrint?: () => void
+  onDownloadPDF?: () => void
   onMonthChange: (value: string, child: React.ReactNode) => void
   months: Record<string, string>
   currentMonth: string
@@ -68,21 +60,20 @@ export interface Props {
   openBalance?: Token
   closingBalance?: Token
   id?: string
-  summary: SummaryItem[]
+  hideBalance?: boolean
+  report: {
+    grant?: Token
+    deposit?: Token
+    ads?: Token
+    contribute?: Token
+    donation?: Token
+    tips?: Token
+  }
   total: Token
   paymentDay: number
 }
 
 export default class ModalActivity extends React.PureComponent<Props, {}> {
-  private colors: Record<SummaryType, TokenType> = {
-    deposit: 'earnings',
-    grant: 'earnings',
-    ads: 'earnings',
-    contribute: 'contribute',
-    recurring: 'donation',
-    donations: 'donation'
-  }
-
   private hasWarnings: boolean = false
 
   get headers () {
@@ -103,16 +94,56 @@ export default class ModalActivity extends React.PureComponent<Props, {}> {
 
   getSummaryBox = () => {
     this.hasWarnings = false
-    let items: React.ReactNode[]
 
-    if (!this.props.summary) {
+    if (!this.props.report) {
       return null
     }
 
-    items = this.props.summary.map((item: SummaryItem, i: number) => {
-      let title: React.ReactNode = item.text
+    const list = [
+      {
+        key: 'grant',
+        translation: 'tokenGrant',
+        color: 'earnings'
+      },
+      {
+        key: 'ads',
+        translation: 'earningsAds',
+        color: 'earnings'
+      },
+      {
+        key: 'deposit',
+        translation: 'deposits',
+        color: 'earnings'
+      },
+      {
+        key: 'contribute',
+        translation: 'rewardsContribute',
+        color: 'contribute',
+        negative: true
+      },
+      {
+        key: 'donation',
+        translation: 'recurringDonations',
+        color: 'donation',
+        negative: true
+      },
+      {
+        key: 'tips',
+        translation: 'oneTimeDonation',
+        color: 'donation',
+        negative: true
+      }
+    ]
 
-      if (item.notPaid) {
+    let result: React.ReactNode[] = []
+    const all = Object.keys(this.props.report).length
+    let current = 0
+
+    list.forEach((item, index) => {
+      const data = (this.props.report as Record<string, Token>)[item.key]
+      let title: React.ReactNode = getLocale(item.translation)
+
+      if (data.notPaid) {
         this.hasWarnings = true
         title = (
           <StyledWarningWrapper>
@@ -120,33 +151,23 @@ export default class ModalActivity extends React.PureComponent<Props, {}> {
           </StyledWarningWrapper>
         )
       }
-
-      return (
-        <ListToken
-          key={`${this.props.id}-summary-${i}`}
-          title={title}
-          value={item.token.value}
-          converted={item.token.converted}
-          color={item.notPaid ? 'notPaid' : this.colors[item.type]}
-          size={'small'}
-          border={i === 0 ? 'first' : 'default'}
-          isNegative={item.token.isNegative}
-        />
-      )
+      if (data) {
+        current++
+        result.push((
+          <ListToken
+            key={`activity--${index}-${data.tokens}`}
+            value={data.tokens}
+            converted={data.converted}
+            color={item.color as Type}
+            title={title}
+            isNegative={item.negative}
+            border={all === current ? 'last' : undefined}
+          />
+        ))
+      }
     })
 
-    items.push(
-      <ListToken
-        key={`${this.props.id}-summary-99`}
-        title={<b>{getLocale('total')}</b>}
-        value={this.props.total.value}
-        converted={this.props.total.converted}
-        size={'small'}
-        border={'last'}
-      />
-    )
-
-    return items
+    return result
   }
 
   render () {
@@ -160,7 +181,10 @@ export default class ModalActivity extends React.PureComponent<Props, {}> {
       closingBalance,
       months,
       transactionRows,
-      paymentDay
+      paymentDay,
+      onPrint,
+      onDownloadPDF,
+      hideBalance
     } = this.props
 
     return (
@@ -187,11 +211,11 @@ export default class ModalActivity extends React.PureComponent<Props, {}> {
                 : null
               }
               {
-                openBalance && closingBalance
+                !hideBalance && openBalance && closingBalance
                 ? <StyledBalance>
                   <ListToken
                     title={getLocale('openBalance')}
-                    value={openBalance.value}
+                    value={openBalance.tokens}
                     converted={openBalance.converted}
                     color={'earnings'}
                     border={'last'}
@@ -199,7 +223,7 @@ export default class ModalActivity extends React.PureComponent<Props, {}> {
                   <StyledClosing>
                     <ListToken
                       title={<b>{getLocale('closeBalance')}</b>}
-                      value={closingBalance.value}
+                      value={closingBalance.tokens}
                       converted={closingBalance.converted}
                       color={'contribute'}
                       border={'last'}
@@ -212,18 +236,26 @@ export default class ModalActivity extends React.PureComponent<Props, {}> {
             </StyledLeft>
             <StyledRight>
               <StyledIconWrap>
-                <StyledIcon>
-                  <StyledActionIcon>
-                    <PrintIcon />
-                  </StyledActionIcon>
-                  <StyledIconText>{getLocale('print')}</StyledIconText>
-                </StyledIcon>
-                <StyledIcon>
-                  <StyledActionIcon>
-                    <DownloadIcon />
-                  </StyledActionIcon>
-                  <StyledIconText>{getLocale('downloadPDF')}</StyledIconText>
-                </StyledIcon>
+                {
+                  onPrint
+                  ? <StyledIcon onClick={onPrint}>
+                    <StyledActionIcon>
+                      <PrintIcon />
+                    </StyledActionIcon>
+                    <StyledIconText>{getLocale('print')}</StyledIconText>
+                  </StyledIcon>
+                  : null
+                }
+                {
+                  onDownloadPDF
+                  ? <StyledIcon onClick={onDownloadPDF}>
+                    <StyledActionIcon>
+                      <DownloadIcon />
+                    </StyledActionIcon>
+                    <StyledIconText>{getLocale('downloadPDF')}</StyledIconText>
+                  </StyledIcon>
+                  : null
+                }
               </StyledIconWrap>
               {this.getSummaryBox()}
             </StyledRight>
@@ -241,22 +273,34 @@ export default class ModalActivity extends React.PureComponent<Props, {}> {
             : null
           }
           <StyledTables>
-            <StyledTableTitle>{getLocale('transactions')}</StyledTableTitle>
-            <TableTransactions
-              rows={transactionRows}
-            />
-            <StyledTableTitle>
-              <span>{getLocale('contributeAllocation')}</span>
-              <StyledTableSubTitle>
-                {getLocale('paymentMonthly', { day: paymentDay })}
-              </StyledTableSubTitle>
-              </StyledTableTitle>
-            <TableContribute
-              header={this.headers}
-              rows={contributeRows}
-              allSites={true}
-              showRowAmount={true}
-            />
+            {
+              transactionRows.length > 0
+              ? <>
+                <StyledTableTitle>{getLocale('transactions')}</StyledTableTitle>
+                <TableTransactions
+                  rows={transactionRows}
+                />
+              </>
+              : null
+            }
+            {
+              contributeRows.length > 0
+              ? <>
+                <StyledTableTitle>
+                  <span>{getLocale('contributeAllocation')}</span>
+                  <StyledTableSubTitle>
+                    {getLocale('paymentMonthly', { day: paymentDay })}
+                  </StyledTableSubTitle>
+                  </StyledTableTitle>
+                <TableContribute
+                  header={this.headers}
+                  rows={contributeRows}
+                  allSites={true}
+                  showRowAmount={true}
+                />
+              </>
+              : null
+            }
             <StyledVerified>
               <StyledVerifiedIcon>
                 <VerifiedFillIcon />
