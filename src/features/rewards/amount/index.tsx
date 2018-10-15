@@ -10,7 +10,7 @@ import { BatColorIcon } from '../../../components/icons'
 export interface Props {
   amount: string
   converted: string
-  onSelect: (amount: number) => void
+  onSelect: (amount: string) => void
   id?: string
   selected?: boolean
   type?: 'big' | 'small'
@@ -21,7 +21,7 @@ export default class Amount extends React.PureComponent<Props, {}> {
   static defaultProps = {
     type: 'small',
     currency: 'USD',
-    converted: 0
+    converted: '0.00'
   }
 
   render () {
