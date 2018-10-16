@@ -168,7 +168,6 @@ const locale: Record<string, string> = {
   welcomeHeaderOne: 'Brave Payments is now Brave Rewards with many upgrades.',
   welcomeHeaderTwo: 'You are about to start a very Brave way to browse the web.',
   whyBraveRewards: 'Why Brave Rewards?',
-  whyBraveRewardsDesc: 'Did you know that the Internet is not actually free?',
   whyBraveRewardsDesc1: 'With conventional browsers, you pay to browse the web by viewing ads with your valuable attention, spending your valuable time downloading invasive ad technology, that transmits your valuable private data to advertisers — without your consent.',
   whyBraveRewardsDesc2: 'Well, you\'ve come to the right place. Brave welcomes you to the new internet. One where your time is valued, your personal data is kept private, and you actually get paid for your attention.',
   yourWallet: 'Your wallet'
