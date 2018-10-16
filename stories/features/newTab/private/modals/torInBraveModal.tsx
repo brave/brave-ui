@@ -5,7 +5,6 @@
 import * as React from 'react'
 import {
   Modal,
-  Paragraph,
   LimitedBounds,
   PurpleButton,
   HeadingText,
@@ -25,8 +24,6 @@ export default class TorInBraveModal extends React.PureComponent<Props, {}> {
       <Modal onClose={onClose} size='small'>
         <LimitedBounds>
         <HeadingText>{locale.modalTorInBraveTitle}</HeadingText>
-          <Paragraph>{locale.modalTorInBraveDisclaimer1}</Paragraph>
-          <Paragraph>{locale.modalTorInBraveDisclaimer2}</Paragraph>
         </LimitedBounds>
         <Footer>
           <PurpleButton onClick={onClose} text={locale.done} />
