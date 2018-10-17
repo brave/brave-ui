@@ -25,6 +25,8 @@ const theme: ITheme = {
     warnActive: colors.red700,
     // subtle controls
     subtle: colors.grey400,
+    subtleBackground: colors.grey100,
+    subtleExclude: colors.grey300,
     subtleInteracting: colors.grey500,
     subtleActive: colors.grey600,
     // disabled controls

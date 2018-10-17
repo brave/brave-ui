@@ -21,6 +21,8 @@ export default interface IThemeProps {
     warnInteracting: string
     warnActive: string
     subtle: string
+    subtleBackground: string
+    subtleExclude: string
     subtleInteracting: string
     subtleActive: string
   }

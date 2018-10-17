@@ -166,6 +166,7 @@ export const StyledSelectTitle = styled<StyleProps, 'span'>('span')`
   letter-spacing: 0;
   line-height: 32px;
   margin-bottom: 30px;
+  text-align: left;
 `
 
 export const StyledModalContent = styled<StyleProps, 'div'>('div')`
