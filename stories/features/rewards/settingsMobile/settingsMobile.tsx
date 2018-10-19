@@ -5,9 +5,11 @@
 import * as React from 'react'
 
 // Components
+import GrantMobile from './grantMobile'
 import AdsBoxMobile from './adsBoxMobile'
 import ContributeBoxMobile from './contributeBoxMobile'
 import DonationsBoxMobile from './donationsBoxMobile'
+import MobileWalletPanel from './mobileWalletPanel'
 import { StyledDisabledContent, StyledHeading, StyledText } from './style'
 import {
   MainToggleMobile,
@@ -24,18 +26,24 @@ import locale from './fakeLocale'
 
 interface State {
   mainToggle: boolean
+  walletShown: boolean
 }
 
 class SettingsMobile extends React.PureComponent<{}, State> {
   constructor (props: {}) {
     super(props)
     this.state = {
-      mainToggle: true
+      mainToggle: true,
+      walletShown: false
     }
   }
 
   onMainToggle = () => {
     this.setState({ mainToggle: !this.state.mainToggle })
+  }
+
+  onToggleWallet = () => {
+    this.setState({ walletShown: !this.state.walletShown })
   }
 
   render () {
@@ -60,10 +68,12 @@ class SettingsMobile extends React.PureComponent<{}, State> {
             </StyledDisabledContent>
           : null
         }
+        <GrantMobile />
         <WalletInfoHeader
           balance={'30.0'}
           id={'mobile-wallet'}
-          converted={'163230.50 USD'}
+          onClick={this.onToggleWallet}
+          converted={'7.00 USD'}
         />
         <AdsBoxMobile
           rewardsEnabled={this.state.mainToggle}
@@ -73,6 +83,10 @@ class SettingsMobile extends React.PureComponent<{}, State> {
         />
         <DonationsBoxMobile
           rewardsEnabled={this.state.mainToggle}
+        />
+        <MobileWalletPanel
+          toggleAction={this.onToggleWallet}
+          visible={this.state.walletShown}
         />
       </SettingsPageMobile>
     )
