@@ -7,7 +7,7 @@ import { ClockProps } from './index'
 import { setTheme } from '../../helpers'
 
 const StyledClock = styled.div`
-  color: ${(p: ClockProps) => setTheme(p.customStyle, 'color') || 'inherit'};
+  color: ${(p: ClockProps) => setTheme(p.customStyle, 'color') || 'white'};
   box-sizing: border-box;
   line-height: 1;
   user-select: none;
