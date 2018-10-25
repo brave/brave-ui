@@ -24,7 +24,7 @@ exports[`WalletSummary tests basic tests matches the snapshot 1`] = `
 }
 
 .c3 {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 300;
   line-height: 0.79;
   -webkit-letter-spacing: 0.4px;
