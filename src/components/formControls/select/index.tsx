@@ -213,7 +213,7 @@ export default class Select extends React.PureComponent<Props, State> {
   }
 
   isTouchscreen = () => {
-    return 'ontouchstart' in document.documentElement
+    return 'ontouchstart' in window
   }
 
   onSelectClick = () => {
