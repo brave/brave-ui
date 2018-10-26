@@ -1,7 +1,7 @@
 {
   "name": "brave-ui",
   "main": "index.js",
-  "version": "0.0.0",
+  "version": "0.30.0",
   "description": "List of reusable React components to empower your brave UI",
   "author": "Brave Software",
   "contributors": [
@@ -32,7 +32,7 @@
     "lint-ts-stories": "tslint --project tsconfig-story.json 'stories/**/*.{ts,tsx}'",
     "copy": "ncp src package --filter='^(?!(.*)(__snapshots__|spec.tsx)$).*$' && cpr package.json package/ && cpr README.md package/",
     "build": "rimraf package && npm run copy && lerna exec -- tsc",
-    "publish": "npm run build && lerna publish",
+    "publishz": "npm run build && lerna publish",
     "storybook-start": "start-storybook -p 9091 -c .storybook",
     "storybook-deploy": "storybook-to-ghpages -s public -o .out",
     "storybook-build": "build-storybook -c .storybook -o .storybook-out",
