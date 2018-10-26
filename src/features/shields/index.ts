@@ -3,29 +3,117 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { SelectBox } from './select'
-import { Grid, GridLabel } from './grid'
-import { LinkIcon, ShieldIcon } from './icons'
+import { CloseButton, EmptyButton } from './button'
 import { Toggle } from './toggle'
-import { Stat, Link, Label, Highlight, UnHighlight, Description } from './text'
-import { ShieldsPanel, SiteCard, EnabledText, DisabledText, HeaderToggle, Header } from './wrappers'
+import { Option, Options } from './options'
+
+import {
+  DisabledTextGrid,
+  EnabledTextGrid,
+  MainFooterLinkFlex,
+  MainSiteInfoGrid,
+  MainToggleFlex,
+  ResourcesFooterFlex,
+  ResourcesFooterGrid,
+  ResourcesFooterGridColumnLeft,
+  ResourcesFooterGridColumnRight,
+  ResourcesGrid,
+  ResourcesListGrid,
+  ResourcesSiteInfoFlex,
+  ResourcesSiteInfoGrid,
+  ResourcesStatusGrid,
+  ResourcesSubTitleGrid,
+  SelectGrid,
+  StatFlex,
+  ToggleFlex,
+  ToggleGrid,
+  ShieldIconFlex
+} from './container'
+
+import {
+  Description,
+  Highlight,
+  Label,
+  Link,
+  ResourcesListAllowedLink,
+  ResourcesListBlockedLink,
+  ResourcesListItem,
+  ResourcesListText,
+  ResourcesStatusTitle,
+  ResourcesSubTitle,
+  ResourcesSwitchLabel,
+  UnHighlight
+} from './text'
+
+import {
+  ClickableEmptySpace,
+  DismissOverlay,
+  Header,
+  ResourcesListScroll,
+  ShieldsPanel,
+  SiteInfoCard
+} from './display'
+
+import {
+  AllowedScriptsIcon,
+  BlockedScriptsIcon,
+  CloseIcon,
+  LinkIcon,
+  ShieldIcon,
+  ShowLessIcon,
+  ShowMoreIcon
+} from './icons'
 
 export {
+  AllowedScriptsIcon,
+  BlockedScriptsIcon,
+  ClickableEmptySpace,
+  CloseButton,
+  CloseIcon,
   Description,
-  DisabledText,
-  EnabledText,
-  Grid,
-  GridLabel,
+  DisabledTextGrid,
+  DismissOverlay,
+  EmptyButton,
+  EnabledTextGrid,
   Header,
-  HeaderToggle,
   Highlight,
   Label,
   Link,
   LinkIcon,
+  MainFooterLinkFlex,
+  MainSiteInfoGrid,
+  MainToggleFlex,
+  Option,
+  Options,
+  ResourcesFooterFlex,
+  ResourcesFooterGrid,
+  ResourcesFooterGridColumnLeft,
+  ResourcesFooterGridColumnRight,
+  ResourcesGrid,
+  ResourcesListAllowedLink,
+  ResourcesListBlockedLink,
+  ResourcesListGrid,
+  ResourcesListItem,
+  ResourcesListScroll,
+  ResourcesListText,
+  ResourcesSiteInfoFlex,
+  ResourcesSiteInfoGrid,
+  ResourcesStatusGrid,
+  ResourcesStatusTitle,
+  ResourcesSubTitle,
+  ResourcesSubTitleGrid,
+  ResourcesSwitchLabel,
   SelectBox,
+  SelectGrid,
   ShieldIcon,
+  ShieldIconFlex,
   ShieldsPanel,
-  SiteCard,
-  Stat,
+  ShowLessIcon,
+  ShowMoreIcon,
+  SiteInfoCard,
+  StatFlex,
   Toggle,
+  ToggleGrid,
+  ToggleFlex,
   UnHighlight
 }

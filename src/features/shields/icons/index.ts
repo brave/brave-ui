@@ -5,28 +5,55 @@
 import styled from '../../../theme'
 
 import { ComponentType } from 'react'
-import { AlertShieldIcon, OpenNewIcon } from '../../../components/icons'
+import {
+  AlertShieldIcon,
+  OpenNewIcon,
+  CaratDownIcon,
+  CaratUpIcon,
+  CloseStrokeIcon,
+  CloseCircleIcon,
+  CheckCircleIcon
+} from '../../../components/icons'
 import palette from '../../../theme/palette'
 
 export const LinkIcon = styled(OpenNewIcon as ComponentType)`
-  box-sizing: border-box;
   width: 24px;
   height: 24px;
-  padding: 4px;
-
-  * {
-    fill: ${palette.blue200};
-  }
+  color: ${palette.blue200};
 `
 
 export const ShieldIcon = styled(AlertShieldIcon as ComponentType)`
-  box-sizing: border-box;
   width: 48px;
   height: 48px;
-  display: block;
-  margin: auto;
+  color: ${palette.grey600};
+`
 
-  * {
-    fill: ${palette.grey600};
-  }
+export const ShowMoreIcon = styled(CaratDownIcon as ComponentType)`
+  width: 24px;
+  height: 24px;
+  color: ${palette.blue200};
+`
+
+export const ShowLessIcon = styled(CaratUpIcon as ComponentType)`
+  width: 24px;
+  height: 24px;
+  color: ${palette.blue200};
+`
+
+export const CloseIcon = styled(CloseStrokeIcon as ComponentType)`
+  width: 24px;
+  height: 24px;
+  color: ${palette.blue200};
+`
+
+export const BlockedScriptsIcon = styled(CloseCircleIcon as ComponentType)`
+  width: 24px;
+  height: 24px;
+  color: ${palette.red500};
+`
+
+export const AllowedScriptsIcon = styled(CheckCircleIcon as ComponentType)`
+  width: 24px;
+  height: 24px;
+  color: ${palette.green500};
 `

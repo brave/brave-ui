@@ -3,16 +3,20 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { Link, LinkIcon } from '../../../../src/features/shields'
+
+// Feature-specific components
+import { MainFooterLinkFlex, LinkIcon } from '../../../../src/features/shields'
+
+// Fake data
 import locale from '../fakeLocale'
 
 export default class ShieldsFooter extends React.PureComponent<{}, {}> {
   render () {
     return (
-      <Link href='chrome://settings' rel='noreferrer noopener' target='_blank'>
+      <MainFooterLinkFlex href='chrome://settings' rel='noreferrer noopener' target='_blank'>
         <span>{locale.editDefaults}</span>
         <LinkIcon />
-      </Link>
+      </MainFooterLinkFlex>
     )
   }
 }
