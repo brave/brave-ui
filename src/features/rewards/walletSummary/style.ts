@@ -35,7 +35,7 @@ export const StyledTitle = styled<{}, 'div'>('div')`
   font-weight: 300;
   line-height: 0.79;
   letter-spacing: 0.4px;
-  color: #4c54d2;
+  color: #4C54D2;
   margin: 4px 0 26px;
   text-transform: uppercase;
 `
