@@ -7,13 +7,16 @@ import GenerateComponentForGraphic from './template'
 
 // Direct access to SVG
 export const Graphic = (
-  <svg width='32' height='32' xmlns='http://www.w3.org/2000/svg'>
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'>
     <path
-      d='M6.062 4L4.45 8.12v16.835h5.731V28h3.224l3.045-3.045h4.657l6.268-6.268V4H6.062zm19.164 13.612l-3.582 3.582h-5.731l-3.045 3.045v-3.045H8.032V6.149h17.194v11.463zm-3.582-7.343v6.268h-2.15V10.27h2.15zm-5.731 0v6.268h-2.15V10.27h2.15z'
-      fill='#6441A4'
-      fillRule='evenodd'
+      fill='#6441a4'
+      d='M5.76 3L4 7.46V25.7h6.25V29h3.52l3.32-3.3h5.07L29 18.91V3H5.76z'
     />
-  </svg>
+    <path
+      d='M7.91 21.63h5.27v3.3l3.32-3.3h6.25l3.91-3.88V5.33H7.91zm12.5-11.84h2.34v6.79h-2.34zm-6.25 0h2.34v6.79h-2.34z'
+      fill='#fff'
+    />
+</svg>
 )
 
 // Styled Component for SVG
