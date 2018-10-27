@@ -52,7 +52,7 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   text-overflow: ellipsis;
 }
 
-.c6 {
+.c7 {
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
@@ -67,7 +67,7 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   padding: 9px 0;
 }
 
-.c7 {
+.c8 {
   font-size: 14px;
   line-height: 36px;
   color: #1b1d2f;
@@ -80,7 +80,7 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   background: #e9f0ff;
 }
 
-.c11 {
+.c12 {
   font-size: 14px;
   line-height: 36px;
   color: #1b1d2f;
@@ -93,7 +93,7 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   background: #fff;
 }
 
-.c8 {
+.c9 {
   -webkit-flex-basis: 11px;
   -ms-flex-preferred-size: 11px;
   flex-basis: 11px;
@@ -111,7 +111,7 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   color: #A1A8F2;
 }
 
-.c10 {
+.c11 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -122,13 +122,19 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   text-overflow: ellipsis;
 }
 
-.c5 {
+.c6 {
   width: 100%;
   height: 100%;
   fill: currentColor;
 }
 
-.c9 {
+.c5 {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.c10 {
   width: 100%;
   height: 100%;
   fill: currentColor;
@@ -158,69 +164,68 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
       >
         <svg
           aria-hidden="true"
-          className="c5"
+          className="c5 c6"
           focusable="false"
           viewBox="0 0 32 32"
         >
           <path
-            d="M16 17.68292l6.3492-5.44218c.41933-.35942 1.05063-.31086 1.41006.10847.35942.41932.31086 1.05062-.10847 1.41005l-7 6c-.37449.32099-.9271.32099-1.30158 0l-7-6c-.41933-.35943-.46789-.99073-.10847-1.41005.35943-.41933.99073-.46789 1.41005-.10847L16 17.68292z"
+            d="M22.4 29a1 1 0 0 1-.67-.25l-13.4-12a1 1 0 0 1 0-1.5l13.4-12a1 1 0 0 1 1.33 1.5L10.5 16l12.56 11.25A1 1 0 0 1 22.4 29z"
           />
         </svg>
       </div>
     </div>
     <div
-      className="c6"
+      className="c7"
     >
       <div
-        className="c7"
+        className="c8"
         onClick={[Function]}
         selected={true}
       >
         <div
-          className="c8"
+          className="c9"
         >
           <svg
             aria-hidden="true"
-            className="c9"
+            className="c10"
             focusable="false"
             viewBox="0 0 32 32"
           >
             <path
-              d="M13.06676 25.00001c-.263 0-.517-.104-.704-.29l-8.067-8c-.392-.389-.395-1.022-.005-1.414.387-.392 1.021-.395 1.414-.006l7.309 7.249 13.233-15.196c.361-.416.993-.46 1.41-.097.417.363.46.994.098 1.411l-13.934 16c-.181.208-.441.332-.717.342-.013.001-.025.001-.037.001"
-              fillRule="evenodd"
+              d="M13 26a1 1 0 0 1-.67-.26l-9-8.2a1 1 0 0 1 1.34-1.48l8.23 7.49L27.23 6.13A1 1 0 0 1 28.64 6a1 1 0 0 1 .13 1.4l-15 18.24a1 1 0 0 1-.7.36z"
             />
           </svg>
         </div>
         <div
-          className="c10"
+          className="c11"
         >
           01
         </div>
       </div>
       <div
-        className="c11"
+        className="c12"
         onClick={[Function]}
         selected={false}
       >
         <div
-          className="c8"
+          className="c9"
         />
         <div
-          className="c10"
+          className="c11"
         >
           11
         </div>
       </div>
       <div
-        className="c11"
+        className="c12"
         onClick={[Function]}
         selected={false}
       >
         <div
-          className="c8"
+          className="c9"
         />
         <div
-          className="c10"
+          className="c11"
         >
           12
         </div>
