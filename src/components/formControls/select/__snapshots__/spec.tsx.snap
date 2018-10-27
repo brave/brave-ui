@@ -8,7 +8,7 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
 .c1 {
   position: relative;
   outline: 0;
-  font-family: Poppins,sans-serif;
+  font-family: Muli,sans-serif;
 }
 
 .c2 {
@@ -38,7 +38,7 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  height: 22px;
+  height: 16px;
 }
 
 .c3 {
