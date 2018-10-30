@@ -4,19 +4,18 @@
 
 import styled, { css } from 'styled-components'
 import { Props } from './index'
-import colors from '../../../theme/palette'
 
 const getSelectColors = (p: StyleProps) => {
-  let color = colors.grey700
-  let borderColor = colors.grey300
+  let color = '#686978'
+  let borderColor = '#DFDFE8'
 
   if (p.type === 'dark') {
-    color = colors.white
-    borderColor = colors.grey700
+    color = '#fff'
+    borderColor = '#686978'
   }
 
   if (p.show) {
-    borderColor = colors.grey300
+    borderColor = '#A1A8F2'
   }
 
   if (p.disabled) {
@@ -24,8 +23,8 @@ const getSelectColors = (p: StyleProps) => {
     color = '#D1D1DB'
 
     if (p.type === 'dark') {
-      color = colors.grey700
-      borderColor = colors.grey700
+      color = '#686978'
+      borderColor = '#686978'
     }
   }
 
@@ -91,7 +90,7 @@ export const StyledOptions = styled<StyleProps, 'div'>('div')`
   border-radius: 3px;
   box-shadow: 0 2px 5px 0 rgba(223, 223, 232, 0.5);
   background-color: #fff;
-  border: solid 1px colors.grey300;
+  border: solid 1px #dfdfe8;
   overflow: hidden;
   z-index: 2;
   display: ${p => p.show ? 'block' : 'none'};
@@ -101,11 +100,11 @@ export const StyledOptions = styled<StyleProps, 'div'>('div')`
 export const StyledOption = styled<StyleProps, 'div'>('div')`
   font-size: 14px;
   line-height: 36px;
-  color: colors.grey700;
+  color: #1b1d2f;
   position: relative;
   padding: 0 0 0 ${(p) => p.showAllContents ? 4 : 12}px;
   display: flex;
-  background: ${p => p.selected ? colors.blurple100 : colors.white};
+  background: ${p => p.selected ? '#e9f0ff' : '#fff'};
 `
 
 export const StyledOptionCheck = styled<StyleProps, 'div'>('div')`
@@ -113,7 +112,7 @@ export const StyledOptionCheck = styled<StyleProps, 'div'>('div')`
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  color: colors.blurple300
+  color: #A1A8F2;
 `
 
 export const StyledOptionText = styled<StyleProps, 'div'>('div')`

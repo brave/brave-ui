@@ -66,7 +66,7 @@ const getThemeColors = (p: ThemedStyledProps<Props>) => {
 const StyledButton = styled<Props, 'button'>('button')`
   ${getThemeColors}
   --button-state-color: var(--button-main-color);
-  --icon-size: ${largeMediumSmall('20px', '16px', '12px')};
+  --icon-size: ${largeMediumSmall('18px', '16px', '14px')};
   --icon-spacing: ${largeMediumSmall('6px', '6px', '6px')};
   --webkit-appearance: none;
   box-sizing: border-box;

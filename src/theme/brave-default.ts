@@ -16,8 +16,8 @@ const theme: ITheme = {
     brandBatInteracting: colors.blurple500,
     brandBatActive: colors.blurple200,
     // regular controls
-    defaultControl: colors.grey500,
-    defaultControlInteracting: colors.grey800,
+    defaultControl: colors.grey800,
+    defaultControlInteracting: colors.black,
     defaultControlActive: colors.grey700,
     // warning controls
     warn: colors.red500,
