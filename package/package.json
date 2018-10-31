@@ -1,7 +1,7 @@
 {
   "name": "brave-ui",
   "main": "index.js",
-  "version": "0.30.3",
+  "version": "0.30.4",
   "description": "List of reusable React components to empower your brave UI",
   "author": "Brave Software",
   "contributors": [
