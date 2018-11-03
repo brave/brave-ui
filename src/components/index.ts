@@ -34,3 +34,8 @@ export {
   TextArea,
   Toggle
 }
+// This module is included to verify that tree shaking is working by a client.
+// It is important that clients do not include modules from this library that
+// will not be used by the client. Tree shaking can be tested by looking in
+// a bundle's output for the present of the 'tree-shake-evidence' module.
+export { default as TreeShakeTest } from './tree-shake-evidence'

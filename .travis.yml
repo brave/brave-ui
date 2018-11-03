@@ -13,5 +13,6 @@ env:
   - TEST_SUITE=lint
   - TEST_SUITE=test-unit-all-ci
   - TEST_SUITE=test-security
+  - TEST_SUITE=test-integration
 script:
   - npm run $TEST_SUITE
