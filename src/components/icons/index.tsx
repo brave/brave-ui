@@ -70,6 +70,7 @@ export { default as TwitchColorIcon } from './fc-logo-twitch'
 export { default as TwitterColorIcon } from './fc-logo-twitter'
 export { default as UpholdColorIcon } from './fc-logo-uphold'
 export { default as YoutubeColorIcon } from './fc-logo-youtube'
+export { default as SendTipsIcon } from './send-tips'
 
 // illustrative
 export { default as GiftIcon } from './illustrative/gift'
