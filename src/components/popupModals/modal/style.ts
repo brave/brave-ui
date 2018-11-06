@@ -31,8 +31,8 @@ export const StyledClose = styled<{}, 'div'>('div')`
   top: 19px;
   right: 19px;
   cursor: pointer;
-  width: 27px;
-  height: 27px;
+  width: 16px;
+  height: 16px;
   color: #B8B9C4;
 `
 

@@ -52,7 +52,7 @@ export const StyledWrapper = styled<StyleProps, 'div'>('div')`
 export const StyledSelectWrapper = styled<StyleProps, 'div'>('div')`
   position: relative;
   outline: 0;
-  font-family: Poppins, sans-serif;
+  font-family: Muli, sans-serif;
 `
 
 export const StyledSelect = styled<StyleProps, 'div'>('div')`
@@ -71,7 +71,7 @@ export const StyledSelectArrow = styled<StyleProps, 'div'>('div')`
   margin-right: ${p => p.floating ? 0 : 15}px;
   flex-basis: 22px;
   flex-shrink: 0;
-  height: 22px;
+  height: 16px;
 `
 
 export const StyledSelectText = styled<StyleProps, 'div'>('div')`

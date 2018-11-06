@@ -10,21 +10,18 @@ export const IconGrid = styled.div`
 `
 
 export const IconGridItem = styled.div`
-  max-width: 200px;
-  min-width: 50px;
-  width: 25%;
-  border: dashed 1px #555;
+  max-width: 100px;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  padding: 4px;
+  margin: 8px
 `
 
 export const IconGridItemTitle = styled.div`
   flex: none;
-  font: 400 12px monospace;
-  color: white;
-  background: #888;
-  padding: 2px 0;
+  font: 600 10px Muli;
+  color: #424242;
+  padding: 4px;
   text-align: center;
   width: 100%;
   overflow: hidden;
@@ -33,5 +30,6 @@ export const IconGridItemTitle = styled.div`
 
 export const IconGridItemIcon = styled.div`
   flex: 1;
-  color: black;
+  color: #424242;
+  padding: 18px;
 `
