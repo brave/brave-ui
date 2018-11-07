@@ -54,7 +54,7 @@ const locale: Record<string, string> = {
   earningsAds: 'Earnings from Brave Ads',
   enableTips: 'Enable Tips',
   excludeSite: 'Exclude this site',
-  excludedSitesText: 'Total number of sites you excluded from Auto-Contribute:',
+  excludedSitesText: 'Sites excluded from Auto-Contributions:',
   expiresOn: 'expires on',
   for: 'for',
   grants: 'Grants',
