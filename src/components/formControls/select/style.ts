@@ -156,6 +156,9 @@ export const StyledOptionsModal = styled<StyleProps, 'div'>('div')`
   @media (max-height: 620px) {
     height: 65%;
   }
+  @media (max-height: 550px) {
+    height: 75%;
+  }
 `
 
 export const StyledSelectTitle = styled<StyleProps, 'span'>('span')`
@@ -175,6 +178,6 @@ export const StyledModalContent = styled<StyleProps, 'div'>('div')`
 
 export const StyledRadioOptions = styled<StyleProps, 'div'>('div')`
   display: block;
-  max-height: 225px;
+  max-height: 250px;
   overflow-y: scroll;
 `
