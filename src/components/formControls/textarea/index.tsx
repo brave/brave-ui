@@ -12,12 +12,13 @@ export interface Props {
   readOnly?: boolean
   placeholder?: string
   disabled?: boolean
+  fieldError?: boolean
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
 }
 
 export default class TextArea extends React.PureComponent<Props, {}> {
   render () {
-    const { id, onChange, value, defaultValue, readOnly, placeholder, disabled } = this.props
+    const { id, onChange, value, defaultValue, readOnly, placeholder, disabled, fieldError } = this.props
 
     return (
       <StyledWrapper id={id}>
@@ -28,6 +29,7 @@ export default class TextArea extends React.PureComponent<Props, {}> {
           readOnly={readOnly}
           placeholder={placeholder}
           defaultValue={defaultValue}
+          fieldError={fieldError}
         />
       </StyledWrapper>
     )
