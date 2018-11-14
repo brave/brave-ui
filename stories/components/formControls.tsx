@@ -13,7 +13,7 @@ import centered from '@storybook/addon-centered/dist'
 
 // Components
 import { Tokens } from '../../src/features/rewards'
-import { Toggle, Select, Checkbox, TextArea, Input, ControlWrapper, Radio } from '../../src/components'
+import { Toggle, Select, Checkbox, TextArea, TextAreaClipboard, Input, ControlWrapper, Radio } from '../../src/components'
 import { CheckCircleIcon } from '../../src/components/icons'
 
 storiesOf('Components/Form controls', module)
@@ -246,6 +246,28 @@ storiesOf('Components/Form controls', module)
             disabled={boolean('Disabled', false)}
         >
           <TextArea
+            value={text('Value', store.state.value)}
+            disabled={boolean('Disabled', false)}
+            onChange={onChange}
+          />
+        </ControlWrapper>
+      </div>
+    )
+  }))
+  .add('TextAreaClipboard', withState({ value: '' }, (store) => {
+    const onChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+      store.set({ value: event.target.value })
+    }
+
+    return (
+      <div style={{ width: '500px' }}>
+        <ControlWrapper
+            text={text('Title', 'Recovery keys')}
+            disabled={boolean('Disabled', false)}
+        >
+          <TextAreaClipboard
+            copiedString='Copied!'
+            wordCountString='Word Count:'
             value={text('Value', store.state.value)}
             disabled={boolean('Disabled', false)}
             onChange={onChange}
