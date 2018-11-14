@@ -130,6 +130,10 @@ export default class Select extends React.PureComponent<Props, State> {
       selected: child,
       radioShown: false
     })
+
+    if (this.props.onChange) {
+      this.props.onChange(key, child)
+    }
   }
 
   onOverlayClick = (event: any) => {
