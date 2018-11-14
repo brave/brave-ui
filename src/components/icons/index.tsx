@@ -23,6 +23,7 @@ export const CaratUpIcon = RotatedIconComponent(CaratIcon, 90)
 export const CaratDownIcon = RotatedIconComponent(CaratIcon, -90)
 export { default as CheckCircleIcon } from './check-circle'
 export { default as CheckIcon } from './check'
+export { default as ClipboardIcon } from './clipboard'
 export { default as CloseCircleIcon } from './close-circle'
 export { default as CloseStrokeIcon } from './close'
 export { default as DownloadIcon } from './download'
