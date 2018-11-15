@@ -5,6 +5,20 @@
 import styled from 'styled-components'
 import { Props } from './index'
 
+const getBorder = (p: Props) => {
+  let color = '#DFDFE8'
+
+  if (p.disabled) {
+    color = '#E5E5EA'
+  }
+
+  if (p.fieldError) {
+    color = '#E2052A'
+  }
+
+  return color
+}
+
 export const StyledWrapper = styled<{}, 'div'>('div')`
   width: 100%;
 `
@@ -14,7 +28,7 @@ export const StyledArea = styled<Props, 'textarea'>('textarea')`
   box-sizing: border-box;
   width: 100%;
   font-family: Muli, sans-serif;
-  border: 1px solid ${(p) => p.disabled ? '#E5E5EA' : '#DFDFE8'};
+  border: 1px solid ${p => getBorder(p)};
   color: ${(p) => p.disabled ? '#D1D1DB' : '#686978'};
   border-radius: 6px;
   padding: 15px 20px;
