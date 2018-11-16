@@ -13,7 +13,7 @@ export const StyledCard = styled<CardProps, 'div'>('div')`
   padding: 30px 36px;
   background-color: #fff;
   border-radius: 6px;
-  box-shadow: 0 0 8px 0 rgba(99,105,110,0.12);
+  box-shadow: 0 1px 12px 0 rgba(99,105,110,0.18);
   font-size: inherit;
   box-sizing: border-box;
   position: relative;

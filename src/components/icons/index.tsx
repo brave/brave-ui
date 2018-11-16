@@ -2,6 +2,7 @@ import styled, { StyledComponentClass } from 'styled-components'
 // rotated imports
 import ArrowIcon from './arrow'
 import CaratIcon from './carat'
+import CaratCircleIcon from './carat-circle'
 
 // rotated variants
 function RotatedIconComponent (iconComponent: StyledComponentClass<any, any>, degrees: number) {
@@ -12,11 +13,13 @@ function RotatedIconComponent (iconComponent: StyledComponentClass<any, any>, de
 
 // simple
 export { default as AlertCircleIcon } from './alert-circle'
+export { default as ArrowAnchorIcon } from './arrow-anchor'
 export const ArrowLeftIcon = RotatedIconComponent(ArrowIcon, 0)
 export const ArrowRightIcon = RotatedIconComponent(ArrowIcon, 180)
 export const ArrowDownIcon = RotatedIconComponent(ArrowIcon, -90)
 export const ArrowUpIcon = RotatedIconComponent(ArrowIcon, 90)
-export { default as BookmarkFolderIcon } from './bookmark-folder'
+export const CaratCircleUpIcon = RotatedIconComponent(CaratCircleIcon, 0)
+export const CaratCircleDownIcon = RotatedIconComponent(CaratCircleIcon, 180)
 export const CaratRightIcon = RotatedIconComponent(CaratIcon, 180)
 export const CaratLeftIcon = RotatedIconComponent(CaratIcon, 0)
 export const CaratUpIcon = RotatedIconComponent(CaratIcon, 90)
