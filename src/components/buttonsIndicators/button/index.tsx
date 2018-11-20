@@ -62,7 +62,7 @@ export default class ThemedButton extends React.PureComponent<Props, {}> {
     }
     let ButtonComponent = this.getButtonComponent()
     return (
-      <ButtonComponent className={className} onClick={onClick} {...deepProps}>
+      <ButtonComponent className={className} onClick={onClick} disabled={disabled} {...deepProps}>
         {
           text
           ? <StyledText {...deepProps}>

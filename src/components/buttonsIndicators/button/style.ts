@@ -98,6 +98,7 @@ export default StyledButton
 export const PrimaryButton = styled(StyledButton)`
   color: #fff;
   background: var(--button-state-color);
+  border: 1px solid var(--button-state-color);
 `
 
 export const SecondaryButton = styled(StyledButton)`
