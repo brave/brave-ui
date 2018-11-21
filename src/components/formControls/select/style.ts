@@ -68,10 +68,11 @@ export const StyledSelect = styled<StyleProps, 'div'>('div')`
 `
 
 export const StyledSelectArrow = styled<StyleProps, 'div'>('div')`
-  margin-right: ${p => p.floating ? 0 : 15}px;
-  flex-basis: 22px;
+  margin-right: ${p => p.floating ? -9 : 15}px;
+  flex-basis: 33px;
   flex-shrink: 0;
-  height: 16px;
+  height: 11px;
+  margin-top: ${p => p.floating ? -5 : 0}px;
 `
 
 export const StyledSelectText = styled<StyleProps, 'div'>('div')`

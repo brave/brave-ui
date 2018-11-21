@@ -32,13 +32,14 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
 
 .c4 {
   margin-right: 15px;
-  -webkit-flex-basis: 22px;
-  -ms-flex-preferred-size: 22px;
-  flex-basis: 22px;
+  -webkit-flex-basis: 33px;
+  -ms-flex-preferred-size: 33px;
+  flex-basis: 33px;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  height: 16px;
+  height: 11px;
+  margin-top: 0px;
 }
 
 .c3 {
