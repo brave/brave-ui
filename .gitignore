@@ -27,6 +27,7 @@ node_modules
 .storybook/temp
 .storybook-out
 .out
+.cache
 
 # package
 package
