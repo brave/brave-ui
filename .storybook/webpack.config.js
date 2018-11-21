@@ -26,6 +26,16 @@ module.exports = (baseConfig, env, defaultConfig) => {
     }
   })
 
+  defaultConfig.module.rules.push({
+    test: /\.svg$/,
+    use: [
+      {
+        loader: 'file-loader',
+        options: {}
+      }
+    ]
+  })
+
   defaultConfig.resolve.extensions.push('.ts', '.tsx')
   return defaultConfig
 }
