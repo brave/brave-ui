@@ -12,6 +12,7 @@ coverage
 
 # Dependency directory
 node_modules
+examples/**/package-lock.json
 
 # Temp files
 .DS_Store
