@@ -3,10 +3,10 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledWrapper, StyledHeader, StyledTitle, StyledClose, StyledText } from './style'
+import { StyledWrapper, StyledHeaderImg, StyledTitle, StyledClose, StyledText } from './style'
 import { CloseStrokeIcon } from '../../../components/icons'
 
-import header from './assets/header'
+const headerSrc = require('./assets/header.svg')
 
 export interface Props {
   id?: string
@@ -29,7 +29,7 @@ export default class GrantWrapper extends React.PureComponent<Props, {}> {
         <StyledClose onClick={onClose}>
           <CloseStrokeIcon />
         </StyledClose>
-        <StyledHeader>{header}</StyledHeader>
+        <StyledHeaderImg src={headerSrc} />
         <StyledTitle>{title}</StyledTitle>
         <StyledText>{text}</StyledText>
         {children}

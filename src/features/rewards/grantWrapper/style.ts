@@ -27,7 +27,7 @@ export const StyledWrapper = styled<StyleProps, 'div'>('div')`
   overflow-y: ${p => p.fullScreen ? 'scroll' : 'hidden'};
 `
 
-export const StyledHeader = styled<{}, 'div'>('div')`
+export const StyledHeaderImg = styled<{}, 'img'>('img')`
   text-align: center;
   width: 100%;
   margin: 59px 0;
