@@ -2,13 +2,5 @@
   "testMatch": [
     "<rootDir>/**/*.test.*"
   ],
-  "moduleFileExtensions": [
-    "ts",
-    "tsx",
-    "js",
-    "json"
-  ],
-  "transform": {
-    ".(ts|tsx)": "<rootDir>/../node_modules/ts-jest/preprocessor.js"
-  }
+  "preset": "ts-jest/presets/js-with-babel"
 }

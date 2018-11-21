@@ -27,10 +27,9 @@
   "scripts": {
     "ts": "tsc",
     "ts-watch": "tsc -w",
-    "lint": "npm run lint-css && npm run lint-ts-src && npm run lint-ts-stories",
+    "lint": "npm run lint-css && npm run lint-ts",
     "lint-css": "stylelint './src/**/*.{ts,tsx}'",
-    "lint-ts-src": "tslint --project tsconfig.json 'src/**/*.{ts,tsx}'",
-    "lint-ts-stories": "tslint --project tsconfig-story.json 'stories/**/*.{ts,tsx}'",
+    "lint-ts": "tslint --project tsconfig-storybook.json 'src/**/*.{ts,tsx}' 'stories/**/*.{ts,tsx}'",
     "copy": "ncp src package --filter='^(?!(.*)(__snapshots__|spec.tsx)$).*$' && cpr package.json package/ && cpr README.md package/",
     "build": "rimraf package && npm run copy && lerna exec -- tsc",
     "publish": "npm run build && lerna publish",
@@ -51,12 +50,15 @@
     "styled-components": "^3.2.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "@dump247/storybook-state": "^1.3.0",
-    "@storybook/addon-actions": "^3.3.15",
-    "@storybook/addon-centered": "^3.4.8",
-    "@storybook/addon-knobs": "^3.3.15",
-    "@storybook/addon-options": "^3.3.15",
-    "@storybook/react": "^3.3.15",
+    "@storybook/addon-actions": "^4.0.7",
+    "@storybook/addon-centered": "^4.0.7",
+    "@storybook/addon-knobs": "^4.0.7",
+    "@storybook/addon-options": "^4.0.7",
+    "@storybook/react": "^4.0.7",
     "@storybook/storybook-deployer": "^2.3.0",
     "@types/enzyme": "^3.1.9",
     "@types/jest": "^23.3.9",
@@ -66,8 +68,10 @@
     "@types/storybook__addon-actions": "^3.0.3",
     "@types/storybook__addon-info": "^3.2.2",
     "@types/storybook__addon-knobs": "^3.2.3",
-    "@types/storybook__react": "^3.0.9",
-    "awesome-typescript-loader": "^4.0.1",
+    "@types/storybook__react": "^4.0.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.4",
     "cpr": "^3.0.1",
     "csstype": "^2.5.5",
     "enzyme": "^3.3.0",
@@ -90,7 +94,7 @@
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.3.2",
-    "ts-jest": "^22.4.2",
+    "ts-jest": "^23.10.4",
     "tslint": "^5.8.0",
     "tslint-config-standard": "^7.0.0",
     "tslint-react": "^3.2.0",
@@ -126,8 +130,12 @@
       "js",
       "json"
     ],
-    "transform": {
-      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    "globals": {
+      "ts-jest": {
+        "babelConfig": true,
+        "tsConfig": "tsconfig-jest.json",
+        "isolatedModules": true
+      }
     },
     "resetMocks": true,
     "resetModules": true,
@@ -147,8 +155,9 @@
       "<rootDir>/.testconfig/testPolyfills.js"
     ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|svg|ttf|woff|woff2)$": "<rootDir>/.testconfig/fileMocks.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|svg|ttf|woff|woff2)$": "<rootDir>/.testconfig/fileMocks.ts",
       "\\.(css)$": "identity-obj-proxy"
-    }
+    },
+    "preset": "ts-jest/presets/js-with-babel"
   }
 }

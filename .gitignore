@@ -12,6 +12,7 @@ coverage
 
 # Dependency directory
 node_modules
+examples/**/package-lock.json
 
 # Temp files
 .DS_Store
@@ -27,6 +28,7 @@ node_modules
 .storybook/temp
 .storybook-out
 .out
+.cache
 
 # package
 package

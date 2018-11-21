@@ -14,14 +14,15 @@
     "noUnusedLocals": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "allowSyntheticDefaultImports": false
+    "allowSyntheticDefaultImports": false,
   },
 
   "include": [
-    "./src"
+    "./definitions",
+    "./src",
   ],
   "exclude": [
     "./stories",
-    "./src/**/spec.tsx"
+    "./src/**/spec.tsx",
   ]
 }
