@@ -26,31 +26,40 @@ export interface Props {
 }
 
 export interface State {
-  copiedStingVisible: boolean
+  copiedStringVisible: boolean
 }
 
 export default class TextArea extends React.PureComponent<Props, State> {
   constructor (props: Props) {
     super(props)
-    this.state = { copiedStingVisible: false }
+    this.state = { copiedStringVisible: false }
+  }
+
+  get emptyWordCount () {
+    return this.props.value === '' || this.props.defaultValue === ''
+  }
+
+  get value () {
+    return this.props.value || this.props.defaultValue
   }
 
   get wordCount () {
-    if (this.props.value === '') {
+    if (!this.value || this.emptyWordCount) {
       return 0
     }
-    return this.props.value!.trim().replace(/\s+/gi, ' ').split(' ').length
+
+    return this.value.trim().replace(/\s+/gi, ' ').split(' ').length
   }
 
   onCopyToClipboard = () => {
     // typescript don't recognize clipboard as a navigator method :/
-    (navigator as any).clipboard.writeText(this.props.value)
+    (navigator as any).clipboard.writeText(this.value)
     // show up the copied string
-    this.setState({ copiedStingVisible: true })
+    this.setState({ copiedStringVisible: true })
   }
 
   onAnimationEnd = () => {
-    this.setState({ copiedStingVisible: false })
+    this.setState({ copiedStringVisible: false })
   }
 
   render () {
@@ -66,7 +75,7 @@ export default class TextArea extends React.PureComponent<Props, State> {
       wordCountString
     } = this.props
 
-    console.log('whatwhawtawht', this.state.copiedStingVisible)
+    const { copiedStringVisible } = this.state
 
     return (
       <StyledWrapper id={id}>
@@ -82,7 +91,7 @@ export default class TextArea extends React.PureComponent<Props, State> {
           {wordCountString} {this.wordCount}
           <StyledCopyToClipboard>
             <StyledText
-              visible={this.state.copiedStingVisible}
+              visible={copiedStringVisible}
               onAnimationEnd={this.onAnimationEnd}
             >
               {copiedString}
