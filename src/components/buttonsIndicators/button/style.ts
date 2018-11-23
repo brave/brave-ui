@@ -84,7 +84,7 @@ const StyledButton = styled<Props, 'button'>('button')`
   border-radius: ${largeMediumSmall('24px', '20px', '16px', '28px')};
   width: ${p => p.size === 'call-to-action' ? '100%' : 'auto'};
   min-width: ${largeMediumSmall('116px', '104px', '88px', '235px')};
-  padding: ${largeMediumSmall('14px 15px', '11px 10px', '7px 10px', '19px 15px')};
+  padding: ${largeMediumSmall('14px 15px', '11px 15px', '7px 10px', '19px 15px')};
   :hover:enabled {
     --button-state-color: var(--button-main-color-hover);
   }
