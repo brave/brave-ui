@@ -12,7 +12,7 @@ import * as React from 'react'
 import { withState } from '@dump247/storybook-state'
 
 // Components
-import { Modal } from '../../src/components'
+import { Modal, AlertBox } from '../../src/components'
 
 storiesOf('Components/Popups and Modals', module)
   .addDecorator(withKnobs)
@@ -38,3 +38,10 @@ storiesOf('Components/Popups and Modals', module)
     </>
     )
   }))
+  .add('AlertBox', () => {
+    return (
+      <AlertBox okString='Ok' cancelString='Cancel'>
+        Content here
+      </AlertBox>
+    )
+  })
