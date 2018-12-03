@@ -34,7 +34,7 @@ import Donate from '../donate/index'
 import Checkbox from '../../../components/formControls/checkbox/index'
 import { getLocale } from '../../../helpers'
 import {
-  CloseStrokeIcon,
+  CloseStrokeShadowIcon,
   TwitterColorIcon,
   YoutubeColorIcon,
   TwitchColorIcon
@@ -187,7 +187,7 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
       >
         <StyledBanner isMobile={isMobile}>
           <StyledClose onClick={onClose}>
-            <CloseStrokeIcon />
+            <CloseStrokeShadowIcon />
           </StyledClose>
           <StyledBannerImage bgImage={bgImage}>
             {
