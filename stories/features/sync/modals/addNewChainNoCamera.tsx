@@ -12,7 +12,6 @@ import TextAreaClipboard from '../../../../src/components/formControls/textareaC
 // Feature-specific components
 import {
   ModalHeader,
-  ModalIcon,
   ModalTitle,
   ModalSubTitle,
   ModalContent,
@@ -20,12 +19,12 @@ import {
   OneColumnButtonGrid
 } from '../../../../src/features/sync'
 
+// Images
+import { SyncAddIcon } from '../../../../src/features/sync/images'
+
 // Utils
 import { getLocale } from '../page/fakeLocale'
 import data from '../page/fakeData'
-
-// Images
-import syncAddIcon from '../../../assets/img/sync/sync_add_icon.svg'
 
 interface Props {
   onClose: () => void
@@ -37,7 +36,7 @@ export default class AddNewChainNoCameraModal extends React.PureComponent<Props,
     return (
       <Modal id='addNewChainNoCameraModal' onClose={onClose} size='small'>
         <ModalHeader>
-          <ModalIcon src={syncAddIcon} />
+          <SyncAddIcon />
           <div>
             <ModalTitle level={1}>{getLocale('enterThisCode')}</ModalTitle>
             <ModalSubTitle>{getLocale('syncChainCodeHowTo')}</ModalSubTitle>

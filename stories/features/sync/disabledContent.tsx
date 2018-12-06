@@ -21,7 +21,8 @@ import {
 import DeviceType from './modals/deviceType'
 import EnterSyncCode from './modals/enterSyncCode'
 
-const syncStart = require('../../assets/img/sync/sync_start.svg')
+// Images
+import { SyncStartIcon } from '../../../src/features/sync/images'
 
 // Utils
 import { getLocale } from './page/fakeLocale'
@@ -68,7 +69,7 @@ export default class SyncDisabledContent extends React.PureComponent<{}, State> 
             : null
         }
         <TableGrid>
-          <img src={syncStart} />
+          <SyncStartIcon />
           <div>
             <Title level={2}>{getLocale('syncTitle')}</Title>
             <Paragraph>{getLocale('syncDescription')}</Paragraph>
