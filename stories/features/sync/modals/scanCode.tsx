@@ -9,23 +9,28 @@ import Button from '../../../../src/components/buttonsIndicators/button'
 import Modal from '../../../../src/components/popupModals/modal'
 
 // Feature-specific components
-import { ModalHeader, ModalTitle, ModalSubTitle, ModalIcon,ScanGrid,
-  MobileHandImage,
+import {
+  ModalHeader,
+  ModalTitle,
+  ModalSubTitle,
+  ScanGrid,
   QRCodeContainer,
   ThreeColumnButtonGrid,
   ThreeColumnButtonGridCol1,
-  ThreeColumnButtonGridCol2 } from '../../../../src/features/sync'
+  ThreeColumnButtonGridCol2
+} from '../../../../src/features/sync'
+
+// Images
+import { SyncMobilePicture, SyncAddIcon, QRCode } from '../../../../src/features/sync/images'
+
+// Fake QR Code
+import qrCodeImage from '../../../assets/img/fakeQRCodeImage.png'
 
 // Modals
 import AddNewChainCameraOption from './addNewChainCameraOption'
 
 // Utils
 import { getLocale } from '../page/fakeLocale'
-
-// Images
-import syncHandMobileImg from '../../../assets/img/sync/sync_mobile_device.png'
-import syncAddIcon from '../../../assets/img/sync/sync_add_icon.svg'
-import qrCodeImage from '../../../assets/img/sync/qrCode.png'
 
 interface Props {
   onClose: () => void
@@ -58,15 +63,15 @@ export default class ScanCodeModal extends React.PureComponent<Props, State> {
           : null
       }
         <ModalHeader>
-          <ModalIcon src={syncAddIcon} />
+          <SyncAddIcon />
           <div>
             <ModalTitle level={1}>{getLocale('scanThisCode')}</ModalTitle>
             <ModalSubTitle>{getLocale('scanThisCodeHowTo')}</ModalSubTitle>
           </div>
         </ModalHeader>
           <ScanGrid>
-            <div><MobileHandImage src={syncHandMobileImg} /></div>
-            <QRCodeContainer><img src={qrCodeImage} /></QRCodeContainer>
+            <SyncMobilePicture />
+            <QRCodeContainer><QRCode size='normal' src={qrCodeImage} /></QRCodeContainer>
           </ScanGrid>
           <ThreeColumnButtonGrid>
             <ThreeColumnButtonGridCol1>

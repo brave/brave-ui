@@ -14,7 +14,6 @@ export {
 } from './grid'
 export {
   ModalHeader,
-  ModalIcon,
   ModalTitle,
   ModalSubTitle,
   ModalContent,
@@ -22,11 +21,8 @@ export {
   OneColumnButtonGrid,
   DeviceGrid,
   DeviceContainer,
-  DeviceImage,
   ViewSyncCodeGrid,
-  QRCode,
   ScanGrid,
-  MobileHandImage,
   QRCodeContainer,
   ThreeColumnButtonGrid,
   ThreeColumnButtonGridCol1,
