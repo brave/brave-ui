@@ -28,7 +28,7 @@ Welcome to the Brave UI repo! Here you will find a list of reusable stateless Re
 
 ## This is experimental technology
 
-You shouldn't be using this module in your production environment yet. API changes can happen at any time and all modules in this repo are considerated `experimental` at this moment.
+You shouldn't be using this module in your production environment yet. API changes can happen at any time and all modules in this repo are considered `experimental` at this moment.
 
 ## Stability Index
 The stability index is adopted from MDN (which is adopted from [node.js](http://nodejs.org/api/documentation.html#documentation_stability_index). This library uses only four of the six values defined by node.js:
