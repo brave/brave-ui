@@ -11,13 +11,14 @@ import Modal from '../../../../src/components/popupModals/modal'
 // Feature-specific components
 import {
   ModalHeader,
-  ModalIcon,
   ModalTitle,
   DeviceGrid,
   DeviceContainer,
-  DeviceImage,
   ModalSubTitle
 } from '../../../../src/features/sync'
+
+// Images
+import { SyncAddIcon, SyncMobileIcon, SyncDesktopIcon } from '../../../../src/features/sync/images'
 
 // Modals
 import AddNewChainNoCamera from './addNewChainNoCamera'
@@ -25,11 +26,6 @@ import ScanCode from './scanCode'
 
 // Utils
 import { getLocale } from '../page/fakeLocale'
-
-// Images
-import syncMobileImg from '../../../assets/img/sync/sync_mobile.svg'
-import syncDesktopImg from '../../../assets/img/sync/sync_desktop.svg'
-import syncAddIcon from '../../../assets/img/sync/sync_add_icon.svg'
 
 interface Props {
   mainDeviceName: string
@@ -74,7 +70,7 @@ export default class DeviceTypeModal extends React.PureComponent<Props, State> {
             : null
         }
         <ModalHeader>
-          <ModalIcon src={syncAddIcon} />
+          <SyncAddIcon />
           <div>
             <ModalTitle level={1}>{getLocale('letsSync')}<br />“{mainDeviceName}”.</ModalTitle>
             <ModalSubTitle>{getLocale('chooseDeviceType')}</ModalSubTitle>
@@ -82,7 +78,7 @@ export default class DeviceTypeModal extends React.PureComponent<Props, State> {
         </ModalHeader>
         <DeviceGrid>
           <DeviceContainer>
-            <DeviceImage src={syncMobileImg} />
+            <SyncMobileIcon />
             <Button
               level='primary'
               type='accent'
@@ -92,7 +88,7 @@ export default class DeviceTypeModal extends React.PureComponent<Props, State> {
             />
           </DeviceContainer>
           <DeviceContainer>
-          <DeviceImage src={syncDesktopImg} />
+            <SyncDesktopIcon />
             <Button
               level='primary'
               type='accent'

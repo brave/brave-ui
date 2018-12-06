@@ -10,7 +10,10 @@ import Modal from '../../../../src/components/popupModals/modal'
 import TextAreaClipboard from '../../../../src/components/formControls/textareaClipboard'
 
 // Feature-specific components
-import { ModalHeader, ModalTitle, ModalIcon, ModalSubTitle, ModalContent, ThreeColumnButtonGrid, ThreeColumnButtonGridCol2, ThreeColumnButtonGridCol1 } from '../../../../src/features/sync'
+import { ModalHeader, ModalTitle, ModalSubTitle, ModalContent, ThreeColumnButtonGrid, ThreeColumnButtonGridCol2, ThreeColumnButtonGridCol1 } from '../../../../src/features/sync'
+
+// Images
+import { SyncAddIcon } from '../../../../src/features/sync/images'
 
 // Modals
 import ScanCode from './scanCode'
@@ -18,9 +21,6 @@ import ScanCode from './scanCode'
 // Utils
 import { getLocale } from '../page/fakeLocale'
 import data from '../page/fakeData'
-
-// Images
-import syncAddIcon from '../../../assets/img/sync/sync_add_icon.svg'
 
 interface Props {
   fromMobileScreen?: boolean
@@ -54,7 +54,7 @@ export default class AddNewChainCameraOptionModal extends React.PureComponent<Pr
             : null
         }
         <ModalHeader>
-          <ModalIcon src={syncAddIcon} />
+          <SyncAddIcon />
           <div>
             <ModalTitle level={1}>
               {

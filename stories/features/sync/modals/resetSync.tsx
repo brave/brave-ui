@@ -12,7 +12,6 @@ import AlertBox from '../../../../src/components/popupModals/alertBox'
 // Feature-specific components
 import {
   ModalHeader,
-  ModalIcon,
   ModalTitle,
   ModalSubTitle,
   ModalContent,
@@ -22,11 +21,11 @@ import {
   Paragraph
 } from '../../../../src/features/sync'
 
+// Images
+import { SyncRemoveIcon } from '../../../../src/features/sync/images'
+
 // Utils
 import { getLocale } from '../page/fakeLocale'
-
-// Images
-import syncRemoveIcon from '../../../assets/img/sync/sync_remove_icon.svg'
 
 interface Props {
   mainDeviceName: string
@@ -71,7 +70,7 @@ export default class ResetSyncModal extends React.PureComponent<Props, State> {
           : null
         }
         <ModalHeader>
-          <ModalIcon src={syncRemoveIcon} />
+          <SyncRemoveIcon />
           <div>
             <ModalSubTitle highlight={true}>{getLocale('warning')}</ModalSubTitle>
             <ModalTitle level={1}>{getLocale('removing')} “{mainDeviceName}” {getLocale('deleteSyncChain')}</ModalTitle>
