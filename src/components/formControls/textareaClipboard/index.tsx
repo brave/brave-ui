@@ -29,7 +29,7 @@ export interface State {
   copiedStringVisible: boolean
 }
 
-export default class TextArea extends React.PureComponent<Props, State> {
+export default class TextAreaClipboard extends React.PureComponent<Props, State> {
   constructor (props: Props) {
     super(props)
     this.state = { copiedStringVisible: false }
@@ -44,11 +44,15 @@ export default class TextArea extends React.PureComponent<Props, State> {
   }
 
   get wordCount () {
-    if (!this.value || this.emptyWordCount) {
+    if (
+      !this.value ||
+      this.emptyWordCount ||
+      this.value.match(/\S+/g) === null
+    ) {
       return 0
     }
 
-    return this.value.trim().replace(/\s+/gi, ' ').split(' ').length
+    return this.value.match(/\S+/g)!.length
   }
 
   onCopyToClipboard = () => {
