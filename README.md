@@ -7,13 +7,7 @@
 
 Welcome to the Brave UI repo. Here you will find a list of reusable React components used in most of Brave products.
 
-<hr>
-<p align="center">
-<a href="#installation">Installation</a> • <a href="#usage">Usage</a> • <a href="#license">License</a>
-</p>
-<hr>
-
-**Important:** We are still hacking a lot this project so we don't recommend that you use it yet. It's free to try and use at your own risk but bear in mind that components and APIs are very likely to change without further notice.
+**Important:** We are still hacking a lot this project, so we don't recommend that you use it yet. It's free to try and use at your own risk but bear in mind that components and APIs are very likely to change without further notice.
 
 ## Installation
 
