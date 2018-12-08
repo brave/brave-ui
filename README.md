@@ -11,11 +11,11 @@
 
 ---
 
-# Welcome to Brave UI 
+# :wave: Welcome to Brave UI 
 
 Here you will find a list of reusable React components used in most of Brave products. Brave UI's [component library](https://brave.github.io/brave-ui) can be found on Storybook.
 
-**Important:** We are still hacking a lot this project, and therefore don't recommend that anyone use it yet. It's free to try and use at your own risk but bear in mind that components and APIs are very likely to change without further notice.
+:exclamation:**Important:** We are still hacking a lot this project, and therefore don't recommend that anyone use it yet. It's free to try and use at your own risk but bear in mind that components and APIs are very likely to change without further notice.
 
 ## Installation
 
@@ -23,7 +23,7 @@ Here you will find a list of reusable React components used in most of Brave pro
 $ npm install
 ```
 
-## Using Brave-UI 
+## Using Brave UI 
 
 ```
 npm run storybook-start
