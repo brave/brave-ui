@@ -8,39 +8,31 @@ export const SectionBlock = styled<{}, 'section'>('section')`
   margin: 10px 0 40px;
 `
 
-export const EnabledContentButtonGrid = styled<{}, 'footer'>('footer')`
+interface GridProps {
+  columns?: string
+  rows?: string
+  gap?: string
+}
+
+export const Grid = styled<GridProps, 'footer'>('footer')`
   display: grid;
-  grid-template-columns: 1fr;
+  height: 100%;
+  grid-template-columns: ${p => p.columns || '1fr'};
+  grid-template-rows: ${p => p.rows || '1fr'};
   grid-template-rows: 1fr;
-  grid-gap: 5px;
+  grid-gap: ${p => p.gap || '15px'};
   margin: 10px 5px 0;
 `
 
-export const SettingsToggleGrid = styled<{}, 'footer'>('footer')`
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-gap: 5px;
-  align-items: center;
-  margin: 15px 0 0;
-`
+interface FlexColumnProps {
+  items?: string
+  direction?: string
+  content?: string
+}
 
-export const DisabledContentButtonGrid = styled<{}, 'footer'>('footer')`
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: 1fr;
-  grid-gap: 10px;
-  margin: 20px 0;
-`
-
-export const TableGrid = styled<{}, 'div'>('div')`
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 20px;
-`
-
-export const TableButtonGrid = styled<{}, 'div'>('div')`
-  display: grid;
-  grid-template-rows: 40px 40px;
-  grid-gap: 15px;
+export const FlexColumn = styled<FlexColumnProps, 'div'>('div')`
+  display: flex;
+  align-items: ${p => p.items};
+  flex-direction: ${p => p.direction};
+  justify-content: ${p => p.content};
 `

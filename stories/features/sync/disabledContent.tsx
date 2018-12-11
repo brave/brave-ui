@@ -8,31 +8,21 @@ import * as React from 'react'
 import Button from '../../../src/components/buttonsIndicators/button'
 
 // Component-specific components
-import {
-  Main,
-  Title,
-  SectionBlock,
-  DisabledContentButtonGrid,
-  TableGrid,
-  Paragraph
-} from '../../../src/features/sync'
+import { Grid } from '../../../src/features/sync'
 
 // Modals
-import DeviceType from './modals/deviceType'
-import EnterSyncCode from './modals/enterSyncCode'
-
-const syncStart = require('../../assets/img/sync/sync_start.svg')
+import NewToSyncModal from './modals/newToSync'
+import ExistingSyncCodeModal from './modals/existingSyncCode'
 
 // Utils
-import { getLocale } from './page/fakeLocale'
-import data from './page/fakeData'
+import locale from './page/fakeLocale'
 
-interface State {
+interface SyncDisabledContentState {
   newToSync: boolean
   existingSyncCode: boolean
 }
 
-export default class SyncDisabledContent extends React.PureComponent<{}, State> {
+class SyncDisabledContent extends React.PureComponent<{}, SyncDisabledContentState> {
   constructor (props: {}) {
     super(props)
     this.state = {
@@ -41,60 +31,48 @@ export default class SyncDisabledContent extends React.PureComponent<{}, State> 
     }
   }
 
-  get mainDeviceName () {
-    return data.device1.name
-  }
-
-  onClickNewSyncChainButton = () => {
+  newToSyncModal = () => {
     this.setState({ newToSync: !this.state.newToSync })
   }
 
-  onClickEnterSyncChainCodeButton = () => {
+  existingSyncCodeModal = () => {
     this.setState({ existingSyncCode: !this.state.existingSyncCode })
   }
 
   render () {
-    const { newToSync, existingSyncCode } = this.state
     return (
-      <Main>
+      <Grid columns='auto 1fr'>
         {
-          newToSync
-            ? <DeviceType onClose={this.onClickNewSyncChainButton} mainDeviceName={this.mainDeviceName} />
+          this.state.newToSync
+            ? <NewToSyncModal onClose={this.newToSyncModal} />
             : null
         }
         {
-          existingSyncCode
-            ? <EnterSyncCode onClose={this.onClickEnterSyncChainCodeButton} />
+          this.state.existingSyncCode
+            ? <ExistingSyncCodeModal onClose={this.existingSyncCodeModal} />
             : null
         }
-        <TableGrid>
-          <img src={syncStart} />
-          <div>
-            <Title level={2}>{getLocale('syncTitle')}</Title>
-            <Paragraph>{getLocale('syncDescription')}</Paragraph>
-            <SectionBlock>
-              <DisabledContentButtonGrid>
-                <div>
-                  <Button
-                    level='primary'
-                    type='accent'
-                    onClick={this.onClickNewSyncChainButton}
-                    text={getLocale('startSyncChain')}
-                  />
-                </div>
-                <div>
-                  <Button
-                    level='secondary'
-                    type='accent'
-                    onClick={this.onClickEnterSyncChainCodeButton}
-                    text={getLocale('enterSyncChainCode')}
-                  />
-                </div>
-              </DisabledContentButtonGrid>
-            </SectionBlock>
-          </div>
-        </TableGrid>
-      </Main>
+        <div>
+          <Button
+            level='primary'
+            type='accent'
+            size='medium'
+            onClick={this.newToSyncModal}
+            text={locale.iAmNewToSync}
+          />
+        </div>
+        <div>
+          <Button
+            level='secondary'
+            type='accent'
+            size='medium'
+            onClick={this.existingSyncCodeModal}
+            text={locale.iHaveAnExistingSyncCode}
+          />
+        </div>
+      </Grid>
     )
   }
 }
+
+export default SyncDisabledContent
