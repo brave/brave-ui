@@ -7,9 +7,14 @@ import styled from '../../../theme'
 export const Main = styled<{}, 'main'>('main')`
   font-family: ${p => p.theme.fontFamily.body};
   color: ${p => p.theme.color.defaultControl};
-  max-width: 980px;
+  max-width: 840px;
   padding: 40px;
   margin: auto;
+`
+
+export const QRCode = styled<{}, 'img'>('img')`
+  display: block;
+  max-width: 180px;
 `
 
 export const TableRowId = styled<{}, 'span'>('span')`
@@ -19,7 +24,7 @@ export const TableRowId = styled<{}, 'span'>('span')`
 `
 
 export const TableRowDevice = styled<{}, 'span'>('span')`
-  max-width: 30ch;
+  max-width: 15ch;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

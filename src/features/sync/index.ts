@@ -2,29 +2,41 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-export { Title, SubTitle, Paragraph, SwitchLabel } from './text'
-export { Main, TableRowId, TableRowDevice, TableRowRemove, TableRowRemoveButton } from './misc'
+import { Main, QRCode, TableRowId, TableRowDevice, TableRowRemove, TableRowRemoveButton } from './misc'
+import { SectionBlock, Grid, FlexColumn } from './grid'
+import {
+  Title,
+  SubTitle,
+  Paragraph,
+  EmphasisText,
+  SecondaryText,
+  Label,
+  Link,
+  SwitchLabel,
+  List,
+  ListOrdered,
+  ListBullet
+} from './text'
+
 export {
+  Main,
+  QRCode,
   SectionBlock,
-  SettingsToggleGrid,
-  EnabledContentButtonGrid,
-  DisabledContentButtonGrid,
-  TableGrid,
-  TableButtonGrid
-} from './grid'
-export {
-  ModalHeader,
-  ModalTitle,
-  ModalSubTitle,
-  ModalContent,
-  TwoColumnButtonGrid,
-  OneColumnButtonGrid,
-  DeviceGrid,
-  DeviceContainer,
-  ViewSyncCodeGrid,
-  ScanGrid,
-  QRCodeContainer,
-  ThreeColumnButtonGrid,
-  ThreeColumnButtonGridCol1,
-  ThreeColumnButtonGridCol2
-} from './modal'
+  Grid,
+  FlexColumn,
+  Title,
+  SubTitle,
+  Paragraph,
+  EmphasisText,
+  SecondaryText,
+  Label,
+  Link,
+  SwitchLabel,
+  List,
+  ListOrdered,
+  ListBullet,
+  TableRowId,
+  TableRowDevice,
+  TableRowRemove,
+  TableRowRemoveButton
+}
