@@ -13,17 +13,16 @@ import TextAreaClipboard from '../../../../src/components/formControls/textareaC
 import {
   ViewSyncCodeGrid,
   ModalTitle,
+  QRCode,
   TwoColumnButtonGrid
 } from '../../../../src/features/sync'
-
-import { QRCode } from '../../../../src/features/sync/images'
-
-// Fake QR Code
-import qrCodeImage from '../../../assets/img/fakeQRCodeImage.png'
 
 // Utils
 import { getLocale } from '../page/fakeLocale'
 import data from '../page/fakeData'
+
+// Images
+import qrCodeImage from '../../../assets/img/sync/qrCode.png'
 
 interface Props {
   onClose: () => void
@@ -37,7 +36,7 @@ export default class ViewSyncCodeModal extends React.PureComponent<Props, {}> {
         <ViewSyncCodeGrid>
           <div style={{ textAlign: 'center' }}>
             <ModalTitle level={3}>{getLocale('qrCode')}</ModalTitle>
-            <QRCode size='small' src={qrCodeImage} />
+            <QRCode src={qrCodeImage} />
           </div>
           <div>
             <ModalTitle level={3}>{getLocale('wordCode')}</ModalTitle>

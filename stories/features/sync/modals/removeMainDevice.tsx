@@ -12,7 +12,7 @@ import Modal from '../../../../src/components/popupModals/modal'
 import {
   Paragraph,
   ModalHeader,
-  // ModalIcon,
+  ModalIcon,
   ModalTitle,
   ModalContent,
   TwoColumnButtonGrid,
@@ -23,7 +23,7 @@ import {
 import { getLocale } from '../page/fakeLocale'
 
 // Images
-import { SyncRemoveIcon } from '../../../../src/features/sync/images'
+import syncRemoveIcon from '../../../assets/img/sync/sync_remove_icon.svg'
 
 interface Props {
   mainDeviceName: string
@@ -36,7 +36,7 @@ export default class RemoveMainDeviceModal extends React.PureComponent<Props, {}
     return (
       <Modal id='removeMainDeviceModal' onClose={onClose} size='small'>
         <ModalHeader>
-          <SyncRemoveIcon />
+          <ModalIcon src={syncRemoveIcon} />
           <ModalTitle level={1}>{getLocale('remove')} “{mainDeviceName}” {getLocale('thisSyncChain')}?</ModalTitle>
         </ModalHeader>
         <ModalContent>
