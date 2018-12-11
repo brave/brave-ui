@@ -46,9 +46,9 @@ export type Donation = {tokens: string, converted: string, selected?: boolean}
 
 export interface Props {
   balance: string
-  currentAmount: number | string
+  currentAmount: number
   donationAmounts: Donation[]
-  onAmountSelection: (tokens: number | string) => void
+  onAmountSelection: (tokens: number) => void
   id?: string
   title?: string
   name?: string
@@ -58,7 +58,7 @@ export interface Props {
   social?: Social[]
   recurringDonation?: boolean
   children?: React.ReactNode
-  onDonate: (amount: number | string, monthly: boolean) => void
+  onDonate: (amount: number, monthly: boolean) => void
   onClose?: () => void
   isMobile?: boolean
   logoBgColor?: CSS.Color
