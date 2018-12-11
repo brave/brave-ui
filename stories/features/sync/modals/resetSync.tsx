@@ -7,99 +7,71 @@ import * as React from 'react'
 // Components
 import Button from '../../../../src/components/buttonsIndicators/button'
 import Modal from '../../../../src/components/popupModals/modal'
-import AlertBox from '../../../../src/components/popupModals/alertBox'
 
 // Feature-specific components
 import {
-  ModalHeader,
-  ModalIcon,
-  ModalTitle,
-  ModalSubTitle,
-  ModalContent,
-  TwoColumnButtonGrid,
-  OneColumnButtonGrid,
   Title,
-  Paragraph
+  ListOrdered,
+  ListBullet,
+  Grid,
+  FlexColumn
 } from '../../../../src/features/sync'
 
-// Utils
-import { getLocale } from '../page/fakeLocale'
+// Assets
+import locale from '../page/fakeLocale'
 
-// Images
-import syncRemoveIcon from '../../../assets/img/sync/sync_remove_icon.svg'
-
-interface Props {
-  mainDeviceName: string
+interface ResetSyncModalProps {
   onClose: () => void
 }
 
-interface State {
-  showAlert: boolean
+interface ResetSyncModalState {
+  showAreYouSureAlert: boolean
 }
 
-export default class ResetSyncModal extends React.PureComponent<Props, State> {
-  constructor (props: Props) {
+class ResetSyncModal extends React.PureComponent<ResetSyncModalProps, ResetSyncModalState> {
+  constructor (props: ResetSyncModalProps) {
     super(props)
-    this.state = { showAlert: false }
+    this.state = { showAreYouSureAlert: false }
   }
 
-  onSetupSync = () => {
-    this.setState({ showAlert: !this.state.showAlert })
-  }
-
-  onResetSync = () => {
-    this.props.onClose()
+  areYouSureAlert = () => {
+    if (window.confirm(locale.areYouSure)) {
+      this.props.onClose()
+      // fire sync reset
+    }
   }
 
   render () {
-    const { onClose, mainDeviceName } = this.props
-    const { showAlert } = this.state
+    const { onClose } = this.props
     return (
-      <Modal id='resetSyncModal' onClose={onClose} size='small'>
-        {
-          showAlert
-          ? (
-              <AlertBox
-                okString={getLocale('ok')}
-                onClickOk={this.onResetSync}
-                cancelString={getLocale('cancel')}
-                onClickCancel={onClose}
-              >
-                <Title level={1}>{getLocale('areYouSure')}</Title>
-              </AlertBox>
-            )
-          : null
-        }
-        <ModalHeader>
-          <ModalIcon src={syncRemoveIcon} />
-          <div>
-            <ModalSubTitle highlight={true}>{getLocale('warning')}</ModalSubTitle>
-            <ModalTitle level={1}>{getLocale('removing')} “{mainDeviceName}” {getLocale('deleteSyncChain')}</ModalTitle>
-          </div>
-        </ModalHeader>
-        <ModalContent>
-          <Paragraph>{getLocale('deleteSyncDescription')}</Paragraph>
-          <Paragraph>{getLocale('startSyncChainHowTo')}</Paragraph>
-        </ModalContent>
-        <TwoColumnButtonGrid>
-            <OneColumnButtonGrid>
-              <Button
-                level='secondary'
-                type='accent'
-                size='medium'
-                onClick={onClose}
-                text={getLocale('cancel')}
-              />
-            </OneColumnButtonGrid>
+      <Modal id='showIAmResetSyncModal' onClose={onClose} size='small'>
+        <Title level={1}>{locale.resetSync}</Title>
+        <ListOrdered>
+          <ListBullet>{locale.resetSyncFirstBullet}</ListBullet>
+          <ListBullet>{locale.resetSyncSecondBullet}</ListBullet>
+          <ListBullet>{locale.resetSyncThirdBullet}</ListBullet>
+        </ListOrdered>
+        <Grid columns='auto 0fr'>
+          <FlexColumn content='flex-end'>
             <Button
-              level='primary'
+              level='secondary'
               type='accent'
               size='medium'
-              onClick={this.onSetupSync}
-              text={getLocale('remove')}
+              onClick={onClose}
+              text={locale.cancel}
             />
-          </TwoColumnButtonGrid>
+          </FlexColumn>
+          <Button
+            level='primary'
+            type='accent'
+            size='medium'
+            onClick={this.areYouSureAlert}
+            text={locale.resetSync}
+          />
+        </Grid>
       </Modal>
     )
   }
 }
+
+export default ResetSyncModal
