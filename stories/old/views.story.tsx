@@ -26,6 +26,7 @@ import * as React from 'react'
 // TBD import Clock from '../components/clock'
 import Page from '../../src/old/page'
 import { DataBlock, DataItem } from '../../src/old/dataBlock'
+import Clock from '../../src/old/clock'
 
 storiesOf('Old/Views', module)
   .addDecorator(withKnobs)
@@ -71,5 +72,10 @@ storiesOf('Old/Views', module)
           onClick={action('clicked the DataBlock!')}
         />
       </DataBlock>
+    )
+  })
+  .add('Clock', () => {
+    return (
+      <Clock />
     )
   })

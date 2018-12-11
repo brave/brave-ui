@@ -19,9 +19,18 @@ export interface ClockProps {
   customStyle?: ClockTheme
 }
 
+interface TimeComponent {
+  type: string,
+  value: string
+}
+
 export interface ClockState {
-  currentTime: Array<{type: string, value: string}>
+  currentTime: Array<TimeComponent>
   date: Date
+}
+
+function isDayPeriod (timeComponent: TimeComponent): boolean {
+  return timeComponent.type.toLowerCase() === 'dayperiod'
 }
 
 class Clock extends React.PureComponent<ClockProps, ClockState> {
@@ -44,7 +53,7 @@ class Clock extends React.PureComponent<ClockProps, ClockState> {
           // hide blank strings
           return null
         }
-      } else if (component.type === 'dayperiod') {
+      } else if (isDayPeriod(component)) {
         // hide day-period (AM / PM), it's rendered in a separate component
         return null
       }
@@ -54,7 +63,7 @@ class Clock extends React.PureComponent<ClockProps, ClockState> {
 
   get formattedTimePeriod () {
     const time: any = this.state.currentTime
-    const period = time.find((component: {type: string}) => component.type === 'dayperiod')
+    const period = time.find(isDayPeriod)
     return period ? period.value : ''
   }
 
