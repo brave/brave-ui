@@ -13,6 +13,7 @@ import TextAreaClipboard from '../../../../src/components/formControls/textareaC
 // Feature-specific components
 import {
   ModalHeader,
+  ModalIcon,
   ModalTitle,
   ModalSubTitle,
   ModalContent,
@@ -26,7 +27,7 @@ import {
 import { getLocale } from '../page/fakeLocale'
 
 // Images
-import { SyncDefaultIcon } from '../../../../src/features/sync/images'
+import syncIcon from '../../../assets/img/sync/sync_icon.svg'
 
 interface Props {
   onClose: () => void
@@ -74,7 +75,7 @@ export default class EnterSyncCodeModal extends React.PureComponent<Props, State
         : null
       }
         <ModalHeader>
-          <SyncDefaultIcon />
+          <ModalIcon src={syncIcon} />
           <div>
             <ModalTitle level={1}>{getLocale('enterSyncCode')}</ModalTitle>
             <ModalSubTitle>{getLocale('enterSyncCodeDescription')}</ModalSubTitle>

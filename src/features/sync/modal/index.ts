@@ -12,6 +12,11 @@ export const ModalHeader = styled<{}, 'header'>('header')`
   margin-bottom: 20px;
 `
 
+export const ModalIcon = styled<{}, 'img'>('img')`
+  margin-top: 3px;
+  height: 60px;
+`
+
 export const ModalTitle = styled(Heading)`
   font-weight: 500;
   font-size: 26px;
@@ -83,6 +88,11 @@ export const DeviceContainer = styled<{}, 'div'>('div')`
   align-items: center;
 `
 
+export const DeviceImage = styled<{}, 'img'>('img')`
+  margin-bottom: 20px;
+  height: 100px;
+`
+
 export const ScanGrid = styled<{}, 'div'>('div')`
   display: grid;
   height: 100%;
@@ -90,6 +100,11 @@ export const ScanGrid = styled<{}, 'div'>('div')`
   grid-template-rows: 1fr;
   margin: 25px auto;
   max-width: 550px;
+`
+
+export const MobileHandImage = styled<{}, 'img'>('img')`
+  max-width: 100%;
+  display: block;
 `
 
 export const QRCodeContainer = styled<{}, 'div'>('div')`
@@ -109,4 +124,10 @@ export const ViewSyncCodeGrid = styled<{}, 'div'>('div')`
   grid-template-rows: 1fr;
   grid-gap: 20px;
   margin: 0 0 25px;
+`
+
+export const QRCode = styled<{}, 'img'>('img')`
+  max-width: 100%;
+  display: block;
+  width: 140px;
 `
