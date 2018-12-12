@@ -37,7 +37,7 @@ export const StyledClose = styled<{}, 'div'>('div')`
 `
 
 export const StyledContent = styled<{}, 'div'>('div')`
-  padding: 61px 50px;
+  padding: 48px 48px;
   overflow-y: auto;
   max-height: calc(100vh - 100px);
 `
