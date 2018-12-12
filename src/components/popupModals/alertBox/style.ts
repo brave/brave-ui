@@ -10,6 +10,7 @@ export const StyledDialog = styled<{}, 'div'>('div')`
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 999999;
   width: 470px;
   height: 200px;
   overflow: hidden;
