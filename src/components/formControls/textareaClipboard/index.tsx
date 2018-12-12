@@ -93,17 +93,21 @@ export default class TextAreaClipboard extends React.PureComponent<Props, State>
         />
         <StyledFooter>
           {wordCountString} {this.wordCount}
-          <StyledCopyToClipboard>
-            <StyledText
-              visible={copiedStringVisible}
-              onAnimationEnd={this.onAnimationEnd}
-            >
-              {copiedString}
-            </StyledText>
-            <StyledClipboardButton onClick={this.onCopyToClipboard}>
-              <ClipboardIcon />
-            </StyledClipboardButton>
-          </StyledCopyToClipboard>
+          {
+            copiedString !== undefined
+            ? <StyledCopyToClipboard>
+                <StyledText
+                  visible={copiedStringVisible}
+                  onAnimationEnd={this.onAnimationEnd}
+                >
+                  {copiedString}
+                </StyledText>
+                <StyledClipboardButton onClick={this.onCopyToClipboard}>
+                  <ClipboardIcon />
+                </StyledClipboardButton>
+              </StyledCopyToClipboard>
+            : null
+          }
         </StyledFooter>
       </StyledWrapper>
     )
