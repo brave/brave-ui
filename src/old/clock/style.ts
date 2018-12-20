@@ -12,7 +12,6 @@ const StyledClock = styled.div`
   line-height: 1;
   user-select: none;
   display: flex;
-  cursor: default;
   -webkit-font-smoothing: antialiased;
   font-family: inherit;
 ` as any
@@ -20,7 +19,7 @@ const StyledClock = styled.div`
 const StyledTime = styled.span`
   box-sizing: border-box;
   letter-spacing: 0;
-  font-size: 75px;
+  font-size: 90px;
   font-weight: 200;
   color: inherit;
   font-family: inherit;
@@ -28,16 +27,7 @@ const StyledTime = styled.span`
 ` as any
 
 const StyledPeriod = styled.span`
-  box-sizing: border-box;
-  color: inherit;
-  font-family: inherit;
-  display: inline-block;
-  font-size: 20px;
-  letter-spacing: -0.2px;
-  font-weight: 200;
-  margin-top: 8px;
-  margin-left: 3px;
-  vertical-align: top;
+  display: none;
 ` as any
 
 const StyledTimeSeparator = styled.span`
