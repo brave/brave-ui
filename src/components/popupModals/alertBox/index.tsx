@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { StyledDialog, StyledFooter, StyledCancelContainer } from './style'
+import { StyledDialogWrapper, StyledDialog, StyledFooter, StyledCancelContainer } from './style'
 import Button from '../../buttonsIndicators/button'
 
 export interface Props {
@@ -24,6 +24,7 @@ export default class AlertBox extends React.PureComponent<Props, {}> {
     const { testId, children, ...buttonProps } = this.props
     const { colorType, onClickCancel, cancelString, onClickOk, okString } = buttonProps
     return (
+      <StyledDialogWrapper>
       <StyledDialog data-test-id={testId}>
         <div>{children}</div>
         <StyledFooter>
@@ -37,6 +38,7 @@ export default class AlertBox extends React.PureComponent<Props, {}> {
           <Button type={colorType} onClick={onClickOk} text={okString} />
         </StyledFooter>
       </StyledDialog>
+      </StyledDialogWrapper>
     )
   }
 }
