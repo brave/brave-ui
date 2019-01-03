@@ -6,9 +6,6 @@ import styled from '../../../theme'
 import Heading from '../../../components/text/heading'
 
 export const ModalHeader = styled<{}, 'header'>('header')`
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: 32px;
   margin-bottom: 8px;
 `
 
@@ -31,7 +28,7 @@ export const ModalSubTitle = styled<ModalSubTitleProps, 'span'>('span')`
 `
 
 export const ModalContent = styled<{}, 'div'>('div')`
-  margin-left: 0px;
+  margin-bottom: -12px;
 `
 
 export const OneColumnButtonGrid = styled<{}, 'div'>('div')`
@@ -43,15 +40,16 @@ export const TwoColumnButtonGrid = styled<{}, 'footer'>('footer')`
   display: grid;
   align-items: center;
   grid-template-columns: 1fr auto;
-  grid-gap: 20px;
+  grid-gap: 15px;
   margin-top: 20px;
 `
 
 export const ThreeColumnButtonGrid = styled<{}, 'div'>('div')`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
-  margin-top: 30px;
+  grid-template-columns: 1fr auto auto;
+  grid-gap: 15px;
+  margin-top: 20px;
+  align-items: center;
 `
 
 export const ThreeColumnButtonGridCol1 = styled<{}, 'div'>('div')`
@@ -69,27 +67,35 @@ export const ThreeColumnButtonGridCol2 = styled<{}, 'div'>('div')`
 
 export const DeviceGrid = styled<{}, 'div'>('div')`
   display: grid;
-  height: 100%;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   grid-gap: 30px;
-  margin: 30px auto 0;
-  width: 400px;
+  height: 220px;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
 `
 
-export const DeviceContainer = styled<{}, 'div'>('div')`
+export const DeviceContainer = styled<{}, 'a'>('a')`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100%;
+  border: 1px solid #C8C8D5;
+  border-radius: 6px;
+  cursor: pointer;
 `
 
 export const ScanGrid = styled<{}, 'div'>('div')`
   display: grid;
   height: 100%;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   margin: 25px auto;
-  max-width: 550px;
+  grid-gap: 30px;
+  align-items: center;
+  width: fit-content;
 `
 
 export const QRCodeContainer = styled<{}, 'div'>('div')`
