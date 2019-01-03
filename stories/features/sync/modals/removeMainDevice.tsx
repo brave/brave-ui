@@ -5,15 +5,13 @@
 import * as React from 'react'
 
 // Components
-import Button from '../../../../src/components/buttonsIndicators/button'
-import Modal from '../../../../src/components/popupModals/modal'
+import { Modal, Button } from '../../../../src/components'
 
 // Feature-specific components
 import {
   Paragraph,
   ModalHeader,
-  // ModalIcon,
-  ModalTitle,
+  Title,
   ModalContent,
   TwoColumnButtonGrid,
   OneColumnButtonGrid
@@ -31,13 +29,12 @@ export default class RemoveMainDeviceModal extends React.PureComponent<Props, {}
   render () {
     const { onClose, mainDeviceName } = this.props
     return (
-      <Modal id='removeMainDeviceModal' onClose={onClose} size='small'>
+      <Modal id='removeMainDeviceModal' displayCloseButton={false} size='small'>
         <ModalHeader>
-          <ModalTitle level={1}>{getLocale('remove')} “{mainDeviceName}” {getLocale('thisSyncChain')}?</ModalTitle>
+          <Title level={1}>{getLocale('remove')} “{mainDeviceName}” {getLocale('thisSyncChain')}?</Title>
         </ModalHeader>
         <ModalContent>
           <Paragraph>{getLocale('thisDeviceRemovalDescription')}</Paragraph>
-          <Paragraph>{getLocale('joinSyncChain')}</Paragraph>
         </ModalContent>
         <TwoColumnButtonGrid>
             <OneColumnButtonGrid>
