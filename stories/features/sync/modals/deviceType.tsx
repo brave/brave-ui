@@ -5,35 +5,33 @@
 import * as React from 'react'
 
 // Components
-import Button from '../../../../src/components/buttonsIndicators/button'
-import Modal from '../../../../src/components/popupModals/modal'
+import { Modal } from '../../../../src/components'
 
 // Feature-specific components
 import {
   ModalHeader,
-  ModalTitle,
+  Title,
   DeviceGrid,
   DeviceContainer,
-  ModalSubTitle
+  Paragraph
 } from '../../../../src/features/sync'
 
 // Images
 import { SyncMobileIcon, SyncDesktopIcon } from '../../../../src/features/sync/images'
 
 // Modals
-import AddNewChainNoCamera from './addNewChainNoCamera'
+import ViewSyncCode from './viewSyncCode'
 import ScanCode from './scanCode'
 
 // Utils
 import { getLocale } from '../page/fakeLocale'
 
 interface Props {
-  mainDeviceName: string
   onClose: () => void
 }
 
 interface State {
-  addNewChainNoCamera: boolean
+  viewSyncCode: boolean
   scanCode: boolean
 }
 
@@ -41,60 +39,49 @@ export default class DeviceTypeModal extends React.PureComponent<Props, State> {
   constructor (props: Props) {
     super(props)
     this.state = {
-      addNewChainNoCamera: false,
+      viewSyncCode: false,
       scanCode: false
     }
   }
 
-  onClickPhoneTabletButton = () => {
+  onClickPhoneTabletButton = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault()
     this.setState({ scanCode: !this.state.scanCode })
   }
 
-  onClickComputerButton = () => {
-    this.setState({ addNewChainNoCamera: !this.state.addNewChainNoCamera })
+  onClickComputerButton = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault()
+    this.setState({ viewSyncCode: !this.state.viewSyncCode })
   }
 
   render () {
-    const { onClose, mainDeviceName } = this.props
-    const { addNewChainNoCamera, scanCode } = this.state
+    const { viewSyncCode, scanCode } = this.state
     return (
-      <Modal id='deviceTypeModal' onClose={onClose} size='small'>
+      <Modal id='deviceTypeModal' displayCloseButton={false} size='small'>
         {
           scanCode
           ? <ScanCode onClose={this.onClickPhoneTabletButton} />
           : null
         }
         {
-          addNewChainNoCamera
-            ? <AddNewChainNoCamera onClose={this.onClickComputerButton} />
+          viewSyncCode
+            ? <ViewSyncCode onClose={this.onClickComputerButton} />
             : null
         }
         <ModalHeader>
           <div>
-            <ModalTitle level={1}>{getLocale('letsSync')} “{mainDeviceName}”.</ModalTitle>
-            <ModalSubTitle>{getLocale('chooseDeviceType')}</ModalSubTitle>
+            <Title level={1}>{getLocale('letsSync')}</Title>
+            <Paragraph>{getLocale('chooseDeviceType')}</Paragraph>
           </div>
         </ModalHeader>
         <DeviceGrid>
-          <DeviceContainer>
+          <DeviceContainer onClick={this.onClickPhoneTabletButton}>
             <SyncMobileIcon />
-            <Button
-              level='primary'
-              type='accent'
-              size='medium'
-              onClick={this.onClickPhoneTabletButton}
-              text={getLocale('phoneTablet')}
-            />
+            <Title level={2}>{getLocale('phoneTablet')}</Title>
           </DeviceContainer>
-          <DeviceContainer>
+          <DeviceContainer onClick={this.onClickComputerButton}>
             <SyncDesktopIcon />
-            <Button
-              level='primary'
-              type='accent'
-              size='medium'
-              onClick={this.onClickComputerButton}
-              text={getLocale('computer')}
-            />
+            <Title level={2}>{getLocale('computer')}</Title>
           </DeviceContainer>
         </DeviceGrid>
       </Modal>
