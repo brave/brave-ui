@@ -5,19 +5,15 @@
 import * as React from 'react'
 
 // Components
-import Button from '../../../../src/components/buttonsIndicators/button'
-import Modal from '../../../../src/components/popupModals/modal'
-import AlertBox from '../../../../src/components/popupModals/alertBox'
+import { Modal, AlertBox, Button } from '../../../../src/components'
 
 // Feature-specific components
 import {
   ModalHeader,
-  ModalTitle,
-  ModalSubTitle,
+  Title,
   ModalContent,
   TwoColumnButtonGrid,
   OneColumnButtonGrid,
-  Title,
   Paragraph
 } from '../../../../src/features/sync'
 
@@ -51,7 +47,7 @@ export default class ResetSyncModal extends React.PureComponent<Props, State> {
     const { onClose, mainDeviceName } = this.props
     const { showAlert } = this.state
     return (
-      <Modal id='resetSyncModal' onClose={onClose} size='small'>
+      <Modal id='resetSyncModal' displayCloseButton={false} size='small'>
         {
           showAlert
           ? (
@@ -68,13 +64,11 @@ export default class ResetSyncModal extends React.PureComponent<Props, State> {
         }
         <ModalHeader>
           <div>
-            <ModalSubTitle highlight={true}>{getLocale('warning')}</ModalSubTitle>
-            <ModalTitle level={1}>{getLocale('removing')} “{mainDeviceName}” {getLocale('deleteSyncChain')}</ModalTitle>
+            <Title level={1}>{getLocale('removing')} “{mainDeviceName}” {getLocale('deleteSyncChain')}</Title>
           </div>
         </ModalHeader>
         <ModalContent>
           <Paragraph>{getLocale('deleteSyncDescription')}</Paragraph>
-          <Paragraph>{getLocale('startSyncChainHowTo')}</Paragraph>
         </ModalContent>
         <TwoColumnButtonGrid>
             <OneColumnButtonGrid>
@@ -91,7 +85,7 @@ export default class ResetSyncModal extends React.PureComponent<Props, State> {
               type='warn'
               size='medium'
               onClick={this.onSetupSync}
-              text={getLocale('remove')}
+              text={getLocale('deleteSyncChainButton')}
             />
           </TwoColumnButtonGrid>
       </Modal>
