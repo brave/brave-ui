@@ -5,21 +5,16 @@
 import * as React from 'react'
 
 // Components
-import Button from '../../../../src/components/buttonsIndicators/button'
-import Modal from '../../../../src/components/popupModals/modal'
-import AlertBox from '../../../../src/components/popupModals/alertBox'
-import TextAreaClipboard from '../../../../src/components/formControls/textareaClipboard'
+import { Modal, AlertBox, TextAreaClipboard, Button } from '../../../../src/components'
 
 // Feature-specific components
 import {
   ModalHeader,
-  ModalTitle,
-  ModalSubTitle,
-  ModalContent,
-  TwoColumnButtonGrid,
-  OneColumnButtonGrid,
   Title,
-  SubTitle
+  SubTitle,
+  Paragraph,
+  TwoColumnButtonGrid,
+  OneColumnButtonGrid
 } from '../../../../src/features/sync'
 
 // Utils
@@ -59,7 +54,7 @@ export default class EnterSyncCodeModal extends React.PureComponent<Props, State
     const { onClose } = this.props
     const { showAlert } = this.state
     return (
-      <Modal id='enterSyncCodeModal' onClose={onClose} size='small'>
+      <Modal id='enterSyncCodeModal' displayCloseButton={false} size='small'>
       {
         showAlert
         ? (
@@ -72,23 +67,20 @@ export default class EnterSyncCodeModal extends React.PureComponent<Props, State
       }
         <ModalHeader>
           <div>
-            <ModalTitle level={1}>{getLocale('enterSyncCode')}</ModalTitle>
-            <ModalSubTitle>{getLocale('enterSyncCodeDescription')}</ModalSubTitle>
+            <Title level={1}>{getLocale('enterSyncCode')}</Title>
+            <Paragraph>{getLocale('enterSyncCodeDescription')}</Paragraph>
           </div>
         </ModalHeader>
-        <ModalContent>
-          <TextAreaClipboard
-            copiedString={getLocale('copied')}
-            wordCountString={getLocale('wordCount')}
-            value={this.state.passphrase}
-            onChange={this.onEnterPassphrase}
-          />
-        </ModalContent>
+        <TextAreaClipboard
+          wordCountString={getLocale('wordCount')}
+          value={this.state.passphrase}
+          onChange={this.onEnterPassphrase}
+        />
         <TwoColumnButtonGrid>
             <OneColumnButtonGrid>
               <Button
                 level='secondary'
-                type='accent'
+                type='subtle'
                 size='medium'
                 onClick={onClose}
                 text={getLocale('cancel')}
