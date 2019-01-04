@@ -50,12 +50,6 @@ exports[`WalletPanel tests basic tests matches the snapshot 1`] = `
   color: #7C7D8C;
 }
 
-.c22 {
-  text-align: center;
-  padding: 15px 0 0;
-  margin: 0 auto;
-}
-
 .c16 {
   margin-top: 6px;
 }
@@ -82,7 +76,7 @@ exports[`WalletPanel tests basic tests matches the snapshot 1`] = `
   flex: 1 0 0;
 }
 
-.c25 {
+.c22 {
   display: none;
 }
 
@@ -213,35 +207,6 @@ exports[`WalletPanel tests basic tests matches the snapshot 1`] = `
   color: #4B4C5C;
 }
 
-.c23 {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  color: white;
-  font-size: 14px;
-  border-radius: 28px;
-  background: inherit;
-  cursor: pointer;
-  height: 40px;
-  color: #4C54D2;
-  border-radius: 20px;
-  font-size: 12px;
-  border: 1px solid #A1A8F2;
-}
-
-.c24 {
-  font-family: Poppins,sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  -webkit-letter-spacing: 0.39px;
-  -moz-letter-spacing: 0.39px;
-  -ms-letter-spacing: 0.39px;
-  letter-spacing: 0.39px;
-  margin: 0 auto;
-}
-
 <div
   className="c0"
 >
@@ -367,23 +332,9 @@ exports[`WalletPanel tests basic tests matches the snapshot 1`] = `
         </div>
       </div>
     </section>
-    <div
-      className="c22"
-    >
-      <button
-        className="c23"
-        type="tip"
-      >
-        <span
-          className="c24"
-        >
-          MISSING: donateNow
-        </span>
-      </button>
-    </div>
   </div>
   <div
-    className="c25"
+    className="c22"
   />
 </div>
 `;
