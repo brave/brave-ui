@@ -5,14 +5,13 @@
 import * as React from 'react'
 
 // Components
-import { Button } from '../../../src/components'
+import Button from '../../../src/components/buttonsIndicators/button'
 
 // Component-specific components
 import {
-  DisabledContent,
   Main,
-  SyncCard,
   Title,
+  SectionBlock,
   DisabledContentButtonGrid,
   TableGrid,
   Paragraph
@@ -58,43 +57,45 @@ export default class SyncDisabledContent extends React.PureComponent<{}, State> 
   render () {
     const { newToSync, existingSyncCode } = this.state
     return (
-      <DisabledContent>
-        <Main>
-          {
-            newToSync
-              ? <DeviceType onClose={this.onClickNewSyncChainButton} />
-              : null
-          }
-          {
-            existingSyncCode
-              ? <EnterSyncCode onClose={this.onClickEnterSyncChainCodeButton} />
-              : null
-          }
-          <SyncCard>
-            <TableGrid isDeviceTable={false}>
-              <SyncStartIcon />
-              <div>
-                <Title level={2}>{getLocale('syncTitle')}</Title>
-                <Paragraph>{getLocale('syncDescription')}</Paragraph>
-                <DisabledContentButtonGrid>
+      <Main>
+        {
+          newToSync
+            ? <DeviceType onClose={this.onClickNewSyncChainButton} mainDeviceName={this.mainDeviceName} />
+            : null
+        }
+        {
+          existingSyncCode
+            ? <EnterSyncCode onClose={this.onClickEnterSyncChainCodeButton} />
+            : null
+        }
+        <TableGrid>
+          <SyncStartIcon />
+          <div>
+            <Title level={2}>{getLocale('syncTitle')}</Title>
+            <Paragraph>{getLocale('syncDescription')}</Paragraph>
+            <SectionBlock>
+              <DisabledContentButtonGrid>
+                <div>
                   <Button
                     level='primary'
                     type='accent'
                     onClick={this.onClickNewSyncChainButton}
                     text={getLocale('startSyncChain')}
                   />
+                </div>
+                <div>
                   <Button
                     level='secondary'
                     type='accent'
                     onClick={this.onClickEnterSyncChainCodeButton}
                     text={getLocale('enterSyncChainCode')}
                   />
-                </DisabledContentButtonGrid>
-              </div>
-            </TableGrid>
-          </SyncCard>
-        </Main>
-      </DisabledContent>
+                </div>
+              </DisabledContentButtonGrid>
+            </SectionBlock>
+          </div>
+        </TableGrid>
+      </Main>
     )
   }
 }

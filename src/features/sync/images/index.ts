@@ -8,9 +8,9 @@ import StartImageUrl from './start_icon.svg'
 import DefaultImageUrl from './default_icon.svg'
 import AddImageUrl from './add_icon.svg'
 import RemoveImageUrl from './remove_icon.svg'
-import DesktopImageUrl from './sync_computer.svg'
-import MobileImageUrl from './sync_devices.svg'
-import MobileHandImageUrl from './sync_hand.svg'
+import DesktopImageUrl from './desktop_icon.svg'
+import MobileImageUrl from './mobile_icon.svg'
+import MobileHandImageUrl from './mobile_picture.png'
 
 const iconStyles = `
   margin-top: 3px;
@@ -18,7 +18,7 @@ const iconStyles = `
 `
 
 const deviceStyles = `
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   height: 100px;
 `
 
@@ -32,7 +32,6 @@ export const SyncDesktopIcon = styled<{}, 'img'>('img').attrs({ src: DesktopImag
 export const SyncMobileIcon = styled<{}, 'img'>('img').attrs({ src: MobileImageUrl })`${deviceStyles}`
 export const SyncMobilePicture = styled<{}, 'img'>('img').attrs({ src: MobileHandImageUrl })`
   max-width: 100%;
-  height: 150px;
   display: block;
 `
 
@@ -41,9 +40,7 @@ interface QRCodeProps {
 }
 
 export const QRCode = styled<QRCodeProps, 'img'>('img')`
-  display: block;
-  width: 200px;
-  padding: 30px;
-  border: 1px solid #C8C8D5;
   max-width: 100%;
+  display: block;
+  width: ${p => p.size === 'normal' ? '180px' : '140px'};
 `

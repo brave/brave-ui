@@ -11,15 +11,13 @@ import TextAreaClipboard from '../../../../src/components/formControls/textareaC
 
 // Feature-specific components
 import {
-  ViewSyncCodeGrid,
+  ModalHeader,
   ModalTitle,
-  TwoColumnButtonGrid
+  ModalSubTitle,
+  ModalContent,
+  TwoColumnButtonGrid,
+  OneColumnButtonGrid
 } from '../../../../src/features/sync'
-
-import { QRCode } from '../../../../src/features/sync/images'
-
-// Fake QR Code
-import qrCodeImage from '../../../assets/img/fakeQRCodeImage.png'
 
 // Utils
 import { getLocale } from '../page/fakeLocale'
@@ -29,33 +27,42 @@ interface Props {
   onClose: () => void
 }
 
-export default class ViewSyncCodeModal extends React.PureComponent<Props, {}> {
+export default class AddNewChainNoCameraModal extends React.PureComponent<Props, {}> {
   render () {
     const { onClose } = this.props
     return (
-      <Modal id='viewSyncCodeModal' onClose={onClose} size='small'>
-        <ViewSyncCodeGrid>
+      <Modal id='addNewChainNoCameraModal' onClose={onClose} size='small'>
+        <ModalHeader>
           <div>
-            <ModalTitle level={3}>{getLocale('wordCode')}</ModalTitle>
-            <TextAreaClipboard
-              copiedString={getLocale('copied')}
-              wordCountString={getLocale('wordCount')}
-              defaultValue={data.passphrase}
-            />
+            <ModalTitle level={1}>{getLocale('enterThisCode')}</ModalTitle>
+            <ModalSubTitle>{getLocale('syncChainCodeHowTo')}</ModalSubTitle>
           </div>
-          <div style={{ textAlign: 'left' }}>
-            <ModalTitle level={3}>{getLocale('qrCode')}</ModalTitle>
-            <QRCode size='small' src={qrCodeImage} />
-          </div>
-        </ViewSyncCodeGrid>
+        </ModalHeader>
+        <ModalContent>
+          <TextAreaClipboard
+            copiedString='Copied!'
+            wordCountString='Word Count:'
+            readOnly={true}
+            defaultValue={data.passphrase}
+          />
+        </ModalContent>
         <TwoColumnButtonGrid>
-          <div>{getLocale('privateKey')}</div>
+          <OneColumnButtonGrid>
+            <Button
+              level='secondary'
+              type='accent'
+              size='medium'
+              onClick={onClose}
+              text={getLocale('previous')}
+            />
+          </OneColumnButtonGrid>
           <Button
             level='primary'
             type='accent'
             size='medium'
             onClick={onClose}
-            text={getLocale('done')}
+            disabled={true}
+            text={getLocale('lookingForDevice')}
           />
         </TwoColumnButtonGrid>
       </Modal>

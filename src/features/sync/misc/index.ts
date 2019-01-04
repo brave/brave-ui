@@ -3,32 +3,13 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from '../../../theme'
-import { Card } from '../../../components'
-
-export const DisabledContent = styled<{}, 'div'>('div')`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: inherit;
-  background-color: #efeff0;
-`
-
-export const EnabledContent = styled<{}, 'div'>('div')`
-  height: inherit;
-  background-color: #efeff0;
-`
 
 export const Main = styled<{}, 'main'>('main')`
   font-family: ${p => p.theme.fontFamily.body};
   color: ${p => p.theme.color.defaultControl};
-  padding: 50px 15px;
-  max-width: 830px;
+  max-width: 980px;
+  padding: 40px;
   margin: auto;
-`
-
-export const SyncCard = styled(Card)`
-  padding: 60px 80px;
 `
 
 export const TableRowId = styled<{}, 'span'>('span')`
@@ -52,16 +33,10 @@ export const TableRowRemove = styled<{}, 'span'>('span')`
 
 export const TableRowRemoveButton = styled<{}, 'button'>('button')`
   text-align: center;
-  padding: 0;
+  padding: 0 6px;
   border: 0;
   background: transparent;
   cursor: pointer;
   display: block;
   margin: auto;
-  width: 24px;
-`
-
-export const TableRowToggleButton = styled<{}, 'span'>('span')`
-  float: right;
-  margin: 9px;
 `

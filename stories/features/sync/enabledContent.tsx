@@ -5,24 +5,23 @@
 import * as React from 'react'
 
 // Components
-import { Toggle } from '../../../src/features/shields'
+import Toggle from '../../../src/components/formControls/toggle'
 import Button from '../../../src/components/buttonsIndicators/button'
-import { CloseCircleIcon } from '../../../src/components/icons'
 import Table, { Cell, Row } from '../../../src/components/dataTables/table'
 
 // Feature-specific components
 import {
-  EnabledContent,
   Main,
-  SyncCard,
   Title,
-  Paragraph,
+  SettingsToggleGrid,
+  SwitchLabel,
   SectionBlock,
+  SubTitle,
   TableRowDevice,
+  TableRowRemove,
   TableRowRemoveButton,
   TableGrid,
-  TableButtonGrid,
-  TableRowToggleButton
+  TableButtonGrid
 } from '../../../src/features/sync'
 
 // Modals
@@ -64,16 +63,16 @@ export default class SyncEnabledContent extends React.PureComponent<{}, State> {
     return data.device2.name
   }
 
-  get deviceRows (): Row[] {
+  get rows (): Row[] {
     return [
       {
         content: [
-          { content: <TableRowDevice>{data.device1.name} (This Device)</TableRowDevice> },
+          { content: <TableRowDevice>{data.device1.name} (main device)</TableRowDevice> },
           { content: data.device1.lastActive },
           {
             content: (
               <TableRowRemoveButton data-id={''} data-name={''} onClick={this.onClickRemoveMainDeviceButton}>
-                <CloseCircleIcon />
+                &times;
               </TableRowRemoveButton>
             )
           }
@@ -86,7 +85,7 @@ export default class SyncEnabledContent extends React.PureComponent<{}, State> {
           {
             content: (
               <TableRowRemoveButton data-id={''} data-name={''} onClick={this.onClickRemoveOtherDeviceButton}>
-                <CloseCircleIcon />
+                &times;
               </TableRowRemoveButton>
             )
           }
@@ -95,31 +94,11 @@ export default class SyncEnabledContent extends React.PureComponent<{}, State> {
     ]
   }
 
-  get deviceHeader (): Cell[] {
+  get header (): Cell[] {
     return [
       { content: <TableRowDevice>{getLocale('deviceName')}</TableRowDevice> },
       { content: getLocale('addedOn') },
-      { content: '' }
-    ]
-  }
-
-  get settingsHeader (): Cell[] {
-    return [
-      { content: <TableRowDevice>{getLocale('settings')}</TableRowDevice> },
-      { content: '' }
-    ]
-  }
-
-  get settingsRows (): Row[] {
-    return [
-      {
-        content: [
-          {
-            content: getLocale('bookmarks')
-          },
-          { content: <TableRowToggleButton><Toggle id='bookmarks' checked={true} size='large' /></TableRowToggleButton> }
-        ]
-      }
+      { content: <TableRowRemove>{getLocale('remove')}</TableRowRemove> }
     ]
   }
 
@@ -146,75 +125,82 @@ export default class SyncEnabledContent extends React.PureComponent<{}, State> {
   render () {
     const { removeOtherDevice, removeMainDevice, viewSyncCode, addDevice, resetSync } = this.state
     return (
-      <EnabledContent>
-        <Main>
-          {
-            removeOtherDevice
-              ? <RemoveOtherDevice onClose={this.onClickRemoveOtherDeviceButton} otherDeviceName={this.otherDeviceName} />
-              : null
-          }
-          {
-            removeMainDevice
-              ? <RemoveMainDevice onClose={this.onClickRemoveMainDeviceButton} mainDeviceName={this.mainDeviceName} />
-              : null
-          }
-          {
-            viewSyncCode
-              ? <ViewSyncCodeModal onClose={this.onClickViewSyncCodeButton} />
-              : null
-          }
-          {
-            addDevice
-              ? <DeviceTypeModal onClose={this.onClickAddDeviceButton} />
-              : null
-          }
-          {
-            resetSync
-              ? <ResetSyncModal onClose={this.onClickResetSyncButton} mainDeviceName={this.mainDeviceName} />
-              : null
-          }
-          <SyncCard>
-            <Title level={2}>{getLocale('braveSync')}</Title>
-            <Paragraph>{getLocale('syncChainDevices')}</Paragraph>
-            <SectionBlock>
-              <TableGrid isDeviceTable={true}>
-                <Table header={this.deviceHeader} rows={this.deviceRows} />
-                <TableButtonGrid>
-                  <br />
-                  <Button
-                    level='secondary'
-                    type='accent'
-                    size='medium'
-                    text={getLocale('viewSyncCode')}
-                    onClick={this.onClickViewSyncCodeButton}
-                  />
-                  <Button
-                    level='primary'
-                    type='accent'
-                    size='medium'
-                    text={getLocale('addDevice')}
-                    onClick={this.onClickAddDeviceButton}
-                  />
-                </TableButtonGrid>
-              </TableGrid>
-            </SectionBlock>
-            <Title level={2}>{getLocale('syncSettings')}</Title>
-            <Paragraph>{getLocale('syncSettingsDescription')}</Paragraph>
-            <SectionBlock>
-              <Table header={this.settingsHeader} rows={this.settingsRows} />
-            </SectionBlock>
-            <SectionBlock>
+      <Main>
+        {
+          removeOtherDevice
+            ? <RemoveOtherDevice onClose={this.onClickRemoveOtherDeviceButton} otherDeviceName={this.otherDeviceName} />
+            : null
+        }
+        {
+          removeMainDevice
+            ? <RemoveMainDevice onClose={this.onClickRemoveMainDeviceButton} mainDeviceName={this.mainDeviceName} />
+            : null
+        }
+        {
+          viewSyncCode
+            ? <ViewSyncCodeModal onClose={this.onClickViewSyncCodeButton} />
+            : null
+        }
+        {
+          addDevice
+            ? <DeviceTypeModal onClose={this.onClickAddDeviceButton} mainDeviceName={this.mainDeviceName} />
+            : null
+        }
+        {
+          resetSync
+            ? <ResetSyncModal onClose={this.onClickResetSyncButton} mainDeviceName={this.mainDeviceName} />
+            : null
+        }
+        <Title level={2}>{getLocale('braveSync')}</Title>
+        <SectionBlock>
+          <SubTitle level={2}>{getLocale('syncChainDevices')}</SubTitle>
+          <TableGrid>
+            <Table header={this.header} rows={this.rows} />
+            <TableButtonGrid>
               <Button
-                level='primary'
+                level='secondary'
                 type='accent'
                 size='medium'
-                text={getLocale('leaveSyncChain')}
-                onClick={this.onClickResetSyncButton}
+                text={getLocale('addDevice')}
+                onClick={this.onClickAddDeviceButton}
               />
-            </SectionBlock>
-          </SyncCard>
-        </Main>
-      </EnabledContent>
+              <Button
+                level='secondary'
+                type='accent'
+                size='medium'
+                text={getLocale('viewSyncCode')}
+                onClick={this.onClickViewSyncCodeButton}
+              />
+            </TableButtonGrid>
+          </TableGrid>
+        </SectionBlock>
+        <SectionBlock>
+          <SubTitle level={2}>{getLocale('dataToSync')} {data.device1.name}</SubTitle>
+          <SettingsToggleGrid>
+            <Toggle id='bookmarks' checked={false} />
+            <SwitchLabel htmlFor='bookmarks'>
+              {getLocale('bookmarks')}
+            </SwitchLabel>
+            <Toggle id='savedSiteSettings' checked={false} />
+            <SwitchLabel htmlFor='savedSiteSettings'>
+              {getLocale('savedSiteSettings')}
+            </SwitchLabel>
+            <Toggle id='browsingHistory' checked={false} />
+            <SwitchLabel htmlFor='browsingHistory'>
+              {getLocale('browsingHistory')}
+            </SwitchLabel>
+          </SettingsToggleGrid>
+        </SectionBlock>
+        <SectionBlock>
+          <Button
+            level='primary'
+            type='accent'
+            size='medium'
+            text={getLocale('leaveSyncChain')}
+            onClick={this.onClickResetSyncButton}
+          />
+        </SectionBlock>
+      </Main>
     )
   }
 }
