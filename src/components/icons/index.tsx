@@ -62,6 +62,7 @@ export { default as WalletWithdrawIcon } from './wallet-withdraw'
 
 // complex, do not autogenerate
 // TODO(petemill): Should have separate process for logos
+export { default as AdsMegaphoneIcon } from './fc-ads-megaphone'
 export { default as BatColorIcon } from './fc-logo-bat'
 export { default as BatGreyIcon } from './fc-logo-bat-grey'
 export { default as BitcoinColorIcon } from './fc-logo-bitcoin'
@@ -70,12 +71,13 @@ export { default as EthereumColorIcon } from './fc-logo-ethereum'
 export { default as LitecoinColorIcon } from './fc-logo-litecoin'
 export { default as LoaderIcon } from './loader'
 export { default as PaperAirplaneIcon } from './paper-airplane'
+export { default as RewardsActivateIcon } from './fc-rewards-activate'
+export { default as RewardsSendTipsIcon } from './fc-rewards-send-tips'
 export { default as TorLockIcon } from './tor-lock'
 export { default as TwitchColorIcon } from './fc-logo-twitch'
 export { default as TwitterColorIcon } from './fc-logo-twitter'
 export { default as UpholdColorIcon } from './fc-logo-uphold'
 export { default as YoutubeColorIcon } from './fc-logo-youtube'
-export { default as SendTipsIcon } from './send-tips'
 
 // illustrative
 export { default as GiftIcon } from './illustrative/gift'
