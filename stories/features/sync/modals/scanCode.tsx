@@ -5,16 +5,19 @@
 import * as React from 'react'
 
 // Components
-import { Modal, Button } from '../../../../src/components'
+import Button from '../../../../src/components/buttonsIndicators/button'
+import Modal from '../../../../src/components/popupModals/modal'
 
 // Feature-specific components
 import {
   ModalHeader,
-  Title,
-  Paragraph,
-  Link,
+  ModalTitle,
+  ModalSubTitle,
   ScanGrid,
-  ThreeColumnButtonGrid
+  QRCodeContainer,
+  ThreeColumnButtonGrid,
+  ThreeColumnButtonGridCol1,
+  ThreeColumnButtonGridCol2
 } from '../../../../src/features/sync'
 
 // Images
@@ -24,13 +27,13 @@ import { SyncMobilePicture, QRCode } from '../../../../src/features/sync/images'
 import qrCodeImage from '../../../assets/img/fakeQRCodeImage.png'
 
 // Modals
-import ViewSyncCodeModal from './viewSyncCode'
+import AddNewChainCameraOption from './addNewChainCameraOption'
 
 // Utils
 import { getLocale } from '../page/fakeLocale'
 
 interface Props {
-  onClose: (event?: any) => void
+  onClose: () => void
 }
 
 interface State {
@@ -49,53 +52,53 @@ export default class ScanCodeModal extends React.PureComponent<Props, State> {
     this.setState({ enterCodeWordsInstead: !this.state.enterCodeWordsInstead })
   }
 
-  onCancel = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault()
-    this.props.onClose()
-  }
-
   render () {
     const { onClose } = this.props
     const { enterCodeWordsInstead } = this.state
     return (
-      <Modal id='scanCodeModal' displayCloseButton={false} size='small'>
+      <Modal id='scanCodeModal' onClose={onClose} size='small'>
       {
         enterCodeWordsInstead
-          ? <ViewSyncCodeModal onClose={this.onClickEnterCodeWordsInstead} />
+          ? <AddNewChainCameraOption fromMobileScreen={true} onClose={this.onClickEnterCodeWordsInstead} />
           : null
       }
         <ModalHeader>
           <div>
-            <Title level={1}>{getLocale('scanThisCode')}</Title>
-            <Paragraph>{getLocale('scanThisCodeHowTo')}</Paragraph>
+            <ModalTitle level={1}>{getLocale('scanThisCode')}</ModalTitle>
+            <ModalSubTitle>{getLocale('scanThisCodeHowTo')}</ModalSubTitle>
           </div>
         </ModalHeader>
           <ScanGrid>
             <SyncMobilePicture />
-            <QRCode size='normal' src={qrCodeImage} />
+            <QRCodeContainer><QRCode size='normal' src={qrCodeImage} /></QRCodeContainer>
           </ScanGrid>
           <ThreeColumnButtonGrid>
-          <div>
-            <Link onClick={this.onCancel}>{getLocale('cancel')}</Link>
-          </div>
-          <div>
-            <Button
-              level='secondary'
-              type='subtle'
-              size='medium'
-              onClick={onClose}
-              text={getLocale('viewSyncCode')}
-            />
-          </div>
-          <div>
-            <Button
-              level='primary'
-              type='accent'
-              size='medium'
-              onClick={onClose}
-              text={getLocale('viewCodeWords')}
-            />
-          </div>
+            <ThreeColumnButtonGridCol1>
+              <Button
+                level='secondary'
+                type='accent'
+                size='medium'
+                onClick={this.onClickEnterCodeWordsInstead}
+                text={getLocale('enterCodeWordsInstead')}
+              />
+            </ThreeColumnButtonGridCol1>
+            <ThreeColumnButtonGridCol2>
+              <Button
+                level='secondary'
+                type='accent'
+                size='medium'
+                onClick={onClose}
+                text={getLocale('previous')}
+              />
+              <Button
+                level='primary'
+                type='accent'
+                size='medium'
+                onClick={onClose}
+                disabled={true}
+                text={getLocale('lookingForDevice')}
+              />
+            </ThreeColumnButtonGridCol2>
         </ThreeColumnButtonGrid>
       </Modal>
     )

@@ -2,18 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-export { Title, SubTitle, Paragraph, SwitchLabel, Link, Bold } from './text'
-export {
-  DisabledContent,
-  EnabledContent,
-  Main,
-  SyncCard,
-  TableRowId,
-  TableRowDevice,
-  TableRowRemove,
-  TableRowRemoveButton,
-  TableRowToggleButton
-} from './misc'
+export { Title, SubTitle, Paragraph, SwitchLabel } from './text'
+export { Main, TableRowId, TableRowDevice, TableRowRemove, TableRowRemoveButton } from './misc'
 export {
   SectionBlock,
   SettingsToggleGrid,
