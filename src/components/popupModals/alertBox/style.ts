@@ -4,16 +4,18 @@
 
 import styled from 'styled-components'
 
-export const StyledDialog = styled<{}, 'div'>('div')`
+export const StyledDialogWrapper = styled<{}, 'div'>('div')`
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 999999;
+  display: flex;
+`
+
+export const StyledDialog = styled<{}, 'div'>('div')`
   width: 470px;
-  height: 200px;
-  overflow: hidden;
   margin: auto;
   padding: 30px 20px 10px;
   max-height: calc(100vh - 100px);
