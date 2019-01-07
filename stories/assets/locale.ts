@@ -123,6 +123,8 @@ const locale: Record<string, string> = {
   recurringDonation: 'Recurring Donation',
   recurringDonations: 'Monthly Tips',
   remove: 'remove',
+  reservedAmountText: 'You’ve designated {{reservedAmount}} BAT for creators who haven’t yet signed up to receive contributions. We’ll keep trying to contribute until they verify, or until 90 days have passed.',
+  reservedMoreLink: 'Learn more.',
   restore: 'Restore',
   restoreAll: 'Restore All',
   reviewSitesMsg: 'Your pinned sites have been moved to',
