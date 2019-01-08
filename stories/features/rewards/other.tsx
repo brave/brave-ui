@@ -208,6 +208,7 @@ storiesOf('Feature Components/Rewards/Other/Desktop', module)
     .add('Grant claim',() => {
       return (
         <GrantClaim
+          type={'ugp'}
           onClaim={dummyClick}
         />
       )
