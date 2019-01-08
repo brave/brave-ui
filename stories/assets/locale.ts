@@ -36,7 +36,6 @@ const locale: Record<string, string> = {
   captchaMissedTarget: 'Hmm… Not Quite. Try Again.',
   claim: 'Claim',
   closeBalance: 'Closing Balance',
-  changeSettingsButton: 'Change Auto-Contribute settings',
   contribute: 'Contribute',
   contributeAllocation: 'Auto-Contribute Allocation',
   contributeTooltip: 'Auto-Contribute Settings',
