@@ -23,8 +23,7 @@ import {
   StyledColumn,
   StyleToggleTips,
   StyledNoticeWrapper,
-  StyledNoticeLink,
-  StyledChangeButton
+  StyledNoticeLink
 } from './style'
 
 // Components
@@ -59,9 +58,7 @@ export interface Props {
   onAmountChange: () => void
   onIncludeInAuto: () => void
   showUnVerified?: boolean
-  showChangeSetting?: boolean
   moreLink?: string
-  onChangeSetting?: () => void
 }
 
 export default class WalletPanel extends React.PureComponent<Props, {}> {
@@ -167,9 +164,7 @@ export default class WalletPanel extends React.PureComponent<Props, {}> {
       toggleTips,
       showUnVerified,
       isVerified,
-      moreLink,
-      showChangeSetting,
-      onChangeSetting
+      moreLink
     } = this.props
 
     return (
@@ -179,13 +174,7 @@ export default class WalletPanel extends React.PureComponent<Props, {}> {
           {
             !isVerified && showUnVerified
             ? <StyledNoticeWrapper>
-              {getLocale('unVerifiedText')}
-              <StyledNoticeLink href={moreLink} target={'_blank'}> {getLocale('unVerifiedTextMore')}</StyledNoticeLink>
-              {
-                showChangeSetting
-                ? <StyledChangeButton onClick={onChangeSetting}>{getLocale('changeSettingsButton')}</StyledChangeButton>
-                : null
-              }
+              {getLocale('unVerifiedText')} <StyledNoticeLink href={moreLink} target={'_blank'}> {getLocale('unVerifiedTextMore')}</StyledNoticeLink>
             </StyledNoticeWrapper>
             : null
           }
