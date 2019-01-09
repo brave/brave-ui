@@ -8,7 +8,7 @@ import { setTheme } from '../../helpers'
 
 import '../../../stories/assets/fonts/poppins.css'
 
-const StyledClock = styled.div`
+export const StyledClock = styled<{}, 'div'>('div')`
   color: ${(p: ClockProps) => setTheme(p.customStyle, 'color') || 'white'};
   box-sizing: border-box;
   line-height: 1;
@@ -16,23 +16,22 @@ const StyledClock = styled.div`
   display: flex;
   -webkit-font-smoothing: antialiased;
   font-family: Poppins, sans-serif;
-` as any
+`
 
-const StyledTime = styled.span`
+export const StyledTime = styled<{}, 'span'>('span')`
   box-sizing: border-box;
   font-size: 90px;
   font-weight: 200;
   color: inherit;
   font-family: inherit;
   display: inline-flex;
-` as any
+`
 
-const StyledPeriod = styled.span`
+export const StyledPeriod = styled<{}, 'span'>('span')`
   display: none;
-` as any
+`
 
-
-const StyledTimeSeparator = styled.span`
+export const StyledTimeSeparator = styled<{}, 'span'>('span')`
   box-sizing: border-box;
   color: inherit;
   font-size: inherit;
@@ -40,10 +39,4 @@ const StyledTimeSeparator = styled.span`
   font-weight: 200;
   /* center colon vertically in the text-content line */
   margin-top: -0.1em;
-` as any
-
-export {
-  StyledClock,
-  StyledTime,
-  StyledTimeSeparator
-}
+`
