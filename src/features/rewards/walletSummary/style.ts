@@ -3,6 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
+import palette from '../../../theme/palette'
 
 interface StyleProps {
   compact?: boolean
@@ -72,4 +73,24 @@ export const StyledNoActivity = styled<{}, 'span'>('span')`
   font-weight: 400;
   color: #B8B9C4;
   font-size: 18px;
+`
+
+export const StyledReservedWrapper = styled<{}, 'div'>('div')`
+  background: rgba(0, 0, 0, 0.04);
+  color: #676283;
+  font-size: 12px;
+  font-family: ${p => p.theme.fontFamily.body};
+  font-weight: normal;
+  letter-spacing: 0;
+  line-height: 16px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  margin: 20px 0 10px;
+`
+
+export const StyledReservedLink = styled<StyleProps, 'a'>('a')`
+  color: ${palette.blue400};
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
 `
