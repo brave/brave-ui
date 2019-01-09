@@ -3,6 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
+import palette from '../../../theme/palette'
 
 interface StyleProps {
   size?: string
@@ -94,19 +95,8 @@ export const StyledNoticeWrapper = styled<StyleProps, 'div'>('div')`
 `
 
 export const StyledNoticeLink = styled<StyleProps, 'a'>('a')`
-  color: #0089FF;
+  color: ${palette.blue400};
   font-weight: bold;
   text-decoration: none;
   display: inline-block;
-  margin-left: 4px;
-`
-
-export const StyledChangeButton = styled<StyleProps, 'button'>('button')`
-  font-family: ${p => p.theme.fontFamily.body};
-  font-weight: bold;
-  background: none;
-  border: none;
-  padding: 0;
-  margin-top: 2px;
-  cursor: pointer;
 `
