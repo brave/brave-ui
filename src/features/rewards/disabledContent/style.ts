@@ -11,7 +11,7 @@ const getColors = (p: Props) => {
 
   switch (p.type) {
     case 'ads':
-      color = '#ceb4e1'
+      color = '#d666a2'
       boldColor = '#b490cf'
       break
     case 'contribute':
@@ -74,4 +74,8 @@ export const StyledTwoColumn = styled<{}, 'div'>('div')`
   justify-content: center;
   flex-direction: column;
   grid-column: span 2;
+`
+
+export const StyledIcon = styled<{}, 'div'>('div')`
+  width: 110px;
 `
