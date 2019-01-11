@@ -4,7 +4,6 @@
 
 import Anchor from './anchor'
 import BoxedContent from './boxedContent'
-import Clock from './clock'
 import ContentToggleArrow from './contentToggleArrow'
 import MediaContent from './mediaContent'
 import Page from './page'
@@ -21,7 +20,6 @@ import { TitleHeading, SectionHeading, FeatureHeading, Heading } from './heading
 export {
   Anchor,
   BoxedContent,
-  Clock,
   ContentToggleArrow,
   DataBlock,
   DataItem,

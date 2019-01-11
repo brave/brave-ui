@@ -4,18 +4,7 @@
 
 import * as React from 'react'
 
-import {
-   StyledClock,
-   StyledTime
- } from './style'
-
-export interface ClockTheme {
-  color?: string
-}
-export interface ClockProps {
-  id?: string
-  customStyle?: ClockTheme
-}
+import { StyledClock, StyledTime } from './style'
 
 interface TimeComponent {
   type: string,
@@ -27,8 +16,8 @@ export interface ClockState {
   date: Date
 }
 
-export default class Clock extends React.PureComponent<ClockProps, ClockState> {
-  constructor (props: ClockProps) {
+export class Clock extends React.PureComponent<{}, ClockState> {
+  constructor (props: {}) {
     super(props)
     this.state = this.getClockState(new Date())
   }
@@ -70,9 +59,8 @@ export default class Clock extends React.PureComponent<ClockProps, ClockState> {
   }
 
   render () {
-    const { id, customStyle } = this.props
     return (
-      <StyledClock id={id} customStyle={customStyle}>
+      <StyledClock>
         <StyledTime>{this.formattedTime}</StyledTime>
       </StyledClock>
     )
