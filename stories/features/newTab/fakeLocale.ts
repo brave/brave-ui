@@ -10,9 +10,9 @@ const locale: any = {
   estimatedTimeSaved: 'Estimated Time Saved',
   minutes: 'minutes',
   // footer info
-  photoBy: 'photo by',
+  photoBy: 'Photo by',
   // site removal notification
-  thumbRemoved: 'Thumb removed',
+  thumbRemoved: 'Top site removed',
   undoRemoved: 'Undo',
   restoreAll: 'Restore All',
   close: 'Close'
