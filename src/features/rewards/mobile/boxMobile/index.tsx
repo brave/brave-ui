@@ -55,36 +55,82 @@ export interface Props {
 }
 
 interface State {
-  contentShown: boolean
-  settingsOpened: boolean
+  detailView: boolean
+  settings: boolean
 }
 
 export default class BoxMobile extends React.PureComponent<Props, State> {
   constructor (props: Props) {
     super(props)
     this.state = {
-      contentShown: false,
-      settingsOpened: false
+      detailView: false,
+      settings: false
     }
   }
 
-  detailsClick = () => {
-    this.setState({
-      contentShown: !this.state.contentShown
+  componentDidMount () {
+    this.handleUrl()
+    window.addEventListener('popstate', (e) => {
+      this.handleUrl()
     })
   }
 
-  settingsClick = () => {
+  handleUrl = () => {
+    const path = window.location.pathname
+    // Index view, no need to do anything here
+    if (path === '/') {
+      this.setState({
+        detailView: false,
+        settings: false
+      })
+      return
+    }
+
+    const { type } = this.props
+    const typeString = `/${type}`
+    const settingsString = `/${type}-settings`
+
+    if (path === typeString) {
+      this.setView('detailView', false)
+    } else if (path === settingsString) {
+      this.setView('settings', false)
+    }
+  }
+
+  setView = (view: string, updateHistory: boolean = true) => {
+    const isSettingsView = view === 'settings'
+      ? !this.state.settings
+      : this.state.settings
+    const isDetailView = view === 'detailView'
+      ? !this.state.detailView
+      : this.state.detailView
+
     this.setState({
-      settingsOpened: !this.state.settingsOpened
+      detailView: isDetailView,
+      settings: isSettingsView
     })
+
+    if (updateHistory) {
+      let newPath = ''
+      const { type } = this.props
+
+      if (!isSettingsView && !isDetailView) {
+        newPath = '/'
+      } else if (isSettingsView) {
+        newPath = `/${type}-settings`
+      } else if (isDetailView) {
+        newPath = `/${type}`
+      }
+
+      window.history.pushState(null, '', newPath)
+    }
   }
 
   onToggle = () => {
     if (this.props.checked) {
       this.setState({
-        contentShown: false,
-        settingsOpened: false
+        detailView: false,
+        settings: false
       })
     }
 
@@ -104,21 +150,21 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
       checked,
       toggle
     } = props
-    const isDetailView = checked && this.state.contentShown
+    const isDetailView = checked && this.state.detailView
 
     return (
       <StyledToggleHeader detailView={isDetailView}>
         <StyledLeft>
           {
             isDetailView
-            ? <StyledBackArrow onClick={this.detailsClick}>
+            ? <StyledBackArrow onClick={this.setView.bind(this, 'detailView')}>
                 <ArrowLeftIcon />
               </StyledBackArrow>
             : null
           }
           <StyledTitle
             type={type}
-            contentShown={isDetailView}
+            detailView={isDetailView}
           >
             {title}
           </StyledTitle>
@@ -126,7 +172,7 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
         <StyledRight>
           {
             toggle ?
-            <StyledToggleWrapper contentShown={isDetailView}>
+            <StyledToggleWrapper detailView={isDetailView}>
               <Toggle
                 size={'small'}
                 onToggle={this.onToggle}
@@ -140,14 +186,16 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
     )
   }
 
-  getBoxContent = (checked?: boolean) => {
-    if (!checked || this.state.contentShown) {
+  getBoxContent = () => {
+    const { checked } = this.props
+
+    if (!checked || this.state.detailView) {
       return null
     }
 
     return (
-      <StyledContent contentShown={this.state.contentShown}>
-        <StyleDetailsLink onClick={this.detailsClick}>
+      <StyledContent detailView={this.state.detailView}>
+        <StyleDetailsLink onClick={this.setView.bind(this, 'detailView')}>
           {getLocale('viewDetails')}
           <StyledArrow>
             <CaratRightIcon/>
@@ -159,7 +207,7 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
 
   getSettingsListTitle = () => {
     return (
-      <StyledSettingsListTitle onClick={this.settingsClick}>
+      <StyledSettingsListTitle onClick={this.setView.bind(this, 'settings')}>
         <StyledSettingsIcon>
           <SettingsIcon />
         </StyledSettingsIcon>
@@ -170,8 +218,10 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
     )
   }
 
-  getSettingsContent = (title: string, children: React.ReactNode, checked?: boolean) => {
-    if (!checked || !this.state.settingsOpened) {
+  getSettingsContent = (show?: boolean) => {
+    const { title, children } = this.props
+
+    if (!show) {
       return null
     }
 
@@ -181,7 +231,7 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
           <StyledSettingsTitle>
             {this.getSettingsTitle(title)}
           </StyledSettingsTitle>
-          <StyledSettingsClose onClick={this.settingsClick}>
+          <StyledSettingsClose onClick={this.setView.bind(this, 'settings')}>
             <CloseStrokeIcon />
           </StyledSettingsClose>
           <StyledSettingsContent>
@@ -192,8 +242,10 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
     )
   }
 
-  getDetailContent = (children: React.ReactNode, checked?: boolean) => {
-    if (!checked || !this.state.contentShown) {
+  getDetailContent = (show?: boolean) => {
+    const { children } = this.props
+
+    if (!show) {
       return null
     }
 
@@ -202,7 +254,7 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
         {this.getToggleHeader(this.props)}
         <StyledDetailContent>
           <StyledDetailInfo>
-            <StyledDescription contentShown={this.state.contentShown}>
+            <StyledDescription detailView={this.state.detailView}>
               {this.props.description}
             </StyledDescription>
           </StyledDetailInfo>
@@ -218,12 +270,12 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
   render () {
     const {
       id,
-      title,
-      children,
       description,
-      checked,
-      settingsChild
+      checked
     } = this.props
+
+    const showDetailView = checked && this.state.detailView
+    const showSettingsView = checked && this.state.settings
 
     return (
       <StyledCard
@@ -231,7 +283,7 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
         checked={checked}
       >
         <StyledFlip>
-          <StyledContentWrapper open={!this.state.settingsOpened}>
+          <StyledContentWrapper open={!this.state.settings}>
             {this.getToggleHeader(this.props)}
             <StyledBreak />
             <StyledLeft>
@@ -239,11 +291,11 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
                 {description}
               </StyledDescription>
             </StyledLeft>
-            {this.getBoxContent(checked)}
+            {this.getBoxContent()}
           </StyledContentWrapper>
         </StyledFlip>
-        {this.getDetailContent(children, checked)}
-        {this.getSettingsContent(title, settingsChild, checked)}
+        {this.getDetailContent(showDetailView)}
+        {this.getSettingsContent(showSettingsView)}
       </StyledCard>
     )
   }
