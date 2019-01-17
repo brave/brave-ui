@@ -18,6 +18,9 @@ export const ArrowLeftIcon = RotatedIconComponent(ArrowIcon, 0)
 export const ArrowRightIcon = RotatedIconComponent(ArrowIcon, 180)
 export const ArrowDownIcon = RotatedIconComponent(ArrowIcon, -90)
 export const ArrowUpIcon = RotatedIconComponent(ArrowIcon, 90)
+export { default as BookmarkBook } from './bookmarkBook'
+export { default as BookmarkIcon } from './bookmark'
+export { default as BookmarkOIcon } from './bookmark-o'
 export const CaratCircleUpIcon = RotatedIconComponent(CaratCircleIcon, 0)
 export const CaratCircleDownIcon = RotatedIconComponent(CaratCircleIcon, 180)
 export const CaratRightIcon = RotatedIconComponent(CaratIcon, 180)
@@ -33,9 +36,11 @@ export { default as CloseStrokeShadowIcon } from './close-shadow'
 export { default as DownloadIcon } from './download'
 export { default as EmoteSadIcon } from './emote-sad'
 export { default as EmoteSmileIcon } from './emote-smile'
+export { default as HistoryIcon } from './history'
 export { default as LogoYoutubeIcon } from './logo-youtube'
 export { default as OpenNewIcon } from './open-new'
 export { default as PaymentDueIcon } from './payment-due'
+export { default as PinIcon } from './pin'
 export { default as PrintIcon } from './print'
 export { default as RefreshIcon } from './refresh'
 export { default as SendIcon } from './send'
