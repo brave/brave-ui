@@ -26,7 +26,7 @@ import * as React from 'react'
 // TBD import Clock from '../components/clock'
 import Page from '../../src/old/page'
 import { DataBlock, DataItem } from '../../src/old/dataBlock'
-import Clock from '../../src/old/clock'
+import { Clock } from '../../src/features/newTab/default/clock'
 
 storiesOf('Old/Views', module)
   .addDecorator(withKnobs)
