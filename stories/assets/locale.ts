@@ -174,6 +174,7 @@ const locale: Record<string, string> = {
   titleETH: 'Etherium (ETH)',
   titleLTC: 'Lite Coin (LTC)',
   tokenGrant: 'Token Grants',
+  tokenGrantClaimed: 'Token Grants Claimed',
   tokens: 'tokens',
   total: 'Total',
   transactions: 'Transactions',
