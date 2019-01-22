@@ -34,7 +34,8 @@ import {
   StyledNotificationContent,
   StyledButton,
   StyledNotificationMessage,
-  StyledPipe
+  StyledPipe,
+  StyledBackupLink
 } from './style'
 import { getLocale } from '../../../helpers'
 import { GrantCaptcha, GrantComplete, GrantError, GrantWrapper } from '../'
@@ -109,6 +110,7 @@ export interface Props {
   gradientTop?: string
   isMobile?: boolean
   notification?: Notification
+  onBackupLink?: () => void
   onFetchCaptcha?: () => void
   onGrantHide?: () => void
   onFinish?: () => void
@@ -144,6 +146,12 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
   onFetchCaptcha = () => {
     if (this.props.onFetchCaptcha) {
       this.props.onFetchCaptcha()
+    }
+  }
+
+  onBackupLink = () => {
+    if (this.props.onBackupLink) {
+      this.props.onBackupLink()
     }
   }
 
@@ -330,7 +338,11 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
         typeText = getLocale('braveAdsTitle')
         break
       case 'backupWallet':
-        typeText = getLocale('backupWalletTitle')
+        typeText = (
+          <StyledBackupLink onClick={this.onBackupLink}>
+            {getLocale('backupWalletTitle')}
+          </StyledBackupLink>
+        )
         break
       case 'contribute':
         typeText = getLocale('braveContributeTitle')

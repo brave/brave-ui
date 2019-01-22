@@ -16,6 +16,7 @@ const locale: Record<string, string> = {
   allowTip: 'Allow tips on',
   amount: 'Amount',
   backup: 'Backup',
+  backupWalletTitle: 'Backup Wallet',
   braveAdsDesc: 'No action required. Just collect tokens. Your data is safe with our Shields.',
   braveAdsTitle: 'Brave Ads',
   braveContributeDesc: 'Set budget and browse normally. Your favorite sites get paid automatically.',

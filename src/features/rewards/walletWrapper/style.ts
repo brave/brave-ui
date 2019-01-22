@@ -303,3 +303,8 @@ export const StyledButton = styled<StyledProps, 'div'>('div')`
 export const StyledPipe = styled<StyledProps, 'span'>('span')`
   font-weight: 300;
 `
+
+export const StyledBackupLink = styled<StyledProps, 'a'>('a')`
+  cursor: pointer;
+  text-decoration: none;
+`
