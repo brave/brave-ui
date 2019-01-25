@@ -28,12 +28,12 @@ export const StyledDialog = styled<Props, 'div'>('div')`
 
 export const StyledClose = styled<{}, 'div'>('div')`
   position: absolute;
-  top: 19px;
-  right: 19px;
+  top: 20px;
+  right: 20px;
   cursor: pointer;
-  width: 16px;
-  height: 16px;
-  color: #B8B9C4;
+  width: 20px;
+  height: 20px;
+  color: #9E9FAB;
 `
 
 export const StyledContent = styled<{}, 'div'>('div')`

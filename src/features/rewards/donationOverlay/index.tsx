@@ -31,7 +31,6 @@ import {
 import { getLocale } from '../../../helpers'
 import {
   CloseCircleOIcon,
-  CloseStrokeIcon,
   PaperAirplaneIcon
 } from '../../../components/icons'
 
@@ -111,8 +110,8 @@ export default class DonationOverlay extends React.PureComponent<Props, {}> {
             </StyledMessage>
           </StyledOverlayTop>
         ) : (
-          this.getFailureContent()
-        )}
+            this.getFailureContent()
+          )}
       </StyledOverlayContent>
     )
   }
@@ -125,7 +124,7 @@ export default class DonationOverlay extends React.PureComponent<Props, {}> {
         {send ? <StyledBackgroundCurve /> : null}
         <StyledWrapper id={id}>
           <StyledClose onClick={onClose}>
-            <CloseStrokeIcon />
+            <CloseCircleOIcon />
           </StyledClose>
           {this.getOverlayContent()}
         </StyledWrapper>
