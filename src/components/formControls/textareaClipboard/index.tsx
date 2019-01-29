@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { ClipboardIcon } from '../../icons'
+import { ClipboardOIcon } from '../../icons'
 import {
   StyledText,
   StyledWrapper,
@@ -95,7 +95,7 @@ export default class TextAreaClipboard extends React.PureComponent<Props, State>
           {wordCountString} {this.wordCount}
           {
             copiedString !== undefined
-            ? <StyledCopyToClipboard>
+              ? <StyledCopyToClipboard>
                 <StyledText
                   visible={copiedStringVisible}
                   onAnimationEnd={this.onAnimationEnd}
@@ -103,10 +103,10 @@ export default class TextAreaClipboard extends React.PureComponent<Props, State>
                   {copiedString}
                 </StyledText>
                 <StyledClipboardButton onClick={this.onCopyToClipboard}>
-                  <ClipboardIcon />
+                  <ClipboardOIcon />
                 </StyledClipboardButton>
               </StyledCopyToClipboard>
-            : null
+              : null
           }
         </StyledFooter>
       </StyledWrapper>

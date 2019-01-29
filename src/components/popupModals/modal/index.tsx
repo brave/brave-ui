@@ -4,7 +4,7 @@
 
 import * as React from 'react'
 import { StyledWrapper, StyledDialog, StyledClose, StyledContent } from './style'
-import { CloseStrokeIcon } from '../../icons'
+import { CloseCircleOIcon } from '../../icons'
 
 export interface Props {
   id?: string
@@ -41,8 +41,8 @@ export default class Modal extends React.PureComponent<Props, {}> {
         <StyledDialog size={size}>
           {
             displayCloseButton
-            ? <StyledClose onClick={onClose}><CloseStrokeIcon /></StyledClose>
-            : null
+              ? <StyledClose onClick={onClose}><CloseCircleOIcon /></StyledClose>
+              : null
           }
           <StyledContent>
             {children}

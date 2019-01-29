@@ -2,10 +2,14 @@ import styled, { StyledComponentClass } from 'styled-components'
 // rotated imports
 import ArrowIcon from './arrow'
 import CaratIcon from './carat'
+import CaratCircleOIcon from './carat-circle-o'
 import CaratCircleIcon from './carat-circle'
 
 // rotated variants
-function RotatedIconComponent (iconComponent: StyledComponentClass<any, any>, degrees: number) {
+function RotatedIconComponent (
+  iconComponent: StyledComponentClass<any, any>,
+  degrees: number
+) {
   return styled(iconComponent)`
     transform: rotate(${degrees}deg);
   `
@@ -13,7 +17,6 @@ function RotatedIconComponent (iconComponent: StyledComponentClass<any, any>, de
 
 // simple
 export { default as AlertCircleIcon } from './alert-circle'
-export { default as ArrowAnchorIcon } from './arrow-anchor'
 export const ArrowLeftIcon = RotatedIconComponent(ArrowIcon, 0)
 export const ArrowRightIcon = RotatedIconComponent(ArrowIcon, 180)
 export const ArrowDownIcon = RotatedIconComponent(ArrowIcon, -90)
@@ -21,24 +24,37 @@ export const ArrowUpIcon = RotatedIconComponent(ArrowIcon, 90)
 export { default as BookmarkBook } from './bookmarkBook'
 export { default as BookmarkIcon } from './bookmark'
 export { default as BookmarkOIcon } from './bookmark-o'
+export const CaratCircleOUpIcon = RotatedIconComponent(CaratCircleOIcon, 0)
+export const CaratCircleODownIcon = RotatedIconComponent(CaratCircleOIcon, 180)
+export const CaratCircleORightIcon = RotatedIconComponent(CaratCircleOIcon, 90)
+export const CaratCircleOLeftIcon = RotatedIconComponent(CaratCircleOIcon, -90)
 export const CaratCircleUpIcon = RotatedIconComponent(CaratCircleIcon, 0)
 export const CaratCircleDownIcon = RotatedIconComponent(CaratCircleIcon, 180)
+export const CaratCircleRightIcon = RotatedIconComponent(CaratCircleIcon, 90)
+export const CaratCircleLeftIcon = RotatedIconComponent(CaratCircleIcon, -90)
 export const CaratRightIcon = RotatedIconComponent(CaratIcon, 180)
 export const CaratLeftIcon = RotatedIconComponent(CaratIcon, 0)
 export const CaratUpIcon = RotatedIconComponent(CaratIcon, 90)
 export const CaratDownIcon = RotatedIconComponent(CaratIcon, -90)
 export { default as CheckCircleIcon } from './check-circle'
 export { default as CheckIcon } from './check'
-export { default as ClipboardIcon } from './clipboard'
+export { default as ClipboardOIcon } from './clipboard-o'
+export { default as CloseCircleOIcon } from './close-circle-o'
 export { default as CloseCircleIcon } from './close-circle'
 export { default as CloseStrokeIcon } from './close'
 export { default as DownloadIcon } from './download'
+export { default as EditOIcon } from './edit-o'
+export { default as EmbedOIcon } from './embed-o'
 export { default as EmoteSadIcon } from './emote-sad'
 export { default as EmoteSmileIcon } from './emote-smile'
+export { default as GraphOIcon } from './graph-o'
 export { default as HistoryIcon } from './history'
 export { default as LogoYoutubeIcon } from './logo-youtube'
+export { default as LogoTwitterIcon } from './logo-twitter'
+export { default as LogoFacebookIcon } from './logo-facebook'
 export { default as OpenNewIcon } from './open-new'
 export { default as PaymentDueIcon } from './payment-due'
+export { default as PinOIcon } from './pin-o'
 export { default as PinIcon } from './pin'
 export { default as PrintIcon } from './print'
 export { default as RefreshIcon } from './refresh'
@@ -46,12 +62,14 @@ export { default as SendIcon } from './send'
 export { default as SettingsAdvancedIcon } from './settings-advanced'
 export { default as SettingsIcon } from './settings'
 export { default as ShieldAlertIcon } from './shield-alert'
-export { default as ShieldAlertStrokeIcon } from './shield-alert-o'
+export { default as ShieldAlertOIcon } from './shield-alert-o'
+export { default as TrashOIcon } from './trash-o'
 export { default as ThumbsUpIcon } from './thumbs-up'
 export { default as UpholdSystemIcon } from './logo-uphold'
-export { default as UnVerifiedIcon } from './unverified'
-export { default as VerifiedFillIcon } from './verified'
-export { default as VerifiedIcon } from './verified-o'
+export { default as UnVerifiedIcon } from './unverified-help'
+export { default as UnVerifiedOIcon } from './unverified-help-o'
+export { default as VerifiedIcon } from './verified'
+export { default as VerifiedOIcon } from './verified-o'
 export { default as WalletInfoIcon } from './wallet-info'
 export { default as WalletAddIcon } from './wallet-add'
 export { default as WalletBackupIcon } from './wallet-backup'
