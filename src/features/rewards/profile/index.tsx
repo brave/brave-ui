@@ -18,7 +18,7 @@ import {
   StyledInlineUnVerified
 } from './style'
 import { getLocale } from '../../../helpers'
-import { VerifiedIcon, UnVerifiedIcon } from '../../../components/icons'
+import { VerifiedIcon, UnVerifiedIcon } from '../../../components/icon'
 
 export type Provider = 'twitter' | 'youtube' | 'twitch'
 

@@ -30,7 +30,7 @@ import {
   BoxMobile,
   MainToggleMobile
 } from '../../../src/features/rewards/mobile'
-import { BatColorIcon, SettingsIcon, UpholdColorIcon } from '../../../src/components/icons'
+import { BatColorIcon, SettingsIcon, UpholdColorIcon } from '../../../src/components/icon'
 import GrantClaim from '../../../src/features/rewards/grantClaim'
 
 const bart = require('../../assets/img/bartBaker.jpeg')

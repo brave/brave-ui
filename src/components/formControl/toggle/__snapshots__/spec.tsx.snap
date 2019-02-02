@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox tests basic tests matches the snapshot 1`] = `
+.c5 {
+  --toggle-bullet-color: #FFFFFF;
+  --toggle-bullet-hoverColor: #FFFFFF;
+  --toggle-bullet-activeColor: #FFFFFF;
+  --toggle-bullet-focus: 0 0 0 2px hsla(12,96%,58%,0.4);
+  --toggle-slider-color: #ced0db;
+  --toggle-slider-hoverColor: #c2c4cf;
+  --toggle-bullet-translate: translateX(0);
+  position: absolute;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  background-color: var(--toggle-bullet-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+  -webkit-transform: var(--toggle-bullet-translate);
+  -ms-transform: var(--toggle-bullet-translate);
+  transform: var(--toggle-bullet-translate);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.c3 {
+  --toggle-bullet-color: #FFFFFF;
+  --toggle-bullet-hoverColor: #FFFFFF;
+  --toggle-bullet-activeColor: #FFFFFF;
+  --toggle-bullet-focus: 0 0 0 2px hsla(12,96%,58%,0.4);
+  --toggle-slider-color: #ced0db;
+  --toggle-slider-hoverColor: #c2c4cf;
+  position: absolute;
+  top: 6px;
+  height: 8px;
+  width: 42px;
+  background-color: var(--toggle-slider-color);
+  border-radius: 4px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.c1 {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  width: 42px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.c1 .c2 {
+  background-color: var(--toggle-slider-color);
+}
+
+.c1:hover .c2 {
+  background-color: var(--toggle-slider-hoverColor);
+}
+
+.c1:active .c4 {
+  background-color: var(--toggle-bullet-activeColor);
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div
+  className="c0"
+  id="toggle"
+>
+  <div
+    className="c1"
+    data-test-id="toggle"
+    size="default"
+  >
+    <div
+      className="c2 c3"
+      size="default"
+    />
+    <div
+      className="c4 c5"
+      size="default"
+    />
+  </div>
+</div>
+`;

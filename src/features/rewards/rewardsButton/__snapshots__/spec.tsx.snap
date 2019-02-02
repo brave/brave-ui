@@ -18,10 +18,6 @@ exports[`TipButton tests basic tests matches the snapshot 1`] = `
   font-family: Poppins,sans-serif;
   font-weight: 600;
   text-transform: uppercase;
-  -webkit-letter-spacing: 0.39px;
-  -moz-letter-spacing: 0.39px;
-  -ms-letter-spacing: 0.39px;
-  letter-spacing: 0.39px;
   margin: 0 auto;
 }
 

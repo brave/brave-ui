@@ -21,10 +21,10 @@ import {
   StyledQRButton,
   StyledText
 } from './style'
-import Modal from '../../../components/popupModals/modal/index'
+import Modal from '../../../components/modal/modal/index'
 import { getLocale } from '../../../helpers'
-import Input from '../../../components/formControls/input'
-import { BatColorIcon, BitcoinColorIcon, EthereumColorIcon, LitecoinColorIcon } from '../../../components/icons'
+import Input from '../../../components/formControl/input'
+import { BatColorIcon, BitcoinColorIcon, EthereumColorIcon, LitecoinColorIcon } from '../../../components/icon'
 
 export type Type = 'BAT' | 'ETH' | 'BTC' | 'LTC'
 
@@ -84,30 +84,29 @@ export default class ModalAddFunds extends React.PureComponent<Props, State> {
           </StyledAddressTitle>
           <StyledData>
             <StyledWalletAddress>{getLocale('walletAddress')}</StyledWalletAddress>
-            <Input value={address.address}/>
+            <Input value={address.address} />
           </StyledData>
         </StyledHeader>
         {
           address.qr
-          ? (<>
-            <StyledQRImageWrapper>
-              {
-                current
-                ? <StyledQRImage src={address.qr} />
-                : <StyledShowQR>
-                  <StyledQRButton
-                    size={'large'}
-                    brand={'rewards'}
-                    type={'accent'}
-                    text={getLocale('addFundsQR')}
-                    onClick={this.onQR.bind(this, address.type)}
-                  />
-                </StyledShowQR>
-              }
+            ? (<>
+              <StyledQRImageWrapper>
+                {
+                  current
+                    ? <StyledQRImage src={address.qr} />
+                    : <StyledShowQR>
+                      <StyledQRButton
+                        size={'large'}
+                        type={'accent'}
+                        text={getLocale('addFundsQR')}
+                        onClick={this.onQR.bind(this, address.type)}
+                      />
+                    </StyledShowQR>
+                }
 
-            </StyledQRImageWrapper>
-          </>)
-          : null
+              </StyledQRImageWrapper>
+            </>)
+            : null
         }
       </StyledAddress>
     )
@@ -131,7 +130,7 @@ export default class ModalAddFunds extends React.PureComponent<Props, State> {
           <StyledNote>
             {getLocale('addFundsNote')} <StyledLink href='https://brave.com/faq-payments/#brave-payments' target={'_blank'}>
               {getLocale('addFundsFAQ')}
-              </StyledLink>.
+            </StyledLink>.
           </StyledNote>
         </StyledWrapper>
       </Modal>

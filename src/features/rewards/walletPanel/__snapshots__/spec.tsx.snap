@@ -107,20 +107,16 @@ exports[`WalletPanel tests basic tests matches the snapshot 1`] = `
   background: inherit;
   cursor: pointer;
   height: 40px;
-  color: #4C54D2;
+  color: #4c54d2;
   border-radius: 20px;
   font-size: 12px;
-  border: 1px solid #A1A8F2;
+  border: 1px solid #a1a8f2;
 }
 
 .c11 {
   font-family: Poppins,sans-serif;
   font-weight: 600;
   text-transform: uppercase;
-  -webkit-letter-spacing: 0.39px;
-  -moz-letter-spacing: 0.39px;
-  -ms-letter-spacing: 0.39px;
-  letter-spacing: 0.39px;
   margin: 0 auto;
 }
 

@@ -34,7 +34,7 @@ export const StyledBullet = styled<Props, 'div'>('div')`
   top: -17px;
   width: 50%;
   height: 37px;
-  background: ${p => p.theme.color.primaryBackground};
+  background: ${p => p.theme.componentBackground};
   border-radius: 21.5px 21.5px 21.5px 21.5px;
   position: relative;
   transition: all .4s ease;
@@ -60,6 +60,6 @@ export const StyledText = styled<StyleProps, 'div'>('div')`
   overflow: hidden;
   text-align: center;
   user-select: none;
-  color: ${p => p.selected ? p.theme.color.brandBrave : p.theme.color.subtleActive};
+  color: ${p => p.selected ? p.theme.brandPrimary : p.theme.brandSubtle};
   font-weight: ${p => p.selected ? '500' : 'normal'};
 `

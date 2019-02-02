@@ -6,9 +6,9 @@ import * as React from 'react'
 
 // Components
 import { Toggle } from '../../../src/features/shields'
-import Button from '../../../src/components/buttonsIndicators/button'
-import { CloseCircleOIcon } from '../../../src/components/icons'
-import Table, { Cell, Row } from '../../../src/components/dataTables/table'
+import Button from '../../../src/components/button/button'
+import { CloseCircleOIcon } from '../../../src/components/icon'
+import Table, { Cell, Row } from '../../../src/components/table/table'
 
 // Feature-specific components
 import {

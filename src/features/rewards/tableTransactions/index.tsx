@@ -8,7 +8,7 @@ import {
   StyledType,
   StyledProvider
 } from './style'
-import Table, { Row } from '../../../components/dataTables/table/index'
+import Table, { Row } from '../../../components/table/table/index'
 import { getLocale } from '../../../helpers'
 import Tokens, { Type as TokenType } from '../tokens'
 

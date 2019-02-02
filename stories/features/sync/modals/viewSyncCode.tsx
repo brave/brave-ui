@@ -6,7 +6,7 @@ import * as React from 'react'
 
 // Components
 import { Modal, TextAreaClipboard, Button } from '../../../../src/components'
-import { LoaderIcon } from '../../../../src/components/icons'
+import { LoaderIcon } from '../../../../src/components/icon'
 
 // Feature-specific components
 import {

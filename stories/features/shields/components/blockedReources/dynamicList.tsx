@@ -26,7 +26,7 @@ import {
 
 // Shared components
 import { Button } from '../../../../../src/components'
-import { CaratDownIcon } from '../../../../../src/components/icons'
+import { CaratDownIcon } from '../../../../../src/components/icon'
 
 // Fake data
 import locale from '../../fakeLocale'

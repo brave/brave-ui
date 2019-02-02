@@ -10,42 +10,62 @@ import { storiesOf, setAddon } from '@storybook/react'
 import chaptersAddon from 'react-storybook-addon-chapters'
 
 // Components
-import styled from '../../src/theme'
-import paletteColors from '../../src/theme/palette'
-import themeBraveDefault from '../../src/theme/brave-default'
+import styled from '../../src/components/style/theme'
+import paletteColors from '../../src/components/style/color/colorPalette'
+import theme from '../../src/components/style/theme/default'
 import '../assets/fonts/muli.css'
 
 // wrappers
+const Palette = styled.div`
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: repeat(10, 1fr);
+  @media only screen and (max-width: 1300px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+` as any
+
 const PaletteItemContainer = styled.div`
-  width: ${(p: any) => p.individual ? '25%' : '10%'};
   min-height: 150px;
-  margin: 5px;
-  border: 4px dotted #888;
   background: white;
-  padding: 2px;
+  padding: 4px;
   display: flex;
   flex-direction: column;
+  border-radius: 4px;
 ` as any
 
 const PaletteColor = styled.div`
-  flex-grow: 1;
-  flex-basis: 0;
+  display: flex;
+  height: 80px;
   background-color: ${p => p.color};
 `
 
 const PaletteItemName = styled.div`
-  font: 12px muli;
+  font-size: 16px;
   font-weight: 500;
-  color: #222;
+  color: ${theme.fontFamily.heading};
   text-align: center;
+  margin: 8px 0 4px;
+  overflow: auto;
 `
 
-const PaletteItem = ({ color, name, individual }: any) => (
-  <PaletteItemContainer individual={individual}>
-    <PaletteColor color={color} />
-    <PaletteItemName>{name}</PaletteItemName>
-  </PaletteItemContainer>
-) as any
+const PaletteItemHex = styled.div`
+  font-size: 12px;
+  font-weight: 600;
+  color: grey800;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 4px 0 8px;
+`
+
+const PaletteItem = ({ color, name, individual }: any) =>
+  (
+    <PaletteItemContainer individual={individual}>
+      <PaletteColor color={color} />
+      <PaletteItemName>{name}</PaletteItemName>
+      <PaletteItemHex>{color}</PaletteItemHex>
+    </PaletteItemContainer>
+  ) as any
 
 const allPalletteItems: any = []
 for (const name in paletteColors) {
@@ -54,17 +74,15 @@ for (const name in paletteColors) {
 }
 
 const allBraveDefaultItems: any = []
-for (const name in themeBraveDefault.color) {
+for (const name in theme) {
   // @ts-ignore
-  allBraveDefaultItems.push({ name, color: themeBraveDefault.color[name] })
+  allBraveDefaultItems.push({ name, color: theme[name] })
 }
 
-const Palette = styled.div`
-  display: flex;
-  flex-direction: ${(p: any) => p.individual ? 'column' : 'row'};
-  flex-wrap: wrap;
-  align-items: flex-start;
-` as any
+// for (const name in theme.base) {
+//   // @ts-ignore
+//   allBraveDefaultItems.push({ name, color: theme.base[name] })
+// }
 
 const sectionOptionsNoProps = {
   showSource: false,
@@ -73,38 +91,26 @@ const sectionOptionsNoProps = {
 }
 
 setAddon(chaptersAddon)
-storiesOf('Theme', module)
+storiesOf('Components/Style', module)
   // @ts-ignore
-.addWithChapters('Palette', {
-  subtitle: 'Define colors by color name and shade, not by purpose',
-  chapters: [
-    {
-      title: 'All colors',
-      info: '_Avoid using directly. Instead use theme variables which link to these colors_',
-      sections: [{
-        sectionFn: () => (
-          <Palette>
-          {allPalletteItems.map(({ color, name }: any) => <PaletteItem key={name} color={color} name={name} />)}
-          </Palette>
-        ),
-        sectionOptionsNoProps
-      }]
-    }
-  ]
-})
-.addWithChapters('Brave Default', {
-  subtitle: 'Define colors, fonts, and sizes by purpose. Keys should not describe the value, but what they are to be used for.',
-  chapters: [
-    {
-      title: 'Color variables',
-      sections: [{
-        sectionFn: () => (
-          <Palette individual={true}>
-          {allBraveDefaultItems.map(({ color, name }: any) => <PaletteItem individual={true} key={name} color={color} name={name} />)}
-          </Palette>
-        ),
-        sectionOptionsNoProps
-      }]
-    }
-  ]
-})
+  .addWithChapters('Colors', {
+    chapters: [
+      {
+        title: 'Color Palette',
+        info:
+          'Avoid using directly. Instead use theme variables which link to these colors',
+        sections: [
+          {
+            sectionFn: () => (
+              <Palette>
+                {allPalletteItems.map(({ color, name }: any) => (
+                  <PaletteItem key={name} color={color} name={name} />
+                ))}
+              </Palette>
+            ),
+            sectionOptionsNoProps
+          }
+        ]
+      }
+    ]
+  })

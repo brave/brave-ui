@@ -33,7 +33,7 @@ import {
   StyledMonthlyInfo
 } from './style'
 import { getLocale } from '../../../helpers'
-import { CloseCircleOIcon, PaperAirplaneIcon } from '../../../components/icons'
+import { CloseCircleOIcon, PaperAirplaneIcon } from '../../../components/icon'
 
 export interface Props {
   id?: string

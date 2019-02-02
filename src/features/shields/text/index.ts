@@ -2,8 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from '../../../theme'
-import palette from '../../../theme/palette'
+import styled from '../../../components/style/theme'
+import palette from '../../../components/style/color/colorPalette'
 import { setValueBasedOnSize } from '../../../helpers'
 
 interface LabelProps {
@@ -31,8 +31,8 @@ interface HighlightProps {
 export const Highlight = styled<HighlightProps, 'em'>('em')`
   box-sizing: border-box;
   font-family: ${p => p.theme.fontFamily.heading};
-  color: ${p => p.enabled ? p.theme.color.brandBrave : palette.grey300};
-  font-size: ${p => p.size === 'large' ? '22px' : 'inherit'};
+  color: ${p => (p.enabled ? p.theme.brandPrimary : palette.grey500)};
+  font-size: ${p => (p.size === 'large' ? '22px' : 'inherit')};
   font-weight: 600;
   text-transform: uppercase;
   font-style: normal;

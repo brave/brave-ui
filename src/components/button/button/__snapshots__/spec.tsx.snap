@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button tests basic tests matches the snapshot 1`] = `
+.c1 {
+  --button-main-color: #FB542B;
+  --button-main-color-hover: #ff7654;
+  --button-main-color-active: #d43f19;
+  --button-state-color: var(--button-main-color);
+  --icon-size: 16px;
+  --icon-spacing: 6px;
+  --webkit-appearance: none;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  outline: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: Poppins,sans-serif;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  border-radius: 20px;
+  width: auto;
+  min-width: 104px;
+  padding: 11px 15px;
+}
+
+.c1:hover:enabled {
+  --button-state-color: var(--button-main-color-hover);
+}
+
+.c1:active:enabled {
+  --button-state-color: var(--button-main-color-active);
+}
+
+.c0 {
+  color: #fff;
+  background: var(--button-state-color);
+  border: 1px solid var(--button-state-color);
+}
+
+.c2 {
+  min-height: var(--icon-size);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+  font-weight: 500;
+  line-height: 1;
+}
+
+<button
+  className="c0 c1"
+  id="button"
+  size="medium"
+  type="default"
+>
+  <div
+    className="c2"
+    id="button"
+    size="medium"
+    type="default"
+  >
+    test
+  </div>
+</button>
+`;

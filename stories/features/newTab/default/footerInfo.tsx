@@ -8,7 +8,7 @@ import * as React from 'react'
 import { Link, Navigation, IconLink, PhotoName } from '../../../../src/features/newTab/default'
 
 // Icons
-import { SettingsAdvancedIcon, BookmarkBook, HistoryIcon } from '../../../../src/components/icons'
+import { SettingsAdvancedIcon, BookmarkBook, HistoryIcon } from '../../../../src/components/icon'
 
 // Helpers
 import { getLocale } from '../fakeLocale'

@@ -4,7 +4,7 @@
 
 import * as React from 'react'
 import { StyledOptions, StyledOption, StyledOptionCheck, StyledOptionText } from './style'
-import { CheckIcon } from '../../../components/icons'
+import { CheckIcon } from '../../../components/icon'
 
 export interface OptionProps {
   selected: boolean

@@ -7,7 +7,7 @@ import { boolean, object } from '@storybook/addon-knobs'
 
 import { WalletSummary, WalletWrapper } from '../../../../src/features/rewards'
 import { StyledWalletClose, StyledWalletOverlay, StyledWalletWrapper } from './style'
-import { CloseStrokeIcon, WalletAddIcon } from '../../../../src/components/icons'
+import { CloseStrokeIcon, WalletAddIcon } from '../../../../src/components/icon'
 import ModalAddFunds, { Address } from '../../../../src/features/rewards/modalAddFunds'
 
 interface State {

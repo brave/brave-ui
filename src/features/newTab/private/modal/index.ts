@@ -3,8 +3,8 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { ComponentType } from 'react'
-import styled from '../../../../theme'
-import DefaultModal, { Props } from '../../../../components/popupModals/modal'
+import styled from '../../../../components/style/theme'
+import DefaultModal, { Props } from '../../../../components/modal/modal'
 import Heading from '../../../../components/text/heading'
 
 export const Modal = styled(DefaultModal as ComponentType<Props>)`

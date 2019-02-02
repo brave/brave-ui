@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import Button from '../../../components/buttonsIndicators/button'
+import Button from '../../../components/button/button'
 import { StyledWrapper, StyledText, StyledButton } from './style'
 
 export interface Props {

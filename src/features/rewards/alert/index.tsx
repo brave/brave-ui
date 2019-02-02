@@ -15,9 +15,8 @@ import {
 import {
   AlertCircleIcon,
   CheckCircleIcon,
-  CloseCircleOIcon,
-  CloseStrokeIcon
-} from '../../../components/icons'
+  CloseCircleOIcon
+} from '../../../components/icon'
 
 export type Type = 'error' | 'success' | 'warning'
 
@@ -67,7 +66,7 @@ export default class Alert extends React.PureComponent<Props, {}> {
         </StyledContent>
         {onClose ? (
           <StyledClose>
-            <CloseStrokeIcon />
+            <CloseCircleOIcon />
           </StyledClose>
         ) : null}
       </StyledWrapper>

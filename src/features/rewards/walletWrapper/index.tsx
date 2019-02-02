@@ -47,7 +47,7 @@ import {
   SettingsAdvancedIcon,
   UpholdColorIcon,
   UpholdSystemIcon
-} from '../../../components/icons'
+} from '../../../components/icon'
 
 import giftIconUrl from './assets/gift.svg'
 import loveIconUrl from './assets/love.svg'

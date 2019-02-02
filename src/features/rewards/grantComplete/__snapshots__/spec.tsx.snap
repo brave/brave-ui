@@ -42,9 +42,9 @@ exports[`Grant complete tests basic tests matches the snapshot 1`] = `
 }
 
 .c7 {
-  --button-main-color: #FB542B;
-  --button-main-color-hover: #F43405;
-  --button-main-color-active: #FDBBAA;
+  --button-main-color: #4C54D2;
+  --button-main-color-hover: #737ade;
+  --button-main-color-active: #353dab;
   --button-state-color: var(--button-main-color);
   --icon-size: 18px;
   --icon-spacing: 6px;
@@ -111,7 +111,6 @@ exports[`Grant complete tests basic tests matches the snapshot 1`] = `
   -ms-letter-spacing: 0;
   letter-spacing: 0;
   font-weight: 500;
-  text-transform: uppercase;
   line-height: 1;
 }
 

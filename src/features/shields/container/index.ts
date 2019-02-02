@@ -3,8 +3,8 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { ComponentType } from 'react'
-import styled from '../../../theme'
-import palette from '../../../theme/palette'
+import styled from '../../../components/style/theme'
+import palette from '../../../components/style/color/colorPalette'
 
 // Extendable components
 // ..............................
@@ -142,7 +142,7 @@ export const MainFooterLinkFlex = styled(Flex.withComponent('a'))`
 
 export const ResourcesFooterGrid = styled(Grid.withComponent('footer'))`
   grid-template-columns: 1fr 1fr;
-  border-top: 1px solid rgba(255,255,255,0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 `
 
 export const ResourcesFooterGridColumnLeft = styled(Flex)`
@@ -162,7 +162,7 @@ export const ResourcesFooterFlex = styled(Flex)`
   justify-content: center;
   margin: auto;
   padding: 15px 0;
-  border-top: 1px solid rgba(255,255,255,0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   width: 100%;
 `
 
@@ -174,19 +174,19 @@ export const StatFlex = styled(Flex)`
   width: 100%;
   height: 100%;
   font-family: ${p => p.theme.fontFamily.heading};
-  color: ${p => p.disabled ? palette.grey500 : palette.grey200};
-  pointer-events: ${p => p.disabled ? 'none' : null};
+  color: ${p => (p.disabled ? palette.grey500 : palette.grey200)};
+  pointer-events: ${p => (p.disabled ? 'none' : null)};
   font-size: 14px;
   font-weight: 600;
   line-height: 1;
   user-select: none;
   padding: 13px 0;
-  `
+`
 
 export const ToggleGrid = styled(Grid)`
   grid-template-columns: 48px 28px 1fr auto;
   padding: 0;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   font-size: 12px;
   font-weight: 500;
   line-height: 18px;

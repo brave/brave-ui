@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from '../../../theme'
+import styled from '../../../components/style/theme'
 import { Card } from '../../../components'
 
 export const DisabledContent = styled<{}, 'div'>('div')`
@@ -21,7 +21,7 @@ export const EnabledContent = styled<{}, 'div'>('div')`
 
 export const Main = styled<{}, 'main'>('main')`
   font-family: ${p => p.theme.fontFamily.body};
-  color: ${p => p.theme.color.defaultControl};
+  color: ${p => p.theme.textDefaultColor};
   padding: 50px 15px;
   max-width: 830px;
   margin: auto;

@@ -18,7 +18,7 @@ import {
 import ListToken from '../listToken'
 import { Type } from '../tokens'
 import { getLocale } from '../../../helpers'
-import { WalletInfoIcon } from '../../../components/icons'
+import { WalletInfoIcon } from '../../../components/icon'
 
 type Token = {
   tokens: string

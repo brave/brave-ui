@@ -28,7 +28,7 @@ exports[`Tab tests basic tests matches the snapshot 1`] = `
   top: -17px;
   width: 50%;
   height: 37px;
-  background: #FFF;
+  background: #FFFFFF;
   border-radius: 21.5px 21.5px 21.5px 21.5px;
   position: relative;
   -webkit-transition: all .4s ease;
@@ -85,7 +85,6 @@ exports[`Tab tests basic tests matches the snapshot 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #585968;
   font-weight: normal;
 }
 

@@ -11,7 +11,7 @@ import { Draggable } from 'react-beautiful-dnd'
 import { Tile, TileActionsContainer, TileAction, TileFavicon } from '../../../../../src/features/newTab/default'
 
 // Icons
-import { PinIcon, BookmarkOIcon, CloseStrokeIcon } from '../../../../../src/components/icons'
+import { PinIcon, BookmarkOIcon, CloseStrokeIcon } from '../../../../../src/components/icon'
 
 interface Props {
   item: {

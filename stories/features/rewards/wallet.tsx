@@ -11,7 +11,7 @@ import centered from '@storybook/addon-centered/dist'
 // Components
 import { WalletSummary, WalletEmpty, WalletOff, WalletPanel, WalletSummarySlider, WalletWrapper } from '../../../src/features/rewards'
 import { AlertWallet } from '../../../src/features/rewards/walletWrapper'
-import { WalletAddIcon, WalletImportIcon } from '../../../src/components/icons'
+import { WalletAddIcon, WalletImportIcon } from '../../../src/components/icon'
 import { WalletInfoHeader } from '../../../src/features/rewards/mobile'
 
 const bartBaker = require('../../assets/img/bartBaker.jpeg')

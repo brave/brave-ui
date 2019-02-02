@@ -33,12 +33,12 @@ import {
 import {
   ArrowLeftIcon,
   CaratRightIcon,
-  CloseStrokeIcon,
+  CloseCircleOIcon,
   SettingsIcon
-} from '../../../../components/icons'
+} from '../../../../components/icon'
 import { List } from '../../'
 import { getLocale } from '../../../../helpers'
-import Toggle from '../../../../components/formControls/toggle/index'
+import Toggle from '../../../../components/formControl/toggle/index'
 
 export type Type = 'ads' | 'contribute' | 'donation'
 
@@ -157,10 +157,10 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
         <StyledLeft>
           {
             isDetailView
-            ? <StyledBackArrow onClick={this.setView.bind(this, 'detailView')}>
+              ? <StyledBackArrow onClick={this.setView.bind(this, 'detailView')}>
                 <ArrowLeftIcon />
               </StyledBackArrow>
-            : null
+              : null
           }
           <StyledTitle
             type={type}
@@ -172,14 +172,14 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
         <StyledRight>
           {
             toggle ?
-            <StyledToggleWrapper detailView={isDetailView}>
-              <Toggle
-                size={'small'}
-                onToggle={this.onToggle}
-                checked={checked}
-              />
-            </StyledToggleWrapper>
-            : null
+              <StyledToggleWrapper detailView={isDetailView}>
+                <Toggle
+                  size={'small'}
+                  onToggle={this.onToggle}
+                  checked={checked}
+                />
+              </StyledToggleWrapper>
+              : null
           }
         </StyledRight>
       </StyledToggleHeader>
@@ -198,7 +198,7 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
         <StyleDetailsLink onClick={this.setView.bind(this, 'detailView')}>
           {getLocale('viewDetails')}
           <StyledArrow>
-            <CaratRightIcon/>
+            <CaratRightIcon />
           </StyledArrow>
         </StyleDetailsLink>
       </StyledContent>
@@ -232,7 +232,7 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
             {this.getSettingsTitle(title)}
           </StyledSettingsTitle>
           <StyledSettingsClose onClick={this.setView.bind(this, 'settings')}>
-            <CloseStrokeIcon />
+            <CloseCircleOIcon />
           </StyledSettingsClose>
           <StyledSettingsContent>
             {children}

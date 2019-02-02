@@ -4,7 +4,7 @@
 
 import * as React from 'react'
 import { StyledWrapper, StyledHeader, StyledTitle, StyledClose, StyledText, StyledGrantIcon, StyledPanelText, StyledHint } from './style'
-import { CloseCircleOIcon } from '../../../components/icons'
+import { CloseCircleOIcon } from '../../../components/icon'
 import { getLocale } from '../../../helpers'
 
 import header from './assets/header'

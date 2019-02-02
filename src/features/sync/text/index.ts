@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from '../../../theme'
+import styled from '../../../components/style/theme'
 import Heading from '../../../components/text/heading'
 
 export const Title = styled(Heading)`
@@ -28,7 +28,7 @@ export const Paragraph = styled<{}, 'p'>('p')`
 `
 
 export const Link = styled<{}, 'a'>(Paragraph.withComponent('a') as any)`
-  color: ${p => p.theme.color.subtle};
+  color: ${p => p.theme.brandPrimary};
   padding: 0;
   text-decoration: none;
   cursor: pointer;
@@ -41,7 +41,7 @@ export const Bold = styled<{}, 'b'>('b')`
 
 export const SwitchLabel = styled<{}, 'label'>('label')`
   font-family: ${p => p.theme.fontFamily.body};
-  color: ${p => p.theme.color.defaultControlActive};
+  color: ${p => p.theme.textDefaultColor};
   font-size: 14px;
   font-weight: 400;
   letter-spacing: normal;

@@ -15,7 +15,7 @@ import {
 } from '../../../../../src/features/welcome/'
 
 // Shared components
-import { ArrowRightIcon } from '../../../../../src/components/icons'
+import { ArrowRightIcon } from '../../../../../src/components/icon'
 import { Button } from '../../../../../src/components'
 
 // Utils

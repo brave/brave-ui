@@ -19,7 +19,7 @@ import {
 
 import Amount from '../amount/index'
 import { getLocale } from '../../../helpers'
-import { EmoteSadIcon, SendIcon } from '../../../components/icons'
+import { EmoteSadIcon, SendIcon } from '../../../components/icon'
 
 export type DonateType = 'big' | 'small'
 

@@ -3,7 +3,7 @@ import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
 import ModalBackupRestore from './index'
-import { TestThemeProvider } from '../../../theme'
+import { TestThemeProvider } from '../../../components/style/theme'
 
 describe('ModalBackupRestore tests', () => {
   const baseComponent = (props?: object) => (
@@ -12,13 +12,13 @@ describe('ModalBackupRestore tests', () => {
         id='modal'
         activeTabId={'backup'}
         recoveryKey={''}
-        onClose={() => {}}
-        onCopy={() => {}}
-        onPrint={() => {}}
-        onSaveFile={() => {}}
-        onRestore={() => {}}
-        onImport={() => {}}
-        onTabChange={() => {}}
+        onClose={() => { }}
+        onCopy={() => { }}
+        onPrint={() => { }}
+        onSaveFile={() => { }}
+        onRestore={() => { }}
+        onImport={() => { }}
+        onTabChange={() => { }}
         {...props}
       />
     </TestThemeProvider>

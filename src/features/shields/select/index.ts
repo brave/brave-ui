@@ -2,8 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled, { css } from '../../../theme'
-import palette from '../../../theme/palette'
+import styled, { css } from '../../../components/style/theme'
+import palette from '../../../components/style/color/colorPalette'
 import caratUrl from './carat.svg'
 
 export interface SelectBoxProps {
@@ -39,19 +39,20 @@ export const SelectBox = styled<SelectBoxProps, 'select'>('select')`
   -webkit-padding-end: 32px;
 
   > option {
-    color: ${palette.black};
+    color: ${palette.grey900};
   }
 
   ${(p: SelectBoxProps) => p.disabled
-    ? css`
-      user-select: none;
-      opacity: 0.25;
-    ` : ''
-  }
-  ${(p: SelectBoxProps) => p.multiple
-    ? css`
-      padding: 6px;
-      background: none;
-    ` : ''
-  }
+      ? css`
+          user-select: none;
+          opacity: 0.25;
+        `
+      : ''}
+  ${(p: SelectBoxProps) =>
+    p.multiple
+      ? css`
+          padding: 6px;
+          background: none;
+        `
+      : ''}
 `

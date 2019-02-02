@@ -9,5 +9,6 @@ const fullPageStoryStyles: object = {
   height: '-webkit-fill-available'
 }
 
-export const FullPageStory = (storyFn: any) =>
+export const FullPageStory = (storyFn: any) => (
   <div style={fullPageStoryStyles}>{storyFn()}</div>
+)

@@ -35,7 +35,7 @@ import {
 } from './style'
 
 import Donate from '../donate/index'
-import Checkbox from '../../../components/formControls/checkbox/index'
+import Checkbox from '../../../components/formControl/checkbox/index'
 import { getLocale } from '../../../helpers'
 import {
   CloseCircleOIcon,
@@ -43,7 +43,7 @@ import {
   YoutubeColorIcon,
   TwitchColorIcon,
   AlertCircleIcon
-} from '../../../components/icons'
+} from '../../../components/icon'
 
 export type Social = { type: SocialType, url: string }
 export type SocialType = 'twitter' | 'youtube' | 'twitch'

@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import { OpenNewIcon } from '../../../../src/components/icons'
+import { OpenNewIcon } from '../../../../src/components/icon'
 import {
   Grid,
   HeaderGrid,

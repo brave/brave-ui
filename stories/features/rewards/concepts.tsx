@@ -11,7 +11,7 @@ import { withKnobs, boolean, text, object, select } from '@storybook/addon-knobs
 import Settings from './settings/settings'
 import SettingsMobile from './settingsMobile/settingsMobile'
 import { DisabledPanel, SiteBanner, Tip, PanelWelcome, WalletPanel, WalletSummary, WalletSummarySlider, WalletWrapper } from '../../../src/features/rewards'
-import { BatColorIcon, WalletAddIcon } from '../../../src/components/icons'
+import { BatColorIcon, WalletAddIcon } from '../../../src/components/icon'
 import WelcomePage from '../../../src/features/rewards/welcomePage'
 import { Notification } from '../../../src/features/rewards/walletWrapper'
 

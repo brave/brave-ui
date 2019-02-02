@@ -34,7 +34,7 @@ export default class RemoveMainDeviceModal extends React.PureComponent<Props, {}
           <Title level={1}>{getLocale('remove')} “{otherDeviceName}” {getLocale('thisSyncChain')}</Title>
         </ModalHeader>
         <ModalContent>
-        <Paragraph>{getLocale('otherDeviceRemovalDescription')}</Paragraph>
+          <Paragraph>{getLocale('otherDeviceRemovalDescription')}</Paragraph>
         </ModalContent>
         <TwoColumnButtonGrid>
           <OneColumnButtonGrid>
@@ -48,7 +48,7 @@ export default class RemoveMainDeviceModal extends React.PureComponent<Props, {}
           </OneColumnButtonGrid>
           <Button
             level='primary'
-            type='warn'
+            type='destructive'
             size='medium'
             onClick={onClose}
             text={getLocale('remove')}

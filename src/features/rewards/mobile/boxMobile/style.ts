@@ -95,7 +95,7 @@ export const StyledDescription = styled<StyleProps, 'div'>('div')`
   line-height: 18px;
   letter-spacing: 0px;
   font-weight: 300;
-  color: ${p => p.theme.color.detailDescription};
+  color: #5E6175;
   margin-top: ${p => p.contentShown ? 0 : -5}px;
 `
 

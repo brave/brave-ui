@@ -16,7 +16,6 @@
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": false,
   },
-
   "include": [
     "./definitions",
     "./src",

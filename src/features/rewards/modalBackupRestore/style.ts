@@ -2,8 +2,8 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 import { ComponentType } from 'react'
-import styled from '../../../theme'
-import Button, { Props as ButtonProps } from '../../../components/buttonsIndicators/button'
+import styled from '../../../components/style/theme'
+import Button, { Props as ButtonProps } from '../../../components/button/button'
 
 interface StyleProps {
   isError?: boolean
@@ -82,7 +82,7 @@ export const StyledTitle = styled<{}, 'span'>('span')`
 export const StyledSafe = styled<{}, 'span'>('span')`
   font-weight: 700;
   margin-right: 3px;
-  color: ${p => p.theme.color.brandBatInteracting};
+  color: ${p => p.theme.brandAccent};
 `
 
 export const StyledTabWrapper = styled<{}, 'div'>('div')`

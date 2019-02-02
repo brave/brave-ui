@@ -17,7 +17,7 @@ import {
   WalletSummary,
   WalletWrapper
 } from '../../../../src/features/rewards'
-import { WalletAddIcon, WalletWithdrawIcon } from '../../../../src/components/icons'
+import { WalletAddIcon, WalletWithdrawIcon } from '../../../../src/components/icon'
 
 // Assets
 const bartBaker = require('../../../assets/img/bartBaker.jpeg')

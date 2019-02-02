@@ -3,7 +3,7 @@ import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
 import Tabs from './index'
-import { TestThemeProvider } from '../../../theme'
+import { TestThemeProvider } from '../../style/theme'
 
 describe('Tabs tests', () => {
   const baseComponent = (props?: object) => <TestThemeProvider><Tabs id='tabs' {...props} /></TestThemeProvider>

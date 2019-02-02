@@ -23,7 +23,7 @@ import {
 import { TextArea, Modal, Button } from '../../../components'
 import { getLocale } from '../../../helpers'
 import { Alert, Tab } from '../'
-import ControlWrapper from '../../../components/formControls/controlWrapper'
+import ControlWrapper from '../../../components/formControl/controlWrapper'
 
 export interface Props {
   backupKey: string
@@ -122,36 +122,36 @@ export default class ModalBackupRestore extends React.PureComponent<Props, State
         <StyleButtonWrapper>
           {
             onCopy
-            ? <GroupedButton
-              text={getLocale('copy')}
-              level={'secondary'}
-              size={'small'}
-              type={'subtle'}
-              onClick={onCopy.bind(this, backupKey)}
-            />
-            : null
+              ? <GroupedButton
+                text={getLocale('copy')}
+                level={'secondary'}
+                size={'small'}
+                type={'subtle'}
+                onClick={onCopy.bind(this, backupKey)}
+              />
+              : null
           }
           {
             onPrint
-            ? <GroupedButton
-              text={getLocale('print')}
-              level={'secondary'}
-              size={'small'}
-              type={'subtle'}
-              onClick={onPrint.bind(this, backupKey)}
-            />
-            : null
+              ? <GroupedButton
+                text={getLocale('print')}
+                level={'secondary'}
+                size={'small'}
+                type={'subtle'}
+                onClick={onPrint.bind(this, backupKey)}
+              />
+              : null
           }
           {
             onSaveFile
-            ? <GroupedButton
-              text={getLocale('saveAsFile')}
-              level={'secondary'}
-              size={'small'}
-              type={'subtle'}
-              onClick={onSaveFile.bind(this, backupKey)}
-            />
-            : null
+              ? <GroupedButton
+                text={getLocale('saveAsFile')}
+                level={'secondary'}
+                size={'small'}
+                type={'subtle'}
+                onClick={onSaveFile.bind(this, backupKey)}
+              />
+              : null
           }
         </StyleButtonWrapper>
         <StyledContent>
@@ -180,12 +180,12 @@ export default class ModalBackupRestore extends React.PureComponent<Props, State
       <>
         {
           funds
-          ? <StyledStatus>
+            ? <StyledStatus>
               <Alert type={'warning'} colored={true} bg={true}>
                 {`Backup your wallet before replacing. Or you will lose the fund, ${funds}, in your current wallet.`}
               </Alert>
             </StyledStatus>
-          : null
+            : null
         }
         <ControlWrapper
           text={
@@ -213,12 +213,12 @@ export default class ModalBackupRestore extends React.PureComponent<Props, State
         </ControlWrapper>
         {
           errorShown
-          ? <StyledStatus isError={true}>
+            ? <StyledStatus isError={true}>
               <Alert type={'error'} colored={true} bg={true}>
                 {error}
               </Alert>
             </StyledStatus>
-          : null
+            : null
         }
         <StyledTextWrapper>
           <StyledText>
@@ -275,8 +275,8 @@ export default class ModalBackupRestore extends React.PureComponent<Props, State
         </StyledControlWrapper>
         {
           activeTabId === 0
-          ? this.getBackup()
-          : this.getRestore()
+            ? this.getBackup()
+            : this.getRestore()
         }
       </Modal>
     )

@@ -16,9 +16,9 @@ import {
 } from './style'
 
 import {
-  CaratCircleOUpIcon,
-  CaratCircleODownIcon
-} from '../../../components/icons'
+  CaratCircleUpOIcon,
+  CaratCircleDownOIcon
+} from '../../../components/icon'
 
 export interface Props {
   id?: string
@@ -70,7 +70,7 @@ export default class WalletSummarySlider extends React.PureComponent<
             </StyledColumn>
             <StyledColumn size={'1'}>
               <StyledArrowIcon show={showTitle}>
-                {!showTitle ? <CaratCircleODownIcon /> : <CaratCircleOUpIcon />}
+                {!showTitle ? <CaratCircleDownOIcon /> : <CaratCircleUpOIcon />}
               </StyledArrowIcon>
             </StyledColumn>
           </StyledGrid>

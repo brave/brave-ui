@@ -13,11 +13,11 @@ import {
   StyledLink,
   StyledRestoreSites
 } from './style'
-import Table, { Row } from '../../../components/dataTables/table'
+import Table, { Row } from '../../../components/table/table'
 import Profile, { Provider } from '../profile'
 import { getLocale } from '../../../helpers'
 import { RestoreSites, Tokens, Tooltip } from '../'
-import { TrashOIcon } from '../../../components/icons'
+import { TrashOIcon } from '../../../components/icon'
 
 interface ProfileCell {
   verified: boolean

@@ -21,7 +21,7 @@ import {
   TwitchColorIcon,
   TwitterColorIcon,
   YoutubeColorIcon
-} from '../../../components/icons'
+} from '../../../components/icon'
 import { Toggle } from '../../../components'
 
 export type Provider = 'twitter' | 'youtube' | 'twitch'

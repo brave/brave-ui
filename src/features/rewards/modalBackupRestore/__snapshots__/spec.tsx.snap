@@ -2,9 +2,9 @@
 
 exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
 .c26 {
-  --button-main-color: #FB542B;
-  --button-main-color-hover: #F43405;
-  --button-main-color-active: #FDBBAA;
+  --button-main-color: #4C54D2;
+  --button-main-color-hover: #737ade;
+  --button-main-color-active: #353dab;
   --button-state-color: var(--button-main-color);
   --icon-size: 16px;
   --icon-spacing: 6px;
@@ -34,7 +34,7 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-size: 13px;
+  font-size: 14px;
   border-radius: 20px;
   width: auto;
   min-width: 104px;
@@ -76,7 +76,6 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   -ms-letter-spacing: 0;
   letter-spacing: 0;
   font-weight: 500;
-  text-transform: none;
   line-height: 1;
 }
 
@@ -260,7 +259,7 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   top: -17px;
   width: 50%;
   height: 37px;
-  background: #FFF;
+  background: #FFFFFF;
   border-radius: 21.5px 21.5px 21.5px 21.5px;
   position: relative;
   -webkit-transition: all .4s ease;
@@ -299,7 +298,6 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #585968;
   font-weight: normal;
 }
 

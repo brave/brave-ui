@@ -5,7 +5,7 @@
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 // Components
-import * as AllIcons from '../../../src/components/icons'
+import * as AllIcons from '../../../src/components/icon'
 import * as Styled from './style'
 
 const book = storiesOf('Components/Icons', module)
@@ -21,11 +21,11 @@ book.add('All Icons', () => {
   return (
     <Styled.IconGrid>
       {AllIconComponents.map(({ componentName, Component }) => (
-          <Styled.IconGridItem title={componentName}>
-            <Styled.IconGridItemIcon><Component /></Styled.IconGridItemIcon>
-            <Styled.IconGridItemTitle>{componentName}</Styled.IconGridItemTitle>
-          </Styled.IconGridItem>
-        ))}
+        <Styled.IconGridItem title={componentName}>
+          <Styled.IconGridItemIcon><Component /></Styled.IconGridItemIcon>
+          <Styled.IconGridItemTitle>{componentName}</Styled.IconGridItemTitle>
+        </Styled.IconGridItem>
+      ))}
     </Styled.IconGrid>
   )
 })

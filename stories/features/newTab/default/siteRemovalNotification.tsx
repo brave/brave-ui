@@ -12,7 +12,7 @@ import {
 } from '../../../../src/features/newTab/default'
 
 // Icons
-import { CloseStrokeIcon } from '../../../../src/components/icons'
+import { CloseStrokeIcon } from '../../../../src/components/icon'
 
 // Helpers
 import { getLocale } from '../fakeLocale'

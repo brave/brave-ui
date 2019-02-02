@@ -7,7 +7,7 @@ import {
   StyledWrapper,
   StyledTitle
 } from './style'
-import Modal from '../../../components/popupModals/modal/index'
+import Modal from '../../../components/modal/modal/index'
 import TableDonation, { DetailRow } from '../tableDonation/index'
 import { getLocale } from '../../../helpers'
 

@@ -26,8 +26,8 @@ import {
   StyledButtonContainer
 } from './style'
 import { Modal } from '../../../components'
-import { AlertCircleIcon, RewardsSendTipsIcon } from '../../../components/icons'
-import Button from '../../../components/buttonsIndicators/button'
+import { AlertCircleIcon, RewardsSendTipsIcon } from '../../../components/icon'
+import Button from '../../../components/button/button'
 
 export interface Props {
   testId?: string

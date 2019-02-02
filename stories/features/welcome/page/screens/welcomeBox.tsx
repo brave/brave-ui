@@ -9,7 +9,7 @@ import { Content, Title, Paragraph } from '../../../../../src/features/welcome/'
 
 // Shared components
 import { Button } from '../../../../../src/components'
-import { ArrowRightIcon } from '../../../../../src/components/icons'
+import { ArrowRightIcon } from '../../../../../src/components/icon'
 
 // Utils
 import locale from '../fakeLocale'

@@ -12,9 +12,9 @@ import {
   StyledTipWrapper
 } from './style'
 import Donate from '../donate'
-import Toggle from '../../../components/formControls/toggle'
+import Toggle from '../../../components/formControl/toggle'
 import { getLocale } from '../../../helpers'
-import { CloseCircleOIcon } from '../../../components/icons'
+import { CloseCircleOIcon } from '../../../components/icon'
 
 type Donation = { tokens: string, converted: string, selected?: boolean }
 
@@ -83,7 +83,6 @@ export default class Tip extends React.PureComponent<Props, {}> {
                 onToggle={this.onToggle}
                 checked={allow}
                 size={'small'}
-                type={'light'}
               />
             </StyledAllowToggle>
           </StyledTipWrapper>

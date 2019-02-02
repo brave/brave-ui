@@ -9,7 +9,7 @@ export const StyledListContent = styled<{}, 'div'>('div')`
 `
 
 export const StyledSupport = styled<{}, 'div'>('div')`
-  background: ${p => p.theme.color.subtleBackground};
+  background: ${p => p.theme.brandSubtle};
   margin-top: -9px;
   padding-top: 10px;
 `
@@ -75,7 +75,7 @@ export const StyledWalletOverlay = styled<{}, 'div'>('div')`
   left: 0;
   width: 100%;
   height: 100%;
-  background: ${p => p.theme.color.modalOverlayBackground};
+  background: ${p => p.theme.modalOverlayBackground};
   align-items: center;
   z-index: 999;
   justify-content: center;
@@ -92,6 +92,6 @@ export const StyledWalletClose = styled<{}, 'div'>('div')`
   top: 15px;
   right: 15px;
   position: fixed;
-  color: ${p => p.theme.color.subtleExclude};
+  color: ${p => p.theme.brandSubtle};
   width: 25px;
 `

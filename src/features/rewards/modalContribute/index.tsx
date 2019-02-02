@@ -10,7 +10,7 @@ import {
   StyledNum
 } from './style'
 import RestoreSites from '../restoreSites'
-import Modal from '../../../components/popupModals/modal/index'
+import Modal from '../../../components/modal/modal/index'
 import TableContribute, { DetailRow } from '../tableContribute/index'
 import { getLocale } from '../../../helpers'
 

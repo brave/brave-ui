@@ -50,7 +50,7 @@ export default class ResetSyncModal extends React.PureComponent<Props, State> {
       <Modal id='resetSyncModal' displayCloseButton={false} size='small'>
         {
           showAlert
-          ? (
+            ? (
               <AlertBox
                 okString={getLocale('ok')}
                 onClickOk={this.onResetSync}
@@ -60,7 +60,7 @@ export default class ResetSyncModal extends React.PureComponent<Props, State> {
                 <Title level={1}>{getLocale('areYouSure')}</Title>
               </AlertBox>
             )
-          : null
+            : null
         }
         <ModalHeader>
           <div>
@@ -71,23 +71,23 @@ export default class ResetSyncModal extends React.PureComponent<Props, State> {
           <Paragraph>{getLocale('deleteSyncDescription')}</Paragraph>
         </ModalContent>
         <TwoColumnButtonGrid>
-            <OneColumnButtonGrid>
-              <Button
-                level='secondary'
-                type='subtle'
-                size='medium'
-                onClick={onClose}
-                text={getLocale('cancel')}
-              />
-            </OneColumnButtonGrid>
+          <OneColumnButtonGrid>
             <Button
-              level='primary'
-              type='warn'
+              level='secondary'
+              type='subtle'
               size='medium'
-              onClick={this.onSetupSync}
-              text={getLocale('deleteSyncChainButton')}
+              onClick={onClose}
+              text={getLocale('cancel')}
             />
-          </TwoColumnButtonGrid>
+          </OneColumnButtonGrid>
+          <Button
+            level='primary'
+            type='destructive'
+            size='medium'
+            onClick={this.onSetupSync}
+            text={getLocale('deleteSyncChainButton')}
+          />
+        </TwoColumnButtonGrid>
       </Modal>
     )
   }

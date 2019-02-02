@@ -14,7 +14,7 @@ import {
   AdsMegaphoneIcon,
   RewardsActivateIcon,
   RewardsSendTipsIcon
-} from '../../../components/icons'
+} from '../../../components/icon'
 
 export type Type = 'ads' | 'contribute' | 'donation'
 

@@ -5,7 +5,7 @@
 import * as React from 'react'
 import { StyledWrapper, StyledAmount, StyledNumber, StyledLogo, StyledConverted, StyledTokens } from './style'
 import { getLocale } from '../../../helpers'
-import { BatColorIcon } from '../../../components/icons'
+import { BatColorIcon } from '../../../components/icon'
 
 export interface Props {
   amount: string

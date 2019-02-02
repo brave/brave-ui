@@ -34,7 +34,7 @@ import {
 import TableContribute, { DetailRow as ContributeRow } from '../tableContribute'
 import TableTransactions, { DetailRow as TransactionRow } from '../tableTransactions'
 import { Select, ControlWrapper, Modal } from '../../../components'
-import { AlertCircleIcon, DownloadIcon, PrintIcon, VerifiedIcon } from '../../../components/icons'
+import { AlertCircleIcon, DownloadIcon, PrintIcon, VerifiedIcon } from '../../../components/icon'
 import ListToken from '../listToken'
 import { Type as TokenType } from '../tokens'
 

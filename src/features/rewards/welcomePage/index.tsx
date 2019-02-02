@@ -6,7 +6,7 @@ import * as React from 'react'
 
 // Components
 import Hero from '../hero'
-import Button from '../../../components/buttonsIndicators/button'
+import Button from '../../../components/button/button'
 import InfoCard, { CardProps } from '../infoCard'
 import {
   AdsMegaphoneIcon,
@@ -15,7 +15,7 @@ import {
   LoaderIcon,
   RewardsActivateIcon,
   RewardsSendTipsIcon
-} from '../../../components/icons'
+} from '../../../components/icon'
 import { Alert, RewardsButton, SettingsPage } from '../'
 
 // Utils

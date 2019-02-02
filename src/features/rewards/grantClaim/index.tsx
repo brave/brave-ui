@@ -5,7 +5,7 @@
 import * as React from 'react'
 import { StyledWrapper, StyledIcon, StyledText, StyledClaim } from './style'
 import { getLocale } from '../../../helpers'
-import { GiftIcon } from '../../../components/icons'
+import { GiftIcon } from '../../../components/icon'
 
 export interface Props {
   id?: string

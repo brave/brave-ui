@@ -14,7 +14,7 @@ import { withState } from '@dump247/storybook-state'
 // Components
 import { Modal, AlertBox } from '../../src/components'
 
-storiesOf('Components/Popups and Modals', module)
+storiesOf('Components/Modal', module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
   .add('Dialog', withState({ visible: true }, (store) => {
@@ -24,18 +24,16 @@ storiesOf('Components/Popups and Modals', module)
 
     return (
       <>
-      {
-        boolean('Visible', store.state.visible)
-        ? <Modal
-          id={'modal'}
-          outsideClose={boolean('Close with click outside', false)}
-          onClose={onClose}
-        >
-          Content
-        </Modal>
-        : null
-      }
-    </>
+        {
+          boolean('Visible', store.state.visible) ?
+            <Modal
+              id={'modal'}
+              outsideClose={boolean('Close with click outside', false)}
+              onClose={onClose}
+            />
+            : null
+        }
+      </>
     )
   }))
   .add('AlertBox', () => {

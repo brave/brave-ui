@@ -15,7 +15,7 @@ import {
   ModalContent,
   TwoColumnButtonGrid,
   OneColumnButtonGrid
- } from '../../../../src/features/sync'
+} from '../../../../src/features/sync'
 
 // Utils
 import { getLocale } from '../page/fakeLocale'
@@ -37,22 +37,22 @@ export default class RemoveMainDeviceModal extends React.PureComponent<Props, {}
           <Paragraph>{getLocale('thisDeviceRemovalDescription')}</Paragraph>
         </ModalContent>
         <TwoColumnButtonGrid>
-            <OneColumnButtonGrid>
-              <Button
-                level='secondary'
-                type='subtle'
-                size='medium'
-                onClick={onClose}
-                text={getLocale('cancel')}
-              />
-            </OneColumnButtonGrid>
+          <OneColumnButtonGrid>
             <Button
-              level='primary'
-              type='warn'
+              level='secondary'
+              type='subtle'
               size='medium'
               onClick={onClose}
-              text={getLocale('remove')}
+              text={getLocale('cancel')}
             />
+          </OneColumnButtonGrid>
+          <Button
+            level='primary'
+            type='destructive'
+            size='medium'
+            onClick={onClose}
+            text={getLocale('remove')}
+          />
         </TwoColumnButtonGrid>
       </Modal>
     )

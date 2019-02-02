@@ -18,8 +18,8 @@ import {
   StyledErrorMessage
 } from './style'
 
-import { BatColorIcon, LoaderIcon } from '../../../components/icons'
-import Button from '../../../components/buttonsIndicators/button'
+import { BatColorIcon, LoaderIcon } from '../../../components/icon'
+import Button from '../../../components/button/button'
 
 export type Variant = 'one' | 'two'
 

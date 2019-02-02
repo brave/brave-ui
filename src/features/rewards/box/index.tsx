@@ -21,9 +21,9 @@ import {
   StyledFlip
 } from './style'
 import { Tooltip } from '../'
-import Toggle from '../../../components/formControls/toggle/index'
+import Toggle from '../../../components/formControl/toggle/index'
 import { getLocale } from '../../../helpers'
-import { CloseStrokeIcon, SettingsIcon } from '../../../components/icons'
+import { CloseCircleOIcon, SettingsIcon } from '../../../components/icon'
 
 export type Type = 'ads' | 'contribute' | 'donation'
 
@@ -87,41 +87,41 @@ export default class Box extends React.PureComponent<Props, {}> {
               <StyledRight>
                 {
                   toggle ?
-                  <Toggle onToggle={onToggle} checked={checked} testId={testId} />
-                  : null
+                    <Toggle onToggle={onToggle} checked={checked} testId={testId} />
+                    : null
                 }
               </StyledRight>
               <StyledBreak />
               <StyledLeft>
                 <StyledDescription>
-                {description}
+                  {description}
                 </StyledDescription>
               </StyledLeft>
               <StyledRight>
                 {
                   settingsChild && ((toggle && checked) || !toggle) ?
-                  <Tooltip
-                    id={'brave-ads-tip'}
-                    content={this.getSettingsTitle(title)}
-                  >
-                    <StyledSettingsIcon float={'right'} onClick={onSettingsClick}>
-                      <SettingsIcon />
-                    </StyledSettingsIcon>
-                  </Tooltip>
-                  : null
+                    <Tooltip
+                      id={'brave-ads-tip'}
+                      content={this.getSettingsTitle(title)}
+                    >
+                      <StyledSettingsIcon float={'right'} onClick={onSettingsClick}>
+                        <SettingsIcon />
+                      </StyledSettingsIcon>
+                    </Tooltip>
+                    : null
                 }
               </StyledRight>
               <StyledContent>
                 {
                   isDisabled
-                  ? disabledContent
-                  : children
+                    ? disabledContent
+                    : children
                 }
               </StyledContent>
             </StyledContentWrapper>
             <StyledSettingsWrapper open={settingsOpened}>
               <StyledSettingsClose onClick={onSettingsClick} open={settingsOpened}>
-                <CloseStrokeIcon />
+                <CloseCircleOIcon />
               </StyledSettingsClose>
               <StyledSettingsTitle>
                 <StyledSettingsIcon>

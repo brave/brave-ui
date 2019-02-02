@@ -11,12 +11,12 @@ import centered from '@storybook/addon-centered/dist'
 import * as React from 'react'
 
 // Components
-import Table, { Cell, Row } from '../../src/components/dataTables/table'
+import Table, { Cell, Row } from '../../src/components/table/table'
 
-storiesOf('Components/Data Tables', module)
+storiesOf('Components/Table', module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
-  .add('Table',() => {
+  .add('Table', () => {
     const rowTheme = {
       'text-align': 'right',
       'padding-left': '9px'
