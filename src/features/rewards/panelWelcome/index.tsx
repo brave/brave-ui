@@ -86,7 +86,7 @@ export default class PanelWelcome extends React.PureComponent<Props, {}> {
               ? <Button
                 level='secondary'
                 size='call-to-action'
-                type='subtle'
+                type='white'
                 text={'Creating wallet'}
                 disabled={true}
                 data-test-id='optInAction'
@@ -103,7 +103,7 @@ export default class PanelWelcome extends React.PureComponent<Props, {}> {
                     <Button
                       level='secondary'
                       size='call-to-action'
-                      type='subtle'
+                      type='white'
                       text={getLocale('walletFailedButton')}
                       onClick={optInErrorAction}
                       data-test-id='optInErrorAction'
@@ -111,7 +111,7 @@ export default class PanelWelcome extends React.PureComponent<Props, {}> {
                   </>
                 : <Button
                   size='call-to-action'
-                  type='subtle'
+                  type='white'
                   level='secondary'
                   onClick={optInAction}
                   text={getLocale(this.locale.button)}

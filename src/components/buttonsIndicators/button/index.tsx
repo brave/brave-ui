@@ -26,7 +26,7 @@ export interface Props {
 }
 
 export type Level = 'primary' | 'secondary' | 'tertiary'
-export type Type = 'default' | 'accent' | 'warn' | 'subtle'
+export type Type = 'default' | 'accent' | 'warn' | 'subtle' | 'white'
 export type Brand = 'brave' | 'rewards'
 export type Size = 'call-to-action' | 'large' | 'medium' | 'small'
 

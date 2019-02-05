@@ -54,6 +54,11 @@ const getThemeColors = (p: ThemedStyledProps<Props>) => {
         hoverColor = p.theme.color.subtleInteracting
         activeColor = p.theme.color.subtleActive
         break
+      case 'white':
+        mainColor = '#FFFFFF'
+        hoverColor = '#FEFEFE'
+        activeColor = '#FFFFFF'
+        break
     }
   }
   return css`
