@@ -109,9 +109,9 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
 }
 
 .c12 {
-  --button-main-color: #A0A1B2;
-  --button-main-color-hover: #7C7D8C;
-  --button-main-color-active: #585968;
+  --button-main-color: #FFFFFF;
+  --button-main-color-hover: #FEFEFE;
+  --button-main-color-active: #FFFFFF;
   --button-state-color: var(--button-main-color);
   --icon-size: 18px;
   --icon-spacing: 6px;
@@ -245,12 +245,12 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
       <button
         className="c11 c12"
         size="call-to-action"
-        type="subtle"
+        type="white"
       >
         <div
           className="c13"
           size="call-to-action"
-          type="subtle"
+          type="white"
         >
           MISSING: welcomeButtonTextOne
         </div>
