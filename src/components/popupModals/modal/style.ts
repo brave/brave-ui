@@ -5,6 +5,10 @@
 import styled from 'styled-components'
 import { Props } from './index'
 
+interface StyleProps {
+  isMobile?: boolean
+}
+
 export const StyledWrapper = styled<{}, 'div'>('div')`
   position: fixed;
   top: 0;
@@ -36,8 +40,8 @@ export const StyledClose = styled<{}, 'div'>('div')`
   color: #9E9FAB;
 `
 
-export const StyledContent = styled<{}, 'div'>('div')`
+export const StyledContent = styled<StyleProps, 'div'>('div')`
   padding: 48px 48px;
   overflow-y: auto;
-  max-height: calc(100vh - 100px);
+  max-height: calc(100vh - ${p => p.isMobile ? 170 : 100}px);
 `
