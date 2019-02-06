@@ -8,7 +8,7 @@ const darkTheme: ITheme = {
   name: 'Brave Dark', // this is needed for theming addon
   color: {
     ...defaultTheme.color,
-    brandBrave: colors.blurple500
+    primary: colors.blurple500
   }
 }
 

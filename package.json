@@ -54,6 +54,7 @@
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@ctrl/tinycolor": "^2.2.1",
     "@dump247/storybook-state": "^1.3.0",
     "@storybook/addon-actions": "^4.0.7",
     "@storybook/addon-backgrounds": "^4.1.11",
