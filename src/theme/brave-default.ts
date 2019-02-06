@@ -5,6 +5,7 @@ import ITheme from './theme-interface'
 // Keys should not describe the value, but what they are to be used for.
 
 const theme: ITheme = {
+  name: 'Brave Light',
   color: {
     brandBrave: colors.orange400,
     brandBat: colors.blurple400,

@@ -1,6 +1,7 @@
 import { ThemedStyledProps } from 'styled-components'
 
 export default interface IThemeProps {
+  name: string,
   color: {
     brandBrave: string
     brandBraveInteracting: string

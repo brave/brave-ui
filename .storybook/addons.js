@@ -12,4 +12,12 @@ import '@storybook/addon-knobs/register'
 import '@storybook/addon-options/register'
 
 // for docs see https://github.com/dump247/storybook-state
+// this addon is surfacing in every panel ATM. this is a bug. track it here:
+// https://github.com/dump247/storybook-state/pull/12
 import '@dump247/storybook-state/register'
+
+// for docs see https://github.com/echoulen/storybook-addon-styled-component-theme/blob/master/README.md
+import 'storybook-addon-styled-component-theme/dist/src/register'
+
+// for docs see https://www.npmjs.com/package/@storybook/addon-backgrounds
+import '@storybook/addon-backgrounds/register'
