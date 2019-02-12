@@ -6,7 +6,7 @@
   ],
   "rules": {
     "property-no-vendor-prefix": [true, {
-      "ignoreProperties": ["background-clip", "padding-start", "padding-end"]
+      "ignoreProperties": ["background-clip", "padding-start", "padding-end", "appearance"]
     }]
   }
 }
