@@ -20,6 +20,8 @@ interface Props {
   hostname: string
   setBlockedListOpen: () => void
   isBlockedListOpen: boolean
+  adsTrackersBlocked: number
+  httpsUpgrades: number
 }
 
 interface State {
@@ -79,7 +81,7 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
   }
 
   render () {
-    const { isBlockedListOpen, favicon, hostname } = this.props
+    const { isBlockedListOpen, favicon, hostname, adsTrackersBlocked, httpsUpgrades } = this.props
     const { trackersBlockedOpen, connectionsUpgradedOpen } = this.state
     return (
       <>
@@ -90,7 +92,7 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
             onKeyDown={this.onOpen3rdPartyTrackersBlockedViaKeyboard}
           >
             <span>V</span>
-            <span>123123</span>
+            <span>{adsTrackersBlocked}</span>
             <span>{getLocale('thirdPartyTrackersBlocked')}</span>
           </div>
           <Toggle disabled={isBlockedListOpen} />
@@ -99,7 +101,7 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
               <StaticList
                 favicon={favicon}
                 hostname={hostname}
-                stats={'222'}
+                stats={adsTrackersBlocked}
                 name={getLocale('thirdPartyTrackersBlocked')}
                 list={data.blockedFakeResources}
                 onClose={this.onOpen3rdPartyTrackersBlocked}
@@ -113,7 +115,7 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
             onKeyDown={this.onOpen3rdPartyTrackersBlockedViaKeyboard}
           >
             <span>V</span>
-            <span>123123</span>
+            <span>{httpsUpgrades}</span>
             <span>{getLocale('connectionsUpgradedHTTPS')}</span>
           </div>
           <Toggle disabled={isBlockedListOpen} />
@@ -122,7 +124,7 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
               <StaticList
                 favicon={favicon}
                 hostname={hostname}
-                stats={'222'}
+                stats={httpsUpgrades}
                 name={getLocale('connectionsUpgradedHTTPS')}
                 list={data.blockedFakeResources}
                 onClose={this.onOpenConnectionsUpgradedToHTTPS}

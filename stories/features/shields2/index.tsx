@@ -17,6 +17,10 @@ interface Props {
   enabled: boolean
   hostname: string
   favicon: string
+  adsTrackersBlocked: number
+  httpsUpgrades: number
+  scriptsBlocked: number
+  fingerprintingBlocked: number
   fakeOnChange: () => void
 }
 
@@ -33,7 +37,14 @@ export default class Shields extends React.PureComponent<Props, State> {
     this.setState({ isBlockedListOpen: !this.state.isBlockedListOpen })
   }
   render () {
-    const { favicon, hostname } = this.props
+    const {
+      favicon,
+      hostname,
+      adsTrackersBlocked,
+      httpsUpgrades,
+      scriptsBlocked,
+      fingerprintingBlocked
+    } = this.props
     const { isBlockedListOpen } = this.state
     return (
       <ShieldsPanel style={{ width: '370px' }}>
@@ -47,12 +58,16 @@ export default class Shields extends React.PureComponent<Props, State> {
           hostname={hostname}
           setBlockedListOpen={this.setBlockedListOpen}
           isBlockedListOpen={isBlockedListOpen}
+          adsTrackersBlocked={adsTrackersBlocked}
+          httpsUpgrades={httpsUpgrades}
         />
         <PrivacyControls
           favicon={favicon}
           hostname={hostname}
           setBlockedListOpen={this.setBlockedListOpen}
           isBlockedListOpen={isBlockedListOpen}
+          scriptsBlocked={scriptsBlocked}
+          fingerprintingBlocked={fingerprintingBlocked}
         />
         <Footer isBlockedListOpen={isBlockedListOpen} />
       </ShieldsPanel>

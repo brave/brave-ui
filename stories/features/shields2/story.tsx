@@ -5,7 +5,7 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 // @ts-ignore
-import { withKnobs, boolean } from '@storybook/addon-knobs'
+import { withKnobs, boolean, number } from '@storybook/addon-knobs'
 import { withState } from '@dump247/storybook-state'
 const favicon = require('../../assets/img/fake_favicon.png')
 
@@ -25,20 +25,11 @@ storiesOf('Feature Components/Shields2', module)
         favicon={favicon}
         hostname={'buzzfeed.com'}
         enabled={boolean('Enabled?', store.state.enabled)}
+        adsTrackersBlocked={number('3rd-party trackers blocked', 80)}
+        httpsUpgrades={number('Connections upgraded to HTTPS', 0)}
+        scriptsBlocked={number('Scripts blocked', 11)}
+        fingerprintingBlocked={number('3rd-party device recognition blocked', 0)}
         fakeOnChange={fakeOnChange}
-      />
-    )
-  }))
-  .add('Disabled', withState({ enabled: false }, (store) => {
-    const fakeOnChange = () => {
-      store.set({ enabled: !store.state.enabled })
-    }
-    return (
-      <Shields
-        fakeOnChange={fakeOnChange}
-        enabled={boolean('Enabled?', store.state.enabled)}
-        hostname={'buzzfeed.com'}
-        favicon={favicon}
       />
     )
   }))

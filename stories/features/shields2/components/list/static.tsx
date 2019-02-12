@@ -12,7 +12,7 @@ import { getLocale } from '../../fakeLocale'
 interface Props {
   favicon: string
   hostname: string
-  stats: string
+  stats: number
   name: string
   list: any[]
   onClose?: (event?: any) => void

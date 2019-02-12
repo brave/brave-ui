@@ -21,6 +21,8 @@ interface Props {
   hostname: string
   setBlockedListOpen: () => void
   isBlockedListOpen: boolean
+  scriptsBlocked: number
+  fingerprintingBlocked: number
 }
 
 interface State {
@@ -79,7 +81,7 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
   }
 
   render () {
-    const { favicon, hostname, isBlockedListOpen } = this.props
+    const { favicon, hostname, isBlockedListOpen, scriptsBlocked, fingerprintingBlocked } = this.props
     const { deviceRecognitionOpen, scriptsBlockedOpen } = this.state
     return (
       <>
@@ -90,7 +92,7 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
             onKeyDown={this.onOpenScriptsBlockedOpenViaKeyboard}
           >
             <span>V</span>
-            <span>123123</span>
+            <span>{scriptsBlocked}</span>
             <span>{getLocale('scriptsBlocked')}</span>
           </div>
           <Toggle disabled={isBlockedListOpen} />
@@ -99,7 +101,7 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
               <DynamicList
                 favicon={favicon}
                 hostname={hostname}
-                stats={'222'}
+                stats={scriptsBlocked}
                 name={getLocale('scriptsOnThisSite')}
                 list={data.blockedScriptsResouces}
                 onClose={this.onOpenScriptsBlockedOpen}
@@ -122,7 +124,7 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
             onKeyDown={this.onOpenDeviceRecognitionOpenViaKeyboard}
           >
             <span>V</span>
-            <span>123123</span>
+            <span>{fingerprintingBlocked}</span>
           </div>
           <SelectBox disabled={isBlockedListOpen}>
             <option value='block_third_party'>{getLocale('thirdPartyFingerprintingBlocked')}</option>
@@ -134,7 +136,7 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
               <StaticList
                 favicon={favicon}
                 hostname={hostname}
-                stats={'222'}
+                stats={fingerprintingBlocked}
                 name={getLocale('deviceRecognitionAttempts')}
                 list={data.blockedFakeResources}
                 onClose={this.onOpenDeviceRecognitionOpen}
