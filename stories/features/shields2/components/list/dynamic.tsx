@@ -45,7 +45,7 @@ export default class DynamicList extends React.PureComponent<Props, {}> {
         </header>
         <details open={true}>
           <summary onClick={onClose}>
-            {stats} - {name}
+            {stats > 99 ? '99+' : stats} - {name}
           </summary>
           <section id='blocked'>
             <div>blocked scripts <button>allow all</button></div>

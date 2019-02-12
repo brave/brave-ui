@@ -92,7 +92,7 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
             onKeyDown={this.onOpenScriptsBlockedOpenViaKeyboard}
           >
             <span>V</span>
-            <span>{scriptsBlocked}</span>
+            <span>{scriptsBlocked > 99 ? '99+' : scriptsBlocked}</span>
             <span>{getLocale('scriptsBlocked')}</span>
           </div>
           <Toggle disabled={isBlockedListOpen} />
@@ -124,7 +124,7 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
             onKeyDown={this.onOpenDeviceRecognitionOpenViaKeyboard}
           >
             <span>V</span>
-            <span>{fingerprintingBlocked}</span>
+            <span>{fingerprintingBlocked > 99 ? '99+' : fingerprintingBlocked}</span>
           </div>
           <SelectBox disabled={isBlockedListOpen}>
             <option value='block_third_party'>{getLocale('thirdPartyFingerprintingBlocked')}</option>

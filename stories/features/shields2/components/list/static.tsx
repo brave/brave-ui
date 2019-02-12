@@ -28,7 +28,7 @@ export default class StaticList extends React.PureComponent<Props, {}> {
         </header>
         <details open={true}>
           <summary onClick={onClose}>
-            {stats} - {name}
+          {stats > 99 ? '99+' : stats} - {name}
           </summary>
           <ul>
             {list.map((item, index) => <li key={index}>{item}</li>)}

@@ -92,7 +92,7 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
             onKeyDown={this.onOpen3rdPartyTrackersBlockedViaKeyboard}
           >
             <span>V</span>
-            <span>{adsTrackersBlocked}</span>
+            <span>{adsTrackersBlocked > 99 ? '99+' : adsTrackersBlocked}</span>
             <span>{getLocale('thirdPartyTrackersBlocked')}</span>
           </div>
           <Toggle disabled={isBlockedListOpen} />
@@ -115,7 +115,7 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
             onKeyDown={this.onOpen3rdPartyTrackersBlockedViaKeyboard}
           >
             <span>V</span>
-            <span>{httpsUpgrades}</span>
+            <span>{httpsUpgrades > 99 ? '99+' : httpsUpgrades}</span>
             <span>{getLocale('connectionsUpgradedHTTPS')}</span>
           </div>
           <Toggle disabled={isBlockedListOpen} />
