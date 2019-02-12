@@ -4,7 +4,7 @@
 
 import * as React from 'react'
 
-import { BlockedListContent } from '../../../../../src/features/shields2'
+import { BlockedListContent, ArrowUpIcon } from '../../../../../src/features/shields2'
 
 // Fake data
 import { getLocale } from '../../fakeLocale'
@@ -28,7 +28,9 @@ export default class StaticList extends React.PureComponent<Props, {}> {
         </header>
         <details open={true}>
           <summary onClick={onClose}>
-          {stats > 99 ? '99+' : stats} - {name}
+          <ArrowUpIcon />
+          <span>{stats > 99 ? '99+' : stats}</span>
+          <span>{name}</span>
           </summary>
           <ul>
             {list.map((item, index) => <li key={index}>{item}</li>)}

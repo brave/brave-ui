@@ -5,7 +5,7 @@
 import * as React from 'react'
 
 // Feature-specific components
-import { BlockedInfo } from '../../../../src/features/shields2'
+import { BlockedInfo, ArrowDownIcon } from '../../../../src/features/shields2'
 import { Toggle } from '../../../../src/features/shields'
 
 // Group Components
@@ -91,7 +91,7 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
             onClick={this.onOpen3rdPartyTrackersBlocked}
             onKeyDown={this.onOpen3rdPartyTrackersBlockedViaKeyboard}
           >
-            <span>V</span>
+            <ArrowDownIcon />
             <span>{adsTrackersBlocked > 99 ? '99+' : adsTrackersBlocked}</span>
             <span>{getLocale('thirdPartyTrackersBlocked')}</span>
           </div>
@@ -114,7 +114,7 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
             onClick={this.onOpenConnectionsUpgradedToHTTPS}
             onKeyDown={this.onOpen3rdPartyTrackersBlockedViaKeyboard}
           >
-            <span>V</span>
+            <ArrowDownIcon />
             <span>{httpsUpgrades > 99 ? '99+' : httpsUpgrades}</span>
             <span>{getLocale('connectionsUpgradedHTTPS')}</span>
           </div>

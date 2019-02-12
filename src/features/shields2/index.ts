@@ -7,3 +7,5 @@ export {
   BlockedListContent,
   BlockedInfo
 } from './structure'
+
+export { ArrowDownIcon, ArrowUpIcon } from './icons/index'

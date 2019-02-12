@@ -5,7 +5,7 @@
 import * as React from 'react'
 
 // Feature-specific components
-import { BlockedInfo } from '../../../../src/features/shields2'
+import { BlockedInfo, ArrowDownIcon } from '../../../../src/features/shields2'
 import { Toggle, SelectBox } from '../../../../src/features/shields'
 
 // Group Components
@@ -91,7 +91,7 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
             onClick={this.onOpenScriptsBlockedOpen}
             onKeyDown={this.onOpenScriptsBlockedOpenViaKeyboard}
           >
-            <span>V</span>
+            <ArrowDownIcon />
             <span>{scriptsBlocked > 99 ? '99+' : scriptsBlocked}</span>
             <span>{getLocale('scriptsBlocked')}</span>
           </div>
@@ -123,7 +123,7 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
             onClick={this.onOpenDeviceRecognitionOpen}
             onKeyDown={this.onOpenDeviceRecognitionOpenViaKeyboard}
           >
-            <span>V</span>
+            <ArrowDownIcon />
             <span>{fingerprintingBlocked > 99 ? '99+' : fingerprintingBlocked}</span>
           </div>
           <SelectBox disabled={isBlockedListOpen}>
