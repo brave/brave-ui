@@ -17,6 +17,8 @@ const locale: Record<string, string> = {
   amount: 'Amount',
   autoTipText: 'You are automatically sending a tip to:',
   backup: 'Backup',
+  backupNow: 'Backup Now',
+  backupWalletTitle: 'Backup Wallet',
   bat: 'BAT',
   braveAdsDesc: 'No action required. Just collect tokens. Your data is safe with our Shields.',
   braveAdsTitle: 'Brave Ads',
