@@ -52,6 +52,10 @@ export default class Shields extends React.PureComponent<Props, State> {
           favicon={favicon}
           hostname={hostname}
           isBlockedListOpen={isBlockedListOpen}
+          adsTrackersBlocked={adsTrackersBlocked}
+          httpsUpgrades={httpsUpgrades}
+          scriptsBlocked={scriptsBlocked}
+          fingerprintingBlocked={fingerprintingBlocked}
         />
         <InterfaceControls
           favicon={favicon}
