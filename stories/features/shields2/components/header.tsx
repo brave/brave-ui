@@ -6,6 +6,12 @@ import * as React from 'react'
 
 // Feature-specific components
 import { Toggle } from '../../../../src/features/shields'
+import {
+  MainToggle,
+  TotalBlockedStats,
+  SiteOverview,
+  SiteInfoGrid
+} from '../../../../src/features/shields2'
 
 // Fake data
 import { getLocale } from '../fakeLocale'
@@ -63,7 +69,7 @@ export default class Header extends React.PureComponent<Props, {}> {
     const { favicon, hostname, isBlockedListOpen } = this.props
     return (
       <header>
-        <section>
+        <MainToggle>
           <div>
             <div>
               {getLocale('shields')} {getLocale('up')} {getLocale('forThisSite')}
@@ -71,15 +77,17 @@ export default class Header extends React.PureComponent<Props, {}> {
             <div>{getLocale('enabledMessage')}</div>
           </div>
           <Toggle disabled={isBlockedListOpen} />
-        </section>
-        <section>
-          <img src={favicon} />
-          <span>{hostname}</span>
-          <div>
-            {this.totalBlocked}<br />
-            {this.totalBlockedString} {this.stringConjunction} {this.httpsUpgradesString}
-          </div>
-        </section>
+        </MainToggle>
+        <SiteOverview>
+          <SiteInfoGrid>
+            <img src={favicon} />
+            <span>{hostname}</span>
+          </SiteInfoGrid>
+          <TotalBlockedStats>
+            <span>{this.totalBlocked}</span>
+            <span>{this.totalBlockedString} {this.stringConjunction} {this.httpsUpgradesString}</span>
+          </TotalBlockedStats>
+        </SiteOverview>
       </header>
     )
   }

@@ -4,7 +4,16 @@
 
 import * as React from 'react'
 
-import { BlockedListContent, ArrowUpIcon } from '../../../../../src/features/shields2'
+import {
+  BlockedListHeader,
+  BlockedListSummary,
+  BlockedListContent,
+  BlockedListItemHeader,
+  BlockedList,
+  BlockedListItemWithOptions,
+  BlockedListFooterWithOptions,
+  ArrowUpIcon
+} from '../../../../../src/features/shields2'
 
 // Fake data
 import { getLocale } from '../../fakeLocale'
@@ -25,14 +34,14 @@ export default class DynamicList extends React.PureComponent<Props, {}> {
         return null
       }
       return (
-        <li key={index}>
+        <BlockedListItemWithOptions key={index}>
           <span title={item.name}>{item.name}</span>
           {
             item.blocked
               ? <button>{getLocale('block')}</button>
               : <button>{getLocale('allow')}</button>
           }
-        </li>
+        </BlockedListItemWithOptions>
       )
     })
   }
@@ -40,28 +49,34 @@ export default class DynamicList extends React.PureComponent<Props, {}> {
     const { stats, favicon, hostname, name, list, onClose } = this.props
     return (
       <BlockedListContent>
-        <header>
+        <BlockedListHeader>
           <img src={favicon} /> {hostname}
-        </header>
+        </BlockedListHeader>
         <details open={true}>
-          <summary onClick={onClose}>
+          <BlockedListSummary onClick={onClose}>
             <ArrowUpIcon />
             <span>{stats > 99 ? '99+' : stats}</span>
             <span>{name}</span>
-          </summary>
-          <section id='blocked'>
-            <div>blocked scripts <button>allow all</button></div>
+          </BlockedListSummary>
+          <BlockedList>
+            <BlockedListItemHeader id='blocked'>
+              <span>{list.filter(item => item.blocked === true).length}</span>
+              <span>blocked scripts</span>
+              <button>allow all</button>
+            </BlockedListItemHeader>
             {this.getList(list, true)}
-          </section>
-          <section id='allowed'>
-            <div>allowed scripts <button>block all</button></div>
+            <BlockedListItemHeader id='allowed'>
+              <span>{list.filter(item => item.blocked === false).length}</span>
+              <span>allowed scripts</span>
+              <button>block all</button>
+            </BlockedListItemHeader>
             {this.getList(list, false)}
-          </section>
+          </BlockedList>
         </details>
-        <footer>
+        <BlockedListFooterWithOptions>
           <button onClick={onClose}>{getLocale('cancel')}</button>
           <button onClick={onClose}>{getLocale('applyOnce')}</button>
-        </footer>
+        </BlockedListFooterWithOptions>
       </BlockedListContent>
     )
   }

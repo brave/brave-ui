@@ -4,8 +4,26 @@
 
 export {
   ShieldsPanel,
+  MainToggle,
+  TotalBlockedStats,
+  SiteOverview,
+  SiteInfoGrid,
+  //
+  BlockedInfoRow,
+  BlockedInfoRowGrid,
+  // footer
+  Footer,
+  //
+  BlockedListHeader,
   BlockedListContent,
-  BlockedInfo
+  BlockedListSummary,
+  BlockedList,
+  BlockedListItemHeader,
+  BlockedListItem,
+  BlockedListItemWithOptions,
+  BlockedListFooter,
+  BlockedListFooterWithOptions
+
 } from './structure'
 
 export { ArrowDownIcon, ArrowUpIcon } from './icons/index'

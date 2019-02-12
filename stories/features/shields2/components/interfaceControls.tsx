@@ -5,7 +5,7 @@
 import * as React from 'react'
 
 // Feature-specific components
-import { BlockedInfo, ArrowDownIcon } from '../../../../src/features/shields2'
+import { BlockedInfoRow, BlockedInfoRowGrid, ArrowDownIcon } from '../../../../src/features/shields2'
 import { Toggle } from '../../../../src/features/shields'
 
 // Group Components
@@ -85,8 +85,8 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
     const { trackersBlockedOpen, connectionsUpgradedOpen } = this.state
     return (
       <>
-        <BlockedInfo>
-          <div
+        <BlockedInfoRow>
+          <BlockedInfoRowGrid
             tabIndex={this.tabIndex}
             onClick={this.onOpen3rdPartyTrackersBlocked}
             onKeyDown={this.onOpen3rdPartyTrackersBlockedViaKeyboard}
@@ -94,7 +94,7 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
             <ArrowDownIcon />
             <span>{adsTrackersBlocked > 99 ? '99+' : adsTrackersBlocked}</span>
             <span>{getLocale('thirdPartyTrackersBlocked')}</span>
-          </div>
+          </BlockedInfoRowGrid>
           <Toggle disabled={isBlockedListOpen} />
           {
             trackersBlockedOpen &&
@@ -107,9 +107,9 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
                 onClose={this.onOpen3rdPartyTrackersBlocked}
               />
           }
-        </BlockedInfo>
-        <BlockedInfo>
-          <div
+        </BlockedInfoRow>
+        <BlockedInfoRow>
+          <BlockedInfoRowGrid
             tabIndex={this.tabIndex}
             onClick={this.onOpenConnectionsUpgradedToHTTPS}
             onKeyDown={this.onOpen3rdPartyTrackersBlockedViaKeyboard}
@@ -117,7 +117,7 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
             <ArrowDownIcon />
             <span>{httpsUpgrades > 99 ? '99+' : httpsUpgrades}</span>
             <span>{getLocale('connectionsUpgradedHTTPS')}</span>
-          </div>
+          </BlockedInfoRowGrid>
           <Toggle disabled={isBlockedListOpen} />
           {
             connectionsUpgradedOpen &&
@@ -130,7 +130,7 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
                 onClose={this.onOpenConnectionsUpgradedToHTTPS}
               />
           }
-        </BlockedInfo>
+        </BlockedInfoRow>
       </>
     )
   }

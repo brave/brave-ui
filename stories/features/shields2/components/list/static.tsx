@@ -4,7 +4,15 @@
 
 import * as React from 'react'
 
-import { BlockedListContent, ArrowUpIcon } from '../../../../../src/features/shields2'
+import {
+  BlockedListHeader,
+  BlockedListSummary,
+  BlockedListContent,
+  BlockedList,
+  BlockedListItem,
+  BlockedListFooter,
+  ArrowUpIcon
+} from '../../../../../src/features/shields2'
 
 // Fake data
 import { getLocale } from '../../fakeLocale'
@@ -23,22 +31,22 @@ export default class StaticList extends React.PureComponent<Props, {}> {
     const { stats, favicon, hostname, name, list, onClose } = this.props
     return (
       <BlockedListContent>
-        <header>
+        <BlockedListHeader>
           <img src={favicon} /> {hostname}
-        </header>
+        </BlockedListHeader>
         <details open={true}>
-          <summary onClick={onClose}>
+          <BlockedListSummary onClick={onClose}>
           <ArrowUpIcon />
           <span>{stats > 99 ? '99+' : stats}</span>
           <span>{name}</span>
-          </summary>
-          <ul>
-            {list.map((item, index) => <li key={index}>{item}</li>)}
-          </ul>
+          </BlockedListSummary>
+          <BlockedList>
+            {list.map((item, index) => <BlockedListItem key={index}>{item}</BlockedListItem>)}
+          </BlockedList>
         </details>
-        <footer>
+        <BlockedListFooter>
           <button onClick={onClose}>{getLocale('goBack')}</button>
-        </footer>
+        </BlockedListFooter>
       </BlockedListContent>
     )
   }
