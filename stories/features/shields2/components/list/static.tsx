@@ -8,7 +8,7 @@ import {
   BlockedListHeader,
   BlockedListSummary,
   BlockedListContent,
-  BlockedList,
+  BlockedListStatic,
   BlockedListItem,
   BlockedListFooter,
   ArrowUpIcon
@@ -40,9 +40,9 @@ export default class StaticList extends React.PureComponent<Props, {}> {
           <span>{stats > 99 ? '99+' : stats}</span>
           <span>{name}</span>
           </BlockedListSummary>
-          <BlockedList>
+          <BlockedListStatic>
             {list.map((item, index) => <BlockedListItem key={index}>{item}</BlockedListItem>)}
-          </BlockedList>
+          </BlockedListStatic>
         </details>
         <BlockedListFooter>
           <button onClick={onClose}>{getLocale('goBack')}</button>

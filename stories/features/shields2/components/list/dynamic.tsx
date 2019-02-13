@@ -9,7 +9,7 @@ import {
   BlockedListSummary,
   BlockedListContent,
   BlockedListItemHeader,
-  BlockedList,
+  BlockedListDynamic,
   BlockedListItemWithOptions,
   BlockedListFooterWithOptions,
   ArrowUpIcon
@@ -58,7 +58,7 @@ export default class DynamicList extends React.PureComponent<Props, {}> {
             <span>{stats > 99 ? '99+' : stats}</span>
             <span>{name}</span>
           </BlockedListSummary>
-          <BlockedList>
+          <BlockedListDynamic>
             <BlockedListItemHeader id='blocked'>
               <span>{list.filter(item => item.blocked === true).length}</span>
               <span>blocked scripts</span>
@@ -71,7 +71,7 @@ export default class DynamicList extends React.PureComponent<Props, {}> {
               <button>block all</button>
             </BlockedListItemHeader>
             {this.getList(list, false)}
-          </BlockedList>
+          </BlockedListDynamic>
         </details>
         <BlockedListFooterWithOptions>
           <button onClick={onClose}>{getLocale('cancel')}</button>

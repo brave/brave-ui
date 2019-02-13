@@ -5,19 +5,23 @@
 export {
   ShieldsPanel,
   MainToggle,
-  TotalBlockedStats,
   SiteOverview,
-  SiteInfoGrid,
+  TotalBlockedStats,
+  SiteInfo,
   //
   BlockedInfoRow,
-  BlockedInfoRowGrid,
+  BlockedInfoRowSingle,
+  BlockedInfoRowForSelect,
+  BlockedInfoRowData,
+  BlockedInfoRowDataForSelect,
   // footer
-  Footer,
+  MainFooter,
   //
   BlockedListHeader,
   BlockedListContent,
   BlockedListSummary,
-  BlockedList,
+  BlockedListStatic,
+  BlockedListDynamic,
   BlockedListItemHeader,
   BlockedListItem,
   BlockedListItemWithOptions,

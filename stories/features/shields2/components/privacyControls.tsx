@@ -5,7 +5,14 @@
 import * as React from 'react'
 
 // Feature-specific components
-import { BlockedInfoRow, BlockedInfoRowGrid, ArrowDownIcon } from '../../../../src/features/shields2'
+import {
+  BlockedInfoRow,
+  BlockedInfoRowForSelect,
+  BlockedInfoRowSingle,
+  BlockedInfoRowData,
+  BlockedInfoRowDataForSelect,
+  ArrowDownIcon
+} from '../../../../src/features/shields2'
 import { Toggle, SelectBox } from '../../../../src/features/shields'
 
 // Group Components
@@ -86,7 +93,7 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
     return (
       <>
         <BlockedInfoRow>
-          <BlockedInfoRowGrid
+          <BlockedInfoRowData
             tabIndex={this.tabIndex}
             onClick={this.onOpenScriptsBlockedOpen}
             onKeyDown={this.onOpenScriptsBlockedOpenViaKeyboard}
@@ -94,7 +101,7 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
             <ArrowDownIcon />
             <span>{scriptsBlocked > 99 ? '99+' : scriptsBlocked}</span>
             <span>{getLocale('scriptsBlocked')}</span>
-          </BlockedInfoRowGrid>
+          </BlockedInfoRowData>
           <Toggle disabled={isBlockedListOpen} />
           {
             scriptsBlockedOpen &&
@@ -108,27 +115,22 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
               />
           }
         </BlockedInfoRow>
-        <BlockedInfoRow>
-          <BlockedInfoRowGrid>
-            <div />
-            <div />
-            <div />
-          </BlockedInfoRowGrid>
-          <SelectBox disabled={isBlockedListOpen}>
-            <option value='block_third_party'>{getLocale('thirdPartyCookiesBlocked')}</option>
-            <option value='block'>{getLocale('allCookiesBlocked')}</option>
-            <option value='allow'>{getLocale('allCookiesAllowed')}</option>
-          </SelectBox>
-        </BlockedInfoRow>
-        <BlockedInfoRow>
-          <BlockedInfoRowGrid
+        <BlockedInfoRowSingle>
+            <SelectBox disabled={isBlockedListOpen}>
+              <option value='block_third_party'>{getLocale('thirdPartyCookiesBlocked')}</option>
+              <option value='block'>{getLocale('allCookiesBlocked')}</option>
+              <option value='allow'>{getLocale('allCookiesAllowed')}</option>
+            </SelectBox>
+        </BlockedInfoRowSingle>
+        <BlockedInfoRowForSelect>
+          <BlockedInfoRowDataForSelect
             tabIndex={this.tabIndex}
             onClick={this.onOpenDeviceRecognitionOpen}
             onKeyDown={this.onOpenDeviceRecognitionOpenViaKeyboard}
           >
             <ArrowDownIcon />
             <span>{fingerprintingBlocked > 99 ? '99+' : fingerprintingBlocked}</span>
-          </BlockedInfoRowGrid>
+          </BlockedInfoRowDataForSelect>
           <SelectBox disabled={isBlockedListOpen}>
             <option value='block_third_party'>{getLocale('thirdPartyFingerprintingBlocked')}</option>
             <option value='block'>{getLocale('allFingerprintingBlocked')}</option>
@@ -145,7 +147,7 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
                 onClose={this.onOpenDeviceRecognitionOpen}
               />
           }
-        </BlockedInfoRow>
+        </BlockedInfoRowForSelect>
       </>
     )
   }

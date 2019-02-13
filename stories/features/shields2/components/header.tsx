@@ -10,7 +10,7 @@ import {
   MainToggle,
   TotalBlockedStats,
   SiteOverview,
-  SiteInfoGrid
+  SiteInfo
 } from '../../../../src/features/shields2'
 
 // Fake data
@@ -79,10 +79,10 @@ export default class Header extends React.PureComponent<Props, {}> {
           <Toggle disabled={isBlockedListOpen} />
         </MainToggle>
         <SiteOverview>
-          <SiteInfoGrid>
+          <SiteInfo>
             <img src={favicon} />
             <span>{hostname}</span>
-          </SiteInfoGrid>
+          </SiteInfo>
           <TotalBlockedStats>
             <span>{this.totalBlocked}</span>
             <span>{this.totalBlockedString} {this.stringConjunction} {this.httpsUpgradesString}</span>
