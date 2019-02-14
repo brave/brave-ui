@@ -4,7 +4,7 @@
 
 import * as React from 'react'
 
-import { MainFooter } from '../../../../src/features/shields2'
+import { MainFooter, Link } from '../../../../src/features/shields2'
 
 // Fake data
 import { getLocale } from '../fakeLocale'
@@ -18,7 +18,11 @@ export default class Footer extends React.PureComponent<Props, {}> {
     const { isBlockedListOpen } = this.props
     return (
       <MainFooter>
-        <button disabled={isBlockedListOpen}>{getLocale('changeDefaults')}</button>
+        <Link
+          disabled={isBlockedListOpen}
+        >
+          {getLocale('changeDefaults')}
+        </Link>
       </MainFooter>
     )
   }

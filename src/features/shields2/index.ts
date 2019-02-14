@@ -30,4 +30,6 @@ export {
 
 } from './structure'
 
+export { Link, LinkAction } from './display'
+
 export { ArrowDownIcon, ArrowUpIcon } from './icons/index'

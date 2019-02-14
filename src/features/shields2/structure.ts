@@ -220,9 +220,8 @@ export const BlockedListFooter = styled<{}, 'footer'>('footer')`
 
 export const BlockedListFooterWithOptions = styled<{}, 'footer'>('footer')`
   box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+  display: flex;
+  justify-content: space-between;
   padding: 12px 24px;
   border-top: 1px solid rgba(160, 161, 178, 0.15);
 `

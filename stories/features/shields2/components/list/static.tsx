@@ -13,6 +13,7 @@ import {
   BlockedListFooter,
   ArrowUpIcon
 } from '../../../../../src/features/shields2'
+import { Button } from '../../../../../src/components'
 
 // Fake data
 import { getLocale } from '../../fakeLocale'
@@ -45,7 +46,7 @@ export default class StaticList extends React.PureComponent<Props, {}> {
           </BlockedListStatic>
         </details>
         <BlockedListFooter>
-          <button onClick={onClose}>{getLocale('goBack')}</button>
+          <Button level='primary' type='accent' onClick={onClose} text={getLocale('goBack')} />
         </BlockedListFooter>
       </BlockedListContent>
     )

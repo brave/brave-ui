@@ -12,11 +12,13 @@ import {
   BlockedListDynamic,
   BlockedListItemWithOptions,
   BlockedListFooterWithOptions,
-  ArrowUpIcon
+  ArrowUpIcon,
+  LinkAction
 } from '../../../../../src/features/shields2'
 
 // Fake data
 import { getLocale } from '../../fakeLocale'
+import { Button } from '../../../../../src/components'
 
 interface Props {
   favicon: string
@@ -38,8 +40,8 @@ export default class DynamicList extends React.PureComponent<Props, {}> {
           <span title={item.name}>{item.name}</span>
           {
             item.blocked
-              ? <button>{getLocale('block')}</button>
-              : <button>{getLocale('allow')}</button>
+              ? <LinkAction>{getLocale('block')}</LinkAction>
+              : <LinkAction>{getLocale('allow')}</LinkAction>
           }
         </BlockedListItemWithOptions>
       )
@@ -62,20 +64,20 @@ export default class DynamicList extends React.PureComponent<Props, {}> {
             <BlockedListItemHeader id='blocked'>
               <span>{list.filter(item => item.blocked === true).length}</span>
               <span>blocked scripts</span>
-              <button>allow all</button>
+              <LinkAction>{getLocale('allowAll')}</LinkAction>
             </BlockedListItemHeader>
             {this.getList(list, true)}
             <BlockedListItemHeader id='allowed'>
               <span>{list.filter(item => item.blocked === false).length}</span>
               <span>allowed scripts</span>
-              <button>block all</button>
+              <LinkAction>{getLocale('blockAll')}</LinkAction>
             </BlockedListItemHeader>
             {this.getList(list, false)}
           </BlockedListDynamic>
         </details>
         <BlockedListFooterWithOptions>
-          <button onClick={onClose}>{getLocale('cancel')}</button>
-          <button onClick={onClose}>{getLocale('applyOnce')}</button>
+          <LinkAction onClick={onClose}>{getLocale('cancel')}</LinkAction>
+          <Button onClick={onClose} level='primary' type='accent' text={getLocale('applyOnce')} />
         </BlockedListFooterWithOptions>
       </BlockedListContent>
     )
