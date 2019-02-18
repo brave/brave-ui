@@ -13,7 +13,12 @@ import {
   BlockedListItemWithOptions,
   BlockedListFooterWithOptions,
   ArrowUpIcon,
-  LinkAction
+  LinkAction,
+  Favicon,
+  SiteInfoText,
+  BlockedListSummaryText,
+  BlockedListItemHeaderStats,
+  BlockedListItemHeaderText
 } from '../../../../../src/features/shields2'
 
 // Fake data
@@ -23,7 +28,6 @@ import { Button } from '../../../../../src/components'
 interface Props {
   favicon: string
   hostname: string
-  stats: number
   name: string
   list: any[]
   onClose?: (event?: any) => void
@@ -48,28 +52,32 @@ export default class DynamicList extends React.PureComponent<Props, {}> {
     })
   }
   render () {
-    const { stats, favicon, hostname, name, list, onClose } = this.props
+    const { favicon, hostname, name, list, onClose } = this.props
     return (
       <BlockedListContent>
         <BlockedListHeader>
-          <img src={favicon} /> {hostname}
+          <Favicon src={favicon} />
+          <SiteInfoText>{hostname}</SiteInfoText>
         </BlockedListHeader>
         <details open={true}>
-          <BlockedListSummary onClick={onClose}>
+          <BlockedListSummary stats={false} onClick={onClose}>
             <ArrowUpIcon />
-            <span>{stats > 99 ? '99+' : stats}</span>
-            <span>{name}</span>
+            <BlockedListSummaryText>{name}</BlockedListSummaryText>
           </BlockedListSummary>
           <BlockedListDynamic>
             <BlockedListItemHeader id='blocked'>
-              <span>{list.filter(item => item.blocked === true).length}</span>
-              <span>blocked scripts</span>
+              <BlockedListItemHeaderStats>
+                {list.filter(item => item.blocked === true).length}
+              </BlockedListItemHeaderStats>
+              <BlockedListItemHeaderText>{getLocale('blockedScripts')}</BlockedListItemHeaderText>
               <LinkAction>{getLocale('allowAll')}</LinkAction>
             </BlockedListItemHeader>
             {this.getList(list, true)}
             <BlockedListItemHeader id='allowed'>
-              <span>{list.filter(item => item.blocked === false).length}</span>
-              <span>allowed scripts</span>
+              <BlockedListItemHeaderStats>
+                {list.filter(item => item.blocked === false).length}
+              </BlockedListItemHeaderStats>
+              <BlockedListItemHeaderText>{getLocale('allowedScripts')}</BlockedListItemHeaderText>
               <LinkAction>{getLocale('blockAll')}</LinkAction>
             </BlockedListItemHeader>
             {this.getList(list, false)}

@@ -4,6 +4,7 @@
 
 export {
   ShieldsPanel,
+  ShieldsHeader,
   MainToggle,
   SiteOverview,
   TotalBlockedStats,
@@ -30,6 +31,21 @@ export {
 
 } from './structure'
 
-export { Link, LinkAction } from './display'
+export {
+  MainToggleHeading,
+  MainToggleText,
+  ToggleStateText,
+  Favicon,
+  SiteInfoText,
+  TotalBlockedStatsNumber,
+  TotalBlockedStatsText,
+  BlockedInfoRowStats,
+  BlockedInfoRowText,
+  BlockedListSummaryText,
+  BlockedListItemHeaderStats,
+  BlockedListItemHeaderText,
+  Link,
+  LinkAction
+} from './display'
 
-export { ArrowDownIcon, ArrowUpIcon } from './icons/index'
+export { ArrowDownIcon, ArrowUpIcon } from './media'

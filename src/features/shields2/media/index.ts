@@ -5,14 +5,10 @@
 import styled from '../../../theme'
 import { StyledComponentClass } from 'styled-components'
 import ArrowDown from './arrowDown'
+// import ShieldsBackground from './background'
 
 import { ComponentType } from 'react'
 import { ShieldAlertIcon } from '../../../components/icons'
-
-export const ShieldIcon = styled(ShieldAlertIcon as ComponentType)`
-  width: 36px;
-  color: #C5C5D3;
-`
 
 // rotated variants
 function RotatedIconComponent (
@@ -24,5 +20,11 @@ function RotatedIconComponent (
   `
 }
 
+export const ShieldIcon = styled(ShieldAlertIcon as ComponentType)`
+  width: 36px;
+  color: #C5C5D3;
+`
+
 export const ArrowDownIcon = ArrowDown
 export const ArrowUpIcon = RotatedIconComponent(ArrowDown, 180)
+// export const Background = ShieldsBackground

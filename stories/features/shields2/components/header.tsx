@@ -7,10 +7,18 @@ import * as React from 'react'
 // Feature-specific components
 import { Toggle } from '../../../../src/features/shields'
 import {
+  ShieldsHeader,
   MainToggle,
   TotalBlockedStats,
   SiteOverview,
-  SiteInfo
+  SiteInfo,
+  MainToggleHeading,
+  MainToggleText,
+  ToggleStateText,
+  Favicon,
+  SiteInfoText,
+  TotalBlockedStatsNumber,
+  TotalBlockedStatsText
 } from '../../../../src/features/shields2'
 
 // Fake data
@@ -68,27 +76,29 @@ export default class Header extends React.PureComponent<Props, {}> {
   render () {
     const { favicon, hostname, isBlockedListOpen } = this.props
     return (
-      <header>
+      <ShieldsHeader>
         <MainToggle>
           <div>
-            <div>
-              {getLocale('shields')} {getLocale('up')} {getLocale('forThisSite')}
-            </div>
-            <div>{getLocale('enabledMessage')}</div>
+            <MainToggleHeading>
+              {getLocale('shields')} <ToggleStateText>{getLocale('up')}</ToggleStateText> {getLocale('forThisSite')}
+            </MainToggleHeading>
+            <MainToggleText>{getLocale('enabledMessage')}</MainToggleText>
           </div>
           <Toggle disabled={isBlockedListOpen} />
         </MainToggle>
         <SiteOverview>
           <SiteInfo>
-            <img src={favicon} />
-            <span>{hostname}</span>
+            <Favicon src={favicon} />
+            <SiteInfoText>{hostname}</SiteInfoText>
           </SiteInfo>
           <TotalBlockedStats>
-            <span>{this.totalBlocked}</span>
-            <span>{this.totalBlockedString} {this.stringConjunction} {this.httpsUpgradesString}</span>
+            <TotalBlockedStatsNumber>{this.totalBlocked}</TotalBlockedStatsNumber>
+            <TotalBlockedStatsText>
+              {this.totalBlockedString} {this.stringConjunction} {this.httpsUpgradesString}
+            </TotalBlockedStatsText>
           </TotalBlockedStats>
         </SiteOverview>
-      </header>
+      </ShieldsHeader>
     )
   }
 }

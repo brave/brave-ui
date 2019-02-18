@@ -4,6 +4,7 @@
 
 import styled from '../../theme'
 import palette from '../../theme/palette'
+import Background from './media/background.svg'
 
 /**
  * Main wrapper
@@ -11,12 +12,22 @@ import palette from '../../theme/palette'
  */
 export const ShieldsPanel = styled<{}, 'div'>('div')`
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-family: ${p => p.theme.fontFamily.heading};
   position: relative;
   background: #FFFFFF;
   height: 100%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto auto;
+`
+
+export const ShieldsHeader = styled<{}, 'header'>('header')`
+  box-sizing: border-box;
+  background-image: url(${Background});
+  background-repeat: no-repeat;
+  background-position: 0 -15px;
+  user-select: none;
 `
 
 /**
@@ -27,7 +38,7 @@ export const MainToggle = styled<{}, 'section'>('section')`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: auto 1fr;
-  padding: 16px 24px 10px;
+  padding: 20px 24px 10px;
   border-bottom: 1px solid rgba(160, 161, 178, 0.15);
 
   > *:last-child {
@@ -40,7 +51,7 @@ export const SiteOverview = styled<{}, 'div'>('div')`
   display: grid;
   align-items: center;
   justify-content: center;
-  padding: 24px 16px 36px;
+  padding: 24px 0 36px;
   border-bottom: 1px solid rgba(160, 161, 178, 0.15);
 `
 
@@ -48,7 +59,7 @@ export const TotalBlockedStats = styled<{}, 'section'>('section')`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: auto 1fr;
-  max-width: 80%;
+  align-items: center;
   margin: 0px auto 5px;
   gap: 24px;
 `
@@ -57,6 +68,7 @@ export const SiteInfo = styled<{}, 'div'>('div')`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: auto 1fr;
+  align-items: center;
   margin: 0px auto 5px;
   gap: 8px;
 `
@@ -65,14 +77,15 @@ export const SiteInfo = styled<{}, 'div'>('div')`
  * Interface/privacy Rows
  ****************************************************
  */
-//
 export const BlockedInfoRow = styled<{}, 'div'>('div')`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
   border-bottom: 1px solid rgba(160, 161, 178, 0.15);
-  padding: 5px 24px 4px 20px;
+  padding: 6px 24px 5px 20px;
+  color: rgb(88, 89, 104);
+  user-select: none;
   // cursor: pointer;
 
   &:active {
@@ -81,6 +94,10 @@ export const BlockedInfoRow = styled<{}, 'div'>('div')`
 
   &:focus-within {
     outline: 1px solid ${palette.orange400};
+  }
+
+  &:hover {
+    color: ${palette.orange400};
   }
 `
 
@@ -135,19 +152,23 @@ export const BlockedListContent = styled<{}, 'div'>('div')`
 export const BlockedListHeader = styled<{}, 'div'>('div')`
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 4px;
+  grid-gap: 6px;
   align-items: center;
-  padding: 24px 24px 14px;
+  padding: 24px 20px 14px;
   border-bottom: 1px solid rgba(160, 161, 178, 0.15);
 `
 
-export const BlockedListSummary = styled<{}, 'summary'>('summary')`
+interface BlockedListSummaryProps {
+  stats?: boolean
+}
+
+export const BlockedListSummary = styled<BlockedListSummaryProps, 'summary'>('summary')`
   &::-webkit-details-marker {
     display: none;
   }
 
   display: grid;
-  grid-template-columns: 28px 28px 1fr;
+  grid-template-columns: ${p => p.stats === false ? '30px 1fr' : '28px 28px 1fr'};
   align-items: center;
   padding: 5px 24px 5px 20px;
   border-bottom: 1px solid rgba(160, 161, 178, 0.15);
@@ -158,8 +179,7 @@ export const BlockedListStatic = styled<{}, 'ul'>('ul')`
   list-style-type: none;
   height: 354px;
   overflow: auto;
-  margin: 0;
-  padding: 6px 0;
+  padding: 0;
   margin: 6px 24px;
 `
 
@@ -173,11 +193,12 @@ export const BlockedListItemHeader = styled<{}, 'li'>('li')`
   position: sticky;
   top: 0;
   display: grid;
-  grid-template-columns: 28px 1fr auto;
+  grid-template-columns: 36px 1fr auto;
   align-items: center;
-  padding: 8px 24px 8px 20px;
+  padding: 11px 24px 10px 14px;
   margin-bottom: 6px;
   line-height: 1;
+  background: rgb(249, 249, 253);
   border-top: 1px solid rgba(160, 161, 178, 0.15);
   border-bottom: 1px solid rgba(160, 161, 178, 0.15);
 
@@ -206,7 +227,9 @@ export const BlockedListItemWithOptions = styled<{}, 'li'>('li')`
     vertical-align: middle;
     line-height: 1.5;
     font-weight: 500;
-    margin: 0px 10px 0px 28px;
+    margin: 0px 10px 0px 30px;
+    font-size: 12px;
+    color: rgb(88, 89, 104);
   }
 `
 

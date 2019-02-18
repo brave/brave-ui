@@ -11,7 +11,11 @@ import {
   BlockedListStatic,
   BlockedListItem,
   BlockedListFooter,
-  ArrowUpIcon
+  ArrowUpIcon,
+  Favicon,
+  SiteInfoText,
+  BlockedInfoRowStats,
+  BlockedListSummaryText
 } from '../../../../../src/features/shields2'
 import { Button } from '../../../../../src/components'
 
@@ -33,13 +37,14 @@ export default class StaticList extends React.PureComponent<Props, {}> {
     return (
       <BlockedListContent>
         <BlockedListHeader>
-          <img src={favicon} /> {hostname}
+          <Favicon src={favicon} />
+          <SiteInfoText>{hostname}</SiteInfoText>
         </BlockedListHeader>
         <details open={true}>
           <BlockedListSummary onClick={onClose}>
           <ArrowUpIcon />
-          <span>{stats > 99 ? '99+' : stats}</span>
-          <span>{name}</span>
+          <BlockedInfoRowStats>{stats > 99 ? '99+' : stats}</BlockedInfoRowStats>
+          <BlockedListSummaryText>{name}</BlockedListSummaryText>
           </BlockedListSummary>
           <BlockedListStatic>
             {list.map((item, index) => <BlockedListItem key={index}>{item}</BlockedListItem>)}

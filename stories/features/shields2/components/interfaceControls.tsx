@@ -5,7 +5,13 @@
 import * as React from 'react'
 
 // Feature-specific components
-import { BlockedInfoRow, BlockedInfoRowData, ArrowDownIcon } from '../../../../src/features/shields2'
+import {
+  BlockedInfoRow,
+  BlockedInfoRowData,
+  ArrowDownIcon,
+  BlockedInfoRowStats,
+  BlockedInfoRowText
+} from '../../../../src/features/shields2'
 import { Toggle } from '../../../../src/features/shields'
 
 // Group Components
@@ -92,8 +98,8 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
             onKeyDown={this.onOpen3rdPartyTrackersBlockedViaKeyboard}
           >
             <ArrowDownIcon />
-            <span>{adsTrackersBlocked > 99 ? '99+' : adsTrackersBlocked}</span>
-            <span>{getLocale('thirdPartyTrackersBlocked')}</span>
+            <BlockedInfoRowStats>{adsTrackersBlocked > 99 ? '99+' : adsTrackersBlocked}</BlockedInfoRowStats>
+            <BlockedInfoRowText>{getLocale('thirdPartyTrackersBlocked')}</BlockedInfoRowText>
           </BlockedInfoRowData>
           <Toggle disabled={isBlockedListOpen} />
           {
@@ -115,8 +121,8 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
             onKeyDown={this.onOpen3rdPartyTrackersBlockedViaKeyboard}
           >
             <ArrowDownIcon />
-            <span>{httpsUpgrades > 99 ? '99+' : httpsUpgrades}</span>
-            <span>{getLocale('connectionsUpgradedHTTPS')}</span>
+            <BlockedInfoRowStats>{httpsUpgrades > 99 ? '99+' : httpsUpgrades}</BlockedInfoRowStats>
+            <BlockedInfoRowText>{getLocale('connectionsUpgradedHTTPS')}</BlockedInfoRowText>
           </BlockedInfoRowData>
           <Toggle disabled={isBlockedListOpen} />
           {

@@ -11,7 +11,9 @@ import {
   BlockedInfoRowSingle,
   BlockedInfoRowData,
   BlockedInfoRowDataForSelect,
-  ArrowDownIcon
+  ArrowDownIcon,
+  BlockedInfoRowStats,
+  BlockedInfoRowText
 } from '../../../../src/features/shields2'
 import { Toggle, SelectBox } from '../../../../src/features/shields'
 
@@ -99,8 +101,8 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
             onKeyDown={this.onOpenScriptsBlockedOpenViaKeyboard}
           >
             <ArrowDownIcon />
-            <span>{scriptsBlocked > 99 ? '99+' : scriptsBlocked}</span>
-            <span>{getLocale('scriptsBlocked')}</span>
+            <BlockedInfoRowStats>{scriptsBlocked > 99 ? '99+' : scriptsBlocked}</BlockedInfoRowStats>
+            <BlockedInfoRowText>{getLocale('scriptsBlocked')}</BlockedInfoRowText>
           </BlockedInfoRowData>
           <Toggle disabled={isBlockedListOpen} />
           {
@@ -108,7 +110,6 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
               <DynamicList
                 favicon={favicon}
                 hostname={hostname}
-                stats={scriptsBlocked}
                 name={getLocale('scriptsOnThisSite')}
                 list={data.blockedScriptsResouces}
                 onClose={this.onOpenScriptsBlockedOpen}
@@ -129,7 +130,7 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
             onKeyDown={this.onOpenDeviceRecognitionOpenViaKeyboard}
           >
             <ArrowDownIcon />
-            <span>{fingerprintingBlocked > 99 ? '99+' : fingerprintingBlocked}</span>
+            <BlockedInfoRowStats>{fingerprintingBlocked > 99 ? '99+' : fingerprintingBlocked}</BlockedInfoRowStats>
           </BlockedInfoRowDataForSelect>
           <SelectBox disabled={isBlockedListOpen}>
             <option value='block_third_party'>{getLocale('thirdPartyFingerprintingBlocked')}</option>
