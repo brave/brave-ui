@@ -4,6 +4,8 @@
 
 import { Notification } from './'
 import styled from 'styled-components'
+import Button, { Props as ButtonProps } from '../../../components/buttonsIndicators/button'
+import { ComponentType } from 'react'
 
 interface StyledProps {
   connected?: boolean,
@@ -296,9 +298,15 @@ export const StyledDateText = styled<StyledProps, 'span'>('span')`
   font-family: Muli, sans-serif;
 `
 
-export const StyledButton = styled<StyledProps, 'div'>('div')`
-  width: 88px;
-  margin: 12px 122px 15px 125px;
+export const StyledButtonWrapper = styled<StyledProps, 'div'>('div')`
+  margin: 12px 0 15px;
+  display: flex;
+  justify-content: center;
+`
+
+export const StyledButton = styled(Button as ComponentType<ButtonProps>)`
+  padding-left: 27px;
+  padding-right: 27px;
 `
 
 export const StyledPipe = styled<StyledProps, 'span'>('span')`

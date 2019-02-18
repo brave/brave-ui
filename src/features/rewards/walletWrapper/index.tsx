@@ -32,6 +32,7 @@ import {
   StyledMessageText,
   StyledDateText,
   StyledNotificationContent,
+  StyledButtonWrapper,
   StyledButton,
   StyledNotificationMessage,
   StyledPipe
@@ -109,7 +110,7 @@ export interface Props {
   gradientTop?: string
   isMobile?: boolean
   notification?: Notification
-  onFetchCaptcha?: () => void
+  onNotificationClick?: () => void
   onGrantHide?: () => void
   onFinish?: () => void
   onSolution?: (x: number, y: number) => void
@@ -141,9 +142,9 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
     })
   }
 
-  onFetchCaptcha = () => {
-    if (this.props.onFetchCaptcha) {
-      this.props.onFetchCaptcha()
+  onNotificationClick = () => {
+    if (this.props.onNotificationClick) {
+      this.props.onNotificationClick()
     }
   }
 
@@ -244,6 +245,36 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
     )
   }
 
+  getNotificationButton = (type: NotificationType, onClose: any) => {
+    let buttonText
+    let buttonAction
+
+    switch (type) {
+      case 'grant':
+        buttonText = getLocale('claim')
+        buttonAction = this.onNotificationClick
+        break
+      case 'backupWallet':
+        buttonText = getLocale('backupNow')
+        buttonAction = this.onNotificationClick
+        break
+      default:
+        buttonText = getLocale('ok').toUpperCase()
+        buttonAction = onClose
+        break
+    }
+
+    return (
+      <StyledButton
+        size={'small'}
+        type={'accent'}
+        level={'primary'}
+        onClick={buttonAction}
+        text={buttonText}
+      />
+    )
+  }
+
   generateNotification = (notification: Notification | undefined) => {
     if (!notification) {
       return null
@@ -259,25 +290,9 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
         <StyledNotificationContent>
           {this.getNotificationIcon(notification)}
           {this.getNotificationMessage(notification)}
-          <StyledButton>
-            {
-              notification.type === 'grant'
-                ? <Button
-                  size={'small'}
-                  type={'accent'}
-                  level={'primary'}
-                  onClick={this.onFetchCaptcha}
-                  text={getLocale('claim')}
-                />
-                : <Button
-                  size={'small'}
-                  type={'accent'}
-                  level={'primary'}
-                  onClick={onClose}
-                  text={'OK'}
-                />
-            }
-          </StyledButton>
+          <StyledButtonWrapper>
+            {this.getNotificationButton(notification.type, onClose)}
+          </StyledButtonWrapper>
         </StyledNotificationContent>
       </>
     )
