@@ -170,6 +170,7 @@ export const BlockedListContent = styled<{}, 'div'>('div')`
   width: 100%;
   height: 100%;
   z-index: 2;
+  user-select: none;
 `
 
 export const BlockedListHeader = styled<{}, 'div'>('div')`
@@ -200,7 +201,7 @@ export const BlockedListSummary = styled<BlockedListSummaryProps, 'summary'>('su
 export const BlockedListStatic = styled<{}, 'ul'>('ul')`
   box-sizing: border-box;
   list-style-type: none;
-  height: 354px;
+  height: 294px;
   overflow: auto;
   padding: 0;
   margin: 6px 24px;
@@ -209,6 +210,7 @@ export const BlockedListStatic = styled<{}, 'ul'>('ul')`
 export const BlockedListDynamic = styled(BlockedListStatic)`
   margin: 0;
   padding: 0;
+  height: 306px;
 `
 
 export const BlockedListItemHeader = styled<{}, 'li'>('li')`
