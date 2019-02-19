@@ -32,7 +32,9 @@ interface Props {
 
 interface State {
   trackersBlockedOpen: boolean
+  trackersBlockedEnabled: boolean
   connectionsUpgradedOpen: boolean
+  connectionsUpgradedEnabled: boolean
 }
 
 export default class InterfaceControls extends React.PureComponent<Props, State> {
@@ -40,7 +42,9 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
     super(props)
     this.state = {
       trackersBlockedOpen: false,
-      connectionsUpgradedOpen: false
+      trackersBlockedEnabled: true,
+      connectionsUpgradedOpen: false,
+      connectionsUpgradedEnabled: true
     }
   }
 
@@ -48,6 +52,8 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
     const { isBlockedListOpen } = this.props
     return isBlockedListOpen ? -1 : 0
   }
+
+  // ads trackers blocked
 
   onOpen3rdPartyTrackersBlocked = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.currentTarget) {
@@ -66,6 +72,12 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
       }
     }
   }
+
+  onChange3rdPartyTrackersBlockedEnabled = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ trackersBlockedEnabled: event.target.checked })
+  }
+
+  // HTTPS
 
   onOpenConnectionsUpgradedToHTTPS = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.currentTarget) {
@@ -86,9 +98,18 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
     }
   }
 
+  onChangeConnectionsUpgradedToHTTPSEnabled = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ connectionsUpgradedEnabled: event.target.checked })
+  }
+
   render () {
     const { isBlockedListOpen, favicon, hostname, adsTrackersBlocked, httpsUpgrades } = this.props
-    const { trackersBlockedOpen, connectionsUpgradedOpen } = this.state
+    const {
+      trackersBlockedOpen,
+      trackersBlockedEnabled,
+      connectionsUpgradedOpen,
+      connectionsUpgradedEnabled
+    } = this.state
     return (
       <>
         <BlockedInfoRow>
@@ -101,7 +122,11 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
             <BlockedInfoRowStats>{adsTrackersBlocked > 99 ? '99+' : adsTrackersBlocked}</BlockedInfoRowStats>
             <BlockedInfoRowText>{getLocale('thirdPartyTrackersBlocked')}</BlockedInfoRowText>
           </BlockedInfoRowData>
-          <Toggle disabled={isBlockedListOpen} />
+          <Toggle
+            disabled={isBlockedListOpen}
+            checked={trackersBlockedEnabled}
+            onChange={this.onChange3rdPartyTrackersBlockedEnabled}
+          />
           {
             trackersBlockedOpen &&
               <StaticList
@@ -124,7 +149,11 @@ export default class InterfaceControls extends React.PureComponent<Props, State>
             <BlockedInfoRowStats>{httpsUpgrades > 99 ? '99+' : httpsUpgrades}</BlockedInfoRowStats>
             <BlockedInfoRowText>{getLocale('connectionsUpgradedHTTPS')}</BlockedInfoRowText>
           </BlockedInfoRowData>
-          <Toggle disabled={isBlockedListOpen} />
+          <Toggle
+            disabled={isBlockedListOpen}
+            checked={connectionsUpgradedEnabled}
+            onChange={this.onChangeConnectionsUpgradedToHTTPSEnabled}
+          />
           {
             connectionsUpgradedOpen &&
               <StaticList

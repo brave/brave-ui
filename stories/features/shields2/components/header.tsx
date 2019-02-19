@@ -36,6 +36,7 @@ interface Props {
   scriptsBlocked: number
   httpsUpgrades: number
   fingerprintingBlocked: number
+  fakeOnChange: () => void
 }
 
 export default class Header extends React.PureComponent<Props, {}> {
@@ -78,7 +79,7 @@ export default class Header extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { enabled, favicon, hostname, isBlockedListOpen } = this.props
+    const { fakeOnChange, enabled, favicon, hostname, isBlockedListOpen } = this.props
     return (
       <ShieldsHeader status={enabled ? 'enabled' : 'disabled'}>
         <MainToggle status={enabled ? 'enabled' : 'disabled'}>
@@ -92,7 +93,7 @@ export default class Header extends React.PureComponent<Props, {}> {
             </MainToggleHeading>
             {enabled ? <MainToggleText>{getLocale('enabledMessage')}</MainToggleText> : null}
           </div>
-          <Toggle size='large' disabled={isBlockedListOpen} />
+          <Toggle size='large' checked={enabled} onChange={fakeOnChange} disabled={isBlockedListOpen} />
         </MainToggle>
         <SiteOverview status={enabled ? 'enabled' : 'disabled'}>
           <SiteInfo>

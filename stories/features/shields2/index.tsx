@@ -44,7 +44,8 @@ export default class Shields extends React.PureComponent<Props, State> {
       adsTrackersBlocked,
       httpsUpgrades,
       scriptsBlocked,
-      fingerprintingBlocked
+      fingerprintingBlocked,
+      fakeOnChange
     } = this.props
     const { isBlockedListOpen } = this.state
     return (
@@ -58,6 +59,7 @@ export default class Shields extends React.PureComponent<Props, State> {
           httpsUpgrades={httpsUpgrades}
           scriptsBlocked={scriptsBlocked}
           fingerprintingBlocked={fingerprintingBlocked}
+          fakeOnChange={fakeOnChange}
         />
         {
           enabled ? (

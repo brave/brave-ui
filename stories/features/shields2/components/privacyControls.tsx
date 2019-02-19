@@ -37,6 +37,7 @@ interface Props {
 interface State {
   deviceRecognitionOpen: boolean
   scriptsBlockedOpen: boolean
+  scriptsBlockedEnabled: boolean
 }
 
 export default class PrivacyControls extends React.PureComponent<Props, State> {
@@ -44,7 +45,8 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
     super(props)
     this.state = {
       deviceRecognitionOpen: false,
-      scriptsBlockedOpen: false
+      scriptsBlockedOpen: false,
+      scriptsBlockedEnabled: true
     }
   }
 
@@ -71,6 +73,10 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
     }
   }
 
+  onChangeScriptsBlockedEnabled = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ scriptsBlockedEnabled: event.target.checked })
+  }
+
   onOpenDeviceRecognitionOpen = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.currentTarget) {
       event.currentTarget.blur()
@@ -91,7 +97,11 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
 
   render () {
     const { favicon, hostname, isBlockedListOpen, scriptsBlocked, fingerprintingBlocked } = this.props
-    const { deviceRecognitionOpen, scriptsBlockedOpen } = this.state
+    const {
+      deviceRecognitionOpen,
+      scriptsBlockedEnabled,
+      scriptsBlockedOpen
+    } = this.state
     return (
       <>
         <BlockedInfoRow>
@@ -104,7 +114,11 @@ export default class PrivacyControls extends React.PureComponent<Props, State> {
             <BlockedInfoRowStats>{scriptsBlocked > 99 ? '99+' : scriptsBlocked}</BlockedInfoRowStats>
             <BlockedInfoRowText>{getLocale('scriptsBlocked')}</BlockedInfoRowText>
           </BlockedInfoRowData>
-          <Toggle disabled={isBlockedListOpen} />
+          <Toggle
+            disabled={isBlockedListOpen}
+            checked={scriptsBlockedEnabled}
+            onChange={this.onChangeScriptsBlockedEnabled}
+          />
           {
             scriptsBlockedOpen &&
               <DynamicList
