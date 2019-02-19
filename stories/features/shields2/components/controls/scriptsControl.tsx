@@ -77,20 +77,20 @@ export default class ScriptsControls extends React.PureComponent<Props, State> {
       <>
         <BlockedInfoRow>
           <BlockedInfoRowData
+            tabIndex={this.tabIndex}
             onClick={this.onOpenScriptsBlockedOpen}
             onKeyDown={this.onOpenScriptsBlockedOpenViaKeyboard}
           >
-            <ArrowDownIcon tabIndex={this.tabIndex} />
+            <ArrowDownIcon />
             <BlockedInfoRowStats>{scriptsBlocked > 99 ? '99+' : scriptsBlocked}</BlockedInfoRowStats>
             <BlockedInfoRowText>{getLocale('scriptsBlocked')}</BlockedInfoRowText>
           </BlockedInfoRowData>
-          {/* <label style={{display: 'flex', width: '100%', height: '100%', marginTop: '-6px', marginBottom: '-5px'}}> */}
-            <Toggle
-              disabled={isBlockedListOpen}
-              checked={scriptsBlockedEnabled}
-              onChange={this.onChangeScriptsBlockedEnabled}
-            />
-          {/* </label> */}
+          <Toggle
+            size='small'
+            disabled={isBlockedListOpen}
+            checked={scriptsBlockedEnabled}
+            onChange={this.onChangeScriptsBlockedEnabled}
+          />
         </BlockedInfoRow>
         {
           scriptsBlockedOpen &&

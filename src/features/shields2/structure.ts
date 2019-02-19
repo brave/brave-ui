@@ -6,6 +6,7 @@ import styled from '../../theme'
 import palette from '../../theme/palette'
 import Background from './media/background.svg'
 import { BlockedInfoRowStats, BlockedInfoRowText } from './display'
+import { StyledWrapper as Toggle } from '../shields/toggle/style'
 
 /**
  * Main wrapper
@@ -44,13 +45,17 @@ interface MainToggleProps {
 export const MainToggle = styled<MainToggleProps, 'section'>('section')`
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 3fr 1fr;
   padding: 16px 24px 10px;
   align-items: ${p => p.status === 'enabled' ? null : 'center'};
   border-bottom: 1px solid rgba(160, 161, 178, 0.15);
 
   > *:last-child {
+    display: flex;
     justify-content: flex-end;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 54px;
   }
 `
 
@@ -74,6 +79,7 @@ export const TotalBlockedStats = styled<{}, 'section'>('section')`
   align-items: center;
   margin: 0px auto 5px;
   gap: 24px;
+  max-width: 70%;
 `
 
 export const SiteInfo = styled<{}, 'div'>('div')`
@@ -92,8 +98,8 @@ export const BlockedInfoRow = styled<{}, 'div'>('div')`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr auto;
+  grid-gap: 6px;
   align-items: center;
-  padding-right: 24px;
   border-bottom: 1px solid rgba(160, 161, 178, 0.15);
   color: ${palette.grey600};
   user-select: none;
@@ -101,15 +107,27 @@ export const BlockedInfoRow = styled<{}, 'div'>('div')`
   &:active {
     outline: none;
   }
+
+  ${Toggle} {
+    display: flex;
+    position: relative;
+    width: fit-content;
+    padding: 0 24px;
+    height: fit-content;
+    height: 100%;
+    align-items: center;
+  }
 `
 
 export const BlockedInfoRowSingle = styled(BlockedInfoRow)`
   padding: 6px 24px 5px 74px;
   cursor: default;
+  grid-template-columns: 1fr;
 `
 
 export const BlockedInfoRowForSelect = styled(BlockedInfoRow)`
   grid-template-columns: auto 1fr;
+  padding-right: 24px;
 `
 
 export const BlockedInfoRowData = styled<{}, 'div'>('div')`
@@ -118,7 +136,16 @@ export const BlockedInfoRowData = styled<{}, 'div'>('div')`
   padding: 6px 0 5px 20px;
   grid-gap: 2px;
   align-items: center;
-  outline: none;
+
+  &:active {
+    outline: none;
+  }
+
+  &:focus {
+    outline-width: 2px;
+    outline-offset: -2px;
+    outline-color: ${palette.orange400};
+  }
 
   &:hover {
     cursor: pointer;

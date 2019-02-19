@@ -28,11 +28,7 @@ export const ShieldIcon = styled(ShieldAlertIcon as ComponentType)`
   color: ${palette.grey300};
 `
 
-interface ArrowDownIconProps {
-  tabIndex: number
-}
-
-export const ArrowDownIcon = styled(ArrowDown as ComponentType<ArrowDownIconProps>)`
+export const ArrowDownIcon = styled(ArrowDown as ComponentType)`
   &:focus {
     outline-width: 2px;
     outline-offset: -6px;

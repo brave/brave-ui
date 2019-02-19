@@ -70,10 +70,11 @@ export default class DeviceRecognitionControl extends React.PureComponent<Props,
       <>
         <BlockedInfoRowForSelect>
           <BlockedInfoRowDataForSelect
+            tabIndex={this.tabIndex}
             onClick={this.onOpenDeviceRecognitionOpen}
             onKeyDown={this.onOpenDeviceRecognitionOpenViaKeyboard}
           >
-            <ArrowDownIcon tabIndex={this.tabIndex} />
+            <ArrowDownIcon />
             <BlockedInfoRowStats>{fingerprintingBlocked > 99 ? '99+' : fingerprintingBlocked}</BlockedInfoRowStats>
           </BlockedInfoRowDataForSelect>
           <SelectBox disabled={isBlockedListOpen}>

@@ -77,14 +77,16 @@ export default class AdsTrackersControl extends React.PureComponent<Props, State
       <>
         <BlockedInfoRow>
           <BlockedInfoRowData
+            tabIndex={this.tabIndex}
             onClick={this.onOpen3rdPartyTrackersBlocked}
             onKeyDown={this.onOpen3rdPartyTrackersBlockedViaKeyboard}
           >
-            <ArrowDownIcon tabIndex={this.tabIndex} />
+            <ArrowDownIcon />
             <BlockedInfoRowStats>{adsTrackersBlocked > 99 ? '99+' : adsTrackersBlocked}</BlockedInfoRowStats>
             <BlockedInfoRowText>{getLocale('thirdPartyTrackersBlocked')}</BlockedInfoRowText>
           </BlockedInfoRowData>
           <Toggle
+            size='small'
             disabled={isBlockedListOpen}
             checked={trackersBlockedEnabled}
             onChange={this.onChange3rdPartyTrackersBlockedEnabled}
