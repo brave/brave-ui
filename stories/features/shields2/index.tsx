@@ -38,6 +38,7 @@ export default class Shields extends React.PureComponent<Props, State> {
   }
   render () {
     const {
+      enabled,
       favicon,
       hostname,
       adsTrackersBlocked,
@@ -49,6 +50,7 @@ export default class Shields extends React.PureComponent<Props, State> {
     return (
       <ShieldsPanel style={{ width: '370px' }}>
         <Header
+          enabled={enabled}
           favicon={favicon}
           hostname={hostname}
           isBlockedListOpen={isBlockedListOpen}
@@ -57,22 +59,28 @@ export default class Shields extends React.PureComponent<Props, State> {
           scriptsBlocked={scriptsBlocked}
           fingerprintingBlocked={fingerprintingBlocked}
         />
-        <InterfaceControls
-          favicon={favicon}
-          hostname={hostname}
-          setBlockedListOpen={this.setBlockedListOpen}
-          isBlockedListOpen={isBlockedListOpen}
-          adsTrackersBlocked={adsTrackersBlocked}
-          httpsUpgrades={httpsUpgrades}
-        />
-        <PrivacyControls
-          favicon={favicon}
-          hostname={hostname}
-          setBlockedListOpen={this.setBlockedListOpen}
-          isBlockedListOpen={isBlockedListOpen}
-          scriptsBlocked={scriptsBlocked}
-          fingerprintingBlocked={fingerprintingBlocked}
-        />
+        {
+          enabled ? (
+            <>
+              <InterfaceControls
+                favicon={favicon}
+                hostname={hostname}
+                setBlockedListOpen={this.setBlockedListOpen}
+                isBlockedListOpen={isBlockedListOpen}
+                adsTrackersBlocked={adsTrackersBlocked}
+                httpsUpgrades={httpsUpgrades}
+              />
+              <PrivacyControls
+                favicon={favicon}
+                hostname={hostname}
+                setBlockedListOpen={this.setBlockedListOpen}
+                isBlockedListOpen={isBlockedListOpen}
+                scriptsBlocked={scriptsBlocked}
+                fingerprintingBlocked={fingerprintingBlocked}
+              />
+            </>
+          ) : null
+        }
         <Footer isBlockedListOpen={isBlockedListOpen} />
       </ShieldsPanel>
     )

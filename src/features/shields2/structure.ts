@@ -5,10 +5,10 @@
 import styled from '../../theme'
 import palette from '../../theme/palette'
 import Background from './media/background.svg'
+import { BlockedInfoRowStats, BlockedInfoRowText } from './display'
 
 /**
  * Main wrapper
- ****************************************************
  */
 export const ShieldsPanel = styled<{}, 'div'>('div')`
   box-sizing: border-box;
@@ -22,23 +22,31 @@ export const ShieldsPanel = styled<{}, 'div'>('div')`
   grid-template-rows: auto auto auto auto;
 `
 
-export const ShieldsHeader = styled<{}, 'header'>('header')`
+interface ShieldsHeaderProps {
+  status: 'enabled' | 'disabled'
+}
+
+export const ShieldsHeader = styled<ShieldsHeaderProps, 'header'>('header')`
   box-sizing: border-box;
   background-image: url(${Background});
   background-repeat: no-repeat;
-  background-position: 0 -15px;
+  background-position: ${p => p.status === 'enabled' ? '0 -15px' : '0 0'};
   user-select: none;
 `
 
 /**
  * Header
- ****************************************************
  */
-export const MainToggle = styled<{}, 'section'>('section')`
+interface MainToggleProps {
+  status: 'enabled' | 'disabled'
+}
+
+export const MainToggle = styled<MainToggleProps, 'section'>('section')`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: auto 1fr;
-  padding: 20px 24px 10px;
+  padding: 16px 24px 10px;
+  align-items: ${p => p.status === 'enabled' ? null : 'center'};
   border-bottom: 1px solid rgba(160, 161, 178, 0.15);
 
   > *:last-child {
@@ -46,13 +54,17 @@ export const MainToggle = styled<{}, 'section'>('section')`
   }
 `
 
-export const SiteOverview = styled<{}, 'div'>('div')`
+interface SiteOverviewProps {
+  status: 'enabled' | 'disabled'
+}
+
+export const SiteOverview = styled<SiteOverviewProps, 'div'>('div')`
   box-sizing: border-box;
   display: grid;
   align-items: center;
   justify-content: center;
   padding: 24px 0 36px;
-  border-bottom: 1px solid rgba(160, 161, 178, 0.15);
+  border-bottom: 1px solid ${p => p.status === 'enabled' ? 'rgba(160, 161, 178, 0.15)' : 'transparent'};
 `
 
 export const TotalBlockedStats = styled<{}, 'section'>('section')`
@@ -75,7 +87,6 @@ export const SiteInfo = styled<{}, 'div'>('div')`
 
 /**
  * Interface/privacy Rows
- ****************************************************
  */
 export const BlockedInfoRow = styled<{}, 'div'>('div')`
   box-sizing: border-box;
@@ -86,7 +97,6 @@ export const BlockedInfoRow = styled<{}, 'div'>('div')`
   padding: 6px 24px 5px 20px;
   color: rgb(88, 89, 104);
   user-select: none;
-  // cursor: pointer;
 
   &:active {
     outline: none;
@@ -98,11 +108,18 @@ export const BlockedInfoRow = styled<{}, 'div'>('div')`
 
   &:hover {
     color: ${palette.orange400};
+
+    ${BlockedInfoRowStats} {
+      color: ${palette.orange400};
+    }
+    ${BlockedInfoRowText} {
+      color: ${palette.orange400};
+    }
   }
 `
 
 export const BlockedInfoRowSingle = styled(BlockedInfoRow)`
-  margin-left: 54px;
+  padding: 6px 24px 5px 74px;
   cursor: default;
   &:focus-within {
     outline: none;
@@ -119,15 +136,22 @@ export const BlockedInfoRowData = styled<{}, 'div'>('div')`
   grid-gap: 2px;
   align-items: center;
   outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 export const BlockedInfoRowDataForSelect = styled(BlockedInfoRowData)`
   grid-template-columns: auto 26px 1fr;
+
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 /**
  * Footer
- ****************************************************
  */
 export const MainFooter = styled<{}, 'div'>('div')`
   box-sizing: border-box;
@@ -136,7 +160,6 @@ export const MainFooter = styled<{}, 'div'>('div')`
 
 /**
  * Blocked Lists
- ****************************************************
  */
 export const BlockedListContent = styled<{}, 'div'>('div')`
   box-sizing: border-box;
@@ -247,4 +270,17 @@ export const BlockedListFooterWithOptions = styled<{}, 'footer'>('footer')`
   justify-content: space-between;
   padding: 12px 24px;
   border-top: 1px solid rgba(160, 161, 178, 0.15);
+`
+
+/**
+ * Disabled content
+ */
+export const DisabledContentView = styled<{}, 'section'>('section')`
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  grid-gap: 4px;
+  align-items: center;
+  max-width: 80%;
+  margin: 5px auto 8px;
 `

@@ -27,8 +27,8 @@ export {
   BlockedListItem,
   BlockedListItemWithOptions,
   BlockedListFooter,
-  BlockedListFooterWithOptions
-
+  BlockedListFooterWithOptions,
+  DisabledContentView
 } from './structure'
 
 export {
@@ -45,7 +45,8 @@ export {
   BlockedListItemHeaderStats,
   BlockedListItemHeaderText,
   Link,
-  LinkAction
+  LinkAction,
+  DisabledContentText
 } from './display'
 
-export { ArrowDownIcon, ArrowUpIcon } from './media'
+export { ArrowDownIcon, ArrowUpIcon, ShieldIcon } from './media'

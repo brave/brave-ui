@@ -7,14 +7,12 @@ import palette from '../../theme/palette'
 
 /**
  * Header
- *****************************************************
  */
 export const MainToggleHeading = styled<{}, 'h1'>('h1')`
   box-sizing: border-box;
   font-size: 16px;
-  line-height: 16px;
+  line-height: 20px;
   font-weight: 500;
-  line-height: 1;
   color: rgb(88, 89, 104);
   margin: 0;
 `
@@ -28,9 +26,13 @@ export const MainToggleText = styled<{}, 'p'>('p')`
   margin: 0;
 `
 
-export const ToggleStateText = styled<{}, 'span'>('span')`
+interface ToggleStateTextProps {
+  status: 'enabled' | 'disabled'
+}
+
+export const ToggleStateText = styled<ToggleStateTextProps, 'span'>('span')`
   box-sizing: border-box;
-  color: ${palette.orange400};
+  color: ${p => p.status === 'enabled' ? palette.orange400 : 'rgb(197, 197, 211)'};
   font-size: inherit;
   text-transform: uppercase;
   font-style: normal;
@@ -57,7 +59,6 @@ export const TotalBlockedStatsNumber = styled<{}, 'h2'>('h2')`
   box-sizing: border-box;
   font-size: 38px;
   text-transform: uppercase;
-  font-weight: 600;
   color: rgb(124, 125, 140);
   font-weight: normal;
   margin: 0;
@@ -73,7 +74,6 @@ export const TotalBlockedStatsText = styled<{}, 'span'>('span')`
 
 /**
  * Interface/Privacy rows
- *****************************************************
  */
 export const BlockedInfoRowStats = styled<{}, 'span'>('span')`
   box-sizing: border-box;
@@ -93,7 +93,6 @@ export const BlockedInfoRowText = styled<{}, 'span'>('span')`
 
 /**
  * Blocked Lists
- *****************************************************
  */
 export const BlockedListSummaryText = styled<{}, 'span'>('span')`
   box-sizing: border-box;
@@ -105,7 +104,6 @@ export const BlockedListSummaryText = styled<{}, 'span'>('span')`
 
 export const BlockedListItemHeaderText = styled<{}, 'span'>('span')`
   box-sizing: border-box;
-  color: inherit;
   font-weight: 500;
   color: rgb(88, 89, 104);
   font-size: 12px;
@@ -120,7 +118,6 @@ export const BlockedListItemHeaderStats = styled<{}, 'span'>('span')`
 
 /**
  * Buttons that look like links
- *****************************************************
  */
 export const Link = styled<{}, 'button'>('button')`
   box-sizing: border-box;
@@ -133,6 +130,10 @@ export const Link = styled<{}, 'button'>('button')`
   font-size: 13px;
   font-weight: 600;
   display: inline-block;
+
+  &:hover {
+    text-decoration: underline;
+  }
 
   &:focus {
     outline-offset: 6px;
@@ -151,4 +152,12 @@ export const LinkAction = styled(Link)`
   &:focus {
     outline-offset: initial;
   }
+`
+
+export const DisabledContentText = styled<{}, 'div'>('div')`
+  box-sizing: border-box;
+  color: rgb(124, 125, 140);
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 18px;
 `

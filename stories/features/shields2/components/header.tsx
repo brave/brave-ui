@@ -18,13 +18,17 @@ import {
   Favicon,
   SiteInfoText,
   TotalBlockedStatsNumber,
-  TotalBlockedStatsText
+  TotalBlockedStatsText,
+  DisabledContentView,
+  ShieldIcon,
+  DisabledContentText
 } from '../../../../src/features/shields2'
 
 // Fake data
 import { getLocale } from '../fakeLocale'
 
 interface Props {
+  enabled: boolean
   favicon: string
   hostname: string
   isBlockedListOpen: boolean
@@ -74,29 +78,44 @@ export default class Header extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { favicon, hostname, isBlockedListOpen } = this.props
+    const { enabled, favicon, hostname, isBlockedListOpen } = this.props
     return (
-      <ShieldsHeader>
-        <MainToggle>
+      <ShieldsHeader status={enabled ? 'enabled' : 'disabled'}>
+        <MainToggle status={enabled ? 'enabled' : 'disabled'}>
           <div>
             <MainToggleHeading>
-              {getLocale('shields')} <ToggleStateText>{getLocale('up')}</ToggleStateText> {getLocale('forThisSite')}
+              {getLocale('shields')}
+              <ToggleStateText status={enabled ? 'enabled' : 'disabled'}>
+                {enabled ? ` ${getLocale('up')} ` : ` ${getLocale('down')} `}
+              </ToggleStateText>
+              {getLocale('forThisSite')}
             </MainToggleHeading>
-            <MainToggleText>{getLocale('enabledMessage')}</MainToggleText>
+            {enabled ? <MainToggleText>{getLocale('enabledMessage')}</MainToggleText> : null}
           </div>
-          <Toggle disabled={isBlockedListOpen} />
+          <Toggle size='large' disabled={isBlockedListOpen} />
         </MainToggle>
-        <SiteOverview>
+        <SiteOverview status={enabled ? 'enabled' : 'disabled'}>
           <SiteInfo>
             <Favicon src={favicon} />
             <SiteInfoText>{hostname}</SiteInfoText>
           </SiteInfo>
-          <TotalBlockedStats>
-            <TotalBlockedStatsNumber>{this.totalBlocked}</TotalBlockedStatsNumber>
-            <TotalBlockedStatsText>
-              {this.totalBlockedString} {this.stringConjunction} {this.httpsUpgradesString}
-            </TotalBlockedStatsText>
-          </TotalBlockedStats>
+          {
+            enabled
+            ? (
+              <TotalBlockedStats>
+                <TotalBlockedStatsNumber>{this.totalBlocked}</TotalBlockedStatsNumber>
+                <TotalBlockedStatsText>
+                  {this.totalBlockedString} {this.stringConjunction} {this.httpsUpgradesString}
+                </TotalBlockedStatsText>
+              </TotalBlockedStats>
+            )
+            : (
+              <DisabledContentView>
+                <div><ShieldIcon /></div>
+                <DisabledContentText>{getLocale('disabledMessage')}</DisabledContentText>
+              </DisabledContentView>
+            )
+          }
         </SiteOverview>
       </ShieldsHeader>
     )

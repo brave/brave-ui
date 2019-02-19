@@ -5,7 +5,6 @@
 import styled from '../../../theme'
 import { StyledComponentClass } from 'styled-components'
 import ArrowDown from './arrowDown'
-// import ShieldsBackground from './background'
 
 import { ComponentType } from 'react'
 import { ShieldAlertIcon } from '../../../components/icons'
@@ -21,10 +20,12 @@ function RotatedIconComponent (
 }
 
 export const ShieldIcon = styled(ShieldAlertIcon as ComponentType)`
+  box-sizing: border-box;
+  display: block;
   width: 36px;
+  margin: auto;
   color: #C5C5D3;
 `
 
 export const ArrowDownIcon = ArrowDown
 export const ArrowUpIcon = RotatedIconComponent(ArrowDown, 180)
-// export const Background = ShieldsBackground
