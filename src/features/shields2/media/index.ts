@@ -25,7 +25,7 @@ export const ShieldIcon = styled(ShieldAlertIcon as ComponentType)`
   display: block;
   width: 36px;
   margin: auto;
-  color: #C5C5D3;
+  color: ${palette.grey300};
 `
 
 interface ArrowDownIconProps {

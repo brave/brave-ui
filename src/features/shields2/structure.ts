@@ -95,7 +95,7 @@ export const BlockedInfoRow = styled<{}, 'div'>('div')`
   align-items: center;
   padding-right: 24px;
   border-bottom: 1px solid rgba(160, 161, 178, 0.15);
-  color: rgb(88, 89, 104);
+  color: ${palette.grey600};
   user-select: none;
 
   &:active {
@@ -187,7 +187,7 @@ export const BlockedListSummary = styled<BlockedListSummaryProps, 'summary'>('su
   display: grid;
   grid-template-columns: ${p => p.stats === false ? '30px 1fr' : '28px 28px 1fr'};
   align-items: center;
-  padding: 5px 24px 5px 20px;
+  padding: 6px 24px 5px 20px;
   border-bottom: 1px solid rgba(160, 161, 178, 0.15);
 
   &:focus {
@@ -257,7 +257,7 @@ export const BlockedListItemWithOptions = styled<{}, 'li'>('li')`
     font-weight: 500;
     margin: 0px 10px 0px 30px;
     font-size: 12px;
-    color: rgb(88, 89, 104);
+    color: ${palette.grey600};
   }
 `
 
