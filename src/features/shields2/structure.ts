@@ -195,6 +195,10 @@ export const BlockedListSummary = styled<BlockedListSummaryProps, 'summary'>('su
     outline-offset: -3px;
     outline-color: ${palette.orange400};
   }
+
+  &:active {
+    outline: none;
+  }
 `
 
 export const BlockedListStatic = styled<{}, 'ul'>('ul')`

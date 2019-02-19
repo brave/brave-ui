@@ -142,6 +142,10 @@ export const Link = styled<{}, 'button'>('button')`
     outline-color: ${palette.orange400};
     outline-width: 2px;
   }
+
+  &:active {
+    outline: none;
+  }
 `
 
 export const LinkAction = styled(Link)`
@@ -153,6 +157,10 @@ export const LinkAction = styled(Link)`
 
   &:focus {
     outline-offset: initial;
+  }
+
+  &:active {
+    outline: none;
   }
 `
 
@@ -172,5 +180,9 @@ export const ShieldsButton = styled(Button as ComponentType<ButtonProps>)`
     outline-offset: 2px;
     outline-color: ${palette.orange400};
     outline-width: 2px;
+  }
+
+  &:active {
+    outline: none;
   }
 `

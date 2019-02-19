@@ -38,5 +38,9 @@ export const ArrowDownIcon = styled(ArrowDown as ComponentType<ArrowDownIconProp
     outline-offset: -6px;
     outline-color: ${palette.orange400};
   }
+
+  &:active {
+    outline: none;
+  }
 `
 export const ArrowUpIcon = RotatedIconComponent(ArrowDown, 180)
