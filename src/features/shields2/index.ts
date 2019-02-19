@@ -46,7 +46,8 @@ export {
   BlockedListItemHeaderText,
   Link,
   LinkAction,
-  DisabledContentText
+  DisabledContentText,
+  ShieldsButton
 } from './display'
 
 export { ArrowDownIcon, ArrowUpIcon, ShieldIcon } from './media'

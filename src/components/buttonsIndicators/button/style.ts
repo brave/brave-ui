@@ -72,7 +72,7 @@ const StyledButton = styled<Props, 'button'>('button')`
   box-sizing: border-box;
   background: none;
   border: none;
-  outline: none;
+  outline-color: transparent;
   display: flex;
   flex-direction: ${p => p.icon && p.icon.position === 'after' ? 'row' : 'row-reverse'};
   justify-content: center;

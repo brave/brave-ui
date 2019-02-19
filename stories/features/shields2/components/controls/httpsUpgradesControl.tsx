@@ -79,11 +79,10 @@ export default class HTTPSUpgradesControl extends React.PureComponent<Props, Sta
       <>
         <BlockedInfoRow>
           <BlockedInfoRowData
-            tabIndex={this.tabIndex}
             onClick={this.onOpenConnectionsUpgradedToHTTPS}
             onKeyDown={this.onOpenConnectionsUpgradedToHTTPSViaKeyboard}
           >
-            <ArrowDownIcon />
+            <ArrowDownIcon tabIndex={this.tabIndex} />
             <BlockedInfoRowStats>{httpsUpgrades > 99 ? '99+' : httpsUpgrades}</BlockedInfoRowStats>
             <BlockedInfoRowText>{getLocale('connectionsUpgradedHTTPS')}</BlockedInfoRowText>
           </BlockedInfoRowData>

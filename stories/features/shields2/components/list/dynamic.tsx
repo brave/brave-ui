@@ -18,12 +18,12 @@ import {
   SiteInfoText,
   BlockedListSummaryText,
   BlockedListItemHeaderStats,
-  BlockedListItemHeaderText
+  BlockedListItemHeaderText,
+  ShieldsButton
 } from '../../../../../src/features/shields2'
 
 // Fake data
 import { getLocale } from '../../fakeLocale'
-import { Button } from '../../../../../src/components'
 
 interface Props {
   favicon: string
@@ -85,7 +85,7 @@ export default class DynamicList extends React.PureComponent<Props, {}> {
         </details>
         <BlockedListFooterWithOptions>
           <LinkAction onClick={onClose}>{getLocale('cancel')}</LinkAction>
-          <Button onClick={onClose} level='primary' type='accent' text={getLocale('applyOnce')} />
+          <ShieldsButton onClick={onClose} level='primary' type='accent' text={getLocale('applyOnce')} />
         </BlockedListFooterWithOptions>
       </BlockedListContent>
     )

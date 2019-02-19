@@ -4,6 +4,8 @@
 
 import styled from '../../theme'
 import palette from '../../theme/palette'
+import Button, { Props as ButtonProps } from '../../components/buttonsIndicators/button'
+import { ComponentType } from 'react'
 
 /**
  * Header
@@ -160,4 +162,15 @@ export const DisabledContentText = styled<{}, 'div'>('div')`
   font-size: 12px;
   font-weight: normal;
   line-height: 18px;
+`
+
+/**
+ * button
+ */
+export const ShieldsButton = styled(Button as ComponentType<ButtonProps>)`
+  &:focus {
+    outline-offset: 2px;
+    outline-color: ${palette.orange400};
+    outline-width: 2px;
+  }
 `

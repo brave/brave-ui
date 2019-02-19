@@ -34,7 +34,7 @@ interface State {
   trackersBlockedEnabled: boolean
 }
 
- export default class AdsTrackersControl extends React.PureComponent<Props, State> {
+export default class AdsTrackersControl extends React.PureComponent<Props, State> {
   constructor (props: Props) {
     super(props)
     this.state = {
@@ -77,11 +77,10 @@ interface State {
       <>
         <BlockedInfoRow>
           <BlockedInfoRowData
-            tabIndex={this.tabIndex}
             onClick={this.onOpen3rdPartyTrackersBlocked}
             onKeyDown={this.onOpen3rdPartyTrackersBlockedViaKeyboard}
           >
-            <ArrowDownIcon />
+            <ArrowDownIcon tabIndex={this.tabIndex} />
             <BlockedInfoRowStats>{adsTrackersBlocked > 99 ? '99+' : adsTrackersBlocked}</BlockedInfoRowStats>
             <BlockedInfoRowText>{getLocale('thirdPartyTrackersBlocked')}</BlockedInfoRowText>
           </BlockedInfoRowData>

@@ -8,6 +8,7 @@ import ArrowDown from './arrowDown'
 
 import { ComponentType } from 'react'
 import { ShieldAlertIcon } from '../../../components/icons'
+import palette from '../../../theme/palette'
 
 // rotated variants
 function RotatedIconComponent (
@@ -27,5 +28,15 @@ export const ShieldIcon = styled(ShieldAlertIcon as ComponentType)`
   color: #C5C5D3;
 `
 
-export const ArrowDownIcon = ArrowDown
+interface ArrowDownIconProps {
+  tabIndex: number
+}
+
+export const ArrowDownIcon = styled(ArrowDown as ComponentType<ArrowDownIconProps>)`
+  &:focus {
+    outline-width: 2px;
+    outline-offset: -6px;
+    outline-color: ${palette.orange400};
+  }
+`
 export const ArrowUpIcon = RotatedIconComponent(ArrowDown, 180)

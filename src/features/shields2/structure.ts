@@ -93,20 +93,35 @@ export const BlockedInfoRow = styled<{}, 'div'>('div')`
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
+  padding-right: 24px;
   border-bottom: 1px solid rgba(160, 161, 178, 0.15);
-  padding: 6px 24px 5px 20px;
   color: rgb(88, 89, 104);
   user-select: none;
 
   &:active {
     outline: none;
   }
+`
 
-  &:focus-within {
-    outline: 1px solid ${palette.orange400};
-  }
+export const BlockedInfoRowSingle = styled(BlockedInfoRow)`
+  padding: 6px 24px 5px 74px;
+  cursor: default;
+`
+
+export const BlockedInfoRowForSelect = styled(BlockedInfoRow)`
+  grid-template-columns: auto 1fr;
+`
+
+export const BlockedInfoRowData = styled<{}, 'div'>('div')`
+  display: grid;
+  grid-template-columns: auto 36px 1fr;
+  padding: 6px 0 5px 20px;
+  grid-gap: 2px;
+  align-items: center;
+  outline: none;
 
   &:hover {
+    cursor: pointer;
     color: ${palette.orange400};
 
     ${BlockedInfoRowStats} {
@@ -118,32 +133,9 @@ export const BlockedInfoRow = styled<{}, 'div'>('div')`
   }
 `
 
-export const BlockedInfoRowSingle = styled(BlockedInfoRow)`
-  padding: 6px 24px 5px 74px;
-  cursor: default;
-  &:focus-within {
-    outline: none;
-  }
-`
-
-export const BlockedInfoRowForSelect = styled(BlockedInfoRow)`
-  grid-template-columns: auto 1fr;
-`
-
-export const BlockedInfoRowData = styled<{}, 'div'>('div')`
-  display: grid;
-  grid-template-columns: auto 36px 1fr;
-  grid-gap: 2px;
-  align-items: center;
-  outline: none;
-
-  &:hover {
-    cursor: pointer;
-  }
-`
-
 export const BlockedInfoRowDataForSelect = styled(BlockedInfoRowData)`
   grid-template-columns: auto 26px 1fr;
+  padding: 12px 0 11px 20px;
 
   &:hover {
     cursor: pointer;
@@ -191,11 +183,18 @@ export const BlockedListSummary = styled<BlockedListSummaryProps, 'summary'>('su
     display: none;
   }
 
+  cursor: pointer;
   display: grid;
   grid-template-columns: ${p => p.stats === false ? '30px 1fr' : '28px 28px 1fr'};
   align-items: center;
   padding: 5px 24px 5px 20px;
   border-bottom: 1px solid rgba(160, 161, 178, 0.15);
+
+  &:focus {
+    outline-width: 2px;
+    outline-offset: -3px;
+    outline-color: ${palette.orange400};
+  }
 `
 
 export const BlockedListStatic = styled<{}, 'ul'>('ul')`

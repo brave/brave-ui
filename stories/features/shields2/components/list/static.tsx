@@ -15,9 +15,9 @@ import {
   Favicon,
   SiteInfoText,
   BlockedInfoRowStats,
-  BlockedListSummaryText
+  BlockedListSummaryText,
+  ShieldsButton
 } from '../../../../../src/features/shields2'
-import { Button } from '../../../../../src/components'
 
 // Fake data
 import { getLocale } from '../../fakeLocale'
@@ -51,7 +51,7 @@ export default class StaticList extends React.PureComponent<Props, {}> {
           </BlockedListStatic>
         </details>
         <BlockedListFooter>
-          <Button level='primary' type='accent' onClick={onClose} text={getLocale('goBack')} />
+          <ShieldsButton level='primary' type='accent' onClick={onClose} text={getLocale('goBack')} />
         </BlockedListFooter>
       </BlockedListContent>
     )
