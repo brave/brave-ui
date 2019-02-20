@@ -9,9 +9,9 @@ import {
   BlockedInfoRowForSelect,
   BlockedInfoRowDataForSelect,
   ArrowDownIcon,
-  BlockedInfoRowStats
-} from '../../../../../src/features/shields2'
-import { SelectBox } from '../../../../../src/features/shields'
+  BlockedInfoRowStats,
+  SelectBox
+} from '../../../../../src/features/shields'
 
 // Group Components
 import StaticList from '../list/static'

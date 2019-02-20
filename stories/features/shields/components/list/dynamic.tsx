@@ -20,7 +20,7 @@ import {
   BlockedListItemHeaderStats,
   BlockedListItemHeaderText,
   ShieldsButton
-} from '../../../../../src/features/shields2'
+} from '../../../../../src/features/shields'
 
 // Fake data
 import { getLocale } from '../../fakeLocale'

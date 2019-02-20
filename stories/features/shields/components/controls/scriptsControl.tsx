@@ -10,9 +10,9 @@ import {
   BlockedInfoRowData,
   ArrowDownIcon,
   BlockedInfoRowStats,
-  BlockedInfoRowText
-} from '../../../../../src/features/shields2'
-import { Toggle } from '../../../../../src/features/shields'
+  BlockedInfoRowText,
+  Toggle
+} from '../../../../../src/features/shields'
 
 // Group Components
 import DynamicList from '../list/dynamic'
