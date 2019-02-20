@@ -43,39 +43,29 @@ export default class Header extends React.PureComponent<Props, {}> {
   get totalBlocked () {
     const { adsTrackersBlocked, httpsUpgrades, scriptsBlocked, fingerprintingBlocked } = this.props
     const total = adsTrackersBlocked + httpsUpgrades + scriptsBlocked + fingerprintingBlocked
+    if (!total) {
+      return 0
+    }
     return total > 99 ? '99+' : total
   }
 
   get totalBlockedString () {
-    const { adsTrackersBlocked, scriptsBlocked, fingerprintingBlocked } = this.props
+    const { adsTrackersBlocked, scriptsBlocked, fingerprintingBlocked, httpsUpgrades } = this.props
     const blockedItems = adsTrackersBlocked + scriptsBlocked + fingerprintingBlocked
-    if (blockedItems === 1) {
-      return getLocale('itemBlocked')
-    } else if (blockedItems > 1) {
-      return getLocale('itemsBlocked')
-    } else {
-      return null
-    }
-  }
 
-  get httpsUpgradesString () {
-    const { httpsUpgrades } = this.props
-    if (httpsUpgrades === 1) {
+    if (blockedItems === 0 && httpsUpgrades === 0) {
+      return getLocale('itemsBlocked')
+    } else if (blockedItems === 1 && httpsUpgrades === 0) {
+      return getLocale('itemBlocked')
+    } else if (blockedItems === 0 && httpsUpgrades === 1) {
       return getLocale('connectionUpgraded')
-    } else if (httpsUpgrades > 1) {
+    } else if (blockedItems > 1 && httpsUpgrades === 0) {
+      return getLocale('itemsBlocked')
+    } else if (blockedItems === 0 && httpsUpgrades > 1) {
       return getLocale('connectionsUpgraded')
     } else {
-      return null
+      return ` ${getLocale('itemsBlocked')} ${getLocale('and')} ${getLocale('connectionsUpgraded')}`
     }
-  }
-
-  get stringConjunction () {
-    const { adsTrackersBlocked, scriptsBlocked, httpsUpgrades, fingerprintingBlocked } = this.props
-    const blockedItems = adsTrackersBlocked + scriptsBlocked + fingerprintingBlocked
-    if (!blockedItems || !httpsUpgrades) {
-      return null
-    }
-    return ` ${getLocale('and')} `
   }
 
   render () {
@@ -106,7 +96,7 @@ export default class Header extends React.PureComponent<Props, {}> {
               <TotalBlockedStats>
                 <TotalBlockedStatsNumber>{this.totalBlocked}</TotalBlockedStatsNumber>
                 <TotalBlockedStatsText>
-                  {this.totalBlockedString} {this.stringConjunction} {this.httpsUpgradesString}
+                  {this.totalBlockedString}
                 </TotalBlockedStatsText>
               </TotalBlockedStats>
             )

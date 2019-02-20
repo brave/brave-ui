@@ -25,10 +25,10 @@ storiesOf('Feature Components/Shields2', module)
         favicon={favicon}
         hostname={'buzzfeed.com'}
         enabled={boolean('Enabled?', store.state.enabled)}
-        adsTrackersBlocked={number('3rd-party trackers blocked', 80)}
-        httpsUpgrades={number('Connections upgraded to HTTPS', 0)}
-        scriptsBlocked={number('Scripts blocked', 11)}
-        fingerprintingBlocked={number('3rd-party device recognition blocked', 0)}
+        adsTrackersBlocked={number('3rd-party trackers blocked', 80) || 0}
+        httpsUpgrades={number('Connections upgraded to HTTPS', 0) || 0}
+        scriptsBlocked={number('Scripts blocked', 11) || 0}
+        fingerprintingBlocked={number('3rd-party device recognition blocked', 0) || 0}
         fakeOnChange={fakeOnChange}
       />
     )
