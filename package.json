@@ -96,6 +96,7 @@
     "react-test-renderer": "^16.3.0",
     "rimraf": "^2.6.2",
     "storybook-addon-styled-component-theme": "^1.1.1",
+    "storybook-readme": "^4.0.5",
     "stylelint": "^9.4.0",
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-styled-components": "^0.1.1",
