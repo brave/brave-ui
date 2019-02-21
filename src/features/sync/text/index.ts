@@ -41,7 +41,7 @@ export const Bold = styled<{}, 'b'>('b')`
 
 export const SwitchLabel = styled<{}, 'label'>('label')`
   font-family: ${p => p.theme.fontFamily.body};
-  color: ${p => p.theme.textDefaultColor};
+  color: ${p => p.theme.fontColor.default};
   font-size: 14px;
   font-weight: 400;
   letter-spacing: normal;

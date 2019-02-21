@@ -3,9 +3,9 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
-import { Heading } from '../../../index'
+import { Head } from '../../../index'
 
-export const Title = styled(Heading)`
+export const Title = styled(Head)`
   font-size: 28px;
   color: #212121;
   margin: 10px 0 0;

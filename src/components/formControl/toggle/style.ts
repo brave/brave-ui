@@ -34,7 +34,7 @@ const getTheme = (p: ThemedStyledProps<Props>) => {
   --toggle-bullet-color: ${bulletColor};
   --toggle-bullet-hoverColor: ${bulletHoverColor};
   --toggle-bullet-activeColor: ${bulletActiveColor};
-  --toggle-bullet-focus: ${p.theme.boxShadowSize} ${focusColor};
+  --toggle-bullet-focus: ${p.theme.boxShadow.size} ${focusColor};
   --toggle-slider-color: ${sliderColor};
   --toggle-slider-hoverColor: ${sliderHoverColor}
   `
@@ -64,10 +64,10 @@ export const StyledBullet = styled<Props, 'div'>('div')`
   height: ${defaultSmall('20px', '16px')};
   width: ${defaultSmall('20px', '16px')};
   background-color: var(--toggle-bullet-color);
-  border-radius: ${(p) => p.theme.borderRadiusCircle};
-  box-shadow: ${(p) => p.theme.shadowSmall};
+  border-radius: ${(p) => p.theme.borderRadius.circle};
+  box-shadow: ${(p) => p.theme.dropShadow.small};
   transform: var(--toggle-bullet-translate);
-  transition: ${(p) => p.theme.transitionDurationBase};
+  transition: ${(p) => p.theme.transition.default};
 `
 
 export const StyledSlider = styled<Props, 'div'>('div')`
@@ -77,8 +77,8 @@ export const StyledSlider = styled<Props, 'div'>('div')`
   height: ${defaultSmall('8px', '6px')};
   width: ${(p) => p.size === 'small' ? '28px' : '42px'};
   background-color: var(--toggle-slider-color);
-  border-radius: ${(p) => p.theme.borderRadiusSmall};
-  transition: ${(p) => p.theme.transitionDurationBase};
+  border-radius: ${(p) => p.theme.borderRadius.small};
+  transition: ${(p) => p.theme.transition.default};
 `
 
 export const StyleToggle = styled<Props, 'div'>('div')`
@@ -86,7 +86,7 @@ export const StyleToggle = styled<Props, 'div'>('div')`
   display: inline-block;
   height: ${(p) => p.size === 'small' ? '16px' : '20px'};
   width: ${(p) => p.size === 'small' ? '28px' : '42px'};
-  transition: ${(p) => p.theme.transitionDurationBase};
+  transition: ${(p) => p.theme.transition.default};
   pointer-events: ${(p) => p.disabled ? 'none' : ''};
   opacity: ${(p) => p.disabled ? p.theme.disabledAlpha : ''};
 

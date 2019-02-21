@@ -17,7 +17,8 @@ export { default as TextArea } from './formControl/textarea'
 export { default as TextAreaClipboard } from './formControl/textareaClipboard'
 export { default as Toggle } from './formControl/toggle'
 export { Grid, Column } from './layout/gridList'
-export { default as Heading } from './text/heading'
+export { default as Head } from './text/heading'
+export { BodyCopy, Heading, Footnote } from './text'
 
 // This module is included to verify that tree shaking is working by a client.
 // It is important that clients do not include modules from this library that
