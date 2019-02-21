@@ -1,6 +1,8 @@
 import makeColor from '../functions/makeColor'
+import tinyColor from '@ctrl/tinycolor'
 
 const baseColors = {
+  black: '#1E2029',
   blue: '#339af0',
   blurple: '#4C54D2',
   cyan: '#22B8CF',
@@ -10,15 +12,17 @@ const baseColors = {
   orange: '#FB542B',
   purple: '#845ef7',
   red: '#E32444',
-  silver: '#C8C8D5',
   teal: '#20c997',
-  yellow: '#FFD43B',
-  white: '#FFFFFF'
+  yellow: '#FFD43B'
 }
 
-// This palette is the only hand selected palette due
-// to it not behaving well using the scale
-// because of the absence of any hue
+const white = '#FFFFFF'
+const black = baseColors.black
+
+// This palette is the only hand selected palette
+// due to it not behaving well using the scale
+// because of the absence of any hue for the
+// makeColor function
 const scaleNeutral = {
   neutral000: '#f8f9fa',
   neutral100: '#f1f3f5',
@@ -175,7 +179,20 @@ const scaleMagenta = {
   magenta900: makeColor(baseColors.magenta, 10)
 }
 
-const white = '#FFFFFF'
+// -------- Fades --------
+// Black based on same hue as gray900
+const fades = {
+  blackFade15: tinyColor(black).setAlpha(.85).toHslString(),
+  blackFade30: tinyColor(black).setAlpha(.70).toHslString(),
+  blackFade50: tinyColor(black).setAlpha(.50).toHslString(),
+  blackFade70: tinyColor(black).setAlpha(.30).toHslString(),
+  blackFade85: tinyColor(black).setAlpha(.15).toHslString(),
+  whiteFade85: tinyColor(white).setAlpha(.15).toHslString(),
+  whiteFade70: tinyColor(white).setAlpha(.30).toHslString(),
+  whiteFade50: tinyColor(white).setAlpha(.50).toHslString(),
+  whiteFade30: tinyColor(white).setAlpha(.70).toHslString(),
+  whiteFade15: tinyColor(white).setAlpha(.85).toHslString()
+}
 
 export default {
   ...scaleGrey,
@@ -190,5 +207,7 @@ export default {
   ...scaleRed,
   ...scaleTeal,
   ...scaleYellow,
-  white
+  ...fades,
+  white,
+  black
 }

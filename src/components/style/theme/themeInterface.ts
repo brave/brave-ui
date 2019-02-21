@@ -66,60 +66,65 @@ export default interface IThemeProps {
   // Radio
   radioStroke: string
 
-  // Type
-  headingDefaultColor: string
-  textDefaultColor: string
-  textSecondaryColor: string
-  textSubtleColor: string
-  textDefaultSize: string
-  textLargeSize: string
-  textSmallSize: string
-  textDefaultLineHeight: string
-  textLargeLineHeight: string
-  textNoLineHeight: string
-
-  // Spacing
-  spacingExtraLarge: string
-  spacingLarge: string
-  spacingMedium: string
-  spacingSmall: string
-  spacingExtraSmall: string
-  spacingTiny: string
-
-  // Radius
-  borderRadiusBase: string
-  borderRadiusSmall: string
-  borderRadiusCircle: string
-
-  // Animation
-  transitionDurationSlow: string
-  transitionDurationBase: string
-  transitionDurationFast: string
-
   // Storybook
   name: string
-
-  // Border
-  borderDefaultColor: string
-  borderDefaultSize: string
-  borderDefaultStyle: string
-
-  // Box shadow
-  boxShadowSize: string
 
   // Disabled
   disabledAlpha: string
 
-  // Shadow
-  shadowLarge: string
-  shadowDefault: string
-  shadowSmall: string
+  spacing: string[]
 
+  // Border Radius
+  borderRadius: {
+    default: string
+    small: string
+    circle: string
+  },
+
+  // Transition
+  transition: {
+    slow: string
+    default: string
+    fast: string
+  },
+
+  // Box shadow
+  boxShadow: {
+    size: string
+  },
+
+  // Shadows for panels
+  dropShadow: {
+    large: string
+    default: string
+    small: string
+  },
+
+  // Type
+  fontColor: {
+    default: string
+    defaultFade15: string
+    defaultFade30: string
+    defaultFade50: string
+  }
   fontFamily: {
     heading: string
     body: string
     code: string
     system: string
+  }
+  fontSize: {
+    scale: string[]
+  }
+  fontWeight: {
+    bold: string
+    regular: string
+    light: string
+  }
+  lineHeight: {
+    large: string
+    default: string
+    zero: string
   }
 }
 

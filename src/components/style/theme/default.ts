@@ -58,40 +58,8 @@ const theme: ITheme = {
   // Modal
   modalOverlayBackground: 'rgba(36,37,54,0.85)',
 
-  // Typography
-  headingDefaultColor: colors.grey800, // default heading color
-  textDefaultColor: colors.grey700, // default text color
-  textSecondaryColor: colors.grey500,
-  textSubtleColor: colors.grey200,
-  textDefaultSize: '14px',
-  textLargeSize: '16px',
-  textSmallSize: '12px',
-
-  // Line height
-  textDefaultLineHeight: '1.5', // default line height
-  textLargeLineHeight: '1.75',
-  textNoLineHeight: '0',
-
-  // Spacing
-  spacingExtraLarge: '32px',
-  spacingLarge: '24px',
-  spacingMedium: '16px',
-  spacingSmall: '12px',
-  spacingExtraSmall: '8px',
-  spacingTiny: '4px',
-
   // Disabled
   disabledAlpha: '.50', // the transparency for disabled components
-
-  // Border Radius
-  borderRadiusBase: '8px', // default for most elements
-  borderRadiusSmall: '4px', // used for smaller components - inputs/forms
-  borderRadiusCircle: '50%', // used to create half circles on elements - buttons
-
-  // Border
-  borderDefaultColor: colors.grey300, // base border outline a component
-  borderDefaultSize: '1px', // width of the border for a component
-  borderDefaultStyle: 'solid', // style of a components border
 
   // Toggle
   toggleSlider: colors.grey300, // other elements are tied to brandPrimary
@@ -102,28 +70,63 @@ const theme: ITheme = {
   // Button
   btnDisabled: colors.grey300, // other elements are tied to brandPrimary,
 
-  // Transition
-  transitionDurationSlow: '0.6s',
-  transitionDurationBase: '0.4s',
-  transitionDurationFast: '0.2s',
+    // Spacing
+  spacing: ['4px', '8px', '12px', '16px', '20px', '24px', '28px', '32px'],
 
-  // Box shadow
-  boxShadowSize: '0 0 0 2px',
+    // Border Radius
+  borderRadius: {
+    default: '8px', // default for most elements
+    small: '4px', // used for smaller components - inputs/forms
+    circle: '50%' // used to create half circles on elements - buttons
+  },
 
-  // Shadow
-  shadowLarge: '0 4px 12px rgba(0, 0, 0, 0.2)',
-  shadowDefault: '0 2px 8px rgba(0, 0, 0, 0.2)',
-  shadowSmall: '0 2px 2px rgba(0, 0, 0, 0.2)',
+    // Transition
+  transition: {
+    slow: '0.6s',
+    default: '0.4s',
+    fast: '0.2s'
+  },
 
-  // Storybook
+    // Box shadow
+  boxShadow: {
+    size: '0 0 0 2px' // focus ring on components
+  },
+
+    // Shadows for panels
+  dropShadow: {
+    large: '0 4px 12px rgba(0, 0, 0, 0.2)',
+    default: '0 2px 8px rgba(0, 0, 0, 0.2)',
+    small: '0 2px 2px rgba(0, 0, 0, 0.2)'
+  },
+
+  // Storybook variable
   name: 'Default',
 
+  // Type styles
+  fontColor: {
+    default: colors.black,
+    defaultFade15: colors.blackFade15,
+    defaultFade30: colors.blackFade30,
+    defaultFade50: colors.blackFade50
+  },
   fontFamily: {
     heading: 'Poppins, sans-serif',
     body: 'Muli, sans-serif',
     code: 'SFMono-Regular, monospace',
-    system:
-  '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif'
+    system: '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif'
+  },
+  fontSize: {
+    scale: ['12px', '14px', '16px', '20px', '24px', '32px', '40px', '48px', '60px', '72px']
+  },
+  fontWeight: {
+    bold: '600',
+    regular: '400',
+    light: '200'
+  },
+  lineHeight: {
+    large: '1.75',
+    default: '1.5',
+    zero: '0'
   }
 }
 
