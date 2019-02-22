@@ -1,4 +1,4 @@
-import './styles.css'
+import './style/github_style.css'
 import { withBackgrounds } from '@storybook/addon-backgrounds'
 import { configure, addDecorator } from '@storybook/react'
 import { withOptions } from '@storybook/addon-options'
@@ -12,19 +12,22 @@ const themes = [DefaultTheme, DarkTheme]
 addDecorator(withThemesProvider(themes))
 addDecorator(
   withBackgrounds([
-    { name: 'Neutral200', value: '#E9ECEF', default: true },
-    { name: 'Grey400', value: '#CED4DA' },
+    { name: 'Neutral300', value: '#DEE2E6', default: true },
+    { name: 'Grey700', value: '#5E6175' },
     { name: 'White', value: '#FFF' },
     { name: 'Grey900', value: '#1E2029' },
   ])
 )
 
-withOptions({
-  name: 'Brave UI',
-  url: 'https://github.com/brave/brave-ui'
-})
+addDecorator(
+  withOptions({
+    name: 'Brave UI',
+    url: 'https://github.com/brave/brave-ui',
+    addonPanelInRight: true
+  })
+)
 
-function loadStories () {
+function loadStories() {
   initLocale(locales)
   const req = require.context('../stories', true, /\.tsx$/)
   req.keys().forEach(filename => req(filename))
