@@ -23,7 +23,7 @@ import {
 import { TextArea, Modal, Button } from '../../../components'
 import { getLocale } from '../../../helpers'
 import { Alert, Tab } from '../'
-import ControlWrapper from '../../../components/formControls/controlWrapper'
+import ControlWrapper from '../../../components/formControl/controlWrapper'
 
 export interface Props {
   backupKey: string

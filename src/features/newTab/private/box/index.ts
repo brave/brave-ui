@@ -5,7 +5,7 @@
 import { ComponentType } from 'react'
 import styled from '../../../../theme'
 import Heading from '../../../../components/text/heading'
-import Button, { Props as ButtonProps } from '../../../../components/buttonsIndicators/button'
+import Button, { Props as ButtonProps } from '../../../../components/button'
 import { DuckDuckGoIcon, TorLockIcon } from '../../../../components/icons'
 
 export const Box = styled<{}, 'section'>('section')`

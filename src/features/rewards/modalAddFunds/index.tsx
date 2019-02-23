@@ -21,9 +21,9 @@ import {
   StyledQRButton,
   StyledText
 } from './style'
-import Modal from '../../../components/popupModals/modal/index'
+import Modal from '../../../components/modal'
 import { getLocale } from '../../../helpers'
-import Input from '../../../components/formControls/input'
+import Input from '../../../components/formControl/input'
 import { BatColorIcon, BitcoinColorIcon, EthereumColorIcon, LitecoinColorIcon } from '../../../components/icons'
 
 export type Type = 'BAT' | 'ETH' | 'BTC' | 'LTC'

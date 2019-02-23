@@ -27,7 +27,7 @@ import {
 } from './style'
 import { Modal } from '../../../components'
 import { AlertCircleIcon, RewardsSendTipsIcon } from '../../../components/icons'
-import Button from '../../../components/buttonsIndicators/button'
+import Button from '../../../components/button'
 
 export interface Props {
   testId?: string

@@ -3,8 +3,8 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from '../../theme'
-import palette from '../../theme/palette'
-import Button, { Props as ButtonProps } from '../../components/buttonsIndicators/button'
+import palette from '../../components/style/color/colorPalette'
+import Button, { Props as ButtonProps } from '../../components/button'
 import { ComponentType } from 'react'
 
 /**
