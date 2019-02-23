@@ -11,7 +11,7 @@ import {
   StyledRight,
   StyledLogoWrapper
 } from './style'
-import Toggle from '../../../../components/formControls/toggle/index'
+import Toggle from '../../../../components/formControl/toggle/index'
 import { getLocale } from '../../../../helpers'
 import { BatColorIcon } from '../../../../components/icons'
 

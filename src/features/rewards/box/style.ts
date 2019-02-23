@@ -4,7 +4,7 @@
 
 import styled from 'styled-components'
 import { Type } from './index'
-import Card, { CardProps } from '../../../components/layout/card'
+import Card, { CardProps } from '../../../components/card'
 import { ComponentType } from 'react'
 
 interface StyleProps {

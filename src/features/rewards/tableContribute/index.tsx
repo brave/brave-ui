@@ -13,7 +13,7 @@ import {
   StyledLink,
   StyledRestoreSites
 } from './style'
-import Table, { Row } from '../../../components/dataTables/table'
+import Table, { Row } from '../../../components/table'
 import Profile, { Provider } from '../profile'
 import { getLocale } from '../../../helpers'
 import { RestoreSites, Tokens, Tooltip } from '../'

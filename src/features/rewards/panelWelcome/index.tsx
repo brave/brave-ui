@@ -19,7 +19,7 @@ import {
 } from './style'
 
 import { BatColorIcon, LoaderIcon } from '../../../components/icons'
-import Button from '../../../components/buttonsIndicators/button'
+import Button from '../../../components/button'
 
 export type Variant = 'one' | 'two'
 

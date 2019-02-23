@@ -3,8 +3,8 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { ComponentType } from 'react'
-import styled from '../../../theme'
-import palette from '../../../theme/palette'
+import styled from '../../../components/style/theme'
+import palette from '../../../components/style/color/colorPalette'
 
 // Extendable components
 // ..............................

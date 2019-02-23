@@ -35,7 +35,7 @@ import {
 } from './style'
 
 import Donate from '../donate/index'
-import Checkbox from '../../../components/formControls/checkbox/index'
+import Checkbox from '../../../components/formControl/checkbox/index'
 import { getLocale } from '../../../helpers'
 import {
   CloseCircleOIcon,

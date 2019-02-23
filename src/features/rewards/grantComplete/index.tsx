@@ -12,7 +12,7 @@ import {
   StyledButtonWrapper
 } from './style'
 import { getLocale } from '../../../helpers'
-import Button from '../../../components/buttonsIndicators/button'
+import Button from '../../../components/button'
 
 export interface Props {
   id?: string

@@ -4,7 +4,7 @@
 
 import { Notification } from './'
 import styled from 'styled-components'
-import Button, { Props as ButtonProps } from '../../../components/buttonsIndicators/button'
+import Button, { Props as ButtonProps } from '../../../components/button'
 import { ComponentType } from 'react'
 
 interface StyledProps {

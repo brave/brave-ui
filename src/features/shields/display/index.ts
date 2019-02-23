@@ -2,8 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from '../../../theme'
-import Card from '../../../components/layout/card'
+import styled from '../../../components/style/theme'
+import Card from '../../../components/card'
 
 export const ShieldsPanel = styled<any, 'main'>('main')`
   box-sizing: border-box;
