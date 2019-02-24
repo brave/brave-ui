@@ -1,21 +1,10 @@
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this file,
- * You can obtain one at http://mozilla.org/MPL/2.0/. */
-
-// Storybook requires
+import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, object } from '@storybook/addon-knobs'
-// @ts-ignore
-import centered from '@storybook/addon-centered/dist'
-
-import * as React from 'react'
-
-// Components
 import Table, { Cell, Row } from '../../src/components/table'
 
-storiesOf('Components/Data Tables', module)
+storiesOf('Components', module)
   .addDecorator(withKnobs)
-  .addDecorator(centered)
   .add('Table',() => {
     const rowTheme = {
       'text-align': 'right',
