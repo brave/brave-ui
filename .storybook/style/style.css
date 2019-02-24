@@ -1,0 +1,7 @@
+.sb-show-main {
+  padding: 40px;
+}
+
+div[role=tablist] {
+  height: 55px;
+}

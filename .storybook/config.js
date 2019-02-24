@@ -1,4 +1,6 @@
 import './style/github_style.css'
+import './style/style.css'
+import 'emptykit.css'
 import { withBackgrounds } from '@storybook/addon-backgrounds'
 import { configure, addDecorator } from '@storybook/react'
 import { withOptions } from '@storybook/addon-options'
@@ -7,8 +9,8 @@ import locales from '../stories/assets/locale'
 import { withThemesProvider } from 'storybook-addon-styled-component-theme'
 import DarkTheme from '../src/components/style/theme/dark'
 import DefaultTheme from '../src/components/style/theme/default'
-
 const themes = [DefaultTheme, DarkTheme]
+
 addDecorator(withThemesProvider(themes))
 addDecorator(
   withBackgrounds([
@@ -23,7 +25,8 @@ addDecorator(
   withOptions({
     name: 'Brave UI',
     url: 'https://github.com/brave/brave-ui',
-    addonPanelInRight: true
+    addonPanelInRight: true,
+    sortStoriesByKind: true
   })
 )
 
