@@ -1,16 +1,13 @@
-// @ts-ignore: Needed for ThemeProvider
 import * as React from 'react'
 import * as styledComponents from 'styled-components'
 import IThemeProps, { BraveThemedStyledProps as ThemedStyledProps } from './themeInterface'
-// theme for testing
-import TestTheme from './default'
+import TestTheme from './default' // theme for testing
 
 const {
   default: styled,
   css,
   injectGlobal,
   keyframes,
-  // React import is needed for following line!
   ThemeProvider
   // tslint disabled because:
   // - Incorrectly complains about unused assertion, but does not detect private member differences
