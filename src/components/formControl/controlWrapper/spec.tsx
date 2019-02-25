@@ -6,7 +6,11 @@ import ControlWrapper from './index'
 import { TestThemeProvider } from '../../style/theme'
 
 describe('ControlWrapper tests', () => {
-  const baseComponent = (props?: object) => <TestThemeProvider><ControlWrapper id='wrapper' {...props} /></TestThemeProvider>
+  const baseComponent = (props?: object) => (
+  <TestThemeProvider>
+    <ControlWrapper id='wrapper' {...props} />
+  </TestThemeProvider>
+  )
 
   describe('basic tests', () => {
     it('matches the snapshot', () => {

@@ -3,10 +3,14 @@ import * as React from 'react'
 import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
 import ToggleTips from './index'
+import { TestThemeProvider } from '../../../components/style/theme'
 
 describe('ToggleTips tests', () => {
-  const baseComponent = (props?: object) => <ToggleTips id='toggle-tips' provider={'youtube'} {...props} />
-
+  const baseComponent = (props?: object) => (
+  <TestThemeProvider>
+    <ToggleTips id='toggle-tips' provider={'youtube'} {...props} />
+  </TestThemeProvider>
+  )
   describe('basic tests', () => {
     it('matches the snapshot', () => {
       const component = baseComponent()
