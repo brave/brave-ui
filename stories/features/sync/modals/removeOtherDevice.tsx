@@ -48,7 +48,7 @@ export default class RemoveMainDeviceModal extends React.PureComponent<Props, {}
           </OneColumnButtonGrid>
           <Button
             level='primary'
-            type='warn'
+            type='danger'
             size='medium'
             onClick={onClose}
             text={getLocale('remove')}

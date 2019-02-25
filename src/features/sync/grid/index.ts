@@ -27,8 +27,7 @@ export const SettingsToggleGrid = styled<{}, 'footer'>('footer')`
 
 export const DisabledContentButtonGrid = styled<{}, 'footer'>('footer')`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: 1fr auto;
   grid-gap: 10px;
   margin: 15px 0 0;
 `

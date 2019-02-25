@@ -5,7 +5,7 @@
 import styled from 'styled-components'
 
 export const StyledWrapper = styled<{}, 'div'>('div')`
-  background: ${p => p.theme.color.subtleBackground};
+  background: #E6E8F5;
   min-height: 100vh;
   width: 100%;
   padding-top: 35px;

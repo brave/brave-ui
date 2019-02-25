@@ -13,7 +13,7 @@ export interface Props {
   onClickOk?: () => void
   cancelString?: string
   okString: string
-  colorType: 'default' | 'accent' | 'warn' | 'subtle'
+  colorType: 'default' | 'accent' | 'danger' | 'subtle'
 }
 
 export default class AlertBox extends React.PureComponent<Props, {}> {

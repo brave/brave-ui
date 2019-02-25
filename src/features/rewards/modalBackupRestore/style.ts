@@ -76,13 +76,13 @@ export const StyledTitle = styled<{}, 'span'>('span')`
   font-weight: normal;
   letter-spacing: 0;
   line-height: 40px;
-  font-family: ${p => p.theme.fontFamily.heading};
+  font-family: ${(p) => p.theme.fontFamily.heading};
 `
 
 export const StyledSafe = styled<{}, 'span'>('span')`
   font-weight: 700;
   margin-right: 3px;
-  color: ${p => p.theme.color.brandBatInteracting};
+  color: ${(p) => p.theme.color.brand.rewards};
 `
 
 export const StyledTabWrapper = styled<{}, 'div'>('div')`

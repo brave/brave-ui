@@ -83,7 +83,6 @@ export default class Tip extends React.PureComponent<Props, {}> {
                 onToggle={this.onToggle}
                 checked={allow}
                 size={'small'}
-                type={'light'}
               />
             </StyledAllowToggle>
           </StyledTipWrapper>

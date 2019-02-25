@@ -32,13 +32,11 @@ const getThemeSizes = (p: ThemedStyledProps<StyleProps>) => {
 }
 
 const getThemeColors = (p: ThemedStyledProps<StyleProps>, selected: boolean | undefined) => {
-  let fillColor = p.theme.color.brandBat
-  let borderColor = p.theme.color.subtleActive
+  let fillColor = p.theme.color.brand.rewards
+  let borderColor = p.theme.color.inputBorder
 
   if (!p.disabled) {
-    borderColor = selected
-      ? p.theme.color.brandBat
-      : p.theme.color.brandBatActive
+    borderColor = p.theme.color.brand.rewards
   }
 
   return css`

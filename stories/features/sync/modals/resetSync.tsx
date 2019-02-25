@@ -82,7 +82,7 @@ export default class ResetSyncModal extends React.PureComponent<Props, State> {
             </OneColumnButtonGrid>
             <Button
               level='primary'
-              type='warn'
+              type='danger'
               size='medium'
               onClick={this.onSetupSync}
               text={getLocale('deleteSyncChainButton')}

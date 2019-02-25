@@ -31,7 +31,7 @@ interface HighlightProps {
 export const Highlight = styled<HighlightProps, 'em'>('em')`
   box-sizing: border-box;
   font-family: ${p => p.theme.fontFamily.heading};
-  color: ${p => p.enabled ? p.theme.color.brandBrave : palette.grey300};
+  color: ${p => p.enabled ? p.theme.color.brand.brave : palette.grey300};
   font-size: ${p => p.size === 'large' ? '22px' : 'inherit'};
   font-weight: 600;
   text-transform: uppercase;

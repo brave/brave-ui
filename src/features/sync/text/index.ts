@@ -28,7 +28,7 @@ export const Paragraph = styled<{}, 'p'>('p')`
 `
 
 export const Link = styled<{}, 'a'>(Paragraph.withComponent('a') as any)`
-  color: ${p => p.theme.color.subtle};
+  color: ${p => p.theme.color.brand.brave};
   padding: 0;
   text-decoration: none;
   cursor: pointer;
@@ -41,7 +41,7 @@ export const Bold = styled<{}, 'b'>('b')`
 
 export const SwitchLabel = styled<{}, 'label'>('label')`
   font-family: ${p => p.theme.fontFamily.body};
-  color: ${p => p.theme.color.defaultControlActive};
+  color: ${p => p.theme.color.bodyText};
   font-size: 14px;
   font-weight: 400;
   letter-spacing: normal;
