@@ -25,34 +25,34 @@ const getThemeColors = (p: ThemedStyledProps<Props>) => {
   let hoverColor
   let activeColor
   if (p.disabled) {
-    mainColor = hoverColor = activeColor = p.theme.color.disabled
+    mainColor = hoverColor = activeColor = p.theme.color.btn.disabled
   } else {
     switch (p.type) {
       case 'accent':
         if (p.brand === 'brave') {
-          mainColor = p.theme.color.brandBrave
-          hoverColor = p.theme.color.brandBraveInteracting
-          activeColor = p.theme.color.brandBraveActive
+          mainColor = p.theme.color.brand.brave
+          hoverColor = p.theme.color.brand.braveHover
+          activeColor = p.theme.color.brand.braveActive
         } else if (p.brand === 'rewards') {
-          mainColor = p.theme.color.brandBat
-          hoverColor = p.theme.color.brandBatInteracting
-          activeColor = p.theme.color.brandBatActive
+          mainColor = p.theme.color.brand.rewards
+          hoverColor = p.theme.color.brand.rewardsHover
+          activeColor = p.theme.color.brand.rewardsActive
         }
         break
       case 'default':
-        mainColor = p.theme.color.defaultControl
-        hoverColor = p.theme.color.defaultControlInteracting
-        activeColor = p.theme.color.defaultControlActive
+        mainColor = p.theme.color.btn.default
+        hoverColor = p.theme.color.btn.defaultHover
+        activeColor = p.theme.color.btn.defaultActive
         break
-      case 'warn':
-        mainColor = p.theme.color.warn
-        hoverColor = p.theme.color.warnInteracting
-        activeColor = p.theme.color.warnActive
+      case 'danger':
+        mainColor = p.theme.color.btn.danger
+        hoverColor = p.theme.color.btn.dangerHover
+        activeColor = p.theme.color.btn.dangerActive
         break
       case 'subtle':
-        mainColor = p.theme.color.subtle
-        hoverColor = p.theme.color.subtleInteracting
-        activeColor = p.theme.color.subtleActive
+        mainColor = '#AEB1C2' // this is being deprecated
+        hoverColor = '#C2C4CF' // this is being deprecated
+        activeColor = '#84889C' // this is being deprecated
         break
     }
   }
@@ -77,16 +77,16 @@ const StyledButton = styled<Props, 'button'>('button')`
   flex-direction: ${p => p.icon && p.icon.position === 'after' ? 'row' : 'row-reverse'};
   justify-content: center;
   align-items: center;
-  font-family: Poppins, sans-serif;
+  font-family: ${p => p.theme.fontFamily.heading};
   cursor: ${p => p.disabled ? 'default' : 'pointer'};
   user-select: none;
-  font-size: ${largeMediumSmall('14px', '13px', '11px')};
+  font-size: ${largeMediumSmall('14px', '14px', '13px')};
   border-radius: ${largeMediumSmall('24px', '20px', '16px', '28px')};
   width: ${p => p.size === 'call-to-action' ? '100%' : 'auto'};
-  min-width: ${largeMediumSmall('116px', '104px', '88px', '235px')};
-  padding: ${largeMediumSmall('14px 15px', '11px 15px', '7px 10px', '19px 15px')};
+  padding: ${largeMediumSmall('10px 20px', '7px 18px', '4px 16px', '19px 15px')};
   :hover:enabled {
     --button-state-color: var(--button-main-color-hover);
+    transition: ${p => p.theme.transitionSpeed[1]};
   }
   :active:enabled {
     --button-state-color: var(--button-main-color-active);
@@ -117,7 +117,7 @@ export const StyledText = styled<Props, 'div'>('div')`
   align-items: center;
   text-align: center;
   letter-spacing: 0;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: ${p => p.size === 'call-to-action' ? 'uppercase' : 'none'};
   line-height: 1;
 `
