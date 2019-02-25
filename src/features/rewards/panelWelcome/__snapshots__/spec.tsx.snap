@@ -3,7 +3,7 @@
 exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
 .c7 {
   box-sizing: border-box;
-  font-family: Poppins,sans-serif;
+  font-family: Poppins,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   margin: 0;
@@ -109,9 +109,9 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
 }
 
 .c12 {
-  --button-main-color: #A0A1B2;
-  --button-main-color-hover: #7C7D8C;
-  --button-main-color-active: #585968;
+  --button-main-color: #AEB1C2;
+  --button-main-color-hover: #C2C4CF;
+  --button-main-color-active: #84889C;
   --button-state-color: var(--button-main-color);
   --icon-size: 18px;
   --icon-spacing: 6px;
@@ -135,7 +135,7 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-family: Poppins,sans-serif;
+  font-family: Poppins,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -144,12 +144,13 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
   font-size: 14px;
   border-radius: 28px;
   width: 100%;
-  min-width: 235px;
   padding: 19px 15px;
 }
 
 .c12:hover:enabled {
   --button-state-color: var(--button-main-color-hover);
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
 .c12:active:enabled {
@@ -176,7 +177,7 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
   -moz-letter-spacing: 0;
   -ms-letter-spacing: 0;
   letter-spacing: 0;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
   line-height: 1;
 }

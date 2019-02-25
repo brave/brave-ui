@@ -84,7 +84,7 @@ exports[`Tip tests basic tests matches the snapshot 1`] = `
   padding-left: 0px;
 }
 
-.c16 {
+.c17 {
   background: var(--donate-send-bg);
   font-size: 13px;
   font-weight: 600;
@@ -101,7 +101,7 @@ exports[`Tip tests basic tests matches the snapshot 1`] = `
   cursor: pointer;
 }
 
-.c18 {
+.c19 {
   display: block;
   border: none;
   font-size: 13px;
@@ -111,13 +111,13 @@ exports[`Tip tests basic tests matches the snapshot 1`] = `
   cursor: pointer;
 }
 
-.c17 {
+.c18 {
   display: block;
   width: 245px;
   margin: 0 auto;
 }
 
-.c19 {
+.c20 {
   vertical-align: middle;
   display: inline-block;
   margin-right: 15px;
@@ -137,10 +137,68 @@ exports[`Tip tests basic tests matches the snapshot 1`] = `
   fill: currentColor;
 }
 
-.c20 {
+.c21 {
   width: 100%;
   height: 100%;
   fill: currentColor;
+}
+
+.c16 {
+  --toggle-bullet-color: #FFFFFF;
+  --toggle-bullet-hoverColor: #FFFFFF;
+  --toggle-bullet-activeColor: #FFFFFF;
+  --toggle-slider-color: #ced0db;
+  --toggle-slider-hoverColor: #c2c4cf;
+  --toggle-bullet-translate: translateX(0);
+  position: absolute;
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  background-color: var(--toggle-bullet-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  -webkit-transform: var(--toggle-bullet-translate);
+  -ms-transform: var(--toggle-bullet-translate);
+  transform: var(--toggle-bullet-translate);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.c14 {
+  --toggle-bullet-color: #FFFFFF;
+  --toggle-bullet-hoverColor: #FFFFFF;
+  --toggle-bullet-activeColor: #FFFFFF;
+  --toggle-slider-color: #ced0db;
+  --toggle-slider-hoverColor: #c2c4cf;
+  position: absolute;
+  top: 5px;
+  height: 6px;
+  width: 28px;
+  background-color: var(--toggle-slider-color);
+  border-radius: 8px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.c12 {
+  position: relative;
+  display: inline-block;
+  height: 16px;
+  width: 28px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.c12 .c13 {
+  background-color: var(--toggle-slider-color);
+}
+
+.c12:hover .c13 {
+  background-color: var(--toggle-slider-hoverColor);
+}
+
+.c12:active .c15 {
+  background-color: var(--toggle-bullet-activeColor);
 }
 
 .c11 {
@@ -148,54 +206,6 @@ exports[`Tip tests basic tests matches the snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.c13 {
-  position: relative;
-  display: block;
-  height: 16px;
-  width: 28px;
-}
-
-.c14 {
-  background: #A7ACB2;
-  height: 6px;
-  margin-top: 5px;
-  width: 100%;
-  border-radius: 3px;
-}
-
-.c15 {
-  position: relative;
-  border-radius: 50%;
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
-  --toggle-bullet-size: 16px;
-  --toggle-bullet-transform: translate(-1px,calc(-50% - 3px));
-  --toggle-bullet-background: #CDD1D5;
-  width: var(--toggle-bullet-size);
-  height: var(--toggle-bullet-size);
-  -webkit-transform: var(--toggle-bullet-transform);
-  -ms-transform: var(--toggle-bullet-transform);
-  transform: var(--toggle-bullet-transform);
-  background-color: var(--toggle-bullet-background);
-  box-shadow: 0 3px 3px rgba(0,0,0,0.05);
-}
-
-.c12 {
-  color: #838391;
-  font-size: 12px;
-  font-family: Poppins,sans-serif;
-  text-align: right;
-  -webkit-letter-spacing: 0.4px;
-  -moz-letter-spacing: 0.4px;
-  -ms-letter-spacing: 0.4px;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  margin: 0px 8px 0 0;
-  opacity: 1;
-  -webkit-transition: 100ms ease-out;
-  transition: 100ms ease-out;
 }
 
 <div
@@ -256,24 +266,17 @@ exports[`Tip tests basic tests matches the snapshot 1`] = `
           >
             <div
               className="c12"
-              size="small"
-            >
-              MISSING: off
-            </div>
-            <div
-              className="c13"
               data-test-id="toggle"
               onClick={[Function]}
               size="small"
             >
               <div
-                className="c14"
+                className="c13 c14"
                 size="small"
               />
               <div
-                className="c15"
+                className="c15 c16"
                 size="small"
-                type="light"
               />
             </div>
           </div>
@@ -281,22 +284,22 @@ exports[`Tip tests basic tests matches the snapshot 1`] = `
       </div>
     </div>
     <div
-      className="c16"
+      className="c17"
       onClick={[Function]}
     >
       <div
-        className="c17"
+        className="c18"
       >
         <button
-          className="c18"
+          className="c19"
         >
           <span
-            className="c19"
+            className="c20"
             disabled={false}
           >
             <svg
               aria-hidden="true"
-              className="c20"
+              className="c21"
               focusable="false"
               viewBox="0 0 32 32"
             >
