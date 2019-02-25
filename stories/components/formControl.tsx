@@ -35,18 +35,19 @@ storiesOf('Components', module)
     }
 
     return (
-      <Toggle
-        size={select('Size', sizeOptions, 'large')}
-        checked={store.state.checked}
-        type={select('Type', { dark: 'dark', light: 'light' }, 'dark')}
-        disabled={boolean('Disabled?', false)}
-        onToggle={onToggle}
-      />
+      <div className='centered'>
+        <Toggle
+          size={select('Size', sizeOptions, 'default')}
+          checked={store.state.checked}
+          disabled={boolean('Disabled?', false)}
+          onToggle={onToggle}
+        />
+      </div>
     )
   }))
   .add('Select', () => {
     return (
-      <>
+      <div className='centered'>
         <div style={{ width: '310px', background: '#fff', padding: '30px' }}>
           <ControlWrapper
             text={text('Title', 'Limit Sites to')}
@@ -124,7 +125,7 @@ storiesOf('Components', module)
             </Select>
           </ControlWrapper>
         </div>
-      </>
+      </div>
     )
   })
   .add('Checkbox', withState({ 'yt': true, 'tw': false, 'inst': false }, (store) => {
@@ -132,7 +133,7 @@ storiesOf('Components', module)
       store.set(all)
     }
     return (
-      <>
+      <div className='centered'>
         <div style={{ width: '310px', background: '#fff', padding: '30px' }}>
           <ControlWrapper
             text={text('Title', 'Enable ability to give tips on ‘Like’ posts')}
@@ -173,7 +174,7 @@ storiesOf('Components', module)
             </Checkbox>
           </ControlWrapper>
         </div>
-      </>
+      </div>
     )
   }))
   .add('Radio', withState({ '5': true, '10': false, '15': false, '20': false }, (store) => {
@@ -181,7 +182,7 @@ storiesOf('Components', module)
       store.set(all)
     }
     return (
-      <>
+      <div className='centered'>
         <div style={{ width: '295px', background: '#fff', padding: '30px 60px' }}>
           <ControlWrapper
             text={text('Title', 'Monthly Budget')}
@@ -229,14 +230,13 @@ storiesOf('Components', module)
             </Radio>
           </ControlWrapper>
         </div>
-      </>
+      </div>
     )
   }))
   .add('TextArea', withState({ value: '' }, (store) => {
     const onChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
       store.set({ value: event.target.value })
     }
-
     return (
       <div style={{ width: '250px' }}>
         <ControlWrapper
