@@ -47,6 +47,7 @@
     "create": "node ./tools/createComponent.js"
   },
   "dependencies": {
+    "@ctrl/tinycolor": "^2.2.1",
     "emptykit.css": "^1.0.1",
     "styled-components": "^3.2.5"
   },
