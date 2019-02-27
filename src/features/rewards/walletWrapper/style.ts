@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { Notification } from './'
-import styled from 'styled-components'
+import styled from '../../../components/style/theme'
 import Button, { Props as ButtonProps } from '../../../components/button'
 import { ComponentType } from 'react'
 
@@ -32,7 +32,7 @@ const wrapperBackgroundRules = (notification: Notification | undefined) => {
   return 'linear-gradient(-180deg, rgba(255,255,255,1) 0%, rgba(228,242,255,1) 40%)'
 }
 
-export const StyledWrapper = styled<StyledProps, 'div'>('div')`
+export const StyledWrapper = styled.div<StyledProps>`
   overflow: hidden;
   box-shadow: 0 1px 12px 0 rgba(99,105,110,0.18);
   font-family: Poppins, sans-serif;
@@ -44,12 +44,12 @@ export const StyledWrapper = styled<StyledProps, 'div'>('div')`
   flex-direction: column;
 `
 
-export const StyledHeader = styled<{}, 'div'>('div')`
+export const StyledHeader = styled.div`
   padding: 16px 21px 0 19px;
   position: relative;
 `
 
-export const StyledTitle = styled<{}, 'div'>('div')`
+export const StyledTitle = styled.div`
   font-size: 16px;
   font-weight: 500;
   line-height: 1.38;
@@ -57,16 +57,16 @@ export const StyledTitle = styled<{}, 'div'>('div')`
   color: rgba(255, 255, 255, 0.65);
 `
 
-export const StyledBalance = styled<{}, 'div'>('div')`
+export const StyledBalance = styled.div`
   text-align: center;
 `
 
-export const StyleGrantButton = styled<{}, 'div'>('div')`
+export const StyleGrantButton = styled.div`
   display: flex;
   justify-content: center;
 `
 
-export const StyledBalanceTokens = styled<{}, 'div'>('div')`
+export const StyledBalanceTokens = styled.div`
   font-size: 36px;
   line-height: 0.61;
   letter-spacing: -0.4px;
@@ -75,7 +75,7 @@ export const StyledBalanceTokens = styled<{}, 'div'>('div')`
   font-weight: 300;
 `
 
-export const StyledContent = styled<StyledProps, 'div'>('div')`
+export const StyledContent = styled.div<StyledProps>`
   padding: ${p => p.contentPadding ? '11px 25px 19px' : '0px'};
   position: relative;
   background: #f9fbfc;
@@ -83,7 +83,7 @@ export const StyledContent = styled<StyledProps, 'div'>('div')`
   height: 381px;
 `
 
-export const StyledAction = styled<{}, 'button'>('button')`
+export const StyledAction = styled.button`
   display: flex;
   background: none;
   padding: 4px;
@@ -93,7 +93,7 @@ export const StyledAction = styled<{}, 'button'>('button')`
   color: #A1A8F2;
 `
 
-export const StyledActionIcon = styled<{}, 'div'>('div')`
+export const StyledActionIcon = styled.div`
   display: inline-block;
   width: 24px;
   height: 24px;
@@ -101,13 +101,13 @@ export const StyledActionIcon = styled<{}, 'div'>('div')`
   vertical-align: text-bottom;
 `
 
-export const StyledActionText = styled<{}, 'div'>('div')`
+export const StyledActionText = styled.div`
   color: #fff;
   font-size: 14px;
   opacity: 0.65;
 `
 
-export const StyledCopy = styled<StyledProps, 'div'>('div')`
+export const StyledCopy = styled.div<StyledProps>`
   font-size: 12px;
   color: #838391;
   padding: 19px 15px;
@@ -115,7 +115,7 @@ export const StyledCopy = styled<StyledProps, 'div'>('div')`
   text-align: center;
 `
 
-export const StyledCopyImage = styled<{}, 'span'>('span')`
+export const StyledCopyImage = styled.span`
   vertical-align: middle;
   display: inline-block;
   color: #838391;
@@ -123,7 +123,7 @@ export const StyledCopyImage = styled<{}, 'span'>('span')`
   height: 27px;
 `
 
-export const StyledIconAction = styled<{}, 'button'>('button')`
+export const StyledIconAction = styled.button`
   position: absolute;
   top: 15px;
   right: 21px;
@@ -136,7 +136,7 @@ export const StyledIconAction = styled<{}, 'button'>('button')`
   height: 24px;
 `
 
-export const StyledBalanceConverted = styled<{}, 'div'>('div')`
+export const StyledBalanceConverted = styled.div`
   font-family: Muli, sans-serif;
   font-size: 12px;
   line-height: 1.17;
@@ -146,11 +146,11 @@ export const StyledBalanceConverted = styled<{}, 'div'>('div')`
   font-weight: 300;
 `
 
-export const StyledGrantWrapper = styled<{}, 'div'>('div')`
+export const StyledGrantWrapper = styled.div`
   margin-top: 13px;
 `
 
-export const StyledGrant = styled<{}, 'div'>('div')`
+export const StyledGrant = styled.div`
   font-family: Muli, sans-serif;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.60);
@@ -172,7 +172,7 @@ export const StyledGrant = styled<{}, 'div'>('div')`
   }
 `
 
-export const StyledActionWrapper = styled<{}, 'div'>('div')`
+export const StyledActionWrapper = styled.div`
   text-align: center;
   font-size: 12px;
   color: #fff;
@@ -182,7 +182,7 @@ export const StyledActionWrapper = styled<{}, 'div'>('div')`
   padding-bottom: 3px;
 `
 
-export const StyledBalanceCurrency = styled<{}, 'span'>('span')`
+export const StyledBalanceCurrency = styled.span`
   text-transform: uppercase;
   opacity: 0.66;
   font-family: Muli, sans-serif;
@@ -191,7 +191,7 @@ export const StyledBalanceCurrency = styled<{}, 'span'>('span')`
   color: #fff;
 `
 
-export const StyledCurve = styled<StyledProps, 'div'>('div')`
+export const StyledCurve = styled.div<StyledProps>`
   padding: 10px 0;
   position: relative;
   overflow: hidden;
@@ -210,7 +210,7 @@ export const StyledCurve = styled<StyledProps, 'div'>('div')`
   }
 `
 
-export const StyledAlertWrapper = styled<{}, 'div'>('div')`
+export const StyledAlertWrapper = styled.div`
   display: flex;
   align-items: stretch;
   position: absolute;
@@ -221,7 +221,7 @@ export const StyledAlertWrapper = styled<{}, 'div'>('div')`
   width: 100%;
 `
 
-export const StyledAlertClose = styled<{}, 'button'>('button')`
+export const StyledAlertClose = styled.button`
   position: absolute;
   background: none;
   border: none;
@@ -234,7 +234,7 @@ export const StyledAlertClose = styled<{}, 'button'>('button')`
   color: #B8B9C4;
 `
 
-export const StyledBAT = styled<{}, 'div'>('div')`
+export const StyledBAT = styled.div`
   text-align: center;
   max-width: 300px;
   margin: 20px auto 0;
@@ -249,13 +249,13 @@ export const StyledBAT = styled<{}, 'div'>('div')`
   }
 `
 
-export const StyledNotificationIcon = styled<StyledProps, 'img'>('img')`
+export const StyledNotificationIcon = styled.img<StyledProps>`
   height: 48px;
   width: 48px;
   margin: 8px 0px 12px;
 `
 
-export const StyledNotificationCloseIcon = styled<StyledProps, 'div'>('div')`
+export const StyledNotificationCloseIcon = styled.div<StyledProps>`
   height: 20px;
   width: 20px;
   position: absolute;
@@ -265,32 +265,32 @@ export const StyledNotificationCloseIcon = styled<StyledProps, 'div'>('div')`
   cursor: pointer;
 `
 
-export const StyledNotificationContent = styled<StyledProps, 'div'>('div')`
+export const StyledNotificationContent = styled.div<StyledProps>`
   display: block;
   text-align: center;
 `
 
-export const StyledNotificationMessage = styled<StyledProps, 'div'>('div')`
+export const StyledNotificationMessage = styled.div<StyledProps>`
   max-width: 285px;
   color: #4B4C5C;
   padding-bottom: 5px;
   margin: 0 auto;
 `
 
-export const StyledTypeText = styled<StyledProps, 'span'>('span')`
+export const StyledTypeText = styled.span<StyledProps>`
   font-weight: 500;
   margin-right: 5px;
   display: inline-block;
 `
 
-export const StyledMessageText = styled<StyledProps, 'span'>('span')`
+export const StyledMessageText = styled.span<StyledProps>`
   line-height: 20px;
   font-weight: 400;
   margin: 0px 5px;
   font-family: Muli, sans-serif;
 `
 
-export const StyledDateText = styled<StyledProps, 'span'>('span')`
+export const StyledDateText = styled.span<StyledProps>`
   font-weight: 400;
   margin-left: 5px;
   display: inline-block;
@@ -298,7 +298,7 @@ export const StyledDateText = styled<StyledProps, 'span'>('span')`
   font-family: Muli, sans-serif;
 `
 
-export const StyledButtonWrapper = styled<StyledProps, 'div'>('div')`
+export const StyledButtonWrapper = styled.div<StyledProps>`
   margin: 12px 0 15px;
   display: flex;
   justify-content: center;
@@ -309,6 +309,6 @@ export const StyledButton = styled(Button as ComponentType<ButtonProps>)`
   padding-right: 27px;
 `
 
-export const StyledPipe = styled<StyledProps, 'span'>('span')`
+export const StyledPipe = styled.span<StyledProps>`
   font-weight: 300;
 `

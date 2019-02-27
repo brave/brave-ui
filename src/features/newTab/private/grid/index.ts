@@ -4,7 +4,7 @@
 
 import styled from '../../../../components/style/theme'
 
-export const Grid = styled<{}, 'section'>('section')`
+export const Grid = styled.section`
   box-sizing: border-box;
   display: grid;
   height: 100%;
@@ -45,7 +45,7 @@ export const Grid = styled<{}, 'section'>('section')`
   }
 `
 
-export const Grid2Columns = styled<{}, 'section'>('section')`
+export const Grid2Columns = styled.section`
   box-sizing: border-box;
   display: grid;
   height: 100%;
@@ -81,7 +81,7 @@ export const Grid2Columns = styled<{}, 'section'>('section')`
   }
 `
 
-export const HeaderGrid = styled<{}, 'section'>('section')`
+export const HeaderGrid = styled.section`
   box-sizing: border-box;
   display: grid;
   height: 100%;
@@ -110,7 +110,7 @@ export const HeaderGrid = styled<{}, 'section'>('section')`
   }
 `
 
-export const ButtonGroup = styled<{}, 'footer'>('footer')`
+export const ButtonGroup = styled.footer`
   display: flex;
   flex: 1;
   justify-content: flex-start;

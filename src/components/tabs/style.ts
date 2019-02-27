@@ -2,19 +2,19 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from 'styled-components'
+import styled from '../style/theme'
 
 interface StyleProps {
   selected: boolean
 }
 
-export const StyledTabWrapper = styled<{}, 'div'>('div')`
+export const StyledTabWrapper = styled.div`
   border-bottom: 1px solid #DFDFE8;
   text-align: center;
   font-family: Poppins, sans-serif;
 `
 
-export const StyledTab = styled<StyleProps, 'div'>('div')`
+export const StyledTab = styled.div<StyleProps>`
   border-radius: 6px 6px 0 0;
   border: 1px solid #DFDFE8;
   border-bottom: 1px solid ${p => p.selected ? '#FFF' : '#DFDFE8'};
@@ -32,6 +32,6 @@ export const StyledTab = styled<StyleProps, 'div'>('div')`
   top: 1px
 `
 
-export const StyledContent = styled<{}, 'div'>('div')`
+export const StyledContent = styled.div`
   padding: 34px 56px 20px;
 `

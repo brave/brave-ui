@@ -2,7 +2,7 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from 'styled-components'
+import styled from '../../style/theme'
 import { Props } from './index'
 
 const getBorder = (p: Props) => {
@@ -19,11 +19,11 @@ const getBorder = (p: Props) => {
   return color
 }
 
-export const StyledWrapper = styled<{}, 'div'>('div')`
+export const StyledWrapper = styled.div`
   width: 100%;
 `
 
-export const StyledArea = styled<Props, 'textarea'>('textarea')`
+export const StyledArea = styled.textarea<Props>`
   min-height: 140px;
   box-sizing: border-box;
   width: 100%;

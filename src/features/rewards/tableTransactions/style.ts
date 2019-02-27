@@ -2,7 +2,7 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled, { css } from 'styled-components'
+import styled, { css } from '../../../components/style/theme'
 import { TransactionType } from './index'
 
 const colors: Record<TransactionType, string> = {
@@ -25,16 +25,16 @@ interface StyleProps {
   type: TransactionType
 }
 
-export const StyledTHLast = styled<{}, 'div'>('div')`
+export const StyledTHLast = styled.div`
   text-align: right;
   padding-right: 14px;
 `
 
-export const StyledProvider = styled<{}, 'span'>('span')`
+export const StyledProvider = styled.span`
   color: #9e9fab;
 `
 
-export const StyledType = styled<StyleProps, 'div'>('div')`
+export const StyledType = styled.div<StyleProps>`
   ${getColor};
   color: var(--tableTransactions-type-color);
 `

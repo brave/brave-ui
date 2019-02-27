@@ -18,7 +18,7 @@ export const SubTitle = styled(Heading)`
   margin: 16px 0 12px 0;
 `
 
-export const Paragraph = styled<{}, 'p'>('p')`
+export const Paragraph = styled.p`
   font-size: 16px;
   font-weight: 300;
   line-height: 1.75;
@@ -27,7 +27,7 @@ export const Paragraph = styled<{}, 'p'>('p')`
   padding: 0 0 12px 0;
 `
 
-export const Link = styled<{}, 'a'>(Paragraph.withComponent('a') as any)`
+export const Link = styled(Paragraph.withComponent('a'))`
   color: ${p => p.theme.color.brand.brave};
   padding: 0;
   text-decoration: none;
@@ -35,11 +35,11 @@ export const Link = styled<{}, 'a'>(Paragraph.withComponent('a') as any)`
   display: inline;
 `
 
-export const Bold = styled<{}, 'b'>('b')`
+export const Bold = styled.b`
   font-weight: 600;
 `
 
-export const SwitchLabel = styled<{}, 'label'>('label')`
+export const SwitchLabel = styled.label`
   font-family: ${p => p.theme.fontFamily.body};
   color: ${p => p.theme.color.bodyText};
   font-size: 14px;

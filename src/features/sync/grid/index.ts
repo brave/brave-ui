@@ -4,11 +4,11 @@
 
 import styled from '../../../components/style/theme'
 
-export const SectionBlock = styled<{}, 'section'>('section')`
+export const SectionBlock = styled.section`
   margin: 15px 0 40px;
 `
 
-export const EnabledContentButtonGrid = styled<{}, 'footer'>('footer')`
+export const EnabledContentButtonGrid = styled.footer`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -16,7 +16,7 @@ export const EnabledContentButtonGrid = styled<{}, 'footer'>('footer')`
   margin: 10px 5px 0;
 `
 
-export const SettingsToggleGrid = styled<{}, 'footer'>('footer')`
+export const SettingsToggleGrid = styled.footer`
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr;
@@ -25,7 +25,7 @@ export const SettingsToggleGrid = styled<{}, 'footer'>('footer')`
   margin: 15px 0 0;
 `
 
-export const DisabledContentButtonGrid = styled<{}, 'footer'>('footer')`
+export const DisabledContentButtonGrid = styled.footer`
   display: grid;
   grid-template-columns: 1fr auto;
   grid-gap: 10px;
@@ -36,7 +36,7 @@ interface TableGridProps {
   isDeviceTable?: boolean
 }
 
-export const TableGrid = styled<TableGridProps, 'div'>('div')`
+export const TableGrid = styled.div<TableGridProps>`
   align-items: center;
   display: grid;
   grid-template-columns: ${p => p.isDeviceTable ? '1fr' : '200px auto'};
@@ -44,7 +44,7 @@ export const TableGrid = styled<TableGridProps, 'div'>('div')`
   grid-gap: ${p => p.isDeviceTable ? '0' : '50px'};
 `
 
-export const TableButtonGrid = styled<{}, 'div'>('div')`
+export const TableButtonGrid = styled.div`
   display: grid;
   grid-template-rows: auto;
   grid-gap: 15px;

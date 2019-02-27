@@ -3,9 +3,9 @@
 * You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-import styled from 'styled-components'
+import styled from '../../../components/style/theme'
 
-export const StyledExcludedText = styled<{}, 'div'>('div')`
+export const StyledExcludedText = styled.div`
   color: #4B4C5C;
   font-size: 14px;
   font-weight: 300;
@@ -15,7 +15,7 @@ export const StyledExcludedText = styled<{}, 'div'>('div')`
   margin-bottom: 33px;
 `
 
-export const StyledRestore = styled<{}, 'a'>('a')`
+export const StyledRestore = styled.a`
   color: #696fdc;
   display: inline-block;
   font-size: 13px;

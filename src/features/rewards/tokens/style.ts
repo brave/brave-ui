@@ -2,7 +2,7 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled, { css } from 'styled-components'
+import styled, { css } from '../../../components/style/theme'
 import { Props, Size, Type } from './index'
 
 const sizes: Record<Size, {token: string, tokenNum: string, text: string}> = {
@@ -43,11 +43,11 @@ const getStyle = (p: Partial<Props>) => {
   `
 }
 
-export const StyledWrapper = styled<Partial<Props>, 'span'>('span')`
+export const StyledWrapper = styled.span<Partial<Props>>`
   ${getStyle}
 `
 
-export const StyledTokens = styled<{}, 'span'>('span')`
+export const StyledTokens = styled.span`
   font-family: Poppins, sans-serif;
   font-weight: 300;
   line-height: 1.4;
@@ -55,13 +55,13 @@ export const StyledTokens = styled<{}, 'span'>('span')`
   display: inline-block;
 `
 
-export const StyledTokenValue = styled<{}, 'span'>('span')`
+export const StyledTokenValue = styled.span`
   color: var(--tokens-value-color);
   font-size: var(--tokens-tokenNum-size);
   font-weight: 500;
 `
 
-export const StyledContent = styled<{}, 'span'>('span')`
+export const StyledContent = styled.span`
   color: #9E9FAB;
   font-size: var(--tokens-text-size);
   font-family: Muli, sans-serif;
@@ -70,7 +70,7 @@ export const StyledContent = styled<{}, 'span'>('span')`
   margin-left: 10px;
 `
 
-export const StyledTokenCurrency = styled<{}, 'span'>('span')`
+export const StyledTokenCurrency = styled.span`
   font-size: var(--tokens-token-size);
   font-weight: 300;
   display: inline-block;

@@ -2,7 +2,7 @@
   "name": "brave-ui",
   "main": "index.js",
   "sideEffects": false,
-  "version": "0.37.0",
+  "version": "0.34.4",
   "description": "List of reusable React components to empower your brave UI",
   "author": "Brave Software",
   "contributors": [
@@ -48,8 +48,9 @@
   },
   "dependencies": {
     "@ctrl/tinycolor": "^2.2.1",
+    "@types/styled-components": "^4.1.10",
     "emptykit.css": "^1.0.1",
-    "styled-components": "^3.2.5"
+    "styled-components": "^4.1.3"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
@@ -83,7 +84,7 @@
     "enzyme-to-json": "^3.3.4",
     "fs-extra": "^2.1.2",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^23.5.0",
+    "jest": "^24.1.0",
     "jest-styled-components": "^5.0.1",
     "lerna": "^2.0.0",
     "ncp": "^2.0.0",
@@ -104,8 +105,8 @@
     "tslint": "^5.8.0",
     "tslint-config-standard": "^7.0.0",
     "tslint-react": "^3.2.0",
-    "typescript": "^3.0.1",
-    "typescript-plugin-styled-components": "0.0.6"
+    "typescript": "^3.3.1",
+    "typescript-plugin-styled-components": "1.2.0"
   },
   "peerDependencies": {
     "react": "^16.0.0"
@@ -156,7 +157,9 @@
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/.testconfig/testSetup.js",
+    "setupFilesAfterEnv": [
+      "<rootDir>/.testconfig/testSetup.js"
+    ],
     "setupFiles": [
       "<rootDir>/.testconfig/testPolyfills.js"
     ],

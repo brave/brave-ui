@@ -3,14 +3,14 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { Type } from './'
-import styled from 'styled-components'
+import styled from '../../../components/style/theme'
 
 interface StyleProps {
   type?: Type
   isMobile?: boolean
 }
 
-export const StyledWrapper = styled<StyleProps, 'div'>('div')`
+export const StyledWrapper = styled.div<StyleProps>`
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
@@ -24,7 +24,7 @@ export const StyledWrapper = styled<StyleProps, 'div'>('div')`
   box-shadow: 0 1px 12px 0 rgba(99,105,110,0.18);
 `
 
-export const StyledIcon = styled<StyleProps, 'div'>('div')`
+export const StyledIcon = styled.div<StyleProps>`
   flex-basis: 42px;
   height: 42px;
   width: 52px;
@@ -32,7 +32,7 @@ export const StyledIcon = styled<StyleProps, 'div'>('div')`
   color: ${p => p.type === 'ads' ? '#C12D7C' : '#FF9868'};
 `
 
-export const StyledText = styled<{}, 'div'>('div')`
+export const StyledText = styled.div`
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 70%;
@@ -43,7 +43,7 @@ export const StyledText = styled<{}, 'div'>('div')`
   padding: 0 10px;
 `
 
-export const StyledClaim = styled<{}, 'button'>('button')`
+export const StyledClaim = styled.button`
   flex-basis: 90px;
   height: 64px;
   background-color: #fb542b;

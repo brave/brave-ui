@@ -25,7 +25,7 @@ export default class Shields extends React.PureComponent<BraveShieldsProps, {}> 
   render () {
     const { fakeOnChange, enabled, sitename, favicon } = this.props
     return (
-      <ShieldsPanel enabled={enabled} style={{ width: '330px' }}>
+      <ShieldsPanel>
         <BraveShieldsHeader enabled={enabled} fakeOnChange={fakeOnChange} sitename={sitename} favicon={favicon} />
         <BraveShieldsInterfaceControls enabled={enabled} sitename={sitename} favicon={favicon} />
         <BraveShieldsPrivacyControls enabled={enabled} sitename={sitename} favicon={favicon} />

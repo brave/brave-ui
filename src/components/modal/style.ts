@@ -2,14 +2,14 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from 'styled-components'
+import styled from '../style/theme'
 import { Props } from './index'
 
 interface StyleProps {
   isMobile?: boolean
 }
 
-export const StyledWrapper = styled<{}, 'div'>('div')`
+export const StyledWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -21,7 +21,7 @@ export const StyledWrapper = styled<{}, 'div'>('div')`
   overflow: hidden;
 `
 
-export const StyledDialog = styled<Props, 'div'>('div')`
+export const StyledDialog = styled.div<Props>`
   max-width: ${p => p.size === 'small' ? '666px' : '920px'};
   margin: 52px auto;
   background: #fff;
@@ -30,7 +30,7 @@ export const StyledDialog = styled<Props, 'div'>('div')`
   position: relative;
 `
 
-export const StyledClose = styled<{}, 'div'>('div')`
+export const StyledClose = styled.div`
   position: absolute;
   top: 20px;
   right: 20px;
@@ -40,7 +40,7 @@ export const StyledClose = styled<{}, 'div'>('div')`
   color: #9E9FAB;
 `
 
-export const StyledContent = styled<StyleProps, 'div'>('div')`
+export const StyledContent = styled.div<StyleProps>`
   padding: 48px 48px;
   overflow-y: auto;
   max-height: calc(100vh - ${p => p.isMobile ? 170 : 100}px);

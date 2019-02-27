@@ -2,9 +2,9 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from 'styled-components'
+import styled from '../../../../components/style/theme'
 
-export const StyledWrapper = styled<{}, 'div'>('div')`
+export const StyledWrapper = styled.div`
   font-family: Poppins, sans-serif;
   display: flex;
   width: 100%;
@@ -21,7 +21,7 @@ export const StyledWrapper = styled<{}, 'div'>('div')`
   box-shadow: 0 0 2px 0 rgba(99,105,110,0.55);
 `
 
-export const StyledLeft = styled<{}, 'div'>('div')`
+export const StyledLeft = styled.div`
   flex-grow: 1;
   flex-shrink: 1;
   display: flex;
@@ -29,14 +29,14 @@ export const StyledLeft = styled<{}, 'div'>('div')`
   padding: 0px 13px;
 `
 
-export const StyledRight = styled<{}, 'div'>('div')`
+export const StyledRight = styled.div`
   height: 66px;
   position: fixed;
   right: 15px;
   top: 18px;
 `
 
-export const StyledTitle = styled<{}, 'div'>('div')`
+export const StyledTitle = styled.div`
   color: #4B4C5C;
   font-size: 22px;
   font-weight: 500;
@@ -53,7 +53,7 @@ export const StyledTitle = styled<{}, 'div'>('div')`
   }
 `
 
-export const StyledTM = styled<{}, 'span'>('span')`
+export const StyledTM = styled.span`
   font-size: 8px;
   font-weight: 300;
   letter-spacing: 0.2px;
@@ -68,7 +68,7 @@ export const StyledTM = styled<{}, 'span'>('span')`
   }
 `
 
-export const StyledLogoWrapper = styled<{}, 'div'>('div')`
+export const StyledLogoWrapper = styled.div`
   width: 30px;
   height: 30px;
   margin-top: 13px;

@@ -2,11 +2,11 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from 'styled-components'
+import styled from '../../style/theme'
 import theme from '../../style/theme/default'
 import { InputProps } from './index'
 
-export const InputComponent = styled<InputProps, 'div'>('div')`
+export const InputComponent = styled.div<InputProps>`
   background-color: #fff;
   min-height: auto;
   box-sizing: border-box;
@@ -20,7 +20,7 @@ export const InputComponent = styled<InputProps, 'div'>('div')`
   }
 `
 
-export const StyledIcon = styled<{}, 'div'>('div')`
+export const StyledIcon = styled.div`
   display: inline-block;
   vertical-align: middle;
   width: 20px;
@@ -28,7 +28,7 @@ export const StyledIcon = styled<{}, 'div'>('div')`
   color: #D1D1DB;
 `
 
-export const StyledInput = styled<InputProps, 'input'>('input')`
+export const StyledInput = styled.input<InputProps>`
   display: inline-block;
   vertical-align: middle;
   min-height: auto;

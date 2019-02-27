@@ -3,7 +3,7 @@
 * You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-import styled from 'styled-components'
+import styled from '../../../components/style/theme'
 import * as CSS from 'csstype'
 
 interface StyleProps {
@@ -14,11 +14,11 @@ interface StyleProps {
   logoBgColor?: CSS.Color
 }
 
-export const StyledOuterWrapper = styled<{}, 'div'>('div')`
+export const StyledOuterWrapper = styled.div`
   display: flex;
 `
 
-export const StyledWrapper = styled<{}, 'div'>('div')`
+export const StyledWrapper = styled.div`
   display: flex;
   position: fixed;
   top: 0;
@@ -30,7 +30,7 @@ export const StyledWrapper = styled<{}, 'div'>('div')`
   justify-content: center;
 `
 
-export const StyledHeaderText = styled<{}, 'span'>('span')`
+export const StyledHeaderText = styled.span`
   color: #D1D1DB;
   font-size: 38px;
   font-weight: 600;
@@ -38,36 +38,36 @@ export const StyledHeaderText = styled<{}, 'span'>('span')`
   line-height: 28px;
 `
 
-export const StyledOverlayTop = styled<{}, 'div'>('div')`
+export const StyledOverlayTop = styled.div`
   display: flex;
   flex-direction: row;
   padding-top: 110px;
 `
 
-export const StyledOverlayContent = styled<{}, 'div'>('div')`
+export const StyledOverlayContent = styled.div`
   display: block;
 `
 
-export const StyledIconWrapper = styled<StyleProps, 'span'>('span')`
+export const StyledIconWrapper = styled.span<StyleProps>`
   flex: 1 0 0;
   margin-top: ${p => p.success ? 0 : '-25px'}
 `
 
-export const StyledIcon = styled<{}, 'span'>('span')`
+export const StyledIcon = styled.span`
   width: 90px;
   margin-top: -7px;
   margin-right: 9px;
   display: inline-block;
 `
 
-export const StyledMessage = styled<StyleProps, 'div'>('div')`
+export const StyledMessage = styled.div<StyleProps>`
   flex: 9 0 0;
   padding-top: 10px;
   text-align: ${p => p.monthly ? 'center' : 'inherit'};
   margin-right: ${p => p.success ? 0 : '-10px'}
 `
 
-export const StyledProviderImage = styled<StyleProps, 'div'>('div')`
+export const StyledProviderImage = styled.div<StyleProps>`
   width: 90px;
   height: 90px;
   padding: 0 20px;
@@ -78,7 +78,7 @@ export const StyledProviderImage = styled<StyleProps, 'div'>('div')`
   background-image:url(${p => p.src ? p.src : ''});
 `
 
-export const StyledImageBorder = styled<{}, 'div'>('div')`
+export const StyledImageBorder = styled.div`
   position: relative;
   top: 0;
   left: -20px;
@@ -88,7 +88,7 @@ export const StyledImageBorder = styled<{}, 'div'>('div')`
   border: 5px solid #ffffff;
 `
 
-export const StyledFailWrapper = styled<{}, 'div'>('div')`
+export const StyledFailWrapper = styled.div`
   margin-top: 110px;
   padding-left: 5px;
   display: flex;
@@ -96,11 +96,11 @@ export const StyledFailWrapper = styled<{}, 'div'>('div')`
   align-items: center;
 `
 
-export const StyledCloseIcon = styled<{}, 'span'>('span')`
+export const StyledCloseIcon = styled.span`
   color: #FFF;
 `
 
-export const StyledClose = styled<{}, 'button'>('button')`
+export const StyledClose = styled.button`
   top: 20px;
   right: 20px;
   position: absolute;
@@ -114,7 +114,7 @@ export const StyledClose = styled<{}, 'button'>('button')`
   z-index: 2;
 `
 
-export const StyledFailTitle = styled<{}, 'span'>('span')`
+export const StyledFailTitle = styled.span`
   color: #FFFFFF;
   font-size: 28px;
   font-weight: 600;
@@ -124,7 +124,7 @@ export const StyledFailTitle = styled<{}, 'span'>('span')`
   margin-bottom: 10px;
 `
 
-export const StyledFailMsg = styled<{}, 'span'>('span')`
+export const StyledFailMsg = styled.span`
   color: #FFFFFF;
   font-size: 16px;
   font-family: "Muli", sans-serif;
@@ -136,7 +136,7 @@ export const StyledFailMsg = styled<{}, 'span'>('span')`
   width: 249px;
 `
 
-export const StyledBackgroundCurve = styled<{}, 'div'>('div')`
+export const StyledBackgroundCurve = styled.div`
   position: fixed;
   top: 0;
   left: -19px;
@@ -147,7 +147,7 @@ export const StyledBackgroundCurve = styled<{}, 'div'>('div')`
   border-bottom-right-radius: 140%;
 `
 
-export const StyleSubHeaderText = styled<{}, 'div'>('div')`
+export const StyleSubHeaderText = styled.div`
   font-size: 16px;
   font-family: "Muli", sans-serif;
   font-weight: normal;
@@ -156,7 +156,7 @@ export const StyleSubHeaderText = styled<{}, 'div'>('div')`
   display: block;
   margin: 10px 0 0 5px;
 `
-export const StyledLetter = styled<StyleProps, 'div'>('div')`
+export const StyledLetter = styled.div<StyleProps>`
   border: 6px solid #fff;
   border-radius: 50%;
   width: 102px;
@@ -171,19 +171,19 @@ export const StyledLetter = styled<StyleProps, 'div'>('div')`
   text-transform: uppercase;
 `
 
-export const StyledLogoImage = styled<StyleProps, 'div'>('div')`
+export const StyledLogoImage = styled.div<StyleProps>`
   width: 90px;
   height: 90px;
   background: url(${p => p.bg}) no-repeat;
   background-size: cover;
 `
 
-export const StyledLogoWrapper = styled<{}, 'div'>('div')`
+export const StyledLogoWrapper = styled.div`
   padding-right: 25px;
   flex-basis: 217px;
 `
 
-export const StyledLogoBorder = styled<StyleProps, 'div'>('div')`
+export const StyledLogoBorder = styled.div<StyleProps>`
   border: 6px solid #fff;
   border-radius: 50%;
   width: 102px;
@@ -193,11 +193,11 @@ export const StyledLogoBorder = styled<StyleProps, 'div'>('div')`
   overflow: hidden;
 `
 
-export const StyledMonthlyInfo = styled<{}, 'div'>('div')`
+export const StyledMonthlyInfo = styled.div`
   color: #fff;
 `
 
-export const StyledDomainText = styled<{}, 'span'>('span')`
+export const StyledDomainText = styled.span`
   display: block;
   font-size: 22px;
   margin: 10px 0 25px;
@@ -206,7 +206,7 @@ export const StyledDomainText = styled<{}, 'span'>('span')`
   line-height: 32px;
 `
 
-export const StyledDateText = styled<{}, 'span'>('span')`
+export const StyledDateText = styled.span`
   display: block;
   font-size: 16px;
   font-weight: normal;
@@ -215,7 +215,7 @@ export const StyledDateText = styled<{}, 'span'>('span')`
   line-height: 28px;
 `
 
-export const StyledDate = styled<{}, 'span'>('span')`
+export const StyledDate = styled.span`
   display: block;
   font-size: 16px;
   font-weight: 500;

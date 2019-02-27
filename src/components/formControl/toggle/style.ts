@@ -54,7 +54,7 @@ const moveBullet = (p: Props) => {
 
 // TODO: the Focus of this element needs hooked up correctly.
 // The styling is right but tabbing to the element in the dom doesn't work.
-export const StyledBullet = styled<Props, 'div'>('div')`
+export const StyledBullet = styled.div<Props>`
   ${getTheme};
   ${moveBullet};
   position: absolute;
@@ -68,7 +68,7 @@ export const StyledBullet = styled<Props, 'div'>('div')`
   transition: ${(p) => p.theme.transitionSpeed[0]};
 `
 
-export const StyledSlider = styled<Props, 'div'>('div')`
+export const StyledSlider = styled.div<Props>`
   ${getTheme};
   position: absolute;
   top: ${defaultSmall('6px', '5px')};
@@ -79,11 +79,11 @@ export const StyledSlider = styled<Props, 'div'>('div')`
   transition: ${(p) => p.theme.transitionSpeed[0]};
 `
 
-export const StyledWrapper = styled<Props, 'div'>('div')`
+export const StyledWrapper = styled.div<Props>`
   display: flex;
 `
 
-export const StyleToggle = styled<Props, 'div'>('div')`
+export const StyleToggle = styled.div<Props>`
   position: relative;
   display: inline-block;
   height: ${(p) => p.size === 'small' ? '16px' : '20px'};

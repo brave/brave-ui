@@ -2,9 +2,9 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from 'styled-components'
+import styled from '../../../components/style/theme'
 
-export const StyledInfoCard = styled<{}, 'div'>('div')`
+export const StyledInfoCard = styled.div`
   height: 290px;
   border-radius: 4px;
   text-align: center;
@@ -16,7 +16,7 @@ export const StyledInfoCard = styled<{}, 'div'>('div')`
   font-family: Poppins, sans-serif;
 `
 
-export const StyledTitle = styled<{}, 'strong'>('strong')`
+export const StyledTitle = styled.strong`
   color: #222326;
   font-size: 18px;
   font-weight: 500;
@@ -24,7 +24,7 @@ export const StyledTitle = styled<{}, 'strong'>('strong')`
   letter-spacing: 0.16px;
 `
 
-export const StyledDesc = styled<{}, 'p'>('p')`
+export const StyledDesc = styled.p`
   color: #686978;
   font-size: 16px;
   line-height: 22px;
@@ -34,14 +34,14 @@ export const StyledDesc = styled<{}, 'p'>('p')`
   font-weight: 400;
 `
 
-export const StyledFigure = styled<{}, 'figure'>('figure')`
+export const StyledFigure = styled.figure`
   box-sizing: border-box;
   display: block;
   max-width: 100%;
   margin: 10px auto 20px;
   height: 80px;
 `
-export const StyledGrid = styled<{}, 'div'>('div')`
+export const StyledGrid = styled.div`
   display: grid;
   grid-gap: 0px;
   grid-template-columns: 1fr 1fr 1fr;
@@ -54,6 +54,6 @@ export const StyledGrid = styled<{}, 'div'>('div')`
   }
 `
 
-export const StyledColumn = styled<{}, 'div'>('div')`
+export const StyledColumn = styled.div`
   padding: 0 10px;
 `

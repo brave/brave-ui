@@ -2,7 +2,7 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled, { css } from 'styled-components'
+import styled, { css } from '../../style/theme'
 import { Props } from './index'
 
 interface StyleProps extends Props {
@@ -56,7 +56,7 @@ const getLabel = (p: Partial<StyleProps>) => {
   `
 }
 
-export const StyledLabel = styled<Partial<StyleProps>, 'div'>('div')`
+export const StyledLabel = styled.div<Partial<StyleProps>>`
   font-family: Poppins, sans-serif;
   line-height: 1.3;
   display: flex;
@@ -67,7 +67,7 @@ export const StyledLabel = styled<Partial<StyleProps>, 'div'>('div')`
   cursor: pointer;
 `
 
-export const StyledBox = styled<Partial<StyleProps>, 'span'>('span')`
+export const StyledBox = styled.span<Partial<StyleProps>>`
   border-radius: 2px;
   text-align: center;
   display: flex;
@@ -83,7 +83,7 @@ export const StyledBox = styled<Partial<StyleProps>, 'span'>('span')`
   margin-right: var(--checkbox-box-spacing);
 `
 
-export const StyledText = styled<Partial<StyleProps>, 'span'>('span')`
+export const StyledText = styled.span<Partial<StyleProps>>`
   flex: 1;
   padding-top: ${(p) => p.size === 'big' ? '2px' : '1px'};
   letter-spacing: 0;

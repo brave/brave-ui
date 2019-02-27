@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
-import styled from 'styled-components'
+import styled from '../../src/components/style/theme'
 
 // Components
 import * as AllIcons from '../../src/components/icons'

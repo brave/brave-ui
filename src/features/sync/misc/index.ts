@@ -5,7 +5,7 @@
 import styled from '../../../components/style/theme'
 import { Card } from '../../../components'
 
-export const DisabledContent = styled<{}, 'div'>('div')`
+export const DisabledContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,12 +14,12 @@ export const DisabledContent = styled<{}, 'div'>('div')`
   background-color: #efeff0;
 `
 
-export const EnabledContent = styled<{}, 'div'>('div')`
+export const EnabledContent = styled.div`
   height: inherit;
   background-color: #efeff0;
 `
 
-export const Main = styled<{}, 'main'>('main')`
+export const Main = styled.main`
   font-family: ${p => p.theme.fontFamily.body};
   color: ${p => p.theme.color.bodyText};
   padding: 50px 15px;
@@ -31,13 +31,13 @@ export const SyncCard = styled(Card)`
   padding: 60px 70px;
 `
 
-export const TableRowId = styled<{}, 'span'>('span')`
+export const TableRowId = styled.span`
   width: 5ch;
   text-align: center;
   display: block;
 `
 
-export const TableRowDevice = styled<{}, 'span'>('span')`
+export const TableRowDevice = styled.span`
   max-width: 30ch;
   white-space: nowrap;
   overflow: hidden;
@@ -45,12 +45,12 @@ export const TableRowDevice = styled<{}, 'span'>('span')`
   display: block;
 `
 
-export const TableRowRemove = styled<{}, 'span'>('span')`
+export const TableRowRemove = styled.span`
   display: block;
   text-align: center;
 `
 
-export const TableRowRemoveButton = styled<{}, 'button'>('button')`
+export const TableRowRemoveButton = styled.button`
   text-align: center;
   padding: 0;
   border: 0;
@@ -61,7 +61,7 @@ export const TableRowRemoveButton = styled<{}, 'button'>('button')`
   width: 24px;
 `
 
-export const TableRowToggleButton = styled<{}, 'span'>('span')`
+export const TableRowToggleButton = styled.span`
   float: right;
   margin: 9px;
 `

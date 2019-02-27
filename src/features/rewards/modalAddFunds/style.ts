@@ -2,7 +2,7 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from 'styled-components'
+import styled from '../../../components/style/theme'
 import Button, { Props as ButtonProps } from '../../../components/button'
 import { ComponentType } from 'react'
 
@@ -10,11 +10,11 @@ interface StyleProps {
   isMobile: boolean
 }
 
-export const StyledWrapper = styled<{}, 'div'>('div')`
+export const StyledWrapper = styled.div`
   font-family: Poppins, sans-serif;
 `
 
-export const StyledTitle = styled<{}, 'div'>('div')`
+export const StyledTitle = styled.div`
   font-size: 32px;
   font-weight: 500;
   color: #4b4c5c;
@@ -22,7 +22,7 @@ export const StyledTitle = styled<{}, 'div'>('div')`
   line-height: 1.3;
 `
 
-export const StyledNote = styled<{}, 'div'>('div') `
+export const StyledNote = styled.div `
   max-width: 508px;
   font-family: Muli,sans-serif;
   font-size: 12px;
@@ -31,14 +31,14 @@ export const StyledNote = styled<{}, 'div'>('div') `
   color: #686978;
 `
 
-export const StyledAddresses = styled<{}, 'div'>('div') `
+export const StyledAddresses = styled.div `
   display: flex;
   flex-wrap: wrap;
   margin: 0 -15px;
   align-items: stretch;
 `
 
-export const StyledAddress = styled<StyleProps, 'div'>('div') `
+export const StyledAddress = styled.div<StyleProps> `
   flex-basis: ${p => p.isMobile ? 100 : 50}%;
   flex-shrink: 0;
   flex-grow: 0;
@@ -47,21 +47,21 @@ export const StyledAddress = styled<StyleProps, 'div'>('div') `
   padding: 0 15px 26px;
 `
 
-export const StyledLogo = styled<{}, 'div'>('div') `
+export const StyledLogo = styled.div `
   height: 60px;
   flex-basis: 60px;
   flex-shrink: 0;
   margin-right: 20px;
 `
 
-export const StyledData = styled<{}, 'div'>('div') `
+export const StyledData = styled.div `
   flex-basis: 100%;
   text-align: center;
   margin-top: 22px;
   color: #686978;
 `
 
-export const StyledAddressTitle = styled<{}, 'div'>('div') `
+export const StyledAddressTitle = styled.div `
   flex-basis: 30%;
   flex-grow: 1;
   font-size: 16px;
@@ -69,7 +69,7 @@ export const StyledAddressTitle = styled<{}, 'div'>('div') `
   color: #4b4c5c;
 `
 
-export const StyledShowQR = styled<{}, 'div'>('div') `
+export const StyledShowQR = styled.div `
   width: 110px;
   height: 110px;
   justify-content: center;
@@ -77,7 +77,7 @@ export const StyledShowQR = styled<{}, 'div'>('div') `
   background: #eee;
 `
 
-export const StyledQRImageWrapper = styled<{}, 'div'>('div') `
+export const StyledQRImageWrapper = styled.div `
   flex-basis: 100%;
   justify-content: center;
   display: flex;
@@ -85,7 +85,7 @@ export const StyledQRImageWrapper = styled<{}, 'div'>('div') `
   position: relative;
 `
 
-export const StyledQRImage = styled<{}, 'img'>('img') `
+export const StyledQRImage = styled.img `
   width: 110px;
   height: 110px;
 `
@@ -96,7 +96,7 @@ export const StyledQRButton = styled(Button as ComponentType<ButtonProps>) `
   font-weight: 400;
 `
 
-export const StyledLink = styled<{}, 'a'>('a') `
+export const StyledLink = styled.a `
   color: #4c54d2;
   text-decoration: none;
 
@@ -105,13 +105,13 @@ export const StyledLink = styled<{}, 'a'>('a') `
   }
 `
 
-export const StyledHeader = styled<{}, 'div'>('div') `
+export const StyledHeader = styled.div `
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 `
 
-export const StyledWalletAddress = styled<{}, 'div'>('div') `
+export const StyledWalletAddress = styled.div `
   font-size: 12px;
   font-weight: 500;
   line-height: 1;
@@ -120,7 +120,7 @@ export const StyledWalletAddress = styled<{}, 'div'>('div') `
   margin-bottom: 4px;
 `
 
-export const StyledText = styled<{}, 'p'>('p') `
+export const StyledText = styled.p `
   margin-bottom: 30px;
   padding: 0;
   font-size: 15px;

@@ -8,7 +8,7 @@ import palette from '../../../components/style/color/colorPalette'
 
 // Extendable components
 // ..............................
-const Grid = styled<any, any>('div')`
+const Grid = styled.div<any>`
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   font-family: ${p => p.theme.fontFamily.heading};
@@ -20,7 +20,7 @@ const Grid = styled<any, any>('div')`
   align-items: center;
 `
 
-const Flex = styled<any, any>('div')`
+const Flex = styled.div<any>`
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   font-family: ${p => p.theme.fontFamily.heading};

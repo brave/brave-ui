@@ -5,7 +5,7 @@
 import styled from '../../../components/style/theme'
 import { OptionsProps, OptionProps } from './index'
 
-export const StyledOptions = styled<OptionsProps, 'div'>('div')`
+export const StyledOptions = styled.div<OptionsProps>`
   position: absolute;
   width: 100%;
   bottom: 58px;
@@ -19,7 +19,7 @@ export const StyledOptions = styled<OptionsProps, 'div'>('div')`
   padding: 9px 0;
 `
 
-export const StyledOption = styled<OptionProps, 'div'>('div')`
+export const StyledOption = styled.div<OptionProps>`
   font-size: 14px;
   line-height: 36px;
   color: #1b1d2f;
@@ -33,7 +33,7 @@ export const StyledOption = styled<OptionProps, 'div'>('div')`
   }
 `
 
-export const StyledOptionCheck = styled<{}, 'div'>('div')`
+export const StyledOptionCheck = styled.div`
   flex-basis: 11px;
   flex-shrink: 0;
   display: flex;
@@ -41,7 +41,7 @@ export const StyledOptionCheck = styled<{}, 'div'>('div')`
   color: #A1A8F2;
 `
 
-export const StyledOptionText = styled<{}, 'div'>('div')`
+export const StyledOptionText = styled.div`
   flex-grow: 1;
   padding: 0 21px 0 6px;
   overflow: hidden;

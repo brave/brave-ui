@@ -2,7 +2,7 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled, { css } from 'styled-components'
+import styled, { css } from '../../style/theme'
 import { Props } from './index'
 
 const getColor = (p: Partial<Props>) => {
@@ -25,12 +25,12 @@ const getColor = (p: Partial<Props>) => {
   `
 }
 
-export const StyledWrapper = styled<{}, 'div'>('div')`
+export const StyledWrapper = styled.div`
   width: 100%;
   margin-bottom: 12px;
 `
 
-export const StyledLabel = styled<Partial<Props>, 'div'>('div')`
+export const StyledLabel = styled.div<Partial<Props>>`
   width: 100%;
   font-family: Poppins, sans-serif;
   line-height: normal;

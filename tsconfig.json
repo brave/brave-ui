@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["react", "jest"], // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/33311
     "target": "es6",
     "module": "esnext",
     "moduleResolution": "node",

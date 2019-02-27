@@ -2,7 +2,7 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled, { css } from 'styled-components'
+import styled, { css } from '../../../components/style/theme'
 import { Props, Provider } from './index'
 
 const getOverflowRules = (provider?: Provider) => {
@@ -17,7 +17,7 @@ const getOverflowRules = (provider?: Provider) => {
   `
 }
 
-export const StyledWrapper = styled<{}, 'div'>('div')`
+export const StyledWrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -27,7 +27,7 @@ export const StyledWrapper = styled<{}, 'div'>('div')`
   font-family: Poppins, sans-serif;
 `
 
-export const StyledImageWrapper = styled<Partial<Props>, 'div'>('div')`
+export const StyledImageWrapper = styled.div<Partial<Props>>`
   flex-basis: 30px;
   position: relative;
 
@@ -46,7 +46,7 @@ export const StyledImageWrapper = styled<Partial<Props>, 'div'>('div')`
   };
 `
 
-export const StyledImage = styled<Partial<Props>, 'img'>('img')`
+export const StyledImage = styled.img<Partial<Props>>`
   border-radius: 50%;
 
   ${p => p.type === 'big'
@@ -66,7 +66,7 @@ export const StyledImage = styled<Partial<Props>, 'img'>('img')`
   };
 `
 
-export const StyledVerified = styled<{}, 'span'>('span')`
+export const StyledVerified = styled.span`
   position: absolute;
   top: -5px;
   right: -8px;
@@ -78,7 +78,7 @@ export const StyledVerified = styled<{}, 'span'>('span')`
   padding: 1px;
 `
 
-export const StyledContent = styled<Partial<Props>, 'div'>('div')`
+export const StyledContent = styled.div<Partial<Props>>`
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 50%;
@@ -86,14 +86,14 @@ export const StyledContent = styled<Partial<Props>, 'div'>('div')`
   padding-left: ${p => p.type === 'big' ? '11px' : 0};
 `
 
-export const StyledTitleWrap = styled<Partial<Props>, 'div'>('div')`
+export const StyledTitleWrap = styled.div<Partial<Props>>`
   ${p => getOverflowRules(p.provider)}
   max-width: ${p => p.tableCell ? 235 : 260}px;
   margin-top: ${p => p.type === 'big' ? 2 : 0}px;
   margin-left: ${p => p.type !== 'big' ? 10 : 0}px;
 `
 
-export const StyledTitle = styled<Partial<Props>, 'span'>('span')`
+export const StyledTitle = styled.span<Partial<Props>>`
   ${p => p.type === 'big'
     ? css`
       font-size: 18px;
@@ -118,7 +118,7 @@ export const StyledTitle = styled<Partial<Props>, 'span'>('span')`
   };
 `
 
-export const StyledProvider = styled<Partial<Props>, 'span'>('span')`
+export const StyledProvider = styled.span<Partial<Props>>`
   padding-left: 5px;
 
   ${p => p.type === 'big'
@@ -133,13 +133,13 @@ export const StyledProvider = styled<Partial<Props>, 'span'>('span')`
   color: ${p => p.type === 'big' ? '#4b4c5c' : '#b8b9c4'};
 `
 
-export const StyledProviderWrap = styled<{}, 'div'>('div')`
+export const StyledProviderWrap = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: -4px;
 `
 
-export const StyledVerifiedText = styled<{}, 'span'>('span')`
+export const StyledVerifiedText = styled.span`
   font-size: 12px;
   color: #838391;
   font-weight: 400;
@@ -147,20 +147,20 @@ export const StyledVerifiedText = styled<{}, 'span'>('span')`
   margin-left: 4px;
 `
 
-export const StyledInlineVerified = styled<{}, 'span'>('span')`
+export const StyledInlineVerified = styled.span`
   width: 19px;
   padding-top: 2px;
   margin-left: -2px;
   color: #392DD1;
 `
 
-export const StyledInlineUnVerified = styled<{}, 'span'>('span')`
+export const StyledInlineUnVerified = styled.span`
   width: 19px;
   padding-top: 2px;
   margin-left: -2px;
   color: #D0D4D9;
 `
 
-export const StyledSubTitle = styled<{}, 'span'>('span')`
+export const StyledSubTitle = styled.span`
   margin-top: 5px;
 `

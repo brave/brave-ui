@@ -2,10 +2,10 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from 'styled-components'
+import styled from '../../../components/style/theme'
 import { Props } from './index'
 
-export const StyledWrapper = styled<Partial<Props>, 'button'>('button')`
+export const StyledWrapper = styled.button<Partial<Props>>`
   user-select: none;
   font-family: Poppins, sans-serif;
   border: none;
@@ -17,7 +17,7 @@ export const StyledWrapper = styled<Partial<Props>, 'button'>('button')`
   margin: ${p => p.isMobile ? '0 auto 8px auto' : '0 0 8px 0'};
 `
 
-export const StyledAmount = styled<Partial<Props>, 'div'>('div')`
+export const StyledAmount = styled.div<Partial<Props>>`
   opacity: 1;
   border-radius: 20px;
   color: #fff;
@@ -36,7 +36,7 @@ export const StyledAmount = styled<Partial<Props>, 'div'>('div')`
   margin-bottom: ${p => p.isMobile ? 5 : 0}px;
 `
 
-export const StyledTokens = styled<{}, 'div'>('div')`
+export const StyledTokens = styled.div`
   font-weight: 400;
   margin-left: 5px;
 `
@@ -45,12 +45,12 @@ export const StyledNumber = styled.span`
   font-weight: 400;
 `
 
-export const StyledLogo = styled<Partial<Props>, 'div'>('div')`
+export const StyledLogo = styled.div<Partial<Props>>`
   margin-right: 6px;
   width: ${p => p.isMobile ? 20 : 23}px;
 `
 
-export const StyledConverted = styled<Partial<Props>, 'div'>('div')`
+export const StyledConverted = styled.div<Partial<Props>>`
   vertical-align: baseline;
   opacity: ${p => p.selected ? 1 : 0.4};
   font-size: ${p => p.type === 'big' ? '12px' : '10px'};

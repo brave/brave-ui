@@ -45,7 +45,7 @@ const getThemeColors = (p: ThemedStyledProps<StyleProps>, selected: boolean | un
   `
 }
 
-export const StyledLabel = styled<StyleProps, 'label'>('label')`
+export const StyledLabel = styled.label<StyleProps>`
   ${p => getThemeSizes(p)}
   line-height: 1.3;
   display: flex;
@@ -54,12 +54,12 @@ export const StyledLabel = styled<StyleProps, 'label'>('label')`
   cursor: pointer;
 `
 
-export const StyledInput = styled<{}, 'input'>('input')`
+export const StyledInput = styled.input`
   opacity: 0;
   position: absolute;
 `
 
-export const StyledCircle = styled<StyleProps, 'span'>('span')`
+export const StyledCircle = styled.span<StyleProps>`
   ${p => getThemeSizes(p)}
   ${p => getThemeColors(p, p.selected)}
   text-align: center;
@@ -74,7 +74,7 @@ export const StyledCircle = styled<StyleProps, 'span'>('span')`
   border-radius: 50%;
 `
 
-export const StyledFill = styled<StyleProps, 'div'>('div')`
+export const StyledFill = styled.div<StyleProps>`
   ${p => getThemeSizes(p)}
   ${p => getThemeColors(p, p.selected)}
   width: var(--radio-fill-size);
@@ -83,7 +83,7 @@ export const StyledFill = styled<StyleProps, 'div'>('div')`
   background: var(--radio-fill-color);
 `
 
-export const StyledText = styled<StyleProps, 'span'>('span')`
+export const StyledText = styled.span<StyleProps>`
   flex: 1;
   letter-spacing: 0;
   display: flex;

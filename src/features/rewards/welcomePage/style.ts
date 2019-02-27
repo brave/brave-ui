@@ -2,11 +2,11 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from 'styled-components'
+import styled from '../../../components/style/theme'
 import Heading from '../../../components/text/heading'
 import centerBackgroundUrl from './assets/centerTextBackground.svg'
 
-export const StyledOptInSection = styled<{}, 'section'>('section')`
+export const StyledOptInSection = styled.section`
   margin: 40px auto;
   max-width: 303px;
 
@@ -16,20 +16,20 @@ export const StyledOptInSection = styled<{}, 'section'>('section')`
   }
 `
 
-export const StyledOptInSecond = styled<{}, 'section'>('section')`
+export const StyledOptInSecond = styled.section`
   max-width: 303px;
   margin: 0 auto;
 `
 
-export const StyledOptInInnerSection = styled<{}, 'section'>('section')`
+export const StyledOptInInnerSection = styled.section`
   text-align: center;
 `
 
-export const StyledCenterSection = styled<{}, 'section'>('section')`
+export const StyledCenterSection = styled.section`
   padding: 15px 0 0;
 `
 
-export const StyledCenterContent = styled<{}, 'div'>('div')`
+export const StyledCenterContent = styled.div`
   margin: 0 auto;
   max-width: 692px;
   padding: 67px 0 20px;
@@ -41,30 +41,30 @@ export const StyledCenterContent = styled<{}, 'div'>('div')`
   }
 `
 
-export const StyledSection = styled<{}, 'div'>('div')`
+export const StyledSection = styled.div`
   display: block;
 `
 
-export const StyledCenterInner = styled<{}, 'section'>('section')`
+export const StyledCenterInner = styled.section`
   @media (max-width: 767px) {
     margin: 0 auto;
     width: 80%;
   }
 `
 
-export const StyledInfoContent = styled<{}, 'section'>('section')`
+export const StyledInfoContent = styled.section`
   margin: 22px auto 0;
   max-width: 900px;
 `
 
-export const StyledTakeActionContent = styled<{}, 'section'>('section')`
+export const StyledTakeActionContent = styled.section`
   margin: 0 auto;
   padding: 64px 0 79px;
   max-width: 500px;
   display: block;
 `
 
-export const StyledBackground = styled<{}, 'div'>('div')`
+export const StyledBackground = styled.div`
   background: url(${centerBackgroundUrl}) no-repeat top;
 
   @media (max-width: 980px) {
@@ -72,7 +72,7 @@ export const StyledBackground = styled<{}, 'div'>('div')`
   }
 `
 
-export const StyledBatLogo = styled<{}, 'div'>('div')`
+export const StyledBatLogo = styled.div`
   margin: 5px auto 0;
   height: 152px;
 
@@ -119,7 +119,7 @@ export const StyledSubTitle = styled(Heading)`
   }
 `
 
-export const StyledTrademark = styled<{}, 'span'>('span')`
+export const StyledTrademark = styled.span`
   display: inline-block;
   vertical-align: text-top;
   margin-top: -25px;
@@ -129,7 +129,7 @@ export const StyledTrademark = styled<{}, 'span'>('span')`
   opacity: 0.7;
 `
 
-export const StyledRewardsParagraph = styled<{}, 'p'>('p')`
+export const StyledRewardsParagraph = styled.p`
   font-size: 16px;
   max-width: 375px;
   margin: 0 auto;
@@ -137,7 +137,7 @@ export const StyledRewardsParagraph = styled<{}, 'p'>('p')`
   color: #FFF;
 `
 
-export const StyledTeaserParagraph = styled<{}, 'p'>('p')`
+export const StyledTeaserParagraph = styled.p`
   font-size: 16px;
   margin: 0 0 5px;
   line-height: 28px;
@@ -145,7 +145,7 @@ export const StyledTeaserParagraph = styled<{}, 'p'>('p')`
   opacity: 0.5;
 `
 
-export const StyledCenterParagraph = styled<{}, 'p'>('p')`
+export const StyledCenterParagraph = styled.p`
   font-size: 16px;
   line-height: 28px;
   color: #686978;
@@ -156,7 +156,7 @@ export const StyledCenterParagraph = styled<{}, 'p'>('p')`
   font-family: Muli,sans-serif;
 `
 
-export const StyledAnchor = styled<{}, 'button'>('button')`
+export const StyledAnchor = styled.button`
   padding: 0;
   border: none;
   background: none;
@@ -171,12 +171,12 @@ export const StyledAnchor = styled<{}, 'button'>('button')`
   }
 `
 
-export const StyledHeroInfo = styled<{}, 'div'>('div')`
+export const StyledHeroInfo = styled.div`
   @media (max-width: 400px) {
     padding: 0 10px;
   }
 `
-export const StyledAlert = styled<{}, 'div'>('div')`
+export const StyledAlert = styled.div`
   margin-bottom: 30px;
   border: 1px solid #F43405;
   border-radius: 4px;
@@ -187,12 +187,12 @@ export const StyledAlert = styled<{}, 'div'>('div')`
   }
 `
 
-export const StyledAlertContent = styled<{}, 'div'>('div')`
+export const StyledAlertContent = styled.div`
   display: flex;
   width: 100%;
 `
 
-export const StyledAlertLeft = styled<{}, 'div'>('div')`
+export const StyledAlertLeft = styled.div`
   flex-basis: 70%;
   flex-grow: 1;
 `

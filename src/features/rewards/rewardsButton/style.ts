@@ -4,7 +4,7 @@
 */
 
 import { Type } from './index'
-import styled, { css } from 'styled-components'
+import styled, { css } from '../../../components/style/theme'
 
 interface StyleProps {
   type?: Type
@@ -56,7 +56,7 @@ const getTypeStyle = (type?: Type, disabled?: boolean) => {
   return typeCss
 }
 
-export const StyledButtonWrapper = styled<StyleProps, 'button'>('button')`
+export const StyledButtonWrapper = styled.button<StyleProps>`
   width: 100%;
   display: flex;
   color: white;
@@ -67,7 +67,7 @@ export const StyledButtonWrapper = styled<StyleProps, 'button'>('button')`
   ${p => getTypeStyle(p.type, p.disabled)}
 `
 
-export const StyledButtonText = styled<{}, 'span'>('span')`
+export const StyledButtonText = styled.span`
   font-family: Poppins, sans-serif;
   font-weight: 600;
   text-transform: uppercase;
@@ -75,7 +75,7 @@ export const StyledButtonText = styled<{}, 'span'>('span')`
   margin: 0 auto;
 `
 
-export const StyledIcon = styled<{}, 'div'>('div')`
+export const StyledIcon = styled.div`
   display: inline-block;
   line-height: 0;
   height: 18px;

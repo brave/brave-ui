@@ -2,7 +2,7 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled, { css, keyframes } from 'styled-components'
+import styled, { css, keyframes } from '../../../components/style/theme'
 import { Card } from '../../../index'
 
 const fadeIn = keyframes`
@@ -14,13 +14,13 @@ const fadeIn = keyframes`
   }
 `
 
-const BaseGrid = styled<{}, 'div'>('div')`
+const BaseGrid = styled.div`
   box-sizing: border-box;
   display: grid;
   height: 100%;
 `
 
-const BaseColumn = styled<{}, 'div'>('div')`
+const BaseColumn = styled.div`
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -64,7 +64,7 @@ interface ContentProps {
   isPrevious: boolean
 }
 
-export const Content = styled<ContentProps, 'section'>('section')`
+export const Content = styled.section<ContentProps>`
   opacity: 0;
   will-change: transform;
   transform: translateX(${p => p.isPrevious ? '-' + p.screenPosition : p.screenPosition}) scale(0.8);
@@ -84,8 +84,8 @@ export const Content = styled<ContentProps, 'section'>('section')`
   `}
 `
 
-export const Page = styled<{}, 'div'>('div')`
-  width: inherit%;
+export const Page = styled.div`
+  width: inherit;
   height: inherit;
   display: flex;
   align-items: center;
@@ -116,7 +116,7 @@ export const Panel = styled(Card)`
   padding: 0;
 `
 
-export const SlideContent = styled<{}, 'div'>('div')`
+export const SlideContent = styled.div`
   max-width: inherit;
   min-height: 540px;
   display: flex;

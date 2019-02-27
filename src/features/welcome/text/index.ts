@@ -2,7 +2,7 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from 'styled-components'
+import styled from '../../../components/style/theme'
 import { Heading } from '../../../index'
 
 export const Title = styled(Heading)`
@@ -13,7 +13,7 @@ export const Title = styled(Heading)`
   line-height: 44px;
 `
 
-export const Paragraph = styled<{}, 'p'>('p')`
+export const Paragraph = styled.p`
   display: block;
   -webkit-font-smoothing: antialiased;
   font-size: 17px;

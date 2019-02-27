@@ -5,7 +5,7 @@
 import styled from '../../../components/style/theme'
 import Card from '../../../components/card'
 
-export const ShieldsPanel = styled<any, 'main'>('main')`
+export const ShieldsPanel = styled.main`
   box-sizing: border-box;
   background: linear-gradient(to bottom, #131526, #343546);
   height: 100%;
@@ -24,19 +24,19 @@ interface HeaderProps {
   enabled: boolean
 }
 
-export const Header = styled<HeaderProps, 'header'>('header')`
+export const Header = styled.header<HeaderProps>`
   box-sizing: border-box;
   border-bottom: ${p => p.enabled ? '1px solid rgba(255, 255, 255, 0.15)' : null};
   padding: ${p => p.enabled ? '28px 25px 10px' : '28px 25px 0'};
 `
 
-export const ResourcesListScroll = styled<{}, 'div'>('div')`
+export const ResourcesListScroll = styled.div`
   box-sizing: border-box;
   overflow: auto;
   height: 303px;
 `
 
-export const DismissOverlay = styled<{}, 'div'>('div')`
+export const DismissOverlay = styled.div`
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -50,7 +50,7 @@ interface ClickableEmptySpaceProps {
   disabled?: boolean
 }
 
-export const ClickableEmptySpace = styled<ClickableEmptySpaceProps, 'div'>('div')`
+export const ClickableEmptySpace = styled.div<ClickableEmptySpaceProps>`
   width: 25px;
   height: 100%;
   pointer-events: ${p => p.disabled ? 'none' : null};

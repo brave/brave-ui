@@ -11,7 +11,7 @@ interface LabelProps {
   children: React.ReactNode
 }
 
-export const Label = styled<LabelProps, 'label'>('label')`
+export const Label = styled.label<LabelProps>`
   box-sizing: border-box;
   font-family: ${p => p.theme.fontFamily.heading};
   font-size: ${p => setValueBasedOnSize(p.size, '16px', '12px', '18px')};
@@ -28,7 +28,7 @@ interface HighlightProps {
   enabled: boolean
 }
 
-export const Highlight = styled<HighlightProps, 'em'>('em')`
+export const Highlight = styled.em<HighlightProps>`
   box-sizing: border-box;
   font-family: ${p => p.theme.fontFamily.heading};
   color: ${p => p.enabled ? p.theme.color.brand.brave : palette.grey300};
@@ -38,7 +38,7 @@ export const Highlight = styled<HighlightProps, 'em'>('em')`
   font-style: normal;
 `
 
-export const UnHighlight = styled<{}, 'span'>('span')`
+export const UnHighlight = styled.span`
   box-sizing: border-box;
   color: ${palette.grey400};
   font-weight: 300;
@@ -48,7 +48,7 @@ interface DescriptionProps {
   enabled: boolean
 }
 
-export const Description = styled<DescriptionProps, 'p'>('p')`
+export const Description = styled.p<DescriptionProps>`
   box-sizing: border-box;
   color: ${p => p.enabled ? palette.grey400 : palette.grey500};
   font-size: ${p => p.enabled ? '11px' : '12px'};
@@ -60,7 +60,7 @@ export const Description = styled<DescriptionProps, 'p'>('p')`
   text-align: left;
 `
 
-export const ResourcesListAllowedLink = styled<{}, 'span'>('span')`
+export const ResourcesListAllowedLink = styled.span`
   box-sizing: border-box;
   font-size: 13px;
   color: ${palette.green500};
@@ -72,7 +72,7 @@ export const ResourcesListBlockedLink = styled(ResourcesListAllowedLink)`
   color: ${palette.red500};
 `
 
-export const Link = styled<{}, 'a'>('a')`
+export const Link = styled.a`
   box-sizing: border-box;
   color: ${palette.blue200};
   font-family: ${p => p.theme.fontFamily.heading};
@@ -87,7 +87,7 @@ export const Link = styled<{}, 'a'>('a')`
   }
 `
 
-export const ResourcesListItem = styled<{}, 'span'>('span')`
+export const ResourcesListItem = styled.span`
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;
@@ -101,7 +101,7 @@ interface ResourcesSwitchLabelProps {
   disabled?: boolean
 }
 
-export const ResourcesSwitchLabel = styled<ResourcesSwitchLabelProps, 'span'>('span')`
+export const ResourcesSwitchLabel = styled.span<ResourcesSwitchLabelProps>`
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   padding: 0 11px;
@@ -109,14 +109,14 @@ export const ResourcesSwitchLabel = styled<ResourcesSwitchLabelProps, 'span'>('s
   pointer-events: ${p => p.disabled ? 'none' : null};
 `
 
-export const ResourcesStatusTitle = styled<{}, 'span'>('span')`
+export const ResourcesStatusTitle = styled.span`
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   padding: 0;
   font-size: 14px;
 `
 
-export const ResourcesListText = styled<{}, 'div'>('div')`
+export const ResourcesListText = styled.div`
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   line-height: 1;
@@ -135,7 +135,7 @@ interface ResourcesLabelScriptsProps {
   accent?: 'blocked' | 'allowed'
 }
 
-export const ResourcesSubTitle = styled<ResourcesLabelScriptsProps, 'span'>('span')`
+export const ResourcesSubTitle = styled.span<ResourcesLabelScriptsProps>`
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   padding: 0 5px;

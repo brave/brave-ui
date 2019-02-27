@@ -4,7 +4,7 @@
 
 import styled from '../../../components/style/theme'
 
-export const EmptyButton = styled<{}, 'button'>('button')`
+export const EmptyButton = styled.button`
   box-sizing: border-box;
   display: flex;
   background: transparent;
@@ -19,7 +19,7 @@ export const EmptyButton = styled<{}, 'button'>('button')`
   }
 `
 
-export const CloseButton = styled<{}, 'button'>('button')`
+export const CloseButton = styled.button`
   box-sizing: border-box;
   background: transparent;
   display: flex;

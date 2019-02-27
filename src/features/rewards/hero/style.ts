@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled from '../../../components/style/theme'
 
 interface StyleProps {
   isMobile?: boolean
 }
 
-export const StyledHero = styled<StyleProps, 'div'>('div')`
+export const StyledHero = styled.div<StyleProps>`
   text-align: center;
   min-height: 610px;
   padding: 60px 0 25px 0;

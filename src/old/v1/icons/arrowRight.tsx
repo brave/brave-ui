@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import styled from 'styled-components'
+import styled from '../../../components/style/theme'
 
 const StyledSVG = styled.svg`
   stroke: inherit;

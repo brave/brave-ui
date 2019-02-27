@@ -4,7 +4,7 @@
 
 import styled from '../../../../components/style/theme'
 
-export const Header = styled<{}, 'header'>('header')`
+export const Header = styled.header`
   box-sizing: border-box;
   display: grid;
   height: 100%;
@@ -52,11 +52,11 @@ export const Header = styled<{}, 'header'>('header')`
   }
 `
 
-export const Main = styled<{}, 'main'>('main')`
+export const Main = styled.main`
   box-sizing: border-box;
 `
 
-export const Footer = styled<{}, 'footer'>('footer')`
+export const Footer = styled.footer`
   box-sizing: border-box;
   display: grid;
   height: 100%;

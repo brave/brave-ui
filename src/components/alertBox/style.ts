@@ -2,9 +2,9 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from 'styled-components'
+import styled from '../style/theme'
 
-export const StyledDialogWrapper = styled<{}, 'div'>('div')`
+export const StyledDialogWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -14,7 +14,7 @@ export const StyledDialogWrapper = styled<{}, 'div'>('div')`
   display: flex;
 `
 
-export const StyledDialog = styled<{}, 'div'>('div')`
+export const StyledDialog = styled.div`
   width: 470px;
   margin: auto;
   padding: 30px 20px 10px;
@@ -27,13 +27,13 @@ export const StyledDialog = styled<{}, 'div'>('div')`
   border-radius: 6px;
 `
 
-export const StyledFooter = styled<{}, 'footer'>('footer')`
+export const StyledFooter = styled.footer`
   display: grid;
   grid-template-columns: 1fr auto;
   grid-gap: 10px;
 `
 
-export const StyledCancelContainer = styled<{}, 'div'>('div')`
+export const StyledCancelContainer = styled.div`
   display: flex;
   justify-content: flex-end;
 `

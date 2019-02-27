@@ -2,15 +2,15 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from 'styled-components'
+import styled from '../../../components/style/theme'
 
-export const StyledWrapper = styled<{}, 'div'>('div')`
+export const StyledWrapper = styled.div`
   padding: 32px 20px 46px;
   text-align: center;
   font-family: Poppins, sans-serif;
 `
 
-export const StyledTitle = styled<{}, 'div'>('div')`
+export const StyledTitle = styled.div`
   font-size: 16px;
   font-weight: 500;
   line-height: 1.75;
@@ -19,7 +19,7 @@ export const StyledTitle = styled<{}, 'div'>('div')`
   color: #5bc4fe;
 `
 
-export const StyledContent = styled<{}, 'div'>('div')`
+export const StyledContent = styled.div`
   font-family: Muli, sans-serif;
   font-size: 16px;
   line-height: 1.75;

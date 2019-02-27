@@ -5,7 +5,7 @@
 import styled from '../../../components/style/theme'
 import Heading from '../../../components/text/heading'
 
-export const ModalHeader = styled<{}, 'header'>('header')`
+export const ModalHeader = styled.header`
   margin-bottom: 8px;
 `
 
@@ -20,23 +20,23 @@ interface ModalSubTitleProps {
   highlight?: boolean
 }
 
-export const ModalSubTitle = styled<ModalSubTitleProps, 'span'>('span')`
+export const ModalSubTitle = styled.span<ModalSubTitleProps>`
   display: block;
   font-size: 18px;
   line-height: 1.6;
   color: ${p => p.highlight && '#ff0000'}
 `
 
-export const ModalContent = styled<{}, 'div'>('div')`
+export const ModalContent = styled.div`
   margin-bottom: -12px;
 `
 
-export const OneColumnButtonGrid = styled<{}, 'div'>('div')`
+export const OneColumnButtonGrid = styled.div`
   display: flex;
   justify-content: flex-end;
 `
 
-export const TwoColumnButtonGrid = styled<{}, 'footer'>('footer')`
+export const TwoColumnButtonGrid = styled.footer`
   display: grid;
   align-items: center;
   grid-template-columns: 1fr auto;
@@ -44,7 +44,7 @@ export const TwoColumnButtonGrid = styled<{}, 'footer'>('footer')`
   margin-top: 20px;
 `
 
-export const ThreeColumnButtonGrid = styled<{}, 'div'>('div')`
+export const ThreeColumnButtonGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr auto auto;
   grid-gap: 15px;
@@ -52,20 +52,20 @@ export const ThreeColumnButtonGrid = styled<{}, 'div'>('div')`
   align-items: center;
 `
 
-export const ThreeColumnButtonGridCol1 = styled<{}, 'div'>('div')`
+export const ThreeColumnButtonGridCol1 = styled.div`
   display: grid;
   align-items: center;
   grid-template-columns: auto;
 `
 
-export const ThreeColumnButtonGridCol2 = styled<{}, 'div'>('div')`
+export const ThreeColumnButtonGridCol2 = styled.div`
   display: grid;
   align-items: center;
   grid-template-columns: auto auto;
   grid-gap: 15px;
 `
 
-export const DeviceGrid = styled<{}, 'div'>('div')`
+export const DeviceGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
@@ -76,7 +76,7 @@ export const DeviceGrid = styled<{}, 'div'>('div')`
   justify-content: center;
 `
 
-export const DeviceContainer = styled<{}, 'a'>('a')`
+export const DeviceContainer = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,7 +87,7 @@ export const DeviceContainer = styled<{}, 'a'>('a')`
   cursor: pointer;
 `
 
-export const ScanGrid = styled<{}, 'div'>('div')`
+export const ScanGrid = styled.div`
   display: grid;
   height: 100%;
   grid-template-columns: 1fr 1fr;
@@ -98,7 +98,7 @@ export const ScanGrid = styled<{}, 'div'>('div')`
   width: fit-content;
 `
 
-export const QRCodeContainer = styled<{}, 'div'>('div')`
+export const QRCodeContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,7 +108,7 @@ export const QRCodeContainer = styled<{}, 'div'>('div')`
   }
 `
 
-export const ViewSyncCodeGrid = styled<{}, 'div'>('div')`
+export const ViewSyncCodeGrid = styled.div`
   display: grid;
   height: 100%;
   grid-template-columns: 2fr 1fr;

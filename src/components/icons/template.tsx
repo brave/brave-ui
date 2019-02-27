@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '../style/theme'
 
 export interface IconProps {
   // text description, for accessiblity

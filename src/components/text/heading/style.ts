@@ -2,11 +2,11 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from 'styled-components'
+import styled from '../../style/theme'
 import { HeadingProps } from './index'
 import theme from '../../style/theme/default'
 
-const StyledSharedHeading = styled<HeadingProps, 'span'>('span')`
+const StyledSharedHeading = styled.span<HeadingProps>`
   box-sizing: border-box;
   font-family: ${theme.fontFamily.heading};
   font-weight: 400;
