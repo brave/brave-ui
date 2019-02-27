@@ -71,6 +71,7 @@ exports[`ModalContribute tests basic tests matches the snapshot 1`] = `
 }
 
 .c12 {
+  text-align: right;
   padding-right: 10px;
 }
 
@@ -177,7 +178,7 @@ exports[`ModalContribute tests basic tests matches the snapshot 1`] = `
                     className="c10"
                   >
                     <div
-                      className="c12 c11"
+                      className="c12"
                     >
                       
                     </div>

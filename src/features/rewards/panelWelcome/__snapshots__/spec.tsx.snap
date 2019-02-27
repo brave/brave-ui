@@ -1,15 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
-.c7 {
+.c6 {
   box-sizing: border-box;
   font-family: Poppins,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   margin: 0;
-}
-
-.c6 {
   font-size: 24px;
 }
 
@@ -57,7 +54,7 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
   display: inline-block;
 }
 
-.c9 {
+.c8 {
   color: #FFFFFF;
   font-size: 16px;
   font-weight: normal;
@@ -73,12 +70,12 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
   font-family: Muli,sans-serif;
 }
 
-.c10 {
+.c9 {
   margin: 0 auto 25px;
   display: inline-block;
 }
 
-.c14 {
+.c12 {
   color: #73CBFF;
   font-size: 14px;
   font-weight: 500;
@@ -92,7 +89,7 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
   cursor: pointer;
 }
 
-.c8 {
+.c7 {
   display: inline-block;
   vertical-align: text-top;
   margin-top: -13px;
@@ -108,7 +105,7 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
   fill: currentColor;
 }
 
-.c12 {
+.c10 {
   --button-main-color: #AEB1C2;
   --button-main-color-hover: #C2C4CF;
   --button-main-color-active: #84889C;
@@ -145,24 +142,21 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
   border-radius: 28px;
   width: 100%;
   padding: 19px 15px;
+  border: 1px solid;
+  color: var(--button-state-color);
 }
 
-.c12:hover:enabled {
+.c10:hover:enabled {
   --button-state-color: var(--button-main-color-hover);
   -webkit-transition: .4s;
   transition: .4s;
 }
 
-.c12:active:enabled {
+.c10:active:enabled {
   --button-state-color: var(--button-main-color-active);
 }
 
 .c11 {
-  border: 1px solid;
-  color: var(--button-state-color);
-}
-
-.c13 {
   min-height: var(--icon-size);
   display: -webkit-box;
   display: -webkit-flex;
@@ -226,30 +220,30 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
       </svg>
     </span>
     <h4
-      className="c5 c6 c7"
+      className="c5 c6"
     >
       MISSING: braveRewards
     </h4>
     <span
-      className="c8"
+      className="c7"
     >
       TM
     </span>
     <p
-      className="c9"
+      className="c8"
     >
       MISSING: welcomeDescOne
     </p>
     <div
-      className="c10"
+      className="c9"
     >
       <button
-        className="c11 c12"
+        className="c10"
         size="call-to-action"
         type="subtle"
       >
         <div
-          className="c13"
+          className="c11"
           size="call-to-action"
           type="subtle"
         >
@@ -258,7 +252,7 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
       </button>
     </div>
     <div
-      className="c14"
+      className="c12"
     >
       MISSING: welcomeFooterTextOne
     </div>

@@ -127,6 +127,13 @@ exports[`MainToggleMobile tests basic tests matches the snapshot 1`] = `
   transition: .2s;
 }
 
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c8 {
   position: relative;
   display: inline-block;
@@ -146,13 +153,6 @@ exports[`MainToggleMobile tests basic tests matches the snapshot 1`] = `
 
 .c8:active .c11 {
   background-color: var(--toggle-bullet-activeColor);
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .c3 {

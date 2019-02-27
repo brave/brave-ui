@@ -38,6 +38,13 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
   transition: .2s;
 }
 
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c1 {
   position: relative;
   display: inline-block;
@@ -57,13 +64,6 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
 
 .c1:active .c4 {
   background-color: var(--toggle-bullet-activeColor);
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 <div

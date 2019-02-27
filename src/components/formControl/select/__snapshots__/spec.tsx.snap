@@ -53,7 +53,7 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   text-overflow: ellipsis;
 }
 
-.c7 {
+.c6 {
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
@@ -68,7 +68,7 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   padding: 9px 0;
 }
 
-.c8 {
+.c7 {
   font-size: 14px;
   line-height: 36px;
   color: #1b1d2f;
@@ -81,7 +81,7 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   background: #e9f0ff;
 }
 
-.c12 {
+.c11 {
   font-size: 14px;
   line-height: 36px;
   color: #1b1d2f;
@@ -94,7 +94,7 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   background: #fff;
 }
 
-.c9 {
+.c8 {
   -webkit-flex-basis: 11px;
   -ms-flex-preferred-size: 11px;
   flex-basis: 11px;
@@ -112,7 +112,7 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   color: #A1A8F2;
 }
 
-.c11 {
+.c10 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -123,19 +123,16 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   text-overflow: ellipsis;
 }
 
-.c6 {
+.c5 {
   width: 100%;
   height: 100%;
   fill: currentColor;
-}
-
-.c5 {
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 
-.c10 {
+.c9 {
   width: 100%;
   height: 100%;
   fill: currentColor;
@@ -165,7 +162,7 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
       >
         <svg
           aria-hidden="true"
-          className="c5 c6"
+          className="c5"
           focusable="false"
           viewBox="0 0 32 32"
         >
@@ -176,19 +173,19 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
       </div>
     </div>
     <div
-      className="c7"
+      className="c6"
     >
       <div
-        className="c8"
+        className="c7"
         onClick={[Function]}
         selected={true}
       >
         <div
-          className="c9"
+          className="c8"
         >
           <svg
             aria-hidden="true"
-            className="c10"
+            className="c9"
             focusable="false"
             viewBox="0 0 32 32"
           >
@@ -198,35 +195,35 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
           </svg>
         </div>
         <div
-          className="c11"
+          className="c10"
         >
           01
         </div>
       </div>
       <div
-        className="c12"
+        className="c11"
         onClick={[Function]}
         selected={false}
       >
         <div
-          className="c9"
+          className="c8"
         />
         <div
-          className="c11"
+          className="c10"
         >
           11
         </div>
       </div>
       <div
-        className="c12"
+        className="c11"
         onClick={[Function]}
         selected={false}
       >
         <div
-          className="c9"
+          className="c8"
         />
         <div
-          className="c11"
+          className="c10"
         >
           12
         </div>

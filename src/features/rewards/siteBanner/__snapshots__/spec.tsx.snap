@@ -117,6 +117,7 @@ exports[`List tests basic tests matches the snapshot 1`] = `
 .c10 {
   background: inherit;
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   -webkit-filter: invert(1) grayscale(1) contrast(9);
   filter: invert(1) grayscale(1) contrast(9);

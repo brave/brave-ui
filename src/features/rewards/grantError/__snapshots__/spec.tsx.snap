@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Grant error tests basic tests matches the snapshot 1`] = `
-.c4 {
+.c3 {
   --button-main-color: #FB542B;
   --button-main-color-hover: #ff7654;
   --button-main-color-active: #d43f19;
@@ -38,22 +38,19 @@ exports[`Grant error tests basic tests matches the snapshot 1`] = `
   border-radius: 28px;
   width: 100%;
   padding: 19px 15px;
+  color: #fff;
+  background: var(--button-state-color);
+  border: 1px solid var(--button-state-color);
 }
 
-.c4:hover:enabled {
+.c3:hover:enabled {
   --button-state-color: var(--button-main-color-hover);
   -webkit-transition: .4s;
   transition: .4s;
 }
 
-.c4:active:enabled {
+.c3:active:enabled {
   --button-state-color: var(--button-main-color-active);
-}
-
-.c3 {
-  color: #fff;
-  background: var(--button-state-color);
-  border: 1px solid var(--button-state-color);
 }
 
 .c0 {
@@ -88,7 +85,7 @@ exports[`Grant error tests basic tests matches the snapshot 1`] = `
     className="c2"
   >
     <button
-      className="c3 c4"
+      className="c3"
       size="call-to-action"
       type="accent"
     />

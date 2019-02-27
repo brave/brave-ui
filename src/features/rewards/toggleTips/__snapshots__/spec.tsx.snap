@@ -121,6 +121,13 @@ exports[`ToggleTips tests basic tests matches the snapshot 1`] = `
   transition: .2s;
 }
 
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c12 {
   position: relative;
   display: inline-block;
@@ -140,13 +147,6 @@ exports[`ToggleTips tests basic tests matches the snapshot 1`] = `
 
 .c12:active .c15 {
   background-color: var(--toggle-bullet-activeColor);
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 <section
