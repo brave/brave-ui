@@ -152,7 +152,7 @@ export const StyledOptionsModal = styled<StyleProps, 'div'>('div')`
     height: 40%;
   }
   @media (max-height: 900px) {
-    height: 55%;
+    height: 60%;
   }
   @media (max-height: 620px) {
     height: 65%;

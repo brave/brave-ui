@@ -7,6 +7,23 @@ import { Props } from './index'
 
 interface StyleProps {
   isMobile?: boolean
+  isLandscape?: boolean
+}
+
+const getHeightOffset = (isMobile?: boolean, isLandscape?: boolean) => {
+  if (!isMobile) {
+    return 100
+  }
+
+  if (isMobile && !isLandscape) {
+    return 180
+  }
+
+  if (isMobile && isLandscape) {
+    return 75
+  }
+
+  return 0
 }
 
 export const StyledWrapper = styled<{}, 'div'>('div')`
@@ -43,5 +60,5 @@ export const StyledClose = styled<{}, 'div'>('div')`
 export const StyledContent = styled<StyleProps, 'div'>('div')`
   padding: 48px 48px;
   overflow-y: auto;
-  max-height: calc(100vh - ${p => p.isMobile ? 170 : 100}px);
+  max-height: calc(100vh - ${p => getHeightOffset(p.isMobile, p.isLandscape)}px);
 `
