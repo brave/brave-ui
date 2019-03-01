@@ -34,6 +34,11 @@ export default class Modal extends React.PureComponent<Props, {}> {
     }
   }
 
+  isLandscape = () => {
+    const isLandscape = (window.innerWidth > window.innerHeight)
+    return isLandscape
+  }
+
   render () {
     const {
       id,
@@ -53,7 +58,7 @@ export default class Modal extends React.PureComponent<Props, {}> {
               ? <StyledClose onClick={onClose}><CloseCircleOIcon /></StyledClose>
               : null
           }
-          <StyledContent isMobile={isMobile}>
+          <StyledContent isMobile={isMobile} isLandscape={this.isLandscape()}>
             {children}
           </StyledContent>
         </StyledDialog>
