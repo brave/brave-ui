@@ -15,9 +15,6 @@ const ComponentTypes = styled.div`
   flex-direction: row;
   align-items: flex-start;
 `
-const Spacer = styled.div`
-  padding: 24px 0;
-`
 const icon = {
   image: <CheckCircleIcon />
 }
@@ -26,29 +23,12 @@ storiesOf('Components', module)
 .add('Button', () => {
   return (
   <div>
-    <div className='md'>
-      <h1>Button</h1>
-      <p>Use when requiring the user to take an action. Different types of buttons setup different user expectations about the button action.</p>
-    </div>
-    <Spacer />
     <Button text='A Button' />
-    <Spacer />,
-    <div className='md'>
-      <h2>Levels</h2>
-      <p>Use different levels to create a hierarchy of importance</p>
-    </div>
-    <Spacer />
     <ComponentTypes>
       <Button level='primary' text='Primary' />
       <Button level='secondary' text='Secondary' />
       <Button level='tertiary' text='Tertiary' />
     </ComponentTypes>
-    <Spacer />
-    <div className='md'>
-      <h2>Types</h2>
-      <p>Let the user know what the effect of the interaction will be</p>
-    </div>
-    <Spacer />
     <ComponentTypes>
       <Button level='primary' type='default' text='Default' />
       <Button level='primary' type='accent' text='Accent' />
@@ -70,22 +50,10 @@ storiesOf('Components', module)
       <Button level='tertiary' type='subtle' text='Subtle' />
       <Button level='tertiary' type='accent' text='Disabled' disabled={true} />
     </ComponentTypes>
-    <Spacer />
-    <div className='md'>
-      <h2>Accent Brands</h2>
-      <p>Optional accents</p>
-    </div>
-    <Spacer />
     <ComponentTypes>
       <Button level='primary' type='accent' text='Brave' />
       <Button level='primary' type='accent' brand='rewards' text='Rewards' />
     </ComponentTypes>
-    <Spacer />
-    <div className='md'>
-      <h2>Sizes</h2>
-      <p>Use size to match the density of information.</p>
-    </div>
-    <Spacer />
     <ComponentTypes>
       <Button size='small' level='primary' type='default' text='Small' />
       <Button size='medium' level='primary' type='accent' text='Medium' />
@@ -104,12 +72,6 @@ storiesOf('Components', module)
       <Button size='large' level='tertiary' type='warn' text='Large' />
     </ComponentTypes>
     <Button size='call-to-action' level='tertiary' type='subtle' text='Call to Action' />
-    <Spacer />
-    <div className='md'>
-      <h2>Icons</h2>
-      <p>Each button can have a single icon.</p>
-    </div>
-    <Spacer />
     <ComponentTypes>
       <Button size='small' level='primary' type='default' text='Small' />
       <Button size='medium' level='primary' type='accent' text='Medium' />

@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { Type } from './index'
 import Card, { CardProps } from '../../../components/card'
 import { ComponentType } from 'react'
-import palette from '../../../theme/palette'
+import palette from '../../../components/style/color/colorPalette'
 
 interface StyleProps {
   open?: boolean

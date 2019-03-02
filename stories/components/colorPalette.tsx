@@ -1,9 +1,8 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
-import styled from '../../src/components/style/theme'
+import styled from '../../src/theme'
 import paletteColors from '../../src/components/style/color/colorPalette'
-import themeBraveDefault from '../../src/components/style/theme/default'
-import '../assets/fonts/muli.css'
+import themeBraveDefault from '../../src/theme/default'
 
 const Palette = styled.div`
   display: grid;
@@ -71,12 +70,6 @@ storiesOf('Components', module)
 .add('Color Palette', () => {
   return (
     <div>
-      <div className='md'>
-        <h1>Color Palette</h1>
-        <h3>Define colors by color name and shade, not by purpose</h3>
-        <h6>Avoid using directly. Instead use theme variables which link to these colors</h6>
-        <br/>
-      </div>
       <Palette>
         {allPalletteItems.map(({ color, name }: any) => <PaletteItem key={name} color={color} name={name} />)}
       </Palette>
