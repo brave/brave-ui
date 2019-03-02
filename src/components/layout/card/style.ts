@@ -5,7 +5,7 @@
 import styled from 'styled-components'
 import { CardProps } from './index'
 
-export const StyledCard = styled<CardProps, 'div'>('div')`
+export const StyledCard = styled.div<CardProps>`
   max-width: 100%;
   width: 100%;
   min-height: auto;

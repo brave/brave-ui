@@ -14,13 +14,13 @@ const fadeIn = keyframes`
   }
 `
 
-const BaseGrid = styled<{}, 'div'>('div')`
+const BaseGrid = styled.div`
   box-sizing: border-box;
   display: grid;
   height: 100%;
 `
 
-const BaseColumn = styled<{}, 'div'>('div')`
+const BaseColumn = styled.div`
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -64,7 +64,7 @@ interface ContentProps {
   isPrevious: boolean
 }
 
-export const Content = styled<ContentProps, 'section'>('section')`
+export const Content = styled.section<ContentProps>`
   opacity: 0;
   will-change: transform;
   transform: translateX(${p => p.isPrevious ? '-' + p.screenPosition : p.screenPosition}) scale(0.8);
@@ -84,7 +84,7 @@ export const Content = styled<ContentProps, 'section'>('section')`
   `}
 `
 
-export const Page = styled<{}, 'div'>('div')`
+export const Page = styled.div`
   width: inherit%;
   height: inherit;
   display: flex;
@@ -116,7 +116,7 @@ export const Panel = styled(Card)`
   padding: 0;
 `
 
-export const SlideContent = styled<{}, 'div'>('div')`
+export const SlideContent = styled.div`
   max-width: inherit;
   min-height: 540px;
   display: flex;

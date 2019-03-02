@@ -19,11 +19,11 @@ const getBorder = (p: Props) => {
   return color
 }
 
-export const StyledWrapper = styled<{}, 'div'>('div')`
+export const StyledWrapper = styled.div`
   width: 100%;
 `
 
-export const StyledArea = styled<Props, 'textarea'>('textarea')`
+export const StyledArea = styled.textarea<Props>`
   min-height: 140px;
   box-sizing: border-box;
   width: 100%;

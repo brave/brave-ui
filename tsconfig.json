@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["react", "jest"],
     "target": "es6",
     "module": "esnext",
     "moduleResolution": "node",

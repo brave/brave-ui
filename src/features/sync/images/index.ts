@@ -22,15 +22,15 @@ const deviceStyles = `
   height: 100px;
 `
 
-export const SyncStartIcon = styled<{}, 'img'>('img').attrs({ src: StartImageUrl })`
+export const SyncStartIcon = styled.img.attrs({ src: StartImageUrl })`
   max-width: 100%;
 `
-export const SyncDefaultIcon = styled<{}, 'img'>('img').attrs({ src: DefaultImageUrl })`${iconStyles}`
-export const SyncAddIcon = styled<{}, 'img'>('img').attrs({ src: AddImageUrl })`${iconStyles}`
-export const SyncRemoveIcon = styled<{}, 'img'>('img').attrs({ src: RemoveImageUrl })`${iconStyles}`
-export const SyncDesktopIcon = styled<{}, 'img'>('img').attrs({ src: DesktopImageUrl })`${deviceStyles}`
-export const SyncMobileIcon = styled<{}, 'img'>('img').attrs({ src: MobileImageUrl })`${deviceStyles}`
-export const SyncMobilePicture = styled<{}, 'img'>('img').attrs({ src: MobileHandImageUrl })`
+export const SyncDefaultIcon = styled.img.attrs({ src: DefaultImageUrl })`${iconStyles}`
+export const SyncAddIcon = styled.img.attrs({ src: AddImageUrl })`${iconStyles}`
+export const SyncRemoveIcon = styled.img.attrs({ src: RemoveImageUrl })`${iconStyles}`
+export const SyncDesktopIcon = styled.img.attrs({ src: DesktopImageUrl })`${deviceStyles}`
+export const SyncMobileIcon = styled.img.attrs({ src: MobileImageUrl })`${deviceStyles}`
+export const SyncMobilePicture = styled.img.attrs({ src: MobileHandImageUrl })`
   max-width: 100%;
   height: 150px;
   display: block;
@@ -40,7 +40,7 @@ interface QRCodeProps {
   size: 'normal' | 'small'
 }
 
-export const QRCode = styled<QRCodeProps, 'img'>('img')`
+export const QRCode = styled.img<QRCodeProps>`
   display: block;
   width: 200px;
   padding: 30px;

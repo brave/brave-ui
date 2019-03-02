@@ -97,9 +97,9 @@ export default class GrantCaptcha extends React.PureComponent<Props, {}> {
     return (
       <StyledWrapper
         id={id}
-        innerRef={this.refWrapper}
+        ref={this.refWrapper}
       >
-        <StyledDrag innerRef={this.refDrag}>
+        <StyledDrag ref={this.refDrag}>
           <StyledImageWrap>
             <StyledImage src={batUrl} onDragStart={this.onCaptchaDrag} draggable={true} />
           </StyledImageWrap>

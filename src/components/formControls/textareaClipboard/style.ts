@@ -5,7 +5,7 @@
 import styled, { keyframes, css } from 'styled-components'
 import { Props } from './index'
 
-export const StyledWrapper = styled<{}, 'div'>('div')`
+export const StyledWrapper = styled.div`
   width: 100%;
   padding: 10px;
   border: 1px solid #DFDFE8;
@@ -18,7 +18,7 @@ export const StyledWrapper = styled<{}, 'div'>('div')`
   }
 `
 
-export const StyledArea = styled<Props, 'textarea'>('textarea')`
+export const StyledArea = styled.textarea<Props>`
   min-height: 140px;
   box-sizing: border-box;
   width: 100%;
@@ -39,7 +39,7 @@ export const StyledArea = styled<Props, 'textarea'>('textarea')`
     outline: none;
   }
 `
-export const StyledFooter = styled<{}, 'div'>('div')`
+export const StyledFooter = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: auto;
@@ -63,7 +63,7 @@ interface StyledTextProps {
   visible?: boolean
 }
 
-export const StyledText = styled<StyledTextProps, 'span'>('span')`
+export const StyledText = styled.span<StyledTextProps>`
   opacity: 0;
 
 ${p => p.visible && css`
@@ -74,7 +74,7 @@ ${p => p.visible && css`
   `}
 `
 
-export const StyledCopyToClipboard = styled<{}, 'div'>('div')`
+export const StyledCopyToClipboard = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto;
@@ -82,7 +82,7 @@ export const StyledCopyToClipboard = styled<{}, 'div'>('div')`
   align-items: center;
 `
 
-export const StyledClipboardButton = styled<{}, 'button'>('button')`
+export const StyledClipboardButton = styled.button`
   width: 24px;
   height: 24px;
   padding: 0;

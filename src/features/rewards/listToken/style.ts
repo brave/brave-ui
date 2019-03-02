@@ -5,7 +5,7 @@
 import styled from 'styled-components'
 import { Props } from './index'
 
-export const StyledWrapper = styled<Partial<Props>, 'div'>('div')`
+export const StyledWrapper = styled.div<Partial<Props>>`
   position: relative;
   display: flex;
   border-bottom: ${p => p.border === 'last' ? 'none' : '1px solid #d0d6dc'};
@@ -17,7 +17,7 @@ export const StyledWrapper = styled<Partial<Props>, 'div'>('div')`
   font-family: Poppins, sans-serif;
 `
 
-export const StyledTitle = styled<{}, 'div'>('div')`
+export const StyledTitle = styled.div`
   font-size: 14px;
   line-height: 2.79;
   color: #4b4c5c;
@@ -26,7 +26,7 @@ export const StyledTitle = styled<{}, 'div'>('div')`
   flex-basis: 60%;
 `
 
-export const StyledContentWrapper = styled<{}, 'div'>('div')`
+export const StyledContentWrapper = styled.div`
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 40%;

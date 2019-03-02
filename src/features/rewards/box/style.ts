@@ -25,7 +25,7 @@ const colors: Record<Type, string> = {
   donation: '#696FDC'
 }
 
-export const StyledWrapper = styled<StyleProps, 'div'>('div')`
+export const StyledWrapper = styled.div<StyleProps>`
   display: block;
   width: 100%;
   margin-bottom: 28px;
@@ -37,29 +37,29 @@ export const StyledCard = styled(Card as ComponentType<CardStyleProps>)`
   border-bottom-right-radius: ${p => p.hasAlert ? 0 : 6}px;
 `
 
-export const StyledFlip = styled<StyleProps, 'div'>('div')`
+export const StyledFlip = styled.div<StyleProps>`
   display: block;
 `
 
-export const StyledContentWrapper = styled<StyleProps, 'div'>('div')`
+export const StyledContentWrapper = styled.div<StyleProps>`
   flex-wrap: wrap;
   display: ${p => p.open ? 'flex' : 'none'};
 `
 
-export const StyledLeft = styled<{}, 'div'>('div')`
+export const StyledLeft = styled.div`
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 50%;
 `
 
-export const StyledRight = styled<StyleProps, 'div'>('div')`
+export const StyledRight = styled.div<StyleProps>`
   flex-basis: 40px;
   justify-content: flex-end;
   display: flex;
   max-height: 30px;
 `
 
-export const StyledTitle = styled<StyleProps, 'div'>('div')`
+export const StyledTitle = styled.div<StyleProps>`
   height: 36px;
   font-size: 22px;
   font-weight: 600;
@@ -68,12 +68,12 @@ export const StyledTitle = styled<StyleProps, 'div'>('div')`
   color: ${p => p.type && colors[p.type] || '#4b4c5c'};
 `
 
-export const StyledBreak = styled<{}, 'div'>('div')`
+export const StyledBreak = styled.div`
   width: 100%;
   display: block;
 `
 
-export const StyledDescription = styled<{}, 'div'>('div')`
+export const StyledDescription = styled.div`
   width: 100%;
   padding-right: 20px;
   font-family: Muli, sans-serif;
@@ -83,7 +83,7 @@ export const StyledDescription = styled<{}, 'div'>('div')`
   color: #838391;
 `
 
-export const StyledSettingsIcon = styled<StyleProps, 'button'>('button')`
+export const StyledSettingsIcon = styled.button<StyleProps>`
   width: 27px;
   border: none;
   background: none;
@@ -92,18 +92,18 @@ export const StyledSettingsIcon = styled<StyleProps, 'button'>('button')`
   color: #A1A8F2;
 `
 
-export const StyledContent = styled<{}, 'div'>('div')`
+export const StyledContent = styled.div`
   flex-basis: 100%;
   flex-grow: 1;
   margin-top: 25px;
 `
 
-export const StyledSettingsWrapper = styled<StyleProps, 'div'>('div')`
+export const StyledSettingsWrapper = styled.div<StyleProps>`
   background: #fff;
   display: ${p => p.open ? 'block' : 'none'};
 `
 
-export const StyledSettingsClose = styled<StyleProps, 'button'>('button')`
+export const StyledSettingsClose = styled.button<StyleProps>`
   display: ${p => p.open ? 'block' : 'none'};
   position: absolute;
   right: 29px;
@@ -117,14 +117,14 @@ export const StyledSettingsClose = styled<StyleProps, 'button'>('button')`
   color: ${palette.grey600};
 `
 
-export const StyledSettingsTitle = styled<{}, 'div'>('div')`
+export const StyledSettingsTitle = styled.div`
   margin-bottom: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
 `
 
-export const StyledSettingsText = styled<{}, 'div'>('div')`
+export const StyledSettingsText = styled.div`
   font-size: 16px;
   font-weight: 600;
   line-height: 1.75;

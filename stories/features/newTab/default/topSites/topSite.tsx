@@ -32,7 +32,7 @@ export default class TopSite extends React.PureComponent<Props, {}> {
       {
         (provided, snapshot) => (
           <Tile
-            innerRef={provided.innerRef}
+            ref={provided.innerRef}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
             isDragging={snapshot.isDragging}

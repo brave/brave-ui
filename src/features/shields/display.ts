@@ -10,7 +10,7 @@ import { ComponentType } from 'react'
 /**
  * Header
  */
-export const MainToggleHeading = styled<{}, 'h1'>('h1')`
+export const MainToggleHeading = styled.h1`
   box-sizing: border-box;
   font-size: 16px;
   line-height: 20px;
@@ -19,7 +19,7 @@ export const MainToggleHeading = styled<{}, 'h1'>('h1')`
   margin: 0;
 `
 
-export const MainToggleText = styled<{}, 'p'>('p')`
+export const MainToggleText = styled.p`
   box-sizing: border-box;
   color: ${palette.grey600};
   font-size: 12px;
@@ -32,7 +32,7 @@ interface ToggleStateTextProps {
   status: 'enabled' | 'disabled'
 }
 
-export const ToggleStateText = styled<ToggleStateTextProps, 'span'>('span')`
+export const ToggleStateText = styled.span<ToggleStateTextProps>`
   box-sizing: border-box;
   color: ${p => p.status === 'enabled' ? palette.orange400 : palette.grey300};
   font-size: inherit;
@@ -41,14 +41,14 @@ export const ToggleStateText = styled<ToggleStateTextProps, 'span'>('span')`
   font-weight: 600;
 `
 
-export const Favicon = styled<{}, 'img'>('img')`
+export const Favicon = styled.img`
   box-sizing: border-box;
   display: block;
   max-width: 100%;
   width: 24px;
 `
 
-export const SiteInfoText = styled<{}, 'p'>('p')`
+export const SiteInfoText = styled.p`
   box-sizing: border-box;
   font-size: 22px;
   font-weight: 500;
@@ -57,7 +57,7 @@ export const SiteInfoText = styled<{}, 'p'>('p')`
   margin: 0;
 `
 
-export const TotalBlockedStatsNumber = styled<{}, 'h2'>('h2')`
+export const TotalBlockedStatsNumber = styled.h2`
   box-sizing: border-box;
   font-size: 38px;
   text-transform: uppercase;
@@ -67,7 +67,7 @@ export const TotalBlockedStatsNumber = styled<{}, 'h2'>('h2')`
   margin: 0;
 `
 
-export const TotalBlockedStatsText = styled<{}, 'span'>('span')`
+export const TotalBlockedStatsText = styled.span`
   box-sizing: border-box;
   font-size: 12px;
   font-weight: 500;
@@ -78,7 +78,7 @@ export const TotalBlockedStatsText = styled<{}, 'span'>('span')`
 /**
  * Interface/Privacy rows
  */
-export const BlockedInfoRowStats = styled<{}, 'span'>('span')`
+export const BlockedInfoRowStats = styled.span`
   box-sizing: border-box;
   color: ${palette.grey800};
   font-size: 14px;
@@ -86,7 +86,7 @@ export const BlockedInfoRowStats = styled<{}, 'span'>('span')`
   line-height: 1;
 `
 
-export const BlockedInfoRowText = styled<{}, 'span'>('span')`
+export const BlockedInfoRowText = styled.span`
   box-sizing: border-box;
   font-size: 12px;
   font-weight: 500;
@@ -97,7 +97,7 @@ export const BlockedInfoRowText = styled<{}, 'span'>('span')`
 /**
  * Blocked Lists
  */
-export const BlockedListSummaryText = styled<{}, 'span'>('span')`
+export const BlockedListSummaryText = styled.span`
   box-sizing: border-box;
   font-size: 14px;
   font-weight: 500;
@@ -105,14 +105,14 @@ export const BlockedListSummaryText = styled<{}, 'span'>('span')`
   color: ${palette.grey800};
 `
 
-export const BlockedListItemHeaderText = styled<{}, 'span'>('span')`
+export const BlockedListItemHeaderText = styled.span`
   box-sizing: border-box;
   font-weight: 500;
   color: ${palette.grey600};
   font-size: 12px;
 `
 
-export const BlockedListItemHeaderStats = styled<{}, 'span'>('span')`
+export const BlockedListItemHeaderStats = styled.span`
   text-align: center;
   font-size: 14px;
   color: ${palette.grey800};
@@ -122,7 +122,7 @@ export const BlockedListItemHeaderStats = styled<{}, 'span'>('span')`
 /**
  * Buttons that look like links
  */
-export const Link = styled<{}, 'button'>('button')`
+export const Link = styled.button`
   box-sizing: border-box;
   -webkit-appearance: none;
   color: ${palette.orange400};
@@ -165,7 +165,7 @@ export const LinkAction = styled(Link)`
   }
 `
 
-export const DisabledContentText = styled<{}, 'div'>('div')`
+export const DisabledContentText = styled.div`
   box-sizing: border-box;
   color: ${palette.grey500};
   font-size: 12px;

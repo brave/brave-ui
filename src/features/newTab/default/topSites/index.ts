@@ -4,7 +4,7 @@
 
 import styled from '../../../../theme'
 
-export const List = styled<{}, 'div'>('div')`
+export const List = styled.div`
   padding: 0 70px;
   height: 100%;
   display: grid;
@@ -24,7 +24,7 @@ export const List = styled<{}, 'div'>('div')`
   }
 `
 
-export const TileActionsContainer = styled<{}, 'nav'>('nav')`
+export const TileActionsContainer = styled.nav`
   box-sizing: border-box;
   opacity: 0;
   visibility: hidden;
@@ -46,7 +46,7 @@ interface TileActionProps {
   standalone?: boolean
 }
 
-export const TileAction = styled<TileActionProps, 'a'>('a')`
+export const TileAction = styled.a<TileActionProps>`
   box-sizing: border-box;
   transition: color 0.1s linear;
   color: #424242;
@@ -73,7 +73,7 @@ interface TileProps {
   isDragging?: boolean
 }
 
-export const Tile = styled<TileProps, 'div'>('div')`
+export const Tile = styled.div<TileProps>`
   background-color: ${p => p.isDragging ? 'rgba(255, 255, 255, 0.5)' : 'rgba(255, 255, 255, 0.8)'};
   position: relative;
   user-select: none;
@@ -95,7 +95,7 @@ export const Tile = styled<TileProps, 'div'>('div')`
   }
 `
 
-export const TileFavicon = styled<{}, 'img'>('img')`
+export const TileFavicon = styled.img`
   display: block;
   height: 72px;
   padding: 16px;

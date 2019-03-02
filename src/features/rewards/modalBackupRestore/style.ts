@@ -10,7 +10,7 @@ interface StyleProps {
   error?: boolean
 }
 
-export const StyledContent = styled<{}, 'div'>('div')`
+export const StyledContent = styled.div`
   font-size: 14px;
   font-family: Muli, sans-serif;
   letter-spacing: 0;
@@ -19,12 +19,12 @@ export const StyledContent = styled<{}, 'div'>('div')`
   margin-top: 40px;
 `
 
-export const StyledImport = styled<{}, 'label'>('label')`
+export const StyledImport = styled.label`
   color: #4c54d2;
   cursor: pointer;
 `
 
-export const StyleButtonWrapper = styled<{}, 'div'>('div')`
+export const StyleButtonWrapper = styled.div`
   display: flex;
   margin-top: 20px;
   justify-content: center;
@@ -43,19 +43,19 @@ export const GroupedButton = styled(Button as ComponentType<ButtonProps>)`
   }
 `
 
-export const StyledDoneWrapper = styled<{}, 'div'>('div')`
+export const StyledDoneWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 40px;
 `
 
-export const StyledStatus = styled<StyleProps, 'div'>('div')`
+export const StyledStatus = styled.div<StyleProps>`
   margin: ${p => p.isError ? 0 : -16}px 0 16px;
   border-radius: 6px;
   overflow: hidden;
 `
 
-export const StyledActionsWrapper = styled<{}, 'div'>('div')`
+export const StyledActionsWrapper = styled.div`
   margin-top: 40px;
   display: flex;
   justify-content: center;
@@ -65,13 +65,13 @@ export const ActionButton = styled(Button as ComponentType<ButtonProps>)`
   margin: 0 8px;
 `
 
-export const StyledTitleWrapper = styled<{}, 'div'>('div')`
+export const StyledTitleWrapper = styled.div`
   width: 100%;
   text-align: center;
   margin-bottom: 20px;
 `
 
-export const StyledTitle = styled<{}, 'span'>('span')`
+export const StyledTitle = styled.span`
   font-size: 22px;
   font-weight: normal;
   letter-spacing: 0;
@@ -79,23 +79,23 @@ export const StyledTitle = styled<{}, 'span'>('span')`
   font-family: ${p => p.theme.fontFamily.heading};
 `
 
-export const StyledSafe = styled<{}, 'span'>('span')`
+export const StyledSafe = styled.span`
   font-weight: 700;
   margin-right: 3px;
   color: ${p => p.theme.color.brandBatInteracting};
 `
 
-export const StyledTabWrapper = styled<{}, 'div'>('div')`
+export const StyledTabWrapper = styled.div`
   margin: 0 auto;
   max-width: 400px;
 `
 
-export const StyledControlWrapper = styled<{}, 'div'>('div')`
+export const StyledControlWrapper = styled.div`
   width: 100%;
   margin-bottom: 30px;
 `
 
-export const StyledText = styled<{}, 'p'>('p')`
+export const StyledText = styled.p`
   font-size: 16px;
   font-weight: 200;
   letter-spacing: 0;
@@ -103,6 +103,6 @@ export const StyledText = styled<{}, 'p'>('p')`
   font-family: Muli, sans-serif;
 `
 
-export const StyledTextWrapper = styled<{}, 'div'>('div')`
+export const StyledTextWrapper = styled.div`
   margin-bottom: 25px;
 `

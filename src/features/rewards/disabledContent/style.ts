@@ -30,7 +30,7 @@ const getColors = (p: Props) => {
   `
 }
 
-export const StyledContent = styled<Props, 'div'>('div')`
+export const StyledContent = styled.div<Props>`
   font-family: Poppins, sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -56,26 +56,26 @@ export const StyledContent = styled<Props, 'div'>('div')`
   }
 `
 
-export const StyledGrid = styled<{}, 'div'>('div')`
+export const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3,1fr);
   grid-gap: 32px;
   box-sizing: border-box;
 `
 
-export const StyledOneColumn = styled<{}, 'div'>('div')`
+export const StyledOneColumn = styled.div`
   display: flex;
   grid-column: span 1;
   justify-content: flex-end;
 `
 
-export const StyledTwoColumn = styled<{}, 'div'>('div')`
+export const StyledTwoColumn = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
   grid-column: span 2;
 `
 
-export const StyledIcon = styled<{}, 'div'>('div')`
+export const StyledIcon = styled.div`
   width: 110px;
 `

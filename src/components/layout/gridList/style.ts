@@ -6,7 +6,7 @@ import styled, { css } from 'styled-components'
 import { GridProps, ColumnProps } from './index'
 import { setTheme } from '../../../helpers'
 
-export const StyledGrid = styled<GridProps, 'div'>('div')`
+export const StyledGrid = styled.div<GridProps>`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(${p => p.columns ? p.columns : '12'}, 1fr);
@@ -29,7 +29,7 @@ export const StyledGrid = styled<GridProps, 'div'>('div')`
   }
 `
 
-export const StyledColumn = styled<ColumnProps, 'div'>('div')`
+export const StyledColumn = styled.div<ColumnProps>`
   box-sizing: border-box;
   position: relative;
   display: flex;

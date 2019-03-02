@@ -11,7 +11,7 @@ export const Modal = styled(DefaultModal as ComponentType<Props>)`
   height: 100%;
 `
 
-export const LimitedBounds = styled<{}, 'article'>('article')`
+export const LimitedBounds = styled.article`
   overflow: auto;
   height: 500px;
   padding: 20px;
@@ -22,14 +22,14 @@ export const HeadingText = styled(Heading)`
   font-weight: 500;
 `
 
-export const Paragraph = styled<{}, 'p'>('p')`
+export const Paragraph = styled.p`
   font-size: 15px;
   font-family: ${p => p.theme.fontFamily.body};
   letter-spacing: .3px;
   line-height: 24px;
 `
 
-export const Footer = styled<{}, 'footer'>('footer')`
+export const Footer = styled.footer`
   display: flex;
   justify-content: flex-end;
 `

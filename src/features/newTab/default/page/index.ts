@@ -13,7 +13,7 @@ const fadeIn = keyframes`
   }
 `
 
-export const Page = styled<{}, 'div'>('div')`
+export const Page = styled.div`
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   position: relative;
@@ -32,7 +32,7 @@ interface DynamicBackgroundProps {
   background: string
 }
 
-export const DynamicBackground = styled<DynamicBackgroundProps, 'div'>('div')`
+export const DynamicBackground = styled.div<DynamicBackgroundProps>`
   box-sizing: border-box;
   background-position: top center;
   background-repeat: no-repeat;
@@ -45,7 +45,7 @@ export const DynamicBackground = styled<DynamicBackgroundProps, 'div'>('div')`
   animation-fill-mode: forwards;
 `
 
-export const Gradient = styled<{}, 'div'>('div')`
+export const Gradient = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -59,7 +59,7 @@ export const Gradient = styled<{}, 'div'>('div')`
   height: 100vh;
 `
 
-export const Link = styled<{}, 'a'>('a')`
+export const Link = styled.a`
   text-decoration: none;
   transition: color 0.15s ease, filter 0.15s ease;
   color: rgba(255, 255, 255, 0.8);
@@ -69,7 +69,7 @@ export const Link = styled<{}, 'a'>('a')`
   }
 `
 
-export const PhotoName = styled<{}, 'div'>('div')`
+export const PhotoName = styled.div`
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   font-size: 12px;
@@ -77,11 +77,11 @@ export const PhotoName = styled<{}, 'div'>('div')`
   color: rgba(255, 255, 255, 0.6);
 `
 
-export const Navigation = styled<{}, 'nav'>('nav')`
+export const Navigation = styled.nav`
   display: flex;
 `
 
-export const IconLink = styled<{}, 'a'>('a')`
+export const IconLink = styled.a`
   display: flex;
   width: 24px;
   height: 24px;

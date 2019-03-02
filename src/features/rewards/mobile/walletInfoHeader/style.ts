@@ -5,7 +5,7 @@
 import styled from 'styled-components'
 import panelBgUrl from './assets/panel.svg'
 
-export const StyledWrapper = styled<{}, 'div'>('div')`
+export const StyledWrapper = styled.div`
   width: 100%;
   display: flex;
   border-radius: 6px;
@@ -17,12 +17,12 @@ export const StyledWrapper = styled<{}, 'div'>('div')`
   box-shadow: 0 1px 12px 0 rgba(99,105,110,0.18);
 `
 
-export const StyledHeader = styled<{}, 'div'>('div')`
+export const StyledHeader = styled.div`
   padding: 16px 21px 14px 19px;
   position: relative;
 `
 
-export const StyledTitle = styled<{}, 'div'>('div')`
+export const StyledTitle = styled.div`
   font-size: 16px;
   font-weight: 300;
   line-height: 1.38;
@@ -34,12 +34,12 @@ export const StyledTitle = styled<{}, 'div'>('div')`
   }
 `
 
-export const StyledBalance = styled<{}, 'div'>('div')`
+export const StyledBalance = styled.div`
   margin-top: -14px;
   text-align: center;
 `
 
-export const StyledBalanceTokens = styled<{}, 'div'>('div')`
+export const StyledBalanceTokens = styled.div`
   font-size: 38px;
   line-height: 0.61;
   letter-spacing: -0.4px;
@@ -48,7 +48,7 @@ export const StyledBalanceTokens = styled<{}, 'div'>('div')`
   margin-top: 10px;
 `
 
-export const StyledBalanceConverted = styled<{}, 'div'>('div')`
+export const StyledBalanceConverted = styled.div`
   font-family: Muli, sans-serif;
   font-size: 12px;
   line-height: 1.17;
@@ -57,7 +57,7 @@ export const StyledBalanceConverted = styled<{}, 'div'>('div')`
   margin: 8px 0;
 `
 
-export const StyledBalanceCurrency = styled<{}, 'span'>('span')`
+export const StyledBalanceCurrency = styled.span`
   text-transform: uppercase;
   opacity: 0.66;
   font-family: Muli, sans-serif;

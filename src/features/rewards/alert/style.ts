@@ -51,7 +51,7 @@ const getColor = (p: Props) => {
   `
 }
 
-export const StyledWrapper = styled<Props, 'div'>('div')`
+export const StyledWrapper = styled.div<Props>`
   height: 100%;
   display: flex;
   justify-content: flex-start;
@@ -65,13 +65,13 @@ export const StyledWrapper = styled<Props, 'div'>('div')`
   background: var(--alert-wrapper-color);
 `
 
-export const StyledIcon = styled<{}, 'span'>('span')`
+export const StyledIcon = styled.span`
   width: 40px;
   height: 40px;
   flex-basis: 40px;
 `
 
-export const StyledContent = styled<Props, 'div'>('div')`
+export const StyledContent = styled.div<Props>`
   flex-grow: 1;
   flex-basis: 50%;
   padding-left: 19px;
@@ -88,7 +88,7 @@ export const StyledContent = styled<Props, 'div'>('div')`
   }
 `
 
-export const StyledClose = styled<{}, 'div'>('div')`
+export const StyledClose = styled.div`
   width: 11px;
   height: 11px;
   position: absolute;
@@ -97,14 +97,14 @@ export const StyledClose = styled<{}, 'div'>('div')`
   z-index: 2;
 `
 
-export const StyledError = styled<{}, 'div'>('div')`
+export const StyledError = styled.div`
   color: #F43405;
 `
 
-export const StyledSuccess = styled<{}, 'div'>('div')`
+export const StyledSuccess = styled.div`
   color: #1BBA6A;
 `
 
-export const StyledWarning = styled<{}, 'div'>('div')`
+export const StyledWarning = styled.div`
   color: #FF7900;
 `

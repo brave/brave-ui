@@ -8,7 +8,7 @@ interface PageProps {
   isPrivate: boolean
 }
 
-export const Page = styled<PageProps, 'div'>('div')`
+export const Page = styled.div<PageProps>`
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   background: linear-gradient(${p => p.isPrivate ? '#381980' : '#5F0C8A'}, #0C041E);
@@ -16,7 +16,7 @@ export const Page = styled<PageProps, 'div'>('div')`
   height: initial;
 `
 
-export const PageWrapper = styled<{}, 'main'>('main')`
+export const PageWrapper = styled.main`
   box-sizing: border-box;
   padding: 85px 15px;
   max-width: 950px;

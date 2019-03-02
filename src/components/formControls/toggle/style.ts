@@ -38,11 +38,11 @@ const getBulletStyle = (p: Props) => {
   `
 }
 
-export const StyledWrapper = styled<Props, 'div'>('div')`
+export const StyledWrapper = styled.div<Props>`
   display: flex;
 `
 
-export const StyleToggle = styled<Props, 'div'>('div')`
+export const StyleToggle = styled.div<Props>`
   position: relative;
   display: block;
   height: ${(p) => p.size === 'small' ? '16px' : '24px'};
@@ -56,7 +56,7 @@ export const StyleToggle = styled<Props, 'div'>('div')`
   };
 `
 
-export const StyledSlider = styled<Props, 'div'>('div')`
+export const StyledSlider = styled.div<Props>`
   background: ${(p) => p.disabled ? '#F6F6FA' : '#A7ACB2'};
   height: ${(p) => p.size === 'small' ? '6px' : '8px'};
   margin-top: ${(p) => p.size === 'small' ? '5px' : '8px'};
@@ -64,7 +64,7 @@ export const StyledSlider = styled<Props, 'div'>('div')`
   border-radius: 3px;
 `
 
-export const StyledBullet = styled<Props, 'div'>('div')`
+export const StyledBullet = styled.div<Props>`
   position: relative;
   border-radius: 50%;
   transition: all .4s ease;
@@ -76,7 +76,7 @@ export const StyledBullet = styled<Props, 'div'>('div')`
   box-shadow: 0 3px 3px rgba(0,0,0,0.05);
 `
 
-export const StyledText = styled<Props, 'div'>('div')`
+export const StyledText = styled.div<Props>`
   color: #838391;
   font-size: ${(p) => p.size === 'small' ? '12px' : '14px'};
   font-family: Poppins, sans-serif;

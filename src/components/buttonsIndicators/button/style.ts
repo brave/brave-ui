@@ -63,7 +63,7 @@ const getThemeColors = (p: ThemedStyledProps<Props>) => {
   `
 }
 
-const StyledButton = styled<Props, 'button'>('button')`
+const StyledButton = styled.button<Props>`
   ${getThemeColors}
   --button-state-color: var(--button-main-color);
   --icon-size: ${largeMediumSmall('18px', '16px', '14px')};
@@ -110,7 +110,7 @@ export const TertiaryButton = styled(StyledButton)`
   color: var(--button-state-color);
 `
 
-export const StyledText = styled<Props, 'div'>('div')`
+export const StyledText = styled.div<Props>`
   /* min-height so that we get consistent height with / without an icon */
   min-height: var(--icon-size);
   display: flex;
@@ -122,7 +122,7 @@ export const StyledText = styled<Props, 'div'>('div')`
   line-height: 1;
 `
 
-export const StyledIcon = styled<Props, 'div'>('div')`
+export const StyledIcon = styled.div<Props>`
   display: block;
   line-height: 0;
   height: var(--icon-size);

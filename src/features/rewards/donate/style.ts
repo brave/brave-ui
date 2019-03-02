@@ -64,19 +64,19 @@ const getAmountStyle = (isMobile?: boolean) => {
   `
 }
 
-export const StyledWrapper = styled<StyleProps, 'div'>('div')`
+export const StyledWrapper = styled.div<StyleProps>`
   position: relative;
   font-family: Poppins, sans-serif;
   margin: ${p => p.isMobile ? '0 auto 8px auto' : 0}px
   ${getStyle}
 `
 
-export const StyledContent = styled<StyleProps, 'div'>('div')`
+export const StyledContent = styled.div<StyleProps>`
   margin-top: ${p => p.isMobile ? -30 : 0}px;
   padding: ${p => p.isMobile ? '0px' : 'var(--donate-content-padding)'};
 `
 
-export const StyledDonationTitle = styled<StyleProps, 'div'>('div')`
+export const StyledDonationTitle = styled.div<StyleProps>`
   font-size: 16px;
   font-weight: 600;
   line-height: 1.75;
@@ -89,7 +89,7 @@ export const StyledDonationTitle = styled<StyleProps, 'div'>('div')`
   padding-left: ${p => p.isMobile ? 20 : 0}px;
 `
 
-export const StyledSend = styled<{}, 'div'>('div')`
+export const StyledSend = styled.div`
   background: var(--donate-send-bg);
   font-size: 13px;
   font-weight: 600;
@@ -103,7 +103,7 @@ export const StyledSend = styled<{}, 'div'>('div')`
   cursor: pointer;
 `
 
-export const StyledSendButton = styled<{}, 'button'>('button')`
+export const StyledSendButton = styled.button`
   display: block;
   border: none;
   font-size: 13px;
@@ -113,13 +113,13 @@ export const StyledSendButton = styled<{}, 'button'>('button')`
   cursor: pointer;
 `
 
-export const StyledButtonWrapper = styled<StyleProps, 'div'>('div')`
+export const StyledButtonWrapper = styled.div<StyleProps>`
   display: block;
   width: ${p => p.isMobile ? 190 : 245}px;
   margin: 0 auto;
 `
 
-export const StyledIconSend = styled<StyleProps, 'span'>('span')`
+export const StyledIconSend = styled.span<StyleProps>`
   vertical-align: middle;
   display: inline-block;
   margin-right: 15px;
@@ -128,7 +128,7 @@ export const StyledIconSend = styled<StyleProps, 'span'>('span')`
   height: 27px;
 `
 
-export const StyledFunds = styled<{}, 'div'>('div')`
+export const StyledFunds = styled.div`
   font-family: Muli, sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -149,17 +149,17 @@ export const StyledFunds = styled<{}, 'div'>('div')`
   }
 `
 
-export const StyledIconFace = styled<{}, 'div'>('div')`
+export const StyledIconFace = styled.div`
   flex-basis: 32px;
   margin: -7px 6px 0 0;
 `
 
-export const StyledFundsText = styled<{}, 'div'>('div')`
+export const StyledFundsText = styled.div`
   flex: 1;
   margin-right: 9px;
 `
 
-export const StyledAmountsWrapper = styled<StyleProps, 'div'>('div')`
+export const StyledAmountsWrapper = styled.div<StyleProps>`
   width: 100%;
   display: block;
   ${p => getAmountStyle(p.isMobile)}

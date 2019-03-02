@@ -45,29 +45,29 @@ export const StyledCard = styled(Card as ComponentType<CardStyleProps>)`
   font-family: Poppins, sans-serif;
 `
 
-export const StyledFlip = styled<{}, 'div'>('div')`
+export const StyledFlip = styled.div`
   display: block;
 `
 
-export const StyledContentWrapper = styled<StyleProps, 'div'>('div')`
+export const StyledContentWrapper = styled.div<StyleProps>`
   flex-wrap: wrap;
   display: ${p => p.open ? 'flex' : 'none'};
 `
 
-export const StyledLeft = styled<{}, 'div'>('div')`
+export const StyledLeft = styled.div`
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 50%;
 `
 
-export const StyledRight = styled<{}, 'div'>('div')`
+export const StyledRight = styled.div`
   flex-basis: 40px;
   justify-content: flex-end;
   display: flex;
   max-height: 30px;
 `
 
-export const StyledTitle = styled<StyleProps, 'div'>('div')`
+export const StyledTitle = styled.div<StyleProps>`
   height: 36px;
   font-size: 18px;
   font-weight: 600;
@@ -83,12 +83,12 @@ export const StyledTitle = styled<StyleProps, 'div'>('div')`
   margin-top: ${p => p.contentShown ? 3 : -5}px;
 `
 
-export const StyledBreak = styled<{}, 'div'>('div')`
+export const StyledBreak = styled.div`
   width: 100%;
   display: block;
 `
 
-export const StyledDescription = styled<StyleProps, 'div'>('div')`
+export const StyledDescription = styled.div<StyleProps>`
   width: 100%;
   font-family: Muli, sans-serif;
   font-size: 14px;
@@ -99,20 +99,20 @@ export const StyledDescription = styled<StyleProps, 'div'>('div')`
   margin-top: ${p => p.contentShown ? 0 : -5}px;
 `
 
-export const StyledContent = styled<StyleProps, 'div'>('div')`
+export const StyledContent = styled.div<StyleProps>`
   flex-basis: 100%;
   flex-grow: 1;
   margin-top: ${p => p.contentShown ? 15 : 10}px;
   text-align: ${p => p.contentShown ? 'default' : 'center'};
 `
 
-export const StyledSettingsWrapper = styled<StyleProps, 'div'>('div')`
+export const StyledSettingsWrapper = styled.div<StyleProps>`
   background: #fff;
   overflow: hidden;
   display: ${p => p.open ? 'block' : 'none'};
 `
 
-export const StyledSettingsClose = styled<{}, 'button'>('button')`
+export const StyledSettingsClose = styled.button`
   display: block;
   position: absolute;
   right: 15px;
@@ -126,7 +126,7 @@ export const StyledSettingsClose = styled<{}, 'button'>('button')`
   color: #DFDFE8;
 `
 
-export const StyledSettingsTitle = styled<{}, 'span'>('span')`
+export const StyledSettingsTitle = styled.span`
   color: #4B4C5C;
   font-size: 16px;
   font-weight: 600;
@@ -138,7 +138,7 @@ export const StyledSettingsTitle = styled<{}, 'span'>('span')`
   padding-top: 25px;
 `
 
-export const StyledSettingsText = styled<{}, 'div'>('div')`
+export const StyledSettingsText = styled.div`
   display: inline-block;
   vertical-align: top;
   color: #4B4C5C;
@@ -149,7 +149,7 @@ export const StyledSettingsText = styled<{}, 'div'>('div')`
   margin-left: 5px;
 `
 
-export const StyleDetailsLink = styled<{}, 'a'>('a')`
+export const StyleDetailsLink = styled.a`
   color: #4C54D2;
   font-size: 14px;
   font-weight: 500;
@@ -157,34 +157,34 @@ export const StyleDetailsLink = styled<{}, 'a'>('a')`
   line-height: 28px;
 `
 
-export const StyledDetailInfo = styled<{}, 'div'>('div')`
+export const StyledDetailInfo = styled.div`
   width: 100%;
   padding: 0px 21px 20px;
   display: block;
 `
 
-export const StyledDetailContent = styled<{}, 'div'>('div')`
+export const StyledDetailContent = styled.div`
   margin-top: 80px;
 `
 
-export const StyledChildContent = styled<{}, 'div'>('div')`
+export const StyledChildContent = styled.div`
   width: 100%;
   display: block;
   border-top: 1px solid #E5E5EA;
 `
 
-export const StyledSettingsContent = styled<{}, 'div'>('div')`
+export const StyledSettingsContent = styled.div`
   width: 100%;
   padding: 25px;
   display: block;
 `
 
-export const StyledSettingsHeader = styled<{}, 'div'>('div')`
+export const StyledSettingsHeader = styled.div`
   width: 100%;
   display: block;
 `
 
-export const StyledSettingsListTitle = styled<{}, 'span'>('span')`
+export const StyledSettingsListTitle = styled.span`
   vertical-align: top;
   font-weight: 300;
   font-size: 16px;
@@ -194,7 +194,7 @@ export const StyledSettingsListTitle = styled<{}, 'span'>('span')`
   margin: 5px 0px -10px 22px;
 `
 
-export const StyledArrow = styled<{}, 'span'>('span')`
+export const StyledArrow = styled.span`
   color: #4C54D2;
   height: 16px;
   width: 16px;
@@ -203,7 +203,7 @@ export const StyledArrow = styled<{}, 'span'>('span')`
   line-height: 16px;
 `
 
-export const StyledToggleHeader = styled<StyleProps, 'div'>('div')`
+export const StyledToggleHeader = styled.div<StyleProps>`
   width: 100%;
   display: flex;
   ${p => getFixedStyling(p.detailView)}
@@ -212,14 +212,14 @@ export const StyledToggleHeader = styled<StyleProps, 'div'>('div')`
   z-index: 1;
 `
 
-export const StyledBackArrow = styled<{}, 'span'>('span')`
+export const StyledBackArrow = styled.span`
   height: 28px;
   width: 25px;
   display: inline-block;
   margin-right: -3px;
 `
 
-export const StyledFullSizeWrapper = styled<{}, 'div'>('div')`
+export const StyledFullSizeWrapper = styled.div`
   display: block;
   position: fixed;
   top: 0;
@@ -231,7 +231,7 @@ export const StyledFullSizeWrapper = styled<{}, 'div'>('div')`
   overflow-y: scroll;
 `
 
-export const StyledSettingsIcon = styled<{}, 'button'>('button')`
+export const StyledSettingsIcon = styled.button`
   width: 27px;
   border: none;
   background: none;
@@ -240,7 +240,7 @@ export const StyledSettingsIcon = styled<{}, 'button'>('button')`
   color: #A1A8F2;
 `
 
-export const StyledToggleWrapper = styled<StyleProps, 'div'>('div')`
+export const StyledToggleWrapper = styled.div<StyleProps>`
   margin-right: -5px;
   margin-top: ${p => p.contentShown ? 5 : 6}px;
 `

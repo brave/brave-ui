@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from '../../../theme'
-import { StyledComponentClass } from 'styled-components'
+import { StyledComponentBase } from 'styled-components'
 import { CaratDownIcon, ShieldAlertIcon } from '../../../components/icons'
 
 import { ComponentType } from 'react'
@@ -11,7 +11,7 @@ import palette from '../../../theme/colors'
 
 // rotated variants
 function RotatedIconComponent (
-  iconComponent: StyledComponentClass<any, any>,
+  iconComponent: StyledComponentBase<any, any>,
   degrees: number
 ) {
   return styled(iconComponent)`

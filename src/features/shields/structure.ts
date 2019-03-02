@@ -11,7 +11,7 @@ import { StyledWrapper as Toggle } from '../shields/toggle/style'
 /**
  * Main wrapper
  */
-export const ShieldsPanel = styled<{}, 'div'>('div')`
+export const ShieldsPanel = styled.div`
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   font-family: ${p => p.theme.fontFamily.heading};
@@ -27,7 +27,7 @@ interface ShieldsHeaderProps {
   status: 'enabled' | 'disabled'
 }
 
-export const ShieldsHeader = styled<ShieldsHeaderProps, 'header'>('header')`
+export const ShieldsHeader = styled.header<ShieldsHeaderProps>`
   box-sizing: border-box;
   background-image: url(${Background});
   background-repeat: no-repeat;
@@ -42,7 +42,7 @@ interface MainToggleProps {
   status: 'enabled' | 'disabled'
 }
 
-export const MainToggle = styled<MainToggleProps, 'section'>('section')`
+export const MainToggle = styled.section<MainToggleProps>`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -64,7 +64,7 @@ interface SiteOverviewProps {
   status: 'enabled' | 'disabled'
 }
 
-export const SiteOverview = styled<SiteOverviewProps, 'div'>('div')`
+export const SiteOverview = styled.div<SiteOverviewProps>`
   box-sizing: border-box;
   display: grid;
   align-items: center;
@@ -73,7 +73,7 @@ export const SiteOverview = styled<SiteOverviewProps, 'div'>('div')`
   border-bottom: 1px solid ${p => p.status === 'enabled' ? 'rgba(160, 161, 178, 0.15)' : 'transparent'};
 `
 
-export const TotalBlockedStats = styled<{}, 'section'>('section')`
+export const TotalBlockedStats = styled.section`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 80px 140px;
@@ -82,7 +82,7 @@ export const TotalBlockedStats = styled<{}, 'section'>('section')`
   grid-gap: 10px;
 `
 
-export const SiteInfo = styled<{}, 'div'>('div')`
+export const SiteInfo = styled.div`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -94,7 +94,7 @@ export const SiteInfo = styled<{}, 'div'>('div')`
 /**
  * Interface/privacy Rows
  */
-export const BlockedInfoRow = styled<{}, 'div'>('div')`
+export const BlockedInfoRow = styled.div`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -134,7 +134,7 @@ interface BlockedInfoRowDataProps {
   disabled: boolean
 }
 
-export const BlockedInfoRowData = styled<BlockedInfoRowDataProps, 'div'>('div')`
+export const BlockedInfoRowData = styled.div<BlockedInfoRowDataProps>`
   display: grid;
   grid-template-columns: auto 36px 1fr;
   padding: 6px 0 5px 20px;
@@ -178,7 +178,7 @@ export const BlockedInfoRowDataForSelect = styled(BlockedInfoRowData)`
 /**
  * Footer
  */
-export const MainFooter = styled<{}, 'div'>('div')`
+export const MainFooter = styled.div`
   box-sizing: border-box;
   padding: 24px;
 `
@@ -186,7 +186,7 @@ export const MainFooter = styled<{}, 'div'>('div')`
 /**
  * Blocked Lists
  */
-export const BlockedListContent = styled<{}, 'div'>('div')`
+export const BlockedListContent = styled.div`
   box-sizing: border-box;
   position: absolute;
   top: 0;
@@ -198,7 +198,7 @@ export const BlockedListContent = styled<{}, 'div'>('div')`
   user-select: none;
 `
 
-export const BlockedListHeader = styled<{}, 'div'>('div')`
+export const BlockedListHeader = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: 6px;
@@ -211,7 +211,7 @@ interface BlockedListSummaryProps {
   stats?: boolean
 }
 
-export const BlockedListSummary = styled<BlockedListSummaryProps, 'summary'>('summary')`
+export const BlockedListSummary = styled.summary<BlockedListSummaryProps>`
   &::-webkit-details-marker {
     display: none;
   }
@@ -234,7 +234,7 @@ export const BlockedListSummary = styled<BlockedListSummaryProps, 'summary'>('su
   }
 `
 
-export const BlockedListStatic = styled<{}, 'ul'>('ul')`
+export const BlockedListStatic = styled.ul`
   box-sizing: border-box;
   list-style-type: none;
   height: 307px;
@@ -247,7 +247,7 @@ export const BlockedListDynamic = styled(BlockedListStatic)`
   margin: 0;
 `
 
-export const BlockedListItemHeader = styled<{}, 'li'>('li')`
+export const BlockedListItemHeader = styled.li`
   box-sizing: border-box;
   position: sticky;
   top: 0;
@@ -266,13 +266,13 @@ export const BlockedListItemHeader = styled<{}, 'li'>('li')`
   }
 `
 
-export const BlockedListItem = styled<{}, 'li'>('li')`
+export const BlockedListItem = styled.li`
   box-sizing: border-box;
   padding: 9px 0px;
   line-height: 1;
 `
 
-export const BlockedListItemWithOptions = styled<{}, 'li'>('li')`
+export const BlockedListItemWithOptions = styled.li`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -292,7 +292,7 @@ export const BlockedListItemWithOptions = styled<{}, 'li'>('li')`
   }
 `
 
-export const BlockedListFooter = styled<{}, 'footer'>('footer')`
+export const BlockedListFooter = styled.footer`
   box-sizing: border-box;
   padding: 12px 0px;
   display: flex;
@@ -300,7 +300,7 @@ export const BlockedListFooter = styled<{}, 'footer'>('footer')`
   border-top: 1px solid rgba(160, 161, 178, 0.15);
 `
 
-export const BlockedListFooterWithOptions = styled<{}, 'footer'>('footer')`
+export const BlockedListFooterWithOptions = styled.footer`
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -311,7 +311,7 @@ export const BlockedListFooterWithOptions = styled<{}, 'footer'>('footer')`
 /**
  * Disabled content
  */
-export const DisabledContentView = styled<{}, 'section'>('section')`
+export const DisabledContentView = styled.section`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 2fr 5fr;

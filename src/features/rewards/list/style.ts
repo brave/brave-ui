@@ -4,7 +4,7 @@
 
 import styled from 'styled-components'
 
-export const StyledWrapper = styled<{}, 'div'>('div')`
+export const StyledWrapper = styled.div`
   position: relative;
   display: flex;
   border-bottom: solid 1px #E5E5EA;
@@ -16,7 +16,7 @@ export const StyledWrapper = styled<{}, 'div'>('div')`
   font-family: Poppins, sans-serif;
 `
 
-export const StyledTitle = styled<{}, 'div'>('div')`
+export const StyledTitle = styled.div`
   font-size: 16px;
   line-height: 1;
   color: #4b4c5c;
@@ -26,7 +26,7 @@ export const StyledTitle = styled<{}, 'div'>('div')`
   padding: 9px 0 15px;
 `
 
-export const StyledContentWrapper = styled<{}, 'div'>('div')`
+export const StyledContentWrapper = styled.div`
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 50%;

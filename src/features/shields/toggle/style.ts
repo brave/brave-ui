@@ -6,7 +6,7 @@ import styled, { css } from '../../../theme'
 import { Props } from './index'
 import palette from '../../../theme/colors'
 
-export const StyledCheckbox = styled<{}, 'input'>('input')`
+export const StyledCheckbox = styled.input`
   -webkit-appearance: none;
   position: absolute;
   z-index: 99999999;
@@ -19,13 +19,13 @@ export const StyledCheckbox = styled<{}, 'input'>('input')`
   outline-width: 2px;
 `
 
-export const StyledWrapper = styled<Props, 'div'>('div')`
+export const StyledWrapper = styled.div<Props>`
   box-sizing: border-box;
   display: flex;
   position: relative;
 `
 
-export const StyleToggle = styled<Props, 'div'>('div')`
+export const StyleToggle = styled.div<Props>`
   box-sizing: border-box;
   position: relative;
   display: block;
@@ -40,7 +40,7 @@ export const StyleToggle = styled<Props, 'div'>('div')`
   };
 `
 
-export const StyledSlider = styled<Props, 'label'>('label')`
+export const StyledSlider = styled.label<Props>`
   box-sizing: border-box;
   background: ${(p) => p.disabled ? 'rgba(246,246,250,0.1)' : '#C4C7C9'};
   height: ${(p) => p.size === 'small' ? '6px' : '8px'};
@@ -63,7 +63,7 @@ const transform = (p: Props) => {
 
 const transformBullet = (p: Props) => `${transform(p).x}, calc(-50% - ${transform(p).y})`
 
-export const StyledBullet = styled<Props, 'label'>('label')`
+export const StyledBullet = styled.label<Props>`
   box-sizing: border-box;
   position: relative;
   border-radius: 50%;

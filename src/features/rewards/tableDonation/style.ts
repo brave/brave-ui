@@ -4,7 +4,7 @@
 
 import styled from 'styled-components'
 
-export const StyledRemove = styled<{}, 'button'>('button')`
+export const StyledRemove = styled.button`
   font-family: Muli, sans-serif;
   font-size: 14px;
   line-height: 0;
@@ -17,7 +17,7 @@ export const StyledRemove = styled<{}, 'button'>('button')`
   display: inline-block;
 `
 
-export const StyledRemoveIcon = styled<{}, 'span'>('span')`
+export const StyledRemoveIcon = styled.span`
   vertical-align: middle;
   color: #9E9FAB;
   width: 12px;
@@ -26,7 +26,7 @@ export const StyledRemoveIcon = styled<{}, 'span'>('span')`
   margin-right: 4px;
 `
 
-export const StyledType = styled<{}, 'div'>('div')`
+export const StyledType = styled.div`
   font-family: Muli, sans-serif;
   font-size: 14px;
   font-weight: 600;
@@ -34,7 +34,7 @@ export const StyledType = styled<{}, 'div'>('div')`
   color: #686978;
 `
 
-export const StyledDate = styled<{}, 'div'>('div')`
+export const StyledDate = styled.div`
   font-family: Muli, sans-serif;
   font-size: 14px;
   line-height: 1;
@@ -42,7 +42,7 @@ export const StyledDate = styled<{}, 'div'>('div')`
   color: #b8b9c4;
 `
 
-export const StyledToggle = styled<{}, 'button'>('button')`
+export const StyledToggle = styled.button`
   font-family: Poppins, sans-serif;
   font-size: 13px;
   color: #4c54d2;
@@ -53,10 +53,10 @@ export const StyledToggle = styled<{}, 'button'>('button')`
   cursor: pointer;
 `
 
-export const StyledToggleWrap = styled<{}, 'div'>('div')`
+export const StyledToggleWrap = styled.div`
   text-align: right;
 `
 
-export const StyledLink = styled<{}, 'a'>('a')`
+export const StyledLink = styled.a`
   text-decoration: none;
 `

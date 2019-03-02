@@ -26,7 +26,7 @@ const getHeightOffset = (isMobile?: boolean, isLandscape?: boolean) => {
   return 0
 }
 
-export const StyledWrapper = styled<{}, 'div'>('div')`
+export const StyledWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -38,7 +38,7 @@ export const StyledWrapper = styled<{}, 'div'>('div')`
   overflow: hidden;
 `
 
-export const StyledDialog = styled<Props, 'div'>('div')`
+export const StyledDialog = styled.div<Props>`
   max-width: ${p => p.size === 'small' ? '666px' : '920px'};
   margin: 52px auto;
   background: #fff;
@@ -47,7 +47,7 @@ export const StyledDialog = styled<Props, 'div'>('div')`
   position: relative;
 `
 
-export const StyledClose = styled<{}, 'div'>('div')`
+export const StyledClose = styled.div`
   position: absolute;
   top: 20px;
   right: 20px;
@@ -57,7 +57,7 @@ export const StyledClose = styled<{}, 'div'>('div')`
   color: #9E9FAB;
 `
 
-export const StyledContent = styled<StyleProps, 'div'>('div')`
+export const StyledContent = styled.div<StyleProps>`
   padding: 48px 48px;
   overflow-y: auto;
   max-height: calc(100vh - ${p => getHeightOffset(p.isMobile, p.isLandscape)}px);

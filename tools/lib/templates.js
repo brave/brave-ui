@@ -42,7 +42,7 @@ module.exports.style = () => `\
 
 import styled from 'styled-components'
 
-export const StyledWrapper = styled<{}, 'div'>('div')\`
+export const StyledWrapper = styled.div\`
   display: flex;
 \`
 `

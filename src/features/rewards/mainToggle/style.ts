@@ -4,7 +4,7 @@
 
 import styled from 'styled-components'
 
-export const MainToggleWrapper = styled<{}, 'div'>('div')`
+export const MainToggleWrapper = styled.div`
   font-family: Poppins, sans-serif;
   position: relative;
   display: flex;
@@ -20,13 +20,13 @@ export const MainToggleWrapper = styled<{}, 'div'>('div')`
   margin-bottom: 25px;
 `
 
-export const ToggleHeading = styled<{}, 'div'>('div')`
+export const ToggleHeading = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
 `
 
-export const StyledTitle = styled<{}, 'div'>('div')`
+export const StyledTitle = styled.div`
   margin: 0 0 0 11px;
   flex: 1;
   font-size: 28px;
@@ -38,7 +38,7 @@ export const StyledTitle = styled<{}, 'div'>('div')`
   align-items: center;
 `
 
-export const StyledTM = styled<{}, 'span'>('span')`
+export const StyledTM = styled.span`
   align-self: flex-start;
   font-size: 10px;
   font-weight: 300;
@@ -47,14 +47,14 @@ export const StyledTM = styled<{}, 'span'>('span')`
   color: #222326;
 `
 
-export const StyleTitle = styled<{}, 'div'>('div')`
+export const StyleTitle = styled.div`
   margin-top: 18px;
   font-size: 22px;
   line-height: 1.27;
   color: #4b4c5c;
 `
 
-export const StyleText = styled<{}, 'div'>('div')`
+export const StyleText = styled.div`
   font-family: Muli, sans-serif;
   font-size: 16px;
   font-weight: 300;
@@ -62,11 +62,11 @@ export const StyleText = styled<{}, 'div'>('div')`
   color: #838391;
 `
 
-export const StyledContent = styled<{}, 'div'>('div')`
+export const StyledContent = styled.div`
   flex-basis: 100%;
 `
 
-export const StyledLogoWrapper = styled<{}, 'div'>('div')`
+export const StyledLogoWrapper = styled.div`
   width: 66px;
   height: 66px;
 `

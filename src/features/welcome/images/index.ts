@@ -12,7 +12,7 @@ import ShieldsImage from './welcome_shields.svg'
 import ThemeImage from './welcome_theme.svg'
 import WelcomeImage from './welcome_bg.svg'
 
-const BaseImage = styled<{}, 'img'>('img')`
+const BaseImage = styled.img`
   box-sizing: border-box;
   display: block;
   max-width: 100%;
@@ -56,7 +56,7 @@ export const topToBottom = keyframes`
   }
 `
 
-export const BackgroundContainer = styled<{}, 'div'>('div')`
+export const BackgroundContainer = styled.div`
   box-sizing: border-box;
   width: inherit;
   height: inherit;
@@ -70,7 +70,7 @@ export const BackgroundContainer = styled<{}, 'div'>('div')`
   overflow: hidden;
 `
 
-export const Background = styled<BackgroundProps, 'div'>('div')`
+export const Background = styled.div<BackgroundProps>`
   box-sizing: border-box;
   background: url('${WelcomeImage}') repeat-x;
   width: 500%;

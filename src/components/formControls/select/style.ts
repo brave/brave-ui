@@ -45,17 +45,17 @@ interface StyleProps extends Props {
   showAllContents?: boolean
 }
 
-export const StyledWrapper = styled<StyleProps, 'div'>('div')`
+export const StyledWrapper = styled.div<StyleProps>`
   width: 100%;
 `
 
-export const StyledSelectWrapper = styled<StyleProps, 'div'>('div')`
+export const StyledSelectWrapper = styled.div<StyleProps>`
   position: relative;
   outline: 0;
   font-family: Muli, sans-serif;
 `
 
-export const StyledSelect = styled<StyleProps, 'div'>('div')`
+export const StyledSelect = styled.div<StyleProps>`
   border-radius: 3px;
   font-size: 14px;
   width: 100%;
@@ -67,7 +67,7 @@ export const StyledSelect = styled<StyleProps, 'div'>('div')`
   border: var(--select-select-border);
 `
 
-export const StyledSelectArrow = styled<StyleProps, 'div'>('div')`
+export const StyledSelectArrow = styled.div<StyleProps>`
   margin-right: ${p => p.floating ? -9 : 15}px;
   flex-basis: 33px;
   flex-shrink: 0;
@@ -75,7 +75,7 @@ export const StyledSelectArrow = styled<StyleProps, 'div'>('div')`
   margin-top: ${p => p.floating ? -5 : 0}px;
 `
 
-export const StyledSelectText = styled<StyleProps, 'div'>('div')`
+export const StyledSelectText = styled.div<StyleProps>`
   flex-grow: 1;
   padding: ${p => p.floating ? 0 : '0 5px 0 13px'};
   overflow: hidden;
@@ -83,7 +83,7 @@ export const StyledSelectText = styled<StyleProps, 'div'>('div')`
   text-overflow: ellipsis;
 `
 
-export const StyledOptions = styled<StyleProps, 'div'>('div')`
+export const StyledOptions = styled.div<StyleProps>`
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
@@ -98,7 +98,7 @@ export const StyledOptions = styled<StyleProps, 'div'>('div')`
   padding: 9px 0;
 `
 
-export const StyledOption = styled<StyleProps, 'div'>('div')`
+export const StyledOption = styled.div<StyleProps>`
   font-size: 14px;
   line-height: 36px;
   color: #1b1d2f;
@@ -108,7 +108,7 @@ export const StyledOption = styled<StyleProps, 'div'>('div')`
   background: ${p => p.selected ? '#e9f0ff' : '#fff'};
 `
 
-export const StyledOptionCheck = styled<StyleProps, 'div'>('div')`
+export const StyledOptionCheck = styled.div<StyleProps>`
   flex-basis: 11px;
   flex-shrink: 0;
   display: flex;
@@ -116,7 +116,7 @@ export const StyledOptionCheck = styled<StyleProps, 'div'>('div')`
   color: #A1A8F2;
 `
 
-export const StyledOptionText = styled<StyleProps, 'div'>('div')`
+export const StyledOptionText = styled.div<StyleProps>`
   flex-grow: 1;
   padding: 0 21px 0 6px;
   overflow: hidden;
@@ -124,7 +124,7 @@ export const StyledOptionText = styled<StyleProps, 'div'>('div')`
   text-overflow: ${p => p.showAllContents ? 'initial' : 'ellipsis'};
 `
 
-export const StyledOptionsOverlay = styled<StyleProps, 'div'>('div')`
+export const StyledOptionsOverlay = styled.div<StyleProps>`
   display: flex;
   position: fixed;
   top: 0;
@@ -137,7 +137,7 @@ export const StyledOptionsOverlay = styled<StyleProps, 'div'>('div')`
   justify-content: center;
 `
 
-export const StyledOptionsModal = styled<StyleProps, 'div'>('div')`
+export const StyledOptionsModal = styled.div<StyleProps>`
   border-radius: 7px;
   background: ${p => p.theme.color.primaryBackground};
   height: 30%;
@@ -162,7 +162,7 @@ export const StyledOptionsModal = styled<StyleProps, 'div'>('div')`
   }
 `
 
-export const StyledSelectTitle = styled<StyleProps, 'span'>('span')`
+export const StyledSelectTitle = styled.span<StyleProps>`
   color: ${p => p.theme.color.defaultControlActive};
   display: block;
   font-size: 16px;
@@ -173,11 +173,11 @@ export const StyledSelectTitle = styled<StyleProps, 'span'>('span')`
   text-align: left;
 `
 
-export const StyledModalContent = styled<StyleProps, 'div'>('div')`
+export const StyledModalContent = styled.div<StyleProps>`
   display: block;
 `
 
-export const StyledRadioOptions = styled<StyleProps, 'div'>('div')`
+export const StyledRadioOptions = styled.div<StyleProps>`
   display: block;
   max-height: 250px;
   overflow-y: scroll;

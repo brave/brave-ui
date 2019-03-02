@@ -4,11 +4,11 @@
 
 import styled from 'styled-components'
 
-export const StyledWrapper = styled<{}, 'div'>('div')`
+export const StyledWrapper = styled.div`
   font-family: Poppins, sans-serif;
 `
 
-export const StyledTitle = styled<{}, 'div'>('div')`
+export const StyledTitle = styled.div`
   font-weight: 600;
   color: #1B1D2F;
   font-family: Poppins, sans-serif;
@@ -16,40 +16,40 @@ export const StyledTitle = styled<{}, 'div'>('div')`
   line-height: 2;
 `
 
-export const StyledSubTitle = styled<{}, 'span'>('span')`
+export const StyledSubTitle = styled.span`
   color: #838391;
   font-weight: normal;
 `
 
-export const StyledHeader = styled<{}, 'div'>('div')`
+export const StyledHeader = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
 `
 
-export const StyledLeft = styled<{}, 'div'>('div')`
+export const StyledLeft = styled.div`
   flex-basis: 40%;
 `
 
-export const StyledRight = styled<{}, 'div'>('div')`
+export const StyledRight = styled.div`
   flex-basis: 378px;
   flex-grow: 0;
   flex-shrink: 1;
   margin-bottom: 45px;
 `
 
-export const StyledSelectOption = styled<{}, 'div'>('div')`
+export const StyledSelectOption = styled.div`
   font-size: 22px;
   font-weight: 300;
   color: #4C54D2;
 `
 
-export const StyledIconWrap = styled<{}, 'div'>('div')`
+export const StyledIconWrap = styled.div`
   margin-bottom: 103px;
   display: flex;
 `
 
-export const StyledIcon = styled<{}, 'button'>('button')`
+export const StyledIcon = styled.button`
   display: flex;
   margin-right: 35px;
   background: none;
@@ -58,24 +58,24 @@ export const StyledIcon = styled<{}, 'button'>('button')`
   align-items: center;
 `
 
-export const StyledIconText = styled<{}, 'div'>('div')`
+export const StyledIconText = styled.div`
   font-size: 14px;
   line-height: 1.43;
   color: #838391;
   margin-left: 13px;
 `
 
-export const StyledBalance = styled<{}, 'div'>('div')`
+export const StyledBalance = styled.div`
   margin-top: 41px;
 `
 
-export const StyledTables = styled<{}, 'div'>('div')`
+export const StyledTables = styled.div`
   background-color: #f9f9fd;
   margin: 0 -50px;
   padding: 0 50px;
 `
 
-export const StyledWarning = styled<{}, 'div'>('div')`
+export const StyledWarning = styled.div`
   display: flex;
   justify-content: center;
   border-top: 1px solid #ebecf0;
@@ -84,7 +84,7 @@ export const StyledWarning = styled<{}, 'div'>('div')`
   align-items: flex-start;
 `
 
-export const StyledWarningText = styled<{}, 'div'>('div')`
+export const StyledWarningText = styled.div`
   max-width: 508px;
   font-family: Muli, sans-serif;
   font-size: 12px;
@@ -94,7 +94,7 @@ export const StyledWarningText = styled<{}, 'div'>('div')`
   padding-left: 8px;
 `
 
-export const StyledNote = styled<{}, 'div'>('div')`
+export const StyledNote = styled.div`
   max-width: 508px;
   margin-top: 46px;
   font-family: Muli, sans-serif;
@@ -104,7 +104,7 @@ export const StyledNote = styled<{}, 'div'>('div')`
   color: #686978;
 `
 
-export const StyledTableTitle = styled<{}, 'div'>('div')`
+export const StyledTableTitle = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 14px;
@@ -117,7 +117,7 @@ export const StyledTableTitle = styled<{}, 'div'>('div')`
   margin-top: 28px;
 `
 
-export const StyledTableSubTitle = styled<{}, 'div'>('div')`
+export const StyledTableSubTitle = styled.div`
   font-size: 14px;
   font-weight: 300;
   line-height: 2.79;
@@ -126,7 +126,7 @@ export const StyledTableSubTitle = styled<{}, 'div'>('div')`
   text-transform: none;
 `
 
-export const StyledVerified = styled<{}, 'div'>('div')`
+export const StyledVerified = styled.div`
   display: flex;
   font-size: 12px;
   align-items: center;
@@ -135,30 +135,30 @@ export const StyledVerified = styled<{}, 'div'>('div')`
   padding: 11px 0 32px;
 `
 
-export const StyledVerifiedText = styled<{}, 'div'>('div')`
+export const StyledVerifiedText = styled.div`
   margin-left: 5px;
 `
 
-export const StyledClosing = styled<{}, 'div'>('div')`
+export const StyledClosing = styled.div`
   margin-top: -10px;
 `
 
-export const StyledActionIcon = styled<{}, 'span'>('span')`
+export const StyledActionIcon = styled.span`
   color: #A1A8F2;
   width: 27px;
 `
 
-export const StyledAlertWrapper = styled<{}, 'div'>('div')`
+export const StyledAlertWrapper = styled.div`
   color: #E9AB18;
   width: 20px;
   margin-left: 3px;
 `
 
-export const StyledWarningWrapper = styled<{}, 'div'>('div')`
+export const StyledWarningWrapper = styled.div`
   display: flex;
 `
 
-export const StyledVerifiedIcon = styled<{}, 'div'>('div')`
+export const StyledVerifiedIcon = styled.div`
   display: flex;
   color: #392DD1;
   width: 19px;

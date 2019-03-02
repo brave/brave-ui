@@ -21,7 +21,7 @@ const getBackground = (props: StyleProps) => {
   return 'rgba(255, 255, 255, 0.95)'
 }
 
-export const StyledWrapper = styled<StyleProps, 'div'>('div')`
+export const StyledWrapper = styled.div<StyleProps>`
   position: ${p => p.fullScreen ? 'fixed' : 'absolute'};
   top: 0;
   left: 0;
@@ -40,13 +40,13 @@ export const StyledWrapper = styled<StyleProps, 'div'>('div')`
   background: ${p => getBackground(p)};
 `
 
-export const StyledHeader = styled<{}, 'div'>('div')`
+export const StyledHeader = styled.div`
   text-align: center;
   width: 100%;
   margin: 59px 0;
 `
 
-export const StyledTitle = styled<StyleProps, 'div'>('div')`
+export const StyledTitle = styled.div<StyleProps>`
   width: 100%;
   font-size: ${p => p.isPanel ? 20 : 28}px;
   font-weight: ${p => p.isPanel ? 'normal' : 500};
@@ -56,7 +56,7 @@ export const StyledTitle = styled<StyleProps, 'div'>('div')`
   color: #fb542b;
 `
 
-export const StyledClose = styled<{}, 'button'>('button')`
+export const StyledClose = styled.button`
   top: 16px;
   right: 16px;
   position: absolute;
@@ -69,7 +69,7 @@ export const StyledClose = styled<{}, 'button'>('button')`
   height: 20px;
 `
 
-export const StyledText = styled<{}, 'div'>('div')`
+export const StyledText = styled.div`
   width: 100%;
   font-family: Muli, sans-serif;
   font-size: 16px;
@@ -79,13 +79,13 @@ export const StyledText = styled<{}, 'div'>('div')`
   color: #4b4c5c;
 `
 
-export const StyledGrantIcon = styled<{}, 'img'>('img')`
+export const StyledGrantIcon = styled.img`
   height: 53px;
   width: 53px;
   margin: 25px auto 15px;
 `
 
-export const StyledPanelText = styled<{}, 'div'>('div')`
+export const StyledPanelText = styled.div`
   padding: 7px;
   font-size: 12px;
   margin: 7px auto 0px;
@@ -93,6 +93,6 @@ export const StyledPanelText = styled<{}, 'div'>('div')`
   border-radius: 8px 8px 8px 8px;
 `
 
-export const StyledHint = styled<{}, 'span'>('span')`
+export const StyledHint = styled.span`
   font-weight: 600;
 `

@@ -10,12 +10,12 @@ interface StyleProps {
   selected?: boolean
 }
 
-export const RewardsTabWrapper = styled<{}, 'div'>('div')`
+export const RewardsTabWrapper = styled.div`
   display: flex;
   font-family: Poppins,sans-serif;
 `
 
-export const StyledSwitch = styled<{}, 'div'>('div')`
+export const StyledSwitch = styled.div`
   position: relative;
   display: block;
   width: 100%;
@@ -23,14 +23,14 @@ export const StyledSwitch = styled<{}, 'div'>('div')`
   cursor: pointer;
 `
 
-export const StyledSlider = styled<{}, 'div'>('div')`
+export const StyledSlider = styled.div`
   width: 100%;
   height: 100%;
   background: #DFDFE8;
   border-radius: 21.5px 21.5px 21.5px 21.5px;
 `
 
-export const StyledBullet = styled<Props, 'div'>('div')`
+export const StyledBullet = styled.div<Props>`
   top: -17px;
   width: 50%;
   height: 37px;
@@ -42,14 +42,14 @@ export const StyledBullet = styled<Props, 'div'>('div')`
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
 `
 
-export const StyledTab = styled<StyleProps, 'div'>('div')`
+export const StyledTab = styled.div<StyleProps>`
   width: 50%;
   display: block;
   height: 100%;
   float: ${p => p.left ? 'left' : 'right'};
 `
 
-export const StyledText = styled<StyleProps, 'div'>('div')`
+export const StyledText = styled.div<StyleProps>`
   z-index: 9;
   position: relative;
   font-size: 14px;

@@ -232,7 +232,7 @@ class WelcomePage extends React.PureComponent<Props, {}> {
             {this.hero()}
           </StyledSection>
           <StyledCenterSection>
-            <StyledCenterSection innerRef={this.refSet}>
+            <StyledCenterSection ref={this.refSet}>
               {this.centerTextContent}
             </StyledCenterSection>
             <StyledInfoContent>

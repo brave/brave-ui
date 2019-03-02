@@ -9,7 +9,7 @@ interface BaseButtonProps {
   active?: boolean
 }
 
-const BaseButton = styled<BaseButtonProps, 'button'>('button')`
+const BaseButton = styled.button<BaseButtonProps>`
   box-sizing: border-box;
   padding: 0;
   margin: 0;

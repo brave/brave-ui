@@ -8,20 +8,20 @@ import batOutlineUrl from './assets/batOutline.svg'
 import Button, { Props as ButtonProps } from '../../../components/buttonsIndicators/button'
 import { ComponentType } from 'react'
 
-export const StyledWrapper = styled<{}, 'div'>('div')`
+export const StyledWrapper = styled.div`
   text-align: center;
   font-family: Poppins, sans-serif;
   background-image: linear-gradient(140deg, #392DD1 0%, #8E2995 100%);
 ` as any
 
-export const StyledInnerWrapper = styled<{}, 'div'>('div')`
+export const StyledInnerWrapper = styled.div`
   margin: 0 auto;
   display: inline-block;
   padding: 35px 30px 25px;
   background: url(${batOutlineUrl}) no-repeat top;
 ` as any
 
-export const StyledHeaderText = styled<{}, 'p'>('p')`
+export const StyledHeaderText = styled.p`
   width: 261px;
   color: #FFFFFF;
   font-size: 16px;
@@ -33,7 +33,7 @@ export const StyledHeaderText = styled<{}, 'p'>('p')`
   font-family: Muli, sans-serif;
 ` as any
 
-export const StyledBatLogo = styled<{}, 'span'>('span')`
+export const StyledBatLogo = styled.span`
   display: block;
   margin: -10px auto 2px;
   width: 150px;
@@ -49,7 +49,7 @@ export const StyledTitle = styled(Heading)`
   display: inline-block;
 ` as any
 
-export const StyledDescText = styled<{}, 'p'>('p')`
+export const StyledDescText = styled.p`
   color: #FFFFFF;
   font-size: 16px;
   font-weight: normal;
@@ -71,7 +71,7 @@ export const StyledJoinButton = styled(Button as ComponentType<ButtonProps>)`
   }
 ` as any
 
-export const StyledFooterText = styled<{}, 'div'>('div')`
+export const StyledFooterText = styled.div`
   color: #73CBFF;
   font-size: 14px;
   font-weight: 500;
@@ -83,7 +83,7 @@ export const StyledFooterText = styled<{}, 'div'>('div')`
   margin: 0 0 16px;
 ` as any
 
-export const StyledTrademark = styled<{}, 'span'>('span')`
+export const StyledTrademark = styled.span`
   display: inline-block;
   vertical-align: text-top;
   margin-top: -13px;
@@ -93,7 +93,7 @@ export const StyledTrademark = styled<{}, 'span'>('span')`
   opacity: 0.7;
 ` as any
 
-export const StyledErrorMessage = styled<{}, 'span'>('span')`
+export const StyledErrorMessage = styled.span`
   font-size: 16px;
   display: block;
   margin: 0px auto 20px;

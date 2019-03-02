@@ -4,7 +4,7 @@
 
 import styled from '../../../../theme'
 
-export const StyledStatsItemContainer = styled<{}, 'ul'>('ul')`
+export const StyledStatsItemContainer = styled.ul`
   -webkit-font-smoothing: antialiased;
   display: grid;
   grid-template-columns: repeat(4, fit-content(100%));
@@ -26,7 +26,7 @@ export const StyledStatsItemContainer = styled<{}, 'ul'>('ul')`
   }
 `
 
-export const StyledStatsItem = styled<{}, 'li'>('li')`
+export const StyledStatsItem = styled.li`
   list-style-type: none;
   font-size: inherit;
   font-family: inherit;
@@ -45,7 +45,7 @@ export const StyledStatsItem = styled<{}, 'li'>('li')`
   }
 `
 
-export const StyledStatsItemCounter = styled<{}, 'span'>('span')`
+export const StyledStatsItemCounter = styled.span`
   color: inherit;
   font-family: ${p => p.theme.fontFamily.heading};
   font-size: 46px;
@@ -56,7 +56,7 @@ export const StyledStatsItemCounter = styled<{}, 'span'>('span')`
   overflow: hidden;
 `
 
-export const StyledStatsItemText = styled<{}, 'span'>('span')`
+export const StyledStatsItemText = styled.span`
   font-size: 20px;
   font-family: ${p => p.theme.fontFamily.heading};
   margin-left: 4px;
@@ -64,7 +64,7 @@ export const StyledStatsItemText = styled<{}, 'span'>('span')`
   letter-spacing: 0;
 `
 
-export const StyledStatsItemDescription = styled<{}, 'div'>('div')`
+export const StyledStatsItemDescription = styled.div`
   font-size: 14px;
   font-weight: 400;
   color: #FFFFFF;

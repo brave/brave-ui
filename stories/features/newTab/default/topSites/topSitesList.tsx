@@ -42,7 +42,7 @@ export default class TopSitesList extends React.PureComponent<Props, State> {
         <Droppable droppableId='droppable' direction='horizontal'>
           {(provided) => {
             return (
-              <List {...provided.droppableProps} innerRef={provided.innerRef}>
+              <List {...provided.droppableProps} ref={provided.innerRef}>
                 {this.state.items.map((item, index) => <TopSite item={item} index={index} key={index} />)}
                 {provided.placeholder}
               </List>

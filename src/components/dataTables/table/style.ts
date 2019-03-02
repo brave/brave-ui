@@ -5,19 +5,19 @@
 import styled, { css } from 'styled-components'
 import { Cell, Row } from './index'
 
-export const StyledNoContent = styled<{}, 'div'>('div')`
+export const StyledNoContent = styled.div`
   text-align: center;
   padding: 30px 0;
   color: #999ea2;
   font-size: 14px;
 `
 
-export const StyledTable = styled<{}, 'table'>('table')`
+export const StyledTable = styled.table`
   width: 100%;
   margin-bottom: 20px;
 `
 
-export const StyledTH = styled<Partial<Cell>, 'th'>('th')`
+export const StyledTH = styled.th<Partial<Cell>>`
   text-transform: uppercase;
   text-align: left;
   font-family: Poppins, sans-serif;
@@ -37,7 +37,7 @@ export const StyledTH = styled<Partial<Cell>, 'th'>('th')`
   };
 `
 
-export const StyledTR = styled<Partial<Row>, 'tr'>('tr')`
+export const StyledTR = styled.tr<Partial<Row>>`
   ${p => p.customStyle
     ? css`
       ${p.customStyle}
@@ -46,7 +46,7 @@ export const StyledTR = styled<Partial<Row>, 'tr'>('tr')`
   };
 `
 
-export const StyledTD = styled<Partial<Cell>, 'td'>('td')`
+export const StyledTD = styled.td<Partial<Cell>>`
   font-family: Muli, sans-serif;
   font-size: 14px;
   font-weight: 500;

@@ -16,7 +16,7 @@ export interface SelectBoxProps {
   children: React.ReactNode
 }
 
-export const SelectBox = styled<SelectBoxProps, 'select'>('select')`
+export const SelectBox = styled.select<SelectBoxProps>`
   box-sizing: border-box;
   position: relative;
   -webkit-font-smoothing: antialiased;
