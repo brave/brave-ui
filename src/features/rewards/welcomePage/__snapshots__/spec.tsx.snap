@@ -12,7 +12,7 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   border-bottom-right-radius: 150% 120px;
 }
 
-.c33 {
+.c29 {
   height: 290px;
   border-radius: 4px;
   text-align: center;
@@ -24,7 +24,7 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   font-family: Poppins,sans-serif;
 }
 
-.c36 {
+.c32 {
   color: #222326;
   font-size: 18px;
   font-weight: 500;
@@ -35,7 +35,7 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   letter-spacing: 0.16px;
 }
 
-.c37 {
+.c33 {
   color: #686978;
   font-size: 16px;
   line-height: 22px;
@@ -48,7 +48,7 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   font-weight: 400;
 }
 
-.c34 {
+.c30 {
   box-sizing: border-box;
   display: block;
   max-width: 100%;
@@ -56,7 +56,7 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   height: 80px;
 }
 
-.c31 {
+.c27 {
   display: grid;
   grid-gap: 0px;
   grid-template-columns: 1fr 1fr 1fr;
@@ -70,23 +70,20 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   justify-content: center;
 }
 
-.c32 {
+.c28 {
   padding: 0 10px;
 }
 
-.c22 {
+.c19 {
   width: 100%;
   height: 100%;
   fill: currentColor;
-}
-
-.c21 {
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 
-.c38 {
+.c34 {
   width: 100%;
   height: 100%;
   fill: currentColor;
@@ -98,55 +95,46 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   fill: currentColor;
 }
 
+.c31 {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
 .c35 {
   width: 100%;
   height: 100%;
   fill: currentColor;
 }
 
-.c39 {
-  width: 100%;
-  height: 100%;
-  fill: currentColor;
-}
-
-.c10 {
+.c9 {
   box-sizing: border-box;
   font-family: Poppins,sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   margin: 0;
-}
-
-.c9 {
   font-size: 40px;
 }
 
-.c28 {
+.c24 {
   box-sizing: border-box;
   font-family: Poppins,sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   margin: 0;
-}
-
-.c27 {
   font-size: 32px;
 }
 
-.c14 {
+.c12 {
   box-sizing: border-box;
   font-family: Poppins,sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   margin: 0;
-}
-
-.c13 {
   font-size: 24px;
 }
 
-.c17 {
+.c15 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -167,15 +155,15 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   border: 1px solid rgba(255,255,255,0.35);
 }
 
-.c17:hover {
+.c15:hover {
   background: rgba(0,0,0,0.05);
 }
 
-.c17:focus {
+.c15:focus {
   outline: 0;
 }
 
-.c44 {
+.c40 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -195,11 +183,11 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   background: #ff7654;
 }
 
-.c44:focus {
+.c40:focus {
   outline: 0;
 }
 
-.c18 {
+.c16 {
   font-family: Poppins,sans-serif;
   font-weight: 600;
   text-transform: uppercase;
@@ -223,25 +211,25 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   padding: 40px 0;
 }
 
-.c16 {
+.c14 {
   margin: 40px auto;
   max-width: 303px;
 }
 
-.c43 {
+.c39 {
   max-width: 303px;
   margin: 0 auto;
 }
 
-.c41 {
+.c37 {
   text-align: center;
 }
 
-.c23 {
+.c20 {
   padding: 15px 0 0;
 }
 
-.c24 {
+.c21 {
   margin: 0 auto;
   max-width: 692px;
   padding: 67px 0 20px;
@@ -251,12 +239,12 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   display: block;
 }
 
-.c30 {
+.c26 {
   margin: 22px auto 0;
   max-width: 900px;
 }
 
-.c40 {
+.c36 {
   margin: 0 auto;
   padding: 64px 0 79px;
   max-width: 500px;
@@ -279,14 +267,14 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   margin: 17px 0 4px;
 }
 
-.c42 {
+.c38 {
   color: #5C58C2;
   font-weight: normal;
   line-height: 28px;
   margin: 18px 0 30px;
 }
 
-.c26 {
+.c23 {
   color: #222326;
   font-weight: normal;
   text-align: left;
@@ -295,14 +283,14 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   margin: 0;
 }
 
-.c12 {
+.c11 {
   color: #5BC4FE;
   font-weight: 500;
   text-align: center;
   margin: 18px 0 7px;
 }
 
-.c11 {
+.c10 {
   display: inline-block;
   vertical-align: text-top;
   margin-top: -25px;
@@ -312,7 +300,7 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   opacity: 0.7;
 }
 
-.c15 {
+.c13 {
   font-size: 16px;
   max-width: 375px;
   margin: 0 auto;
@@ -320,7 +308,7 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   color: #FFF;
 }
 
-.c19 {
+.c17 {
   font-size: 16px;
   margin: 0 0 5px;
   line-height: 28px;
@@ -328,7 +316,7 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   opacity: 0.5;
 }
 
-.c29 {
+.c25 {
   font-size: 16px;
   line-height: 28px;
   color: #686978;
@@ -342,7 +330,7 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   font-family: Muli,sans-serif;
 }
 
-.c20 {
+.c18 {
   padding: 0;
   border: none;
   background: none;
@@ -353,7 +341,7 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
   outline: none;
 }
 
-.c20:focus {
+.c18:focus {
   outline: 0;
 }
 
@@ -364,21 +352,21 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
 }
 
 @media (max-width:640px) {
-  .c31 {
+  .c27 {
     grid-gap: 20px;
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width:410px) {
-  .c16 {
+  .c14 {
     margin: 40px 20px;
     max-width: unset;
   }
 }
 
 @media (max-width:767px) {
-  .c24 {
+  .c21 {
     max-width: none;
     width: 100%;
     padding-top: 30px;
@@ -386,7 +374,7 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
 }
 
 @media (max-width:767px) {
-  .c25 {
+  .c22 {
     margin: 0 auto;
     width: 80%;
   }
@@ -411,7 +399,7 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
 }
 
 @media (max-width:360px) {
-  .c12 {
+  .c11 {
     font-size: 22px;
   }
 }
@@ -477,38 +465,38 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
               className="c7"
             >
               <h2
-                className="c8 c9 c10"
+                className="c8 c9"
               >
                 MISSING: braveRewardsTitle
               </h2>
               <span
-                className="c11"
+                className="c10"
               >
                 TM
               </span>
               <h4
-                className="c12 c13 c14"
+                className="c11 c12"
               >
                 MISSING: braveRewardsSubTitle
               </h4>
               <p
-                className="c15"
+                className="c13"
               >
                 MISSING: braveRewardsDesc
               </p>
             </div>
           </div>
           <section
-            className="c16"
+            className="c14"
           >
             <button
-              className="c17"
+              className="c15"
               data-test-id="optInAction"
               onClick={[Function]}
               type="opt-in"
             >
               <span
-                className="c18"
+                className="c16"
               >
                 MISSING: braveRewardsOptInText
               </span>
@@ -518,17 +506,17 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
             className="c3"
           >
             <p
-              className="c19"
+              className="c17"
             >
               MISSING: braveRewardsTeaser
             </p>
             <button
-              className="c20"
+              className="c18"
               onClick={[Function]}
             >
               <svg
                 aria-hidden="true"
-                className="c21 c22"
+                className="c19"
                 focusable="false"
                 viewBox="0 0 32 32"
               >
@@ -541,29 +529,29 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
         </div>
       </div>
       <section
-        className="c23"
+        className="c20"
       >
         <section
-          className="c23"
+          className="c20"
         >
           <div
-            className="c24"
+            className="c21"
           >
             <section
-              className="c25"
+              className="c22"
             >
               <h3
-                className="c26 c27 c28"
+                className="c23 c24"
               >
                 MISSING: whyBraveRewards
               </h3>
               <p
-                className="c29"
+                className="c25"
               >
                 MISSING: whyBraveRewardsDesc1
               </p>
               <p
-                className="c29"
+                className="c25"
               >
                 MISSING: whyBraveRewardsDesc2
               </p>
@@ -571,26 +559,26 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
           </div>
         </section>
         <section
-          className="c30"
+          className="c26"
         >
           <section
             id="rewards-info"
           >
             <div
-              className="c31"
+              className="c27"
             >
               <div
-                className="c32"
+                className="c28"
               >
                 <div
-                  className="c33"
+                  className="c29"
                 >
                   <figure
-                    className="c34"
+                    className="c30"
                   >
                     <svg
                       aria-hidden="true"
-                      className="c35"
+                      className="c31"
                       focusable="false"
                       viewBox="0 0 32 32"
                     >
@@ -609,29 +597,29 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
                     </svg>
                   </figure>
                   <strong
-                    className="c36"
+                    className="c32"
                   >
                     MISSING: turnOnRewardsTitle
                   </strong>
                   <p
-                    className="c37"
+                    className="c33"
                   >
                     MISSING: turnOnRewardsDesc
                   </p>
                 </div>
               </div>
               <div
-                className="c32"
+                className="c28"
               >
                 <div
-                  className="c33"
+                  className="c29"
                 >
                   <figure
-                    className="c34"
+                    className="c30"
                   >
                     <svg
                       aria-hidden="true"
-                      className="c38"
+                      className="c34"
                       focusable="false"
                       viewBox="0 0 32 32"
                     >
@@ -650,29 +638,29 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
                     </svg>
                   </figure>
                   <strong
-                    className="c36"
+                    className="c32"
                   >
                     MISSING: braveAdsTitle
                   </strong>
                   <p
-                    className="c37"
+                    className="c33"
                   >
                     MISSING: braveAdsDesc
                   </p>
                 </div>
               </div>
               <div
-                className="c32"
+                className="c28"
               >
                 <div
-                  className="c33"
+                  className="c29"
                 >
                   <figure
-                    className="c34"
+                    className="c30"
                   >
                     <svg
                       aria-hidden="true"
-                      className="c39"
+                      className="c35"
                       focusable="false"
                       viewBox="0 0 32 32"
                     >
@@ -699,12 +687,12 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
                     </svg>
                   </figure>
                   <strong
-                    className="c36"
+                    className="c32"
                   >
                     MISSING: braveContributeTitle
                   </strong>
                   <p
-                    className="c37"
+                    className="c33"
                   >
                     MISSING: braveContributeDesc
                   </p>
@@ -714,26 +702,26 @@ exports[`WelcomePage tests basic tests matches the snapshot 1`] = `
           </section>
         </section>
         <section
-          className="c40"
+          className="c36"
         >
           <section
-            className="c41"
+            className="c37"
           >
             <h4
-              className="c42 c13 c14"
+              className="c38 c12"
             >
               MISSING: readyToTakePart
             </h4>
             <section
-              className="c43"
+              className="c39"
             >
               <button
-                className="c44"
+                className="c40"
                 onClick={[Function]}
                 type="cta-opt-in"
               >
                 <span
-                  className="c18"
+                  className="c16"
                 >
                   MISSING: readyToTakePartOptInText
                 </span>

@@ -41,10 +41,10 @@ exports[`Grant complete tests basic tests matches the snapshot 1`] = `
   margin-top: 0px;
 }
 
-.c7 {
-  --button-main-color: #ff7654;
-  --button-main-color-hover: #FB542B;
-  --button-main-color-active: #ffb8a6;
+.c6 {
+  --button-main-color: #FB542B;
+  --button-main-color-hover: #F43405;
+  --button-main-color-active: #FDBBAA;
   --button-state-color: var(--button-main-color);
   --icon-size: 18px;
   --icon-spacing: 6px;
@@ -79,23 +79,20 @@ exports[`Grant complete tests basic tests matches the snapshot 1`] = `
   width: 100%;
   min-width: 235px;
   padding: 19px 15px;
-}
-
-.c7:hover:enabled {
-  --button-state-color: var(--button-main-color-hover);
-}
-
-.c7:active:enabled {
-  --button-state-color: var(--button-main-color-active);
-}
-
-.c6 {
   color: #fff;
   background: var(--button-state-color);
   border: 1px solid var(--button-state-color);
 }
 
-.c8 {
+.c6:hover:enabled {
+  --button-state-color: var(--button-main-color-hover);
+}
+
+.c6:active:enabled {
+  --button-state-color: var(--button-main-color-active);
+}
+
+.c7 {
   min-height: var(--icon-size);
   display: -webkit-box;
   display: -webkit-flex;
@@ -150,12 +147,12 @@ exports[`Grant complete tests basic tests matches the snapshot 1`] = `
     className="c5"
   >
     <button
-      className="c6 c7"
+      className="c6"
       size="call-to-action"
       type="accent"
     >
       <div
-        className="c8"
+        className="c7"
         size="call-to-action"
         type="accent"
       >

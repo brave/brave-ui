@@ -1,22 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
-.c7 {
+.c6 {
   box-sizing: border-box;
   font-family: Poppins,sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   margin: 0;
-}
-
-.c6 {
   font-size: 24px;
 }
 
-.c12 {
-  --button-main-color: #c2c4cf;
-  --button-main-color-hover: #AEB1C2;
-  --button-main-color-active: #84889c;
+.c10 {
+  --button-main-color: #A0A1B2;
+  --button-main-color-hover: #7C7D8C;
+  --button-main-color-active: #585968;
   --button-state-color: var(--button-main-color);
   --icon-size: 18px;
   --icon-spacing: 6px;
@@ -51,22 +48,19 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
   width: 100%;
   min-width: 235px;
   padding: 19px 15px;
-}
-
-.c12:hover:enabled {
-  --button-state-color: var(--button-main-color-hover);
-}
-
-.c12:active:enabled {
-  --button-state-color: var(--button-main-color-active);
-}
-
-.c11 {
   border: 1px solid;
   color: var(--button-state-color);
 }
 
-.c13 {
+.c10:hover:enabled {
+  --button-state-color: var(--button-main-color-hover);
+}
+
+.c10:active:enabled {
+  --button-state-color: var(--button-main-color-active);
+}
+
+.c11 {
   min-height: var(--icon-size);
   display: -webkit-box;
   display: -webkit-flex;
@@ -130,7 +124,7 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
   display: inline-block;
 }
 
-.c9 {
+.c8 {
   color: #FFFFFF;
   font-size: 16px;
   font-weight: normal;
@@ -146,17 +140,17 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
   font-family: Muli,sans-serif;
 }
 
-.c10 {
+.c9 {
   color: #FFF;
   margin: 0 auto 24px;
   outline: 0;
 }
 
-.c10:hover {
+.c9:hover {
   color: #e0e0e0;
 }
 
-.c14 {
+.c12 {
   color: #73CBFF;
   font-size: 14px;
   font-weight: 500;
@@ -171,7 +165,7 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
   margin: 0 0 16px;
 }
 
-.c8 {
+.c7 {
   display: inline-block;
   vertical-align: text-top;
   margin-top: -13px;
@@ -231,27 +225,27 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
       </svg>
     </span>
     <h4
-      className="c5 c6 c7"
+      className="c5 c6"
     >
       MISSING: braveRewards
     </h4>
     <span
-      className="c8"
+      className="c7"
     >
       TM
     </span>
     <p
-      className="c9"
+      className="c8"
     >
       MISSING: welcomeDescOne
     </p>
     <button
-      className="c10 c11 c12"
+      className="c9 c10"
       size="call-to-action"
       type="subtle"
     >
       <div
-        className="c13"
+        className="c11"
         size="call-to-action"
         type="subtle"
       >
@@ -259,7 +253,7 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
       </div>
     </button>
     <div
-      className="c14"
+      className="c12"
     >
       MISSING: welcomeFooterTextOne
     </div>

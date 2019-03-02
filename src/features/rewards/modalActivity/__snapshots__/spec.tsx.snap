@@ -155,6 +155,7 @@ exports[`ModalActivity tests basic tests matches the snapshot 1`] = `
 }
 
 .c24 {
+  text-align: right;
   padding-right: 10px;
 }
 
@@ -445,7 +446,7 @@ exports[`ModalActivity tests basic tests matches the snapshot 1`] = `
                       className="c22"
                     >
                       <div
-                        className="c24 c23"
+                        className="c24"
                       >
                         MISSING: payment
                       </div>

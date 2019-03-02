@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
-.c26 {
-  --button-main-color: #ff7654;
-  --button-main-color-hover: #FB542B;
-  --button-main-color-active: #ffb8a6;
+.c27 {
+  --button-main-color: #FB542B;
+  --button-main-color-hover: #F43405;
+  --button-main-color-active: #FDBBAA;
   --button-state-color: var(--button-main-color);
   --icon-size: 16px;
   --icon-spacing: 6px;
@@ -39,28 +39,70 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   width: auto;
   min-width: 104px;
   padding: 11px 15px;
-}
-
-.c26:hover:enabled {
-  --button-state-color: var(--button-main-color-hover);
-}
-
-.c26:active:enabled {
-  --button-state-color: var(--button-main-color-active);
-}
-
-.c28 {
   color: #fff;
   background: var(--button-state-color);
   border: 1px solid var(--button-state-color);
 }
 
+.c27:hover:enabled {
+  --button-state-color: var(--button-main-color-hover);
+}
+
+.c27:active:enabled {
+  --button-state-color: var(--button-main-color-active);
+}
+
 .c25 {
+  --button-main-color: #FB542B;
+  --button-main-color-hover: #F43405;
+  --button-main-color-active: #FDBBAA;
+  --button-state-color: var(--button-main-color);
+  --icon-size: 16px;
+  --icon-spacing: 6px;
+  --webkit-appearance: none;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  outline-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: Poppins,sans-serif;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 13px;
+  border-radius: 20px;
+  width: auto;
+  min-width: 104px;
+  padding: 11px 15px;
   border: 1px solid;
   color: var(--button-state-color);
 }
 
-.c27 {
+.c25:hover:enabled {
+  --button-state-color: var(--button-main-color-hover);
+}
+
+.c25:active:enabled {
+  --button-state-color: var(--button-main-color-active);
+}
+
+.c26 {
   min-height: var(--icon-size);
   display: -webkit-box;
   display: -webkit-flex;
@@ -438,13 +480,13 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
         className="c23"
       >
         <button
-          className="c24 c25 c26"
+          className="c24 c25"
           onClick={[Function]}
           size="medium"
           type="accent"
         >
           <div
-            className="c27"
+            className="c26"
             size="medium"
             type="accent"
           >
@@ -452,13 +494,13 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
           </div>
         </button>
         <button
-          className="c24 c28 c26"
+          className="c24 c27"
           onClick={[Function]}
           size="medium"
           type="accent"
         >
           <div
-            className="c27"
+            className="c26"
             size="medium"
             type="accent"
           >
