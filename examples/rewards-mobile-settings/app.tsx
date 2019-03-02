@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 
 import SettingsMobile from '../../stories/features/rewards/settingsMobile/settingsMobile'
 import { ThemeProvider } from '../../src/theme'
-import Theme from '../../src/theme/brave-default'
+import Theme from '../../src/theme/default'
 
 window.addEventListener('DOMContentLoaded', function () {
   const appElement = document.createElement('div')

@@ -38,7 +38,7 @@ import {
 } from '../../../../components/icons'
 import { List } from '../../'
 import { getLocale } from '../../../../helpers'
-import Toggle from '../../../../components/formControls/toggle/index'
+import Toggle from '../../../../components/toggle/index'
 
 export type Type = 'ads' | 'contribute' | 'donation'
 

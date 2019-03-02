@@ -21,7 +21,7 @@ import {
   StyledFlip
 } from './style'
 import { Tooltip } from '../'
-import Toggle from '../../../components/formControls/toggle/index'
+import Toggle from '../../../components/toggle/index'
 import { getLocale } from '../../../helpers'
 import { CloseCircleOIcon, SettingsIcon } from '../../../components/icons'
 

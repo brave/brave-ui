@@ -11,8 +11,8 @@ import chaptersAddon from 'react-storybook-addon-chapters'
 
 // Components
 import styled from '../../src/theme'
-import paletteColors from '../../src/theme/palette'
-import themeBraveDefault from '../../src/theme/brave-default'
+import paletteColors from '../../src/components/style/color/color-palette'
+import themeBraveDefault from '../../src/theme/default'
 import '../assets/fonts/muli.css'
 
 // wrappers

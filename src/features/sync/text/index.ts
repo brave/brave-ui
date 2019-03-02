@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from '../../../theme'
-import Heading from '../../../components/text/heading'
+import Heading from '../../../components/heading'
 
 export const Title = styled(Heading)`
   font-weight: 600;

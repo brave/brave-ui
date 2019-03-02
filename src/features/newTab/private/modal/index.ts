@@ -4,8 +4,8 @@
 
 import { ComponentType } from 'react'
 import styled from '../../../../theme'
-import DefaultModal, { Props } from '../../../../components/popupModals/modal'
-import Heading from '../../../../components/text/heading'
+import DefaultModal, { Props } from '../../../../components/modal'
+import Heading from '../../../../components/heading'
 
 export const Modal = styled(DefaultModal as ComponentType<Props>)`
   height: 100%;

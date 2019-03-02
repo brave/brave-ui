@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
-import Heading from '../../../components/text/heading'
+import Heading from '../../../components/heading'
 import centerBackgroundUrl from './assets/centerTextBackground.svg'
 
 export const StyledOptInSection = styled<{}, 'section'>('section')`

@@ -12,7 +12,7 @@ import {
   StyledTipWrapper
 } from './style'
 import Donate from '../donate'
-import Toggle from '../../../components/formControls/toggle'
+import Toggle from '../../../components/toggle'
 import { getLocale } from '../../../helpers'
 import { CloseCircleOIcon } from '../../../components/icons'
 

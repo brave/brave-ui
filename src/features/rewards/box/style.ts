@@ -4,9 +4,9 @@
 
 import styled from 'styled-components'
 import { Type } from './index'
-import Card, { CardProps } from '../../../components/layout/card'
+import Card, { CardProps } from '../../../components/card'
 import { ComponentType } from 'react'
-import palette from '../../../theme/palette'
+import palette from '../../../components/style/color/color-palette'
 
 interface StyleProps {
   open?: boolean

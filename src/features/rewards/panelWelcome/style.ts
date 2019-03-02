@@ -3,9 +3,9 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
-import Heading from '../../../components/text/heading'
+import Heading from '../../../components/heading'
 import batOutlineUrl from './assets/batOutline.svg'
-import Button, { Props as ButtonProps } from '../../../components/buttonsIndicators/button'
+import Button, { Props as ButtonProps } from '../../../components/button'
 import { ComponentType } from 'react'
 
 export const StyledWrapper = styled<{}, 'div'>('div')`

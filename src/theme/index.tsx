@@ -3,7 +3,7 @@ import * as React from 'react'
 import * as styledComponents from 'styled-components'
 import IThemeProps, { BraveThemedStyledProps as ThemedStyledProps } from './theme-interface'
 // theme for testing
-import TestTheme from './brave-default'
+import TestTheme from './default'
 
 const {
   default: styled,

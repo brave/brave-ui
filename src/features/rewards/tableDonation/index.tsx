@@ -12,7 +12,7 @@ import {
   StyledToggleWrap,
   StyledLink
 } from './style'
-import Table, { Cell, Row } from '../../../components/dataTables/table/index'
+import Table, { Cell, Row } from '../../../components/table/index'
 import Profile, { Provider } from '../profile/index'
 import Tokens from '../tokens/index'
 import { getLocale } from '../../../helpers'

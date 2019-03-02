@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 import { ComponentType } from 'react'
 import styled from '../../../theme'
-import Button, { Props as ButtonProps } from '../../../components/buttonsIndicators/button'
+import Button, { Props as ButtonProps } from '../../../components/button'
 
 interface StyleProps {
   isError?: boolean
