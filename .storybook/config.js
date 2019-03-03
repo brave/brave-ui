@@ -1,4 +1,4 @@
-import './style/github_style.css'
+import 'emptykit.css'
 import { withBackgrounds } from '@storybook/addon-backgrounds'
 import { configure, addDecorator } from '@storybook/react'
 import { withOptions } from '@storybook/addon-options'
@@ -23,7 +23,8 @@ addDecorator(
   withOptions({
     name: 'Brave UI',
     url: 'https://github.com/brave/brave-ui',
-    addonPanelInRight: true
+    addonPanelInRight: true,
+    sortStoriesByKind: true
   })
 )
 
