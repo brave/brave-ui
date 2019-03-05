@@ -1,9 +1,9 @@
 import ITheme from './theme-interface'
-import defaultTheme from './brave-default'
+import defaultTheme from './default'
 
 const darkTheme: ITheme = {
   ...defaultTheme,
-  name: 'Brave Dark'
+  name: 'Dark Theme'
 }
 
 export default darkTheme

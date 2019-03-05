@@ -6,7 +6,6 @@ import makeColor from '../util/make-color'
 import tinyColor from '@ctrl/tinycolor'
 
 const baseColors = {
-  black: '#1E2029',
   blue: '#339af0',
   blurple: '#4C54D2',
   cyan: '#22B8CF',
@@ -20,15 +19,8 @@ const baseColors = {
   yellow: '#FFD43B'
 }
 
-const white = '#FFFFFF'
-const black = baseColors.black
-
-/**
- * This palette is the only hand selected palette
- * due to it not behaving well using the scale
- * because of the absence of any hue for the
- * makeColor function
- */
+// Hand selected due to absence of hue variable
+// not performing well with makeColor
 
 const scaleNeutral = {
   neutral000: '#f8f9fa',
@@ -185,6 +177,9 @@ const scaleMagenta = {
   magenta800: makeColor(baseColors.magenta, 9),
   magenta900: makeColor(baseColors.magenta, 10)
 }
+
+const white = '#FFFFFF'
+const black = scaleGrey.grey800
 
 const fades = {
   blackFade15: tinyColor(black).setAlpha(.85).toHslString(),
