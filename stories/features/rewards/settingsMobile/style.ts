@@ -2,7 +2,7 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from 'styled-components'
+import styled from '../../../../src/theme'
 
 export const StyledListContent = styled<{}, 'div'>('div')`
   padding: 0 25px;
@@ -57,7 +57,7 @@ export const StyledWalletOverlay = styled<{}, 'div'>('div')`
   left: 0;
   width: 100%;
   height: 100%;
-  background: ${p => p.theme.color.modalOverlayBackground};
+  background: ${p => p.theme.shadows.modalOverlayBackground};
   align-items: center;
   z-index: 999;
   justify-content: center;
@@ -74,6 +74,6 @@ export const StyledWalletClose = styled<{}, 'div'>('div')`
   top: 15px;
   right: 15px;
   position: fixed;
-  color: ${p => p.theme.color.subtleExclude};
+  color: ${p => p.theme.palette.grey400};
   width: 25px;
 `

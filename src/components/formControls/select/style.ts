@@ -2,7 +2,7 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled, { css } from 'styled-components'
+import styled, { css } from '../../../theme'
 import { Props } from './index'
 
 const getSelectColors = (p: StyleProps) => {
@@ -131,7 +131,7 @@ export const StyledOptionsOverlay = styled<StyleProps, 'div'>('div')`
   left: 0;
   width: 100%;
   height: 100%;
-  background: ${p => p.theme.color.modalOverlayBackground};
+  background: ${p => p.theme.shadows.modalOverlayBackground};
   align-items: center;
   z-index: 999;
   justify-content: center;
@@ -139,7 +139,7 @@ export const StyledOptionsOverlay = styled<StyleProps, 'div'>('div')`
 
 export const StyledOptionsModal = styled<StyleProps, 'div'>('div')`
   border-radius: 7px;
-  background: ${p => p.theme.color.primaryBackground};
+  background: ${p => p.theme.palette.white};
   height: 30%;
   width: 50%;
   z-index: 9999;
@@ -163,7 +163,7 @@ export const StyledOptionsModal = styled<StyleProps, 'div'>('div')`
 `
 
 export const StyledSelectTitle = styled<StyleProps, 'span'>('span')`
-  color: ${p => p.theme.color.defaultControlActive};
+  color: ${p => p.theme.textColor.default};
   display: block;
   font-size: 16px;
   font-weight: 600;

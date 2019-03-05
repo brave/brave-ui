@@ -4,7 +4,7 @@
 */
 
 import { Type } from './index'
-import styled, { css } from 'styled-components'
+import styled, { css } from '../../../theme'
 
 interface StyleProps {
   type?: Type
@@ -32,7 +32,7 @@ const getTypeStyle = (type?: Type, disabled?: boolean) => {
         border: 1px solid rgba(255, 255, 255, 0.35);
 
         &:hover {
-          background: ${p => disabled ? 'inherit' : 'rgba(0, 0, 0, 0.05)'};
+          background: ${disabled ? 'inherit' : 'rgba(0, 0, 0, 0.05)'};
         }
       `
       break
@@ -40,13 +40,13 @@ const getTypeStyle = (type?: Type, disabled?: boolean) => {
       typeCss = css`
         height: 56px;
         letter-spacing: .6px;
-        background: ${p => p.theme.color.brandBrave};
+        background: ${p => p.theme.brand.brave};
 
         &:hover {
           background: ${p =>
             disabled
-              ? p.theme.color.brandBrave
-              : p.theme.brandBraveInteracting
+              ? p.theme.brand.brave
+              : p.theme.brand.braveActive
           };
         }
       `

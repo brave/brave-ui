@@ -2,7 +2,7 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled, { css } from 'styled-components'
+import styled, { css } from '../../../../theme'
 import { Type } from './index'
 import Card, { CardProps } from '../../../../components/layout/card'
 import { ComponentType } from 'react'
@@ -95,7 +95,7 @@ export const StyledDescription = styled<StyleProps, 'div'>('div')`
   line-height: 18px;
   letter-spacing: 0px;
   font-weight: 300;
-  color: ${p => p.theme.color.detailDescription};
+  color: ${p => p.theme.textColor.default};
   margin-top: ${p => p.contentShown ? 0 : -5}px;
 `
 

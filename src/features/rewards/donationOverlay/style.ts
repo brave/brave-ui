@@ -3,7 +3,7 @@
 * You can obtain one at http://mozilla.org/MPL/2.0/.
 */
 
-import styled from 'styled-components'
+import styled from '../../../theme'
 import * as CSS from 'csstype'
 
 interface StyleProps {
@@ -222,5 +222,5 @@ export const StyledDate = styled<{}, 'span'>('span')`
   text-align: center;
   letter-spacing: 0;
   line-height: 28px;
-  color: ${p => p.theme.color.brandBrave};
+  color: ${p => p.theme.brand.brave};
 `

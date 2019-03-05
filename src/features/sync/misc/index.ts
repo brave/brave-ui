@@ -21,7 +21,7 @@ export const EnabledContent = styled<{}, 'div'>('div')`
 
 export const Main = styled<{}, 'main'>('main')`
   font-family: ${p => p.theme.fontFamily.body};
-  color: ${p => p.theme.color.defaultControl};
+  color: ${p => p.theme.textColor.default};
   padding: 50px 15px;
   max-width: 830px;
   margin: auto;

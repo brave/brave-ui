@@ -12,7 +12,7 @@ import chaptersAddon from 'react-storybook-addon-chapters'
 // Components
 import styled from '../../src/theme'
 import paletteColors from '../../src/theme/colors'
-import themeBraveDefault from '../../src/theme/brave-default'
+import themeBraveDefault from '../../src/theme/default'
 import '../assets/fonts/muli.css'
 
 // wrappers
@@ -54,9 +54,9 @@ for (const name in paletteColors) {
 }
 
 const allBraveDefaultItems: any = []
-for (const name in themeBraveDefault.color) {
+for (const name in themeBraveDefault) {
   // @ts-ignore
-  allBraveDefaultItems.push({ name, color: themeBraveDefault.color[name] })
+  allBraveDefaultItems.push({ name, color: themeBraveDefault[name] })
 }
 
 const Palette = styled.div`
@@ -85,22 +85,6 @@ storiesOf('Theme', module)
         sectionFn: () => (
           <Palette>
           {allPalletteItems.map(({ color, name }: any) => <PaletteItem key={name} color={color} name={name} />)}
-          </Palette>
-        ),
-        sectionOptionsNoProps
-      }]
-    }
-  ]
-})
-.addWithChapters('Brave Default', {
-  subtitle: 'Define colors, fonts, and sizes by purpose. Keys should not describe the value, but what they are to be used for.',
-  chapters: [
-    {
-      title: 'Color variables',
-      sections: [{
-        sectionFn: () => (
-          <Palette individual={true}>
-          {allBraveDefaultItems.map(({ color, name }: any) => <PaletteItem individual={true} key={name} color={color} name={name} />)}
           </Palette>
         ),
         sectionOptionsNoProps

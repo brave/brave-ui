@@ -5,8 +5,8 @@ import { withOptions } from '@storybook/addon-options'
 import { initLocale } from '../src/helpers'
 import locales from '../stories/assets/locale'
 import { withThemesProvider } from 'storybook-addon-styled-component-theme'
-import DarkTheme from '../src/theme/brave-dark'
-import DefaultTheme from '../src/theme/brave-default'
+import DefaultTheme from '../src/theme/default'
+import DarkTheme from '../src/theme/dark'
 
 const themes = [DefaultTheme, DarkTheme]
 addDecorator(withThemesProvider(themes))

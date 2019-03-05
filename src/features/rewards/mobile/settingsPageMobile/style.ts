@@ -2,10 +2,10 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from 'styled-components'
+import styled from '../../../../theme'
 
 export const StyledWrapper = styled<{}, 'div'>('div')`
-  background: ${p => p.theme.color.subtleBackground};
+  background: ${p => p.theme.palette.grey100};
   min-height: 100vh;
   width: 100%;
   padding-top: 35px;

@@ -82,7 +82,7 @@ export const StyledTitle = styled<{}, 'span'>('span')`
 export const StyledSafe = styled<{}, 'span'>('span')`
   font-weight: 700;
   margin-right: 3px;
-  color: ${p => p.theme.color.brandBatInteracting};
+  color: ${p => p.theme.brand.brave};
 `
 
 export const StyledTabWrapper = styled<{}, 'div'>('div')`

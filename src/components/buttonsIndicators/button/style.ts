@@ -25,34 +25,34 @@ const getThemeColors = (p: ThemedStyledProps<Props>) => {
   let hoverColor
   let activeColor
   if (p.disabled) {
-    mainColor = hoverColor = activeColor = p.theme.color.disabled
+    mainColor = hoverColor = activeColor = p.theme.btn.disabled
   } else {
     switch (p.type) {
       case 'accent':
         if (p.brand === 'brave') {
-          mainColor = p.theme.color.brandBrave
-          hoverColor = p.theme.color.brandBraveInteracting
-          activeColor = p.theme.color.brandBraveActive
+          mainColor = p.theme.brand.brave
+          hoverColor = p.theme.brand.braveHover
+          activeColor = p.theme.brand.braveActive
         } else if (p.brand === 'rewards') {
-          mainColor = p.theme.color.brandBat
-          hoverColor = p.theme.color.brandBatInteracting
-          activeColor = p.theme.color.brandBatActive
+          mainColor = p.theme.brand.rewards
+          hoverColor = p.theme.brand.rewardsHover
+          activeColor = p.theme.brand.rewardsActive
         }
         break
       case 'default':
-        mainColor = p.theme.color.defaultControl
-        hoverColor = p.theme.color.defaultControlInteracting
-        activeColor = p.theme.color.defaultControlActive
+        mainColor = p.theme.btn.default
+        hoverColor = p.theme.btn.defaultHover
+        activeColor = p.theme.btn.defaultActive
         break
       case 'warn':
-        mainColor = p.theme.color.warn
-        hoverColor = p.theme.color.warnInteracting
-        activeColor = p.theme.color.warnActive
+        mainColor = p.theme.btn.danger
+        hoverColor = p.theme.btn.dangerHover
+        activeColor = p.theme.btn.dangerHover
         break
       case 'subtle':
-        mainColor = p.theme.color.subtle
-        hoverColor = p.theme.color.subtleInteracting
-        activeColor = p.theme.color.subtleActive
+        mainColor = p.theme.palette.grey400 // being depracated
+        hoverColor = p.theme.palette.grey300 // being depracated
+        activeColor = p.theme.palette.grey500 // being depracated
         break
     }
   }
