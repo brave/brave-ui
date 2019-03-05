@@ -2,8 +2,8 @@
 
 exports[`Button tests basic tests matches the snapshot 1`] = `
 .c1 {
-  --button-main-color: #3b3e4f;
-  --button-main-color-hover: #1E2029;
+  --button-main-color: #84889c;
+  --button-main-color-hover: #AEB1C2;
   --button-main-color-active: #5e6175;
   --button-state-color: var(--button-main-color);
   --icon-size: 16px;

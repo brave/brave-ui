@@ -94,7 +94,7 @@ exports[`Box tests basic tests matches the snapshot 1`] = `
   -ms-letter-spacing: 0px;
   letter-spacing: 0px;
   font-weight: 300;
-  color: #AEB1C2;
+  color: #3b3e4f;
   margin-top: -5px;
 }
 

@@ -3,7 +3,7 @@
 exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
 .c7 {
   box-sizing: border-box;
-  font-family: Poppins,sans-serif;
+  font-family: Poppins,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   margin: 0;
@@ -15,8 +15,8 @@ exports[`PanelWelcome tests basic tests matches the snapshot 1`] = `
 
 .c12 {
   --button-main-color: #c2c4cf;
-  --button-main-color-hover: #AEB1C2;
-  --button-main-color-active: #84889c;
+  --button-main-color-hover: #ced0db;
+  --button-main-color-active: #AEB1C2;
   --button-state-color: var(--button-main-color);
   --icon-size: 18px;
   --icon-spacing: 6px;

@@ -23,7 +23,7 @@ exports[`Input tests basic tests matches the snapshot 1`] = `
   width: calc(100% - 30px);
   max-width: 100%;
   font-size: 14px;
-  font-family: Muli,sans-serif;
+  font-family: Muli,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   border: none;
   color: #686978;
   outline: unset;
