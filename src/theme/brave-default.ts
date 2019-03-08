@@ -1,4 +1,4 @@
-import colors from './palette'
+import colors from './colors'
 import ITheme from './theme-interface'
 
 // Define colors, fonts, and sizes by purpose.
