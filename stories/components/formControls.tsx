@@ -8,8 +8,7 @@ import { withKnobs, boolean, select, text, object } from '@storybook/addon-knobs
 
 import * as React from 'react'
 import { withState } from '@dump247/storybook-state'
-// @ts-ignore
-import centered from '@storybook/addon-centered/dist'
+import centered from '@storybook/addon-centered'
 
 // Components
 import { Tokens } from '../../src/features/rewards'

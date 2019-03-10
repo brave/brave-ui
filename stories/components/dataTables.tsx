@@ -2,13 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-// Storybook requires
+import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, object } from '@storybook/addon-knobs'
-// @ts-ignore
-import centered from '@storybook/addon-centered/dist'
-
-import * as React from 'react'
+import centered from '@storybook/addon-centered'
 
 // Components
 import Table, { Cell, Row } from '../../src/components/dataTables/table'

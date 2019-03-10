@@ -5,8 +5,7 @@
 // Storybook requires
 import { storiesOf } from '@storybook/react'
 import { withKnobs, select, text } from '@storybook/addon-knobs'
-// @ts-ignore
-import centered from '@storybook/addon-centered/dist'
+import centered from '@storybook/addon-centered'
 
 import * as React from 'react'
 import { withState } from '@dump247/storybook-state'
