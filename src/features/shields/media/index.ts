@@ -7,7 +7,7 @@ import { StyledComponentClass } from 'styled-components'
 import { CaratDownIcon, ShieldAlertIcon } from '../../../components/icons'
 
 import { ComponentType } from 'react'
-import palette from '../../../theme/colors'
+import palette from '../../../theme/palette'
 
 // rotated variants
 function RotatedIconComponent (
