@@ -154,7 +154,7 @@ const locale: Record<string, string> = {
   rewardsPanelEmptyText2: '3 ways to fill your wallet:',
   rewardsPanelEmptyText3: 'You can add funds.',
   rewardsPanelEmptyText4: 'You can earn tokens from Brave Ads.',
-  rewardsPanelEmptyText5: 'Occasionally, you will also received token grants from Brave. So keep an eye out for the alert!',
+  rewardsPanelEmptyText5: 'Occasionally, you\'ll be offered free token grants from Brave. Be sure to keep an eye out for the alert!',
   rewardsPanelOffText1: 'Get Rewarded for Browsing!',
   rewardsPanelOffText2: 'Earn tokens for your attention to ads and pay it forward to support content creators you value!',
   rewardsPanelText1: 'Add, withdraw and manage funds at',
