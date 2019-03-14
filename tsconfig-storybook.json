@@ -1,11 +1,11 @@
 {
   "extends": "./tsconfig",
   "include": [
-    "definitions",
-    "src",
-    "stories"
+    "./definitions",
+    "./src",
+    "./stories"
   ],
   "exclude": [
-    "src/**/spec.tsx",
+    "./src/**/spec.tsx",
   ],
 }
