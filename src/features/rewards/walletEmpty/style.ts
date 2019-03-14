@@ -34,6 +34,6 @@ export const StyledContent = styled.div`
   }
 `
 
-export const StyledCenter = styled<{}, 'div'>('div')`
+export const StyledCenter = styled.div`
   text-align: center;
-` as any
+`
