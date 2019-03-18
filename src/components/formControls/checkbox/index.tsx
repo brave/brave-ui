@@ -12,6 +12,7 @@ export type Size = 'big' | 'small'
 export interface Props {
   value: {[key: string]: boolean}
   id?: string
+  testId?: string
   children: React.ReactNode
   multiple?: boolean
   disabled?: boolean
@@ -84,7 +85,7 @@ export default class Checkbox extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { id, children } = this.props
+    const { id, testId, children } = this.props
     const num = React.Children.count(children)
     let data = null
 
@@ -93,7 +94,7 @@ export default class Checkbox extends React.PureComponent<Props, {}> {
     }
 
     return (
-      <div id={id}>
+      <div id={id} data-test-id={testId}>
         {data}
       </div>
     )
