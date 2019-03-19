@@ -141,7 +141,10 @@ export const BlockedInfoRowData = styled<BlockedInfoRowDataProps, 'div'>('div')`
   grid-gap: 2px;
   align-items: center;
   pointer-events: ${p => p.disabled && 'none'};
-  opacity: ${p => p.disabled && '0.4'};
+
+  & > *:not(:last-child) {
+    opacity: ${p => p.disabled && '0.4'};
+  }
 
   &:active {
     outline: none;
