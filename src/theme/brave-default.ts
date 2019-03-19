@@ -5,10 +5,14 @@ import ITheme from './theme-interface'
 // Keys should not describe the value, but what they are to be used for.
 
 const theme: ITheme = {
-  name: 'Brave Light',
+  name: 'Default',
+  textColor: colors.grey700,
+  panelBackground: colors.white,
+  inputBorder: colors.grey500,
+  separatorLine: colors.grey100,
   color: {
-    brandBrave: colors.orange400,
-    brandBat: colors.blurple400,
+    brandBrave: colors.orange500,
+    brandBat: colors.blurple500,
     // brave controls
     brandBraveInteracting: colors.orange500,
     brandBraveActive: colors.orange200,
