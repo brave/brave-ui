@@ -26,7 +26,7 @@ export default interface IThemeProps {
     subtleExclude: string
     subtleInteracting: string
     subtleActive: string
-    textColor: string
+    text: string
     panelBackground: string
     inputBorder: string
     separatorLine: string

@@ -39,7 +39,7 @@ const theme: ITheme = {
     modalOverlayBackground: 'rgba(36,37,54,0.85)',
     // text
     detailDescription: colors.grey500,
-    textColor: colors.grey700,
+    text: colors.grey700,
     // form controls
     inputBorder: colors.grey500,
     separatorLine: colors.grey100

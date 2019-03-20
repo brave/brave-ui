@@ -7,7 +7,7 @@ const shieldsDarkTheme: ITheme = {
   name: 'Shields Dark',
   color: {
     ...defaultTheme.color,
-    textColor: colors.white,
+    text: colors.white,
     panelBackground: colors.grey900,
     inputBorder: colors.grey700,
     separatorLine: colors.grey800
