@@ -6,10 +6,6 @@ import ITheme from './theme-interface'
 
 const theme: ITheme = {
   name: 'Default',
-  textColor: colors.grey700,
-  panelBackground: colors.white,
-  inputBorder: colors.grey500,
-  separatorLine: colors.grey100,
   color: {
     brandBrave: colors.orange500,
     brandBat: colors.blurple500,
@@ -37,11 +33,16 @@ const theme: ITheme = {
     // disabled controls
     disabled: colors.grey300,
     // backgrounds
+    panelBackground: colors.white,
     primaryBackground: colors.white,
     secondaryBackground: colors.grey400,
     modalOverlayBackground: 'rgba(36,37,54,0.85)',
     // text
-    detailDescription: colors.grey500
+    detailDescription: colors.grey500,
+    textColor: colors.grey700,
+    // form controls
+    inputBorder: colors.grey500,
+    separatorLine: colors.grey100
   },
   fontFamily: {
     heading: 'Poppins, sans-serif',
