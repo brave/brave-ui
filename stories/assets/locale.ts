@@ -13,6 +13,7 @@ const locale: Record<string, string> = {
   addFundsQR: 'Show QR Code',
   addFundsText: 'Be sure to use the address below that matches the type of cryto you own. It will be converted automatically to BAT by Uphold and appear as an increased balance in your Brave Rewards wallet. Please allow up to one hour for your wallet balance to update.',
   addFundsTitle: 'Send cryptocurrency from your external account to your Brave Rewards wallet.',
+  adsNotSupported: 'Sorry! Ads are not yet available in your region.',
   allowTip: 'Allow tips on',
   amount: 'Amount',
   autoTipText: 'You are automatically sending a tip to:',
