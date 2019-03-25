@@ -9,6 +9,7 @@ const shieldsDarkTheme: ITheme = {
     ...defaultTheme.color,
     text: colors.white,
     panelBackground: colors.grey900,
+    panelBackgroundSecondary: '#181921',
     inputBorder: colors.grey700,
     separatorLine: colors.grey800
   }
