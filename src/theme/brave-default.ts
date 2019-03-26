@@ -34,6 +34,7 @@ const theme: ITheme = {
     disabled: colors.grey300,
     // backgrounds
     panelBackground: colors.white,
+    panelBackgroundSecondary: colors.neutral000,
     primaryBackground: colors.white,
     secondaryBackground: colors.grey400,
     modalOverlayBackground: 'rgba(36,37,54,0.85)',
