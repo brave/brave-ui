@@ -1,31 +1,32 @@
 const path = require('path')
 
-const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components')
+  .default
 
-function getStyledComponentDisplay(filename, bindingName) {
+function getStyledComponentDisplay (filename, bindingName) {
   return bindingName
 }
 
 // Export a function. Accept the base config as the only param.
-module.exports = (baseConfig, env, defaultConfig) => {
+module.exports = async ({ config, mode }) => {
   // Make whatever fine-grained changes you need
-  defaultConfig.module.rules.push({
+  config.module.rules.push({
     test: /\.(ts|tsx)$/,
     loader: require.resolve('awesome-typescript-loader'),
     options: {
       configFileName: path.resolve(__dirname, '..', 'tsconfig-storybook.json'),
       getCustomTransformers: () => ({
         before: [
-            createStyledComponentsTransformer({
-              options: {
-                getDisplayName: getStyledComponentDisplay
-              }
-            })
+          createStyledComponentsTransformer({
+            options: {
+              getDisplayName: getStyledComponentDisplay
+            }
+          })
         ]
       })
     }
   })
 
-  defaultConfig.resolve.extensions.push('.ts', '.tsx')
-  return defaultConfig
+  config.resolve.extensions.push('.ts', '.tsx')
+  return config
 }

@@ -14,10 +14,5 @@ import '@storybook/addon-actions/register'
 // for docs see https://github.com/storybooks/storybook/tree/master/addons/knobs
 import '@storybook/addon-knobs/register'
 
-// for docs see https://github.com/storybooks/storybook/tree/master/addons/options
-import '@storybook/addon-options/register'
-
 // for docs see https://github.com/dump247/storybook-state
-// this addon is surfacing in every panel ATM. this is a bug. track it here:
-// https://github.com/dump247/storybook-state/pull/12
 import '@dump247/storybook-state/register'
