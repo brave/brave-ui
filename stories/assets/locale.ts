@@ -201,6 +201,7 @@ const locale: Record<string, string> = {
   turnOnRewardsTitle: 'Turn on Rewards',
   type: 'Type',
   uhOh: 'Uh oh…',
+  unVerifiedCheck: 'Check Again...',
   unVerifiedPublisher: 'Not yet verified',
   unVerifiedText: 'This creator has not yet signed up to receive contributions from Brave users.',
   unVerifiedTextMore: 'Learn more.',
