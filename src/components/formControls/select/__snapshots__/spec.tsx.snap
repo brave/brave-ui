@@ -12,7 +12,7 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
 }
 
 .c2 {
-  border-radius: 3px;
+  border-radius: 4px;
   font-size: 14px;
   width: 100%;
   padding: 8px 0;

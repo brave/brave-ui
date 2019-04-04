@@ -43,7 +43,7 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
 .c1 {
   color: #838391;
   font-size: 14px;
-  font-family: Poppins,sans-serif;
+  font-family: Muli,sans-serif;
   text-align: right;
   -webkit-letter-spacing: 0.4px;
   -moz-letter-spacing: 0.4px;
