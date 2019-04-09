@@ -46,10 +46,7 @@ import {
   StyledHeroInfo,
   StyledAlert,
   StyledAlertLeft,
-  StyledAlertContent,
-  StyledTOSWrapper,
-  StyledServiceText,
-  StyledServiceLink
+  StyledAlertContent
 } from './style'
 
 export interface Props {
@@ -57,8 +54,6 @@ export interface Props {
   optInAction: () => void
   creating?: boolean
   onReTry?: () => void
-  onTOSClick?: () => void
-  onPrivacyClick?: () => void
 }
 
 class WelcomePage extends React.PureComponent<Props, {}> {
@@ -93,9 +88,7 @@ class WelcomePage extends React.PureComponent<Props, {}> {
     this.props.optInAction()
   }
 
-  hero = () => {
-    const { onTOSClick, onPrivacyClick } = this.props
-
+  hero () {
     return (
       <Hero
         id={'rewards-hero'}
@@ -136,15 +129,6 @@ class WelcomePage extends React.PureComponent<Props, {}> {
               />
           }
         </StyledOptInSection>
-        {
-          !this.isTouchScreen
-          ? <StyledTOSWrapper header={true}>
-              <StyledServiceText header={true}>
-                {getLocale('serviceTextWelcome')} <StyledServiceLink header={true} onClick={onTOSClick}>{getLocale('termsOfService')}</StyledServiceLink> {getLocale('and')} <StyledServiceLink header={true} onClick={onPrivacyClick}>{getLocale('privacyPolicy')}</StyledServiceLink>.
-              </StyledServiceText>
-            </StyledTOSWrapper>
-          : null
-        }
         <StyledSection>
           <StyledTeaserParagraph>
             {getLocale('braveRewardsTeaser')}
@@ -175,9 +159,7 @@ class WelcomePage extends React.PureComponent<Props, {}> {
     )
   }
 
-  optInContent = () => {
-    const { onPrivacyClick, onTOSClick } = this.props
-
+  get optInContent () {
     return (
       <StyledOptInInnerSection>
         <StyledActionTitle level={4}>
@@ -199,15 +181,6 @@ class WelcomePage extends React.PureComponent<Props, {}> {
               />
           }
         </StyledOptInSecond>
-        {
-          !this.isTouchScreen
-          ? <StyledTOSWrapper>
-              <StyledServiceText>
-                {getLocale('serviceTextWelcome')} <StyledServiceLink onClick={onTOSClick}>{getLocale('termsOfService')}</StyledServiceLink> {getLocale('and')} <StyledServiceLink onClick={onPrivacyClick}>{getLocale('privacyPolicy')}</StyledServiceLink>.
-              </StyledServiceText>
-            </StyledTOSWrapper>
-          : null
-        }
       </StyledOptInInnerSection>
     )
   }
@@ -269,7 +242,7 @@ class WelcomePage extends React.PureComponent<Props, {}> {
               />
             </StyledInfoContent>
             <StyledTakeActionContent>
-              {this.optInContent()}
+              {this.optInContent}
             </StyledTakeActionContent>
           </StyledCenterSection>
         </StyledBackground>

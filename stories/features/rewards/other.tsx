@@ -104,8 +104,6 @@ storiesOf('Feature Components/Rewards/Other/Desktop', module)
     return (
       <div style={{ width: '800px' }}>
         <MainToggle
-          onTOSClick={dummyClick}
-          onPrivacyClick={dummyClick}
           enabled={boolean('Enable', store.state.checked)}
           onToggle={onToggle}
         />
