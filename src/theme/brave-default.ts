@@ -6,6 +6,9 @@ import ITheme from './theme-interface'
 
 const theme: ITheme = {
   name: 'Default',
+  palette: {
+    ...colors
+  },
   color: {
     brandBrave: colors.orange500,
     brandBat: colors.blurple500,

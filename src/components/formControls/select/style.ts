@@ -2,7 +2,7 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled, { css } from 'styled-components'
+import styled, { css } from '../../../theme'
 import { Props } from './index'
 
 const getSelectColors = (p: StyleProps) => {
@@ -52,14 +52,14 @@ export const StyledWrapper = styled<StyleProps, 'div'>('div')`
 export const StyledSelectWrapper = styled<StyleProps, 'div'>('div')`
   position: relative;
   outline: 0;
-  font-family: Muli, sans-serif;
+  font-family: ${p => p.theme.fontFamily.body};
 `
 
 export const StyledSelect = styled<StyleProps, 'div'>('div')`
-  border-radius: 3px;
+  border-radius: 4px;
   font-size: 14px;
   width: 100%;
-  padding: ${p => p.floating ? 0 : 8}px 0;
+  padding: 8px 36px 8px 0;
   display: flex;
   align-items: center;
   ${getSelectColors};
@@ -68,11 +68,10 @@ export const StyledSelect = styled<StyleProps, 'div'>('div')`
 `
 
 export const StyledSelectArrow = styled<StyleProps, 'div'>('div')`
-  margin-right: ${p => p.floating ? -9 : 15}px;
-  flex-basis: 33px;
-  flex-shrink: 0;
-  height: 11px;
-  margin-top: ${p => p.floating ? -5 : 0}px;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  right: 12px;
 `
 
 export const StyledSelectText = styled<StyleProps, 'div'>('div')`
@@ -88,14 +87,14 @@ export const StyledOptions = styled<StyleProps, 'div'>('div')`
   top: calc(100% + 4px);
   left: 0;
   width: ${p => p.showAllContents ? 'auto' : '100%'};
-  border-radius: 3px;
+  border-radius: 4px;
   box-shadow: 0 2px 5px 0 rgba(223, 223, 232, 0.5);
   background-color: #fff;
   border: solid 1px #dfdfe8;
   overflow: hidden;
   z-index: 2;
   display: ${p => p.show ? 'block' : 'none'};
-  padding: 9px 0;
+  padding: 8px 0;
 `
 
 export const StyledOption = styled<StyleProps, 'div'>('div')`
@@ -117,7 +116,6 @@ export const StyledOptionCheck = styled<StyleProps, 'div'>('div')`
 `
 
 export const StyledOptionText = styled<StyleProps, 'div'>('div')`
-  flex-grow: 1;
   padding: 0 21px 0 6px;
   overflow: hidden;
   white-space: nowrap;
@@ -138,7 +136,7 @@ export const StyledOptionsOverlay = styled<StyleProps, 'div'>('div')`
 `
 
 export const StyledOptionsModal = styled<StyleProps, 'div'>('div')`
-  border-radius: 7px;
+  border-radius: 4px;
   background: ${p => p.theme.color.primaryBackground};
   height: 30%;
   width: 50%;
@@ -171,6 +169,7 @@ export const StyledSelectTitle = styled<StyleProps, 'span'>('span')`
   line-height: 32px;
   margin-bottom: 30px;
   text-align: left;
+  font-family: ${p => p.theme.fontFamily.body};
 `
 
 export const StyledModalContent = styled<StyleProps, 'div'>('div')`

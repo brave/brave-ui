@@ -2,7 +2,7 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled, { css } from 'styled-components'
+import styled, { css } from '../../../theme'
 import { Props } from './index'
 
 const getBulletStyle = (p: Props) => {
@@ -79,11 +79,11 @@ export const StyledBullet = styled<Props, 'div'>('div')`
 export const StyledText = styled<Props, 'div'>('div')`
   color: #838391;
   font-size: ${(p) => p.size === 'small' ? '12px' : '14px'};
-  font-family: Poppins, sans-serif;
+  font-family: ${p => p.theme.fontFamily.body};
   text-align: right;
   letter-spacing: 0.4px;
   text-transform: uppercase;
   margin: ${(p) => p.size === 'small' ? '0px' : '4px'} 8px 0 0;
-  opacity: ${(p) => !p.checked && !p.disabled ? 1 : 0 };
+  opacity: ${(p) => !p.checked && !p.disabled ? 1 : 0};
   transition: 100ms ease-out;
 `

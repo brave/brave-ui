@@ -57,10 +57,10 @@ const getLabel = (p: Partial<StyleProps>) => {
 }
 
 export const StyledLabel = styled<Partial<StyleProps>, 'div'>('div')`
-  font-family: Poppins, sans-serif;
-  line-height: 1.3;
+  font-family: ${p => p.theme.fontFamily.body};
   display: flex;
-  margin-bottom: 20px;
+  align-items: center;
+  margin-bottom: 4px;
   ${getLabel};
   color: var(--checkbox-label-color);
   font-size: var(--checkbox-label-size);
@@ -73,14 +73,14 @@ export const StyledBox = styled<Partial<StyleProps>, 'span'>('span')`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 2.5px;
+  padding: 2px;
   ${getBox};
   flex-basis: var(--checkbox-box-size);
   width: var(--checkbox-box-size);
   height: var(--checkbox-box-size);
   color: var(--checkbox-box-color);
   border: 1px solid var(--checkbox-box-borderColor);
-  margin-right: var(--checkbox-box-spacing);
+  margin: 8px;
 `
 
 export const StyledText = styled<Partial<StyleProps>, 'span'>('span')`
