@@ -28,6 +28,9 @@ interface ShieldsHeaderProps {
 export const ShieldsHeader = styled<ShieldsHeaderProps, 'header'>('header')`
   box-sizing: border-box;
   user-select: none;
+  background: ${p => p.theme.color.panelBackgroundSecondary};
+  border-radius: 0 0 200px 50%/25px;
+  margin: 0 0 8px;
 `
 
 /**
@@ -65,8 +68,7 @@ export const SiteOverview = styled<SiteOverviewProps, 'div'>('div')`
   align-items: center;
   justify-content: center;
   padding: 32px 0;
-  background: ${p => p.theme.color.panelBackgroundSecondary};
-  border-bottom: 1px solid ${p => p.status === 'enabled' ? 'rgba(160, 161, 178, 0.15)' : 'transparent'};
+  /* border-bottom: 1px solid ${p => p.status === 'enabled' ? 'rgba(160, 161, 178, 0.15)' : 'transparent'}; */
 `
 
 export const TotalBlockedStats = styled<{}, 'section'>('section')`
@@ -299,7 +301,7 @@ export const BlockedListItemWithOptions = styled<{}, 'li'>('li')`
     display: inline-block;
     vertical-align: middle;
     line-height: 1.5;
-    font-weight: 500;
+    font-weight: 600;
     margin: 0px 10px 0px 30px;
     font-size: 12px;
     color: ${p => p.theme.color.text};
