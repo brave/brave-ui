@@ -22,10 +22,10 @@ export const SelectBox = styled<SelectBoxProps, 'select'>('select')`
   -webkit-font-smoothing: antialiased;
   border-radius: 4px;
   display: block;
-  padding: 6px 12px 6px 6px;
+  padding: 8px 12px 8px 6px;
   width: 100%;
   appearance: none;
-  min-height: 36px;
+  min-height: 30px;
   color: ${p => p.theme.color.text};
   font-size: 12px;
   font-weight: 500;

@@ -244,15 +244,17 @@ export const BlockedListSummary = styled<BlockedListSummaryProps, 'summary'>('su
 export const BlockedListStatic = styled<{}, 'ul'>('ul')`
   box-sizing: border-box;
   list-style-type: none;
-  height: 307px;
+  height: 320px;
   overflow: auto;
-  padding: 0;
+  padding: 0 0 0 24px;
+  margin: 0;
+  font-size: 12px;
   background: ${p => p.theme.color.panelBackgroundSecondary};
-  margin: 0 24px;
 `
 
 export const BlockedListDynamic = styled(BlockedListStatic)`
   margin: 0;
+  padding: 0;
 `
 
 export const BlockedListItemHeader = styled<{}, 'li'>('li')`
@@ -305,7 +307,7 @@ export const BlockedListItemWithOptions = styled<{}, 'li'>('li')`
 
 export const BlockedListFooter = styled<{}, 'footer'>('footer')`
   box-sizing: border-box;
-  padding: 12px 0px;
+  padding: 16px 0px;
   display: flex;
   justify-content: center;
   border-top: 1px solid ${p => p.theme.color.separatorLine};
@@ -315,7 +317,7 @@ export const BlockedListFooterWithOptions = styled<{}, 'footer'>('footer')`
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  padding: 12px 24px;
+  padding: 16px 24px;
   border-top: 1px solid ${p => p.theme.color.separatorLine};
 `
 
