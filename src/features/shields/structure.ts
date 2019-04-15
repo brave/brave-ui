@@ -116,7 +116,7 @@ export const BlockedInfoRow = styled<{}, 'div'>('div')`
 `
 
 export const BlockedInfoRowSingle = styled(BlockedInfoRow)`
-  padding: 6px 24px 5px 74px;
+  padding: 8px 24px 8px 74px;
   cursor: default;
   grid-template-columns: 1fr;
 `
@@ -175,7 +175,7 @@ export const BlockedInfoRowData = styled<BlockedInfoRowDataProps, 'div'>('div')`
 
 export const BlockedInfoRowDataForSelect = styled(BlockedInfoRowData)`
   grid-template-columns: auto 26px 1fr;
-  padding: 12px 0 11px 20px;
+  padding: 8px 0 8px 20px;
 
   &:hover {
     cursor: pointer;
@@ -227,7 +227,7 @@ export const BlockedListSummary = styled<BlockedListSummaryProps, 'summary'>('su
   display: grid;
   grid-template-columns: ${p => p.stats === false ? '30px 1fr' : '28px 28px 1fr'};
   align-items: center;
-  padding: 6px 24px 5px 20px;
+  padding: 8px 24px 8px 20px;
   border-bottom: 1px solid ${p => p.theme.color.separatorLine};
 
   &:focus {
@@ -264,7 +264,7 @@ export const BlockedListItemHeader = styled<{}, 'li'>('li')`
   display: grid;
   grid-template-columns: 36px 1fr auto;
   align-items: center;
-  padding: 11px 24px 10px 14px;
+  padding: 12px 24px 12px 14px;
   line-height: 1;
   background: ${p => p.theme.color.panelBackground};
   border-top: 1px solid ${p => p.theme.color.separatorLine};
@@ -277,8 +277,9 @@ export const BlockedListItemHeader = styled<{}, 'li'>('li')`
 
 export const BlockedListItem = styled<{}, 'li'>('li')`
   box-sizing: border-box;
-  padding: 9px 0px;
+  padding: 8px 0px;
   line-height: 1;
+  margin: auto 0;
   white-space: nowrap;
   user-select: all;
   color: ${p => p.theme.color.text}
@@ -288,7 +289,7 @@ export const BlockedListItemWithOptions = styled<{}, 'li'>('li')`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr auto;
-  padding: 9px 24px 9px 20px;
+  padding: 8px 24px 8px 20px;
   background: ${p => p.theme.color.panelBackgroundSecondary};
 
   > *:first-child {
@@ -307,7 +308,7 @@ export const BlockedListItemWithOptions = styled<{}, 'li'>('li')`
 
 export const BlockedListFooter = styled<{}, 'footer'>('footer')`
   box-sizing: border-box;
-  padding: 16px 0px;
+  padding: 8px 0px;
   display: flex;
   justify-content: center;
   border-top: 1px solid ${p => p.theme.color.separatorLine};
@@ -317,7 +318,7 @@ export const BlockedListFooterWithOptions = styled<{}, 'footer'>('footer')`
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  padding: 16px 24px;
+  padding: 8px 24px;
   border-top: 1px solid ${p => p.theme.color.separatorLine};
 `
 

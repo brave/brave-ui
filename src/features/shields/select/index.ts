@@ -21,11 +21,11 @@ export const SelectBox = styled<SelectBoxProps, 'select'>('select')`
   position: relative;
   -webkit-font-smoothing: antialiased;
   border-radius: 4px;
-  display: block;
-  padding: 8px 12px 8px 6px;
+  display: flex;
+  align-items: center;
   width: 100%;
   appearance: none;
-  min-height: 30px;
+  height: 32px;
   color: ${p => p.theme.color.text};
   font-size: 12px;
   font-weight: 500;
