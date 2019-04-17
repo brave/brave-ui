@@ -4,6 +4,7 @@ import ArrowIcon from './arrow'
 import CaratIcon from './carat'
 import CaratCircleOIcon from './carat-circle-o'
 import CaratCircleIcon from './carat-circle'
+import CaratStrongIcon from './carat-strong'
 
 // rotated variants
 function RotatedIconComponent (
@@ -36,6 +37,10 @@ export const CaratRightIcon = RotatedIconComponent(CaratIcon, 180)
 export const CaratLeftIcon = RotatedIconComponent(CaratIcon, 0)
 export const CaratUpIcon = RotatedIconComponent(CaratIcon, 90)
 export const CaratDownIcon = RotatedIconComponent(CaratIcon, -90)
+export const CaratStrongRightIcon = RotatedIconComponent(CaratStrongIcon, -90)
+export const CaratStrongLeftIcon = RotatedIconComponent(CaratStrongIcon, 90)
+export const CaratStrongUpIcon = RotatedIconComponent(CaratStrongIcon, 180)
+export const CaratStrongDownIcon = RotatedIconComponent(CaratStrongIcon, 0)
 export { default as CheckCircleIcon } from './check-circle'
 export { default as CheckIcon } from './check'
 export { default as ClipboardOIcon } from './clipboard-o'
