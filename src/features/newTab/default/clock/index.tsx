@@ -16,14 +16,30 @@ export interface ClockState {
   date: Date
 }
 
-export class Clock extends React.PureComponent<{}, ClockState> {
-  constructor (props: {}) {
+interface PreferredLocale {
+  preferredLocale?: string | string[]
+}
+
+export class Clock extends React.PureComponent<PreferredLocale, ClockState> {
+  preferredLocale: string | string[]
+
+  constructor (props: PreferredLocale) {
     super(props)
+    /* We need to put the preferredLocale outside of state, to allow for
+       dateTimeFormat to be called for creating the original state */
+    this.preferredLocale = props.preferredLocale ? props.preferredLocale : []
     this.state = this.getClockState(new Date())
   }
 
   get dateTimeFormat (): any {
-    return new Intl.DateTimeFormat([], { hour: '2-digit', minute: '2-digit' })
+    try {
+      return new Intl.DateTimeFormat(this.preferredLocale, { hour: '2-digit', minute: '2-digit' })
+    } catch(e) {
+      /* in case the user has provided a preferred locale which is not a valid
+         language tag, Intl.DateTimeFormat throws a RangeError: in that case, go
+         for default locale */
+      return new Intl.DateTimeFormat([], { hour: '2-digit', minute: '2-digit' })
+    }
   }
 
   get formattedTime () {
