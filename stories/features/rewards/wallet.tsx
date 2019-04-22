@@ -10,7 +10,7 @@ import centered from '@storybook/addon-centered/dist'
 
 // Components
 import { WalletSummary, WalletEmpty, WalletOff, WalletPanel, WalletSummarySlider, WalletWrapper } from '../../../src/features/rewards'
-import { AlertWallet } from '../../../src/features/rewards/walletWrapper'
+import { AlertWallet, Notification } from '../../../src/features/rewards/walletWrapper'
 import { WalletAddIcon, WalletImportIcon } from '../../../src/components/icons'
 import { WalletInfoHeader } from '../../../src/features/rewards/mobile'
 
@@ -23,11 +23,20 @@ const doNothing = () => {
 storiesOf('Feature Components/Rewards/Wallet/Desktop', module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
-  .add('Wrapper',() => {
+  .add('Wrapper', () => {
+    const onEnableAds = () => {
+      console.log('enabling ads')
+    }
     const alert: AlertWallet = {
       node: 'Some text',
       type: 'success',
       onAlertClose: doNothing
+    }
+    const adsLaunchNotification: Notification = {
+      id: '001',
+      type: 'ads-launch',
+      onCloseNotification: doNothing,
+      text: <span>Now you can earn by viewing ads.</span>
     }
     const showAlert = boolean('Show alert', false)
     const showGrant = boolean('Show grants', false)
@@ -36,6 +45,8 @@ storiesOf('Feature Components/Rewards/Wallet/Desktop', module)
       <WalletWrapper
         compact={false}
         contentPadding={false}
+        onNotificationClick={onEnableAds}
+        notification={adsLaunchNotification}
         connectedWallet={boolean('Connected wallet', false)}
         showCopy={boolean('Show Uphold', false)}
         showSecActions={boolean('Show secondary actions', true)}
