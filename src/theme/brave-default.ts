@@ -35,6 +35,7 @@ const theme: ITheme = {
     subtleActive: colors.grey600,
     // disabled controls
     disabled: colors.grey300,
+    disabledResourceBlocked: colors.neutral600,
     // backgrounds
     panelBackground: colors.white,
     panelBackgroundSecondary: colors.neutral000,

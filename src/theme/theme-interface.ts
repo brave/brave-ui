@@ -13,6 +13,7 @@ export default interface IThemeProps {
     brandBatActive: string
     detailDescription: string
     disabled: string
+    disabledResourceBlocked: string
     primaryBackground: string
     secondaryBackground: string
     modalOverlayBackground: string
