@@ -136,6 +136,7 @@ export { default as TorLockIcon } from './tor-lock'
 export { default as TwitchColorIcon } from './fc-logo-twitch'
 export { default as TwitterColorIcon } from './fc-logo-twitter'
 export { default as UpholdColorIcon } from './fc-logo-uphold'
+export { default as VimeoColorIcon } from './fc-logo-vimeo'
 export { default as YoutubeColorIcon } from './fc-logo-youtube'
 
 // illustrative
