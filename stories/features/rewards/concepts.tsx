@@ -308,15 +308,18 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
             grants={object('Grants', [
               {
                 tokens: '8.0',
-                expireDate: '7/15/2018'
+                expireDate: '7/15/2018',
+                type: 'ugp'
               },
               {
                 tokens: '10.0',
-                expireDate: '9/10/2018'
+                expireDate: '9/10/2018',
+                type: 'ugp'
               },
               {
                 tokens: '10.0',
-                expireDate: '10/10/2018'
+                expireDate: '10/10/2018',
+                type: 'ads'
               }
             ])}
             grant={store.state.grant}
