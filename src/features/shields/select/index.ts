@@ -41,7 +41,8 @@ export const SelectBox = styled<SelectBoxProps, 'select'>('select')`
   cursor: pointer;
 
   > option {
-    color: ${palette.white};
+    /* see https://github.com/brave/brave-browser/issues/4213 for info */
+    color: ${palette.black};
   }
 
   ${(p: SelectBoxProps) => p.disabled
