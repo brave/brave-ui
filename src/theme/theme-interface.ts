@@ -31,6 +31,7 @@ export default interface IThemeProps {
     text: string
     panelBackground: string
     panelBackgroundSecondary: string
+    lionLogo: string
     inputBorder: string
     separatorLine: string
   }
