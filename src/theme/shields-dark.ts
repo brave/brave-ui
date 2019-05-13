@@ -9,7 +9,7 @@ const shieldsDarkTheme: ITheme = {
     ...defaultTheme.color,
     lionLogo: colors.grey700,
     text: colors.white,
-    panelBackground: colors.grey900,
+    panelBackground: '#17171F',
     panelBackgroundSecondary: colors.grey900,
     inputBorder: colors.grey700,
     separatorLine: colors.grey800
