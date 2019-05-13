@@ -7,6 +7,7 @@ const shieldsLightTheme: ITheme = {
   name: 'Shields Light',
   color: {
     ...defaultTheme.color,
+    text: colors.neutral900,
     panelBackgroundSecondary: colors.neutral000
   }
 }

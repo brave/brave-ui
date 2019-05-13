@@ -11,11 +11,12 @@ import {
   ArrowDownIcon,
   BlockedInfoRowStats,
   BlockedInfoRowText,
-  Toggle
+  Toggle,
+  LinkAction
 } from '../../../../../src/features/shields'
 
 // Group Components
-import DynamicList from '../list/dynamic'
+import NoScriptDetails from '../list/noScriptDetails'
 
 // Fake data
 import { getLocale } from '../../fakeLocale'
@@ -73,12 +74,16 @@ export default class ScriptsControls extends React.PureComponent<Props, State> {
     this.setState({ scriptsBlockedEnabled: event.target.checked })
   }
 
+  onAllowScriptsOnceViaShortcut = () => {
+    return
+  }
+
   render () {
     const { favicon, hostname, isBlockedListOpen, scriptsBlocked } = this.props
     const { scriptsBlockedEnabled, scriptsBlockedOpen } = this.state
     return (
       <>
-        <BlockedInfoRow>
+        <BlockedInfoRow extraColumn={true}>
           <BlockedInfoRowData
             disabled={scriptsBlocked === 0}
             tabIndex={this.tabIndex}
@@ -87,8 +92,13 @@ export default class ScriptsControls extends React.PureComponent<Props, State> {
           >
             <ArrowDownIcon />
             <BlockedInfoRowStats>{scriptsBlocked > 99 ? '99+' : scriptsBlocked}</BlockedInfoRowStats>
-            <BlockedInfoRowText>{getLocale('scriptsBlocked')}</BlockedInfoRowText>
+            <BlockedInfoRowText>
+              <span>{getLocale('scriptsBlocked')}</span>
+            </BlockedInfoRowText>
           </BlockedInfoRowData>
+          <LinkAction size='small' style={{ zIndex: 1 }} onClick={this.onAllowScriptsOnceViaShortcut}>
+            {getLocale('allowScriptsOnce')}
+          </LinkAction>
           <Toggle
             size='small'
             disabled={isBlockedListOpen}
@@ -98,7 +108,7 @@ export default class ScriptsControls extends React.PureComponent<Props, State> {
         </BlockedInfoRow>
         {
           scriptsBlockedOpen &&
-            <DynamicList
+            <NoScriptDetails
               favicon={favicon}
               hostname={hostname}
               name={getLocale('scriptsOnThisSite')}

@@ -7,6 +7,8 @@
   "rules": {
     "property-no-vendor-prefix": [true, {
       "ignoreProperties": ["background-clip", "padding-start", "padding-end", "appearance"]
-    }]
+    }],
+    "selector-type-no-unknown": null,
+    "no-descending-specificity": null
   }
 }

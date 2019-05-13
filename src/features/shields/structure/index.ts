@@ -2,9 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled from '../../theme'
-import { BlockedInfoRowStats, BlockedInfoRowText } from './display'
-import { StyledWrapper as Toggle } from '../shields/toggle/style'
+import styled from '../../../theme'
+import { BlockedInfoRowStats, BlockedInfoRowText } from '../display'
+import { StyledWrapper as Toggle } from '../toggle/style'
+import dash from './dash.svg'
 
 /**
  * Main wrapper
@@ -68,7 +69,6 @@ export const SiteOverview = styled<SiteOverviewProps, 'div'>('div')`
   align-items: center;
   justify-content: center;
   padding: 32px 0;
-  /* border-bottom: 1px solid ${p => p.status === 'enabled' ? 'rgba(160, 161, 178, 0.15)' : 'transparent'}; */
 `
 
 export const TotalBlockedStats = styled<{}, 'section'>('section')`
@@ -92,12 +92,17 @@ export const SiteInfo = styled<{}, 'div'>('div')`
 /**
  * Interface/privacy Rows
  */
-export const BlockedInfoRow = styled<{}, 'div'>('div')`
+
+interface BlockedInfoRowProps {
+  extraColumn?: boolean
+}
+
+export const BlockedInfoRow = styled<BlockedInfoRowProps, 'div'>('div')`
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: ${p => p.extraColumn ? '1fr auto auto' : '1fr auto'};
+  grid-gap: ${p => p.extraColumn ? '4px' : '0'};
   align-items: center;
-  border-bottom: 1px solid ${p => p.theme.color.separatorLine};
   color: ${p => p.theme.color.text};
   user-select: none;
 
@@ -204,7 +209,7 @@ export const BlockedListContent = styled<{}, 'div'>('div')`
   width: 100%;
   height: 100%;
   z-index: 2;
-  user-select: none;
+  cursor: default;
 `
 
 export const BlockedListHeader = styled<{}, 'div'>('div')`
@@ -213,7 +218,6 @@ export const BlockedListHeader = styled<{}, 'div'>('div')`
   grid-gap: 6px;
   align-items: center;
   padding: 24px 20px 14px;
-  border-bottom: 1px solid ${p => p.theme.color.separatorLine};
 `
 
 interface BlockedListSummaryProps {
@@ -230,7 +234,6 @@ export const BlockedListSummary = styled<BlockedListSummaryProps, 'summary'>('su
   grid-template-columns: ${p => p.stats === false ? '30px 1fr' : '28px 28px 1fr'};
   align-items: center;
   padding: 8px 24px 8px 20px;
-  border-bottom: 1px solid ${p => p.theme.color.separatorLine};
 
   &:focus {
     outline-width: 2px;
@@ -246,7 +249,7 @@ export const BlockedListSummary = styled<BlockedListSummaryProps, 'summary'>('su
 export const BlockedListStatic = styled<{}, 'ul'>('ul')`
   box-sizing: border-box;
   list-style-type: none;
-  height: 320px;
+  height: 328px;
   overflow: auto;
   padding: 0 0 0 24px;
   margin: 0;
@@ -263,14 +266,13 @@ export const BlockedListItemHeader = styled<{}, 'li'>('li')`
   box-sizing: border-box;
   position: sticky;
   top: 0;
+  z-index: 3;
   display: grid;
   grid-template-columns: 36px 1fr auto;
   align-items: center;
   padding: 12px 24px 12px 14px;
   line-height: 1;
   background: ${p => p.theme.color.panelBackground};
-  border-top: 1px solid ${p => p.theme.color.separatorLine};
-  border-bottom: 1px solid ${p => p.theme.color.separatorLine};
 
   &:first-of-type {
     border-top: 0;
@@ -284,11 +286,13 @@ export const BlockedListItem = styled<{}, 'li'>('li')`
   margin: auto 0;
   white-space: nowrap;
   user-select: all;
+  font-weight: 500;
   color: ${p => p.theme.color.text}
 `
 
 export const BlockedListItemWithOptions = styled<{}, 'li'>('li')`
   box-sizing: border-box;
+  position: relative;
   display: grid;
   grid-template-columns: 1fr auto;
   padding: 8px 24px 8px 20px;
@@ -301,10 +305,59 @@ export const BlockedListItemWithOptions = styled<{}, 'li'>('li')`
     display: inline-block;
     vertical-align: middle;
     line-height: 1.5;
-    font-weight: 600;
+    font-weight: 500;
     margin: 0px 10px 0px 30px;
     font-size: 12px;
     color: ${p => p.theme.color.text};
+  }
+`
+
+export const BlockedListItemDetails = styled<{}, 'details'>('details')`
+  position: relative;
+
+  &[open] summary:after {
+    content: "-";
+    color: ${p => p.theme.color.text};
+  }
+
+  /* grouped scripts row (nested dash) */
+  &[open] ${BlockedListItemWithOptions}:before {
+    content: " ";
+    background: url(${dash});
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 0;
+    top: -2px;
+    left: 26px;
+    width: 18px;
+    height: 21px;
+  }
+  ${BlockedListItemWithOptions} {
+    padding: 4px 24px 4px 20px;
+  }
+`
+
+export const BlockedListItemSummary = styled(BlockedListItemWithOptions.withComponent('summary'))`
+  position: relative;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &:after {
+    position: absolute;
+    content: "+";
+    color: ${p => p.theme.color.text};
+    top: 7px;
+    left: 26px;
+    font-size: 20px;
+    padding: 0;
+  }
+
+  &:focus {
+    outline-width: 2px;
+    outline-offset: -3px;
+    outline-color: ${p => p.theme.color.brandBrave};
   }
 `
 
@@ -313,7 +366,6 @@ export const BlockedListFooter = styled<{}, 'footer'>('footer')`
   padding: 8px 0px;
   display: flex;
   justify-content: center;
-  border-top: 1px solid ${p => p.theme.color.separatorLine};
 `
 
 export const BlockedListFooterWithOptions = styled<{}, 'footer'>('footer')`
@@ -321,7 +373,6 @@ export const BlockedListFooterWithOptions = styled<{}, 'footer'>('footer')`
   display: flex;
   justify-content: space-between;
   padding: 8px 24px;
-  border-top: 1px solid ${p => p.theme.color.separatorLine};
 `
 
 /**

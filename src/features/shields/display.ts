@@ -33,7 +33,7 @@ interface ToggleStateTextProps {
 
 export const ToggleStateText = styled<ToggleStateTextProps, 'span'>('span')`
   box-sizing: border-box;
-  color: ${p => p.status === 'enabled' ? p => p.theme.color.brandBrave : p.theme.color.text};
+  color: ${p => p.status === 'enabled' ? p => p.theme.color.brandBrave : p.theme.color.disabledResourceBlocked};
   font-size: inherit;
   text-transform: uppercase;
   font-style: normal;
@@ -103,14 +103,14 @@ export const BlockedInfoRowText = styled<{}, 'span'>('span')`
 export const BlockedListSummaryText = styled<{}, 'span'>('span')`
   box-sizing: border-box;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1;
   color: ${p => p.theme.color.text};
 `
 
 export const BlockedListItemHeaderText = styled<{}, 'span'>('span')`
   box-sizing: border-box;
-  font-weight: 600;
+  font-weight: 500;
   color: ${p => p.theme.color.text};
   font-size: 14px;
 `
@@ -151,12 +151,17 @@ export const Link = styled<{}, 'button'>('button')`
     outline: none;
   }
 `
+interface LinkActionProps {
+  size?: 'small'
+}
 
-export const LinkAction = styled(Link)`
+export const LinkAction = styled<LinkActionProps, any>(Link)`
   box-sizing: border-box;
   color: ${p => p.theme.color.brandBrave};
-  font-size: inherit;
+  font-size: ${p => p.size === 'small' && '12px' || 'inherit'};
+  line-height: ${p => p.size === 'small' && '1'};
   font-weight: 500;
+  z-index: 2;
 
   &:focus {
     outline-offset: initial;
@@ -164,6 +169,18 @@ export const LinkAction = styled(Link)`
 
   &:active {
     outline: none;
+  }
+
+  &:disabled {
+    color: ${p => p.theme.color.disabledResourceBlocked};
+    font-style: italic;
+    font-weight: 500;
+    pointer-events: none;
+    cursor: default;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 `
 
