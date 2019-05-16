@@ -36,7 +36,7 @@ import {
 
 import Donate from '../donate/index'
 import Checkbox from '../../../components/formControls/checkbox/index'
-import { getLocale } from '../../../helpers'
+import { getLocale, normalizeSocialUrl } from '../../../helpers'
 import {
   CloseCircleOIcon,
   TwitterColorIcon,
@@ -121,6 +121,10 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
 
     const self = this
     return social.map((item: Social) => {
+      const href = normalizeSocialUrl(item.type, item.url)
+      if (!href) {
+        return null
+      }
       const logo = self.getSocialData(item)
       return (
         <StyledSocialItem

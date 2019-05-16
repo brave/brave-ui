@@ -152,7 +152,8 @@
       "!src/**/index.ts"
     ],
     "testMatch": [
-      "<rootDir>/src/**/spec.tsx"
+      "<rootDir>/src/**/spec.tsx",
+      "<rootDir>/src/*.test.ts"
     ],
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/"

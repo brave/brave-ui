@@ -72,3 +72,27 @@ export const getLocale = (key: string, replacements?: Replacements) => {
   }
   return returnVal
 }
+
+const socialRegexes = {
+  twitter: /^(https:\/\/)?(www\.)?twitter\.com\//,
+  youtube: /^(https:\/\/)?(www\.)?youtube\.com\//,
+  twitch: /^(https:\/\/)?(www\.)?twitch\.tv\//
+}
+
+/**
+ * Normalizes a social media URL from the publishers database. Returns empty
+ * if input is not a valid social URL.
+ * @param {string} type - social media type
+ * @param {string} input - input social url
+ * @returns {string} - the normalized url
+ */
+export const normalizeSocialUrl = (type: string, input: string) => {
+  const regex = socialRegexes[type]
+  if (regex && regex.test(input)) {
+    if (input.startsWith('https://')) {
+      return input
+    }
+    return `https://${input}`
+  }
+  return ''
+}
