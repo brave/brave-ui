@@ -207,7 +207,7 @@ const locale: Record<string, string> = {
   turnOnAds: 'Turn on Ads',
   turnOnRewardsDesc: 'This enables both Brave Ads and Auto-Contribute. You can always opt out each any time.',
   turnOnRewardsTitle: 'Turn on Rewards',
-  tweetNow: 'Tweet Now',
+  tweetNow: 'Tweet',
   type: 'Type',
   uhOh: 'Uh oh…',
   unVerifiedCheck: 'Check Again...',
