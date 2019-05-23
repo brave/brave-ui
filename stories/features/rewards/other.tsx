@@ -32,7 +32,7 @@ import {
 import { BatColorIcon, SettingsIcon, UpholdColorIcon } from '../../../src/components/icons'
 import GrantClaim from '../../../src/features/rewards/grantClaim'
 
-const bart = require('../../assets/img/bartBaker.jpeg')
+const favicon = require('../../assets/img/brave-favicon.png')
 const tipScreen = require('../../assets/img/tip_site.jpg')
 const siteBgLogo = require('../../assets/img/ddgo_siteBanner.svg')
 
@@ -178,10 +178,10 @@ storiesOf('Feature Components/Rewards/Other/Desktop', module)
       <div style={{ width: '400px' }}>
         <Profile
           type={select<any>('Type', { big: 'big', small: 'small' }, 'big')}
-          title={'Bart Baker'}
+          title={'Jonathon Doe'}
           verified={boolean('Verified', false)}
           provider={select<any>('Provider', { youtube: 'YouTube', twitter: 'Twitter', twitch: 'Twitch' }, 'youtube')}
-          src={bart}
+          src={favicon}
         />
       </div>
     )
