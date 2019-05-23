@@ -26,14 +26,17 @@ import {
   StyledClose,
   StyledLogoWrapper,
   StyledLogoBorder,
+  StyledLogoIcon,
   StyledLogoImage,
   StyledDomainText,
   StyledDateText,
   StyledDate,
-  StyledMonthlyInfo
+  StyledMonthlyInfo,
+  StyledButtonWrapper,
+  StyledTwitterShareButton
 } from './style'
 import { getLocale } from '../../../helpers'
-import { CloseCircleOIcon, PaperAirplaneIcon } from '../../../components/icons'
+import { CloseCircleOIcon, LogoTwitterIcon, PaperAirplaneIcon } from '../../../components/icons'
 
 export interface Props {
   id?: string
@@ -45,6 +48,7 @@ export interface Props {
   logo?: string
   amount?: string
   monthlyDate?: string
+  onTweet?: () => void
   onClose: () => void
 }
 
@@ -75,7 +79,8 @@ export default class DonationOverlay extends React.PureComponent<Props, {}> {
       domain,
       logoBgColor,
       amount,
-      monthlyDate
+      monthlyDate,
+      onTweet
     } = this.props
     return (
       <StyledOverlayContent>
@@ -154,6 +159,23 @@ export default class DonationOverlay extends React.PureComponent<Props, {}> {
                               : null
                           }
                         </StyledMonthlyInfo>
+                        {
+                          onTweet
+                          ? <>
+                            <StyleSubHeaderText>
+                              {getLocale('tellOthers')}
+                            </StyleSubHeaderText>
+                            <StyledButtonWrapper>
+                              <StyledTwitterShareButton onClick={onTweet}>
+                                {getLocale('tweetNow')}
+                                <StyledLogoIcon>
+                                  <LogoTwitterIcon />
+                                </StyledLogoIcon>
+                              </StyledTwitterShareButton>
+                            </StyledButtonWrapper>
+                          </>
+                          : null
+                        }
                       </>
                       : null
                   }

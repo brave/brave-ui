@@ -5,7 +5,7 @@
 import * as React from 'react'
 import { withState } from '@dump247/storybook-state'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean, text, object, select } from '@storybook/addon-knobs'
+import { withKnobs, boolean, number, text, object, select } from '@storybook/addon-knobs'
 
 // Components
 import Settings from './settings/settings'
@@ -15,6 +15,7 @@ import {
   WalletPanelDisabled,
   SiteBanner,
   Tip,
+  TweetBox,
   PanelWelcome,
   WalletPanel,
   WalletSummary,
@@ -77,6 +78,9 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
     />
   ))
   .add('Site Banner', withState({ donationAmounts, currentAmount: '5.0', showBanner: true }, (store) => {
+    const screenName = text('Screen Name', '')
+    const tweetText = text('Tweet Text', '')
+
     const onDonate = () => {
       console.log('onDonate')
     }
@@ -87,6 +91,10 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
 
     const showBanner = () => {
       store.set({ showBanner: true })
+    }
+
+    const isTwitterTip = () => {
+      return screenName.length > 0 || tweetText.length > 0
     }
 
     const onClose = () => {
@@ -102,6 +110,7 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
               <SiteBanner
                 domain={text('Domain', 'duckduckgo.com')}
                 name={text('Name', 'duckduckgo.com')}
+                screenName={screenName}
                 title={text('Title', '')}
                 recurringDonation={boolean('Current recurring donation', true)}
                 balance={text('Balance ', '5.0')}
@@ -129,7 +138,16 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
                   }
                 ]}
                 showUnVerifiedNotice={boolean('Show unverified notice', false)}
-              />
+              >
+                {
+                  isTwitterTip()
+                  ? <TweetBox
+                      tweetText={tweetText}
+                      tweetTimestamp={number('Timestamp in seconds', 46420000) || 0}
+                  />
+                  : null
+                }
+              </SiteBanner>
             </div>
             : null
         }
