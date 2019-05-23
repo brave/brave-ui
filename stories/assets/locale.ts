@@ -185,6 +185,7 @@ const locale: Record<string, string> = {
   serviceTextToggle: 'By turning on Brave Rewards, you indicate that you have read and agree to the',
   serviceTextPanelWelcome: 'By clicking ‘Join Rewards’, you indicate that you have read and agree to the',
   serviceTextWelcome: 'By clicking ‘Yes, I\'m in!’, you indicate that you have read and agree to the',
+  serviceTextReady: 'By clicking ‘Yes, I\'m Ready!’, you indicate that you have read and agree to the',
   settings: 'Settings',
   site: 'site',
   siteBannerNoticeNote: 'NOTE:',
