@@ -4,13 +4,23 @@
 
 import * as React from 'react'
 
-import { StyledCard } from './style'
+import * as Styled from './style'
 
+export type Emphasis = '50' | '60' // a (small) scale
 export interface CardProps {
   testId?: string
   children?: React.ReactNode
   className?: string
+  useDefaultContentPadding?: boolean
+  emphasis?: Emphasis
 }
+
+interface PropsWithDefaults {
+  useDefaultContentPadding: boolean
+  emphasis: Emphasis
+}
+
+type ActualProps = CardProps & PropsWithDefaults
 
 /**
  * Card Component
@@ -18,12 +28,29 @@ export interface CardProps {
  * @prop {string} testId - the test id to be used for testing
  * @prop {React.ReactNode} children - the child components/elements to be included
  */
-export default class Card extends React.PureComponent<CardProps, {}> {
-  render () {
-    const { testId, children, className } = this.props
+export default class Card extends React.Component<ActualProps, {}> {
+  static defaultProps = {
+    useDefaultContentPadding: true,
+    emphasis: '50'
+  }
 
+  render () {
+    const {
+      testId,
+      children
+    } = this.props
+
+    const styleProps = {
+      className: this.props.className,
+      useDefaultContentPadding: this.props.useDefaultContentPadding,
+      emphasis: this.props.emphasis
+    }
     return (
-      <StyledCard className={className} data-test-id={testId}>{children}</StyledCard>
+      <Styled.Card data-test-id={testId} {...styleProps}>
+        <Styled.Content {...styleProps}>
+          {children}
+        </Styled.Content>
+      </Styled.Card>
     )
   }
 }
