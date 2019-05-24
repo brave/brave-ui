@@ -6,7 +6,8 @@
 import * as React from 'react'
 
 // Feature-specific components
-import { Content, Title, Paragraph } from '../../../../../src/features/welcome/'
+import { Content, Title, Paragraph, SelectGrid } from '../../../../../src/features/welcome/'
+import { SelectBox } from '../../../../../src/features/shields'
 
 // Shared components
 import { Button } from '../../../../../src/components'
@@ -21,11 +22,32 @@ interface Props {
   index: number
   currentScreen: number
   onClick: () => void
+  fakeOnChange: () => void
+  isDefaultSearchGoogle: boolean
 }
 
-export default class SearchEngineBox extends React.PureComponent<Props, {}> {
+interface State {
+  searchEngineSelected: boolean
+}
+
+export default class SearchEngineBox extends React.PureComponent<Props, State> {
+  constructor (props: Props) {
+    super(props)
+    this.state = {
+      searchEngineSelected: false
+    }
+  }
+
+  onChangeDefaultSearchEngine = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    console.log((event.target.value) !== '')
+    this.setState({ searchEngineSelected: (event.target.value) !== '' })
+    this.props.fakeOnChange()
+  }
+
   render () {
-    const { index, currentScreen, onClick } = this.props
+    const { index, currentScreen, onClick, isDefaultSearchGoogle } = this.props
+    const { searchEngineSelected } = this.state
+    const bodyText = isDefaultSearchGoogle ? `${locale.chooseSearchEngine} ${locale.privateExperience}` : locale.chooseSearchEngine
     return (
       <Content
         zIndex={index}
@@ -35,14 +57,22 @@ export default class SearchEngineBox extends React.PureComponent<Props, {}> {
       >
         <WelcomeSearchImage />
         <Title>{locale.setDefaultSearchEngine}</Title>
-        <Paragraph>{locale.chooseSearchEngine}</Paragraph>
-          <Button
-            level='primary'
-            type='accent'
-            size='large'
-            text={locale.search}
-            onClick={onClick}
-          />
+        <Paragraph>{bodyText}</Paragraph>
+          <SelectGrid>
+            <SelectBox onChange={this.onChangeDefaultSearchEngine}>
+              <option value=''>{locale.selectSearchEngine}</option>
+              <option value='DuckDuckGo'>{locale.fakeSearchProvider1}</option>
+              <option value='Google'>{locale.fakeSearchProvider2}</option>
+            </SelectBox>
+            <Button
+              level='primary'
+              type='accent'
+              size='large'
+              text={locale.setDefault}
+              disabled={!searchEngineSelected}
+              onClick={onClick}
+            />
+          </SelectGrid>
       </Content>
     )
   }

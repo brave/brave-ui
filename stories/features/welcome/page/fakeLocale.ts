@@ -13,8 +13,13 @@ const locale = {
   import: 'Import',
   imported: 'Imported',
   // third screen
-  setDefaultSearchEngine: 'Change your search engine',
+  setDefault: 'Set default',
+  setDefaultSearchEngine: 'Set default search engine',
   chooseSearchEngine: 'Choose the search engine you would like to use by default when searching the web from the address bar.',
+  privateExperience: 'For a more private search experience, try DuckDuckGo.',
+  selectSearchEngine: 'Select a search engine',
+  fakeSearchProvider1: 'DuckDuckGo',
+  fakeSearchProvider2: 'Google (default)',
   // fourth screen
   chooseYourTheme: 'Choose your color theme',
   findToolbarTheme: 'Set the color of your toolbar by selecting the light or dark option from the settings panel.',
