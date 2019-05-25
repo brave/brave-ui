@@ -251,6 +251,24 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
       </Styled.FullSizeWrapper>
     )
   }
+
+  renderDescription (isInitialView: boolean) {
+    const {
+      description,
+      extraDescriptionChild
+    } = this.props
+
+    const descriptionExtra = isInitialView && extraDescriptionChild
+      ? extraDescriptionChild
+      : null
+
+    return (
+      <>
+        <Styled.Description>
+          {description}
+        </Styled.Description>
+        {descriptionExtra}
+      </>
     )
   }
 
@@ -272,9 +290,7 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
             {this.getToggleHeader(this.props)}
             <Styled.Break />
             <Styled.DetailInfo>
-              <Styled.Description>
-                {description}
-              </Styled.Description>
+            {this.renderDescription(!showDetailView && !showSettingsView)}
             </Styled.DetailInfo>
             {this.getBoxContent()}
           </Styled.ContentWrapper>
