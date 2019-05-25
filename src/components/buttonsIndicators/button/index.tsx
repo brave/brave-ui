@@ -41,14 +41,14 @@ export default class ThemedButton extends React.PureComponent<Props, {}> {
     main: false
   }
 
-  getButtonComponent () {
+  getButtonComponent (): React.ComponentClass<Props> {
     switch (this.props.level) {
       case 'primary':
-        return PrimaryButton
+        return PrimaryButton as any
       case 'secondary':
-        return SecondaryButton
+        return SecondaryButton as any
       case 'tertiary':
-        return TertiaryButton
+        return TertiaryButton as any
     }
     throw new Error(`Unknown component level: ${this.props.level || '[undefined]'}`)
   }
