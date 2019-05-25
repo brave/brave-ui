@@ -45,6 +45,9 @@ const theme: ITheme = {
     // text
     detailDescription: colors.grey500,
     text: colors.grey700,
+    // info
+    infoBackground: colors.blue000,
+    infoForeground: colors.blue400,
     // form controls
     inputBorder: colors.grey500,
     separatorLine: colors.grey100,

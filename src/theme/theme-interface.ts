@@ -20,6 +20,8 @@ export default interface IThemeProps {
     defaultControl: string
     defaultControlInteracting: string
     defaultControlActive: string
+    infoForeground: string
+    infoBackground: string
     warn: string
     warnInteracting: string
     warnActive: string

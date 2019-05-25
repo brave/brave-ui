@@ -6,6 +6,7 @@ import * as React from 'react'
 import styled, { css } from '../../../../theme'
 import { Type } from './index'
 import Card, { CardProps } from '../../../../components/layout/card'
+import { AlertCircleIcon } from '../../../../components/icons'
 
 interface StyleProps {
   open?: boolean
@@ -231,4 +232,35 @@ export const ToggleWrapper = styled<StyleProps, 'div'>('div')`
 
 export const MobileListWrapper = styled<{}, 'div'>('div')`
   padding: 0 24px;
+`
+
+export const Alert = styled<{}, 'div'>('div')`
+  background: ${p => p.theme.color.infoBackground};
+  padding: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+`
+
+// TODO: use a React FC which can:
+// - decide the correct icon to use based on alert props
+// - decide the correct color to use based on theme and props
+// But we can't use that until we can get a ThemeContext or useTheme hook
+// from styled-components 4.x
+export const AlertIcon = styled(AlertCircleIcon)`
+  align-self: flex-start;
+  flex-shrink: 0;
+  height: 24px;
+  width: 24px;
+  margin-right: 8px;
+  color: ${p => p.theme.color.infoForeground};
+`
+
+export const AlertContent = styled<{}, 'div'>('div')`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  font-size: 14px;
+  min-height: 100%;
 `

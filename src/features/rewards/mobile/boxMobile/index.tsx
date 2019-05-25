@@ -281,7 +281,26 @@ export default class BoxMobile extends React.PureComponent<Props, State> {
         </Styled.Flip>
         {this.getDetailContent(showDetailView)}
         {this.getSettingsContent(showSettingsView)}
+        {this.renderAlert()}
       </Styled.BoxCard>
+    )
+  }
+
+  renderAlert () {
+    const {
+      alertContent
+    } = this.props
+
+    if (!alertContent) {
+      return null
+    }
+    return (
+      <Styled.Alert>
+        <Styled.AlertIcon />
+        <Styled.AlertContent>
+          {alertContent}
+        </Styled.AlertContent>
+      </Styled.Alert>
     )
   }
 }

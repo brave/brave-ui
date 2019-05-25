@@ -47,6 +47,7 @@ class AdsBoxMobile extends React.Component<Props, State> {
         checked={checked}
         toggleAction={this.onAdsToggle}
         settingsChild={<div>Ads Settings content</div>}
+        alertContent={<>Sorry! Ads are not available yet in your region.</>}
       >
         <List title={<StyledListContent>{locale.adsEarnings}</StyledListContent>}>
           <StyledListContent>
