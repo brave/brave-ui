@@ -6,17 +6,25 @@ exports[`card tests basic tests matches the snapshot 1`] = `
   width: 100%;
   min-height: auto;
   margin: 0;
-  padding: 30px 36px;
   background-color: #fff;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0,0,0,.15);
   font-size: inherit;
+  font-family: Muli,sans-serif;
   box-sizing: border-box;
   position: relative;
+}
+
+.c1 {
+  padding: 32px;
 }
 
 <div
   className="c0"
   data-test-id="testCard"
-/>
+>
+  <div
+    className="c1"
+  />
+</div>
 `;
