@@ -43,6 +43,9 @@ export const CaratStrongUpIcon = RotatedIconComponent(CaratStrongIcon, 180)
 export const CaratStrongDownIcon = RotatedIconComponent(CaratStrongIcon, 0)
 export { default as CheckCircleIcon } from './check-circle'
 export { default as CheckIcon } from './check'
+export { default as CheckmarkCircleL } from './checkmark-circle-l'
+export { default as CheckmarkCircleS } from './checkmark-circle-s'
+export { default as CheckmarkCircleR } from './checkmark-circle-r'
 export { default as ClipboardOIcon } from './clipboard-o'
 export { default as CloseCircleOIcon } from './close-circle-o'
 export { default as CloseCircleIcon } from './close-circle'
