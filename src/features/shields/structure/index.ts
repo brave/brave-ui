@@ -20,6 +20,9 @@ export const ShieldsPanel = styled<{}, 'div'>('div')`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto auto;
+  /* fix outline of elements being cut on linux and windows */
+  /* see see https://github.com/brave/brave-browser/issues/4225 */
+  padding: 0 1px;
 `
 
 interface ShieldsHeaderProps {
@@ -54,7 +57,7 @@ export const MainToggle = styled<MainToggleProps, 'section'>('section')`
     justify-content: flex-end;
     width: fit-content;
     height: 100%;
-    margin-left: 54px;
+    margin-left: 52px;
     align-items: center;
   }
 `
@@ -101,7 +104,7 @@ export const BlockedInfoRow = styled<BlockedInfoRowProps, 'div'>('div')`
   box-sizing: border-box;
   display: grid;
   grid-template-columns: ${p => p.extraColumn ? '1fr auto auto' : '1fr auto'};
-  grid-gap: ${p => p.extraColumn ? '4px' : '0'};
+  grid-gap: 0;
   align-items: center;
   color: ${p => p.theme.color.text};
   user-select: none;
@@ -210,6 +213,9 @@ export const BlockedListContent = styled<{}, 'div'>('div')`
   height: 100%;
   z-index: 2;
   cursor: default;
+  /* add extra padding since shields focus outline-width is set to 2px */
+  /* see https://github.com/brave/brave-browser/issues/4225 */
+  padding: 1px;
 `
 
 export const BlockedListHeader = styled<{}, 'div'>('div')`
@@ -234,6 +240,10 @@ export const BlockedListSummary = styled<BlockedListSummaryProps, 'summary'>('su
   grid-template-columns: ${p => p.stats === false ? '30px 1fr' : '28px 28px 1fr'};
   align-items: center;
   padding: 8px 24px 8px 20px;
+  /* avoid focus being cut by sibling elements. */
+  /* see https://github.com/brave/brave-browser/issues/4225 */
+  position: relative;
+  z-index: 5;
 
   &:focus {
     outline-width: 2px;
@@ -266,13 +276,16 @@ export const BlockedListItemHeader = styled<{}, 'li'>('li')`
   box-sizing: border-box;
   position: sticky;
   top: 0;
-  z-index: 3;
+  z-index: 4;
   display: grid;
   grid-template-columns: 36px 1fr auto;
   align-items: center;
   padding: 12px 24px 12px 14px;
   line-height: 1;
   background: ${p => p.theme.color.panelBackground};
+  /* prevent z-index overflowing focus on sibling elements */
+  /* see https://github.com/brave/brave-browser/issues/4225 */
+  margin-top: 1px;
 
   &:first-of-type {
     border-top: 0;
@@ -339,6 +352,10 @@ export const BlockedListItemDetails = styled<{}, 'details'>('details')`
 
 export const BlockedListItemSummary = styled(BlockedListItemWithOptions.withComponent('summary'))`
   position: relative;
+  /* prevent focus being overflown by siblings/scroll on win/linux*/
+  /* see https://github.com/brave/brave-browser/issues/4225 */
+  z-index: 3;
+  margin: 0px 1px;
 
   &::-webkit-details-marker {
     display: none;
