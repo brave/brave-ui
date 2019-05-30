@@ -27,8 +27,8 @@ export interface Props {
 
 export default class GrantComplete extends React.PureComponent<Props, {}> {
   static defaultProps = {
-    amountTitleText: getLocale('newTokenGrant'),
-    dateTitleText: getLocale('grantExpire')
+    amountTitleText: getLocale('grantAmountTitleUGP'),
+    dateTitleText: getLocale('grantDateTitleUGP')
   }
   render () {
     const { id, testId, onClose, amount, date, isMobile } = this.props
