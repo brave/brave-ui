@@ -40,11 +40,9 @@ const theme: ITheme = {
     panelBackground: colors.white,
     panelBackgroundSecondary: colors.neutral000,
     primaryBackground: colors.white,
-    contextMenuBackground: colors.white,
     secondaryBackground: colors.grey400,
     modalOverlayBackground: 'rgba(36,37,54,0.85)',
     // text
-    contextMenuForeground: colors.grey800,
     detailDescription: colors.grey500,
     text: colors.grey700,
     // form controls
