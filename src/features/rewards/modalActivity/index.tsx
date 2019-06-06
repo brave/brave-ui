@@ -19,17 +19,20 @@ import {
   StyledWarningText,
   StyledTables,
   StyledNote,
-  StyledTableTitle,
   StyledTableSubTitle,
   StyledVerified,
   StyledVerifiedText,
   StyledSelectOption,
   StyledIcon,
+  StyledIconPDF,
   StyledClosing,
   StyledActionIcon,
   StyledAlertWrapper,
-  StyledWarningWrapper,
-  StyledVerifiedIcon
+  StyledVerifiedIcon,
+  StyledTable,
+  StyledTableMenu,
+  StyledLink,
+  StyledFirstLink
 } from './style'
 import TableContribute, { DetailRow as ContributeRow } from '../tableContribute'
 import TableTransactions, { DetailRow as TransactionRow } from '../tableTransactions'
@@ -58,6 +61,8 @@ export interface SummaryItem {
 
 export interface Props {
   contributeRows: ContributeRow[]
+  recurringRows: ContributeRow[]
+  tipRows: ContributeRow[]
   onClose: () => void
   onPrint: () => void
   onDownloadPDF: () => void
@@ -70,10 +75,18 @@ export interface Props {
   id?: string
   summary: SummaryItem[]
   total: Token
-  paymentDay: number
+  paymentDay: string
+  isPdfVersion?: boolean
 }
 
-export default class ModalActivity extends React.PureComponent<Props, {}> {
+interface State {
+  showTransactionTable: boolean
+  showMonthlyContributionTable: boolean
+  showAutoContributeTable: boolean
+  showTipsTable: boolean
+}
+
+export default class ModalActivity extends React.PureComponent<Props, State> {
   private colors: Record<SummaryType, TokenType> = {
     deposit: 'earnings',
     grant: 'earnings',
@@ -83,12 +96,27 @@ export default class ModalActivity extends React.PureComponent<Props, {}> {
     donations: 'donation'
   }
 
-  private hasWarnings: boolean = false
+  constructor (props: Props) {
+    super(props)
+    this.state = {
+      showTransactionTable: true,
+      showAutoContributeTable: false,
+      showMonthlyContributionTable: false,
+      showTipsTable: false
+    }
+  }
 
   get headers () {
     return [
       getLocale('rewardsContributeVisited'),
-      getLocale('rewardsContributeAttention'),
+      getLocale('payment')
+    ]
+  }
+
+  get tipsHeaders () {
+    return [
+      getLocale('rewardsTipVisited'),
+      getLocale('rewardsTipDate'),
       getLocale('payment')
     ]
   }
@@ -102,7 +130,6 @@ export default class ModalActivity extends React.PureComponent<Props, {}> {
   }
 
   getSummaryBox = () => {
-    this.hasWarnings = false
     let items: React.ReactNode[]
 
     if (!this.props.summary) {
@@ -112,22 +139,13 @@ export default class ModalActivity extends React.PureComponent<Props, {}> {
     items = this.props.summary.map((item: SummaryItem, i: number) => {
       let title: React.ReactNode = item.text
 
-      if (item.notPaid) {
-        this.hasWarnings = true
-        title = (
-          <StyledWarningWrapper>
-            {title} <StyledAlertWrapper><AlertCircleIcon /></StyledAlertWrapper>
-          </StyledWarningWrapper>
-        )
-      }
-
       return (
         <ListToken
           key={`${this.props.id}-summary-${i}`}
           title={title}
           value={item.token.value}
           converted={item.token.converted}
-          color={item.notPaid ? 'notPaid' : this.colors[item.type]}
+          color={this.colors[item.type]}
           size={'small'}
           border={i === 0 ? 'first' : 'default'}
           isNegative={item.token.isNegative}
@@ -149,18 +167,58 @@ export default class ModalActivity extends React.PureComponent<Props, {}> {
     return items
   }
 
+  selectTransactionTable = () => {
+    this.setState({
+      showTransactionTable: true,
+      showAutoContributeTable: false,
+      showMonthlyContributionTable: false,
+      showTipsTable: false
+    })
+  }
+
+  selectMonthlyContributionTable = () => {
+    this.setState({
+      showTransactionTable: false,
+      showAutoContributeTable: false,
+      showMonthlyContributionTable: true,
+      showTipsTable: false
+    })
+  }
+
+  selectAutoContributeTable = () => {
+    this.setState({
+      showTransactionTable: false,
+      showAutoContributeTable: true,
+      showMonthlyContributionTable: false,
+      showTipsTable: false
+    })
+  }
+
+  selectTipsTable = () => {
+    this.setState({
+      showTransactionTable: false,
+      showAutoContributeTable: false,
+      showMonthlyContributionTable: false,
+      showTipsTable: true
+    })
+  }
+
   render () {
     const {
       id,
       onClose,
       contributeRows,
+      recurringRows,
+      tipRows,
       onMonthChange,
       currentMonth,
       openBalance,
       closingBalance,
       months,
       transactionRows,
-      paymentDay
+      paymentDay,
+      onDownloadPDF,
+      onPrint
     } = this.props
 
     return (
@@ -208,55 +266,115 @@ export default class ModalActivity extends React.PureComponent<Props, {}> {
                   </StyledBalance>
                   : null
               }
-
             </StyledLeft>
             <StyledRight>
               <StyledIconWrap>
-                <StyledIcon>
+                <StyledIcon onClick={onPrint}>
                   <StyledActionIcon>
                     <PrintIcon />
                   </StyledActionIcon>
                   <StyledIconText>{getLocale('print')}</StyledIconText>
                 </StyledIcon>
-                <StyledIcon>
+                <StyledIconPDF onClick={onDownloadPDF}>
                   <StyledActionIcon>
                     <DownloadIcon />
                   </StyledActionIcon>
                   <StyledIconText>{getLocale('downloadPDF')}</StyledIconText>
-                </StyledIcon>
+                </StyledIconPDF>
               </StyledIconWrap>
               {this.getSummaryBox()}
             </StyledRight>
           </StyledHeader>
-          {
-            this.hasWarnings
-              ? <StyledWarning>
-                <StyledAlertWrapper>
-                  <AlertCircleIcon />
-                </StyledAlertWrapper>
-                <StyledWarningText>
-                  <b>{getLocale('paymentNotMade')}</b> {getLocale('paymentWarning')}
-                </StyledWarningText>
-              </StyledWarning>
-              : null
-          }
+          <StyledWarning>
+            <StyledAlertWrapper>
+              <AlertCircleIcon />
+            </StyledAlertWrapper>
+            <StyledWarningText>
+              {getLocale('paymentWarning')}
+            </StyledWarningText>
+          </StyledWarning>
           <StyledTables>
-            <StyledTableTitle>{getLocale('transactions')}</StyledTableTitle>
-            <TableTransactions
-              rows={transactionRows}
-            />
-            <StyledTableTitle>
-              <span>{getLocale('contributeAllocation')}</span>
-              <StyledTableSubTitle>
-                {getLocale('paymentMonthly', { day: paymentDay })}
-              </StyledTableSubTitle>
-            </StyledTableTitle>
-            <TableContribute
-              header={this.headers}
-              rows={contributeRows}
-              allSites={true}
-              showRowAmount={true}
-            />
+            <StyledTableMenu>
+              <StyledFirstLink selected={this.state.showTransactionTable} onClick={this.selectTransactionTable} data-test-id={'cont1'}>
+                {getLocale('transactions')}
+              </StyledFirstLink>
+              <StyledLink selected={this.state.showMonthlyContributionTable} onClick={this.selectMonthlyContributionTable} data-test-id={'cont2'}>
+                {getLocale('monthlyContributions')}
+              </StyledLink>
+              <StyledLink selected={this.state.showAutoContributeTable} onClick={this.selectAutoContributeTable} data-test-id={'cont3'}>
+                {getLocale('autoContribute')}
+              </StyledLink>
+              <StyledLink selected={this.state.showTipsTable} onClick={this.selectTipsTable} data-test-id={'cont4'}>
+                {getLocale('tips')}
+              </StyledLink>
+            </StyledTableMenu>
+              {
+                this.state.showTransactionTable ?
+                  <StyledTable>
+                    <TableTransactions
+                      rows={transactionRows}
+                      testId={'txTable'}
+                    >
+                      {getLocale('noStatementTransactions')}
+                    </TableTransactions>
+                  </StyledTable>
+                : null
+              }
+              {
+                this.state.showMonthlyContributionTable ?
+                  <>
+                    <StyledTable>
+                      <TableContribute
+                        header={this.headers}
+                        rows={recurringRows}
+                        allSites={true}
+                        showRowAmount={true}
+                        testId={'monthlyTable'}
+                      >
+                        {getLocale('noStatementMonthlyContributions')}
+                      </TableContribute>
+                    </StyledTable>
+                    <StyledTableSubTitle>
+                      {getLocale('paymentMonthly', { day: paymentDay })}
+                    </StyledTableSubTitle>
+                  </>
+                : null
+              }
+              {
+                this.state.showAutoContributeTable ?
+                  <>
+                    <StyledTable>
+                      <TableContribute
+                        header={this.headers}
+                        rows={contributeRows}
+                        allSites={true}
+                        showRowAmount={true}
+                        testId={'acTable'}
+                      >
+                        {getLocale('noStatementAutoContributions')}
+                      </TableContribute>
+                    </StyledTable>
+                    <StyledTableSubTitle>
+                      {getLocale('paymentMonthly', { day: paymentDay })}
+                    </StyledTableSubTitle>
+                  </>
+                : null
+              }
+              {
+                this.state.showTipsTable ?
+                  <StyledTable>
+                    <TableContribute
+                      header={this.tipsHeaders}
+                      rows={tipRows}
+                      allSites={true}
+                      showRowAmount={true}
+                      testId={'tipsTable'}
+                    >
+                      {getLocale('noStatementTips')}
+                    </TableContribute>
+                  </StyledTable>
+                : null
+              }
             <StyledVerified>
               <StyledVerifiedIcon>
                 <VerifiedSIcon />

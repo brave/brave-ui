@@ -25,7 +25,7 @@ const locale = {
   contributionTime5: '5 seconds',
   contributionTime60: '60 seconds',
   contributionTime8: '8 seconds',
-  contributionTitle: 'Brave Contribute',
+  contributionTitle: 'Auto-Contribute',
   contributionVideos: 'Allow contribution to videos',
   contributionVisit10: '10 visits',
   contributionVisit1: '1 visit',

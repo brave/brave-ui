@@ -28,6 +28,7 @@ type Token = {
 }
 
 export interface Props {
+  hasActivity?: boolean
   onActivity?: () => void
   report: {
     grant?: Token
@@ -123,6 +124,7 @@ export default class WalletSummary extends React.PureComponent<Props, {}> {
   render () {
     const {
       id,
+      hasActivity,
       onActivity,
       compact,
       reservedAmount,
@@ -161,8 +163,8 @@ export default class WalletSummary extends React.PureComponent<Props, {}> {
             }
           </div>
           {
-            onActivity
-            ? <StyledActivity onClick={onActivity}>
+            hasActivity ?
+            <StyledActivity onClick={onActivity} data-test-id='monthlyStatementButton'>
               <StyledActivityIcon>
                 <WalletInfoIcon />
               </StyledActivityIcon>

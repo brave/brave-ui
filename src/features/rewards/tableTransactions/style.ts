@@ -6,11 +6,13 @@ import styled, { css } from 'styled-components'
 import { TransactionType } from './index'
 
 const colors: Record<TransactionType, string> = {
-  deposit: '#9f22a1',
-  tipOnLike: '#696fdc',
-  donation: '#696fdc',
-  contribute: '#9752cb',
-  recurringDonation: '#696fdc'
+  depositTx: '#9f22a1',
+  tipOnLikeTx: '#696fdc',
+  donationTx: '#696fdc',
+  contributeTx: '#9752cb',
+  recurringDonationTx: '#696fdc',
+  grantsTx: '#c12d7c',
+  earningFromAdsTx: '#c12d7c'
 }
 
 const getColor = (p: StyleProps) => {

@@ -27,7 +27,8 @@ interface ProfileCell {
 
 export interface DetailRow {
   profile: ProfileCell
-  attention: number
+  attention?: number
+  tipDate?: string
   url: string
   onRemove?: () => void
   token?: { value: string, converted: string }
@@ -110,11 +111,19 @@ export default class TableContribute extends React.PureComponent<Props, {}> {
         ]
       }
 
-      if (!isExcluded) {
+      if (!isExcluded && row.attention) {
         cell.content.push({
           content: (
             <StyledText>
               {row.attention}%
+            </StyledText>
+          )
+        })
+      } else if (row.tipDate && row.tipDate !== '') {
+        cell.content.push({
+          content: (
+            <StyledText>
+              {row.tipDate}
             </StyledText>
           )
         })
@@ -161,7 +170,7 @@ export default class TableContribute extends React.PureComponent<Props, {}> {
 
       if (this.props.showRowAmount) {
         if (this.props.showRemove) {
-          const remaining = (100 - row.attention) / 1.04
+          const remaining = row.attention ? (100 - row.attention) / 1.04 : 0
           cell.customStyle = {
             background: `linear-gradient(
               to right,
@@ -173,7 +182,7 @@ export default class TableContribute extends React.PureComponent<Props, {}> {
               transparent 100%
             )`
           }
-        } else {
+        } else if (row.attention) {
           const remaining = 100 - row.attention
           cell.customStyle = {
             background: `linear-gradient(90deg, transparent ${remaining}%, rgba(210, 198, 243, 0.39) ${row.attention}%)`
@@ -198,8 +207,8 @@ export default class TableContribute extends React.PureComponent<Props, {}> {
           rows={this.getRows(rows)}
         />
         {
-          !allSites && (numSites > 0 || numExcludedSites > 0)
-            ? <StyledToggleWrap>
+          !allSites && (numSites > 0 || numExcludedSites > 0) ?
+            <StyledToggleWrap>
               <StyledToggle onClick={onShowAll}>{getLocale('showAll')}</StyledToggle>
             </StyledToggleWrap>
             : null

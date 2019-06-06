@@ -5,14 +5,13 @@
 import * as React from 'react'
 import {
   StyledTHLast,
-  StyledType,
   StyledProvider
 } from './style'
 import Table, { Row } from '../../../components/dataTables/table/index'
 import { getLocale } from '../../../helpers'
 import Tokens, { Type as TokenType } from '../tokens'
 
-export type TransactionType = 'deposit' | 'tipOnLike' | 'donation' | 'contribute' | 'recurringDonation'
+export type TransactionType = 'depositTx' | 'tipOnLikeTx' | 'donationTx' | 'contributeTx' | 'recurringDonationTx' | 'grantsTx' | 'earningFromAdsTx'
 
 type Description = string | { publisher: string, platform: string }
 
@@ -27,21 +26,23 @@ export interface Props {
   id?: string
   children?: React.ReactNode
   rows?: DetailRow[]
+  testId?: string
 }
 
 export default class TableTransactions extends React.PureComponent<Props, {}> {
   private tokenColors: Record<TransactionType, TokenType> = {
-    deposit: 'earnings',
-    tipOnLike: 'donation',
-    donation: 'donation',
-    contribute: 'contribute',
-    recurringDonation: 'donation'
+    depositTx: 'earnings',
+    tipOnLikeTx: 'donation',
+    donationTx: 'donation',
+    contributeTx: 'contribute',
+    recurringDonationTx: 'donation',
+    grantsTx: 'earnings',
+    earningFromAdsTx: 'earnings'
   }
 
   getHeader = () => {
     const header: string[] = [
       getLocale('date'),
-      getLocale('type'),
       getLocale('description'),
       getLocale('amount')
     ]
@@ -79,9 +80,6 @@ export default class TableTransactions extends React.PureComponent<Props, {}> {
             content: row.date
           },
           {
-            content: <StyledType type={row.type}>{getLocale(row.type)}</StyledType>
-          },
-          {
             content: this.getDescription(row.description)
           },
           {
@@ -106,10 +104,10 @@ export default class TableTransactions extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { id, children, rows } = this.props
+    const { id, children, rows, testId } = this.props
 
     return (
-      <div id={id}>
+      <div id={id} data-test-id={testId}>
         <Table
           header={this.getHeader()}
           children={children}

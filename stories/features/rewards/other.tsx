@@ -152,7 +152,7 @@ storiesOf('Feature Components/Rewards/Other/Desktop', module)
     return (
       <div style={{ width: '400px' }}>
         <ListToken
-          title={text('Title', 'Brave Contribute')}
+          title={text('Title', 'Auto-Contribute')}
           value={text('Value', '10.0')}
           converted={text('Converted', '0.25')}
           isNegative={boolean('Is negative', false)}

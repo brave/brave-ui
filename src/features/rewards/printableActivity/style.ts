@@ -3,27 +3,27 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from '../../../theme'
-
-interface StyleProps {
-  selected: boolean
-}
+import palette from '../../../theme/colors'
 
 export const StyledWrapper = styled<{}, 'div'>('div')`
-  display: inline-block;
-  white-space: nowrap;
+  background-color: white;
+`
+
+export const StyledMarginWrapper = styled<{}, 'div'>('div')`
   font-family: ${p => p.theme.fontFamily.body};
+  margin: 50px;
 `
 
 export const StyledTitle = styled<{}, 'div'>('div')`
   font-weight: 600;
-  color: #1B1D2F;
+  color: ${palette.black};
   font-family: ${p => p.theme.fontFamily.heading};
   font-size: 16px;
   line-height: 2;
 `
 
 export const StyledSubTitle = styled<{}, 'span'>('span')`
-  color: #838391;
+  color: ${palette.grey600};
   font-weight: normal;
 `
 
@@ -44,12 +44,6 @@ export const StyledRight = styled<{}, 'div'>('div')`
   margin-bottom: 45px;
 `
 
-export const StyledSelectOption = styled<{}, 'div'>('div')`
-  font-size: 22px;
-  font-weight: 300;
-  color: #4C54D2;
-`
-
 export const StyledIconWrap = styled<{}, 'div'>('div')`
   margin-bottom: 103px;
   display: flex;
@@ -64,29 +58,11 @@ export const StyledIcon = styled<{}, 'button'>('button')`
   align-items: center;
 `
 
-export const StyledIconPDF = styled<{}, 'button'>('button')`
-  display: none;
-  margin-right: 35px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  align-items: center;
-`
-
-export const StyledIconText = styled<{}, 'div'>('div')`
-  font-size: 14px;
-  line-height: 1.43;
-  color: #838391;
-  margin-left: 13px;
-`
-
 export const StyledBalance = styled<{}, 'div'>('div')`
-  display: none;
   margin-top: 41px;
 `
 
 export const StyledTables = styled<{}, 'div'>('div')`
-  background-color: #f9f9fd;
   margin: 0 -50px;
   padding: 0 50px;
 `
@@ -99,18 +75,6 @@ export const StyledWarning = styled<{}, 'div'>('div')`
   margin: 0 -50px;
   padding: 17px 50px 17px;
   align-items: flex-start;
-  white-space: normal;
-`
-
-export const StyledTable = styled<{}, 'div'>('div')`
-  margin: -24px 0;
-`
-
-export const StyledTableMenu = styled<{}, 'div'>('div')`
-  text-align: center;
-  font-family: ${p => p.theme.fontFamily.body};
-  height: 60px;
-  padding-top:5px;
 `
 
 export const StyledWarningText = styled<{}, 'div'>('div')`
@@ -131,7 +95,6 @@ export const StyledNote = styled<{}, 'div'>('div')`
   font-weight: 300;
   line-height: 1.5;
   color: #686978;
-  white-space: normal;
 `
 
 export const StyledTableTitle = styled<{}, 'div'>('div')`
@@ -193,33 +156,4 @@ export const StyledVerifiedIcon = styled<{}, 'div'>('div')`
   color: #392DD1;
   width: 24px;
   height: 24px;
-`
-
-export const StyledLink = styled<StyleProps, 'div'>('div')`
-  color: '#686978';
-  font-size: 16px;
-  font-weight: ${p => p.selected ? 'bold' : '500'};
-  letter-spacing: -0.29px;
-  line-height: 44px;
-  display: inline-block;
-  cursor: pointer;
-  padding: 0 42px;
-  margin: 0 2px;
-  position: relative;
-  top: 1px;
-  border-left: 1px solid #DFDFE8;
-`
-
-export const StyledFirstLink = styled<StyleProps, 'div'>('div')`
-  color: '#686978';
-  font-size: 16px;
-  font-weight: ${p => p.selected ? 'bold' : '500'};
-  letter-spacing: -0.29px;
-  line-height: 44px;
-  display: inline-block;
-  cursor: pointer;
-  padding: 0 42px;
-  margin: 0 2px;
-  position: relative;
-  top: 1px;
 `

@@ -56,7 +56,6 @@ class PageWallet extends React.Component<{}, State> {
           src: favicon
         },
         url: 'https://brave.com',
-        attention: 40,
         onRemove: doNothing,
         token: {
           value: '5.0',
@@ -70,7 +69,6 @@ class PageWallet extends React.Component<{}, State> {
           src: ddgo
         },
         url: 'https://brave.com',
-        attention: 20,
         onRemove: doNothing,
         token: {
           value: '4.0',
@@ -84,7 +82,6 @@ class PageWallet extends React.Component<{}, State> {
           src: buzz
         },
         url: 'https://brave.com',
-        attention: 10,
         onRemove: doNothing,
         token: {
           value: '3.0',
@@ -98,7 +95,6 @@ class PageWallet extends React.Component<{}, State> {
           src: guardian
         },
         url: 'https://brave.com',
-        attention: 5,
         onRemove: doNothing,
         token: {
           value: '2.0',
@@ -112,7 +108,6 @@ class PageWallet extends React.Component<{}, State> {
           src: wiki
         },
         url: 'https://brave.com',
-        attention: 4,
         onRemove: doNothing,
         token: {
           value: '1.0',
@@ -126,7 +121,7 @@ class PageWallet extends React.Component<{}, State> {
     return [
       {
         date: '6/1',
-        type: 'deposit',
+        type: 'depositTx',
         description: 'Brave Ads payment for May',
         amount: {
           value: '5.0',
@@ -135,7 +130,7 @@ class PageWallet extends React.Component<{}, State> {
       },
       {
         date: '6/9',
-        type: 'tipOnLike',
+        type: 'tipOnLikeTx',
         description: {
           publisher: 'Jonathon Doe',
           platform: 'YouTube'
@@ -148,7 +143,7 @@ class PageWallet extends React.Component<{}, State> {
       },
       {
         date: '6/10',
-        type: 'deposit',
+        type: 'depositTx',
         description: 'Token grant made available or unlocked',
         amount: {
           value: '10.0',
@@ -157,7 +152,7 @@ class PageWallet extends React.Component<{}, State> {
       },
       {
         date: '6/12',
-        type: 'donation',
+        type: 'donationTx',
         description: 'coinmarketcap.com',
         amount: {
           isNegative: true,
@@ -167,7 +162,7 @@ class PageWallet extends React.Component<{}, State> {
       },
       {
         date: '6/14',
-        type: 'tipOnLike',
+        type: 'tipOnLikeTx',
         description: {
           publisher: 'BrendanEich',
           platform: 'Twitter'
@@ -180,7 +175,7 @@ class PageWallet extends React.Component<{}, State> {
       },
       {
         date: '6/26',
-        type: 'deposit',
+        type: 'depositTx',
         description: 'Added via Uphold',
         amount: {
           value: '10.0',
@@ -189,7 +184,7 @@ class PageWallet extends React.Component<{}, State> {
       },
       {
         date: '6/31',
-        type: 'contribute',
+        type: 'contributeTx',
         description: 'Monthly payment',
         amount: {
           isNegative: true,
@@ -199,7 +194,7 @@ class PageWallet extends React.Component<{}, State> {
       },
       {
         date: '6/31',
-        type: 'recurringDonation',
+        type: 'recurringDonationTx',
         description: 'Monthly payment',
         amount: {
           isNegative: true,
@@ -326,6 +321,37 @@ class PageWallet extends React.Component<{}, State> {
           this.state.modalActivity
             ? <ModalActivity
               contributeRows={this.activityContributions}
+              recurringRows={[
+                {
+                  profile: {
+                    name: 'Brave',
+                    verified: true,
+                    provider: 'youtube',
+                    src: ''
+                  },
+                  url: 'https://brave.com',
+                  token: {
+                    value: '5.0',
+                    converted: '5.00'
+                  }
+                }
+              ]}
+              tipRows={[
+                {
+                  profile: {
+                    name: 'Brave',
+                    verified: true,
+                    provider: 'youtube',
+                    src: ''
+                  },
+                  tipDate: 'Jun 19',
+                  url: 'https://brave.com',
+                  token: {
+                    value: '5.0',
+                    converted: '5.00'
+                  }
+                }
+              ]}
               transactionRows={this.activityTransactions}
               onClose={this.onActivityClose}
               onPrint={doNothing}
@@ -339,7 +365,7 @@ class PageWallet extends React.Component<{}, State> {
               currentMonth={'jun-2018'}
               summary={[
                 {
-                  text: 'Token Grant available',
+                  text: 'Token grants received',
                   type: 'grant',
                   token: {
                     value: '10.0',
@@ -347,7 +373,7 @@ class PageWallet extends React.Component<{}, State> {
                   }
                 },
                 {
-                  text: 'Earnings from Brave Ads',
+                  text: 'Rewards from ads',
                   type: 'ads',
                   token: {
                     value: '10.0',
@@ -355,7 +381,7 @@ class PageWallet extends React.Component<{}, State> {
                   }
                 },
                 {
-                  text: 'Brave Contribute',
+                  text: 'Auto-Contribute',
                   type: 'contribute',
                   notPaid: true,
                   token: {
@@ -365,7 +391,7 @@ class PageWallet extends React.Component<{}, State> {
                   }
                 },
                 {
-                  text: 'Recurring Donations',
+                  text: 'Monthly contributions',
                   type: 'recurring',
                   notPaid: true,
                   token: {
@@ -375,7 +401,7 @@ class PageWallet extends React.Component<{}, State> {
                   }
                 },
                 {
-                  text: 'One-time Donations/Tips',
+                  text: 'One-time tips',
                   type: 'donations',
                   token: {
                     value: '19.0',
@@ -388,7 +414,7 @@ class PageWallet extends React.Component<{}, State> {
                 value: '1.0',
                 converted: '0.5'
               }}
-              paymentDay={12}
+              paymentDay={'12'}
               openBalance={{
                 value: '10.0',
                 converted: '5.20'

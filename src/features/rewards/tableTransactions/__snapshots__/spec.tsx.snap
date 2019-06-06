@@ -47,11 +47,6 @@ exports[`TableContribute tests basic tests matches the snapshot 1`] = `
           <th
             className="c1"
           >
-            MISSING: type
-          </th>
-          <th
-            className="c1"
-          >
             MISSING: description
           </th>
           <th
