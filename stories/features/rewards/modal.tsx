@@ -128,7 +128,7 @@ storiesOf('Feature Components/Rewards/Modal', module)
       />
     )
   }))
-  .add('Activity', () => {
+  .add('Monthly Statement', () => {
     const contributions: ContributeRow[] = [
       {
         profile: {
@@ -138,7 +138,6 @@ storiesOf('Feature Components/Rewards/Modal', module)
           src: favicon
         },
         url: 'https://brave.com',
-        attention: 40,
         onRemove: doNothing,
         token: {
           value: '5.0',
@@ -152,7 +151,6 @@ storiesOf('Feature Components/Rewards/Modal', module)
           src: ddgo
         },
         url: 'https://brave.com',
-        attention: 20,
         onRemove: doNothing,
         token: {
           value: '4.0',
@@ -166,7 +164,6 @@ storiesOf('Feature Components/Rewards/Modal', module)
           src: buzz
         },
         url: 'https://brave.com',
-        attention: 10,
         onRemove: doNothing,
         token: {
           value: '3.0',
@@ -180,7 +177,6 @@ storiesOf('Feature Components/Rewards/Modal', module)
           src: guardian
         },
         url: 'https://brave.com',
-        attention: 5,
         onRemove: doNothing,
         token: {
           value: '2.0',
@@ -194,7 +190,6 @@ storiesOf('Feature Components/Rewards/Modal', module)
           src: wiki
         },
         url: 'https://brave.com',
-        attention: 4,
         onRemove: doNothing,
         token: {
           value: '1.0',
@@ -206,7 +201,7 @@ storiesOf('Feature Components/Rewards/Modal', module)
     const transactions: TransactionsRow[] = [
       {
         date: '6/1',
-        type: 'deposit',
+        type: 'depositTx',
         description: 'Brave Ads payment for May',
         amount: {
           value: '5.0',
@@ -215,7 +210,7 @@ storiesOf('Feature Components/Rewards/Modal', module)
       },
       {
         date: '6/9',
-        type: 'tipOnLike',
+        type: 'tipOnLikeTx',
         description: {
           publisher: 'Jonathon Doe',
           platform: 'YouTube'
@@ -228,7 +223,7 @@ storiesOf('Feature Components/Rewards/Modal', module)
       },
       {
         date: '6/10',
-        type: 'deposit',
+        type: 'depositTx',
         description: 'Token grant made available or unlocked',
         amount: {
           value: '10.0',
@@ -237,7 +232,7 @@ storiesOf('Feature Components/Rewards/Modal', module)
       },
       {
         date: '6/12',
-        type: 'donation',
+        type: 'donationTx',
         description: 'coinmarketcap.com',
         amount: {
           isNegative: true,
@@ -247,7 +242,7 @@ storiesOf('Feature Components/Rewards/Modal', module)
       },
       {
         date: '6/14',
-        type: 'tipOnLike',
+        type: 'tipOnLikeTx',
         description: {
           publisher: 'BrendanEich',
           platform: 'Twitter'
@@ -260,7 +255,7 @@ storiesOf('Feature Components/Rewards/Modal', module)
       },
       {
         date: '6/26',
-        type: 'deposit',
+        type: 'depositTx',
         description: 'Added via Uphold',
         amount: {
           value: '10.0',
@@ -269,7 +264,7 @@ storiesOf('Feature Components/Rewards/Modal', module)
       },
       {
         date: '6/31',
-        type: 'contribute',
+        type: 'contributeTx',
         description: 'Monthly payment',
         amount: {
           isNegative: true,
@@ -279,12 +274,54 @@ storiesOf('Feature Components/Rewards/Modal', module)
       },
       {
         date: '6/31',
-        type: 'recurringDonation',
+        type: 'recurringDonationTx',
         description: 'Monthly payment',
         amount: {
           isNegative: true,
           value: '5.0',
           converted: '15.00'
+        }
+      },
+      {
+        date: '6/31',
+        type: 'earningFromAdsTx',
+        description: 'Earnings from Ads',
+        amount: {
+          value: '15.3',
+          converted: '3.00'
+        }
+      }
+    ]
+
+    const donations: ContributeRow[] = [
+      {
+        profile: {
+          name: 'Brave',
+          verified: true,
+          provider: 'youtube',
+          src: ''
+        },
+        url: 'https://brave.com',
+        token: {
+          value: '5.0',
+          converted: '5.00'
+        }
+      }
+    ]
+
+    const tips: ContributeRow[] = [
+      {
+        profile: {
+          name: 'Brave',
+          verified: true,
+          provider: 'youtube',
+          src: ''
+        },
+        tipDate: 'Jun 19',
+        url: 'https://brave.com',
+        token: {
+          value: '5.0',
+          converted: '5.00'
         }
       }
     ]
@@ -292,6 +329,8 @@ storiesOf('Feature Components/Rewards/Modal', module)
     return (
       <ModalActivity
         contributeRows={contributions}
+        donationRows={donations}
+        tipRows={tips}
         transactionRows={transactions}
         onClose={doNothing}
         onPrint={doNothing}
@@ -358,7 +397,7 @@ storiesOf('Feature Components/Rewards/Modal', module)
           value: '11.0',
           converted: '0.5'
         }}
-        paymentDay={12}
+        paymentDay={'12'}
         openBalance={{
           value: '10.0',
           converted: '5.20'

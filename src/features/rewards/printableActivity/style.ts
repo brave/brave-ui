@@ -5,9 +5,12 @@
 import styled from '../../../theme'
 
 export const StyledWrapper = styled<{}, 'div'>('div')`
-  display: inline-block;
-  white-space: nowrap;
+  background-color: white;
+`
+
+export const StyledMarginWrapper = styled<{}, 'div'>('div')`
   font-family: ${p => p.theme.fontFamily.body};
+  margin: 50px;
 `
 
 export const StyledTitle = styled<{}, 'div'>('div')`
@@ -60,15 +63,6 @@ export const StyledIcon = styled<{}, 'button'>('button')`
   align-items: center;
 `
 
-export const StyledIconPDF = styled<{}, 'button'>('button')`
-  display: none;
-  margin-right: 35px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  align-items: center;
-`
-
 export const StyledIconText = styled<{}, 'div'>('div')`
   font-size: 14px;
   line-height: 1.43;
@@ -77,12 +71,10 @@ export const StyledIconText = styled<{}, 'div'>('div')`
 `
 
 export const StyledBalance = styled<{}, 'div'>('div')`
-  display: none;
   margin-top: 41px;
 `
 
 export const StyledTables = styled<{}, 'div'>('div')`
-  background-color: #f9f9fd;
   margin: 0 -50px;
   padding: 0 50px;
 `

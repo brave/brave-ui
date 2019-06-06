@@ -49,6 +49,7 @@ export default class Tabs extends React.PureComponent<Props, {}> {
           key={`${self.props.id}-tab-${key}`}
           onClick={self.props.onChange.bind(self, key)}
           selected={selected}
+          data-test-id={key}
         >
           {title}
         </StyledTab>

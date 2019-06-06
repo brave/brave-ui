@@ -1,0 +1,455 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrintableActivity tests basic tests matches the snapshot 1`] = `
+.c0 {
+  background-color: white;
+}
+
+.c1 {
+  font-family: Muli,sans-serif;
+  margin: 50px;
+}
+
+.c4 {
+  font-weight: 600;
+  color: #1B1D2F;
+  font-family: Poppins,sans-serif;
+  font-size: 16px;
+  line-height: 2;
+}
+
+.c5 {
+  color: #838391;
+  font-weight: normal;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  -webkit-flex-basis: 40%;
+  -ms-flex-preferred-size: 40%;
+  flex-basis: 40%;
+}
+
+.c6 {
+  -webkit-flex-basis: 378px;
+  -ms-flex-preferred-size: 378px;
+  flex-basis: 378px;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  margin-bottom: 45px;
+}
+
+.c7 {
+  margin: 0 -50px;
+  padding: 0 50px;
+}
+
+.c22 {
+  max-width: 508px;
+  margin-top: 46px;
+  font-family: Muli,sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #686978;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 2.79;
+  -webkit-letter-spacing: 0.2px;
+  -moz-letter-spacing: 0.2px;
+  -ms-letter-spacing: 0.2px;
+  letter-spacing: 0.2px;
+  color: #4b4c5c;
+  text-transform: uppercase;
+  padding-top: 14px;
+  margin-top: 28px;
+}
+
+.c13 {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 2.79;
+  -webkit-letter-spacing: 0.2px;
+  -moz-letter-spacing: 0.2px;
+  -ms-letter-spacing: 0.2px;
+  letter-spacing: 0.2px;
+  color: #4b4c5c;
+  text-transform: none;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 2;
+  color: #9e9fab;
+  padding: 11px 0 32px;
+}
+
+.c21 {
+  margin-left: 5px;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #392DD1;
+  width: 24px;
+  height: 24px;
+}
+
+.c17 {
+  text-align: right;
+}
+
+.c16 {
+  padding-right: 10px;
+}
+
+.c12 {
+  text-align: center;
+  padding: 30px 0;
+  color: #999ea2;
+  font-size: 14px;
+}
+
+.c9 {
+  min-width: 100%;
+  margin: 24px 0;
+  margin-top: 0px;
+}
+
+.c14 {
+  min-width: 100%;
+  margin: 24px 0;
+}
+
+.c10 {
+  text-transform: uppercase;
+  text-align: left;
+  font-family: Muli,sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  border-bottom: 2px solid #dedfe4;
+  border-top: 2px solid #dedfe4;
+  color: #4B4C5C;
+  padding: 12px 0;
+}
+
+.c15 {
+  text-transform: uppercase;
+  text-align: left;
+  font-family: Muli,sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  border-bottom: 2px solid #dedfe4;
+  border-top: 2px solid #dedfe4;
+  color: #4B4C5C;
+  padding: 12px 0;
+}
+
+.c20 {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.c11 {
+  text-align: right;
+  padding-right: 14px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <div
+            className="c4"
+          >
+            MISSING: braveRewards
+             
+            <span
+              className="c5"
+            >
+              MISSING: walletActivity
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c6"
+      />
+    </div>
+    <div
+      className="c7"
+    >
+      <div
+        className="c8"
+      >
+        MISSING: transactions
+      </div>
+      <div>
+        <div>
+          <table
+            className="c9"
+          >
+            <thead>
+              <tr>
+                <th
+                  className="c10"
+                >
+                  MISSING: date
+                </th>
+                <th
+                  className="c10"
+                >
+                  MISSING: type
+                </th>
+                <th
+                  className="c10"
+                >
+                  MISSING: description
+                </th>
+                <th
+                  className="c10"
+                >
+                  <div
+                    className="c11"
+                  >
+                    MISSING: amount
+                  </div>
+                </th>
+              </tr>
+            </thead>
+          </table>
+          <div
+            className="c12"
+          >
+            MISSING: noStatementTransactions
+          </div>
+        </div>
+      </div>
+      <div
+        className="c8"
+      >
+        <span>
+          MISSING: donationAllocation
+        </span>
+        <div
+          className="c13"
+        >
+          MISSING: paymentMonthly
+        </div>
+      </div>
+      <div>
+        <div>
+          <table
+            className="c14"
+          >
+            <thead>
+              <tr>
+                <th
+                  className="c15"
+                >
+                  <div>
+                    MISSING: rewardsContributeVisited
+                  </div>
+                </th>
+                <th
+                  className="c15"
+                >
+                  <div
+                    className="c16 c17"
+                  >
+                    MISSING: payment
+                  </div>
+                </th>
+              </tr>
+            </thead>
+          </table>
+          <div
+            className="c12"
+          >
+            MISSING: noStatementMonthlyContributions
+          </div>
+        </div>
+      </div>
+      <div
+        className="c8"
+      >
+        <span>
+          MISSING: contributeAllocation
+        </span>
+        <div
+          className="c13"
+        >
+          MISSING: paymentMonthly
+        </div>
+      </div>
+      <div>
+        <div>
+          <table
+            className="c14"
+          >
+            <thead>
+              <tr>
+                <th
+                  className="c15"
+                >
+                  <div>
+                    MISSING: rewardsContributeVisited
+                  </div>
+                </th>
+                <th
+                  className="c15"
+                >
+                  <div
+                    className="c16 c17"
+                  >
+                    MISSING: payment
+                  </div>
+                </th>
+              </tr>
+            </thead>
+          </table>
+          <div
+            className="c12"
+          >
+            MISSING: noStatementAutoContributions
+          </div>
+        </div>
+      </div>
+      <div
+        className="c8"
+      >
+        <span>
+          MISSING: tipAllocation
+        </span>
+      </div>
+      <div>
+        <div>
+          <table
+            className="c14"
+          >
+            <thead>
+              <tr>
+                <th
+                  className="c15"
+                >
+                  <div>
+                    MISSING: rewardsTipVisited
+                  </div>
+                </th>
+                <th
+                  className="c15"
+                >
+                  <div
+                    className="c17"
+                  >
+                    MISSING: rewardsTipDate
+                  </div>
+                </th>
+                <th
+                  className="c15"
+                >
+                  <div
+                    className="c16 c17"
+                  >
+                    MISSING: payment
+                  </div>
+                </th>
+              </tr>
+            </thead>
+          </table>
+          <div
+            className="c12"
+          >
+            MISSING: noStatementTips
+          </div>
+        </div>
+      </div>
+      <div
+        className="c18"
+      >
+        <div
+          className="c19"
+        >
+          <svg
+            aria-hidden="true"
+            className="c20"
+            focusable="false"
+            viewBox="0 0 32 32"
+          >
+            <path
+              d="M30 16c0 7.73-6.27 14-14 14-7.732 0-14-6.269-14-14S8.268 2 16 2c7.73 0 14 6.27 14 14zm-15.573 3.374l-3.495-3.04a1.167 1.167 0 0 0-1.531 1.761l4.42 3.845c.503.438 1.27.365 1.682-.16l7.646-9.726a1.167 1.167 0 0 0-1.834-1.442l-6.888 8.762z"
+            />
+          </svg>
+        </div>
+        <div
+          className="c21"
+        >
+          MISSING: braveVerified
+        </div>
+      </div>
+    </div>
+    <div
+      className="c22"
+    >
+      <b>
+        MISSING: pleaseNote
+      </b>
+       
+      MISSING: activityNote
+      <br />
+      <br />
+      MISSING: activityCopy
+    </div>
+  </div>
+</div>
+`;

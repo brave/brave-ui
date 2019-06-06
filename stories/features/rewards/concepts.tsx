@@ -8,6 +8,8 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, number, text, object, select } from '@storybook/addon-knobs'
 
 // Components
+import { DetailRow as ContributeRow } from '../../../src/features/rewards/tableContribute'
+import { DetailRow as TransactionsRow } from '../../../src/features/rewards/tableTransactions'
 import Settings from './settings/settings'
 import SettingsMobile from './settingsMobile/settingsMobile'
 import {
@@ -20,7 +22,8 @@ import {
   WalletPanel,
   WalletSummary,
   WalletSummarySlider,
-  WalletWrapper
+  WalletWrapper,
+  PrintableActivity
 } from '../../../src/features/rewards'
 import { BatColorIcon, WalletAddIcon } from '../../../src/components/icons'
 import WelcomePage from '../../../src/features/rewards/welcomePage'
@@ -32,6 +35,11 @@ const siteBgLogo = require('../../assets/img/ddgo_siteBanner.svg')
 const siteScreen = require('../../assets/img/ddgo_site.png')
 
 const captchaDrop = require('../../assets/img/captchaDrop.png')
+
+const ddgo = require('../../assets/img/ddgo.jpg')
+const wiki = require('../../assets/img/wiki.jpg')
+const buzz = require('../../assets/img/buzz.jpg')
+const guardian = require('../../assets/img/guardian.jpg')
 
 const doNothing = (id: string) => {
   console.log('nothing')
@@ -80,6 +88,269 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
       optInAction={dummyOptInAction}
     />
   ))
+  .add('Printable Monthly Statement', () => {
+    const contributions: ContributeRow[] = [
+      {
+        profile: {
+          name: 'Jonathon Doe',
+          verified: true,
+          provider: 'youtube',
+          src: favicon
+        },
+        url: 'https://brave.com',
+        token: {
+          value: '5.0',
+          converted: '5.00'
+        }
+      },
+      {
+        profile: {
+          name: 'duckduckgo.com',
+          verified: true,
+          src: ddgo
+        },
+        url: 'https://brave.com',
+        token: {
+          value: '4.0',
+          converted: '11.00'
+        }
+      },
+      {
+        profile: {
+          name: 'buzzfeed.com',
+          verified: false,
+          src: buzz
+        },
+        url: 'https://brave.com',
+        token: {
+          value: '3.0',
+          converted: '15.00'
+        }
+      },
+      {
+        profile: {
+          name: 'theguardian.com',
+          verified: true,
+          src: guardian
+        },
+        url: 'https://brave.com',
+        token: {
+          value: '2.0',
+          converted: '17.00'
+        }
+      },
+      {
+        profile: {
+          name: 'wikipedia.org',
+          verified: false,
+          src: wiki
+        },
+        url: 'https://brave.com',
+        token: {
+          value: '1.0',
+          converted: '11.00'
+        }
+      }
+    ]
+
+    const transactions: TransactionsRow[] = [
+      {
+        date: '6/1',
+        type: 'depositTx',
+        description: 'Brave Ads payment for May',
+        amount: {
+          value: '5.0',
+          converted: '5.00'
+        }
+      },
+      {
+        date: '6/9',
+        type: 'tipOnLikeTx',
+        description: {
+          publisher: 'Jonathon Doe',
+          platform: 'YouTube'
+        },
+        amount: {
+          isNegative: true,
+          value: '5.0',
+          converted: '11.00'
+        }
+      },
+      {
+        date: '6/10',
+        type: 'depositTx',
+        description: 'Token grant made available or unlocked',
+        amount: {
+          value: '10.0',
+          converted: '15.00'
+        }
+      },
+      {
+        date: '6/12',
+        type: 'donationTx',
+        description: 'coinmarketcap.com',
+        amount: {
+          isNegative: true,
+          value: '10.0',
+          converted: '15.00'
+        }
+      },
+      {
+        date: '6/14',
+        type: 'tipOnLikeTx',
+        description: {
+          publisher: 'BrendanEich',
+          platform: 'Twitter'
+        },
+        amount: {
+          isNegative: true,
+          value: '1.0',
+          converted: '2.00'
+        }
+      },
+      {
+        date: '6/26',
+        type: 'depositTx',
+        description: 'Added via Uphold',
+        amount: {
+          value: '10.0',
+          converted: '15.00'
+        }
+      },
+      {
+        date: '6/31',
+        type: 'contributeTx',
+        description: 'Monthly payment',
+        amount: {
+          isNegative: true,
+          value: '10.0',
+          converted: '15.00'
+        }
+      },
+      {
+        date: '6/31',
+        type: 'recurringDonationTx',
+        description: 'Monthly payment',
+        amount: {
+          isNegative: true,
+          value: '5.0',
+          converted: '15.00'
+        }
+      }
+    ]
+
+    const donations: ContributeRow[] = [
+      {
+        profile: {
+          name: 'Brave',
+          verified: true,
+          provider: 'youtube',
+          src: ''
+        },
+        url: 'https://brave.com',
+        token: {
+          value: '5.0',
+          converted: '5.00'
+        }
+      }
+    ]
+
+    const tips: ContributeRow[] = [
+      {
+        profile: {
+          name: 'Brave',
+          verified: true,
+          provider: 'youtube',
+          src: ''
+        },
+        tipDate: 'Jun 19',
+        url: 'https://brave.com',
+        token: {
+          value: '5.0',
+          converted: '5.00'
+        }
+      }
+    ]
+
+    return (
+      <PrintableActivity
+        contributeRows={contributions}
+        donationRows={donations}
+        tipRows={tips}
+        transactionRows={transactions}
+        months={{ 'jun-2018': 'June 2018', 'may-2018': 'May 2018', 'apr-2018': 'April 2018' }}
+        currentMonth={'jun-2018'}
+        summary={[
+          {
+            text: 'Token Grant available',
+            type: 'grant',
+            token: {
+              value: '10.0',
+              converted: '5.20'
+            }
+          },
+          {
+            text: 'Earnings from Brave Ads',
+            type: 'ads',
+            token: {
+              value: '10.0',
+              converted: '5.20'
+            }
+          },
+          {
+            text: 'Deposits',
+            type: 'deposit',
+            token: {
+              value: '10.0',
+              converted: '5.20'
+            }
+          },
+          {
+            text: 'Brave Contribute',
+            type: 'contribute',
+            notPaid: true,
+            token: {
+              value: '10.0',
+              converted: '5.20',
+              isNegative: true
+            }
+          },
+          {
+            text: 'Recurring Donations',
+            type: 'recurring',
+            notPaid: true,
+            token: {
+              value: '2.0',
+              converted: '1.10',
+              isNegative: true
+            }
+          },
+          {
+            text: 'One-time Donations/Tips',
+            type: 'donations',
+            token: {
+              value: '19.0',
+              converted: '10.10',
+              isNegative: true
+            }
+          }
+        ]}
+        total={{
+          value: '11.0',
+          converted: '0.5'
+        }}
+        paymentDay={'12'}
+        openBalance={{
+          value: '10.0',
+          converted: '5.20'
+        }}
+        closingBalance={{
+          value: '21.0',
+          converted: '5.30'
+        }}
+      />
+    )
+  })
   .add('Site Banner', withState({ donationAmounts, currentAmount: '5.0', showBanner: true }, (store) => {
     const mediaProvider = select<any>('Provider', { youtube: 'youtube', twitter: 'twitter', twitch: 'twitch', reddit: 'reddit', github: 'github' }, 'youtube')
     const screenName = text('Screen Name', '')

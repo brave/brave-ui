@@ -9,29 +9,28 @@ interface StyleProps {
 }
 
 export const StyledTabWrapper = styled<{}, 'div'>('div')`
-  border-bottom: 1px solid #DFDFE8;
   text-align: center;
   font-family: ${p => p.theme.fontFamily.body};
+  height: 60px;
+  padding-top:5px;
 `
 
 export const StyledTab = styled<StyleProps, 'div'>('div')`
-  border-radius: 6px 6px 0 0;
-  border: 1px solid #DFDFE8;
-  border-bottom: 1px solid ${p => p.selected ? '#FFF' : '#DFDFE8'};
-  color: ${p => p.selected ? '#FB542B' : '#686978'};
+  color: '#686978';
   font-size: 16px;
-  font-weight: 500;
+  font-weight: ${p => p.selected ? 'bold' : '500'};
   letter-spacing: -0.29px;
   line-height: 44px;
   display: inline-block;
   cursor: pointer;
-  min-width: 230px;
-  padding: 0 10px;
+  min-width: 100px;
+  border-left: 1px solid #DFDFE8;
+  padding: 0 50px;
   margin: 0 2px;
   position: relative;
   top: 1px
 `
 
 export const StyledContent = styled<{}, 'div'>('div')`
-  padding: 34px 56px 20px;
+  padding: 0;
 `

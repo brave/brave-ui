@@ -12,29 +12,24 @@ import {
   StyledHeader,
   StyledLeft,
   StyledRight,
-  StyledIconWrap,
-  StyledIconText,
   StyledBalance,
   StyledWarning,
   StyledWarningText,
   StyledTables,
   StyledNote,
+  StyledTableTitle,
   StyledTableSubTitle,
   StyledVerified,
   StyledVerifiedText,
-  StyledSelectOption,
-  StyledIcon,
-  StyledIconPDF,
   StyledClosing,
-  StyledActionIcon,
   StyledAlertWrapper,
   StyledWarningWrapper,
-  StyledVerifiedIcon
+  StyledVerifiedIcon,
+  StyledMarginWrapper
 } from './style'
 import TableContribute, { DetailRow as ContributeRow } from '../tableContribute'
 import TableTransactions, { DetailRow as TransactionRow } from '../tableTransactions'
-import { Select, ControlWrapper, Modal, Tabs } from '../../../components'
-import { AlertCircleIcon, DownloadIcon, PrintIcon, VerifiedSIcon } from '../../../components/icons'
+import { AlertCircleIcon, VerifiedSIcon } from '../../../components/icons'
 import ListToken from '../listToken'
 import { Type as TokenType } from '../tokens'
 
@@ -60,10 +55,6 @@ export interface Props {
   contributeRows: ContributeRow[]
   donationRows: ContributeRow[]
   tipRows: ContributeRow[]
-  onClose: () => void
-  onPrint: () => void
-  onDownloadPDF: () => void
-  onMonthChange: (value: string, child: React.ReactNode) => void
   months: Record<string, string>
   currentMonth: string
   transactionRows: TransactionRow[]
@@ -73,14 +64,9 @@ export interface Props {
   summary: SummaryItem[]
   total: Token
   paymentDay: string
-  isPdfVersion?: boolean
 }
 
-interface State {
-  tabId: string
-}
-
-export default class ModalActivity extends React.PureComponent<Props, State> {
+export default class PrintableActivity extends React.PureComponent<Props, {}> {
   private colors: Record<SummaryType, TokenType> = {
     deposit: 'earnings',
     grant: 'earnings',
@@ -91,13 +77,6 @@ export default class ModalActivity extends React.PureComponent<Props, State> {
   }
 
   private hasWarnings: boolean = false
-
-  constructor (props: Props) {
-    super(props)
-    this.state = {
-      tabId: 'cont1'
-    }
-  }
 
   get headers () {
     return [
@@ -170,58 +149,23 @@ export default class ModalActivity extends React.PureComponent<Props, State> {
     return items
   }
 
-  onChange = (tabId: string) => {
-    this.setState({
-      tabId: tabId
-    })
-  }
-
   render () {
     const {
-      id,
-      onClose,
       contributeRows,
       donationRows,
       tipRows,
-      onMonthChange,
-      currentMonth,
       openBalance,
       closingBalance,
-      months,
       transactionRows,
-      paymentDay,
-      onDownloadPDF,
-      onPrint
+      paymentDay
     } = this.props
 
-    const customTableStyle = {
-      'min-width': '100%',
-      margin: '0'
-    }
-
     return (
-      <Modal id={id} onClose={onClose}>
-        <StyledWrapper>
+      <StyledWrapper>
+        <StyledMarginWrapper>
           <StyledHeader>
             <StyledLeft>
-              {
-                months
-                  ? <ControlWrapper text={this.selectTitle}>
-                    <Select
-                      value={currentMonth}
-                      onChange={onMonthChange}
-                    >
-                      {
-                        Object.keys(months).map((item: string) => {
-                          return <div data-value={item} key={`${id}-monthly-${item}`}>
-                            <StyledSelectOption>{months[item]}</StyledSelectOption>
-                          </div>
-                        })
-                      }
-                    </Select>
-                  </ControlWrapper>
-                  : null
-              }
+              <StyledTitle>{this.selectTitle}</StyledTitle>
               {
                 openBalance && closingBalance
                   ? <StyledBalance>
@@ -244,107 +188,83 @@ export default class ModalActivity extends React.PureComponent<Props, State> {
                   </StyledBalance>
                   : null
               }
-
             </StyledLeft>
             <StyledRight>
-              <StyledIconWrap>
-                <StyledIcon onClick={onPrint}>
-                  <StyledActionIcon>
-                    <PrintIcon />
-                  </StyledActionIcon>
-                  <StyledIconText>{getLocale('print')}</StyledIconText>
-                </StyledIcon>
-                <StyledIconPDF onClick={onDownloadPDF}>
-                  <StyledActionIcon>
-                    <DownloadIcon />
-                  </StyledActionIcon>
-                  <StyledIconText>{getLocale('downloadPDF')}</StyledIconText>
-                </StyledIconPDF>
-              </StyledIconWrap>
               {this.getSummaryBox()}
             </StyledRight>
           </StyledHeader>
           {
             this.hasWarnings
               ? <StyledWarning>
-                  <StyledAlertWrapper>
-                    <AlertCircleIcon />
-                  </StyledAlertWrapper>
-                  <StyledWarningText>
-                    <b>{getLocale('paymentNotMade')}</b> {getLocale('paymentWarning')}
-                  </StyledWarningText>
-                </StyledWarning>
+                <StyledAlertWrapper>
+                  <AlertCircleIcon />
+                </StyledAlertWrapper>
+                <StyledWarningText>
+                  <b>{getLocale('paymentNotMade')}</b> {getLocale('paymentWarning')}
+                </StyledWarningText>
+              </StyledWarning>
               : null
           }
-          <StyledTables>
-            <div>
-              <Tabs activeTabId={this.state.tabId} onChange={this.onChange}>
-                <div data-key='cont1' data-title={'Transactions'}>
-                  <TableTransactions
-                    rows={transactionRows}
-                    testId={'txTable'}
-                  >
-                    {getLocale('noStatementTransactions')}
-                  </TableTransactions>
-                </div>
-                <div data-key='cont2' data-title={'Monthly contributions'}>
-                  <TableContribute
-                    header={this.headers}
-                    rows={donationRows}
-                    allSites={true}
-                    showRowAmount={true}
-                    customStyle={customTableStyle}
-                    testId={'monthlyTable'}
-                  >
-                    {getLocale('noStatementMonthlyContributions')}
-                  </TableContribute>
+            <StyledTables>
+              <StyledTableTitle>{getLocale('transactions')}</StyledTableTitle>
+                <TableTransactions
+                  rows={transactionRows}
+                >
+                  {getLocale('noStatementTransactions')}
+                </TableTransactions>
+                <StyledTableTitle>
+                  <span>{getLocale('donationAllocation')}</span>
                   <StyledTableSubTitle>
                     {getLocale('paymentMonthly', { day: paymentDay })}
                   </StyledTableSubTitle>
-                </div>
-                <div data-key='cont3' data-title={'Auto-Contribute'}>
-                  <TableContribute
-                    header={this.headers}
-                    rows={contributeRows}
-                    allSites={true}
-                    showRowAmount={true}
-                    customStyle={customTableStyle}
-                    testId={'acTable'}
-                  >
-                    {getLocale('noStatementAutoContributions')}
-                  </TableContribute>
-                  <StyledTableSubTitle>
-                    {getLocale('paymentMonthly', { day: paymentDay })}
-                  </StyledTableSubTitle>
-                </div>
-                <div data-key='cont4' data-title={'Tips'}>
+                </StyledTableTitle>
                 <TableContribute
-                  header={this.tipsHeaders}
-                  rows={tipRows}
+                  header={this.headers}
+                  rows={donationRows}
                   allSites={true}
                   showRowAmount={true}
-                  customStyle={customTableStyle}
-                  testId={'tipsTable'}
                 >
-                  {getLocale('noStatementTips')}
+                  {getLocale('noStatementMonthlyContributions')}
                 </TableContribute>
-                </div>
-                <StyledVerified>
-                  <StyledVerifiedIcon>
-                    <VerifiedSIcon />
-                  </StyledVerifiedIcon>
-                  <StyledVerifiedText>{getLocale('braveVerified')}</StyledVerifiedText>
-                </StyledVerified>
-              </Tabs>
-            </div>
-          </StyledTables>
+              <StyledTableTitle>
+                <span>{getLocale('contributeAllocation')}</span>
+                <StyledTableSubTitle>
+                  {getLocale('paymentMonthly', { day: paymentDay })}
+                </StyledTableSubTitle>
+              </StyledTableTitle>
+              <TableContribute
+                header={this.headers}
+                rows={contributeRows}
+                allSites={true}
+                showRowAmount={true}
+              >
+                {getLocale('noStatementAutoContributions')}
+              </TableContribute>
+              <StyledTableTitle>
+                <span>{getLocale('tipAllocation')}</span>
+              </StyledTableTitle>
+              <TableContribute
+                header={this.tipsHeaders}
+                rows={tipRows}
+                allSites={true}
+                showRowAmount={true}
+              >
+                {getLocale('noStatementTips')}
+              </TableContribute>
+              <StyledVerified>
+                <StyledVerifiedIcon>
+                  <VerifiedSIcon />
+                </StyledVerifiedIcon>
+                <StyledVerifiedText>{getLocale('braveVerified')}</StyledVerifiedText>
+              </StyledVerified>
+            </StyledTables>
           <StyledNote>
             <b>{getLocale('pleaseNote')}</b> {getLocale('activityNote')}
             <br /><br />
             {getLocale('activityCopy')}
           </StyledNote>
-        </StyledWrapper>
-      </Modal>
+        </StyledMarginWrapper>
+      </StyledWrapper>
     )
   }
 }

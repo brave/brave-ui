@@ -166,7 +166,7 @@ storiesOf('Feature Components/Rewards/Table', module)
     const rows: TransactionsRow[] = [
       {
         date: '6/1',
-        type: 'deposit',
+        type: 'depositTx',
         description: 'Brave Ads payment for May',
         amount: {
           value: '5.0',
@@ -175,7 +175,7 @@ storiesOf('Feature Components/Rewards/Table', module)
       },
       {
         date: '6/9',
-        type: 'tipOnLike',
+        type: 'tipOnLikeTx',
         description: {
           publisher: 'Jonathon Doe',
           platform: 'YouTube'
@@ -188,7 +188,7 @@ storiesOf('Feature Components/Rewards/Table', module)
       },
       {
         date: '6/31',
-        type: 'contribute',
+        type: 'contributeTx',
         description: 'Monthly payment',
         amount: {
           isNegative: true,

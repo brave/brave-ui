@@ -21,17 +21,18 @@ export interface Props {
   children?: React.ReactNode
   rows?: Row[]
   rowTheme?: {[key: string]: string}
+  customStyle?: {[key: string]: string}
 }
 
 export default class Table extends React.PureComponent<Props, {}> {
   render () {
-    const { id, header, rows, children } = this.props
+    const { id, header, rows, children, customStyle } = this.props
 
     return (
       <div id={id}>
         {
           header && header.length > 0
-          ? <StyledTable>
+          ? <StyledTable customStyle={customStyle}>
             {
               header
               ? <thead>

@@ -2,13 +2,14 @@
 
 exports[`Tabs tests basic tests matches the snapshot 1`] = `
 .c0 {
-  border-bottom: 1px solid #DFDFE8;
   text-align: center;
   font-family: Muli,sans-serif;
+  height: 60px;
+  padding-top: 5px;
 }
 
 .c1 {
-  padding: 34px 56px 20px;
+  padding: 0;
 }
 
 <div

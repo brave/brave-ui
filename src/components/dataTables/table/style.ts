@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled, { css } from '../../../theme'
-import { Cell, Row } from './index'
+import { Props, Cell, Row } from './index'
 
 export const StyledNoContent = styled<{}, 'div'>('div')`
   text-align: center;
@@ -12,9 +12,16 @@ export const StyledNoContent = styled<{}, 'div'>('div')`
   font-size: 14px;
 `
 
-export const StyledTable = styled<{}, 'table'>('table')`
+export const StyledTable = styled<Partial<Props>, 'table'>('table')`
   min-width: 100%;
   margin: 24px 0;
+
+  ${p => p.customStyle
+    ? css`
+      ${p.customStyle}
+    `
+    : ''
+  };
 `
 
 export const StyledTH = styled<Partial<Cell>, 'th'>('th')`
