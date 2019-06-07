@@ -96,6 +96,7 @@ export type NotificationType =
   'tipsProcessed' |
   'error' |
   'pendingContribution' |
+  'oldBTC' |
   ''
 
 export interface Notification {
@@ -281,6 +282,10 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
         buttonText = getLocale('addFunds')
         buttonAction = this.onNotificationClick
         break
+      case 'oldBTC':
+        buttonText = getLocale('btcEmailSupport')
+        buttonAction = this.onNotificationClick
+        break
       default:
         buttonText = getLocale('ok').toUpperCase()
         break
@@ -336,6 +341,7 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
       case 'ads':
       case 'ads-launch':
       case 'backupWallet':
+      case 'oldBTC':
         icon = megaphoneIconUrl
         break
       case 'contribute':
@@ -390,6 +396,9 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
         break
       case 'pendingContribution':
         typeText = getLocale('pendingContributionTitle')
+        break
+      case 'oldBTC':
+        typeText = getLocale('btcNotificationTitle')
         break
       default:
         typeText = ''
