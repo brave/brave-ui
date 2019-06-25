@@ -8,7 +8,8 @@ const shieldsLightTheme: ITheme = {
   color: {
     ...defaultTheme.color,
     text: colors.neutral900,
-    panelBackgroundSecondary: colors.neutral000
+    panelBackgroundSecondary: colors.neutral000,
+    modalOverlayBackground: 'rgba(255, 255, 255, 70%)'
   }
 }
 
