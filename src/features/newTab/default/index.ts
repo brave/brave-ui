@@ -4,7 +4,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import { StatsContainer, StatsItem } from './stats'
-import { Page, DynamicBackground, Gradient, Link, Navigation, IconLink, PhotoName } from './page'
+import { Page, DynamicBackground, Gradient, Link, Navigation, IconLink, IconButton, PhotoName } from './page'
 import { Header, Main, Footer } from './grid'
 import { SettingsMenu, SettingsRow, SettingsText, SettingsTitle, SettingsWrapper } from './settings'
 import { List, Tile, TileActionsContainer, TileAction, TileFavicon } from './topSites'
@@ -20,6 +20,7 @@ export {
   Link,
   Navigation,
   IconLink,
+  IconButton,
   PhotoName,
   Header,
   Main,
