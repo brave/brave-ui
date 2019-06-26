@@ -5,7 +5,7 @@
 import * as React from 'react'
 
 // Feature-specific components
-import { Link, Navigation, IconLink, PhotoName } from '../../../../src/features/newTab/default'
+import { Link, Navigation, IconLink, IconButton, PhotoName } from '../../../../src/features/newTab/default'
 
 // Icons
 import { SettingsAdvancedIcon, BookmarkBook, HistoryIcon, SettingsIcon } from '../../../../src/components/icons'
@@ -21,6 +21,13 @@ interface Props {
 }
 
 export default class FooterInfo extends React.PureComponent<Props, {}> {
+
+  onKeyPressSettings = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (e.key === ' ' || e.key === 'Enter') {
+      this.props.onClickSettings()
+    }
+  }
+
   render () {
     const {
       backgroundImageInfo,
@@ -41,7 +48,13 @@ export default class FooterInfo extends React.PureComponent<Props, {}> {
           </PhotoName>}
         </div>
         <Navigation>
-          <IconLink onClick={onClickSettings} disabled={isSettingsMenuOpen}><SettingsIcon /></IconLink>
+          <IconButton
+            onMouseDown={onClickSettings}
+            disabled={isSettingsMenuOpen}
+            onKeyDown={this.onKeyPressSettings}
+          >
+            <SettingsIcon />
+          </IconButton>
           <IconLink><SettingsAdvancedIcon /></IconLink>
           <IconLink><BookmarkBook /></IconLink>
           <IconLink><HistoryIcon /></IconLink>

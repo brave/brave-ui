@@ -40,12 +40,8 @@ export default class NewTabPage extends React.PureComponent<{}, State> {
     this.setState({ showBackgroundImage: !this.state.showBackgroundImage })
   }
 
-  showSettings = () => {
-    this.setState({ showSettings: true })
-  }
-
-  closeSettings = () => {
-    this.setState({ showSettings: false })
+  toggleSettings = () => {
+    this.setState({ showSettings: !this.state.showSettings })
   }
 
   render () {
@@ -65,7 +61,7 @@ export default class NewTabPage extends React.PureComponent<{}, State> {
           {
             showSettings &&
             <Settings
-              onClickOutside={this.closeSettings}
+              onClickOutside={this.toggleSettings}
               toggleShowBackgroundImage={this.toggleShowBackgroundImage}
               showBackgroundImage={showBackgroundImage}
             />
@@ -73,7 +69,7 @@ export default class NewTabPage extends React.PureComponent<{}, State> {
           <Footer>
             <FooterInfo
               backgroundImageInfo={generateRandomBackgroundData}
-              onClickSettings={this.showSettings}
+              onClickSettings={this.toggleSettings}
               isSettingsMenuOpen={showSettings}
               showPhotoInfo={showBackgroundImage}
             />
