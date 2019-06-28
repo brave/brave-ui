@@ -68,9 +68,6 @@ type GrantClaim = {
   captcha?: string
   hint?: string
   status?: 'wrongPosition' | 'grantGone' | 'generalError' | 'grantAlreadyClaimed' | number | null
-  finishTokenTitle?: string
-  finishTitle?: string
-  finishText?: string
 }
 
 export interface AlertWallet {
@@ -461,10 +458,10 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
               ? <GrantWrapper
                 isPanel={true}
                 onClose={this.onFinish}
-                title={grant.finishTitle || ''}
-                text={grant.finishText}
+                title={getLocale('captchaLuckyDay')}
+                text={getLocale('captchaOnTheWay')}
               >
-                <GrantComplete isMobile={true} onClose={this.onFinish} amount={tokens} date={date} tokenTitle={grant.finishTokenTitle} />
+                <GrantComplete isMobile={true} onClose={this.onFinish} amount={tokens} date={date} />
               </GrantWrapper>
               : null
           }
