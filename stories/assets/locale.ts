@@ -138,6 +138,8 @@ const locale: Record<string, string> = {
   pleaseNote: 'Please note:',
   print: 'Print',
   privacyPolicy: 'Privacy Policy',
+  processingRequest: 'You will be redirected shorty to verify your wallet.',
+  processingRequestButton: 'Try again',
   readyToTakePart: 'Ready to get started?',
   readyToTakePartOptInText: 'Yes I\'m Ready!',
   readyToTakePartStart: 'You can start with the',
