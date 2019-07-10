@@ -18,6 +18,7 @@ function RotatedIconComponent (
 
 // simple
 export { default as AlertCircleIcon } from './alert-circle'
+export { default as AlertMessageIcon } from './alert-message-o'
 export const ArrowLeftIcon = RotatedIconComponent(ArrowIcon, 0)
 export const ArrowRightIcon = RotatedIconComponent(ArrowIcon, 180)
 export const ArrowDownIcon = RotatedIconComponent(ArrowIcon, -90)
