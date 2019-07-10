@@ -233,6 +233,7 @@ const locale: Record<string, string> = {
   unVerifiedText: 'This creator has not yet signed up to receive contributions from Brave users.',
   unVerifiedTextMore: 'Learn more.',
   verifiedPublisher: 'Verified Creator',
+  verifyWalletTitle: 'Verify your wallet',
   viewDetails: 'View Details',
   viewMonthly: 'View Monthly Statement for Details',
   walletActivity: 'Wallet Activity',
@@ -272,6 +273,7 @@ const locale: Record<string, string> = {
   whyBraveRewards: 'Why Brave Rewards?',
   whyBraveRewardsDesc1: 'With conventional browsers, you pay to browse the web by viewing ads with your valuable attention, spending your valuable time downloading invasive ad technology, that transmits your valuable private data to advertisers — without your consent.',
   whyBraveRewardsDesc2: 'Well, you\'ve come to the right place. Brave welcomes you to the new internet. One where your time is valued, your personal data is kept private, and you actually get paid for your attention.',
+  whyHow: 'Why & How',
   yourWallet: 'Your wallet'
 }
 
