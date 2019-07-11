@@ -11,24 +11,18 @@ interface StyleProps {
 export const StyledTabWrapper = styled<{}, 'div'>('div')`
   text-align: center;
   font-family: ${p => p.theme.fontFamily.body};
-  height: 60px;
-  padding-top:5px;
+  display: flex;
+  padding: 12px 24px;
+  justify-content: space-between;
 `
 
 export const StyledTab = styled<StyleProps, 'div'>('div')`
-  color: '#686978';
+  color: ${p => p.selected ? '#392dd1' : p.theme.color.text};
   font-size: 16px;
   font-weight: ${p => p.selected ? 'bold' : '500'};
-  letter-spacing: -0.29px;
-  line-height: 44px;
-  display: inline-block;
+  display: flex;
   cursor: pointer;
-  min-width: 100px;
-  border-left: 1px solid #DFDFE8;
-  padding: 0 50px;
-  margin: 0 2px;
-  position: relative;
-  top: 1px
+  padding: 8px 16px;
 `
 
 export const StyledContent = styled<{}, 'div'>('div')`
