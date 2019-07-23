@@ -4,13 +4,20 @@
 
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
+import welcomeLightTheme from '../../../src/theme/welcome-light'
+import welcomeDarkTheme from '../../../src/theme/welcome-dark'
+import { withThemesProvider } from 'storybook-addon-styled-component-theme'
 import { withKnobs, boolean } from '@storybook/addon-knobs'
 import { FullPageStory } from '../../storyUtils'
 // Components
 import WelcomePage from './page/index'
 
+// Themes
+const themes = [welcomeLightTheme, welcomeDarkTheme]
+
 storiesOf('Feature Components/Welcome', module)
   .addDecorator(FullPageStory)
+  .addDecorator(withThemesProvider(themes))
   .addDecorator(withKnobs)
   .add('Page', () => {
     return (
