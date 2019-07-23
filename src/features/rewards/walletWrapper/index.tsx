@@ -16,6 +16,7 @@ import {
   StyledCopyImage,
   StyledIconAction,
   StyledBalanceConverted,
+  StyledBalanceUnavailable,
   StyledGrantWrapper,
   StyledGrant,
   StyledActionWrapper,
@@ -35,12 +36,19 @@ import {
   StyledButtonWrapper,
   StyledButton,
   StyledNotificationMessage,
-  StyledPipe
+  StyledPipe,
+  StyledWalletButton,
+  StyledVerifiedButton,
+  StyledVerifiedButtonIcon,
+  StyledVerifiedButtonText,
+  StyledTextIcon,
+  StyledDialogList,
+  StyledLink
 } from './style'
 import { getLocale } from '../../../helpers'
-import { GrantCaptcha, GrantComplete, GrantError, GrantWrapper } from '../'
+import { GrantCaptcha, GrantComplete, GrantError, GrantWrapper, WalletPopup } from '../'
 import Alert, { Type as AlertType } from '../alert'
-import { Button } from '../../../components'
+import Button, { Props as ButtonProps } from '../../../components/buttonsIndicators/button'
 import {
   CaratDownIcon,
   CaratUpIcon,
@@ -96,7 +104,14 @@ export type NotificationType =
   'tipsProcessed' |
   'error' |
   'pendingContribution' |
+  'verifyWallet' |
   ''
+
+export type WalletState =
+  'unverified' |
+  'verified' |
+  'disconnected_unverified' |
+  'disconnected_verified'
 
 export interface Notification {
   id: string
@@ -110,7 +125,7 @@ export interface Props {
   balance: string
   converted: string | null
   actions: ActionWallet[]
-  connectedWallet?: boolean
+  walletState?: WalletState
   compact?: boolean
   contentPadding?: boolean
   showCopy?: boolean
@@ -130,19 +145,25 @@ export interface Props {
   onFinish?: () => void
   onSolution?: (x: number, y: number) => void
   convertProbiToFixed?: (probi: string, place: number) => string
+  onVerifyClick?: () => void
+  onDisconnectClick?: () => void
+  goToUphold?: () => void
+  userName?: string
 }
 
 export type Step = '' | 'captcha' | 'complete'
 
 interface State {
-  grantDetails: boolean
+  grantDetails: boolean,
+  verificationDetails: boolean
 }
 
 export default class WalletWrapper extends React.PureComponent<Props, State> {
   constructor (props: Props) {
     super(props)
     this.state = {
-      grantDetails: false
+      grantDetails: false,
+      verificationDetails: false
     }
   }
 
@@ -281,6 +302,10 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
         buttonText = getLocale('addFunds')
         buttonAction = this.onNotificationClick
         break
+      case 'verifyWallet':
+        buttonText = getLocale('whyHow').toUpperCase()
+        buttonAction = this.onNotificationClick
+        break
       default:
         buttonText = getLocale('ok').toUpperCase()
         break
@@ -321,6 +346,102 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
     )
   }
 
+  generateWalletButton = (walletState: WalletState) => {
+    const buttonProps: Partial<ButtonProps> = {
+      size: 'small',
+      level: 'primary',
+      brand: 'rewards',
+      onClick: this.props.onVerifyClick
+    }
+
+    switch (walletState) {
+      case 'unverified':
+        return (
+          <StyledWalletButton
+            type={'accent'}
+            icon={{
+              image: <StyledTextIcon>!</StyledTextIcon>,
+              position: 'after'
+            }}
+            text={getLocale('walletButtonUnverified')}
+            {...buttonProps}
+            id={'verify-wallet-button'}
+          />
+        )
+
+      case 'verified':
+        return (
+          <StyledVerifiedButton
+            onClick={this.toggleVerificationDetails}
+            active={this.state.verificationDetails}
+            id={'verified-wallet-button'}
+          >
+            <StyledVerifiedButtonIcon position={'before'}>
+              <UpholdSystemIcon />
+            </StyledVerifiedButtonIcon>
+            <StyledVerifiedButtonText>
+              {getLocale('walletButtonVerified')}
+            </StyledVerifiedButtonText>
+            <StyledVerifiedButtonIcon position={'after'}>
+              <CaratDownIcon />
+            </StyledVerifiedButtonIcon>
+          </StyledVerifiedButton>
+        )
+
+      case 'disconnected_unverified':
+      case 'disconnected_verified':
+        return (
+          <Button
+            text={getLocale('walletButtonDisconnected')}
+            type={'subtle'}
+            icon={{
+              image: <UpholdSystemIcon />,
+              position: 'before'
+            }}
+            {...buttonProps}
+            id={'disconnected-wallet-button'}
+          />
+        )
+    }
+  }
+
+  toggleVerificationDetails = () => {
+    this.setState({ verificationDetails: !this.state.verificationDetails })
+  }
+
+  onDetailsLinkClicked = (action?: () => void) => {
+    if (action) {
+      action()
+    }
+    this.toggleVerificationDetails()
+  }
+
+  getVerificationDetails = () => {
+    const { goToUphold, userName, onDisconnectClick } = this.props
+
+    return (
+      <WalletPopup
+        onClose={this.toggleVerificationDetails}
+        userName={userName || ''}
+      >
+        {
+          <StyledDialogList>
+            <li>
+              <StyledLink onClick={this.onDetailsLinkClicked.bind(this, goToUphold)} target={'_blank'}>
+                {getLocale('walletGoToUphold')}
+              </StyledLink>
+            </li>
+            <li>
+              <StyledLink onClick={this.onDetailsLinkClicked.bind(this, onDisconnectClick)}>
+                {getLocale('walletDisconnect')}
+              </StyledLink>
+            </li>
+          </StyledDialogList>
+        }
+      </WalletPopup>
+    )
+  }
+
   toggleGrantDetails = () => {
     this.setState({ grantDetails: !this.state.grantDetails })
   }
@@ -336,6 +457,8 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
       case 'ads':
       case 'ads-launch':
       case 'backupWallet':
+      case 'insufficientFunds':
+      case 'verifyWallet':
         icon = megaphoneIconUrl
         break
       case 'contribute':
@@ -345,9 +468,6 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
         break
       case 'grant':
         icon = giftIconUrl
-        break
-      case 'insufficientFunds':
-        icon = megaphoneIconUrl
         break
       default:
         icon = ''
@@ -391,6 +511,9 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
       case 'pendingContribution':
         typeText = getLocale('pendingContributionTitle')
         break
+      case 'verifyWallet':
+        typeText = getLocale('verifyWalletTitle')
+        break
       default:
         typeText = ''
         break
@@ -417,7 +540,7 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
       converted,
       actions,
       showCopy,
-      connectedWallet,
+      walletState,
       compact,
       contentPadding,
       showSecActions,
@@ -428,7 +551,9 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
       gradientTop,
       notification,
       isMobile,
-      convertProbiToFixed
+      convertProbiToFixed,
+      onVerifyClick,
+      onDisconnectClick
     } = this.props
 
     const hasGrants = this.hasGrants(grants)
@@ -442,6 +567,9 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
     if (grant && grant.expiryTime !== 0) {
       date = new Date(grant.expiryTime).toLocaleDateString()
     }
+
+    const walletVerified = walletState === 'verified' || walletState === 'disconnected_verified'
+    const connectedVerified = walletState === 'verified'
 
     return (
       <>
@@ -473,6 +601,11 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
               !notification
                 ? <>
                   {
+                    this.state.verificationDetails && connectedVerified && onDisconnectClick
+                      ? this.getVerificationDetails()
+                      : null
+                  }
+                  {
                     alert && alert.node
                       ? <StyledAlertWrapper>
                         {
@@ -488,7 +621,11 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
                       </StyledAlertWrapper>
                       : null
                   }
-                  <StyledTitle>{getLocale('yourWallet')}</StyledTitle>
+                  {
+                    walletState
+                      ? this.generateWalletButton(walletState)
+                      : <StyledTitle>{getLocale('yourWallet')}</StyledTitle>
+                  }
                   {
                     showSecActions
                       ? <StyledIconAction onClick={onSettingsClick} data-test-id='settingsButton'>
@@ -496,30 +633,45 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
                       </StyledIconAction>
                       : null
                   }
-                  <StyledBalance>
-                    <StyledBalanceTokens data-test-id='balance'>
-                      {balance} <StyledBalanceCurrency>BAT</StyledBalanceCurrency>
-                    </StyledBalanceTokens>
-                    {
-                      converted
-                        ? <StyledBalanceConverted>{converted}</StyledBalanceConverted>
-                        : null
-                    }
-                    {
-                      hasGrants
-                        ? <StyleGrantButton>
+                  {
+                    walletState && (walletState === 'disconnected_unverified' || walletState === 'disconnected_verified')
+                      ? <StyledBalance>
+                        <StyledBalanceUnavailable>{getLocale('balanceUnavailable')}</StyledBalanceUnavailable>
+                        <StyleGrantButton>
                           <Button
-                            text={getLocale('grants')}
+                            text={getLocale('reconnectWallet')}
                             size={'small'}
                             type={'subtle'}
                             level={'secondary'}
-                            onClick={this.toggleGrantDetails}
-                            icon={{ position: 'after', image: this.state.grantDetails ? <CaratUpIcon /> : <CaratDownIcon /> }}
+                            onClick={onVerifyClick}
                           />
                         </StyleGrantButton>
-                        : null
-                    }
-                  </StyledBalance>
+                      </StyledBalance>
+                      : <StyledBalance>
+                        <StyledBalanceTokens data-test-id='balance'>
+                          {balance} <StyledBalanceCurrency>BAT</StyledBalanceCurrency>
+                        </StyledBalanceTokens>
+                        {
+                          converted
+                            ? <StyledBalanceConverted>{converted}</StyledBalanceConverted>
+                            : null
+                        }
+                        {
+                          hasGrants
+                            ? <StyleGrantButton>
+                              <Button
+                                text={getLocale('grants')}
+                                size={'small'}
+                                type={'subtle'}
+                                level={'secondary'}
+                                onClick={this.toggleGrantDetails}
+                                icon={{ position: 'after', image: this.state.grantDetails ? <CaratUpIcon /> : <CaratDownIcon /> }}
+                              />
+                            </StyleGrantButton>
+                            : null
+                        }
+                      </StyledBalance>
+                  }
                   {
                     this.state.grantDetails && hasGrants
                       ? <StyledGrantWrapper>
@@ -553,21 +705,32 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
           </StyledContent>
           {
             showCopy
-              ? <StyledCopy connected={connectedWallet}>
+              ? <StyledCopy connected={connectedVerified}>
                 {
-                  connectedWallet
+                  walletVerified
                     ? <>
                       <StyledCopyImage>
                         <UpholdColorIcon />
                       </StyledCopyImage>
                       {getLocale('rewardsPanelText1')} <b>Uphold</b>.
-                  </>
+                    </>
                     : <>
                       <StyledCopyImage>
                         <UpholdSystemIcon />
                       </StyledCopyImage>
                       {getLocale('rewardsPanelText2')} <b>Uphold</b>.
-                  </>
+                      {
+                        onVerifyClick
+                          ? <>
+                            {' ('}
+                            <StyledLink onClick={onVerifyClick}>
+                              {getLocale('rewardsPanelTextVerify')}
+                            </StyledLink>
+                            {')'}
+                          </>
+                          : null
+                      }
+                    </>
                 }
               </StyledCopy>
               : null

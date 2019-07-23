@@ -4,6 +4,7 @@
 
 import { Notification } from './'
 import styled from '../../../theme'
+import palette from '../../../theme/colors'
 import Button, { Props as ButtonProps } from '../../../components/buttonsIndicators/button'
 import { ComponentType } from 'react'
 
@@ -44,11 +45,13 @@ export const StyledWrapper = styled<StyledProps, 'div'>('div')`
   flex-direction: column;
   max-width: 415px;
   margin: 0 auto;
+  position: relative;
 `
 
 export const StyledHeader = styled<{}, 'div'>('div')`
   padding: 16px 21px 0 19px;
   position: relative;
+  z-index: 2;
 `
 
 export const StyledTitle = styled<{}, 'div'>('div')`
@@ -77,9 +80,16 @@ export const StyledBalanceTokens = styled<{}, 'div'>('div')`
   font-weight: 300;
 `
 
+export const StyledBalanceUnavailable = styled<{}, 'div'>('div')`
+  font-size: 24px;
+  opacity: 0.66;
+  color: ${p => p.theme.palette.white};
+  margin: 10px 0;
+  font-weight: 300;
+`
+
 export const StyledContent = styled<StyledProps, 'div'>('div')`
   padding: ${p => p.contentPadding ? '11px 25px 19px' : '0px'};
-  position: relative;
   background: #fff;
   flex: 1;
 `
@@ -112,7 +122,7 @@ export const StyledCopy = styled<StyledProps, 'div'>('div')`
   font-size: 12px;
   color: #838391;
   padding: 19px 15px;
-  background: ${p => p.connected ? '#dcdfff' : '#dee2e6'};
+  background: ${p => p.connected ? '#c4f2db' : '#dee2e6'};
   text-align: center;
 `
 
@@ -313,4 +323,73 @@ export const StyledButton = styled(Button as ComponentType<ButtonProps>)`
 
 export const StyledPipe = styled<StyledProps, 'span'>('span')`
   font-weight: 300;
+`
+
+export const StyledWalletButton = styled(Button as ComponentType<ButtonProps>)`
+  padding-right: 23px;
+`
+
+export const StyledVerifiedButton = styled<{active: boolean}, 'button'>('button')`
+  box-sizing: border-box;
+  outline-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: Poppins, sans-serif;
+  cursor: pointer;
+  user-select: none;
+  font-size: 11px;
+  border-radius: 28px;
+  min-width: 88px;
+  padding: 7px 10px;
+  color: #fff;
+  background: ${palette.green600};
+  border: 1px solid ${p => p.theme.color[p.active ? 'brandBatActive' : 'brandBat']};
+  :active:enabled {
+    border-color: ${p => p.theme.color.brandBatActive};
+  }
+`
+
+export const StyledVerifiedButtonText = styled<{}, 'div'>('div')`
+  /* min-height so that we get consistent height with / without an icon */
+  min-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0;
+  font-weight: 500;
+  line-height: 1;
+`
+
+export const StyledVerifiedButtonIcon = styled<{position: string}, 'div'>('div')`
+  display: block;
+  line-height: 0;
+  height: 14px;
+  width: 14px;
+  margin: ${(p) => p.position === 'before' ? '0 6px 0 -4px' : '0 -4px 0 6px'};
+`
+
+export const StyledTextIcon = styled<{}, 'div'>('div')`
+  line-height: initial;
+  background: ${palette.blurple600};
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  margin: 0 10px;
+`
+
+export const StyledDialogList = styled<{}, 'ul'>('ul')`
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 0;
+  line-height: 150%;
+`
+
+export const StyledLink = styled<{}, 'a'>('a')`
+  color: ${palette.blue400};
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
 `

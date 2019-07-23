@@ -83,7 +83,6 @@ exports[`Button tests basic tests matches the snapshot 1`] = `
 >
   <div
     className="c2"
-    id="button"
     size="medium"
     type="default"
   >

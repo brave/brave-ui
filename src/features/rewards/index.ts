@@ -27,8 +27,10 @@ import ModalBackupRestore from './modalBackupRestore'
 import ModalContribute from './modalContribute'
 import ModalDonation from './modalDonation'
 import ModalPending from './modalPending'
+import ModalRedirect from './modalRedirect'
 import NextContribution from './nextContribution'
 import PanelWelcome from './panelWelcome'
+import PanelVerify from './panelVerify'
 import Profile from './profile'
 import RestoreSites from './restoreSites'
 import RewardsButton from './rewardsButton'
@@ -47,6 +49,7 @@ import WalletEmpty from './walletEmpty'
 import WalletOff from './walletOff'
 import WalletPanel from './walletPanel'
 import WalletPanelDisabled from './walletPanelDisabled'
+import WalletPopup from './walletPopup'
 import WalletSummary from './walletSummary'
 import WalletSummarySlider from './walletSummarySlider'
 import WalletWrapper from './walletWrapper'
@@ -78,8 +81,10 @@ export {
   ModalContribute,
   ModalDonation,
   ModalPending,
+  ModalRedirect,
   NextContribution,
   PanelWelcome,
+  PanelVerify,
   Profile,
   RestoreSites,
   RewardsButton,
@@ -98,6 +103,7 @@ export {
   WalletOff,
   WalletPanel,
   WalletPanelDisabled,
+  WalletPopup,
   WalletSummary,
   WalletSummarySlider,
   WalletWrapper,
