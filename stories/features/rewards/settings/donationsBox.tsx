@@ -119,6 +119,7 @@ class DonationsBox extends React.Component<{}, State> {
                 <div data-key='rd'>Reddit</div>
                 <div data-key='gh'>GitHub</div>
                 <div data-key='us'>Unsplash</div>
+                <div data-key='sc'>SoundCloud</div>
                 <div data-key='inst'>Instagram</div>
               </Checkbox>
             </ControlWrapper>
