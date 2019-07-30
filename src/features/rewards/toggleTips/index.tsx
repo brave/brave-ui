@@ -23,11 +23,12 @@ import {
   TwitchColorIcon,
   TwitterColorIcon,
   VimeoColorIcon,
-  YoutubeColorIcon
+  YoutubeColorIcon,
+  SoundCloudColorIcon
 } from '../../../components/icons'
 import { Toggle } from '../../../components'
 
-export type Provider = 'twitter' | 'youtube' | 'twitch' | 'reddit' | 'vimeo' | 'github'
+export type Provider = 'twitter' | 'youtube' | 'twitch' | 'reddit' | 'vimeo' | 'github' | 'soundcloud'
 
 export interface Props {
   id?: string
@@ -51,6 +52,8 @@ export default class ToggleTips extends React.PureComponent<Props, {}> {
         return <VimeoColorIcon />
       case 'github':
         return <GitHubColorIcon />
+      case 'soundcloud':
+        return <SoundCloudColorIcon />
     }
   }
 

@@ -113,7 +113,7 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
     />
   ))
   .add('Site Banner', withState({ donationAmounts, currentAmount: '5.0', showBanner: true }, (store) => {
-    const mediaProvider = select<any>('Provider', { youtube: 'youtube', twitter: 'twitter', twitch: 'twitch', reddit: 'reddit', github: 'github' }, 'youtube')
+    const mediaProvider = select<any>('Provider', { youtube: 'youtube', twitter: 'twitter', twitch: 'twitch', reddit: 'reddit', github: 'github', soundcloud: 'soundcloud' }, 'youtube')
     const screenName = text('Screen Name', '')
     const commentText = text('Post Text', '')
 
@@ -183,6 +183,10 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
                   {
                     type: 'github',
                     url: 'https://github.com/duckduckgo'
+                  },
+                  {
+                    type: 'soundcloud',
+                    url: 'https://soundcloud.com/weird-al-yankovic-official'
                   }
                 ]}
                 showUnVerifiedNotice={boolean('Show unverified notice', false)}
