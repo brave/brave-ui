@@ -9,7 +9,7 @@ import {
   StyledWrapper,
   StyledClose,
   StyledHeader,
-  StyledBatIcon,
+  StyledWalletIcon,
   StyledHeaderText,
   StyledTitle,
   StyledSubtitle,
@@ -17,10 +17,13 @@ import {
   StyledListItem,
   StyledListIcon,
   StyledListItemText,
-  StyledIDNotice,
   StyledButton,
   StyledFooter,
-  StyledFooterIcon
+  StyledFooterIcon,
+  StyledLeftSide,
+  StyledRightSide,
+  StyledContent,
+  StyledNote
 } from './style'
 
 import {
@@ -29,17 +32,17 @@ import {
   RewardsWalletCheck,
   RewardsCheckIcon
 } from '../../../components/icons'
+import { Modal } from '../../../components'
 
 export interface Props {
   onVerifyClick: () => void
   onClose: () => void
-  compact?: boolean
   id?: string
 }
 
-export default class PanelWelcome extends React.PureComponent<Props, {}> {
-  getListItem = (text: string, compact?: boolean) => (
-    <StyledListItem compact={compact}>
+export default class ModalVerify extends React.PureComponent<Props, {}> {
+  getListItem = (text: string) => (
+    <StyledListItem>
       <StyledListIcon>
         <RewardsCheckIcon />
       </StyledListIcon>
@@ -49,15 +52,15 @@ export default class PanelWelcome extends React.PureComponent<Props, {}> {
     </StyledListItem>
   )
 
-  getHeader = (onClose: () => void, compact?: boolean) => (
+  getHeader = (onClose: () => void) => (
     <>
       <StyledClose onClick={onClose}>
         <CloseStrokeIcon />
       </StyledClose>
-      <StyledHeader compact={compact}>
-        <StyledBatIcon>
+      <StyledHeader>
+        <StyledWalletIcon>
           <RewardsWalletCheck />
-        </StyledBatIcon>
+        </StyledWalletIcon>
         <StyledHeaderText>
           <StyledTitle level={1}>
             {getLocale('walletVerificationTitle1')}
@@ -70,8 +73,8 @@ export default class PanelWelcome extends React.PureComponent<Props, {}> {
     </>
   )
 
-  getFooter = (compact?: boolean) => (
-    <StyledFooter compact={compact}>
+  getFooter = () => (
+    <StyledFooter>
       {getLocale('walletVerificationFooter')} <b>Uphold</b>
       <StyledFooterIcon>
         <UpholdColorIcon />
@@ -83,31 +86,39 @@ export default class PanelWelcome extends React.PureComponent<Props, {}> {
     const {
       onVerifyClick,
       onClose,
-      compact,
       id
     } = this.props
 
     return (
-      <StyledWrapper id={id}>
-        {this.getHeader(onClose, compact)}
-        <StyledListTitle>
-          {getLocale('walletVerificationListHeader')}
-        </StyledListTitle>
-        {this.getListItem(getLocale(compact ? 'walletVerificationListCompact1' : 'walletVerificationList1'), compact)}
-        {this.getListItem(getLocale(compact ? 'walletVerificationListCompact2' : 'walletVerificationList2'), compact)}
-        {this.getListItem(getLocale(compact ? 'walletVerificationListCompact3' : 'walletVerificationList3'), compact)}
-        <StyledIDNotice compact={compact}>
-          {getLocale('walletVerificationID')}
-        </StyledIDNotice>
-        <StyledButton
-          text={getLocale('walletVerificationButton')}
-          size={'call-to-action'}
-          type={'accent'}
-          onClick={onVerifyClick}
-          id={'on-boarding-verify-button'}
-        />
-        {this.getFooter(compact)}
-      </StyledWrapper>
+      <Modal id={id} displayCloseButton={false} size={'small'}>
+        <StyledWrapper id={id}>
+          {this.getHeader(onClose)}
+          <StyledListTitle>
+            {getLocale('walletVerificationListHeader')}
+          </StyledListTitle>
+          <StyledContent>
+            <StyledLeftSide>
+              {this.getListItem(getLocale('walletVerificationList1'))}
+              {this.getListItem(getLocale('walletVerificationList2'))}
+              {this.getListItem(getLocale('walletVerificationList3'))}
+            </StyledLeftSide>
+            <StyledRightSide>
+              <StyledButton
+                text={getLocale('walletVerificationButton')}
+                size={'call-to-action'}
+                type={'accent'}
+                onClick={onVerifyClick}
+                id={'on-boarding-verify-button'}
+              />
+              {this.getFooter()}
+              <StyledNote>
+                {getLocale('walletVerificationNote1')}<br/><br/>
+                {getLocale('walletVerificationNote2')}
+              </StyledNote>
+            </StyledRightSide>
+          </StyledContent>
+        </StyledWrapper>
+      </Modal>
     )
   }
 }
