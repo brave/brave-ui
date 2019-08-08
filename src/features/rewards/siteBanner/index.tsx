@@ -42,6 +42,7 @@ import Checkbox from '../../../components/formControls/checkbox/index'
 import { getLocale } from '../../../helpers'
 import {
   CloseCircleOIcon,
+  MediumColorIcon,
   TwitterColorIcon,
   YoutubeColorIcon,
   TwitchColorIcon,
@@ -51,7 +52,7 @@ import {
 } from '../../../components/icons'
 
 export type Social = { type: SocialType, url: string }
-export type SocialType = 'twitter' | 'youtube' | 'twitch' | 'reddit' | 'vimeo' | 'github'
+export type SocialType = 'medium' | 'twitter' | 'youtube' | 'twitch' | 'reddit' | 'vimeo' | 'github'
 export type Donation = { tokens: string, converted: string, selected?: boolean }
 
 export interface Props {
@@ -105,6 +106,9 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
   getSocialData (item: Social) {
     let logo = null
     switch (item.type) {
+      case 'medium':
+        logo = <MediumColorIcon />
+        break
       case 'twitter':
         logo = <TwitterColorIcon />
         break
@@ -159,6 +163,8 @@ export default class SiteBanner extends React.PureComponent<Props, State> {
     }
 
     switch (provider) {
+      case 'medium':
+        return `${identifier} ${getLocale('on')} Medium`
       case 'youtube':
         return `${identifier} ${getLocale('on')} YouTube`
       case 'twitter':
