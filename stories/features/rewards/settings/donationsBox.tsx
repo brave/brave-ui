@@ -114,6 +114,7 @@ class DonationsBox extends React.Component<{}, State> {
                 onChange={this.onChange}
               >
                 <div data-key='yt'>YouTube</div>
+                <div data-key='md'>Medium</div>
                 <div data-key='tw'>Twitter</div>
                 <div data-key='rd'>Reddit</div>
                 <div data-key='gh'>GitHub</div>

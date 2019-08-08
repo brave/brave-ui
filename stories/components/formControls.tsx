@@ -149,6 +149,7 @@ storiesOf('Components/Form controls', module)
               type={'light'}
             >
               <div data-key='yt'>YouTube</div>
+              <div data-key='md'>Medium</div>
               <div data-key='tw'>Twitter</div>
               <div data-key='rd'>Reddit</div>
               <div data-key='gh'>GitHub</div>
@@ -172,6 +173,7 @@ storiesOf('Components/Form controls', module)
               type={'dark'}
             >
               <div data-key='yt'>YouTube</div>
+              <div data-key='md'>Medium</div>
               <div data-key='tw'>Twitter</div>
               <div data-key='rd'>Reddit</div>
               <div data-key='rd'>GitHub</div>

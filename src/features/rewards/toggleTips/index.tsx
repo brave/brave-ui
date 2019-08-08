@@ -24,11 +24,12 @@ import {
   TwitterColorIcon,
   VimeoColorIcon,
   YoutubeColorIcon,
-  UnsplashColorIcon
+  UnsplashColorIcon,
+  MediumColorIcon
 } from '../../../components/icons'
 import { Toggle } from '../../../components'
 
-export type Provider = 'twitter' | 'youtube' | 'twitch' | 'reddit' | 'vimeo' | 'github' | 'unsplash'
+export type Provider = 'twitter' | 'youtube' | 'twitch' | 'reddit' | 'vimeo' | 'github' | 'unsplash' | 'medium'
 
 export interface Props {
   id?: string
@@ -54,6 +55,8 @@ export default class ToggleTips extends React.PureComponent<Props, {}> {
         return <GitHubColorIcon />
       case 'unsplash':
         return <UnsplashColorIcon />
+      case 'medium':
+        return <MediumColorIcon />
     }
   }
 

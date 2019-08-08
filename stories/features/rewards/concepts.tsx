@@ -113,7 +113,7 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
     />
   ))
   .add('Site Banner', withState({ donationAmounts, currentAmount: '5.0', showBanner: true }, (store) => {
-    const mediaProvider = select<any>('Provider', { youtube: 'youtube', twitter: 'twitter', twitch: 'twitch', reddit: 'reddit', github: 'github', unsplash: 'unsplash' }, 'youtube')
+    const mediaProvider = select<any>('Provider', { youtube: 'youtube', twitter: 'twitter', twitch: 'twitch', reddit: 'reddit', github: 'github', unsplash: 'unsplash', medium: 'medium' }, 'youtube')
     const screenName = text('Screen Name', '')
     const commentText = text('Post Text', '')
 
@@ -187,6 +187,10 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
                   {
                     type: 'unsplash',
                     url: 'https://unsplash.com/@nathananderson'
+                  },
+                  {
+                    type: 'medium',
+                    url : 'https://medium.com/@duckduckgo'
                   }
                 ]}
                 showUnVerifiedNotice={boolean('Show unverified notice', false)}
