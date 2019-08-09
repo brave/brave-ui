@@ -26,11 +26,12 @@ import {
   YoutubeColorIcon,
   UnsplashColorIcon,
   MediumColorIcon,
-  SoundCloudColorIcon
+  SoundCloudColorIcon,
+  StackOverflowColorIcon
 } from '../../../components/icons'
 import { Toggle } from '../../../components'
 
-export type Provider = 'twitter' | 'youtube' | 'twitch' | 'reddit' | 'vimeo' | 'github' | 'unsplash' | 'medium' | 'soundcloud'
+export type Provider = 'twitter' | 'youtube' | 'twitch' | 'reddit' | 'vimeo' | 'github' | 'unsplash' | 'medium' | 'soundcloud' | 'stackoverflow'
 
 export interface Props {
   id?: string
@@ -60,6 +61,8 @@ export default class ToggleTips extends React.PureComponent<Props, {}> {
         return <MediumColorIcon />
       case 'soundcloud':
         return <SoundCloudColorIcon />
+      case 'stackoverflow':
+        return <StackOverflowColorIcon />
     }
   }
 

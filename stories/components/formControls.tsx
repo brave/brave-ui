@@ -155,6 +155,7 @@ storiesOf('Components/Form controls', module)
               <div data-key='gh'>GitHub</div>
               <div data-key='us'>Unsplash</div>
               <div data-key='sc'>SoundCloud</div>
+              <div data-key='so'>StackOverflow</div>
               <div data-key='inst'>Instagram Instagram Instagram Instagram Instagram</div>
             </Checkbox>
           </ControlWrapper>
@@ -180,6 +181,7 @@ storiesOf('Components/Form controls', module)
               <div data-key='rd'>GitHub</div>
               <div data-key='us'>Unsplash</div>
               <div data-key='sc'>SoundCloud</div>
+              <div data-key='so'>StackOverflow</div>
               <div data-key='inst'>Instagram Instagram Instagram Instagram Instagram</div>
             </Checkbox>
           </ControlWrapper>
