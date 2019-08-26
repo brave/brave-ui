@@ -53,6 +53,7 @@ const locale: Record<string, string> = {
   claim: 'Claim',
   click: 'Clicked',
   closeBalance: 'Closing Balance',
+  connectedText: 'This creator has not yet signed up to receive contributions from Brave users. Any tips you send will remain in your wallet until they verify.',
   contribute: 'Contribute',
   contributeAllocation: 'Auto-Contribute Allocation',
   contributeTooltip: 'Auto-Contribute Settings',
