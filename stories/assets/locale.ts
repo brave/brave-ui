@@ -225,6 +225,7 @@ const locale: Record<string, string> = {
   site: 'site',
   siteBannerNoticeNote: 'NOTE:',
   siteBannerNoticeText: 'This Creator has not yet verified their site. As soon as they verify with Brave, they will receive your tip.',
+  siteBannerConnectedText: 'This creator has not yet signed up to receive contributions from Brave users. Your browser will keep trying to contribute until they verify, or until 90 days have passed.',
   sites: 'sites',
   tellOthers: 'Tell others about your tip.',
   supportedSites: 'Supported Sites',
