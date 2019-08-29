@@ -267,6 +267,7 @@ const locale: Record<string, string> = {
   walletFailedButton: 'Re-try',
   walletFailedTitle: 'Wallet creation failed',
   walletFailedText: 'Please check your internet connection.',
+  walletGoToVerifyPage: 'Complete wallet verification',
   walletGoToUphold: 'Go to my Uphold account',
   walletDisconnect: 'Disconnect from Brave Rewards',
   walletVerificationButton: 'Verify wallet',
