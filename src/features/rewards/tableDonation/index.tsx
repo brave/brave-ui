@@ -142,7 +142,7 @@ export default class TableDonation extends React.PureComponent<Props, {}> {
         customStyle
       },
       {
-        content: getLocale('type'),
+        content: getLocale('date'),
         customStyle
       },
       {

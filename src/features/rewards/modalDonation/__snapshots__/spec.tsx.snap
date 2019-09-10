@@ -154,7 +154,7 @@ exports[`ModalDonation tests basic tests matches the snapshot 1`] = `
                   <th
                     className="c8"
                   >
-                    MISSING: type
+                    MISSING: date
                   </th>
                   <th
                     className="c9"

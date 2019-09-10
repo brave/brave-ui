@@ -56,7 +56,7 @@ exports[`TableDonation tests basic tests matches the snapshot 1`] = `
           <th
             className="c1"
           >
-            MISSING: type
+            MISSING: date
           </th>
           <th
             className="c2"
