@@ -22,6 +22,7 @@ interface Props {
   fakeOnChangeAdvancedView: () => void
   fakeOnChangeReadOnlyView: () => void
   fakeToggleFirstAccess: () => void
+  fakeOnReportBrokenSite: () => void
 }
 
 interface State {
@@ -51,7 +52,8 @@ export default class Shields extends React.PureComponent<Props, State> {
       fakeOnChangeShieldsEnabled,
       fakeOnChangeAdvancedView,
       fakeOnChangeReadOnlyView,
-      fakeToggleFirstAccess
+      fakeToggleFirstAccess,
+      fakeOnReportBrokenSite
     } = this.props
     const { advancedView } = this.props
     return advancedView
@@ -69,6 +71,7 @@ export default class Shields extends React.PureComponent<Props, State> {
           fakeOnChangeShieldsEnabled={fakeOnChangeShieldsEnabled}
           fakeOnChangeAdvancedView={fakeOnChangeAdvancedView}
           fakeToggleFirstAccess={fakeToggleFirstAccess}
+          fakeOnReportBrokenSite={fakeOnReportBrokenSite}
         />
       ) : (
         <SimpleView
@@ -83,6 +86,7 @@ export default class Shields extends React.PureComponent<Props, State> {
           fakeOnChangeShieldsEnabled={fakeOnChangeShieldsEnabled}
           fakeOnChangeAdvancedView={fakeOnChangeAdvancedView}
           fakeOnChangeReadOnlyView={fakeOnChangeReadOnlyView}
+          fakeOnReportBrokenSite={fakeOnReportBrokenSite}
         />
       )
   }

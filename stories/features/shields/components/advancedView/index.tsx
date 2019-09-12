@@ -27,6 +27,7 @@ interface Props {
   fakeOnChangeShieldsEnabled: () => void
   fakeOnChangeAdvancedView: () => void
   fakeToggleFirstAccess: () => void
+  fakeOnReportBrokenSite: () => void
 }
 
 interface State {
@@ -53,7 +54,8 @@ export default class ShieldsAdvancedView extends React.PureComponent<Props, Stat
       fingerprintingBlocked,
       fakeOnChangeShieldsEnabled,
       fakeOnChangeAdvancedView,
-      fakeToggleFirstAccess
+      fakeToggleFirstAccess,
+      fakeOnReportBrokenSite
     } = this.props
     const { isBlockedListOpen } = this.state
     return (
@@ -69,6 +71,7 @@ export default class ShieldsAdvancedView extends React.PureComponent<Props, Stat
           scriptsBlocked={scriptsBlocked}
           fingerprintingBlocked={fingerprintingBlocked}
           fakeOnChangeShieldsEnabled={fakeOnChangeShieldsEnabled}
+          fakeOnReportBrokenSite={fakeOnReportBrokenSite}
         />
         {
           enabled ? (

@@ -23,6 +23,7 @@ interface Props {
   fakeOnChangeShieldsEnabled: () => void
   fakeOnChangeAdvancedView: () => void
   fakeOnChangeReadOnlyView: () => void
+  fakeOnReportBrokenSite: () => void
 }
 
 interface State {
@@ -48,7 +49,8 @@ export default class ShieldsSimpleView extends React.PureComponent<Props, State>
       fingerprintingBlocked,
       fakeOnChangeShieldsEnabled,
       fakeOnChangeReadOnlyView,
-      fakeOnChangeAdvancedView
+      fakeOnChangeAdvancedView,
+      fakeOnReportBrokenSite
     } = this.props
     const { isBlockedListOpen } = this.state
     return (
@@ -64,6 +66,7 @@ export default class ShieldsSimpleView extends React.PureComponent<Props, State>
           fingerprintingBlocked={fingerprintingBlocked}
           fakeOnChangeShieldsEnabled={fakeOnChangeShieldsEnabled}
           fakeOnChangeReadOnlyView={fakeOnChangeReadOnlyView}
+          fakeOnReportBrokenSite={fakeOnReportBrokenSite}
         />
         <Footer
           advancedView={false}
