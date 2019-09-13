@@ -16,7 +16,8 @@ import {
   StyledSendButton,
   StyledButtonWrapper,
   StyledContributionWrapper,
-  StyledContributionText
+  StyledContributionText,
+  StyledMonthlySendButton
 } from './style'
 
 import Amount from '../amount/index'
@@ -115,6 +116,7 @@ export default class Donate extends React.PureComponent<Props, State> {
 
     const isMonthly = type === 'monthly'
     const disabled = parseInt(currentAmount, 10) === 0
+    const SendButton = isMonthly ? StyledMonthlySendButton : StyledSendButton
 
     return (
       <StyledWrapper donateType={donateType} disabled={disabled} isMobile={isMobile}>
@@ -141,11 +143,11 @@ export default class Donate extends React.PureComponent<Props, State> {
 
         <StyledSend onClick={this.validateDonation} data-test-id={'send-tip-button'} monthly={isMonthly}>
           <StyledButtonWrapper isMobile={isMobile}>
-            <StyledSendButton monthly={isMonthly}>
+            <SendButton>
               <StyledIconSend disabled={disabled} donateType={donateType} monthly={isMonthly}>
                 <SendIcon />
               </StyledIconSend>{actionText}
-            </StyledSendButton>
+            </SendButton>
             {
               nextContribution && isMonthly
               ? <StyledContributionWrapper>

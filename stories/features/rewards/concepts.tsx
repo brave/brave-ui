@@ -510,6 +510,7 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
               attentionScore={'17'}
               onToggleTips={onToggleTips}
               donationAction={doNothing}
+              setMonthlyAction={doNothing}
               onAmountChange={onAmountChange}
               donationAmounts={donationAmounts}
               onIncludeInAuto={onIncludeInAuto}

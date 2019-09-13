@@ -157,6 +157,7 @@ storiesOf('Feature Components/Rewards/Wallet/Desktop', module)
           }
           onToggleTips={doNothing}
           donationAction={doNothing}
+          setMonthlyAction={doNothing}
           onAmountChange={doNothing}
           onIncludeInAuto={doNothing}
           showUnVerified={boolean('Show unverified content', true)}

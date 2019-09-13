@@ -5,6 +5,7 @@
 import styled, { css } from '../../../theme'
 import * as CSS from 'csstype'
 import { DonateType } from './index'
+import palette from '../../../theme/colors'
 
 interface Theme {
   paddingBox: CSS.PaddingProperty<1>
@@ -66,19 +67,15 @@ const getAmountStyle = (isMobile?: boolean) => {
 }
 
 const getIconColor = (p: StyleProps) => {
-  if (p.disabled) {
-    return '#a1a8f2'
-  }
-
   if (p.monthly) {
-    return '#FF5903'
+    return palette.orange500
   }
 
-  if (p.donateType === 'small') {
-    return '#1A22A8'
+  if (p.disabled) {
+    return palette.purple300
   }
 
-  return '#3e45b2'
+  return palette.blurple600
 }
 
 export const StyledWrapper = styled<StyleProps, 'div'>('div')`
@@ -111,7 +108,7 @@ export const StyledSend = styled<StyleProps, 'div'>('div')`
     ? `inherit`
     : `var(--donate-send-bg)`
   };
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.2px;
   color: var(--donate-send-color);
@@ -120,33 +117,28 @@ export const StyledSend = styled<StyleProps, 'div'>('div')`
   border: none;
   width: 100%;
   text-align: left;
-  cursor: pointer;
+  padding-bottom: ${p => p.monthly ? 20 : 13}px;
 `
 
-export const StyledSendButton = styled<StyleProps, 'button'>('button')`
+export const StyledSendButton = styled<{}, 'button'>('button')`
   display: block;
   border: none;
-  font-size: ${p => p.monthly ? 12 : 13}px;
+  font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   background: var(--donate-send-bg);
   cursor: pointer;
-  ${(p) => {
-    if (!p.monthly) {
-      return null
-    }
+`
 
-    return `
-      color: #FF5903;
-      background: white;
-      border-radius: 20px;
-      font-size: 12px;
-      padding: 6px 15px;
-      text-transform: none;
-      width: 180px;
-      font-weight: bold;
-    `
-  }}
+export const StyledMonthlySendButton = styled(StyledSendButton)`
+  color: ${palette.orange500};
+  background: ${palette.white};
+  border-radius: 20px;
+  font-size: 12px;
+  padding: 6px 15px;
+  text-transform: none;
+  width: 180px;
+  font-weight: bold;
 `
 
 export const StyledButtonWrapper = styled<StyleProps, 'div'>('div')`
@@ -166,7 +158,7 @@ export const StyledIconSend = styled<StyleProps, 'span'>('span')`
 
 export const StyledFunds = styled<{}, 'div'>('div')`
   font-family: Muli, sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 300;
   line-height: 1.69;
   color: #fff;
@@ -203,6 +195,7 @@ export const StyledAmountsWrapper = styled<StyleProps, 'div'>('div')`
 
 export const StyledContributionWrapper = styled<{}, 'div'>('div')`
   float: right;
+  color: ${palette.white};
   margin: -33px -35px 0px;
 `
 

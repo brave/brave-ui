@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import { Props } from './index'
 import bg1Url from './assets/bg_bats.svg'
 import bg2Url from './assets/bg_hearts.svg'
+import palette from '../../../theme/colors'
 
 interface StyleProps {
   padding?: boolean
@@ -16,10 +17,10 @@ interface StyleProps {
 
 const getBgStyle = (monthly?: boolean) => {
   if (!monthly) {
-    return 'background: #696fdc'
+    return `background: ${palette.blurple400}`
   }
 
-  return 'background-image: linear-gradient(180deg, #FF8907 0%, #FF5103 100%)'
+  return `background-image: linear-gradient(180deg, #FF8907 0%, ${palette.orange500} 100%)`
 }
 
 export const StyledWrapper = styled<StyleProps, 'div'>('div')`

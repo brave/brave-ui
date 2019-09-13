@@ -32,7 +32,7 @@ exports[`Donate tests basic tests matches the snapshot 1`] = `
 
 .c4 {
   background: var(--donate-send-bg);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   -webkit-letter-spacing: 0.2px;
   -moz-letter-spacing: 0.2px;
@@ -44,13 +44,13 @@ exports[`Donate tests basic tests matches the snapshot 1`] = `
   border: none;
   width: 100%;
   text-align: left;
-  cursor: pointer;
+  padding-bottom: 13px;
 }
 
 .c6 {
   display: block;
   border: none;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   background: var(--donate-send-bg);
@@ -67,7 +67,7 @@ exports[`Donate tests basic tests matches the snapshot 1`] = `
   vertical-align: middle;
   display: inline-block;
   margin-right: 15px;
-  color: #1A22A8;
+  color: #353dab;
   width: 27px;
   height: 27px;
 }
