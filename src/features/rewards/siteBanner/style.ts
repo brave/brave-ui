@@ -11,6 +11,15 @@ interface StyleProps {
   padding?: boolean
   bg?: string
   isTwitterTip?: boolean
+  monthly?: boolean | undefined
+}
+
+const getBgStyle = (monthly?: boolean) => {
+  if (!monthly) {
+    return 'background: #696fdc'
+  }
+
+  return 'background-image: linear-gradient(180deg, #FF8907 0%, #FF5103 100%)'
 }
 
 export const StyledWrapper = styled<StyleProps, 'div'>('div')`
@@ -43,7 +52,7 @@ export const StyledContent = styled<{}, 'div'>('div')`
 
 export const StyledDonation = styled<StyleProps, 'div'>('div')`
   flex-basis: 336px;
-  background: #696fdc;
+  ${p => getBgStyle(p.monthly)};
   justify-content: space-between;
   display: flex;
   flex-direction: column;
@@ -145,7 +154,7 @@ export const StyledText = styled<StyleProps, 'div'>('div')`
 
 export const StyledWallet = styled<StyleProps, 'div'>('div')`
   font-size: 12px;
-  color: #afb2f1;
+  color: ${p => p.monthly ? '#fff' : '#afb2f1'};
   text-align: right;
   margin: 8px 0 10px;
   padding: 0 19px 0 55px;

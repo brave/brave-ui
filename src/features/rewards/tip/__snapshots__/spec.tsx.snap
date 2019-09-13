@@ -121,7 +121,7 @@ exports[`Tip tests basic tests matches the snapshot 1`] = `
   vertical-align: middle;
   display: inline-block;
   margin-right: 15px;
-  color: #a1a8f2;
+  color: #1A22A8;
   width: 27px;
   height: 27px;
 }

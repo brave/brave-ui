@@ -14,12 +14,15 @@ import {
   StyledFundsText,
   StyledAmountsWrapper,
   StyledSendButton,
-  StyledButtonWrapper
+  StyledButtonWrapper,
+  StyledContributionWrapper,
+  StyledContributionText
 } from './style'
 
 import Amount from '../amount/index'
 import { getLocale } from '../../../helpers'
 import { EmoteSadIcon, SendIcon } from '../../../components/icons'
+import { BannerType } from '../siteBanner'
 
 export type DonateType = 'big' | 'small'
 
@@ -41,6 +44,8 @@ export interface Props {
   children?: React.ReactNode
   isMobile?: boolean
   addFundsLink?: string
+  type: BannerType
+  nextContribution?: string
 }
 
 interface State {
@@ -103,8 +108,12 @@ export default class Donate extends React.PureComponent<Props, State> {
       currentAmount,
       donateType,
       isMobile,
-      addFundsLink
+      addFundsLink,
+      type,
+      nextContribution
     } = this.props
+
+    const isMonthly = type === 'monthly'
     const disabled = parseInt(currentAmount, 10) === 0
 
     return (
@@ -130,13 +139,25 @@ export default class Donate extends React.PureComponent<Props, State> {
           {children}
         </StyledContent>
 
-        <StyledSend onClick={this.validateDonation} data-test-id={'send-tip-button'}>
+        <StyledSend onClick={this.validateDonation} data-test-id={'send-tip-button'} monthly={isMonthly}>
           <StyledButtonWrapper isMobile={isMobile}>
-            <StyledSendButton>
-              <StyledIconSend disabled={disabled} donateType={donateType}>
+            <StyledSendButton monthly={isMonthly}>
+              <StyledIconSend disabled={disabled} donateType={donateType} monthly={isMonthly}>
                 <SendIcon />
               </StyledIconSend>{actionText}
             </StyledSendButton>
+            {
+              nextContribution && isMonthly
+              ? <StyledContributionWrapper>
+                  <StyledContributionText>
+                    {getLocale('nextContribution')}
+                  </StyledContributionText>
+                  <StyledContributionText>
+                    {nextContribution}
+                  </StyledContributionText>
+                </StyledContributionWrapper>
+              : null
+            }
           </StyledButtonWrapper>
         </StyledSend>
         {

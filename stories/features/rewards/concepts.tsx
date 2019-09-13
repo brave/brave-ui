@@ -22,6 +22,7 @@ import {
   WalletSummarySlider,
   WalletWrapper
 } from '../../../src/features/rewards'
+import { BannerType } from '../../../src/features/rewards/siteBanner'
 import { BatColorIcon, WalletAddIcon } from '../../../src/components/icons'
 import WelcomePage from '../../../src/features/rewards/welcomePage'
 import { Notification, WalletState } from '../../../src/features/rewards/walletWrapper'
@@ -40,9 +41,7 @@ const doNothing = (id: string) => {
 const donationAmounts = [
   { tokens: '1.0', converted: '0.30', selected: false },
   { tokens: '5.0', converted: '1.50', selected: false },
-  { tokens: '10.0', converted: '3.00', selected: false },
-  { tokens: '50.0', converted: '15.00', selected: false },
-  { tokens: '100.0', converted: '30.00', selected: false }
+  { tokens: '10.0', converted: '3.00', selected: false }
 ]
 
 const defaultGrant = {
@@ -148,11 +147,14 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
           store.state.showBanner
             ? <div style={{ position: 'fixed', top: 0, left: 0, height: '100vh', width: '100%', backgroundColor: 'rgba(12,13,33,0.85)' }}>
               <SiteBanner
+                type={select('Banner Type', {
+                  'one-time': 'one-time',
+                  monthly: 'monthly'
+                }, 'one-time') as BannerType}
                 domain={text('Domain', 'duckduckgo.com')}
                 name={text('Name', 'duckduckgo.com')}
                 screenName={screenName}
                 title={text('Title', '')}
-                recurringDonation={boolean('Current recurring donation', true)}
                 balance={text('Balance ', '5.0')}
                 bgImage={boolean('Show bg image', false) ? siteBgImage : null}
                 logo={boolean('Show logo', false) ? siteBgLogo : null}
@@ -187,6 +189,7 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
                 ]}
                 showUnVerifiedNotice={boolean('Show unverified notice', false)}
                 isVerified={boolean('Is publisher verified', true)}
+                nextContribution={'07/08/2019'}
               >
                 {
                   isTwitterTip()

@@ -18,6 +18,7 @@ interface StyleProps {
   disabled?: boolean
   donateType?: DonateType
   isMobile?: boolean
+  monthly?: boolean
 }
 
 const customStyle: Record<DonateType, Theme> = {
@@ -64,6 +65,22 @@ const getAmountStyle = (isMobile?: boolean) => {
   `
 }
 
+const getIconColor = (p: StyleProps) => {
+  if (p.disabled) {
+    return '#a1a8f2'
+  }
+
+  if (p.monthly) {
+    return '#FF5903'
+  }
+
+  if (p.donateType === 'small') {
+    return '#1A22A8'
+  }
+
+  return '#3e45b2'
+}
+
 export const StyledWrapper = styled<StyleProps, 'div'>('div')`
   position: relative;
   font-family: ${p => p.theme.fontFamily.body};
@@ -89,8 +106,11 @@ export const StyledDonationTitle = styled<StyleProps, 'div'>('div')`
   padding-left: ${p => p.isMobile ? 20 : 0}px;
 `
 
-export const StyledSend = styled<{}, 'div'>('div')`
-  background: var(--donate-send-bg);
+export const StyledSend = styled<StyleProps, 'div'>('div')`
+  background: ${p => p.monthly
+    ? `inherit`
+    : `var(--donate-send-bg)`
+  };
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.2px;
@@ -103,14 +123,30 @@ export const StyledSend = styled<{}, 'div'>('div')`
   cursor: pointer;
 `
 
-export const StyledSendButton = styled<{}, 'button'>('button')`
+export const StyledSendButton = styled<StyleProps, 'button'>('button')`
   display: block;
   border: none;
-  font-size: 13px;
+  font-size: ${p => p.monthly ? 12 : 13}px;
   font-weight: 600;
   text-transform: uppercase;
   background: var(--donate-send-bg);
   cursor: pointer;
+  ${(p) => {
+    if (!p.monthly) {
+      return null
+    }
+
+    return `
+      color: #FF5903;
+      background: white;
+      border-radius: 20px;
+      font-size: 12px;
+      padding: 6px 15px;
+      text-transform: none;
+      width: 180px;
+      font-weight: bold;
+    `
+  }}
 `
 
 export const StyledButtonWrapper = styled<StyleProps, 'div'>('div')`
@@ -123,7 +159,7 @@ export const StyledIconSend = styled<StyleProps, 'span'>('span')`
   vertical-align: middle;
   display: inline-block;
   margin-right: 15px;
-  color: ${p => p.disabled ? p.donateType === 'small' ? '#1A22A8' : '#3e45b2' : '#a1a8f2'};
+  color: ${p => getIconColor(p)};
   width: 27px;
   height: 27px;
 `
@@ -163,4 +199,18 @@ export const StyledAmountsWrapper = styled<StyleProps, 'div'>('div')`
   width: 100%;
   display: block;
   ${p => getAmountStyle(p.isMobile)}
+`
+
+export const StyledContributionWrapper = styled<{}, 'div'>('div')`
+  float: right;
+  margin: -33px -35px 0px;
+`
+
+export const StyledContributionText = styled<{}, 'span'>('span')`
+  font-size: 10px;
+  font-weight: 300;
+  text-align: right;
+  display: block;
+  line-height: 12px;
+  text-transform: none;
 `
