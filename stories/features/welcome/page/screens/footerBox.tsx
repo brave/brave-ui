@@ -10,12 +10,11 @@ import {
   FooterLeftColumn,
   FooterMiddleColumn,
   FooterRightColumn,
-  SkipButton,
-  FooterButton,
   Bullet
 } from '../../../../../src/features/welcome/'
 
 // Shared components
+import Button from '../../../../../src/components/buttonsIndicators/button'
 import { ArrowRightIcon } from '../../../../../src/components/icons'
 
 // Utils
@@ -36,7 +35,7 @@ export default class FooterBox extends React.PureComponent<Props, {}> {
     return (
       <Footer>
         <FooterLeftColumn>
-          <SkipButton onClick={onClickSkip}>{locale.skipWelcomeTour}</SkipButton>
+          <Button level={'tertiary'} size={'small'} onClick={onClickSkip} text={locale.skipWelcomeTour} />
         </FooterLeftColumn>
         <FooterMiddleColumn>
           {Array.from({ length: totalScreensSize }, (v: undefined, k: number) => (
@@ -49,9 +48,8 @@ export default class FooterBox extends React.PureComponent<Props, {}> {
             // don't show the next button in the first screen
             currentScreen !== 1
               ? (
-                <FooterButton
-                  level='secondary'
-                  type='default'
+                <Button
+                  level='default'
                   size='medium'
                   onClick={onClickNext}
                   text={locale.next}
@@ -59,9 +57,8 @@ export default class FooterBox extends React.PureComponent<Props, {}> {
                 />
               )
               : currentScreen !== 1 && (
-                <FooterButton
-                  level='secondary'
-                  type='default'
+                <Button
+                  level='default'
                   size='medium'
                   onClick={onClickDone}
                   text={locale.done}

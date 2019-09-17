@@ -5,7 +5,10 @@
 import * as React from 'react'
 
 // Feature-specific components
-import { Content, Title, Paragraph, PrimaryButton } from '../../../../../src/features/welcome/'
+import { Content, Title, Paragraph } from '../../../../../src/features/welcome/'
+
+// Shared components
+import Button from '../../../../../src/components/buttonsIndicators/button'
 
 // Utils
 import locale from '../fakeLocale'
@@ -32,9 +35,8 @@ export default class PaymentsBox extends React.PureComponent<Props, {}> {
         <WelcomeRewardsImage />
         <Title>{locale.enableBraveRewards}</Title>
         <Paragraph>{locale.setupBraveRewards}</Paragraph>
-        <PrimaryButton
+        <Button
           level='primary'
-          type='accent'
           size='large'
           text={locale.getStarted}
           onClick={onClick}

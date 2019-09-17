@@ -5,8 +5,11 @@
 import * as React from 'react'
 
 // Feature-specific components
-import { Content, Title, Paragraph, PrimaryButton, SelectGrid } from '../../../../../src/features/welcome/'
+import { Content, Title, Paragraph, SelectGrid } from '../../../../../src/features/welcome/'
 import { SelectBox } from '../../../../../src/features/welcome'
+
+// Shared components
+import Button from '../../../../../src/components/buttonsIndicators/button'
 
 // Utils
 import locale from '../fakeLocale'
@@ -61,9 +64,8 @@ export default class ThemingBox extends React.PureComponent<Props, State> {
               <option value='Dark'>{locale.themeOption2}</option>
               <option value='System'>{locale.themeOption3}</option>
             </SelectBox>
-            <PrimaryButton
+            <Button
               level='primary'
-              type='accent'
               size='large'
               text={locale.confirm}
               disabled={!themeSelected}
