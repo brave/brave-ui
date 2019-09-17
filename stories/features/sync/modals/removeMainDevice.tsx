@@ -39,8 +39,7 @@ export default class RemoveMainDeviceModal extends React.PureComponent<Props, {}
         <TwoColumnButtonGrid>
             <OneColumnButtonGrid>
               <Button
-                level='secondary'
-                type='subtle'
+                level='tertiary'
                 size='medium'
                 onClick={onClose}
                 text={getLocale('cancel')}
@@ -48,7 +47,6 @@ export default class RemoveMainDeviceModal extends React.PureComponent<Props, {}
             </OneColumnButtonGrid>
             <Button
               level='primary'
-              type='warn'
               size='medium'
               onClick={onClose}
               text={getLocale('remove')}
