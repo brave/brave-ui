@@ -9,11 +9,11 @@ import {
   Overlay,
   WarningModal,
   WarningIcon,
-  WarningText,
-  ShieldsButton
+  WarningText
 } from '../../../../../../src/features/shields'
 
 // Shared components
+import Button from '../../../../../../src/components/buttonsIndicators/button'
 import { Card } from '../../../../../../src/components'
 
 // Helpers
@@ -34,9 +34,8 @@ export default class WebCompatWarning extends React.PureComponent<Props, {}> {
             <WarningText>
               {getLocale('webCompatWarning')}
             </WarningText>
-            <ShieldsButton
+            <Button
               level='primary'
-              type='accent'
               onClick={onConfirm}
               text={getLocale('gotIt')}
             />

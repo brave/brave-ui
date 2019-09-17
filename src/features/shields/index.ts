@@ -66,8 +66,7 @@ export {
   // Footer
   Link,
   // Disabled state
-  DisabledContentText,
-  ShieldsButton
+  DisabledContentText
 } from './display'
 
 export { ArrowDownIcon, ArrowUpIcon, ShieldIcon, WarningIcon } from './media'

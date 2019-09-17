@@ -14,12 +14,14 @@ import {
   Favicon,
   SiteInfoText,
   BlockedInfoRowStats,
-  BlockedListSummaryText,
-  ShieldsButton
+  BlockedListSummaryText
 } from '../../../../../../src/features/shields'
 
 // Group components
 import StaticResourcesList from '../../shared/resourcesBlockedList/staticResourcesList'
+
+// Shared components
+import Button from '../../../../../../src/components/buttonsIndicators/button'
 
 // Fake data
 import { getLocale } from '../../../fakeLocale'
@@ -53,7 +55,7 @@ export default class StaticList extends React.PureComponent<Props, {}> {
             </BlockedListStatic>
         </details>
         <BlockedListFooter>
-          <ShieldsButton level='primary' type='accent' onClick={onClose} text={getLocale('goBack')} />
+          <Button level='primary' onClick={onClose} text={getLocale('goBack')} />
         </BlockedListFooter>
       </BlockedListContent>
     )

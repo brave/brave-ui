@@ -410,7 +410,7 @@ export const BlockedListItemSummary = styled(BlockedListItemWithOptions.withComp
 
 export const BlockedListFooter = styled<{}, 'footer'>('footer')`
   box-sizing: border-box;
-  padding: 8px 0px;
+  padding: 12px 0px;
   display: flex;
   justify-content: center;
 `

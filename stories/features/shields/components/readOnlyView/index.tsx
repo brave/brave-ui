@@ -14,13 +14,15 @@ import {
   StaticResourcesControls,
   StaticResourcesContainer,
   BlockedInfoRowText,
-  BlockedListFooter,
-  ShieldsButton
+  BlockedListFooter
 } from '../../../../../src/features/shields'
 
 // Group components
 import InterfaceControls from './interfaceControls'
 import PrivacyControls from './privacyControls'
+
+// Shared components
+import Button from '../../../../../src/components/buttonsIndicators/button'
 
 // Helpers
 import { getLocale } from '../../fakeLocale'
@@ -50,7 +52,7 @@ export default class ShieldsReadOnlyView extends React.PureComponent<Props, {}> 
           </StaticResourcesContainer>
         </StaticResourcesControls>
         <BlockedListFooter>
-          <ShieldsButton level='primary' type='accent' onClick={onClose} text={getLocale('goBack')} />
+          <Button level='primary' onClick={onClose} text={getLocale('goBack')} />
         </BlockedListFooter>
       </ShieldsPanel>
     )
