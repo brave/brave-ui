@@ -11,7 +11,6 @@ import { withState } from '@dump247/storybook-state'
 import centered from '@storybook/addon-centered'
 
 // Components
-import { Tokens } from '../../src/features/rewards'
 import { Toggle, Select, Checkbox, TextArea, TextAreaClipboard, Input, ControlWrapper, Radio } from '../../src/components'
 import { CheckCircleIcon } from '../../src/components/icons'
 
@@ -83,45 +82,6 @@ storiesOf('Components/Form controls', module)
               <div data-value='10'>Pay Only Top 10</div>
               <div data-value='50'>Pay Top 50</div>
               <div data-value='100000'>Really long limit that I know of 100000</div>
-            </Select>
-          </ControlWrapper>
-        </div>
-        <div style={{ width: '310px', background: '#fff', padding: '30px' }}>
-          <ControlWrapper
-            text={text('Title', 'Monthly Budget')}
-            type={'light'}
-            disabled={boolean('Disabled', false)}
-          >
-            <Select
-              type={'light'}
-              title={'Monthly Budget'}
-              disabled={boolean('Disabled', false)}
-              floating={boolean('Floating', false)}
-            >
-              <div data-value='5'>
-                <Tokens
-                  size={'mini'}
-                  value={'5'}
-                  data-value={'5'}
-                  color={'donation'}
-                />
-              </div>
-              <div data-value='10'>
-                <Tokens
-                  size={'mini'}
-                  value={'10'}
-                  data-value={'10'}
-                  color={'donation'}
-                />
-              </div>
-              <div data-value='20'>
-                <Tokens
-                  size={'mini'}
-                  value={'20'}
-                  data-value={'20'}
-                  color={'donation'}
-                />
-              </div>
             </Select>
           </ControlWrapper>
         </div>
@@ -199,38 +159,10 @@ storiesOf('Components/Form controls', module)
               disabled={boolean('Disabled', false)}
               onChange={onChange}
             >
-              <div data-value='5'>
-                <Tokens
-                  size={'mini'}
-                  value={'5'}
-                  data-value={'5'}
-                  color={'donation'}
-                />
-              </div>
-              <div data-value='10'>
-                <Tokens
-                  size={'mini'}
-                  value={'10'}
-                  data-value={'10'}
-                  color={'donation'}
-                />
-              </div>
-              <div data-value='15'>
-                <Tokens
-                  size={'mini'}
-                  value={'15'}
-                  data-value={'15'}
-                  color={'donation'}
-                />
-              </div>
-              <div data-value='20'>
-                <Tokens
-                  size={'mini'}
-                  value={'20'}
-                  data-value={'20'}
-                  color={'donation'}
-                />
-              </div>
+              <div data-value='5'>5</div>
+              <div data-value='10'>10</div>
+              <div data-value='15'>15</div>
+              <div data-value='20'>20</div>
             </Radio>
           </ControlWrapper>
         </div>
