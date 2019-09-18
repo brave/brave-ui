@@ -31,9 +31,11 @@ import {
   SiteInfoText,
   BlockedListSummaryText,
   BlockedListItemHeaderStats,
-  BlockedListItemHeaderText,
-  ShieldsButton
+  BlockedListItemHeaderText
 } from '../../../../../../src/features/shields'
+
+// Shared components
+import Button from '../../../../../../src/components/buttonsIndicators/button'
 
 // Helpers
 import { getLocale } from '../../../fakeLocale'
@@ -120,7 +122,7 @@ export default class CoreFeature extends React.PureComponent<Props, {}> {
           </BlockedListDynamic>
         </details>
         <BlockedListFooter>
-          <ShieldsButton level='primary' type='accent' onClick={onClose} text={getLocale('goBack')} />
+          <Button level='primary' onClick={onClose} text={getLocale('goBack')} />
         </BlockedListFooter>
       </BlockedListContent>
     )

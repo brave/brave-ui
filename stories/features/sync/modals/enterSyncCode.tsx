@@ -79,8 +79,7 @@ export default class EnterSyncCodeModal extends React.PureComponent<Props, State
         <TwoColumnButtonGrid>
             <OneColumnButtonGrid>
               <Button
-                level='secondary'
-                type='subtle'
+                level='tertiary'
                 size='medium'
                 onClick={onClose}
                 text={getLocale('cancel')}
@@ -88,7 +87,6 @@ export default class EnterSyncCodeModal extends React.PureComponent<Props, State
             </OneColumnButtonGrid>
             <Button
               level='primary'
-              type='accent'
               size='medium'
               onClick={this.onClickConfirmSyncCode}
               text={getLocale('confirmCode')}

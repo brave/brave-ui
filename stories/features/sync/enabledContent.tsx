@@ -208,14 +208,12 @@ export default class SyncEnabledContent extends React.PureComponent<{}, State> {
                     <br />
                     <Button
                       level='secondary'
-                      type='accent'
                       size='medium'
                       text={getLocale('viewSyncCode')}
                       onClick={this.onClickViewSyncCodeButton}
                     />
                     <Button
                       level='primary'
-                      type='accent'
                       size='medium'
                       text={getLocale('addDevice')}
                       onClick={this.onClickAddDeviceButton}
@@ -231,7 +229,6 @@ export default class SyncEnabledContent extends React.PureComponent<{}, State> {
               <SectionBlock>
                 <Button
                   level='primary'
-                  type='accent'
                   size='medium'
                   text={getLocale('leaveSyncChain')}
                   onClick={this.onClickResetSyncButton}

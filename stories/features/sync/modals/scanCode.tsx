@@ -12,7 +12,6 @@ import {
   ModalHeader,
   Title,
   Paragraph,
-  Link,
   ScanGrid,
   ThreeColumnButtonGrid
 } from '../../../../src/features/sync'
@@ -49,8 +48,7 @@ export default class ScanCodeModal extends React.PureComponent<Props, State> {
     this.setState({ enterCodeWordsInstead: !this.state.enterCodeWordsInstead })
   }
 
-  onCancel = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault()
+  onCancel = () => {
     this.props.onClose()
   }
 
@@ -76,12 +74,11 @@ export default class ScanCodeModal extends React.PureComponent<Props, State> {
           </ScanGrid>
           <ThreeColumnButtonGrid>
           <div>
-            <Link onClick={this.onCancel}>{getLocale('cancel')}</Link>
+            <Button level='tertiary' onClick={this.onCancel} text={getLocale('cancel')}/>
           </div>
           <div>
             <Button
               level='secondary'
-              type='subtle'
               size='medium'
               onClick={onClose}
               text={getLocale('viewSyncCode')}
@@ -90,7 +87,6 @@ export default class ScanCodeModal extends React.PureComponent<Props, State> {
           <div>
             <Button
               level='primary'
-              type='accent'
               size='medium'
               onClick={onClose}
               text={getLocale('viewCodeWords')}

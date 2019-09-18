@@ -2,10 +2,11 @@
 
 exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
 .c26 {
-  --button-main-color: #FB542B;
-  --button-main-color-hover: #FB542B;
-  --button-main-color-active: #ffb8a6;
-  --button-state-color: var(--button-main-color);
+  --brand-color-subtle: #fb542b1a;
+  --brand-color-hover: #ff977d;
+  --brand-color-main: #ff7654;
+  --brand-color-pressed: #FB542B;
+  --brand-style-focus-shadow: 0 0 0 4px #ff765466;
   --icon-size: 16px;
   --icon-spacing: 6px;
   --webkit-appearance: none;
@@ -28,36 +29,58 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-family: Poppins,sans-serif;
+  font-family: Muli,sans-serif;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-size: 13px;
+  font-size: 14px;
   border-radius: 20px;
   width: auto;
-  min-width: 104px;
-  padding: 11px 15px;
+  min-width: 82px;
+  padding: 9px 16px;
+  opacity: none;
 }
 
-.c26:hover:enabled {
-  --button-state-color: var(--button-main-color-hover);
+.c25 {
+  color: #3b3e4f;
+  border: 1px solid #c2c4cf;
 }
 
-.c26:active:enabled {
-  --button-state-color: var(--button-main-color-active);
+.c25:hover:enabled {
+  color: var(--brand-color-main);
+  border-color: var(--brand-color-main);
+}
+
+.c25:focus:enabled {
+  border-color: var(--brand-color-main);
+  box-shadow: var(--brand-style-focus-shadow);
+}
+
+.c25:active:enabled {
+  color: var(--brand-color-main);
+  border-color: var(--brand-color-main);
+  box-shadow: var(--brand-style-focus-shadow);
 }
 
 .c28 {
   color: #fff;
-  background: var(--button-state-color);
-  border: 1px solid var(--button-state-color);
+  background: var(--brand-color-main);
 }
 
-.c25 {
-  border: 1px solid;
-  color: var(--button-state-color);
+.c28:hover:enabled {
+  background: var(--brand-color-hover);
+}
+
+.c28:focus:enabled {
+  background: var(--brand-color-main);
+  box-shadow: var(--brand-style-focus-shadow);
+}
+
+.c28:active:enabled {
+  background: var(--brand-color-main);
+  box-shadow: var(--brand-style-focus-shadow);
 }
 
 .c27 {
@@ -75,7 +98,27 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
   -moz-letter-spacing: 0;
   -ms-letter-spacing: 0;
   letter-spacing: 0;
-  font-weight: 500;
+  font-weight: 600;
+  text-transform: none;
+  line-height: 1;
+}
+
+.c29 {
+  min-height: var(--icon-size);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+  font-weight: 700;
   text-transform: none;
   line-height: 1;
 }
@@ -436,12 +479,10 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
           className="c24 c25 c26"
           onClick={[Function]}
           size="medium"
-          type="accent"
         >
           <div
             className="c27"
             size="medium"
-            type="accent"
           >
             MISSING: cancel
           </div>
@@ -450,12 +491,10 @@ exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
           className="c24 c28 c26"
           onClick={[Function]}
           size="medium"
-          type="accent"
         >
           <div
-            className="c27"
+            className="c29"
             size="medium"
-            type="accent"
           >
             MISSING: restore
           </div>

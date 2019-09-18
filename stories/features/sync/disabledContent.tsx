@@ -81,13 +81,11 @@ export default class SyncDisabledContent extends React.PureComponent<{}, State> 
                   <DisabledContentButtonGrid>
                     <Button
                       level='primary'
-                      type='accent'
                       onClick={this.onClickNewSyncChainButton}
                       text={getLocale('startSyncChain')}
                     />
                     <Button
-                      level='secondary'
-                      type='accent'
+                      level='default'
                       onClick={this.onClickEnterSyncChainCodeButton}
                       text={getLocale('enterSyncChainCode')}
                     />

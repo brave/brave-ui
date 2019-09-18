@@ -3,8 +3,6 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from '../../theme'
-import Button, { Props as ButtonProps } from '../../components/buttonsIndicators/button'
-import { ComponentType } from 'react'
 
 /**
  * Header
@@ -191,19 +189,4 @@ export const DisabledContentText = styled<{}, 'div'>('div')`
   font-size: 12px;
   font-weight: normal;
   line-height: 18px;
-`
-
-/**
- * button
- */
-export const ShieldsButton = styled(Button as ComponentType<ButtonProps>)`
-  &:focus {
-    outline-offset: 2px;
-    outline-color: ${p => p.theme.color.brandBrave};
-    outline-width: 2px;
-  }
-
-  &:active {
-    outline: none;
-  }
 `

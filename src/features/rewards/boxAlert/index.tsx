@@ -100,7 +100,7 @@ export default class BoxAlert extends React.PureComponent<Props, State> {
               <Button
                 text={getLocale('ok')}
                 size={'call-to-action'}
-                type={'accent'}
+                level={'primary'}
                 onClick={this.toggleModalDisplay}
               />
             </StyledButton>

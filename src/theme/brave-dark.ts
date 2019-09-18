@@ -8,7 +8,9 @@ const darkTheme: ITheme = {
   color: {
     ...defaultTheme.color,
     contextMenuBackground: colors.black,
-    contextMenuForeground: colors.white
+    contextMenuForeground: colors.white,
+    defaultControl: colors.white,
+    defaultButtonBorder: colors.grey400
   }
 }
 

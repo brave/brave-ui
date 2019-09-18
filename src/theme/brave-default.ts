@@ -1,5 +1,6 @@
 import colors from './colors'
 import ITheme from './theme-interface'
+import tinyColor from '@ctrl/tinycolor'
 
 // Define colors, fonts, and sizes by purpose.
 // Keys should not describe the value, but what they are to be used for.
@@ -13,13 +14,23 @@ const theme: ITheme = {
     brandBrave: colors.orange500,
     brandBat: colors.blurple500,
     // brave controls
-    brandBraveInteracting: colors.orange500,
+    brandBraveSubtleBackground: tinyColor(colors.orange500).setAlpha(.1).toHex8String(),
+    brandBraveHover: colors.orange300,
+    brandBraveMain: colors.orange400,
+    brandBravePressed: colors.orange500,
+    brandBraveOutline: tinyColor(colors.orange400).setAlpha(.4).toHex8String(),
     brandBraveActive: colors.orange200,
-    brandBraveLight: colors.orange000,
     // bat controls
+    brandBatSubtleBackground: tinyColor(colors.blurple500).setAlpha(.1).toHex8String(),
+    brandBatHover: colors.blurple300,
+    brandBatMain: colors.blurple400,
+    brandBatPressed: colors.blurple500,
+    brandBatOutline: tinyColor(colors.blurple400).setAlpha(.4).toHex8String(),
     brandBatInteracting: colors.blurple500,
     brandBatActive: colors.blurple200,
     // regular controls
+    defaultButtonText: colors.grey800,
+    defaultButtonBorder: colors.grey400,
     defaultControl: colors.grey800,
     defaultControlInteracting: colors.black,
     defaultControlActive: colors.grey700,

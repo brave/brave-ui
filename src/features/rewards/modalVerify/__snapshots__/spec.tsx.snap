@@ -26,10 +26,11 @@ exports[`PanelVerify tests basic tests matches the snapshot 1`] = `
 }
 
 .c26 {
-  --button-main-color: #FB542B;
-  --button-main-color-hover: #FB542B;
-  --button-main-color-active: #ffb8a6;
-  --button-state-color: var(--button-main-color);
+  --brand-color-subtle: #fb542b1a;
+  --brand-color-hover: #ff977d;
+  --brand-color-main: #ff7654;
+  --brand-color-pressed: #FB542B;
+  --brand-style-focus-shadow: 0 0 0 4px #ff765466;
   --icon-size: 18px;
   --icon-spacing: 6px;
   --webkit-appearance: none;
@@ -52,31 +53,37 @@ exports[`PanelVerify tests basic tests matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-family: Poppins,sans-serif;
+  font-family: Muli,sans-serif;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 28px;
   width: 100%;
   min-width: 235px;
   padding: 19px 15px;
-}
-
-.c26:hover:enabled {
-  --button-state-color: var(--button-main-color-hover);
-}
-
-.c26:active:enabled {
-  --button-state-color: var(--button-main-color-active);
+  opacity: none;
 }
 
 .c25 {
   color: #fff;
-  background: var(--button-state-color);
-  border: 1px solid var(--button-state-color);
+  background: var(--brand-color-main);
+}
+
+.c25:hover:enabled {
+  background: var(--brand-color-hover);
+}
+
+.c25:focus:enabled {
+  background: var(--brand-color-main);
+  box-shadow: var(--brand-style-focus-shadow);
+}
+
+.c25:active:enabled {
+  background: var(--brand-color-main);
+  box-shadow: var(--brand-style-focus-shadow);
 }
 
 .c27 {
@@ -94,7 +101,7 @@ exports[`PanelVerify tests basic tests matches the snapshot 1`] = `
   -moz-letter-spacing: 0;
   -ms-letter-spacing: 0;
   letter-spacing: 0;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
   line-height: 1;
 }
@@ -511,12 +518,10 @@ exports[`PanelVerify tests basic tests matches the snapshot 1`] = `
               className="c24 c25 c26"
               id="on-boarding-verify-button"
               size="call-to-action"
-              type="accent"
             >
               <div
                 className="c27"
                 size="call-to-action"
-                type="accent"
               >
                 MISSING: walletVerificationButton
               </div>

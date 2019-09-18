@@ -13,16 +13,12 @@ export interface Props {
   onClickOk?: () => void
   cancelString?: string
   okString: string
-  colorType: 'default' | 'accent' | 'warn' | 'subtle'
 }
 
 export default class AlertBox extends React.PureComponent<Props, {}> {
-  static defaultProps = {
-    colorType: 'accent'
-  }
   render () {
     const { testId, children, ...buttonProps } = this.props
-    const { colorType, onClickCancel, cancelString, onClickOk, okString } = buttonProps
+    const { onClickCancel, cancelString, onClickOk, okString } = buttonProps
     return (
       <StyledDialogWrapper>
       <StyledDialog data-test-id={testId}>
@@ -31,11 +27,11 @@ export default class AlertBox extends React.PureComponent<Props, {}> {
           <StyledCancelContainer>
             {
               cancelString
-                ? <Button type={colorType} level='secondary' onClick={onClickCancel} text={cancelString} />
+                ? <Button onClick={onClickCancel} text={cancelString} />
                 : null
             }
           </StyledCancelContainer>
-          <Button type={colorType} onClick={onClickOk} text={okString} />
+          <Button level='primary' onClick={onClickOk} text={okString} />
         </StyledFooter>
       </StyledDialog>
       </StyledDialogWrapper>

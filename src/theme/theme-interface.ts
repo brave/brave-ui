@@ -6,10 +6,18 @@ export default interface IThemeProps {
   color: {
     contextMenuBackground: string
     contextMenuForeground: string
+    brandBraveSubtleBackground: string
+    brandBraveHover: string
+    brandBraveMain: string
+    brandBravePressed: string
+    brandBraveOutline: string
     brandBrave: string
-    brandBraveInteracting: string
     brandBraveActive: string
-    brandBraveLight: string
+    brandBatSubtleBackground: string
+    brandBatHover: string
+    brandBatMain: string
+    brandBatPressed: string
+    brandBatOutline: string
     brandBat: string
     brandBatInteracting: string
     brandBatActive: string
@@ -19,6 +27,8 @@ export default interface IThemeProps {
     primaryBackground: string
     secondaryBackground: string
     modalOverlayBackground: string
+    defaultButtonText: string
+    defaultButtonBorder: string
     defaultControl: string
     defaultControlInteracting: string
     defaultControlActive: string

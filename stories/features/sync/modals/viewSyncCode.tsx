@@ -13,7 +13,6 @@ import {
   ModalHeader,
   Title,
   Paragraph,
-  Link,
   Bold,
   ThreeColumnButtonGrid
 } from '../../../../src/features/sync'
@@ -27,8 +26,7 @@ interface Props {
 }
 
 export default class ViewSyncCodeModal extends React.PureComponent<Props, {}> {
-  onCancel = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault()
+  onCancel = () => {
     this.props.onClose()
   }
   render () {
@@ -51,20 +49,18 @@ export default class ViewSyncCodeModal extends React.PureComponent<Props, {}> {
         />
         <ThreeColumnButtonGrid>
           <div>
-            <Link onClick={this.onCancel}>{getLocale('cancel')}</Link>
+            <Button level='tertiary' onClick={this.onCancel} text={getLocale('cancel')}/>
           </div>
           <div>
             <Button
               level='secondary'
-              type='subtle'
               size='medium'
               onClick={onClose}
               text={getLocale('qrCode')}
             />
           </div>
           <Button
-            level='secondary'
-            type='accent'
+            level='primary'
             size='medium'
             onClick={onClose}
             disabled={true}

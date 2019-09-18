@@ -56,6 +56,9 @@ import {
   CaratCircleRightIcon
 } from '../../../components/icons'
 
+import { ThemeProvider } from '../../../theme'
+import braveDarkTheme from '../../../theme/brave-dark'
+
 import giftIconUrl from './assets/gift.svg'
 import loveIconUrl from './assets/love.svg'
 import megaphoneIconUrl from './assets/megaphone.svg'
@@ -313,7 +316,6 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
     return (
       <StyledButton
         size={'small'}
-        type={'accent'}
         level={'primary'}
         onClick={buttonAction}
         text={buttonText}
@@ -357,7 +359,6 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
       case 'unverified':
         return (
           <Button
-            type={'accent'}
             icon={{
               image: <CaratCircleRightIcon />,
               position: 'after'
@@ -389,7 +390,6 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
       case 'connected':
         return (
           <Button
-            type={'accent'}
             icon={{
               image: <CaratDownIcon />,
               position: 'after'
@@ -406,7 +406,6 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
         return (
           <Button
             text={getLocale('walletButtonDisconnected')}
-            type={'subtle'}
             icon={{
               image: <UpholdSystemIcon />,
               position: 'before'
@@ -670,14 +669,15 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
                     {
                       hasGrants
                         ? <StyleGrantButton>
-                          <Button
-                            text={getLocale('grants')}
-                            size={'small'}
-                            type={'subtle'}
-                            level={'secondary'}
-                            onClick={this.toggleGrantDetails}
-                            icon={{ position: 'after', image: this.state.grantDetails ? <CaratUpIcon /> : <CaratDownIcon /> }}
-                          />
+                          <ThemeProvider theme={braveDarkTheme}>
+                            <Button
+                              text={getLocale('grants')}
+                              size={'small'}
+                              brand={'rewards'}
+                              onClick={this.toggleGrantDetails}
+                              icon={{ position: 'after', image: this.state.grantDetails ? <CaratUpIcon /> : <CaratDownIcon /> }}
+                            />
+                          </ThemeProvider>
                         </StyleGrantButton>
                         : null
                     }

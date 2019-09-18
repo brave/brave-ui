@@ -4,6 +4,7 @@
 
 import * as React from 'react'
 import {
+  DefaultButton,
   PrimaryButton,
   SecondaryButton,
   TertiaryButton,
@@ -14,10 +15,8 @@ import {
 export interface Props {
   text: string
   size?: Size
-  type?: Type
   brand?: Brand
   level?: Level
-  main?: boolean
   onClick?: () => void
   id?: string
   disabled?: boolean
@@ -25,8 +24,7 @@ export interface Props {
   className?: string
 }
 
-export type Level = 'primary' | 'secondary' | 'tertiary'
-export type Type = 'default' | 'accent' | 'warn' | 'subtle'
+export type Level = 'default' | 'primary' | 'secondary' | 'tertiary'
 export type Brand = 'brave' | 'rewards'
 export type Size = 'call-to-action' | 'large' | 'medium' | 'small'
 
@@ -36,13 +34,13 @@ export default class ThemedButton extends React.PureComponent<Props, {}> {
   static defaultProps = {
     brand: 'brave',
     size: 'medium',
-    type: 'default',
-    level: 'primary',
-    main: false
+    level: 'default'
   }
 
   getButtonComponent () {
     switch (this.props.level) {
+      case 'default':
+        return DefaultButton
       case 'primary':
         return PrimaryButton
       case 'secondary':

@@ -34,7 +34,7 @@ export default class ModalRedirect extends React.PureComponent<Props, {}> {
 
     return (
       <StyledButton>
-        <Button onClick={onClick} text={buttonText} type={'accent'} />
+        <Button onClick={onClick} text={buttonText} level={'primary'} />
       </StyledButton>
     )
   }

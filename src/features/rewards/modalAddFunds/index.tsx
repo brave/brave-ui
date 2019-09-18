@@ -99,7 +99,7 @@ export default class ModalAddFunds extends React.PureComponent<Props, State> {
                   <StyledQRButton
                     size={'large'}
                     brand={'rewards'}
-                    type={'accent'}
+                    level={'primary'}
                     text={getLocale('addFundsQR')}
                     onClick={this.onQR.bind(this, address.type)}
                   />
