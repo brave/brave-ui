@@ -26,7 +26,7 @@ export default class GrantError extends React.PureComponent<Props, {}> {
           <Button
             text={buttonText}
             size={'call-to-action'}
-            type={'accent'}
+            level={'primary'}
             onClick={onButtonClick}
           />
         </StyledButton>

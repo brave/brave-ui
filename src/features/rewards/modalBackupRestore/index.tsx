@@ -124,9 +124,8 @@ export default class ModalBackupRestore extends React.PureComponent<Props, State
             onCopy
             ? <GroupedButton
               text={getLocale('copy')}
-              level={'secondary'}
+              level={'tertiary'}
               size={'small'}
-              type={'subtle'}
               onClick={onCopy.bind(this, backupKey)}
             />
             : null
@@ -135,9 +134,8 @@ export default class ModalBackupRestore extends React.PureComponent<Props, State
             onPrint
             ? <GroupedButton
               text={getLocale('print')}
-              level={'secondary'}
+              level={'tertiary'}
               size={'small'}
-              type={'subtle'}
               onClick={onPrint.bind(this, backupKey)}
             />
             : null
@@ -146,9 +144,8 @@ export default class ModalBackupRestore extends React.PureComponent<Props, State
             onSaveFile
             ? <GroupedButton
               text={getLocale('saveAsFile')}
-              level={'secondary'}
+              level={'tertiary'}
               size={'small'}
-              type={'subtle'}
               onClick={onSaveFile.bind(this, backupKey)}
             />
             : null
@@ -163,8 +160,8 @@ export default class ModalBackupRestore extends React.PureComponent<Props, State
         <StyledDoneWrapper>
           <Button
             text={getLocale('done')}
+            level={'primary'}
             size={'medium'}
-            type={'accent'}
             onClick={onClose}
           />
         </StyledDoneWrapper>
@@ -227,15 +224,13 @@ export default class ModalBackupRestore extends React.PureComponent<Props, State
         </StyledTextWrapper>
         <StyledActionsWrapper>
           <ActionButton
-            level={'secondary'}
+            level={'default'}
             text={getLocale('cancel')}
             size={'medium'}
-            type={'accent'}
             onClick={onClose}
           />
           <ActionButton
             level={'primary'}
-            type={'accent'}
             text={getLocale('restore')}
             size={'medium'}
             onClick={this.onRestore}

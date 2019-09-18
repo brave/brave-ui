@@ -245,7 +245,6 @@ class WelcomePage extends React.PureComponent<Props, {}> {
                   </StyledAlertLeft>
                   <Button
                     level={'primary'}
-                    type={'accent'}
                     text={getLocale('walletFailedButton')}
                     onClick={this.props.onReTry}
                   />

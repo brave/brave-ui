@@ -106,7 +106,7 @@ export default class ModalVerify extends React.PureComponent<Props, {}> {
               <StyledButton
                 text={getLocale('walletVerificationButton')}
                 size={'call-to-action'}
-                type={'accent'}
+                level={'primary'}
                 onClick={onVerifyClick}
                 id={'on-boarding-verify-button'}
               />

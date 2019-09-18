@@ -53,7 +53,7 @@ export default class GrantComplete extends React.PureComponent<Props, {}> {
           <Button
             text={getLocale('ok')}
             size={'call-to-action'}
-            type={'accent'}
+            level={'primary'}
             onClick={onClose}
             id={'grant-completed-ok'}
           />
