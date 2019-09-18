@@ -81,7 +81,7 @@ class Grant extends React.Component<Props, State > {
             title={'It’s your lucky day!'}
             text={'Your token grant is on its way.'}
           >
-            <GrantComplete onClose={this.onComplete} amount={'30.0'} date={'8/15/2018'} tokenTitle={'Free token grant'} />
+            <GrantComplete onClose={this.onComplete} amount={'30.0'} date={'8/15/2018'} />
           </GrantWrapper>
           : null
         }
