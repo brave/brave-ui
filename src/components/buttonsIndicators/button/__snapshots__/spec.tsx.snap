@@ -2,10 +2,11 @@
 
 exports[`Button tests basic tests matches the snapshot 1`] = `
 .c1 {
-  --button-main-color: #3b3e4f;
-  --button-main-color-hover: #1E2029;
-  --button-main-color-active: #5e6175;
-  --button-state-color: var(--button-main-color);
+  --brand-color-subtle: #fb542b1a;
+  --brand-color-hover: #ff977d;
+  --brand-color-main: #ff7654;
+  --brand-color-pressed: #FB542B;
+  --brand-style-focus-shadow: 0 0 0 4px #ff765466;
   --icon-size: 16px;
   --icon-spacing: 6px;
   --webkit-appearance: none;
@@ -28,31 +29,39 @@ exports[`Button tests basic tests matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-family: Poppins,sans-serif;
+  font-family: Muli,sans-serif;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-size: 13px;
+  font-size: 14px;
   border-radius: 20px;
   width: auto;
-  min-width: 104px;
-  padding: 11px 15px;
-}
-
-.c1:hover:enabled {
-  --button-state-color: var(--button-main-color-hover);
-}
-
-.c1:active:enabled {
-  --button-state-color: var(--button-main-color-active);
+  min-width: 82px;
+  padding: 9px 16px;
+  opacity: none;
 }
 
 .c0 {
-  color: #fff;
-  background: var(--button-state-color);
-  border: 1px solid var(--button-state-color);
+  color: #3b3e4f;
+  border: 1px solid #c2c4cf;
+}
+
+.c0:hover:enabled {
+  color: var(--brand-color-main);
+  border-color: var(--brand-color-main);
+}
+
+.c0:focus:enabled {
+  border-color: var(--brand-color-main);
+  box-shadow: var(--brand-style-focus-shadow);
+}
+
+.c0:active:enabled {
+  color: var(--brand-color-main);
+  border-color: var(--brand-color-main);
+  box-shadow: var(--brand-style-focus-shadow);
 }
 
 .c2 {
@@ -70,7 +79,7 @@ exports[`Button tests basic tests matches the snapshot 1`] = `
   -moz-letter-spacing: 0;
   -ms-letter-spacing: 0;
   letter-spacing: 0;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: none;
   line-height: 1;
 }
@@ -79,12 +88,10 @@ exports[`Button tests basic tests matches the snapshot 1`] = `
   className="c0 c1"
   id="button"
   size="medium"
-  type="default"
 >
   <div
     className="c2"
     size="medium"
-    type="default"
   >
     test
   </div>

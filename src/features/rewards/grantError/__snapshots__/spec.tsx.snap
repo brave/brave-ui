@@ -2,10 +2,11 @@
 
 exports[`Grant error tests basic tests matches the snapshot 1`] = `
 .c4 {
-  --button-main-color: #FB542B;
-  --button-main-color-hover: #FB542B;
-  --button-main-color-active: #ffb8a6;
-  --button-state-color: var(--button-main-color);
+  --brand-color-subtle: #fb542b1a;
+  --brand-color-hover: #ff977d;
+  --brand-color-main: #ff7654;
+  --brand-color-pressed: #FB542B;
+  --brand-style-focus-shadow: 0 0 0 4px #ff765466;
   --icon-size: 18px;
   --icon-spacing: 6px;
   --webkit-appearance: none;
@@ -28,31 +29,37 @@ exports[`Grant error tests basic tests matches the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-family: Poppins,sans-serif;
+  font-family: Muli,sans-serif;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 28px;
   width: 100%;
   min-width: 235px;
   padding: 19px 15px;
-}
-
-.c4:hover:enabled {
-  --button-state-color: var(--button-main-color-hover);
-}
-
-.c4:active:enabled {
-  --button-state-color: var(--button-main-color-active);
+  opacity: none;
 }
 
 .c3 {
   color: #fff;
-  background: var(--button-state-color);
-  border: 1px solid var(--button-state-color);
+  background: var(--brand-color-main);
+}
+
+.c3:hover:enabled {
+  background: var(--brand-color-hover);
+}
+
+.c3:focus:enabled {
+  background: var(--brand-color-main);
+  box-shadow: var(--brand-style-focus-shadow);
+}
+
+.c3:active:enabled {
+  background: var(--brand-color-main);
+  box-shadow: var(--brand-style-focus-shadow);
 }
 
 .c0 {
@@ -88,7 +95,6 @@ exports[`Grant error tests basic tests matches the snapshot 1`] = `
     <button
       className="c3 c4"
       size="call-to-action"
-      type="accent"
     />
   </div>
 </div>
