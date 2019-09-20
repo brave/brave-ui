@@ -6,7 +6,7 @@ exports[`card tests basic tests matches the snapshot 1`] = `
   width: 100%;
   min-height: auto;
   margin: 0;
-  background-color: #fff;
+  background-color: #FFFFFF;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0,0,0,.15);
   font-size: inherit;
