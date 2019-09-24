@@ -122,12 +122,16 @@ export { default as ThumbsupRIcon } from './thumbsup-r'
 // complex, do not autogenerate
 // TODO(petemill): Should have separate process for logos
 export { default as AdsMegaphoneIcon } from './fc-ads-megaphone'
+export { default as AdsTokensIcon } from './fc-ads-tokens'
+export { default as AutoContributeIcon } from './fc-auto-contribute'
 export { default as LoaderIcon } from './loader'
+export { default as MonthlyContributionsIcon } from './fc-monthly-contributions'
 export { default as PaperAirplaneIcon } from './paper-airplane'
 export { default as RewardsActivateIcon } from './fc-rewards-activate'
 export { default as RewardsCheckIcon } from './fc-rewards-check'
 export { default as RewardsSendTipsIcon } from './fc-rewards-send-tips'
 export { default as RewardsWalletCheck } from './fc-rewards-wallet-check'
+export { default as TipsIcon } from './fc-tips'
 export { default as TorLockIcon } from './tor-lock'
 // Logos
 export { default as AmazonColorIcon } from './fc-logo-amazon'
