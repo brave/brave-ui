@@ -1,12 +1,12 @@
 import ITheme from './theme-interface'
-import defaultTheme from './brave-default'
+import darkTheme from './brave-dark'
 import colors from './colors'
 
 const shieldsDarkTheme: ITheme = {
-  ...defaultTheme,
+  ...darkTheme,
   name: 'Shields Dark',
   color: {
-    ...defaultTheme.color,
+    ...darkTheme.color,
     lionLogo: colors.grey700,
     text: colors.white,
     panelBackground: '#17171F',

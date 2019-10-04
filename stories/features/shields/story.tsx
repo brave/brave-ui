@@ -35,6 +35,7 @@ storiesOf('Feature Components/Shields', module)
     const fakeToggleFirstAccess = () => {
       store.set({ firstAccess: !store.state.firstAccess })
     }
+    const fakeOnReportBrokenSite = () => { /* noop */ }
     return (
       <div style={{ margin: '120px' }}>
         {
@@ -60,6 +61,7 @@ storiesOf('Feature Components/Shields', module)
               fakeOnChangeAdvancedView={fakeOnChangeAdvancedView}
               fakeOnChangeReadOnlyView={fakeOnChangeReadOnlyView}
               fakeToggleFirstAccess={fakeToggleFirstAccess}
+              fakeOnReportBrokenSite={fakeOnReportBrokenSite}
             />
           )
         }

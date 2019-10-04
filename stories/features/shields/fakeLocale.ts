@@ -9,7 +9,8 @@ const locale: { [key: string]: string } = {
   down: 'down',
   forThisSite: 'for this site',
   enabledMessage: 'If a site appears broken, try shields down',
-  disabledMessage: 'You’re browsing this site without any privacy and security protections.',
+  disabledMessage: 'You’re browsing this site without Brave\'s privacy and security protections. Does it not work right with Shields up?',
+  reportBrokenSite: 'Report a broken site',
   // Total stats blocked
   itemsBlocked: 'Items blocked',
   itemBlocked: 'Item blocked',

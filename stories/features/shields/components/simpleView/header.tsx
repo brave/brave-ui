@@ -20,7 +20,7 @@ import {
   TotalBlockedStatsNumber,
   TotalBlockedStatsText,
   DisabledContentView,
-  ShieldIcon,
+  ShieldsButton,
   DisabledContentText,
   Toggle
  } from '../../../../../src/features/shields'
@@ -39,6 +39,7 @@ interface Props {
   fingerprintingBlocked: number
   fakeOnChangeShieldsEnabled: () => void
   fakeOnChangeReadOnlyView: () => void
+  fakeOnReportBrokenSite: () => void
 }
 
 export default class Header extends React.PureComponent<Props, {}> {
@@ -58,7 +59,8 @@ export default class Header extends React.PureComponent<Props, {}> {
       hostname,
       isBlockedListOpen,
       fakeOnChangeReadOnlyView,
-      fakeOnChangeShieldsEnabled
+      fakeOnChangeShieldsEnabled,
+      fakeOnReportBrokenSite
     } = this.props
     return (
       <ShieldsHeader status={enabled ? 'enabled' : 'disabled'}>
@@ -93,8 +95,8 @@ export default class Header extends React.PureComponent<Props, {}> {
             )
             : (
               <DisabledContentView>
-                <div><ShieldIcon /></div>
                 <DisabledContentText>{getLocale('disabledMessage')}</DisabledContentText>
+                <ShieldsButton level='secondary' type='default' size='small' onClick={fakeOnReportBrokenSite} text={getLocale('reportBrokenSite')}/>
               </DisabledContentView>
             )
           }
