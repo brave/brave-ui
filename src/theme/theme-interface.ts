@@ -36,6 +36,7 @@ export default interface IThemeProps {
     lionLogo: string
     inputBorder: string
     separatorLine: string
+    outlineColor: string
   }
   fontFamily: {
     heading: string

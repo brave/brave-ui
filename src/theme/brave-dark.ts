@@ -11,7 +11,8 @@ const darkTheme: ITheme = {
     contextMenuForeground: colors.white,
     defaultControl: colors.grey400,
     defaultControlInteracting: colors.white,
-    defaultControlActive: colors.grey500
+    defaultControlActive: colors.grey500,
+    outlineColor: 'rgba(255,255,255,0.5)'
   }
 }
 

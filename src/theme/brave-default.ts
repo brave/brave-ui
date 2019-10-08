@@ -51,7 +51,9 @@ const theme: ITheme = {
     inputBorder: colors.grey500,
     separatorLine: colors.grey100,
     // images
-    lionLogo: colors.grey500
+    lionLogo: colors.grey500,
+    // elements outline
+    outlineColor: 'rgba(255,80,0,0.2)'
   },
   fontFamily: {
     heading: 'Poppins, sans-serif',
