@@ -4,6 +4,7 @@
 
 import * as React from 'react'
 import { StyledWrapper, StyledTokens, StyledContent, StyledTokenValue, StyledTokenCurrency } from './style'
+import { getLocale } from '../../../helpers'
 
 export type Size = 'mini' | 'small' | 'normal'
 export type Type = 'contribute' | 'donation' | 'earnings' | 'default' | 'notPaid'
@@ -17,6 +18,7 @@ export interface Props {
   isNegative?: boolean
   size?: Size
   color?: Type
+  onlyAnonWallet?: boolean
 }
 
 export default class Tokens extends React.PureComponent<Props, {}> {
@@ -28,7 +30,8 @@ export default class Tokens extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { id, converted, value, hideText, isNegative, size, color, currency } = this.props
+    const { id, converted, value, hideText, isNegative, size, color, currency, onlyAnonWallet } = this.props
+    const batFormatString = onlyAnonWallet ? 'bap' : 'bat'
 
     return (
       <StyledWrapper id={id} size={size} color={color}>
@@ -38,7 +41,7 @@ export default class Tokens extends React.PureComponent<Props, {}> {
           </StyledTokenValue>
           {
             !hideText
-            ? <StyledTokenCurrency>BAT</StyledTokenCurrency>
+            ? <StyledTokenCurrency>{getLocale(batFormatString)}</StyledTokenCurrency>
             : null
           }
         </StyledTokens>

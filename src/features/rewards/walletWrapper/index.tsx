@@ -111,6 +111,7 @@ export interface Props {
   gradientTop?: string
   isMobile?: boolean
   notification?: Notification
+  onlyAnonWallet?: boolean
   onNotificationClick?: () => void
   onGrantHide?: () => void
   onFinish?: () => void
@@ -406,10 +407,12 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
       gradientTop,
       notification,
       isMobile,
-      convertProbiToFixed
+      convertProbiToFixed,
+      onlyAnonWallet
     } = this.props
 
     const hasGrants = this.hasGrants(grants)
+    const batFormatString = onlyAnonWallet ? 'bap' : 'bat'
 
     let tokens = '0.0'
     if (grant && grant.probi && convertProbiToFixed) {
@@ -476,7 +479,7 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
                   }
                   <StyledBalance>
                     <StyledBalanceTokens data-test-id='balance'>
-                      {balance} <StyledBalanceCurrency>BAT</StyledBalanceCurrency>
+                      {balance} <StyledBalanceCurrency>{getLocale(batFormatString)}</StyledBalanceCurrency>
                     </StyledBalanceTokens>
                     {
                       converted
@@ -504,7 +507,7 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
                         {
                           grants && grants.map((grant: Grant, i: number) => {
                             return <StyledGrant key={`${id}-grant-${i}`}>
-                              <b>{grant.tokens} BAT</b>
+                              <b>{grant.tokens} {getLocale(batFormatString)}</b>
                               {
                                 grant.type === 'ads'
                                 ? <span>{getLocale('adsEarnings')}</span>
