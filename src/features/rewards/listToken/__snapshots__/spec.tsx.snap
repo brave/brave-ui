@@ -113,7 +113,7 @@ exports[`ListToken tests basic tests matches the snapshot 1`] = `
         <span
           className="c6"
         >
-          BAT
+          MISSING: bat
         </span>
       </span>
     </span>

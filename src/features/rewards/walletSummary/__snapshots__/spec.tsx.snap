@@ -185,7 +185,7 @@ exports[`WalletSummary tests basic tests matches the snapshot 1`] = `
     <div
       className="c3"
     >
-      MISSING: monthMay
+      MISSING: monthNov
        
       2019
     </div>
@@ -218,7 +218,7 @@ exports[`WalletSummary tests basic tests matches the snapshot 1`] = `
               <span
                 className="c10"
               >
-                BAT
+                MISSING: bat
               </span>
             </span>
             <span
@@ -259,7 +259,7 @@ exports[`WalletSummary tests basic tests matches the snapshot 1`] = `
               <span
                 className="c10"
               >
-                BAT
+                MISSING: bat
               </span>
             </span>
             <span
@@ -300,7 +300,7 @@ exports[`WalletSummary tests basic tests matches the snapshot 1`] = `
               <span
                 className="c10"
               >
-                BAT
+                MISSING: bat
               </span>
             </span>
             <span
@@ -341,7 +341,7 @@ exports[`WalletSummary tests basic tests matches the snapshot 1`] = `
               <span
                 className="c10"
               >
-                BAT
+                MISSING: bat
               </span>
             </span>
             <span
@@ -382,7 +382,7 @@ exports[`WalletSummary tests basic tests matches the snapshot 1`] = `
               <span
                 className="c10"
               >
-                BAT
+                MISSING: bat
               </span>
             </span>
             <span

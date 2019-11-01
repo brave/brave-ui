@@ -41,7 +41,7 @@ exports[`Tokens tests basic tests matches the snapshot 1`] = `
     <span
       className="c3"
     >
-      BAT
+      MISSING: bat
     </span>
   </span>
 </span>
