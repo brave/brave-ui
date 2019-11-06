@@ -47,7 +47,7 @@ exports[`WalletInfoHeader tests basic tests matches the snapshot 1`] = `
   letter-spacing: -0.4px;
   color: #fff;
   font-weight: 300;
-  margin-top: 10px;
+  margin-top: 25px;
 }
 
 .c5 {
