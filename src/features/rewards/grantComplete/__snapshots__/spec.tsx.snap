@@ -121,7 +121,8 @@ exports[`Grant complete tests basic tests matches the snapshot 1`] = `
     <div
       className="c3"
     >
-       BAT
+       
+      MISSING: bat
     </div>
   </div>
   <div

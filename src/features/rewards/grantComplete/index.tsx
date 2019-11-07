@@ -23,6 +23,7 @@ export interface Props {
   isMobile?: boolean
   amountTitleText?: string
   dateTitleText?: string
+  onlyAnonWallet?: boolean
 }
 
 export default class GrantComplete extends React.PureComponent<Props, {}> {
@@ -31,13 +32,14 @@ export default class GrantComplete extends React.PureComponent<Props, {}> {
     dateTitleText: getLocale('grantDateTitleUGP')
   }
   render () {
-    const { id, testId, onClose, amount, date, isMobile } = this.props
+    const { id, testId, onClose, amount, date, isMobile, onlyAnonWallet } = this.props
+    const currencyLabel = getLocale(onlyAnonWallet ? 'bap' : 'bat')
 
     return (
       <StyledWrapper id={id} data-test-id={testId}>
         <StyledBox>
           <StyledTitle>{this.props.amountTitleText}</StyledTitle>
-          <StyledValue>{amount} BAT</StyledValue>
+          <StyledValue>{amount} {currencyLabel}</StyledValue>
           {
             date && date.length > 0
             ? <>
