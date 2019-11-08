@@ -40,11 +40,13 @@ export interface Props {
   compact?: boolean
   reservedAmount?: number
   reservedMoreLink?: string
+  onlyAnonWallet?: boolean
 }
 
 export default class WalletSummary extends React.PureComponent<Props, {}> {
   generateList = () => {
-    const tokenSize = this.props.compact ? 'small' : 'normal'
+    const { compact, onlyAnonWallet, report } = this.props
+    const tokenSize = compact ? 'small' : 'normal'
     const list = [
       {
         key: 'grant',
@@ -82,11 +84,11 @@ export default class WalletSummary extends React.PureComponent<Props, {}> {
     ]
 
     let result: React.ReactNode[] = []
-    const all = Object.keys(this.props.report).length
+    const all = Object.keys(report).length
     let current = 0
 
     list.forEach((item, index) => {
-      const data = (this.props.report as Record<string, Token>)[item.key]
+      const data = (report as Record<string, Token>)[item.key]
       if (data) {
         current++
         result.push((
@@ -98,6 +100,7 @@ export default class WalletSummary extends React.PureComponent<Props, {}> {
             color={item.color as Type}
             title={getLocale(item.translation)}
             isNegative={item.negative}
+            onlyAnonWallet={onlyAnonWallet}
             border={all === current ? 'last' : undefined}
           />
         ))

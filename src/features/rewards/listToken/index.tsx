@@ -14,6 +14,7 @@ export interface Props {
   isNegative?: boolean
   size?: Size
   color?: Type
+  onlyAnonWallet?: boolean
   border?: 'first' | 'last' | 'default'
 }
 
@@ -23,7 +24,7 @@ export default class ListToken extends React.PureComponent<Props, {}> {
   }
 
   render () {
-    const { id, title, value, converted, isNegative, size, color, border } = this.props
+    const { id, title, value, converted, isNegative, size, color, border, onlyAnonWallet } = this.props
 
     return (
       <StyledWrapper id={id} border={border}>
@@ -35,6 +36,7 @@ export default class ListToken extends React.PureComponent<Props, {}> {
             isNegative={isNegative}
             size={size}
             color={color}
+            onlyAnonWallet={onlyAnonWallet}
           />
         </StyledContentWrapper>
       </StyledWrapper>
