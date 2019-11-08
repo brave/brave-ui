@@ -412,7 +412,7 @@ export default class WalletWrapper extends React.PureComponent<Props, State> {
     } = this.props
 
     const hasGrants = this.hasGrants(grants)
-    const batFormatString = onlyAnonWallet ? 'bap' : 'batPoints'
+    const batFormatString = onlyAnonWallet ? 'batPoints' : 'bat'
 
     let tokens = '0.0'
     if (grant && grant.probi && convertProbiToFixed) {

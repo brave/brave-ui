@@ -26,7 +26,7 @@ export default class WalletInfoHeader extends React.PureComponent<Props, {}> {
 
   render () {
     const { id, balance, converted, onlyAnonWallet, onClick } = this.props
-    const batFormatString = onlyAnonWallet ? 'bap' : 'bat'
+    const batFormatString = onlyAnonWallet ? 'batPoints' : 'bat'
 
     return (
       <StyledWrapper
