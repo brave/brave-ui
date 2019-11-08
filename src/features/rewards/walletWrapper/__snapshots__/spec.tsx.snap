@@ -128,7 +128,7 @@ exports[`WalletWrapper tests basic tests matches the snapshot 1`] = `
         <span
           className="c5"
         >
-          MISSING: bat
+          MISSING: batPoints
         </span>
       </div>
     </div>
