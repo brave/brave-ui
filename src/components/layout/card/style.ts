@@ -24,7 +24,7 @@ export const Card = styled<StyledCardProps, 'div'>('div')`
   width: 100%;
   min-height: auto;
   margin: 0;
-  background-color: #fff;
+  background-color: ${p => p.theme.color.panelBackground};
   border-radius: 4px;
   box-shadow: ${p => `0 2px 4px rgba(0, 0, 0, ${getShadowOpacity(p.emphasis)})`};
   font-size: inherit;
