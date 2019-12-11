@@ -4,7 +4,7 @@ node_js:
 dist: trusty
 cache: npm
 before_install:
-  - npm i -g npm@6.0.1
+  - npm i -g npm@6.5.0
   - npm --version
 branches:
   only:
