@@ -131,6 +131,7 @@ export default class WalletSummary extends React.PureComponent<Props, {}> {
     const date = new Date()
     const month = getLocale(`month${date.toLocaleString('en-us', { month: 'short' })}`)
     const year = date.getFullYear()
+    const batFormatString = /*onlyAnonWallet ? getLocale('batPoints') :*/ getLocale('bat')
 
     return (
       <StyledWrapper
@@ -145,7 +146,7 @@ export default class WalletSummary extends React.PureComponent<Props, {}> {
             {
               reservedAmount && reservedAmount > 0
               ? <StyledReservedWrapper>
-                {getLocale('reservedAmountText', { reservedAmount })} <StyledReservedLink href={reservedMoreLink} target={'_blank'}>
+                {getLocale('reservedAmountText', { reservedAmount, currency: batFormatString })} <StyledReservedLink href={reservedMoreLink} target={'_blank'}>
                   {getLocale('reservedMoreLink')}
                 </StyledReservedLink>
               </StyledReservedWrapper>
