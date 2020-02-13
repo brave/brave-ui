@@ -9,6 +9,8 @@ const darkTheme: ITheme = {
     ...defaultTheme.color,
     contextMenuBackground: colors.black,
     contextMenuForeground: colors.white,
+    contextMenuHoverBackground: colors.blurple500,
+    contextMenuHoverForeground: colors.white,
     defaultControl: colors.grey400,
     defaultControlInteracting: colors.white,
     defaultControlActive: colors.grey500,
