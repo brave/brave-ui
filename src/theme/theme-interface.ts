@@ -6,6 +6,8 @@ export default interface IThemeProps {
   color: {
     contextMenuBackground: string
     contextMenuForeground: string
+    contextMenuHoverBackground: string
+    contextMenuHoverForeground: string
     brandBrave: string
     brandBraveInteracting: string
     brandBraveActive: string
