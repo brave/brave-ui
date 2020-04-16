@@ -41,7 +41,7 @@ export default class ThemedButton extends React.PureComponent<Props, {}> {
     main: false
   }
 
-  getButtonComponent () {
+  getButtonComponent (): any {
     switch (this.props.level) {
       case 'primary':
         return PrimaryButton
