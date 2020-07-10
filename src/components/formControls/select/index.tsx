@@ -38,7 +38,6 @@ export interface Props {
 
 interface State {
   value: string | number
-  selected: React.ReactNode
   show: boolean
   radioShown: boolean
 }
@@ -58,10 +57,8 @@ export default class Select extends React.PureComponent<Props, State> {
   constructor (props: Props) {
     super(props)
 
-    const obj = this.getDefaultValue(props)
     this.state = {
-      value: obj.value,
-      selected: obj.selected,
+      value: this.getDefaultValue(props).value,
       show: false,
       radioShown: false
     }
@@ -73,10 +70,8 @@ export default class Select extends React.PureComponent<Props, State> {
 
   componentDidUpdate (prevProps: Props) {
     if (prevProps.value !== this.props.value) {
-      const obj = this.getDefaultValue(this.props)
       this.setState({
-        value: obj.value,
-        selected: obj.selected,
+        value: this.getDefaultValue(this.props).value,
         show: false
       })
     }
@@ -127,7 +122,6 @@ export default class Select extends React.PureComponent<Props, State> {
   onRadioOptionClick = (key: string, selected: boolean, child: React.ReactNode, all: {[key: string]: boolean}) => {
     this.setState({
       value: key,
-      selected: child,
       radioShown: false
     })
 
@@ -193,7 +187,7 @@ export default class Select extends React.PureComponent<Props, State> {
         <StyledOption
           showAllContents={showAllContents}
           key={`${self.props.id}-option-${i}`}
-          onClick={self.onOptionClick.bind(self, value, child, element)}
+          onClick={self.onOptionClick.bind(self, value, child)}
           selected={selected}
         >
           <StyledOptionCheck>
@@ -204,10 +198,9 @@ export default class Select extends React.PureComponent<Props, State> {
     })
   }
 
-  onOptionClick = (value: string, child: React.ReactNode, element: React.ReactNode) => {
+  onOptionClick = (value: string, child: React.ReactNode) => {
     this.setState({
       value: value,
-      selected: element,
       show: false
     })
 
@@ -262,7 +255,7 @@ export default class Select extends React.PureComponent<Props, State> {
               floating={floating}
             >
               <StyledSelectText floating={floating}>
-                {this.state.selected}
+                {this.getDefaultValue(this.props).selected}
               </StyledSelectText>
               <StyledSelectArrow floating={floating}>
                 <CaratDownIcon />
