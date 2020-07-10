@@ -25,7 +25,7 @@ export default class Tabs extends React.PureComponent<Props, {}> {
       }
     }
 
-    const tabs: React.ReactNode[] = React.Children.map(self.props.children, (child: any, i: number) => {
+    const tabs = React.Children.map(self.props.children, (child: any, i: number) => {
       if (child.props['data-key'] === undefined) {
         return null
       }
