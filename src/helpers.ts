@@ -68,7 +68,8 @@ export const getLocale = (key: string, replacements?: Replacements) => {
   }
 
   for (let item in replacements) {
-    returnVal = returnVal.replace(new RegExp('{{\\s*' + item + '\\s*}}', 'g'), replacements[item].toString())
+    const reString = String.raw`({{\s*${item}\s*}})|(\[\[\s*${item}\s*\]\])`
+    returnVal = returnVal.replace(new RegExp(reString, 'g'), replacements[item].toString())
   }
   return returnVal
 }
