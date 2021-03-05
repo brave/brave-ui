@@ -25,12 +25,12 @@ const getColor = (p: Partial<Props>) => {
   `
 }
 
-export const StyledWrapper = styled<{}, 'div'>('div')`
+export const StyledWrapper = styled('div')<{}>`
   width: 100%;
   margin-bottom: 24px;
 `
 
-export const StyledLabel = styled<Partial<Props>, 'div'>('div')`
+export const StyledLabel = styled('div')<Partial<Props>>`
   width: 100%;
   font-family: ${p => p.theme.fontFamily.body};
   line-height: normal;

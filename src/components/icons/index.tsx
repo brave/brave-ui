@@ -1,4 +1,4 @@
-import styled, { StyledComponentClass } from 'styled-components'
+import styled, { AnyStyledComponent } from 'styled-components'
 // rotated imports
 import ArrowIcon from './arrow'
 import CaratIcon from './carat'
@@ -8,7 +8,7 @@ import CaratStrongIcon from './carat-strong'
 
 // rotated variants
 function RotatedIconComponent (
-  iconComponent: StyledComponentClass<any, any>,
+  iconComponent: AnyStyledComponent,
   degrees: number
 ) {
   return styled(iconComponent)`

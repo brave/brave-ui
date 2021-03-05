@@ -48,8 +48,7 @@
   },
   "dependencies": {
     "@ctrl/tinycolor": "^2.2.1",
-    "emptykit.css": "^1.0.1",
-    "styled-components": "^3.2.5"
+    "emptykit.css": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
@@ -74,6 +73,7 @@
     "@types/storybook__addon-info": "^4.1.0",
     "@types/storybook__addon-knobs": "^4.0.3",
     "@types/storybook__react": "^4.0.1",
+    "@types/styled-components": "^5.1.7",
     "awesome-typescript-loader": "^5.2.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.0.4",
@@ -97,6 +97,7 @@
     "react-test-renderer": "^16.3.0",
     "rimraf": "^2.6.2",
     "storybook-addon-styled-component-theme": "^1.1.1",
+    "styled-components": "^5.2.1",
     "stylelint": "^13.7.2",
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-styled-components": "^0.1.1",
