@@ -56,7 +56,7 @@ const getLabel = (p: Partial<StyleProps>) => {
   `
 }
 
-export const StyledLabel = styled<Partial<StyleProps>, 'div'>('div')`
+export const StyledLabel = styled('div')<Partial<StyleProps>>`
   font-family: ${p => p.theme.fontFamily.body};
   display: flex;
   align-items: center;
@@ -67,7 +67,7 @@ export const StyledLabel = styled<Partial<StyleProps>, 'div'>('div')`
   cursor: pointer;
 `
 
-export const StyledBox = styled<Partial<StyleProps>, 'span'>('span')`
+export const StyledBox = styled('span')<Partial<StyleProps>>`
   border-radius: 2px;
   text-align: center;
   display: flex;
@@ -83,7 +83,7 @@ export const StyledBox = styled<Partial<StyleProps>, 'span'>('span')`
   margin: 8px;
 `
 
-export const StyledText = styled<Partial<StyleProps>, 'span'>('span')`
+export const StyledText = styled('span')<Partial<StyleProps>>`
   flex: 1;
   padding-top: ${(p) => p.size === 'big' ? '2px' : '1px'};
   letter-spacing: 0;

@@ -98,6 +98,6 @@ const StyledPushButton = styled.button`
       }
     ` : ''
   }
-` as any
+`
 
 export default StyledPushButton

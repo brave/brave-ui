@@ -19,7 +19,7 @@ function getShadowOpacity (emphasis: Emphasis) {
   }
 }
 
-export const Card = styled<StyledCardProps, 'div'>('div')`
+export const Card = styled('div')<StyledCardProps>`
   max-width: 100%;
   width: 100%;
   min-height: auto;
@@ -33,6 +33,6 @@ export const Card = styled<StyledCardProps, 'div'>('div')`
   position: relative;
 `
 
-export const Content = styled<StyledCardProps, 'div'>('div')`
+export const Content = styled('div')<StyledCardProps>`
   padding: ${p => p.useDefaultContentPadding ? '32px' : undefined};
 `

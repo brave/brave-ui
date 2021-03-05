@@ -8,10 +8,17 @@ import TestTheme from './brave-default'
 const {
   default: styled,
   css,
-  injectGlobal,
+  createGlobalStyle,
   keyframes,
+  withTheme,
   // React import is needed for following line!
-  ThemeProvider
+  ThemeProvider,
+  ThemeConsumer,
+  ThemeContext,
+  useTheme,
+  isStyledComponent,
+  ServerStyleSheet,
+  StyleSheetManager
   // tslint disabled because:
   // - Incorrectly complains about unused assertion, but does not detect private member differences
   //   see: https://github.com/palantir/tslint/issues/3505
@@ -23,4 +30,4 @@ export default styled
 
 const TestThemeProvider = (props: any) => <ThemeProvider theme={TestTheme} {...props} />
 
-export { css, injectGlobal, keyframes, ThemeProvider, ThemedStyledProps, TestThemeProvider }
+export { css, createGlobalStyle, keyframes, withTheme, ThemeProvider, ThemeConsumer, ThemeContext, useTheme, isStyledComponent, ServerStyleSheet, StyleSheetManager, ThemedStyledProps, TestThemeProvider }

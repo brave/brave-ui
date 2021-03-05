@@ -21,14 +21,14 @@ const StyledPage = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100%;
-` as any
+`
 
 const StyledPageContent = styled.main`
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
   color: inherit;
-` as any
+`
 
 export {
   StyledPage,

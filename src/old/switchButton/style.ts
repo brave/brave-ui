@@ -22,7 +22,7 @@ const StyledSwitchButtonWrapper = styled.div`
     opacity: 0.3;
     user-select: none;`
   }
-` as any
+`
 
 /**
  * Label for the switch button
@@ -37,7 +37,7 @@ const StyledSwitchButtonLabel = styled.label`
   font-family: inherit;
   color: ${(p: SwitchButtonProps) => setTheme(p.customStyle, 'labelColor') || 'inherit'};
   user-select: ${(p: SwitchButtonProps) => setTheme(p.customStyle, 'userSelect') || 'none'};
-` as any
+`
 
 /**
  * The switch button itself
@@ -66,7 +66,7 @@ const StyledSwitchButton = styled.input`
       ${(p: SwitchButtonProps) => setValueBasedOnSize(p.size, '31px', '25px', '33px')} 0px 0px 0px
       ${defaultTheme.switchButton.checkedBg};
   }
-` as any
+`
 
 export {
   StyledSwitchButtonWrapper,

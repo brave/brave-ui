@@ -37,7 +37,7 @@ const StyledSelectOption = styled.select`
       padding: 6px;
     ` : ''
   }
-` as any
+`
 
 const StyledSelectOptionWrapper = styled.div`
   position: relative;
@@ -55,12 +55,12 @@ const StyledSelectOptionWrapper = styled.div`
     padding: 0 8px;
     font-size: 13px;
   }
-` as any
+`
 
 const StyledSelectOptionTitle = styled.p`
   margin: 0 0 4px 2px;
   user-select: ${(p: SelectOptionProps) => setTheme(p.customStyle, 'userSelect')};
-` as any
+`
 
 export {
   StyledSelectOption,

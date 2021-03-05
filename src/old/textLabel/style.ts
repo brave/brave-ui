@@ -21,6 +21,6 @@ const StyledTextLabel = styled.p`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-` as any
+`
 
 export default StyledTextLabel

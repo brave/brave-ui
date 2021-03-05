@@ -15,7 +15,7 @@ const StyledSharedHeading = styled.span`
   -webkit-font-smoothing: antialiased;
   user-select: none;
   cursor: default;
-` as any
+`
 
 const StyledHeadingTitle = styled(StyledSharedHeading.withComponent('h1'))`
   margin: 0;
@@ -29,7 +29,7 @@ const StyledHeadingTitleLabel = styled.sup`
   box-sizing: border-box;
   color: #999;
   font-size: 15px;
-` as any
+`
 
 const StyledSectionHeading = styled(StyledSharedHeading.withComponent('h2'))`
   color: rgb(68, 68, 68);
@@ -56,27 +56,27 @@ const StyledH1 = styled.h1`
   font-size: ${(p: HeadingProps) => setTheme(p.customStyle, 'fontSize') || '30px'};
   text-align: ${(p: HeadingProps) => setTheme(p.customStyle, 'textAlign') || 'left'};
   line-height: ${(p: HeadingProps) => setTheme(p.customStyle, 'lineHeight') || '44px'};
-` as any
+`
 
 const StyledH2 = styled.h2`
   /* TBD */
-` as any
+`
 
 const StyledH3 = styled.h3`
   /* TBD */
-` as any
+`
 
 const StyledH4 = styled.h4`
   /* TBD */
-` as any
+`
 
 const StyledH5 = styled.h5`
   /* TBD */
-` as any
+`
 
 const StyledH6 = styled.h6`
   /* TBD */
-` as any
+`
 
 export {
   StyledHeadingTitle,

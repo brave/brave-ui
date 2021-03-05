@@ -13,6 +13,6 @@ const StyledSeparator = styled.hr`
   width: 100%;
   margin-top: ${(p: SeparatorProps) => p.noMargin ? '0' : '10px'};
   margin-bottom: ${(p: SeparatorProps) => p.noMargin ? '0' : '10px'};
-` as any
+`
 
 export default StyledSeparator

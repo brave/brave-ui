@@ -16,14 +16,14 @@ const StyledPicture = styled.picture`
   padding: ${(p: ImageProps) => setTheme(p.customStyle, 'padding')};
   box-sizing: border-box;
   display: block;
-` as any
+`
 
 const StyledFigure = styled.figure`
   box-sizing: border-box;
   display: block;
   max-width: 100%;
   margin: 0;
-` as any
+`
 
 const StyledFigcaption = StyledFigure.withComponent('figure')
 

@@ -15,7 +15,7 @@ const Palette = styled.div`
   @media only screen and (max-width: 1300px) {
     grid-template-columns: repeat(5, 1fr);
   }
-` as any
+`
 
 const PaletteItemContainer = styled.div`
   min-height: 150px;
@@ -24,7 +24,7 @@ const PaletteItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 4px;
-` as any
+`
 
 const PaletteColor = styled.div`
   display: flex;

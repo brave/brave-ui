@@ -6,13 +6,13 @@ import styled from 'styled-components'
 import { AnchorProps } from './index'
 import { setTheme } from '../../helpers'
 
-const StyledAnchor = styled.a`
-  color: ${(p: AnchorProps) => setTheme(p.customStyle, 'color') || 'inherit'};
-  text-decoration: ${(p: AnchorProps) => setTheme(p.customStyle, 'textDecoration') || 'none'};
-  font-size: ${(p: AnchorProps) => setTheme(p.customStyle, 'fontSize') || '13px'};
-  user-select: ${(p: AnchorProps) => setTheme(p.customStyle, 'userSelect')};
+const StyledAnchor = styled.a<AnchorProps>`
+  color: ${(p) => setTheme(p.customStyle, 'color') || 'inherit'};
+  text-decoration: ${(p) => setTheme(p.customStyle, 'textDecoration') || 'none'};
+  font-size: ${(p) => setTheme(p.customStyle, 'fontSize') || '13px'};
+  user-select: ${(p) => setTheme(p.customStyle, 'userSelect')};
   font-family: inherit;
   box-sizing: border-box;
-` as any
+`
 
 export default StyledAnchor

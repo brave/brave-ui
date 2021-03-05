@@ -7,15 +7,15 @@ export interface IconProps {
 
 export default function GenerateIconComponentForGraphic (Graphic: JSX.Element): any {
 
-  return styled.svg.attrs<IconProps>({
+  return styled.svg.attrs((props: IconProps) => ({
     children: [Graphic.props.children],
     viewBox: '0 0 32 32',
-    'aria-hidden': (props: IconProps) => (props.title === undefined ? 'true' : undefined),
+    'aria-hidden': props.title === undefined ? 'true' : undefined,
     focusable: 'false',
-    role: (props: IconProps) => (props.title !== undefined ? 'img' : undefined)
-  })`
+    role: props.title !== undefined ? 'img' : undefined
+  }))<IconProps>`
     width: 100%;
     height: 100%;
     fill: currentColor;
-  ` as any
+  `
 }
