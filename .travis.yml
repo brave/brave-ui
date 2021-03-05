@@ -1,10 +1,9 @@
 language: node_js
 node_js:
-  - "11.10.1"
+  - "14.16.0"
 dist: trusty
 cache: npm
 before_install:
-  - npm i -g npm@6.5.0
   - npm --version
 branches:
   only:
