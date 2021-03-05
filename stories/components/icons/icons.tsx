@@ -21,7 +21,7 @@ book.add('All Icons', () => {
   return (
     <Styled.IconGrid>
       {AllIconComponents.map(({ componentName, Component }) => (
-          <Styled.IconGridItem title={componentName}>
+          <Styled.IconGridItem key={componentName} title={componentName}>
             <Styled.IconGridItemIcon><Component /></Styled.IconGridItemIcon>
             <Styled.IconGridItemTitle>{componentName}</Styled.IconGridItemTitle>
           </Styled.IconGridItem>

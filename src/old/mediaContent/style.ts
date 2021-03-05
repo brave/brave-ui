@@ -13,14 +13,14 @@ const StyledMediaContent = styled.div`
   font-weight: inherit;
   font-family: inherit;
   color: inherit;
-` as any
+`
 
 const StyledMedia = styled.img`
   width: ${(p: MediaContentProps) => setTheme(p.customStyle, 'width')};
   box-sizing: border-box;
   display: block;
   max-width: 100%;
-` as any
+`
 
 const StyledMediaBody = styled.div`
   box-sizing: border-box;
@@ -28,7 +28,7 @@ const StyledMediaBody = styled.div`
   font-weight: inherit;
   font-family: inherit;
   color: inherit;
-` as any
+`
 
 export {
   StyledMediaContent,

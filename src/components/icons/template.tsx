@@ -17,5 +17,5 @@ export default function GenerateIconComponentForGraphic (Graphic: JSX.Element): 
     width: 100%;
     height: 100%;
     fill: currentColor;
-  ` as any
+  `
 }

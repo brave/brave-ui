@@ -23,6 +23,6 @@ const StyledPanel = styled.div`
   box-sizing: border-box;
   border-radius: 20px;
   box-shadow: 0 6px 12px 0 rgba(39, 46, 64, 0.2);
-` as any
+`
 
 export default StyledPanel

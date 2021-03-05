@@ -94,7 +94,7 @@ const StyledPushButton = styled.button`
       }
     ` : ''
   }
-` as any
+`
 
 const StyledPushButtonLink = StyledPushButton.withComponent('a')
 

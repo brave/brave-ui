@@ -26,7 +26,7 @@ const StyledDataBlock = styled.ul`
     margin-right: ${(p: DataProps) => p.asList ? '0' : '40px'};
     margin-bottom: ${(p: DataProps) => p.asList ? '0' : '20px'};
   }
-` as any
+`
 
 const StyledDataItem = styled.li`
   user-select: ${(p: DataItemProps) => setTheme(p.customStyle, 'userSelect') || 'auto'};
@@ -35,7 +35,7 @@ const StyledDataItem = styled.li`
   list-style-type: none;
   font-size: inherit;
   font-family: inherit;
-` as any
+`
 
 const StyledDataItemCounter = styled.span`
   color: ${(p: DataItemProps) => setTheme(p.customStyle, 'counterColor') || 'inherit'};
@@ -49,7 +49,7 @@ const StyledDataItemCounter = styled.span`
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-` as any
+`
 
 const StyledDataItemText = styled.span`
   color: ${(p: DataItemProps) => setTheme(p.customStyle, 'counterColor') || 'inherit'};
@@ -60,7 +60,7 @@ const StyledDataItemText = styled.span`
   display: inline;
   font-family: inherit;
   letter-spacing: 0;
-` as any
+`
 
 const StyledDataItemDescription = styled.div`
   box-sizing: border-box;
@@ -69,7 +69,7 @@ const StyledDataItemDescription = styled.div`
   font-family: inherit;
   color: ${(p: DataItemProps) => setTheme(p.customStyle, 'descriptionColor') || 'inherit'};
   margin-left: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '3px', '1ch', undefined)};
-` as any
+`
 
 export {
   StyledDataBlock,

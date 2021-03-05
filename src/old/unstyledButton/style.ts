@@ -25,6 +25,6 @@ const StyledUnstyledButton = styled.button`
   &:hover {
     color: ${(p: UnstyledButtonProps) => setTheme(p.customStyle, 'hoverColor')};
   }
-` as any
+`
 
 export default StyledUnstyledButton

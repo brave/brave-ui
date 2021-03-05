@@ -19,6 +19,6 @@ const StyledParagraph = styled.p`
   padding: 0;
   -webkit-font-smoothing: antialiased;
   background: transparent;
-` as any
+`
 
 export default StyledParagraph

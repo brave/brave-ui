@@ -13,6 +13,6 @@ const StyledAnchor = styled.a<AnchorProps>`
   user-select: ${(p) => setTheme(p.customStyle, 'userSelect')};
   font-family: inherit;
   box-sizing: border-box;
-` as any
+`
 
 export default StyledAnchor

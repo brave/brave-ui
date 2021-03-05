@@ -7,7 +7,7 @@ import styled from 'styled-components'
 
 const StyledSVG = styled.svg`
   stroke: inherit;
-` as any
+`
 
 class ArrowRight extends React.PureComponent {
   render () {

@@ -11,7 +11,7 @@ const StyledContentToggleArrow = styled.div`
   color: inherit;
   font-size: inherit;
   font-family: inherit;
-` as any
+`
 
 const StyledContentToggleArrowControl = styled.div`
   box-sizing: border-box;
@@ -31,7 +31,7 @@ const StyledContentToggleArrowControl = styled.div`
     top: 0;
     left: 0;
   }
-` as any
+`
 
 const StyledContentToggleArrowSummary = styled.div`
   box-sizing: border-box;
@@ -39,7 +39,7 @@ const StyledContentToggleArrowSummary = styled.div`
   font-size: inherit;
   font-family: inherit;
   margin-left: 15px;
-` as any
+`
 
 const StyledContentToggleArrowContent = styled.div`
   box-sizing: border-box;
@@ -49,7 +49,7 @@ const StyledContentToggleArrowContent = styled.div`
   overflow: ${(s: ContentToggleArrowState) => s.open ? 'auto' : 'hidden'};
   height: ${(s: ContentToggleArrowState) => s.open ? 'fit-content' : '0'};
   width: fill-available;
-` as any
+`
 
 export {
   StyledContentToggleArrow,
