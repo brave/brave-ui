@@ -45,6 +45,8 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   padding: 0 5px 0 13px;
   overflow: hidden;
   white-space: nowrap;
+  --select-text-color: #686978;
+  color: var(--select-text-color);
   text-overflow: ellipsis;
 }
 

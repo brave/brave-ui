@@ -5,6 +5,22 @@
 import styled, { css } from '../../../theme'
 import { Props } from './index'
 
+const matchTextColorWithTheme = (p: StyleProps) => {
+  let color;
+
+  switch(p.theme?.name){
+    case "Brave Dark": 
+      color = "#B8B9C4";
+      break;
+    case "Default":
+      color = "#686978";
+  }
+
+  return css`
+    --select-text-color : ${color};
+  `
+}
+
 const getSelectColors = (p: StyleProps) => {
   let color = '#686978'
   let borderColor = '#DFDFE8'
@@ -79,6 +95,8 @@ export const StyledSelectText = styled('div')<StyleProps>`
   padding: ${p => p.floating ? 0 : '0 5px 0 13px'};
   overflow: hidden;
   white-space: nowrap;
+  ${matchTextColorWithTheme};
+  color: var(--select-text-color);
   text-overflow: ellipsis;
 `
 

@@ -30,10 +30,15 @@ export interface Props {
   title?: string
   disabled?: boolean
   floating?: boolean
+  theme? : StyleThemeProps
   showAllContents?: boolean
   value?: string
   onChange?: (value: string, child: React.ReactNode) => void
   type?: Type
+}
+
+interface StyleThemeProps extends Props {
+  name? : String
 }
 
 interface State {
