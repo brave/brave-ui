@@ -45,8 +45,7 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
   padding: 0 5px 0 13px;
   overflow: hidden;
   white-space: nowrap;
-  --select-text-color: #686978;
-  color: var(--select-text-color);
+  color: 686978;
   text-overflow: ellipsis;
 }
 
@@ -150,6 +149,7 @@ exports[`Select tests basic tests matches the snapshot 1`] = `
     >
       <div
         className="c3"
+        type="light"
       >
         01
       </div>

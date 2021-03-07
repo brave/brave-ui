@@ -259,7 +259,7 @@ export default class Select extends React.PureComponent<Props, State> {
               type={type}
               floating={floating}
             >
-              <StyledSelectText floating={floating}>
+              <StyledSelectText type={type} floating={floating}>
                 {this.getDefaultValue(this.props).selected}
               </StyledSelectText>
               <StyledSelectArrow floating={floating}>
