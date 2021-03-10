@@ -15,14 +15,14 @@ const StyledMediaContent = styled.div`
   color: inherit;
 `
 
-const StyledMedia = styled.img`
+const StyledMedia = styled.img<MediaContentProps>`
   width: ${(p: MediaContentProps) => setTheme(p.customStyle, 'width')};
   box-sizing: border-box;
   display: block;
   max-width: 100%;
 `
 
-const StyledMediaBody = styled.div`
+const StyledMediaBody = styled.div<MediaContentProps>`
   box-sizing: border-box;
   margin: ${(p: MediaContentProps) => setTheme(p.customStyle, 'margin')};
   font-weight: inherit;

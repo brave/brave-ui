@@ -3,14 +3,29 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import styled from 'styled-components'
-import { DataProps, DataItemProps } from './index'
 import { setValueBasedOnSize, setTheme } from '../../helpers'
+
+type DataItemTheme = {
+  counterColor?: string
+  descriptionColor?: string
+  userSelect?: string
+}
+
+export type StyleProps = {
+  asList?: boolean
+}
+
+export type ItemStyleProps = {
+  size?: 'medium' | 'small'
+  customStyle?: DataItemTheme
+  asList?: boolean
+}
 
 // s/Data/data
 
-const StyledDataBlock = styled.ul`
+const StyledDataBlock = styled.ul<StyleProps>`
   box-sizing: border-box;
-  display: ${(p: DataProps) => !p.asList ? 'inline-block' : 'block'};
+  display: ${(p) => !p.asList ? 'inline-block' : 'block'};
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   margin: 0;
@@ -20,16 +35,16 @@ const StyledDataBlock = styled.ul`
   font-family: inherit;
 
   & > li {
-    display: ${(p: DataProps) => p.asList ? 'flex' : 'inline-block'};
-    align-items: ${(p: DataProps) => p.asList ? 'center' : null};
-    min-height: ${(p: DataProps) => p.asList ? '30px' : null};
-    margin-right: ${(p: DataProps) => p.asList ? '0' : '40px'};
-    margin-bottom: ${(p: DataProps) => p.asList ? '0' : '20px'};
+    display: ${(p) => p.asList ? 'flex' : 'inline-block'};
+    align-items: ${(p) => p.asList ? 'center' : null};
+    min-height: ${(p) => p.asList ? '30px' : null};
+    margin-right: ${(p) => p.asList ? '0' : '40px'};
+    margin-bottom: ${(p) => p.asList ? '0' : '20px'};
   }
 `
 
-const StyledDataItem = styled.li`
-  user-select: ${(p: DataItemProps) => setTheme(p.customStyle, 'userSelect') || 'auto'};
+const StyledDataItem = styled.li<ItemStyleProps>`
+  user-select: ${(p) => setTheme(p.customStyle, 'userSelect') || 'auto'};
   box-sizing: border-box;
   vertical-align: middle;
   list-style-type: none;
@@ -37,12 +52,12 @@ const StyledDataItem = styled.li`
   font-family: inherit;
 `
 
-const StyledDataItemCounter = styled.span`
-  color: ${(p: DataItemProps) => setTheme(p.customStyle, 'counterColor') || 'inherit'};
-  font-size: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '44px', '26px', undefined)};
-  line-height: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '52px', '24px', undefined)};
-  width: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '7ch', '3ch', undefined)};
-  text-align: ${(p: DataItemProps) => p.size === 'small' ? 'right' : 'inherit'};
+const StyledDataItemCounter = styled.span<ItemStyleProps>`
+  color: ${(p) => setTheme(p.customStyle, 'counterColor') || 'inherit'};
+  font-size: ${(p) => setValueBasedOnSize(p.size, '44px', '26px', undefined)};
+  line-height: ${(p) => setValueBasedOnSize(p.size, '52px', '24px', undefined)};
+  width: ${(p) => setValueBasedOnSize(p.size, '7ch', '3ch', undefined)};
+  text-align: ${(p) => p.size === 'small' ? 'right' : 'inherit'};
   box-sizing: border-box;
   letter-spacing: -0.4px;
   font-family: inherit;
@@ -51,24 +66,24 @@ const StyledDataItemCounter = styled.span`
   overflow: hidden;
 `
 
-const StyledDataItemText = styled.span`
-  color: ${(p: DataItemProps) => setTheme(p.customStyle, 'counterColor') || 'inherit'};
-  font-size: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '20px', '13px', undefined)};
-  line-height: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '24px', '16px', undefined)};
-  margin-left: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '3px', '10px', undefined)};
+const StyledDataItemText = styled.span<ItemStyleProps>`
+  color: ${(p) => setTheme(p.customStyle, 'counterColor') || 'inherit'};
+  font-size: ${(p) => setValueBasedOnSize(p.size, '20px', '13px', undefined)};
+  line-height: ${(p) => setValueBasedOnSize(p.size, '24px', '16px', undefined)};
+  margin-left: ${(p) => setValueBasedOnSize(p.size, '3px', '10px', undefined)};
   box-sizing: border-box;
   display: inline;
   font-family: inherit;
   letter-spacing: 0;
 `
 
-const StyledDataItemDescription = styled.div`
+const StyledDataItemDescription = styled.div<ItemStyleProps>`
   box-sizing: border-box;
   font-size: 13px;
-  line-height: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '24px', '16px', undefined)};
+  line-height: ${(p) => setValueBasedOnSize(p.size, '24px', '16px', undefined)};
   font-family: inherit;
-  color: ${(p: DataItemProps) => setTheme(p.customStyle, 'descriptionColor') || 'inherit'};
-  margin-left: ${(p: DataItemProps) => setValueBasedOnSize(p.size, '3px', '1ch', undefined)};
+  color: ${(p) => setTheme(p.customStyle, 'descriptionColor') || 'inherit'};
+  margin-left: ${(p) => setValueBasedOnSize(p.size, '3px', '1ch', undefined)};
 `
 
 export {

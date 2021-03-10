@@ -8,25 +8,18 @@ import { capitalize } from '../../helpers'
 import {
   StyledSwitchButtonWrapper,
   StyledSwitchButtonLabel,
-  StyledSwitchButton
+  StyledSwitchButton,
+  StyleProps
 } from './style'
 
-export interface SwitchButtonTheme {
-  labelColor?: string
-  userSelect?: string
-}
-
-export interface SwitchButtonProps {
+export type SwitchButtonProps = StyleProps & {
   checked: boolean
-  disabled?: boolean
   onChange?: (e: any) => void
   id: string
   readOnly?: boolean
   autoFocus?: boolean
   leftText?: string
   rightText?: string
-  size?: 'large' | 'medium' | 'small'
-  customStyle?: SwitchButtonTheme
 }
 
 export interface SwitchButtonState {
@@ -69,7 +62,7 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
       <StyledSwitchButtonLabel
         id={`${this.props.id + capitalize(side)}Text`}
         htmlFor={this.props.id}
-        size={this.props.size}
+        switchSize={this.props.switchSize}
         customStyle={this.props.customStyle}
       >
         {side === 'left' ? this.props.leftText : this.props.rightText}
@@ -83,7 +76,7 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
       readOnly,
       disabled,
       autoFocus,
-      size = 'medium',
+      switchSize = 'medium',
       rightText,
       leftText
     } = this.props
@@ -100,7 +93,7 @@ class SwitchButton extends React.PureComponent<SwitchButtonProps, SwitchButtonSt
             readOnly={readOnly}
             disabled={disabled}
             autoFocus={autoFocus}
-            size={size}
+            switchSize={switchSize}
             onChange={this.handleChange}
           />
         {rightText && this.getLabel('right')}

@@ -5,23 +5,11 @@
 
 import * as React from 'react'
 
-import StyledParagraph from './style'
+import StyledParagraph, { StyleProps } from './style'
 
-export interface ParagraphTheme {
-  color?: string
-  fontSize?: string
-  fontWeight?: string
-  fontStyle?: string
-  fontFamily?: string
-  margin?: string
-  textAlign?: string
-  lineHeight?: string
-}
-
-export interface ParagraphProps {
+export type ParagraphProps = StyleProps & {
   id?: string
   text?: string
-  customStyle?: ParagraphTheme
 }
 
 /**

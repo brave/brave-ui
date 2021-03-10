@@ -10,7 +10,8 @@ import {
   StyledH3,
   StyledH4,
   StyledH5,
-  StyledH6
+  StyledH6,
+  StyleProps
 } from './style'
 
 export interface TitleHeadingProps {
@@ -63,18 +64,10 @@ class FeatureHeading extends React.PureComponent<FeatureHeadingProps, {}> {
   }
 }
 
-export interface HeadingTheme {
-  color?: string
-  fontFamily?: string
-  fontWeight?: string
-  margin?: string
-}
-
-export interface HeadingProps {
+export type HeadingProps = StyleProps & {
   id?: string
   level?: 1 | 2 | 3 | 4 | 5 | 6
   text?: string
-  customStyle?: HeadingTheme
 }
 
 class Heading extends React.PureComponent<HeadingProps, {}> {
