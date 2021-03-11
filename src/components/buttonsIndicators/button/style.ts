@@ -2,7 +2,7 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled, { css, ThemedStyledProps } from '../../../theme'
+import styled, { css, StyledProps } from 'styled-components'
 import { Props } from './index'
 
 function largeMediumSmall (largeValue: any, mediumValue: any, smallValue: any, ctaValue?: any) {
@@ -20,7 +20,7 @@ function largeMediumSmall (largeValue: any, mediumValue: any, smallValue: any, c
   }
 }
 
-const getThemeColors = (p: ThemedStyledProps<Props>) => {
+const getThemeColors = (p: StyledProps<Props>) => {
   let mainColor
   let hoverColor
   let activeColor

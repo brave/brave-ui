@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as React from 'react'
-import StyledUnstyledButton from './style'
+import StyledUnstyledButton, { StyleProps } from './style'
 
 /**
  * Implementor notes:
@@ -15,19 +15,10 @@ import StyledUnstyledButton from './style'
  * as this file shouldn't be changed much.
  */
 
-export interface UnstyledButtonTheme {
-  fontSize?: string
-  color?: string
-  hoverColor?: string
-  userSelect?: string
-  textDecoration?: string
-}
-
-export interface UnstyledButtonProps {
+export type UnstyledButtonProps = StyleProps & {
   id?: string
   onClick?: (e: any) => void
   text?: string | number
-  customStyle?: UnstyledButtonTheme
 }
 
 class UnstyledButton extends React.PureComponent<UnstyledButtonProps, {}> {

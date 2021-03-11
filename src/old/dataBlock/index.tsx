@@ -5,12 +5,13 @@ import {
   StyledDataItem,
   StyledDataItemCounter,
   StyledDataItemText,
-  StyledDataItemDescription
+  StyledDataItemDescription,
+  StyleProps,
+  ItemStyleProps
 } from './style'
 
-export interface DataProps {
+export type DataProps = StyleProps & {
   id?: string
-  asList?: boolean
   children?: React.ReactNode
 }
 
@@ -22,20 +23,13 @@ class DataBlock extends React.PureComponent<DataProps, {}> {
     )
   }
 }
-export interface DataItemTheme {
-  counterColor?: string
-  descriptionColor?: string
-  userSelect?: string
-}
 
-export interface DataItemProps {
+export type DataItemProps = ItemStyleProps & {
   id?: string
   counter?: string | number
   text?: string
   description?: string
-  size?: 'medium' | 'small'
   onClick?: (e: any) => void
-  customStyle?: DataItemTheme
 }
 
 class DataItem extends React.PureComponent<DataItemProps, {}> {

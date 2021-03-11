@@ -46,7 +46,6 @@ exports[`switchButton tests basic tests matches the snapshot 1`] = `
     className="c1"
     id="switchButton"
     onChange={[Function]}
-    size="medium"
     type="checkbox"
   />
 </div>

@@ -7,10 +7,10 @@ import { PushButtonProps } from './index'
 import { setTheme } from '../../helpers'
 import defaultTheme from '../defaultTheme'
 
-const StyledPushButton = styled.button`
-  font-size: ${(p: PushButtonProps) => setTheme(p.customStyle, 'fontSize') || '13px'};
-  min-width: ${(p: PushButtonProps) => setTheme(p.customStyle, 'minWidth') || '78px'};
-  min-height: ${(p: PushButtonProps) => setTheme(p.customStyle, 'minHeight') || '32px'};
+const StyledPushButton = styled.button<PushButtonProps>`
+  font-size: ${(p) => setTheme(p.customStyle, 'fontSize') || '13px'};
+  min-width: ${(p) => setTheme(p.customStyle, 'minWidth') || '78px'};
+  min-height: ${(p) => setTheme(p.customStyle, 'minHeight') || '32px'};
   font-family: inherit;
   position: relative;
   display: inline-block;
