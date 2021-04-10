@@ -2,7 +2,7 @@
 
 <p align="center">
 <a href="https://www.npmjs.com/package/brave-ui" alt="NPM"><img src="https://img.shields.io/npm/v/brave-ui.svg" /></a>
-<a href="https://travis-ci.org/brave/brave-ui)" alt="Travis"><img src="https://img.shields.io/travis/brave/brave-ui.svg" /></a>
+<a href="https://travis-ci.org/brave/brave-ui" alt="Travis"><img src="https://img.shields.io/travis/brave/brave-ui.svg" /></a>
 <a href="https://snyk.io/test/github/brave/brave-ui" alt="Known Vulnerabilities"><img src="https://snyk.io/test/github/brave/brave-ui/badge.svg" /></a>
 <a href="#" alt="NPM"><img src="https://img.shields.io/npm/dt/brave-ui.svg" /></a>
 <a href="https://lernajs.io/" alt="Lerna"><img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" /></a>
