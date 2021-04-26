@@ -5,8 +5,12 @@ import { create } from 'react-test-renderer'
 import Button from './index'
 import { TestThemeProvider } from '../../../theme'
 
-describe('Button tests', () => {
+describe('Button tests', () => { 
   const baseComponent = (props?: object) => <TestThemeProvider><Button id='button' text='test' {...props} /></TestThemeProvider>
+
+  beforeEach(() => {
+    jest.clearAllMocks()
+  });
 
   describe('basic tests', () => {
     it('matches the snapshot', () => {
@@ -20,5 +24,14 @@ describe('Button tests', () => {
       const assertion = wrapper.find('#button').length
       expect(assertion).toBe(1)
     })
+  })
+
+  describe('onClick test', () => {
+    it('Should fire exactly once', () => {
+     const onClick = jest.fn()
+     const wrapper = shallow(baseComponent({onClick}))
+     wrapper.find('#button').simulate('click')
+     expect(onClick.mock.calls.length).toEqual(1)
+    });
   })
 })
