@@ -8,6 +8,9 @@ export default interface IThemeProps {
     contextMenuForeground: string
     contextMenuHoverBackground: string
     contextMenuHoverForeground: string
+    background01: string
+    background02: string
+    background03: string
     brandBrave: string
     brandBraveInteracting: string
     brandBraveActive: string
@@ -33,11 +36,38 @@ export default interface IThemeProps {
     subtleInteracting: string
     subtleActive: string
     text: string
+    text01: string
+    text02: string
+    text03: string
     panelBackground: string
     panelBackgroundSecondary: string
     lionLogo: string
     inputBorder: string
     separatorLine: string
+    interactive01: string
+    interactive02: string
+    interactive03: string
+    interactive04: string
+    interactive05: string
+    interactive06: string
+    interactive07: string
+    interactive08: string
+    focusBorder: string
+    divider01: string
+    errorIcon: string
+    errorText: string
+    errorBorder: string
+    errorBackground: string
+    warningIcon: string
+    warningBorder: string
+    warningBackground: string
+    infoIcon: string
+    infoBorder: string
+    infoBackground: string
+    successIcon: string
+    successBorder: string
+    successBackground: string
+
   }
   fontFamily: {
     heading: string
