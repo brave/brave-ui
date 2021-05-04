@@ -8,7 +8,7 @@ import { withKnobs, text, number } from '@storybook/addon-knobs'
 import centered from '@storybook/addon-centered'
 import { Heading } from '../../src/components'
 
-storiesOf('Components/Text', module)
+storiesOf('Components/Typography', module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
   .add('Heading playground', () => {
