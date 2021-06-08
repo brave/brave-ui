@@ -8,9 +8,9 @@ import * as React from 'react'
 import * as V1Icons from '../../../src/components/icons'
 import * as V2Icons from '../../../src/components/icons_v2'
 import * as Styled from './style'
-import * as copy from 'copy-to-clipboard';
+import * as copy from 'copy-to-clipboard'
 
-const svgSprite = require('./brave-icons-svg');
+const svgSprite = require('./brave-icons-svg')
 
 const book = storiesOf('Components/Icons', module)
 
@@ -41,11 +41,11 @@ book.add('v1', () => {
   )
 })
 
-const handleIconClick = (componentName:string) => () => {
+const handleIconClick = (componentName: string) => () => {
   const spriteId = componentName.replace(/(\S)([A-Z])/g, '$1-$2').toLowerCase()
   copy(`<svg class="">
   <use href="#${spriteId}" />
-</svg>`);
+</svg>`)
 }
 
 book.add('v2', () => {
