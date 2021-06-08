@@ -4,15 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preinstall": "npx npm-force-resolutions"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@balajmarius/svg2jsx": "github:brave/svg2jsx#507bc7e3782f838fc28af639bfcd24bb4435a218",
     "html": "^1.0.0",
-    "mkdirp-promise": "^5.0.1",
+    "mkdirp": "^1.0.4",
     "mz": "^2.7.0",
-    "svgo": "^1.2.2"
+    "svgo": "^2.3.0"
+  },
+  "resolutions": {
+    "css-select": "^4.1.3",
+    "css-what": "^5.0.0"
   }
 }
