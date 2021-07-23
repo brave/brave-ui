@@ -9,7 +9,7 @@ export default function GenerateIconComponentForGraphic (Graphic: JSX.Element): 
 
   return styled.svg.attrs((props: IconProps) => ({
     children: [Graphic.props.children],
-    viewBox: '0 0 32 32',
+    viewBox: '0 0 25 25',
     'aria-hidden': props.title === undefined ? 'true' : undefined,
     focusable: 'false',
     role: props.title !== undefined ? 'img' : undefined
