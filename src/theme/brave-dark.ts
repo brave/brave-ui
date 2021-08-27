@@ -14,6 +14,8 @@ const darkTheme: ITheme = {
     defaultControl: colors.grey400,
     defaultControlInteracting: colors.white,
     defaultControlActive: colors.grey500,
+    // disabled controls
+    disabled: colors.neutral800,
     // text
     contextMenuForeground: colors.white,
     contextMenuHoverForeground: colors.white,
