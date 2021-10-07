@@ -8,6 +8,7 @@ const darkTheme: ITheme = {
   color: {
     ...defaultTheme.color,
     // brand
+    interactive05: colors.blurple300,
     interactive07: colors.grey000,
     interactive08: colors.grey700,
     // regular controls
