@@ -88,7 +88,7 @@ storiesOf('Components/Form controls', module)
       </>
     )
   })
-  .add('Checkbox', withState({ 'yt': true, 'tw': false, 'inst': false }, (store) => {
+  .add('Checkbox', withState({ 'yt': true, 'tw': false, 'rd': false, 'gh': false, 'inst': false }, (store) => {
     const onChange = (key: string, selected: boolean, child: React.ReactNode, all: { [key: string]: boolean }) => {
       store.set(all)
     }
@@ -101,7 +101,7 @@ storiesOf('Components/Form controls', module)
             disabled={boolean('Disabled', false)}
           >
             <Checkbox
-              value={object('Checkbox values', store.state)}
+              value={store.state}
               size={select<any>('Size', { small: 'small', big: 'big' }, 'small')}
               multiple={boolean('Is multiple?', false)}
               disabled={boolean('Disabled', false)}
@@ -123,7 +123,7 @@ storiesOf('Components/Form controls', module)
             disabled={boolean('Disabled', false)}
           >
             <Checkbox
-              value={object('Checkbox values', store.state)}
+              value={store.state}
               size={select<any>('Size', { small: 'small', big: 'big' }, 'small')}
               multiple={boolean('Is multiple?', false)}
               disabled={boolean('Disabled', false)}
@@ -133,7 +133,7 @@ storiesOf('Components/Form controls', module)
               <div data-key='yt'>YouTube</div>
               <div data-key='tw'>Twitter</div>
               <div data-key='rd'>Reddit</div>
-              <div data-key='rd'>GitHub</div>
+              <div data-key='gh'>GitHub</div>
               <div data-key='inst'>Instagram Instagram Instagram Instagram Instagram</div>
             </Checkbox>
           </ControlWrapper>

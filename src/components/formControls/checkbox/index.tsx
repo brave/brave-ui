@@ -21,6 +21,13 @@ export interface Props {
   onChange?: (key: string, selected: boolean, child: React.ReactNode, all: {[key: string]: boolean}) => void
 }
 
+function onKeyPressForAction (handler: Function, event: React.KeyboardEvent) {
+  // Invoke for space or enter, just like a regular input or button
+  if ([' ', 'Enter'].includes(event.key)) {
+    handler()
+  }
+}
+
 export default class Checkbox extends React.PureComponent<Props, {}> {
   static defaultProps = {
     type: 'light',
@@ -39,19 +46,22 @@ export default class Checkbox extends React.PureComponent<Props, {}> {
       const element = child.props.children
       const key = child.props['data-key']
       const selected = self.props.value[key] || false
+      const onClick = self.onOptionClick.bind(self, key, child, selected)
       return (
         <StyledLabel
           key={`checkbox-${i}`}
-          onClick={!self.props.disabled ? self.onOptionClick.bind(self, key, child, selected) : undefined}
+          data-testid={`checkbox-child-${i}`}
+          role='checkbox'
+          aria-checked={selected ? 'true' : 'false'}
+          tabIndex={self.props.disabled ? undefined : '0'}
+          onClick={!self.props.disabled ? onClick : undefined}
+          onKeyPress={!self.props.disabled ? onKeyPressForAction.bind(null, onClick) : undefined}
           type={self.props.type}
           size={self.props.size}
+          disabled={self.props.disabled}
+          selected={selected}
         >
-          <StyledBox
-            selected={selected}
-            type={self.props.type}
-            disabled={self.props.disabled}
-            size={self.props.size}
-          >
+          <StyledBox>
             {selected ? <CheckIcon /> : null}
           </StyledBox>
           <StyledText
