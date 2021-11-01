@@ -9,18 +9,22 @@ interface StyleProps extends Props {
   selected?: boolean
 }
 
-const getBox = (p: Partial<StyleProps>) => {
-  let size = 18
+const getLabelProps = (p: Partial<StyleProps>) => {
+  let boxSize = 18
+  let labelSize = 14
   let borderColor = '#D1D1DB'
-  let color = '#696FDC'
+  let boxColor = '#696FDC'
+  let labelColor = '#686978'
   let spacing = 12
   if (p.size === 'big') {
-    size = 24
+    boxSize = 24
+    labelSize = 16
     spacing = 17
   }
 
   if (p.type === 'dark') {
-    color = '#A1A8F2'
+    boxColor = '#A1A8F2'
+    labelColor = '#B8B9C4'
   }
 
   if (p.selected) {
@@ -32,55 +36,63 @@ const getBox = (p: Partial<StyleProps>) => {
   }
 
   return css`
-    --checkbox-box-size: ${size}px;
-    --checkbox-box-borderColor: ${borderColor};
-    --checkbox-box-color: ${color};
+    --checkbox-border-color: ${borderColor};
+    --checkbox-border-size: 1px;
+    --checkbox-box-size: ${boxSize}px;
+    --checkbox-box-color: ${boxColor};
     --checkbox-box-spacing: ${spacing}px;
+    --checkbox-label-color: ${labelColor};
+    --checkbox-label-size: ${labelSize}px;
+    &:focus, &:hover:not([disabled]) {
+      outline: none;
+      --checkbox-border-color: #A0A5EB;
+      --checkbox-border-size: 3px;
+    }
   `
 }
 
-const getLabel = (p: Partial<StyleProps>) => {
-  let color = '#686978'
-  let size = 14
-  if (p.size === 'big') {
-    size = 16
-  }
-
-  if (p.type === 'dark') {
-    color = '#B8B9C4'
-  }
-
-  return css`
-    --checkbox-label-color: ${color};
-    --checkbox-label-size: ${size}px;
-  `
-}
-
-export const StyledLabel = styled('div')<Partial<StyleProps>>`
+export const StyledLabel = styled('label')<Partial<StyleProps>>`
+  ${getLabelProps};
   font-family: ${p => p.theme.fontFamily.body};
   display: flex;
   align-items: center;
   margin-bottom: 4px;
-  ${getLabel};
   color: var(--checkbox-label-color);
   font-size: var(--checkbox-label-size);
   cursor: pointer;
+  &:focus {
+    /* Focus style is on child 'box' */
+    outline: none;
+  }
 `
 
-export const StyledBox = styled('span')<Partial<StyleProps>>`
-  border-radius: 2px;
+export const StyledBox = styled('span')`
+  border-radius: 4px;
+  position: relative;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2px;
-  ${getBox};
+  padding: 3px;
   flex-basis: var(--checkbox-box-size);
   width: var(--checkbox-box-size);
   height: var(--checkbox-box-size);
   color: var(--checkbox-box-color);
-  border: 1px solid var(--checkbox-box-borderColor);
   margin: 8px;
+  :after {
+    /* Border provided by :after element so that transition of size is smooth without
+       svg-resizing 'jumping' effect from resizing padding + border space at the same time */
+    transition: border .1s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: var(--checkbox-border-size) solid var(--checkbox-border-color);
+    content: '';
+    display: block;
+    border-radius: 4px;
+  }
 `
 
 export const StyledText = styled('span')<Partial<StyleProps>>`

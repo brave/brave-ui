@@ -2,6 +2,13 @@
 
 exports[`Checkbox tests basic tests matches the snapshot 1`] = `
 .c0 {
+  --checkbox-border-color: #A1A8F2;
+  --checkbox-border-size: 1px;
+  --checkbox-box-size: 18px;
+  --checkbox-box-color: #696FDC;
+  --checkbox-box-spacing: 12px;
+  --checkbox-label-color: #686978;
+  --checkbox-label-size: 14px;
   font-family: Muli,sans-serif;
   display: -webkit-box;
   display: -webkit-flex;
@@ -12,45 +19,59 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 4px;
-  --checkbox-label-color: #686978;
-  --checkbox-label-size: 14px;
   color: var(--checkbox-label-color);
   font-size: var(--checkbox-label-size);
   cursor: pointer;
 }
 
-.c1 {
-  border-radius: 2px;
-  text-align: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 2px;
-  --checkbox-box-size: 18px;
-  --checkbox-box-borderColor: #A1A8F2;
-  --checkbox-box-color: #696FDC;
-  --checkbox-box-spacing: 12px;
-  -webkit-flex-basis: var(--checkbox-box-size);
-  -ms-flex-preferred-size: var(--checkbox-box-size);
-  flex-basis: var(--checkbox-box-size);
-  width: var(--checkbox-box-size);
-  height: var(--checkbox-box-size);
-  color: var(--checkbox-box-color);
-  border: 1px solid var(--checkbox-box-borderColor);
-  margin: 8px;
+.c0:focus,
+.c0:hover:not([disabled]) {
+  outline: none;
+  --checkbox-border-color: #A0A5EB;
+  --checkbox-border-size: 3px;
+}
+
+.c0:focus {
+  outline: none;
 }
 
 .c4 {
-  border-radius: 2px;
+  --checkbox-border-color: #D1D1DB;
+  --checkbox-border-size: 1px;
+  --checkbox-box-size: 18px;
+  --checkbox-box-color: #696FDC;
+  --checkbox-box-spacing: 12px;
+  --checkbox-label-color: #686978;
+  --checkbox-label-size: 14px;
+  font-family: Muli,sans-serif;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 4px;
+  color: var(--checkbox-label-color);
+  font-size: var(--checkbox-label-size);
+  cursor: pointer;
+}
+
+.c4:focus,
+.c4:hover:not([disabled]) {
+  outline: none;
+  --checkbox-border-color: #A0A5EB;
+  --checkbox-border-size: 3px;
+}
+
+.c4:focus {
+  outline: none;
+}
+
+.c1 {
+  border-radius: 4px;
+  position: relative;
   text-align: center;
   display: -webkit-box;
   display: -webkit-flex;
@@ -64,19 +85,28 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 2px;
-  --checkbox-box-size: 18px;
-  --checkbox-box-borderColor: #D1D1DB;
-  --checkbox-box-color: #696FDC;
-  --checkbox-box-spacing: 12px;
+  padding: 3px;
   -webkit-flex-basis: var(--checkbox-box-size);
   -ms-flex-preferred-size: var(--checkbox-box-size);
   flex-basis: var(--checkbox-box-size);
   width: var(--checkbox-box-size);
   height: var(--checkbox-box-size);
   color: var(--checkbox-box-color);
-  border: 1px solid var(--checkbox-box-borderColor);
   margin: 8px;
+}
+
+.c1:after {
+  -webkit-transition: border .1s ease-in-out;
+  transition: border .1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: var(--checkbox-border-size) solid var(--checkbox-border-color);
+  content: '';
+  display: block;
+  border-radius: 4px;
 }
 
 .c3 {
@@ -101,20 +131,23 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
 }
 
 <div
-  id="checkbox"
+  data-test-id="checkbox"
 >
-  <div
+  <label
+    aria-checked="true"
     className="c0"
+    data-testid="checkbox-child-0"
+    disabled={false}
     onClick={[Function]}
+    onKeyPress={[Function]}
+    role="checkbox"
+    selected={true}
     size="small"
+    tabIndex="0"
     type="light"
   >
     <span
       className="c1"
-      disabled={false}
-      selected={true}
-      size="small"
-      type="light"
     >
       <svg
         aria-hidden="true"
@@ -134,19 +167,22 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
     >
       YouTube
     </span>
-  </div>
-  <div
-    className="c0"
+  </label>
+  <label
+    aria-checked="false"
+    className="c4"
+    data-testid="checkbox-child-1"
+    disabled={false}
     onClick={[Function]}
+    onKeyPress={[Function]}
+    role="checkbox"
+    selected={false}
     size="small"
+    tabIndex="0"
     type="light"
   >
     <span
-      className="c4"
-      disabled={false}
-      selected={false}
-      size="small"
-      type="light"
+      className="c1"
     />
     <span
       className="c3"
@@ -155,19 +191,22 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
     >
       Twitter
     </span>
-  </div>
-  <div
-    className="c0"
+  </label>
+  <label
+    aria-checked="false"
+    className="c4"
+    data-testid="checkbox-child-2"
+    disabled={false}
     onClick={[Function]}
+    onKeyPress={[Function]}
+    role="checkbox"
+    selected={false}
     size="small"
+    tabIndex="0"
     type="light"
   >
     <span
-      className="c4"
-      disabled={false}
-      selected={false}
-      size="small"
-      type="light"
+      className="c1"
     />
     <span
       className="c3"
@@ -176,6 +215,6 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
     >
       Instagram
     </span>
-  </div>
+  </label>
 </div>
 `;
