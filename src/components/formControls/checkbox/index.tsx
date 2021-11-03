@@ -53,7 +53,7 @@ export default class Checkbox extends React.PureComponent<Props, {}> {
           data-testid={`checkbox-child-${i}`}
           role='checkbox'
           aria-checked={selected ? 'true' : 'false'}
-          tabIndex={self.props.disabled ? undefined : '0'}
+          tabIndex={self.props.disabled ? undefined : 0}
           onClick={!self.props.disabled ? onClick : undefined}
           onKeyPress={!self.props.disabled ? onKeyPressForAction.bind(null, onClick) : undefined}
           type={self.props.type}
