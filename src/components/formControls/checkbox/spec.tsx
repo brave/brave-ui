@@ -1,6 +1,5 @@
 /* global jest, expect, describe, it, afterEach */
 import * as React from 'react'
-import { shallow } from 'enzyme'
 import { create } from 'react-test-renderer'
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
