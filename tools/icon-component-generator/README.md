@@ -7,7 +7,7 @@ This tool batch processes SVGs within a folder by optimizing the XML with SVGO, 
 1. Create a folder with the SVG files inside.
 2. `cd` into the `icon-component-generator` folder
 3. `npm install`
-4. Run the comman
+4. Run the command
 
 ```
 node ./ [Full Path Of Directory with SVG files relative to the icon-component-generator folder] [Destination Path For TSX files relative to the icon-component-generator folder]
