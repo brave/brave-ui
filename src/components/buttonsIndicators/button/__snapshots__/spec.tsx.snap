@@ -78,6 +78,7 @@ exports[`Button tests basic tests matches the snapshot 1`] = `
 <button
   className="c0 c1"
   id="button"
+  onClick={[MockFunction]}
   size="medium"
   type="default"
 >
