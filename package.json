@@ -12,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/brave/brave-ui/issues"
   },
-  "homepage": "https://github.com/brave/brave-ui#readme"
+  "homepage": "https://github.com/brave/brave-ui#readme",
+  "optionalDependencies": {
+    "tailwindcss": "^3.0.19"
+  }
 }
