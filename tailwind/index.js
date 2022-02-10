@@ -1,5 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-const { primaryFont, fontSize, textColor, backgroundColor, colors, boxShadow } = require("../shared/tokens.cjs");
+const { primaryFont, fontSize, textColor, backgroundColor, colors, boxShadow } = require("../shared/tokens");
 
 module.exports = {
 	theme: {
@@ -62,8 +62,8 @@ module.exports = {
 		},
 	},
 	plugins: [
-		require("./preflightPlugin.cjs"),
-		require("./buttonsPlugins.cjs"),
-		require("./inputsPlugin.cjs")
+		require("./preflightPlugin"),
+		require("./buttonsPlugins"),
+		require("./inputsPlugin")
 	],
 };

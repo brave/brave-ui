@@ -1,4 +1,4 @@
-const { token } = require("./utils.cjs");
+const { token } = require("./utils");
 
 module.exports = {
 	".btn": {

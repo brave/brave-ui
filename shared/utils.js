@@ -1,4 +1,4 @@
-const tokens = require("./tokens.cjs");
+const tokens = require("./tokens");
 
 const pathRegex = /([a-zA-Z]+)(?:\[|\.)([a-zA-Z0-9-]+)\]?/
 const token = (path) => {

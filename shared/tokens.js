@@ -1,7 +1,7 @@
 // Largely a modification of https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 
 module.exports = {
-	primaryFont: ["Poppins", "Helvetica"],
+	primaryFont: ["Poppins", "Helvetica", "sans-serif"],
 	fontSize: {
 		h1: ["3.25rem", 1.2307692307692308],
 		h2: ["2.25rem", 1.6666666666666667],
