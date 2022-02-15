@@ -1,6 +1,11 @@
 const { token } = require("./utils");
 
 module.exports = {
+	":root": {
+		"--tw-text-opacity": "1",
+		"--tw-bg-opacity": "1",
+		"--tw-border-opacity": "1",
+	},
 	html: { scrollBehavior: "smooth" },
 	"html, body": {
 		fontFamily: token("primaryFont").join(", "),

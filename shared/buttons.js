@@ -33,25 +33,25 @@ module.exports = {
 	".btn--small": { "--height": "32px", fontSize: "13px" },
 	".btn--large": { "--height": "48px", fontSize: "14px" },
 	".btn--filled": {
-		color: `${token("colors.white")} !important`,
-		backgroundColor: token("colors[interactive-05]"),
-		"&:hover": { backgroundColor: token("colors[interactive-04]") },
+		color: `${token("textColor.white")} !important`,
+		backgroundColor: token("backgroundColor[interactive-05]"),
+		"&:hover": { backgroundColor: token("backgroundColor[interactive-04]") },
 		"&:active, &.loading": {
 			"--tw-text-opacity": "0.7",
-			color: `${token("colors.white")} !important`,
+			color: `${token("textColor.white")} !important`,
 			boxShadow: "none",
 			background: "rgba(53, 61, 171, 0.7)",
 		},
 		"&:disabled": {
-			backgroundColor: token("colors[light-disabled]"),
-			color: token("colors.white"),
+			backgroundColor: token("backgroundColor[light-disabled]"),
+			color: token("textColor.white"),
 		},
 		".theme--dark &, &.theme--dark": {
 			"&:hover": {
-				backgroundColor: token("colors[interactive-06]"),
+				backgroundColor: token("backgroundColor[interactive-06]"),
 			},
 			"&:disabled": {
-				backgroundColor: token("colors[dark-disabled]"),
+				backgroundColor: token("backgroundColor[dark-disabled]"),
 				color: "#677078 !important",
 			},
 			"&:active, &.loading": {
@@ -63,15 +63,15 @@ module.exports = {
 		},
 	},
 	".btn--ghost": {
-		color: `${token("colors.white")} !important`,
+		color: `${token("textColor.white")} !important`,
 		fontWeight: token("fontWeight.semibold"),
 		"--tw-bg-opacity": "0.24",
-		backgroundColor: token("colors.white"),
+		backgroundColor: token("backgroundColor.white"),
 		backdropFilter: "blur(16px)",
 		"&:hover": {
 			opacity: 100,
 			"--tw-bg-opacity": "0.42",
-			backgroundColor: token("colors.white"),
+			backgroundColor: token("backgroundColor.white"),
 		},
 		"&:focus": {
 			outline: "none",
@@ -82,34 +82,34 @@ module.exports = {
 		"&:disabled": {
 			"--tw-bg-opacity": "0.14",
 			"--tw-text-opacity": "0.32",
-			backgroundColor: token("colors.white"),
-			color: token("colors.white"),
+			backgroundColor: token("backgroundColor.white"),
+			color: token("textColor.white"),
 			cursor: "not-allowed",
 		},
 		"&:active, &.loading": {
 			"--tw-bg-opacity": "0.32",
 			"--tw-text-opacity": "0.32",
-			backgroundColor: token("colors.white"),
-			color: `${token("colors.white")} !important`,
+			backgroundColor: token("backgroundColor.white"),
+			color: `${token("textColor.white")} !important`,
 			boxShadow: "none",
 			borderColor: "transparent",
 		},
 	},
 	".btn--outline": {
-		color: token("colors[interactive-07]"),
+		color: token("textColor[interactive-07]"),
 		borderColor: token("colors[interactive-08]"),
 		"&:hover": {
 			borderColor: token("colors[interactive-05]"),
-			color: token("colors[interactive-05]"),
+			color: token("textColor[interactive-05]"),
 			opacity: 100,
 			boxShadow: `0 0 0 1px ${token("colors.blurple-300")}`,
 		},
 		"&:focus": { boxShadow: `0 0 0 3px ${token("colors.blurple-300")}` },
 		".theme--dark &, &.theme--dark": {
-			color: token("colors.white"),
+			color: token("textColor.white"),
 			"&:hover": {
 				borderColor: token("colors[interactive-06]"),
-				color: token("colors[blurple-300]"),
+				color: token("textColor[blurple-300]"),
 			},
 		},
 	},
@@ -130,7 +130,7 @@ module.exports = {
 			"& svg": { fill: token("colors.white") },
 			"&:hover:not(:focus)": {
 				"--tw-bg-opacity": "0.16",
-				backgroundColor: token("colors.white"),
+				backgroundColor: token("backgroundColor.white"),
 			},
 			"&:hover:not(:focus) svg": { fill: token("colors.white") },
 			"&:focus": { boxShadow: "0 0 0 3px rgba(255, 255, 255, 0.6)" },
@@ -141,7 +141,7 @@ module.exports = {
 			"& svg": { fill: token("colors.white") },
 			"&:hover:not(:focus)": {
 				"--tw-bg-opacity": "0.32",
-				backgroundColor: token("colors[blurple-300]"),
+				backgroundColor: token("backgroundColor[blurple-300]"),
 			},
 			"&:hover:not(:focus) svg": { fill: token("colors.white") },
 			"&:focus": { boxShadow: `0 0 0 3px ${token("colors.blurple-300")}` },
@@ -156,8 +156,8 @@ module.exports = {
 		marginRight: `calc(-1 * ${token("spacing[1]")})`,
 		border: `${token("borderWidth[2]")} solid transparent`,
 		borderRadius: token("borderRadius.md"),
-		color: token("colors[interactive-05]"),
-		"&:hover": { color: token("colors[interactive-04]") },
+		color: token("textColor[interactive-05]"),
+		"&:hover": { color: token("textColor[interactive-04]") },
 		"&:focus": { borderRadius: token("borderRadius.md") },
 		"&:hover:not(:focus)": {
 			paddingLeft: "0",
@@ -168,25 +168,25 @@ module.exports = {
 			borderBottom: `2px solid ${token("colors.interactive-05")}`,
 		},
 		".theme--dark &, &.theme--dark": {
-			color: token("colors[blurple-300]"),
-			"&:hover": { color: token("colors[blurple-300]") },
+			color: token("textColor[blurple-300]"),
+			"&:hover": { color: token("textColor[blurple-300]") },
 			"&:hover:not(:focus)": {
 				paddingLeft: "0",
 				paddingRight: "0",
 				marginLeft: "0",
 				marginRight: "0",
 				borderRadius: "none",
-				color: token("colors[interactive-06]"),
+				color: token("textColor[interactive-06]"),
 				borderBottom: `2px solid ${token("colors.interactive-06")}`,
 			},
 			"&:focus": {
-				color: token("colors.white"),
+				color: token("textColor.white"),
 				boxShadow: `0 0 0 3px ${token("colors.blurple-300")}`,
 			},
 		},
 		".theme--ghost &, &.theme--ghost": {
-			color: token("colors.white"),
-			"&:hover": { color: token("colors.white") },
+			color: token("textColor.white"),
+			"&:hover": { color: token("textColor.white") },
 			"&:hover:not(:focus)": {
 				paddingLeft: "0",
 				paddingRight: "0",

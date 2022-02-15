@@ -20,25 +20,6 @@ module.exports = {
 		xs: ["0.75rem", 1.5],
 		"2xs": ["0.6875rem", 1.5454545454545454],
 	},
-	textColor: {
-		"light-01": "#212529",
-		"light-02": "#495057",
-		"light-03": "#868E96",
-		"dark-01": "#F0F2FF",
-		"dark-02": "#C2C4CF",
-		"dark-03": "#84889C",
-		"dark-04": "#3B3E4F",
-	},
-	backgroundColor: {
-		"light-01": "#F8F9FA",
-		"light-02": "#FFFFFF",
-		"light-03": "#EBEFF3",
-		"dark-01": "#17171F",
-		"dark-02": "#1E2029",
-		"dark-03": "#3B3E4F",
-		"dark-04": "#274058",
-		"dark-overlay": "rgba(96, 120, 157, 0.4)",
-	},
 	colors: {
 		"interactive-08": "#AEB1C2",
 		"interactive-07": "#212529",
@@ -69,6 +50,36 @@ module.exports = {
 		"light-disabled": "#DADCE8",
 		"dark-disabled": "#343A40",
 		white: "#FFFFFF",
+	},
+	get textColor () {
+		return {
+			...this.colors,
+			"light-01": "#212529",
+			"light-02": "#495057",
+			"light-03": "#868E96",
+			"dark-01": "#F0F2FF",
+			"dark-02": "#C2C4CF",
+			"dark-03": "#84889C",
+			"dark-04": "#3B3E4F",
+		}
+	},
+	get backgroundColor () {
+		return {
+			...this.colors,
+			"light-01": "#F8F9FA",
+			"light-02": "#FFFFFF",
+			"light-03": "#EBEFF3",
+			"dark-01": "#17171F",
+			"dark-02": "#1E2029",
+			"dark-03": "#3B3E4F",
+			"dark-04": "#274058",
+			"dark-overlay": "rgba(96, 120, 157, 0.4)",
+		}
+	},
+	get borderColor () {
+		return {
+			...this.colors
+		}
 	},
 	spacing: {
 		px: "1px",
