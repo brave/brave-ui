@@ -30,18 +30,13 @@ const token = (path) => {
 	}
 
     if (typeof value === "string" && value.startsWith("#")) {
-        let alphaVar;
         if (path.includes("textColor")) {
-            alphaVar = "var(--tw-text-opacity)";
+            value = hex2rgba(value, "var(--tw-text-opacity)");
         } else if (path.includes("backgroundColor")) {
-            alphaVar = "var(--tw-bg-opacity)";
+            value = hex2rgba(value, "var(--tw-bg-opacity)");
         } else if (path.includes("borderColor")) {
-            alphaVar = "var(--tw-border-opacity)";
-        } else {
-            alphaVar = 1;
+            value = hex2rgba(value, "var(--tw-border-opacity)");
         }
-
-        value = hex2rgba(value, alphaVar);
     }
 
 	if (!value) {

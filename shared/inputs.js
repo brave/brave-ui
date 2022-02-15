@@ -1,31 +1,111 @@
 const { token } = require("./utils");
 
 module.exports = {
-	".input": {
-		backgroundColor: token("colors.white"),
+	".input, .checkbox, .radio": {
 		border: `${token("borderWidth[DEFAULT]")} solid ${token("colors[interactive-08]")}`,
-		borderRadius: token("borderRadius.md"),
-		fontSize: token("fontSize.tiny")[0],
 		color: token("textColor[light-01]"),
-		height: "40px",
-		minWidth: "250px",
 		WebkitAppearance: "none",
-		padding: "10px 18px",
 		"&::placeholder": { color: token("textColor[light-03]") },
-		"&:hover, &:focus": {
+		"&:hover, &:focus, &:checked:hover, &:checked:focus": {
 			outline: "none",
 			border: `${token("borderWidth[DEFAULT]")} solid ${token("colors[blurple-300]")}`,
-			boxShadow: `0 0 0 4px ${token("colors.blurple-300")}`,
+			boxShadow: `0 0 0 4px ${token("colors.blurple-300")}`
 		},
+		"&--ghost": {
+			color: `${token("textColor.white")} !important`,
+			"--tw-bg-opacity": "0.24",
+			backgroundColor: token("backgroundColor.white"),
+			backdropFilter: "blur(16px)",
+			"&:focus, &:checked:focus, &:hover, &:checked:hover": {
+				outline: "none",
+				opacity: 100,
+				border: `${token("borderWidth[DEFAULT]")} solid ${token("colors.white")}`,
+				boxShadow: "0 0 0 3px rgba(255, 255, 255, 0.6)",
+			},
+			"&:disabled, &:checked:disabled": {
+				"--tw-text-opacity": "0.32",
+				color: token("textColor.white"),
+				cursor: "not-allowed",
+			},
+			"&:active, &.loading, &:checked:active, &:checked.loading": {
+				"--tw-text-opacity": "0.32",
+				color: `${token("textColor.white")} !important`,
+				boxShadow: "none",
+				borderColor: "transparent",
+			},
+		},
+	},
+	".input": {
+		backgroundColor: token("colors.white"),
+		borderRadius: token("borderRadius.md"),
+		fontSize: token("fontSize.tiny")[0],
+		height: "40px",
+		minWidth: "250px",
+		padding: "10px 18px",
+		"&::placeholder": { color: token("textColor[light-03]") },
 		".-errors &, &.-errors": {
 			backgroundColor: token("colors[light-error-background]"),
 			boxShadow: `0 0 0 4px ${token("colors.error-border")}`,
 		},
+		"&--ghost": {
+			"--tw-bg-opacity": "0.24",
+			backgroundColor: token("backgroundColor.white"),
+			"&:hover": {
+				"--tw-bg-opacity": "0.42",
+				backgroundColor: token("backgroundColor.white"),
+			},
+			"&:disabled": {
+				"--tw-bg-opacity": "0.14",
+				backgroundColor: token("backgroundColor.white"),
+			},
+			"&:active, &.loading": {
+				"--tw-bg-opacity": "0.32",
+				backgroundColor: token("backgroundColor.white"),
+			},
+		}
 	},
 	".input--large": {
 		fontSize: token("fontSize.sm")[0],
 		height: "48px",
 		padding: "12px 14px",
+	},
+	".radio, .checkbox": {
+		width: 22,
+		height: 22,
+		"&:hover": {
+			cursor: "pointer"
+		},
+		"&:checked": {
+			backgroundColor: token("backgroundColor.interactive-05")
+		},
+		"&--ghost": {
+			"&:checked": {
+				backgroundColor: token("backgroundColor.white")
+			},
+		}
+	},
+	".radio": {
+		borderRadius: token("borderRadius.full"),
+		"&:checked": {
+			"--tw-border-opacity": "0.24",
+			border: `5px solid transparent`,
+			boxShadow: `0 0 0 1px ${token("colors.interactive-05")}`,
+			backgroundColor: "transparent",
+			backgroundRepeat: "no-repeat",
+			backgroundPosition: "center",
+			backgroundImage: `url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='6' cy='6' r='6' fill='${encodeURIComponent(token("colors.interactive-05"))}'/%3E%3C/svg%3E%0A")`
+		},
+		"&--ghost": {
+			borderColor: "transparent",
+			"&:checked": {
+				"--tw-bg-opacity": "1",
+				boxShadow: `0 0 0 1px ${token("colors.white")}`,
+				backgroundImage: `url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='6' cy='6' r='6' fill='${encodeURIComponent(token("colors.white"))}'/%3E%3C/svg%3E%0A")`
+			},
+		}
+	},
+	".checkbox": {
+		borderRadius: token("borderRadius.DEFAULT"),
 	},
 	".error__message": {
 		display: "none",
