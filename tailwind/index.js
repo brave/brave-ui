@@ -4,9 +4,15 @@ const { primaryFont, fontSize, textColor, backgroundColor, colors, boxShadow } =
 module.exports = {
 	theme: {
 		fontSize,
-		textColor,
 		boxShadow,
-		backgroundColor,
+		textColor: {
+			...colors,
+			...textColor
+		},
+		backgroundColor: {
+			...colors,
+			...backgroundColor
+		},
 		colors: {
 			...colors,
 			gray: {

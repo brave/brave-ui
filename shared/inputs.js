@@ -5,11 +5,12 @@ module.exports = {
 		backgroundColor: token("colors.white"),
 		border: `${token("borderWidth[DEFAULT]")} solid ${token("colors[interactive-08]")}`,
 		borderRadius: token("borderRadius.md"),
-		fontSize: token("fontSize.tiny"),
+		fontSize: token("fontSize.tiny")[0],
 		color: token("textColor[light-01]"),
 		height: "40px",
 		minWidth: "250px",
 		WebkitAppearance: "none",
+		padding: "10px 18px",
 		"&::placeholder": { color: token("textColor[light-03]") },
 		"&:hover, &:focus": {
 			outline: "none",
@@ -22,7 +23,7 @@ module.exports = {
 		},
 	},
 	".input--large": {
-		fontSize: token("fontSize.sm"),
+		fontSize: token("fontSize.sm")[0],
 		height: "48px",
 		padding: "12px 14px",
 	},
@@ -31,7 +32,7 @@ module.exports = {
 		alignSelf: "start",
 		alignItems: "center",
 		paddingTop: token("spacing[2]"),
-		fontSize: token("fontSize.tiny"),
+		fontSize: token("fontSize.tiny")[0],
 		textAlign: "left",
 		color: token("colors[error-icon]"),
 		"&::before": {
