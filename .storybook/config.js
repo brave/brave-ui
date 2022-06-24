@@ -5,6 +5,7 @@ import locales from '../stories/assets/locale'
 import DarkTheme from '../src/theme/brave-dark'
 import DefaultTheme from '../src/theme/brave-default'
 import { withThemesProvider } from 'storybook-addon-styled-component-theme'
+import '../stories/assets/fonts/poppins.css'
 
 addParameters({
   backgrounds: [
