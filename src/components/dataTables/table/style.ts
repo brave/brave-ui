@@ -46,7 +46,7 @@ export const StyledTR = styled('tr')<Partial<Row>>`
 `
 
 export const StyledTD = styled('td')<Partial<Cell>>`
-  font-family: Muli, sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: #686978;

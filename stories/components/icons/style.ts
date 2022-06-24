@@ -19,7 +19,7 @@ export const IconGridItem = styled.div`
 
 export const IconGridItemTitle = styled.div`
   flex: none;
-  font: 600 10px Muli;
+  font: 600 10px Poppins;
   color: #424242;
   padding: 4px;
   text-align: center;

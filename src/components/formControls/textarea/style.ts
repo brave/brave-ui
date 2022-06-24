@@ -27,7 +27,7 @@ export const StyledArea = styled('textarea')<Props>`
   min-height: 140px;
   box-sizing: border-box;
   width: 100%;
-  font-family: Muli, sans-serif;
+  font-family: Poppins, sans-serif;
   border: 1px solid ${p => getBorder(p)};
   color: ${(p) => p.disabled ? '#D1D1DB' : '#686978'};
   border-radius: 6px;

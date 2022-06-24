@@ -10,7 +10,7 @@ exports[`card tests basic tests matches the snapshot 1`] = `
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0,0,0,.15);
   font-size: inherit;
-  font-family: Muli,sans-serif;
+  font-family: Poppins,sans-serif;
   box-sizing: border-box;
   position: relative;
 }
