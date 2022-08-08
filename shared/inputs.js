@@ -16,6 +16,7 @@ module.exports = {
 			"--tw-bg-opacity": "0.24",
 			backgroundColor: token("backgroundColor.white"),
 			backdropFilter: "blur(16px)",
+			"&::placeholder": { color: token("textColor[dark-02]") },
 			"&:focus, &:checked:focus, &:hover, &:checked:hover": {
 				outline: "none",
 				opacity: 100,
@@ -50,6 +51,7 @@ module.exports = {
 		"&--ghost": {
 			"--tw-bg-opacity": "0.24",
 			backgroundColor: token("backgroundColor.white"),
+			"&::placeholder": { color: token("textColor[dark-02]") },
 			"&:hover": {
 				"--tw-bg-opacity": "0.42",
 				backgroundColor: token("backgroundColor.white"),
@@ -106,6 +108,14 @@ module.exports = {
 	},
 	".checkbox": {
 		borderRadius: token("borderRadius.DEFAULT"),
+		"&:checked": {
+			backgroundRepeat: "no-repeat",
+			backgroundPosition: "center",
+			backgroundImage: `url("data:image/svg+xml,%3Csvg width='14' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.026.354C12.736.1 12.351 0 11.965 0c-.386.05-.724.202-.965.505L5.259 7.378 2.46 4.498c-.58-.607-1.496-.607-2.027 0C.144 4.8 0 5.155 0 5.558c0 .405.145.81.434 1.062l3.908 4.043c.29.303.627.455 1.013.455h.049c.385 0 .771-.203 1.013-.506l6.754-8.085c.482-.657.434-1.617-.145-2.173Z' fill='${encodeURIComponent(token("colors.white"))}'/%3E%3C/svg%3E")`
+		},
+		"&--ghost": {
+			borderColor: "transparent",
+		}
 	},
 	".error__message": {
 		display: "none",

@@ -70,6 +70,7 @@ module.exports = {
 	plugins: [
 		require("./preflightPlugin"),
 		require("./buttonsPlugins"),
-		require("./inputsPlugin")
+		require("./inputsPlugin"),
+		require("./jsVariant")
 	],
 };

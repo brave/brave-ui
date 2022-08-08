@@ -14,7 +14,7 @@ module.exports = {
 		WebkitFontSmoothing: "antialiased",
 		MozOsxFontSmoothing: "grayscale",
 		color: token("textColor.light-01"),
-		fontSize: "14px",
+		fontSize: "16px",
 	},
 	".theme--dark": { fontWeight: token("fontWeight.medium") },
 	"a:not(.btn):hover": { textDecoration: "underline", color: "#872ec5" },
