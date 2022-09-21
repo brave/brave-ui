@@ -9,7 +9,7 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
   --checkbox-box-spacing: 12px;
   --checkbox-label-color: #686978;
   --checkbox-label-size: 14px;
-  font-family: Muli,sans-serif;
+  font-family: Poppins,sans-serif;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -43,7 +43,7 @@ exports[`Checkbox tests basic tests matches the snapshot 1`] = `
   --checkbox-box-spacing: 12px;
   --checkbox-label-color: #686978;
   --checkbox-label-size: 14px;
-  font-family: Muli,sans-serif;
+  font-family: Poppins,sans-serif;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

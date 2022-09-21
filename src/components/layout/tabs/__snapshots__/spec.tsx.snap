@@ -4,7 +4,7 @@ exports[`Tabs tests basic tests matches the snapshot 1`] = `
 .c0 {
   border-bottom: 1px solid #DFDFE8;
   text-align: center;
-  font-family: Muli,sans-serif;
+  font-family: Poppins,sans-serif;
 }
 
 .c1 {

@@ -89,7 +89,7 @@ const theme: ITheme = {
   },
   fontFamily: {
     heading: 'Poppins, sans-serif',
-    body: 'Muli, sans-serif',
+    body: 'Poppins, sans-serif',
     system: '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif'
   }
 }
