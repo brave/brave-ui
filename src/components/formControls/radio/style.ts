@@ -2,7 +2,7 @@
  * License. v. 2.0. If a copy of the MPL was not distributed with this file.
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import styled, { css, ThemedStyledProps } from '../../../theme'
+import styled, { css, StyledProps } from 'styled-components'
 import { Size } from './index'
 
 interface StyleProps {
@@ -11,7 +11,7 @@ interface StyleProps {
   selected?: boolean
 }
 
-const getThemeSizes = (p: ThemedStyledProps<StyleProps>) => {
+const getThemeSizes = (p: StyledProps<StyleProps>) => {
   let fillSize = '8'
   let circleSize = '18'
   let fontSize = '14'
@@ -31,14 +31,14 @@ const getThemeSizes = (p: ThemedStyledProps<StyleProps>) => {
   `
 }
 
-const getThemeColors = (p: ThemedStyledProps<StyleProps>, selected: boolean | undefined) => {
-  let fillColor = p.theme.color.brandBat
-  let borderColor = p.theme.color.subtleActive
+const getThemeColors = (p: StyledProps<StyleProps>, selected: boolean | undefined) => {
+  let fillColor = css`${p.theme.legacy.color.brandBat}`
+  let borderColor = p.theme.legacy.color.subtleActive
 
   if (!p.disabled) {
     borderColor = selected
-      ? p.theme.color.brandBat
-      : p.theme.color.brandBatActive
+      ? p.theme.legacy.color.brandBat
+      : p.theme.legacy.color.brandBatActive
   }
 
   return css`
@@ -47,8 +47,8 @@ const getThemeColors = (p: ThemedStyledProps<StyleProps>, selected: boolean | un
   `
 }
 
-export const StyledLabel = styled('label')<StyleProps>`
-  ${p => getThemeSizes(p)}
+export const StyledLabel = styled.label<StyleProps>`
+  ${getThemeSizes}
   line-height: 1.3;
   display: flex;
   margin-bottom: 30px;

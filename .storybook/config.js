@@ -26,7 +26,7 @@ addParameters({
   }
 })
 
-const themes = [DefaultTheme, DarkTheme]
+const themes = [{ name: DefaultTheme.name, legacy: DefaultTheme }, { name: DarkTheme.name, legacy: DarkTheme }]
 addDecorator(withThemesProvider(themes))
 
 function loadStories () {

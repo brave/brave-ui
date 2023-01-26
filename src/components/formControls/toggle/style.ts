@@ -79,7 +79,7 @@ export const StyledBullet = styled('div')<Props>`
 export const StyledText = styled('div')<Props>`
   color: #838391;
   font-size: ${(p) => p.size === 'small' ? '12px' : '14px'};
-  font-family: ${p => p.theme.fontFamily.body};
+  font-family: ${p => p.theme.legacy.fontFamily.body};
   text-align: right;
   letter-spacing: 0.4px;
   text-transform: uppercase;
