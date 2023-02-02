@@ -86,7 +86,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.1.0",
     "jest-styled-components": "^5.0.1",
-    "lerna": "^2.0.0",
+    "lerna": "^6.4.1",
     "ncp": "^2.0.0",
     "pre-commit": "^1.2.2",
     "pre-push": "^0.1.1",
