@@ -93,8 +93,6 @@
     "jest-styled-components": "^7.0.3",
     "lerna": "^3.20.2",
     "ncp": "^2.0.0",
-    "pre-commit": "^1.2.2",
-    "pre-push": "^0.1.1",
     "react": "^16.4.2",
     "react-beautiful-dnd": "^10.0.3",
     "react-dom": "^16.3.0",
@@ -115,17 +113,6 @@
   },
   "peerDependencies": {
     "react": "^16.0.0"
-  },
-  "pre-commit": {
-    "run": [
-      "lint"
-    ]
-  },
-  "pre-push": {
-    "run": [
-      "lint",
-      "test-unit-all"
-    ]
   },
   "storybook-deployer": {
     "gitUsername": "Brave Nespresso Drinker and Static Deployer Bot",
