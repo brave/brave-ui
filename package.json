@@ -112,7 +112,8 @@
     "typescript-plugin-styled-components": "0.0.6"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.0.0",
+    "styled-components": "^5.2.1"
   },
   "storybook-deployer": {
     "gitUsername": "Brave Nespresso Drinker and Static Deployer Bot",
