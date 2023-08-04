@@ -7,7 +7,7 @@ import { PushButtonProps } from './index'
 import { setTheme, setValueBasedOnSize } from '../../../helpers'
 import newTheme from '../newTheme'
 
-const StyledPushButton = styled.button`
+const StyledPushButton = styled.button<PushButtonProps>`
   font-size: ${(p: PushButtonProps) => setValueBasedOnSize(p.size, '13px', undefined, '16px')};
   min-width: ${(p: PushButtonProps) => setValueBasedOnSize(p.size, '112px', undefined, '190px')};
   min-height: ${(p: PushButtonProps) => setValueBasedOnSize(p.size, '40px', undefined, '52px')};
