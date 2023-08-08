@@ -3,7 +3,7 @@
   "private": false,
   "main": "index.js",
   "sideEffects": false,
-  "version": "0.40.1",
+  "version": "0.40.2",
   "description": "List of reusable React components to empower your brave UI",
   "author": "Brave Software",
   "contributors": [
@@ -31,7 +31,7 @@
     "lint": "npm run lint-css && npm run lint-ts",
     "lint-css": "stylelint './src/**/*.{ts,tsx}'",
     "lint-ts": "tslint --project tsconfig-storybook.json 'src/**/*.{ts,tsx}' 'stories/**/*.{ts,tsx}'",
-    "copy": "cpr package.json package/ && cpr README.md package/",
+    "copy": "cpr package.json package/ && cpr README.md package/ && cpr LICENSE.md package/",
     "build": "rimraf package && npm run copy && tsc --outDir package",
     "publish": "npm run build && lerna publish",
     "now-build": "npm run storybook-build",
