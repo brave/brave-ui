@@ -1,8 +1,10 @@
 {
-  "name": "brave-ui",
+  "name": "@brave/brave-ui",
+  "private": false,
   "main": "index.js",
+  "type": "module",
   "sideEffects": false,
-  "version": "0.39.0",
+  "version": "0.40.4",
   "description": "List of reusable React components to empower your brave UI",
   "author": "Brave Software",
   "contributors": [
@@ -30,13 +32,10 @@
     "lint": "npm run lint-css && npm run lint-ts",
     "lint-css": "stylelint './src/**/*.{ts,tsx}'",
     "lint-ts": "tslint --project tsconfig-storybook.json 'src/**/*.{ts,tsx}' 'stories/**/*.{ts,tsx}'",
-    "copy": "ncp src package --filter='^(?!(.*)(__snapshots__|spec.tsx)$).*$' && cpr package.json package/ && cpr README.md package/",
-    "build": "rimraf package && npm run copy && lerna exec -- tsc",
+    "copy": "cpr package.json package/ && cpr README.md package/ && cpr LICENSE.md package/",
+    "build": "rimraf package && npm run copy && tsc --outDir package",
     "publish": "npm run build && lerna publish",
     "now-build": "npm run storybook-build",
-    "storybook-start": "start-storybook -p 9091 -c .storybook -s .storybook/static",
-    "storybook-deploy": "storybook-to-ghpages -s storybook-build -o .out",
-    "storybook-build": "build-storybook -c .storybook -s .storybook/static -o .storybook-out",
     "test-integration:deps": "npm run build && cd ./examples/webpack-4 && npm install && npm run build && cd ../../",
     "test-integration": "npm run test-integration:deps && jest -c ./integration-tests/jest.json",
     "test-unit": "jest -t",
@@ -54,14 +53,6 @@
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@dump247/storybook-state": "^1.5.2",
-    "@storybook/addon-actions": "^5.3.17",
-    "@storybook/addon-backgrounds": "^5.3.17",
-    "@storybook/addon-centered": "^5.0.1",
-    "@storybook/addon-knobs": "^5.3.17",
-    "@storybook/addons": "^5.0.6",
-    "@storybook/react": "^5.3.17",
-    "@storybook/storybook-deployer": "^2.8.6",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -71,11 +62,6 @@
     "@types/react-beautiful-dnd": "^10.0.1",
     "@types/react-dom": "^16.0.7",
     "@types/react-test-renderer": "^16.0.1",
-    "@types/storybook__addon-actions": "^3.4.2",
-    "@types/storybook__addon-centered": "^3.3.2",
-    "@types/storybook__addon-info": "^4.1.0",
-    "@types/storybook__addon-knobs": "^4.0.3",
-    "@types/storybook__react": "^4.0.1",
     "@types/styled-components": "^5.1.7",
     "awesome-typescript-loader": "^5.2.1",
     "babel-core": "^7.0.0-bridge.0",
@@ -92,14 +78,11 @@
     "jest-styled-components": "^7.0.3",
     "lerna": "^3.20.2",
     "ncp": "^2.0.0",
-    "pre-commit": "^1.2.2",
-    "pre-push": "^0.1.1",
     "react": "^16.4.2",
     "react-beautiful-dnd": "^10.0.3",
     "react-dom": "^16.3.0",
     "react-test-renderer": "^16.3.0",
     "rimraf": "^2.6.2",
-    "storybook-addon-styled-component-theme": "^1.1.1",
     "styled-components": "^5.2.1",
     "stylelint": "^13.11.0",
     "stylelint-config-recommended": "^3.0.0",
@@ -109,22 +92,12 @@
     "tslint": "^6.1.3",
     "tslint-config-standard": "^9.0.0",
     "tslint-react": "^5.0.0",
-    "typescript": "^3.0.1",
-    "typescript-plugin-styled-components": "0.0.6"
+    "typescript": "^4.9.5",
+    "typescript-plugin-styled-components": "2.0.0"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
-  },
-  "pre-commit": {
-    "run": [
-      "lint"
-    ]
-  },
-  "pre-push": {
-    "run": [
-      "lint",
-      "test-unit-all"
-    ]
+    "react": "^16.0.0",
+    "styled-components": "^5.2.1"
   },
   "storybook-deployer": {
     "gitUsername": "Brave Nespresso Drinker and Static Deployer Bot",

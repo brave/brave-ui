@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { ImageProps } from './index'
 import { setTheme } from '../../../helpers'
 
-const StyledPicture = styled.picture`
+const StyledPicture = styled.picture<ImageProps>`
   max-width: ${(p: ImageProps) => setTheme(p.customStyle, 'maxWidth')};
   min-width: ${(p: ImageProps) => setTheme(p.customStyle, 'minWidth')};
   width: ${(p: ImageProps) => setTheme(p.customStyle, 'width')};
@@ -18,7 +18,7 @@ const StyledPicture = styled.picture`
   display: block;
 `
 
-const StyledFigure = styled.figure`
+const StyledFigure = styled.figure<ImageProps>`
   box-sizing: border-box;
   display: block;
   max-width: 100%;

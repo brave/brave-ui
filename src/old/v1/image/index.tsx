@@ -15,14 +15,12 @@ export interface ImageTheme {
   padding?: string
 }
 
-export interface ImageProps {
+export type ImageProps = React.PropsWithChildren<{
   customStyle?: ImageTheme
   id?: string
-  children?: HTMLSourceElement
   src?: string
   caption?: string
-}
-
+}>
 class Image extends React.PureComponent<ImageProps, {}> {
   render () {
     const { id, customStyle, children, src, caption } = this.props
