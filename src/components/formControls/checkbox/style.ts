@@ -53,7 +53,7 @@ const getLabelProps = (p: Partial<StyleProps>) => {
 
 export const StyledLabel = styled('label')<Partial<StyleProps>>`
   ${getLabelProps};
-  font-family: ${p => p.theme.fontFamily.body};
+  font-family: ${p => p.theme.legacy.fontFamily.body};
   display: flex;
   align-items: center;
   margin-bottom: 4px;

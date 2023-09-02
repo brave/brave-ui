@@ -52,7 +52,7 @@ export const StyledWrapper = styled('div')<StyleProps>`
 export const StyledSelectWrapper = styled('div')<StyleProps>`
   position: relative;
   outline: 0;
-  font-family: ${p => p.theme.fontFamily.body};
+  font-family: ${p => p.theme.legacy.fontFamily.body};
 `
 
 export const StyledSelect = styled('div')<StyleProps>`
@@ -129,7 +129,7 @@ export const StyledOptionsOverlay = styled('div')<StyleProps>`
   left: 0;
   width: 100%;
   height: 100%;
-  background: ${p => p.theme.color.modalOverlayBackground};
+  background: ${p => p.theme.legacy.color.modalOverlayBackground};
   align-items: center;
   z-index: 999;
   justify-content: center;
@@ -137,7 +137,7 @@ export const StyledOptionsOverlay = styled('div')<StyleProps>`
 
 export const StyledOptionsModal = styled('div')<StyleProps>`
   border-radius: 4px;
-  background: ${p => p.theme.color.primaryBackground};
+  background: ${p => p.theme.legacy.color.primaryBackground};
   height: 30%;
   width: 50%;
   z-index: 9999;
@@ -161,7 +161,7 @@ export const StyledOptionsModal = styled('div')<StyleProps>`
 `
 
 export const StyledSelectTitle = styled('span')<StyleProps>`
-  color: ${p => p.theme.color.defaultControlActive};
+  color: ${p => p.theme.legacy.color.defaultControlActive};
   display: block;
   font-size: 16px;
   font-weight: 600;
@@ -169,7 +169,7 @@ export const StyledSelectTitle = styled('span')<StyleProps>`
   line-height: 32px;
   margin-bottom: 30px;
   text-align: left;
-  font-family: ${p => p.theme.fontFamily.body};
+  font-family: ${p => p.theme.legacy.fontFamily.body};
 `
 
 export const StyledModalContent = styled('div')<StyleProps>`

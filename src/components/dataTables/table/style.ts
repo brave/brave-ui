@@ -20,7 +20,7 @@ export const StyledTable = styled('table')<{}>`
 export const StyledTH = styled('th')<Partial<Cell>>`
   text-transform: uppercase;
   text-align: left;
-  font-family: ${p => p.theme.fontFamily.body};
+  font-family: ${p => p.theme.legacy.fontFamily.body};
   font-size: 12px;
   font-weight: 500;
   border-bottom: 2px solid #dedfe4;
