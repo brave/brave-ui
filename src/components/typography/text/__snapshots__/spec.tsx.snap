@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text tests basic tests matches the snapshot 1`] = `
+.c0 {
+  line-height: 1.5;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+  font-family: Muli,sans-serif;
+}
+
+.c1 {
+  font-size: 16px;
+}
+
+<div
+  className="c0 c1"
+  type="body"
+>
+  A browser with your interest at heart
+</div>
+`;
+
+exports[`Text tests basic tests matches the snapshot 2`] = `
+.c0 {
+  line-height: 1.5;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+  font-family: Muli,sans-serif;
+}
+
+.c1 {
+  font-size: 16px;
+}
+
+<span
+  className="c0 c1"
+  type="body"
+>
+  A browser with your interest at heart
+</span>
+`;
+
+exports[`Text tests basic tests matches the snapshot 3`] = `
+.c0 {
+  line-height: 1.5;
+  -webkit-letter-spacing: 0;
+  -moz-letter-spacing: 0;
+  -ms-letter-spacing: 0;
+  letter-spacing: 0;
+  font-family: Muli,sans-serif;
+}
+
+.c1 {
+  font-size: 16px;
+}
+
+<div
+  className="c0 c1 test"
+  type="body"
+>
+  A browser with your interest at heart
+</div>
+`;
