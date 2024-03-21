@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "sideEffects": false,
-  "version": "0.40.4",
+  "version": "0.40.5",
   "description": "List of reusable React components to empower your brave UI",
   "author": "Brave Software",
   "contributors": [
@@ -96,7 +96,7 @@
     "typescript-plugin-styled-components": "2.0.0"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
+    "react": ">= 16.0.0",
     "styled-components": "^5.2.1"
   },
   "storybook-deployer": {
