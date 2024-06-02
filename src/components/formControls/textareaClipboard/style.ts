@@ -10,7 +10,7 @@ export const StyledWrapper = styled('div')<{}>`
   padding: 10px;
   border: 1px solid #DFDFE8;
   border-radius: 6px;
-  font-family: ${p => p.theme.fontFamily.body};
+  font-family: ${p => p.theme.legacy.fontFamily.body};
 
   &:focus-within {
     border-color: #A1A8F2;

@@ -24,11 +24,11 @@ export const Card = styled('div')<StyledCardProps>`
   width: 100%;
   min-height: auto;
   margin: 0;
-  background-color: ${p => p.theme.color.panelBackground};
+  background-color: ${p => p.theme.legacy.color.panelBackground};
   border-radius: 4px;
   box-shadow: ${p => `0 2px 4px rgba(0, 0, 0, ${getShadowOpacity(p.emphasis)})`};
   font-size: inherit;
-  font-family: ${p => p.theme.fontFamily.body};
+  font-family: ${p => p.theme.legacy.fontFamily.body};
   box-sizing: border-box;
   position: relative;
 `

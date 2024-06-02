@@ -32,7 +32,7 @@ export const StyledWrapper = styled('div')<{}>`
 
 export const StyledLabel = styled('div')<Partial<Props>>`
   width: 100%;
-  font-family: ${p => p.theme.fontFamily.body};
+  font-family: ${p => p.theme.legacy.fontFamily.body};
   line-height: normal;
   font-size: 14px;
   font-weight: 600;

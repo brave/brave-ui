@@ -11,7 +11,7 @@ interface StyleProps {
 export const StyledTabWrapper = styled('div')<{}>`
   border-bottom: 1px solid #DFDFE8;
   text-align: center;
-  font-family: ${p => p.theme.fontFamily.body};
+  font-family: ${p => p.theme.legacy.fontFamily.body};
 `
 
 export const StyledTab = styled('div')<StyleProps>`

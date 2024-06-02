@@ -25,34 +25,34 @@ const getThemeColors = (p: StyledProps<Props>) => {
   let hoverColor
   let activeColor
   if (p.disabled) {
-    mainColor = hoverColor = activeColor = p.theme.color.disabled
+    mainColor = hoverColor = activeColor = p.theme.legacy.color.disabled
   } else {
     switch (p.type) {
       case 'accent':
         if (p.brand === 'brave') {
-          mainColor = p.theme.color.brandBrave
-          hoverColor = p.theme.color.brandBraveInteracting
-          activeColor = p.theme.color.brandBraveActive
+          mainColor = p.theme.legacy.color.brandBrave
+          hoverColor = p.theme.legacy.color.brandBraveInteracting
+          activeColor = p.theme.legacy.color.brandBraveActive
         } else if (p.brand === 'rewards') {
-          mainColor = p.theme.color.brandBat
-          hoverColor = p.theme.color.brandBatInteracting
-          activeColor = p.theme.color.brandBatActive
+          mainColor = p.theme.legacy.color.brandBat
+          hoverColor = p.theme.legacy.color.brandBatInteracting
+          activeColor = p.theme.legacy.color.brandBatActive
         }
         break
       case 'default':
-        mainColor = p.theme.color.defaultControl
-        hoverColor = p.theme.color.defaultControlInteracting
-        activeColor = p.theme.color.defaultControlActive
+        mainColor = p.theme.legacy.color.defaultControl
+        hoverColor = p.theme.legacy.color.defaultControlInteracting
+        activeColor = p.theme.legacy.color.defaultControlActive
         break
       case 'warn':
-        mainColor = p.theme.color.warn
-        hoverColor = p.theme.color.warnInteracting
-        activeColor = p.theme.color.warnActive
+        mainColor = p.theme.legacy.color.warn
+        hoverColor = p.theme.legacy.color.warnInteracting
+        activeColor = p.theme.legacy.color.warnActive
         break
       case 'subtle':
-        mainColor = p.theme.color.subtle
-        hoverColor = p.theme.color.subtleInteracting
-        activeColor = p.theme.color.subtleActive
+        mainColor = p.theme.legacy.color.subtle
+        hoverColor = p.theme.legacy.color.subtleInteracting
+        activeColor = p.theme.legacy.color.subtleActive
         break
     }
   }
