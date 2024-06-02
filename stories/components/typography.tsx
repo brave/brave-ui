@@ -6,9 +6,9 @@ import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text, number } from '@storybook/addon-knobs'
 import centered from '@storybook/addon-centered'
-import { Heading } from '../../src/components'
+import { Heading, Text } from '../../src/components'
 
-storiesOf('Components/Text', module)
+storiesOf('Components/Typography', module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
   .add('Heading playground', () => {
@@ -35,6 +35,24 @@ storiesOf('Components/Text', module)
         <Heading level={4}>Heading level 4</Heading>
         <Heading level={5}>Heading level 5</Heading>
         <Heading level={6}>Heading level 6</Heading>
+      </>
+    )
+  })
+  .add('Text', () => {
+    return (
+      <>
+        <Text size='00'>A browser with your interest at heart</Text>
+        <Text size='01'>A browser with your interest at heart</Text>
+        <Text size='02'>A browser with your interest at heart</Text>
+        <Text size='03'>A browser with your interest at heart</Text>
+        <Text size='04'>A browser with your interest at heart</Text>
+        <Text size='05'>A browser with your interest at heart</Text>
+        <Text size='06'>A browser with your interest at heart</Text>
+        <Text size='07'>A browser with your interest at heart</Text>
+        <Text size='08'>A browser with your interest at heart</Text>
+        <Text size='09'>A browser with your interest at heart</Text>
+        <Text size='10'>A browser with your interest at heart</Text>
+        <Text size='11'>A browser with your interest at heart</Text>
       </>
     )
   })
